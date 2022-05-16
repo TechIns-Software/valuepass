@@ -8378,8 +8378,8 @@ em.mm-counter+a.mm-next+label.mm-toggle+span {
 
 @font-face {
     font-family: fontello;
-    /* src: url(icon_fonts/font/fontello.eot?32974303);
-    src: url(icon_fonts/font/fontello.eot?32974303#iefix) format('embedded-opentype'), url(icon_fonts/font/fontello.woff?32974303) format('woff'), url(icon_fonts/font/fontello.ttf?32974303) format('truetype'), url(icon_fonts/font/fontello.svg?32974303#fontello) format('svg'); */
+    src: url(icon_fonts/font/fontello.eot?32974303);
+    src: url(icon_fonts/font/fontello.eot?32974303#iefix) format('embedded-opentype'), url(icon_fonts/font/fontello.woff?32974303) format('woff'), url(icon_fonts/font/fontello.ttf?32974303) format('truetype'), url(icon_fonts/font/fontello.svg?32974303#fontello) format('svg');
     font-weight: 400;
     font-style: normal
 }
@@ -16211,8 +16211,8 @@ em.mm-counter+a.mm-next+label.mm-toggle+span {
 
 @font-face {
     font-family: Pe-icon-7-stroke;
-    /* src: url(icon_fonts/font/Pe-icon-7-stroke.eot?d7yf1v);
-    src: url(icon_fonts/font/Pe-icon-7-stroke.eot?#iefixd7yf1v) format('embedded-opentype'), url(icon_fonts/font/Pe-icon-7-stroke.woff?d7yf1v) format('woff'), url(icon_fonts/font/Pe-icon-7-stroke.ttf?d7yf1v) format('truetype'), url(icon_fonts/font/Pe-icon-7-stroke.svg?d7yf1v#Pe-icon-7-stroke) format('svg'); */
+    src: url(icon_fonts/font/Pe-icon-7-stroke.eot?d7yf1v);
+    src: url(icon_fonts/font/Pe-icon-7-stroke.eot?#iefixd7yf1v) format('embedded-opentype'), url(icon_fonts/font/Pe-icon-7-stroke.woff?d7yf1v) format('woff'), url(icon_fonts/font/Pe-icon-7-stroke.ttf?d7yf1v) format('truetype'), url(icon_fonts/font/Pe-icon-7-stroke.svg?d7yf1v#Pe-icon-7-stroke) format('svg');
     font-weight: 400;
     font-style: normal
 }
@@ -17041,8 +17041,8 @@ em.mm-counter+a.mm-next+label.mm-toggle+span {
 
 @font-face {
     font-family: ElegantIcons;
-    /* src: url(icon_fonts/font/ElegantIcons.eot);
-    src: url(icon_fonts/font/ElegantIcons.eot?#iefix) format('embedded-opentype'), url(icon_fonts/font/ElegantIcons.woff) format('woff'), url(icon_fonts/font/ElegantIcons.ttf) format('truetype'), url(icon_fonts/font/ElegantIcons.svg#ElegantIcons) format('svg'); */
+    src: url(icon_fonts/font/ElegantIcons.eot);
+    src: url(icon_fonts/font/ElegantIcons.eot?#iefix) format('embedded-opentype'), url(icon_fonts/font/ElegantIcons.woff) format('woff'), url(icon_fonts/font/ElegantIcons.ttf) format('truetype'), url(icon_fonts/font/ElegantIcons.svg#ElegantIcons) format('svg');
     font-weight: 400;
     font-style: normal
 }
@@ -18912,8 +18912,8 @@ em.mm-counter+a.mm-next+label.mm-toggle+span {
 
 @font-face {
     font-family: themify;
-    /* src: url(icon_fonts/font/themify.eot?-fvbane);
-    src: url(icon_fonts/font/themify.eot?#iefix-fvbane) format('embedded-opentype'), url(icon_fonts/font/themify.woff?-fvbane) format('woff'), url(icon_fonts/font/themify.ttf?-fvbane) format('truetype'), url(icon_fonts/font/themify.svg?-fvbane#themify) format('svg'); */
+    src: url(icon_fonts/font/themify.eot?-fvbane);
+    src: url(icon_fonts/font/themify.eot?#iefix-fvbane) format('embedded-opentype'), url(icon_fonts/font/themify.woff?-fvbane) format('woff'), url(icon_fonts/font/themify.ttf?-fvbane) format('truetype'), url(icon_fonts/font/themify.svg?-fvbane#themify) format('svg');
     font-weight: 400;
     font-style: normal
 }
@@ -20341,11 +20341,14 @@ em.mm-counter+a.mm-next+label.mm-toggle+span {
 
 @font-face {
     font-family: Glyphter;
-    /* src: url(icon_fonts/font/Glyphter.eot);
-    src: url(icon_fonts/font/Glyphter.eot?#iefix) format('embedded-opentype'), url(icon_fonts/font/Glyphter.woff) format('woff'), url(icon_fonts/font/Glyphter.ttf) format('truetype'), url(icon_fonts/font/Glyphter.svg#Glyphter) format('svg'); */
+    src: url(icon_fonts/font/Glyphter.eot);
+    src: url(icon_fonts/font/Glyphter.eot?#iefix) format('embedded-opentype'), url(icon_fonts/font/Glyphter.woff) format('woff'), url(icon_fonts/font/Glyphter.ttf) format('truetype'), url(icon_fonts/font/Glyphter.svg#Glyphter) format('svg');
     font-weight: 400;
     font-style: normal
 }
+
+
+
 
 .icon-icon_cart:before,
 .icon-icon_heart_2:before,
