@@ -3624,7 +3624,8 @@ a.box_feat h3 {
 }
 
 .wrapper-grid {
-    padding: 0 20px
+    padding: 0 20px;
+    
 }
 
 .box_grid {
@@ -3634,7 +3635,8 @@ a.box_feat h3 {
     margin-bottom: 30px;
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1)
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+   
 }
 
 .box_grid .price {
@@ -3695,21 +3697,22 @@ a.box_feat h3 {
     height: 210px
 }
 
-.box_grid figure small {
-    position: absolute;
+.box_grid .wrapper small {
+    position: relative;
     background-color: #000;
-    background-color: rgba(0, 0, 0, .6);
-    left: 20px;
-    top: 22px;
+    background-color: rgba(48, 45, 45, 0.836);
+    left: -15px;
+    top: -35px;
     text-transform: uppercase;
-    color: #ccc;
+    color: rgb(252, 252, 252);
     font-weight: 600;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     border-radius: 3px;
     padding: 7px 10px 4px 10px;
-    line-height: 1
+    line-height: 1;
+    z-index: 9999;
 }
 
 .box_grid figure .read_more {
@@ -3786,8 +3789,62 @@ a.box_feat h3 {
 }
 
 .box_grid .wrapper {
-    padding: 25px
+    padding: 25px;
 }
+
+.addons{
+    color: black;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+   
+}
+
+
+
+.icon_star {
+    color: gray;
+}
+.voted{
+    color: rgb(235, 214, 26);
+}
+
+
+.box_grid .wrapper  p .voucher_av b {
+    color: rgb(231, 54, 41);
+    font-weight: 700;
+
+}
+
+.box_grid .wrapper  p .prev_price b {
+    color: rgb(218, 124, 17);
+    font-weight: 700;
+    text-decoration: line-through;
+
+}
+
+.vpvoucher_price  {
+    color: rgb(10, 107, 252);
+    font-weight: 700;
+
+}
+
+
+.final_price span{
+    color: green;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+ 
+
+
 
 .box_grid .wrapper h3 {
     font-size: 20px;
@@ -3880,7 +3937,7 @@ a.box_feat h3 {
 
 .box_list a.wish_bt:hover:after {
     content: "\e089";
-    color: #999
+    color: rgb(233, 19, 19)
 }
 
 .box_list figure {
@@ -8888,8 +8945,8 @@ ul.bullets li:before {
 }
 
 .margin_60_35 {
-    padding-top: 60px;
-    padding-bottom: 35px
+    /* padding-top: 60px;
+    padding-bottom: 35px */
 }
 
 @media (max-width:575px) {
@@ -10179,4 +10236,10 @@ ul.plan-features {
 .badge-danger {
     color: #fff;
     background-color: #dc3545;
+}
+
+.underline{
+    text-decoration-color: lightcoral!important;
+    text-decoration: underline;
+
 }
