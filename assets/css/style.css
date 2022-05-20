@@ -3625,7 +3625,7 @@ a.box_feat h3 {
 
 .wrapper-grid {
     padding: 0 20px;
-    
+
 }
 
 .box_grid {
@@ -3636,7 +3636,7 @@ a.box_feat h3 {
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
-   
+
 }
 
 .box_grid .price {
@@ -3792,12 +3792,12 @@ a.box_feat h3 {
     padding: 25px;
 }
 
-.addons{
+.addons {
     color: black;
     font-weight: 700;
     padding: 0;
     margin: 0;
-   
+
 }
 
 
@@ -3805,32 +3805,33 @@ a.box_feat h3 {
 .icon_star {
     color: gray;
 }
-.voted{
+
+.voted {
     color: rgb(235, 214, 26);
 }
 
 
-.box_grid .wrapper  p .voucher_av b {
+.box_grid .wrapper p .voucher_av b {
     color: rgb(231, 54, 41);
     font-weight: 700;
 
 }
 
-.box_grid .wrapper  p .prev_price b {
+.box_grid .wrapper p .prev_price b {
     color: rgb(218, 124, 17);
     font-weight: 700;
     text-decoration: line-through;
 
 }
 
-.vpvoucher_price  {
+.vpvoucher_price {
     color: rgb(10, 107, 252);
     font-weight: 700;
 
 }
 
 
-.final_price span{
+.final_price span {
     color: green;
     font-weight: 700;
 }
@@ -3842,7 +3843,7 @@ a.box_feat h3 {
 
 
 
- 
+
 
 
 
@@ -9299,7 +9300,7 @@ ul.bullets li:before {
     font-size: 24px;
     font-family: ElegantIcons;
     content: "\4d"
-    
+
 }
 
 .small-dialog-header {
@@ -10238,8 +10239,233 @@ ul.plan-features {
     background-color: #dc3545;
 }
 
-.underline{
-    text-decoration-color: lightcoral!important;
+.underline {
+    text-decoration-color: lightcoral !important;
     text-decoration: underline;
 
 }
+
+
+/* MY CUSTOM CSS 
+
+TODO : MOVE THIS TO OTHER FILE
+*/
+
+
+
+#hero {
+
+    background: url('../img/bg_images/1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.hero-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    background-color: rgba(252, 252, 252, 0.5);
+    padding: 2em;
+    border-radius: 1em;
+}
+
+
+
+.advantages {
+    background-color: lightcoral;
+    border: 2px solid rgba(252, 252, 252, 0.5);
+    border-radius: 1em;
+
+}
+
+
+.advantages h4 {
+    font-weight: 800;
+
+}
+
+
+.newsletter-subscribe {
+    color: #313437;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.53);
+    padding: 1em 2em;
+    border-radius: 2em;
+}
+
+.newsletter-subscribe p {
+    color: #7d8285;
+    line-height: 1.5;
+}
+
+.newsletter-subscribe h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    padding-top: 0;
+    margin-top: 0;
+    color: inherit;
+}
+
+.newsletter-subscribe .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto 25px;
+}
+
+.newsletter-subscribe .intro p {
+    margin-bottom: 35px;
+}
+
+.newsletter-subscribe form {
+    justify-content: center;
+}
+
+.newsletter-subscribe form .form-control {
+    background: #eff1f4;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
+    text-indent: 9px;
+    height: 45px;
+    margin-right: 10px;
+    min-width: 250px;
+}
+
+.newsletter-subscribe form .btn {
+    padding: 16px 32px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    line-height: 1;
+}
+
+.newsletter-subscribe form .btn:hover {
+    opacity: 1;
+}
+
+.newsletter-subscribe form .btn:active {
+    transform: translateY(1px);
+}
+
+.newsletter-subscribe form .btn-primary {
+    background-color: #055ada !important;
+    color: #fff;
+    outline: none !important;
+}
+
+
+
+.newsletter {
+    color: #0062cc !important;
+}
+
+
+.wrapper {
+    margin: 10vh
+}
+
+
+
+.card {
+    border: none;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    overflow: hidden;
+    border-radius: 20px;
+    min-height: 450px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 768px) {
+        min-height: 350px;
+    }
+
+    @media (max-width: 420px) {
+        min-height: 300px;
+    }
+    }
+    .card-has-bg {
+        transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 120%;
+        background-size: cover;
+        
+    }
+
+        .card-has-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: inherit;
+            -webkit-filter: grayscale(1);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        .card-has-bg:hover {
+            transform: scale(0.98);
+            box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
+            /* background-size: 130%; */
+            transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+
+        }
+            .card-img-overlay {
+                transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+                background: rgb(35, 79, 109);
+                background: linear-gradient(0deg, rgba(4, 69, 114, 0.5) 0%, rgba(4, 69, 114, 1) 100%);
+            }
+        
+    
+
+    .card-footer {
+        background: none;
+        border-top: none;
+
+    }.card-footer .media  img {
+             
+                border: solid 3px rgba(234, 95, 0, 0.3);
+            }
+        
+    
+
+    .card-meta {
+        color: red
+    }
+
+    .card-body {
+        transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .card-body:hover {
+       
+            margin-top: 30px;
+            transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .card-body{ cursor:pointer;
+        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .card-img-overlay {
+        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+        background: rgba(35, 79, 109,0.4); 
+        background: linear-gradient(0deg, rgba(35, 79, 109, 0.3785889355742297) 0%, rgba(69, 95, 113, 1) 100%);
+
+
+    }
