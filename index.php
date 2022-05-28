@@ -1,6 +1,5 @@
 <?php
 $title = "Homeapage";
-
 include_once 'includes/header.php';
 ?>
 

@@ -4,7 +4,6 @@ $title = "Adventures";
 include_once 'includes/header.php';
 ?>
 
-
 <main>
 	<section class="header-video adventure">
 		<div id="hero_video">
@@ -13,11 +12,13 @@ include_once 'includes/header.php';
 					<small>Introducing</small>
 					<h3>{ Location Name }</h3>
 					<p>Hosted journeys to extraordinary and unique places.</p>
-					<a href="adventure-detail.html" class="btn_1">Read more</a>
+					<a href="adventure-detail.html" class="btn_1">Learn more</a>
 				</div>
 			</div>
 		</div>
-		<img src="assets/img/10.jpg" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960">
+
+		<video src="assets/videos/vid2.mp4" autoplay loop playsinline muted></video>
+		<!-- <img src="assets/img/10.jpg" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960"> -->
 	</section>
 	<!-- /header-video -->
 

@@ -5,9 +5,9 @@ include_once 'includes/header.php';
 ?>
 
 <main>
-	<section class="hero_in hotels_detail">
-		<div class="wrapper">
-			<div class="container">
+	<section class="hero_in hotels_detail ">
+		<div class="wrapper ">
+			<div class="container ">
 				<h1 class="fadeInUp"><span></span>Detail page</h1>
 			</div>
 			<span class="magnific-gallery">
@@ -515,7 +515,7 @@ include_once 'includes/header.php';
 <!-- <script src="assets/js/infobox.js"></script> -->
 
 <!-- DATEPICKER  -->
-<script>
+<!-- <script>
 	$(function() {
 		$('input[name="dates"]').daterangepicker({
 			autoUpdateInput: false,
@@ -533,7 +533,7 @@ include_once 'includes/header.php';
 			$(this).val('');
 		});
 	});
-</script>
+</script> -->
 
 
 <?php
