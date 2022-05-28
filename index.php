@@ -104,7 +104,7 @@ include_once 'includes/header.php';
 						<p>Check here the available locations</p>
 					</div>
 
-					<div class="col-lg-3  col-md-4 col-sm-6">
+					<div class="col-lg-3  col-md-4 col-sm-12">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -119,7 +119,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="col-lg-3  col-md-4 col-sm-6">
+					<div class="col-lg-3  col-md-4 col-sm-12">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?island');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?island" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -134,7 +134,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="col-lg-3  col-md-4 col-sm-6">
+					<div class="col-lg-3  col-md-4 col-sm-12">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -149,7 +149,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="col-lg-3  col-md-4 col-sm-6">
+					<div class="col-lg-3  col-md-4 col-sm-12">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?samos');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?samos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -164,7 +164,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="col-lg-3  col-md-4 col-sm-6">
+					<div class="col-lg-3  col-md-4 col-sm-12">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -179,7 +179,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="col-lg-3  col-md-4 col-sm-6">
+					<div class="col-lg-3  col-md-4 col-sm-12">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
