@@ -1,442 +1,244 @@
 <?php
-$title = "Index ";
+$title = "Homeapage";
 
 include_once 'includes/header.php';
 ?>
 
 
-
 <main>
-	<section class="hero_single version_2">
-		<div class="wrapper">
+	<section class="header-video adventure">
+		<div id="hero_video">
+			<div class="wrapper">
+				<div class="container container-custom  ">
+					<div class="row ">
+
+						<div class="col-lg-6    col-md-12 ">
+							<small> Discover everything you need to know about your Vacation Experiences… </small>
+							<h3>Value Pass</h3>
+							<p>Hosted journeys to extraordinary and unique places.</p>
+							<a href="adventure-detail.html" class="btn_1">How it works</a>
+						</div>
+
+						<div class="col-lg-6    d-none d-md-block  ">
+							<div class="row">
+								<div class="col-6 py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
+								<div class="col-6  py-2  hero-imgs"> <img src="assets/img/10.jpg" class="img-fluid" alt=""></div>
+								<div class="col-4  py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
+								<div class="col-4  py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
+								<div class="col-4  py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
+							</div>
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- <img src="assets/videos/vid1.mp4" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960"> -->
+
+		<video src="assets/videos/vid1.mp4" autoplay loop playsinline muted></video>
+	</section>
+	<!-- /header-video -->
+
+
+	<div class="container margin_80_55">
+		<div class="main_title_2">
+			<span><em></em></span>
+			<h2>How it works</h2>
+			<p>Spend less money doing it more</p>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<a class="box_feat" href="#0">
+					<i class="pe-7s-medal"></i>
+					<h3>Go save</h3>
+					<p>You'll save far more with us compared to buying separate attraction tickets.</p>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<a class="box_feat" href="#0">
+					<i class="pe-7s-help2"></i>
+					<h3>Go see it all and get free Vouchers</h3>
+					<p>From unmissable experiences, we’ve got you covered.</p>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<a class="box_feat" href="#0">
+					<i class="pe-7s-culture"></i>
+					<h3>Go your way</h3>
+					<p>You control your sightseeing – mix pre-booked activities with other flexible experiences.</p>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<a class="box_feat" href="#0">
+					<i class="pe-7s-headphones"></i>
+					<h3>All to your smartphone </h3>
+					<p>Just show your pass at each attraction to enter - it's that easy! </p>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<a class="box_feat" href="#0">
+					<i class="pe-7s-credit"></i>
+					<h3>Secure Payments</h3>
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<a class="box_feat" href="#0">
+					<i class="pe-7s-chat"></i>
+					<h3>Support via Chat</h3>
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris. </p>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+
+		<section class="wrapper">
 			<div class="container">
-				<h3>Book unique experiences</h3>
-				<p>Expolore top rated tours, hotels and restaurants around the world</p>
-				<form>
-					<div class="row g-0 custom-search-input-2">
-						<div class="col-lg-4">
-							<div class="form-group">
-								<input class="form-control" type="text" placeholder="Hotel, City...">
-								<i class="icon_pin_alt"></i>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="form-group">
-								<input class="form-control" type="text" name="dates" placeholder="When..">
-								<i class="icon_calendar"></i>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="panel-dropdown">
-								<a href="#">Guests <span class="qtyTotal">1</span></a>
-								<div class="panel-dropdown-content">
-									<!-- Quantity Buttons -->
-									<div class="qtyButtons">
-										<label>Adults</label>
-										<input type="text" name="qtyInput" value="1">
-									</div>
-									<div class="qtyButtons">
-										<label>Childrens</label>
-										<input type="text" name="qtyInput" value="0">
-									</div>
+				<div class="row">
+					<div class="main_title_2">
+						<span><em></em></span>
+						<h2>Locations</h2>
+						<p>Check here the available locations</p>
+					</div>
+
+					<div class="col-lg-3  col-md-4 col-sm-6">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
+
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+									<small class="card-meta mb-2">25 Advetures</small>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-2">
-							<input type="submit" class="btn_search" value="Search">
+					</div>
+
+					<div class="col-lg-3  col-md-4 col-sm-6">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?island');">
+							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?island" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
+
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Naxos</a></h4>
+									<small class="card-meta mb-2">25 Advetures</small>
+								</div>
+							</div>
 						</div>
 					</div>
-					<!-- /row -->
-				</form>
-			</div>
-		</div>
-	</section>
-	<!-- /hero_single -->
 
-	<div class="container container-custom margin_80_0">
-		<div class="main_title_2">
-			<span><em></em></span>
-			<h2>Our Popular Tours</h2>
-			<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-		</div>
-		<div id="reccomended" class="owl-carousel owl-theme">
-			<div class="item">
-				<div class="box_grid">
-					<figure>
-						<a href="#0" class="wish_bt"></a>
-						<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-							<div class="read_more"><span>Read more</span></div>
-						</a>
-						<small>Historic</small>
-					</figure>
-					<div class="wrapper">
-						<h3><a href="tour-detail.html">Arc Triomphe</a></h3>
-						<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-						<span class="price">From <strong>$54</strong> /per person</span>
-					</div>
-					<ul>
-						<li><i class="icon_clock_alt"></i> 1h 30min</li>
-						<li>
-							<div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /item -->
-			<div class="item">
-				<div class="box_grid">
-					<figure>
-						<a href="#0" class="wish_bt"></a>
-						<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-							<div class="read_more"><span>Read more</span></div>
-						</a>
-						<small>Churches</small>
-					</figure>
-					<div class="wrapper">
-						<h3><a href="tour-detail.html">Notredam</a></h3>
-						<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-						<span class="price">From <strong>$124</strong> /per person</span>
-					</div>
-					<ul>
-						<li><i class="icon_clock_alt"></i> 1h 30min</li>
-						<li>
-							<div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /item -->
-			<div class="item">
-				<div class="box_grid">
-					<figure>
-						<a href="#0" class="wish_bt"></a>
-						<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-							<div class="read_more"><span>Read more</span></div>
-						</a>
-						<small>Historic</small>
-					</figure>
-					<div class="wrapper">
-						<h3><a href="tour-detail.html">Versailles</a></h3>
-						<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-						<span class="price">From <strong>$25</strong> /per person</span>
-					</div>
-					<ul>
-						<li><i class="icon_clock_alt"></i> 1h 30min</li>
-						<li>
-							<div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /item -->
-			<div class="item">
-				<div class="box_grid">
-					<figure>
-						<a href="#0" class="wish_bt"></a>
-						<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-							<div class="read_more"><span>Read more</span></div>
-						</a>
-						<small>Historic</small>
-					</figure>
-					<div class="wrapper">
-						<h3><a href="tour-detail.html">Versailles</a></h3>
-						<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-						<span class="price">From <strong>$25</strong> /per person</span>
-					</div>
-					<ul>
-						<li><i class="icon_clock_alt"></i> 1h 30min</li>
-						<li>
-							<div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /item -->
-			<div class="item">
-				<div class="box_grid">
-					<figure>
-						<a href="#0" class="wish_bt"></a>
-						<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-							<div class="read_more"><span>Read more</span></div>
-						</a>
-						<small>Museum</small>
-					</figure>
-					<div class="wrapper">
-						<h3><a href="tour-detail.html">Pompidue Museum</a></h3>
-						<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-						<span class="price">From <strong>$45</strong> /per person</span>
-					</div>
-					<ul>
-						<li><i class="icon_clock_alt"></i> 2h 30min</li>
-						<li>
-							<div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.0</strong></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /item -->
-			<div class="item">
-				<div class="box_grid">
-					<figure>
-						<a href="#0" class="wish_bt"></a>
-						<a href="tour-detail.html"><img src="assets/img/2.jpg" class="img-fluid" alt="" width="800" height="533">
-							<div class="read_more"><span>Read more</span></div>
-						</a>
-						<small>Walking</small>
-					</figure>
-					<div class="wrapper">
-						<h3><a href="tour-detail.html">Tour Eiffel</a></h3>
-						<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-						<span class="price">From <strong>$65</strong> /per person</span>
-					</div>
-					<ul>
-						<li><i class="icon_clock_alt"></i> 1h 30min</li>
-						<li>
-							<div class="score"><span>Good<em>350 Reviews</em></span><strong>7.5</strong></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /item -->
-		</div>
-		<!-- /carousel -->
-		<p class="btn_home_align"><a href="tours-grid-isotope.html" class="btn_1 rounded">View all Tours</a></p>
-		<hr class="large">
-	</div>
-	<!-- /container -->
+					<div class="col-lg-3  col-md-4 col-sm-6">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
+							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
 
-	<div class="container container-custom margin_30_95">
-		<section class="add_bottom_45">
-			<div class="main_title_3">
-				<span><em></em></span>
-				<h2>Popular Hotels and Accommodations</h2>
-				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Samos</a></h4>
+									<small class="card-meta mb-2">25 Advetures</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3  col-md-4 col-sm-6">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?samos');">
+							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?samos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
+
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+									<small class="card-meta mb-2">25 Advetures</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3  col-md-4 col-sm-6">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
+
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+									<small class="card-meta mb-2">25 Advetures</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3  col-md-4 col-sm-6">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
+
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+									<small class="card-meta mb-2">25 Advetures</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div>
+
 			</div>
-			<div class="row">
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="hotel-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>8.9</strong></div>
-							<img src="assets/img/10.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
-								<h3>Mariott Hotel</h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="hotel-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>7.9</strong></div>
-							<img src="assets/img/10.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
-								<h3>Concorde Hotel </h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="hotel-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>7.0</strong></div>
-							<img src="assets/img/10.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
-								<h3>Louvre Hotel</h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="hotel-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>8.9</strong></div>
-							<img src="assets/img/10.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
-								<h3>Park Yatt Hotel</h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-			</div>
-			<!-- /row -->
-			<a href="hotels-grid-isotope.html"><strong>View all (157) <i class="arrow_carrot-right"></i></strong></a>
 		</section>
-		<!-- /section -->
-
-		<section class="add_bottom_45">
-			<div class="main_title_3">
-				<span><em></em></span>
-				<h2>Popular Restaurants</h2>
-				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-			</div>
-			<div class="row">
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="restaurant-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>8.5</strong></div>
-							<img src="assets/img/2.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<h3>Da Alfredo</h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="restaurant-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>7.9</strong></div>
-							<img src="assets/img/4.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<h3>Slow Food</h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="restaurant-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>7.5</strong></div>
-							<img src="assets/img/4.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<h3>Bella Napoli</h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<a href="restaurant-detail.html" class="grid_item">
-						<figure>
-							<div class="score"><strong>9.0</strong></div>
-							<img src="assets/img/4.jpg" class="img-fluid" alt="">
-							<div class="info">
-								<h3>Marcus</h3>
-							</div>
-						</figure>
-					</a>
-				</div>
-				<!-- /grid_item -->
-			</div>
-			<!-- /row -->
-			<a href="restaurants-grid-isotope.html"><strong>View all (157) <i class="arrow_carrot-right"></i></strong></a>
-		</section>
-		<!-- /section -->
-
-		<!-- <div class="banner mb-0">
-				<div class="wrapper d-flex align-items-center opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.3)">
-					<div>
-						<small>Adventure</small>
-						<h3>Your Perfect<br>Advenure Experience</h3>
-						<p>Activities and accommodations</p>
-						<a href="adventure.html" class="btn_1">Read more</a>
-					</div>
-				</div>
-			
-			</div> -->
 
 
-	</div>
-	<!-- /container -->
-
-	<div class="bg_color_1">
 		<div class="container margin_80_55">
-			<div class="main_title_2">
-				<span><em></em></span>
-				<h3>News and Events</h3>
-				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-			</div>
-			<div class="row">
-				<div class="col-lg-6">
-					<a class="box_news" href="#0">
-						<figure><img src="assets/img/4.jpg" alt="">
-							<figcaption><strong>28</strong>Dec</figcaption>
-						</figure>
-						<ul>
-							<li>Mark Twain</li>
-							<li>20.11.2017</li>
-						</ul>
-						<h4>Pri oportere scribentur eu</h4>
-						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
-					</a>
-				</div>
-				<!-- /box_news -->
-				<div class="col-lg-6">
-					<a class="box_news" href="#0">
-						<figure><img src="assets/img/4.jpg" alt="">
-							<figcaption><strong>28</strong>Dec</figcaption>
-						</figure>
-						<ul>
-							<li>Jhon Doe</li>
-							<li>20.11.2017</li>
-						</ul>
-						<h4>Duo eius postea suscipit ad</h4>
-						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
-					</a>
-				</div>
-				<!-- /box_news -->
-				<div class="col-lg-6">
-					<a class="box_news" href="#0">
-						<figure><img src="assets/img/4.jpg" alt="">
-							<figcaption><strong>28</strong>Dec</figcaption>
-						</figure>
-						<ul>
-							<li>Luca Robinson</li>
-							<li>20.11.2017</li>
-						</ul>
-						<h4>Elitr mandamus cu has</h4>
-						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
-					</a>
-				</div>
-				<!-- /box_news -->
-				<div class="col-lg-6">
-					<a class="box_news" href="#0">
-						<figure><img src="assets/img/4.jpg" alt="">
-							<figcaption><strong>28</strong>Dec</figcaption>
-						</figure>
-						<ul>
-							<li>Paula Rodrigez</li>
-							<li>20.11.2017</li>
-						</ul>
-						<h4>Id est adhuc ignota delenit</h4>
-						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
-					</a>
-				</div>
-				<!-- /box_news -->
-			</div>
-			<!-- /row -->
-			<p class="btn_home_align"><a href="blog.html" class="btn_1 rounded">View all news</a></p>
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /bg_color_1 -->
-
-	<!-- <div class="call_section">
-			<div class="container clearfix">
-				<div class="col-lg-5 col-md-6 float-end wow position-relative" data-wow-offset="250">
-					<div class="block-reveal">
-						<div class="block-vertical"></div>
-						<div class="box_1">
-							<h3>Enjoy a GREAT travel with us</h3>
-							<p>Ius cu tamquam persequeris, eu veniam apeirian platonem qui, id aliquip voluptatibus pri. Ei mea primis ornatus disputationi. Menandri erroribus cu per, duo solet congue ut. </p>
-							<a href="#0" class="btn_1 rounded">Read more</a>
-						</div>
+		<section>
+			<div class="newsletter-subscribe  container">
+				<div class="container">
+					<div class="intro">
+						<h2 class="text-center newsletter">Subscribe to our Newsletter</h2>
+						<p class="text-center">Hey… want to save even more?
+							Sign up today and more save + extrafree Vouchers
+						</p>
 					</div>
+					<form class="form-inline" method="post">
+						<div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
+						<div class="form-group"><select class="form-select" name="" id="">
+
+								<option value="" disabled selected> Choose your Voucher ValuePass </option>
+								<option value="2 Vouchers for 14€"> 2 Vouchers for 14€</option>
+								<option value="3 Vouchers from21€ + extra 1 free Voucher value10€"> 3 Vouchers from21€ + extra 1 free Voucher value10€</option>
+								<option value="4 Vouchers from28€ +extra 2 freeVoucher value 20€"> 4 Vouchers from28€ +extra 2 freeVoucher value 20€</option>
+								<option value="5 Vouchers from35€ +extra 2 freeVoucher value 30€"> 5 Vouchers from35€ +extra 2 freeVoucher value 30€</option>
+								<option value="6 Vouchers from42€ + extra 3 freeVoucher value40€"> 6 Vouchers from42€ + extra 3 freeVoucher value40€</option>
+								<option value="7 Vouchers from49€ +extra3 freeVoucher value50€"> 7 Vouchers from49€ +extra3 freeVoucher value50€</option>
+
+							</select></div>
+
+						<div class="form-group"><button class="btn btn-primary" type="button">Subscribe </button></div>
+					</form>
 				</div>
 			</div>
-		</div> -->
+		</section>
+	</div>
+	
+
 
 </main>
-
+<!-- /main -->
 
 <footer>
 	<div class="container margin_60_35">
@@ -471,16 +273,6 @@ include_once 'includes/header.php';
 					<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
 					<li><a href="mailto:info@Panagea.com"><i class="ti-email"></i> info@Panagea.com</a></li>
 				</ul>
-				<div id="newsletter">
-					<h6>Newsletter</h6>
-					<div id="message-newsletter"></div>
-					<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-						<div class="form-group">
-							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
-							<input type="submit" value="Submit" id="submit-newsletter">
-						</div>
-					</form>
-				</div>
 			</div>
 		</div>
 		<!--/row-->
@@ -513,7 +305,7 @@ include_once 'includes/header.php';
 				<ul id="additional_links">
 					<li><a href="#0">Terms and conditions</a></li>
 					<li><a href="#0">Privacy</a></li>
-					<li><span>© Panagea</span></li>
+					<li><span>© TechIns</span></li>
 				</ul>
 			</div>
 		</div>
@@ -578,28 +370,7 @@ include_once 'includes/header.php';
 <script src="assets/js/main.js"></script>
 <script src="assets/js/validate.js"></script>
 
-<!-- DATEPICKER  -->
-<script>
-	$(function() {
-		'use strict';
-		$('input[name="dates"]').daterangepicker({
-			autoUpdateInput: false,
-			minDate: new Date(),
-			locale: {
-				cancelLabel: 'Clear'
-			}
-		});
-		$('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
-			$(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
-		});
-		$('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
-			$(this).val('');
-		});
-	});
-</script>
 
-<!-- INPUT QUANTITY  -->
-<script src="assets/js/input_qty.js"></script>
 
 
 </body>

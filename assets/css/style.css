@@ -1169,7 +1169,7 @@ header.sticky .hamburger-inner::before {
 }
 
 .hero_in.tours:before {
-    background: url(../img/hero_in_bg_1.jpg) center center no-repeat;
+    background: url(assets/img/) center center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2352,10 +2352,10 @@ a#moveDown {
     width: 100%;
     height: auto
 }
-
+ /*
 @media (max-width:1024px) {
     #hero_video {
-        /* background: #ccc url(../img/home_section_1.jpg); */
+        background: #ccc url("../videos/vid1.mp4")
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -2371,6 +2371,36 @@ a#moveDown {
         background: 0 0
     }
 }
+; */
+
+    #hero_video {
+        /* background: #ccc url("../videos/vid1.mp4"); */
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover
+    }
+
+    #hero_video>div {
+        background-color: #000;
+        background-color: rgba(0, 0, 0, .5)
+    }
+
+    .header-video {
+        background: 0 0
+    }
+
+
+    video {
+        object-fit: cover; 
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+            
+      }
+
 
 .hero_single {
     width: 100%;
@@ -2383,7 +2413,7 @@ a#moveDown {
 
 .hero_single .wrapper {
     background-color: #000;
-    background-color: rgba(0, 0, 0, .8)
+    background-color: rgba(0, 0, 0, .8);
 }
 
 .hero_single.start_bg_zoom:before {
@@ -6544,17 +6574,17 @@ ul.list_3 li:before {
 }
 
 @media (max-width:1024px) {
-    .header-video.adventure #hero_video {
+    /* .header-video.adventure #hero_video {
         background: #ccc url(../img/bg_fallback_video_adventure.jpg) center right;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover
-    }
+    } */
 
     .header-video.adventure #hero_video>div {
         background-color: #000;
-        background-color: rgba(0, 0, 0, .5)
+        background-color: rgba(0, 0, 0, .4)
     }
 
     .header-video.adventure {
@@ -10498,4 +10528,13 @@ TODO : MOVE THIS TO OTHER FILE
     border-radius: 1em;
     color: black;
     font-weight: 700;
+}
+
+.hero-imgs img{
+    
+    border-radius: .2em;
+    opacity: .8;
+    -webkit-box-shadow: 0px 0px 17px 12px rgba(0,0,0,0.24); 
+box-shadow: 0px 0px 17px 12px rgba(0,0,0,0.24);
+  
 }
