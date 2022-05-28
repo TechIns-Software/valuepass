@@ -44,7 +44,7 @@
 	<header class="header menu_fixed">
 		<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Page Preload -->
 		<div id="logo">
-			<a href="index.html" class="fs-3 fw-bolder">
+			<a href="index.php" class="fs-3 fw-bolder">
 				<!-- <img src="img/logo.svg" width="150" height="36" alt="" class="logo_normal">
 				<img src="img/logo_sticky.svg" width="150" height="36" alt="" class="logo_sticky"> -->
 				VALUEPASS
