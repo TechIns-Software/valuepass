@@ -3489,7 +3489,8 @@ a.box_feat {
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     border-radius: 3px;
-    overflow: hidden
+    overflow: hidden;
+    border-radius: 5em;
 }
 
 @media (max-width:767px) {
@@ -3741,7 +3742,7 @@ a.box_feat h3 {
 .box_grid .wrapper small {
     position: relative;
     background-color: #000;
-    background-color: rgba(48, 45, 45, 0.836);
+    background-color: rgba(45, 45, 48, 0.836);
     left: -15px;
     top: -35px;
     text-transform: uppercase;
@@ -3878,6 +3879,23 @@ a.box_feat h3 {
     font-weight: 700;
 }
 
+.vpvoucher_price1{
+    margin: .4em ;
+    width: fit-content;
+    background-color: yellow;
+    color: #121921;
+    border-radius: .3em;
+    font-weight: 500;
+}
+
+.final_price1{
+    margin: .4em ;
+    width: fit-content;
+    background-color: rgba(170, 170, 170, 0.63);
+    color: #121921;
+    border-radius: .3em;
+    font-weight: 500;
+}
 
 
 
@@ -10331,10 +10349,10 @@ TODO : MOVE THIS TO OTHER FILE
 .newsletter-subscribe {
     color: #313437;
     background-color: #ffffff;
-    -webkit-box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.53);
-    box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.53);
+    /* -webkit-box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.53); */
     padding: 1em 2em;
-    border-radius: 2em;
+    border-radius: 1em;
 }
 
 .newsletter-subscribe p {
@@ -10454,11 +10472,11 @@ TODO : MOVE THIS TO OTHER FILE
     bottom: 0;
     left: 0;
     background: inherit;
-    -webkit-filter: grayscale(1);
+    /* -webkit-filter: grayscale(1);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
-    filter: grayscale(100%);
+    filter: grayscale(100%); */
 }
 
 .card-has-bg:hover {
@@ -10497,9 +10515,9 @@ TODO : MOVE THIS TO OTHER FILE
 
 
 .card-meta {
-  
-    color: gray;
-    font-weight: 700;
+    opacity: 0.7;
+    color: yellow;
+    font-weight: 500;
     font-size: medium;
 }
 
@@ -10549,3 +10567,78 @@ TODO : MOVE THIS TO OTHER FILE
 box-shadow: 0px 0px 17px 12px rgba(0,0,0,0.24);
   
 }
+
+.valuepasslogo {
+    color: #fc5b62!important;
+
+}
+
+.vp_discount{
+    color: red;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+
+
+
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+/* HOMEPAGE 1 */
+
+
+.herophoto{
+    border-radius: 1em;
+    -webkit-box-shadow: 0px 0px 17px 12px rgba(0,0,0,0.1); 
+    box-shadow: 0px 0px 17px 12px rgba(0,0,0,0.1);
+}
+
+
+.herotext h4 {
+
+   font-size:3em;
+   line-height: 1em;
+    /* font-family: 'Tiro Devanagari Hindi', serif; */
+}
+
+
+.herotext h3 {
+    font-size:3em;
+    line-height: 1em;
+    font-weight: 500;
+    font-family: 'Tiro Devanagari Hindi', serif;
+   font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
