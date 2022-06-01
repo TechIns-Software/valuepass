@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <!-- BASE CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets\bootstrap-5.1.3\dist\css\bootstrap.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/vendors.css" rel="stylesheet">
 

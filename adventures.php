@@ -142,9 +142,7 @@ include_once 'includes/header.php';
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="#0" class="wish_bt"></a>
 							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-								<div class="read_more"><span>Read more</span></div>
 							</a>
 
 						</figure>
@@ -156,21 +154,23 @@ include_once 'includes/header.php';
 							<p class="addons">
 								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
 							</p>
+							<p class="vp_discount m-0 ">Save 30%</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">With VP Voucher  <b>12€ </b> per person</p>
+							<p  class="final_price1 m-0  p-1"> You will pay <span>84€ </span> per person</p>
 						</div>
-						<ul>
-							<li class="vpvoucher_price"> <b>12€ </b> per person</li>
-							<li class="final_price"> You will pay <span>84€ </span> per person</li>
-							<!-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> -->
-						</ul>
+						<!-- <ul>
+							<li class="vpvoucher_price"> <b>12€ </b> per person </li>
+							<li class="final_price"> You will pay <span>84€ </span> per person </li>
+						</ul> -->
 					</div>
 				</div>
+
+	
 
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="#0" class="wish_bt"></a>
 							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-								<div class="read_more"><span>Read more</span></div>
 							</a>
 
 						</figure>
@@ -182,21 +182,23 @@ include_once 'includes/header.php';
 							<p class="addons">
 								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
 							</p>
+							<p class="vp_discount m-0 ">Save 30%</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">With VP Voucher  <b>12€ </b> per person</p>
+							<p  class="final_price1 m-0  p-1"> You will pay <span>84€ </span> per person</p>
 						</div>
-						<ul>
-							<li class="vpvoucher_price"> <b>12€ </b> per person</li>
-							<li class="final_price"> You will pay <span>84€ </span> per person</li>
-							<!-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> -->
-						</ul>
+						<!-- <ul>
+							<li class="vpvoucher_price"> <b>12€ </b> per person </li>
+							<li class="final_price"> You will pay <span>84€ </span> per person </li>
+						</ul> -->
 					</div>
 				</div>
+
+	
 
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="#0" class="wish_bt"></a>
 							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-								<div class="read_more"><span>Read more</span></div>
 							</a>
 
 						</figure>
@@ -208,21 +210,23 @@ include_once 'includes/header.php';
 							<p class="addons">
 								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
 							</p>
+							<p class="vp_discount m-0 ">Save 30%</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">With VP Voucher  <b>12€ </b> per person</p>
+							<p  class="final_price1 m-0  p-1"> You will pay <span>84€ </span> per person</p>
 						</div>
-						<ul>
-							<li class="vpvoucher_price"> <b>12€ </b> per person</li>
-							<li class="final_price"> You will pay <span>84€ </span> per person</li>
-							<!-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> -->
-						</ul>
+						<!-- <ul>
+							<li class="vpvoucher_price"> <b>12€ </b> per person </li>
+							<li class="final_price"> You will pay <span>84€ </span> per person </li>
+						</ul> -->
 					</div>
 				</div>
+
+	
 
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="#0" class="wish_bt"></a>
 							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-								<div class="read_more"><span>Read more</span></div>
 							</a>
 
 						</figure>
@@ -234,21 +238,23 @@ include_once 'includes/header.php';
 							<p class="addons">
 								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
 							</p>
+							<p class="vp_discount m-0 ">Save 30%</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">With VP Voucher  <b>12€ </b> per person</p>
+							<p  class="final_price1 m-0  p-1"> You will pay <span>84€ </span> per person</p>
 						</div>
-						<ul>
-							<li class="vpvoucher_price"> <b>12€ </b> per person</li>
-							<li class="final_price"> You will pay <span>84€ </span> per person</li>
-							<!-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> -->
-						</ul>
+						<!-- <ul>
+							<li class="vpvoucher_price"> <b>12€ </b> per person </li>
+							<li class="final_price"> You will pay <span>84€ </span> per person </li>
+						</ul> -->
 					</div>
 				</div>
+
+	
 
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="#0" class="wish_bt"></a>
 							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-								<div class="read_more"><span>Read more</span></div>
 							</a>
 
 						</figure>
@@ -260,21 +266,86 @@ include_once 'includes/header.php';
 							<p class="addons">
 								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
 							</p>
+							<p class="vp_discount m-0 ">Save 30%</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">With VP Voucher  <b>12€ </b> per person</p>
+							<p  class="final_price1 m-0  p-1"> You will pay <span>84€ </span> per person</p>
 						</div>
-						<ul>
-							<li class="vpvoucher_price"> <b>12€ </b> per person</li>
-							<li class="final_price"> You will pay <span>84€ </span> per person</li>
-							<!-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> -->
-						</ul>
+						<!-- <ul>
+							<li class="vpvoucher_price"> <b>12€ </b> per person </li>
+							<li class="final_price"> You will pay <span>84€ </span> per person </li>
+						</ul> -->
 					</div>
 				</div>
+
+	
 
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="#0" class="wish_bt"></a>
 							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
-								<div class="read_more"><span>Read more</span></div>
+							</a>
+
+						</figure>
+						<div class="wrapper">
+							<small>Historic</small>
+							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
+							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
+							<p class="addons">
+								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
+							</p>
+							<p class="vp_discount m-0 ">Save 30%</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">With VP Voucher  <b>12€ </b> per person</p>
+							<p  class="final_price1 m-0  p-1"> You will pay <span>84€ </span> per person</p>
+						</div>
+						<!-- <ul>
+							<li class="vpvoucher_price"> <b>12€ </b> per person </li>
+							<li class="final_price"> You will pay <span>84€ </span> per person </li>
+						</ul> -->
+					</div>
+				</div>
+
+	
+
+				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
+					<div class="box_grid">
+						<figure>
+							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							</a>
+
+						</figure>
+						<div class="wrapper">
+							<small>Historic</small>
+							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
+							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
+							<p class="addons">
+								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
+							</p>
+							<p class="vp_discount m-0 ">Save 30%</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">With VP Voucher  <b>12€ </b> per person</p>
+							<p  class="final_price1 m-0  p-1"> You will pay <span>84€ </span> per person</p>
+						</div>
+						<!-- <ul>
+							<li class="vpvoucher_price"> <b>12€ </b> per person </li>
+							<li class="final_price"> You will pay <span>84€ </span> per person </li>
+						</ul> -->
+					</div>
+				</div>
+
+	
+
+
+	
+
+				
+<!-- this is the old
+				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
+					<div class="box_grid">
+						<figure>
+							
+							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+								
 							</a>
 
 						</figure>
@@ -290,10 +361,9 @@ include_once 'includes/header.php';
 						<ul>
 							<li class="vpvoucher_price"> <b>12€ </b> per person</li>
 							<li class="final_price"> You will pay <span>84€ </span> per person</li>
-							<!-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> -->
 						</ul>
 					</div>
-				</div>
+				</div> -->
 
 
 
@@ -382,6 +452,11 @@ include_once 'includes/header.php';
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
 				<!-- <p><img src="img/logo.svg" width="150" height="36" alt=""></p> -->
+				
+				
+			<p class="fs-3 fw-bolder valuepasslogo">
+			VALUEPASS
+			</p>
 				<p>Mea nibh meis philosophia eu. Duis legimus efficiantur ea sea. Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. Nihil facilisi indoctum an vix, ut delectus expetendis vis.</p>
 				<div class="follow_us">
 					<ul>
