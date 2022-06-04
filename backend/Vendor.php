@@ -79,13 +79,37 @@ class Vendor {
         array_push($this->labelsBoxNames, $labelName);
     }
 
-    public function addRatedCategory($nameRated, $stars) : void {
-        array_push($this->ratedArray, [$nameRated, $stars]);
+    public function addRatedCategory(RatedCategory $ratedCategory) : void {
+        array_push($this->ratedArray, $ratedCategory);
     }
 
-    public function addImage($image) : void {
+    public function addSimpleField(
+        $descriptionFull, $descriptionBig,
+        $paymentActivityHead, $paymentActivityDesc
+    ) : void {
+        $this->descriptionFull = $descriptionFull;
+        $this->descriptionBig = $descriptionBig;
+        $this->paymentInfoActivityHead = $paymentActivityHead;
+        $this->paymentInfoActivityDescription = $paymentActivityDesc;
+    }
+
+    public function addImage(string $image) : void {
         array_push($this->images, $image);
     }
 
+    public function addHighlight(string $highlight) : void {
+        array_push($this->highlights, $highlight);
+    }
 
+    public function addIncludedService(IncludedService $includedService) : void {
+        array_push($this->includedServicesArray, $includedService);
+    }
+
+    public function addActivity(AboutActivity $aboutActivity) {
+        array_push($this->aboutActivityArray, $aboutActivity);
+    }
+
+    public function addImportantInformation(ImportantInformation $importantInformation) : void {
+        array_push($this->importantInformationArray, $importantInformation);
+    }
 }
