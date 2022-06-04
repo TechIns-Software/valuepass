@@ -5,18 +5,19 @@ namespace ValuePass;
 
 
 class IncludedService {
-    private int $id;
     private string $name;
+    private string $icon;
+
     /**
      * IncludedService constructor.
-     * @param int $id
      * @param string $name
+     * @param string $icon
      */
-    public function __construct(int $id, string $name)
+    public function __construct(string $name, string $icon)
     {
-        $this->id = $id;
         $this->name = $name;
-        array_push(IncludedService::$allIncludedServices, $this);
+        $this->icon = $icon;
     }
+
 
 }
