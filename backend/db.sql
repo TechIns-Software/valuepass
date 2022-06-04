@@ -1,6 +1,7 @@
 CREATE TABLE language (
     id int NOT NULL,
-    language varchar(100)
+    language varchar(100),
+    icon varchar(50)
 );
 CREATE TABLE Destination (
     id int NOT NULL AUTO_INCREMENT,
@@ -75,12 +76,12 @@ CREATE TABLE BestOff (
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor(id)
 );
-CREATE TABLE OrderBestOff (
+CREATE TABLE BestOffOrder (
     id int NOT NULL AUTO_INCREMENT, -- not sure needed
     PRIMARY KEY (id),
     idBestOff int NOT NULL,
     FOREIGN KEY (idBestOff) REFERENCES BestOff(id),
-    int number
+    int number --How to return it in software?
 );
 CREATE TABLE LabelsBox(
     id int NOT NULL AUTO_INCREMENT,

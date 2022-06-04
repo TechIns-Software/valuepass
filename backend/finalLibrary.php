@@ -1,9 +1,15 @@
 <?php
 //$mysqli -> real_escape_string(escapestring)
-function getDestinations($conn) : array{
-    $query1 = "SELECT id, name, description, image1 FROM Destination ORDER BY id ASC;";
-    $query2 = "SELECT SUM(id), idDestination FROM Vendor GROUP BY idDestination ORDER BY idDestination ASC;";
+function getDestinations($conn, $idLanguage) : array{
+    $query1 = "SELECT D.id, DT.name, DT.description, D.image1
+                FROM Destination AS D, DestinationTranslate AS DT
+                WHERE D.id = DT.idDestination AND DT.idLanguage = ?
+                ORDER BY id ASC;";
+    $query2 = "SELECT SUM(id), idDestination FROM Vendor
+                GROUP BY idDestination
+                ORDER BY idDestination ASC;";
     $stmt1 = $conn->prepare($query1);
+    $stmt1->bind_param('i', $idLanguage);
     $stmt2 = $conn->prepare($query2);
     $destinations = [];
     if ($stmt1->execute() && $stmt2->execute()) {
@@ -29,9 +35,12 @@ function getDestinations($conn) : array{
     return $destinations;
 }
 
-function getDestination($conn) : \ValuePass\Destination{
-    $query = "SELECT id, name, description, image2 FROM Destination;";
+function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destination{
+    $query = "SELECT DT.name, DT.description, D.image2
+                FROM Destination AS D, DestinationTranslate AS DT
+                WHERE D.id = ?; AND D.id = DT.idDestination AND DT.idLanguage = ?";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('ii', $idDestination, $idLanguage);
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
         $stmt->bind_result($id, $name, $description, $image2);
@@ -44,33 +53,45 @@ function getDestination($conn) : \ValuePass\Destination{
     return $destination;
 }
 
-function getBestOff($conn, $idDestination) : array{
+function getBestOff($conn, $idLanguage, $idDestination) : array{
     $idDestination = $conn->real_escape_string($idDestination);
-    $vendors = getVendors($conn, $idDestination, isBestOff: true);
+    $vendors = getVendors($conn, $idDestination, $idLanguage, isBestOff: true);
 
 }
 
-function getVendors($conn, $idDestination, $isBestOff = false) : array {
+function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : array {
     $idDestination = $conn->real_escape_string($idDestination);
-    $querySelections = "SELECT V.id, V.name, V.originalPrice, V.discount, V.priceAdult, V.image, C.name ";
+    $querySelections = "SELECT V.id, V.priceAdult, V.originalPrice, V.discount,
+    V.priceKid, V.image, VT.name, VT.descriptionSmall, CV.name, C.id ";
+    $querySelections .= " FROM Vendor AS V, VendorTranslate AS VT, CategoryVendor as CV,
+                CategoryVendorTranslate CVT ";
     if ($isBestOff) {
-        $query = $querySelections
-            ." FROM Vendor AS V, BestOff AS B, OrderBestOff AS O WHERE V.id = B.idVendor AND O.idBestOff = B.id AND V.idDestination = ? AND C.id = V.idCategory  ORDER BY O.number ASC";
-    } else {
-        $query = $querySelections ." FROM Vendor AS V, CategoryVendor as C WHERE V.idDestination = ? AND C.id = V.idCategory";
+        $querySelections .= " , BestOff AS BO, BestOffOrder AS BOO ";
     }
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param('i', $idDestination);
+    $querySelections .= " WHERE V.idDestination = ? AND VT.idLanguage = ? AND V.id = VT.idVendor
+                AND CV.id = V.idCategory AND CV.id = CVT.idCategoryVendor ";
+    if ($isBestOff) {
+        $querySelections = $querySelections
+            ." V.id = BO.idVendor AND BOO.idBestOff = BO.id 
+            ORDER BY BOO.number ASC";
+    }
+    $stmt = $conn->prepare($querySelections);
+    $stmt->bind_param('ii', $idDestination, $idLanguage);
     $vendors = [];
     if ($stmt->execute()) {
-        $id = $name = $originalPrice = $discount = $priceAdult = $image = $categoryName = '';
-        $stmt->bind_result($id, $name, $originalPrice, $discount, $priceAdult, $image, $categoryName);
+        $id = $priceAdult = $originalPrice = $discount = $priceKid = $image = $name = $description = $categoryName = $categoryId = '';
+        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $image, $description, $name, $categoryName);
         while ($stmt->fetch()) {
             $vendor = New \ValuePass\Vendor(
-                $id, $name, $idDestination, $image, $priceAdult,
-                $discount, $originalPrice, $categoryName
+                $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
+                $discount, $priceKid, $description, $image, $name
             );
-            $query1 = "SELECT LB.name FROM LabelsBox LB, VendorLabelsBox AS VLB WHERE VBX.idVendor = $id AND LB.id = VBX.idLabelsBox ORDER BY LB.order ASC;";
+
+            $query1 ="SELECT LBT.name
+                FROM LabelBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT
+                WHERE VLB.idVendor = $id AND LBT.idLanguage = $idLanguage 
+                AND LBT.idLabelsBox = LB.id AND LB.id = VLB.idLabelsBox
+                ORDER BY LB.order ASC;";
             $stmt1 = $conn->prepare($query1);
             if ($stmt1->execute()) {
                 $nameLB = '';
@@ -80,26 +101,23 @@ function getVendors($conn, $idDestination, $isBestOff = false) : array {
                 }
             }
 
-            //TODO criteria what to show->add to vendor
 
-            if (!$isBestOff) {
-
-                $query2 = "SELECT image FROM VendorImages AS VI WHERE VI.id = $id;";
-                $stmt2 = $conn->prepare($query2);
-                if ($stmt2->execute()) {
-                    $image = '';
-                    $stmt2->bind_result($image);
-                    while ($stmt2->fetch()) {
-                        $vendor->addImage($image);
-                    }
+            $query2 = "SELECT RCT.nameCategory AND RCV.stars
+                FROM RatedCategory RC, Rated AS RCV, RatedCategoryTranslate AS RCT
+                WHERE RCV.idVendor = $id AND RCT.idLanguage = $idLanguage 
+                AND RCT.idRatedCategory = RC.id AND RC.id = RCV.idRatedCategory
+                ORDER BY RC.orderNumber ASC;";
+            $stmt2 = $conn->prepare($query2);
+            if ($stmt2->execute()) {
+                $nameRated = $stars = '';
+                $stmt1->bind_result($nameRated , $stars);
+                while ($stmt1->fetch()) {
+                    $vendor->addRatedCategory($nameRated, $stars);
                 }
-
-
-                //TODO vouchers available;
-                $query2 = "";
-
             }
 
+            //TODO vouchers available;
+            $query3 = "";
 
 
 
@@ -111,9 +129,12 @@ function getVendors($conn, $idDestination, $isBestOff = false) : array {
 }
 
 
-function getCategoriesVendors($conn, $idDestination) : array {
+function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
     $idDestination = $conn->real_escape_string($idDestination);
-    $query = "SELECT C.id, C.name FROM Vendor AS V, CategoryVendor AS C WHERE V.idCategory = C.id AND V.idDestination = ?";
+    $query = "SELECT CV.id, CVT.name
+            FROM Vendor AS V, CategoryVendor AS CV, CategoryVendorTranslate AS CVT
+            WHERE CVT.idLanguage = $idLanguage AND CVT.idCategoryVendor = CV.id
+            AND V.idDestination = ? AND V.idCategory = CV.id";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $idDestination);
     $categories = [];
