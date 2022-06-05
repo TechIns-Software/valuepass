@@ -1,7 +1,19 @@
 <?php
+if (!isset($conn)) {
+    include 'connection.php';
+}
+if (!isset($_GET['id'])) {
+    header('location: index.php');
+}
 $title = "Adventures";
-
 include_once 'includes/header.php';
+include 'backend/finalLibrary.php';
+$idDestination = $_GET['id'];
+$vendors = getVendors($conn, $idDestination, $languageId);
+$bestOffs = getVendors($conn, $idDestination, $languageId, true);
+if (count($vendors) <= 0) {
+//    header('location: index.php');
+}
 ?>
 
 <main>
@@ -12,7 +24,7 @@ include_once 'includes/header.php';
 					<small>Introducing</small>
 					<h3>{ Location Name }</h3>
 					<p>Hosted journeys to extraordinary and unique places.</p>
-					<a href="adventure-detail.html" class="btn_1">Learn more</a>
+					<a href="adventure_page.php" class="btn_1">Learn more</a>
 				</div>
 			</div>
 		</div>
@@ -32,10 +44,16 @@ include_once 'includes/header.php';
 
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
+                <?php
+                foreach ($bestOffs as $vendorBestOff) {
+
+                }
+                ?>
+
+
 				<div class="item">
-					<a href="adventure-detail.html" class="grid_item_adventure">
+					<a href="adventure_page.php" class="grid_item_adventure">
 						<figure>
-							<div class="score"><strong>7.9</strong></div>
 							<img src="assets/img/10.jpg" class="img-fluid" alt="">
 							<div class="info">
 								<em>3 days in Patagonia</em>
@@ -46,7 +64,7 @@ include_once 'includes/header.php';
 				</div>
 
 				<div class="item">
-					<a href="adventure-detail.html" class="grid_item_adventure">
+					<a href="adventure_page.php" class="grid_item_adventure">
 						<figure>
 							<div class="score"><strong>9.0</strong></div>
 							<img src="assets/img/10.jpg" class="img-fluid" alt="">
@@ -59,7 +77,7 @@ include_once 'includes/header.php';
 				</div>
 
 				<div class="item">
-					<a href="adventure-detail.html" class="grid_item_adventure">
+					<a href="adventure_page.php" class="grid_item_adventure">
 						<figure>
 							<div class="score"><strong>9.5</strong></div>
 							<img src="assets/img/4.jpg" class="img-fluid" alt="">
@@ -72,7 +90,7 @@ include_once 'includes/header.php';
 				</div>
 
 				<div class="item">
-					<a href="adventure-detail.html" class="grid_item_adventure">
+					<a href="adventure_page.php" class="grid_item_adventure">
 						<figure>
 							<div class="score"><strong>9.0</strong></div>
 							<img src="assets/img/4.jpg" class="img-fluid" alt="">
@@ -85,7 +103,7 @@ include_once 'includes/header.php';
 				</div>
 
 				<div class="item">
-					<a href="adventure-detail.html" class="grid_item_adventure">
+					<a href="adventure_page.php" class="grid_item_adventure">
 						<figure>
 							<div class="score"><strong>9.0</strong></div>
 							<img src="assets/img/4.jpg" class="img-fluid" alt="">
@@ -98,7 +116,7 @@ include_once 'includes/header.php';
 				</div>
 
 				<div class="item">
-					<a href="adventure-detail.html" class="grid_item_adventure">
+					<a href="adventure_page.php" class="grid_item_adventure">
 						<figure>
 							<div class="score"><strong>8.5</strong></div>
 							<img src="assets/img/4.jpg" class="img-fluid" alt="">
@@ -138,6 +156,12 @@ include_once 'includes/header.php';
 
 		<div class="isotope-wrapper">
 			<div class="row">
+
+                <?php
+                foreach ($bestOffs as $vendorBestOff) {
+
+                }
+                ?>
 
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
