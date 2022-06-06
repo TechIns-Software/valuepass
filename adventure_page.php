@@ -77,14 +77,20 @@ include_once 'includes/header.php';
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
-								<span class="criteria">Criteria <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> From <b>120 € </b> per person</span>
+								<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> Initial Price <b>120 € </b> per person</span>
 							</p>
+							<p class="vpvoucher_price1 m-0 p-1 ">Buy VP Voucher  <b>12€ </b> per person</p>
+							<p class="vp_discount m-0 ">You Save 20% 24€</p>
+							<p  class="final_price1 m-0  p-1"> Final Price <span>84€ </span> per person</p>
 						</div>
 						<ul>
-							<li class="vpvoucher_price"> <b>12€ </b> per person</li>
-							<li class="final_price"> You will pay <span>84€ </span> per person</li>
-							<!-- <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li> -->
+							<li><p>Buy your Value Pass  Voucher  <br> Reserve Now & Pay Later for your activity <br> Offer this as a gift (Active click) </p>
+						 </li>
+							<li> <p  class="buy_button">Buy Now </p>  </li>
 						</ul>
+		
+				
+					
 					</div>
 
 				</div>
@@ -188,6 +194,7 @@ include_once 'includes/header.php';
 
 					<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
+						<!-- version 1 carsouel ready css 
 						<div class="item">
 							<a href="adventure-detail.html" class="grid_item_adventure">
 								<figure>
@@ -199,75 +206,116 @@ include_once 'includes/header.php';
 									</div>
 								</figure>
 							</a>
+						</div>  -->
+
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="item">
-							<a href="adventure-detail.html" class="grid_item_adventure">
-								<figure>
-									<div class="score"><strong>9.0</strong></div>
-									<img src="assets/img/10.jpg" class="img-fluid" alt="">
-									<div class="info">
-										<em>2 days in Caribbean</em>
-										<h3>Horseback ride through Valencia</h3>
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?andros');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?andros" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
 									</div>
-								</figure>
-							</a>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Andros</a></h4>
+										<small class="card-meta mb-2">15 Advetures</small>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="item">
-							<a href="adventure-detail.html" class="grid_item_adventure">
-								<figure>
-									<div class="score"><strong>9.5</strong></div>
-									<img src="assets/img/4.jpg" class="img-fluid" alt="">
-									<div class="info">
-										<em>2 days in Caribbean</em>
-										<h3>Horseback ride through Valencia</h3>
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
 									</div>
-								</figure>
-							</a>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Naxos</a></h4>
+										<small class="card-meta mb-2">8 Advetures</small>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="item">
-							<a href="adventure-detail.html" class="grid_item_adventure">
-								<figure>
-									<div class="score"><strong>9.0</strong></div>
-									<img src="assets/img/4.jpg" class="img-fluid" alt="">
-									<div class="info">
-										<em>2 days in Canada</em>
-										<h3>Horseback ride through Valencia</h3>
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?crete');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?crete" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
 									</div>
-								</figure>
-							</a>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Crete</a></h4>
+										<small class="card-meta mb-2">35 Advetures</small>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="item">
-							<a href="adventure-detail.html" class="grid_item_adventure">
-								<figure>
-									<div class="score"><strong>9.0</strong></div>
-									<img src="assets/img/4.jpg" class="img-fluid" alt="">
-									<div class="info">
-										<em>3 days in Norway</em>
-										<h3>Horseback ride through Valencia</h3>
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?greece');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?greece" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
 									</div>
-								</figure>
-							</a>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="item">
-							<a href="adventure-detail.html" class="grid_item_adventure">
-								<figure>
-									<div class="score"><strong>8.5</strong></div>
-									<img src="assets/img/4.jpg" class="img-fluid" alt="">
-									<div class="info">
-										<em>3 days in Brasil</em>
-										<h3>Horseback ride through Valencia</h3>
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
 									</div>
-								</figure>
-							</a>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
 						</div>
+
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
+
 
 					</div>
-					<!-- /reccomended_aventure -->
+
 				</section>
 			</div>
 

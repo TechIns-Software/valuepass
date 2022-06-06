@@ -10889,7 +10889,16 @@ html[xmlns] .slides {
 
 
 
+.buy_button{
+    background-color: #004dda;
+    width: fit-content;
+    padding: .3em;
+    border-radius: .5em;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
 
+}
 
 
 
