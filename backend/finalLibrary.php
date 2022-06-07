@@ -133,6 +133,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
         }
 
         //TODO vouchers available;
+        //getVoucherAvailability()
         $query3 = "";
 
         if ($fullOption) {
@@ -231,6 +232,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
     }
     return $vendor;
 }
+
 function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
     $idDestination = $conn->real_escape_string($idDestination);
     $query = "SELECT CV.id, CVT.name
@@ -254,4 +256,15 @@ function voucherChangeStatus() {
 //    TODO to be sent tou our BD
 }
 
-
+function getMaxVendorVoucher($conn, $idVendorVoucher) : int {
+    $query = "SELECT existenceVoucher
+            FROM VendorVoucher
+            WHERE id = $idVendorVoucher ;";
+    $stmt = $conn->prepare($query);
+    $number = 0;
+    if ($stmt->execute()) {
+        $stmt->bind_result($number);
+        while ($stmt->fetch()){}
+    }
+    return $number;
+}
