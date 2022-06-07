@@ -49,29 +49,31 @@ class Cart
     public function addItemsToCart(array $groupVoucherWant, $conn) : string {
         //see if can add
         if ($this->checkUpperLimit(count($groupVoucherWant))) {
-            //see if can buy from one vendor alla these vouchers
+            //see if can buy from one vendor all these vouchers
+            $voucherIdWant = $groupVoucherWant[0];
+            $ids = $this->getConcentratedVendorVoucherIds();
+            $idAdded = $voucherIdWant->getIdVendorVoucher();
+            $newTotalNumber = 0;
+            if (isset($ids[$idAdded])) {
+                $newTotalNumber = $ids[$idAdded];
+            }
+            $newTotalNumber = $newTotalNumber + 1;
+            //we get the max voucher can have, if does not exist we get 0
+            $maxVoucherFromVendorThatCanHave = getMaxVendorVoucher($conn, $idAdded);
+
+            if ($newTotalNumber < $maxVoucherFromVendorThatCanHave) {
+                //TODO: check if they are permission to be checked, fe infants and children
+                //TODO: if exists infants then only with parents
+                array_push($this->arrayGroupVouchersWant, $groupVoucherWant);
+                $message = "OK";
+            } else {
+                $message = "Can Not Have More Than $maxVoucherFromVendorThatCanHave vouchers in that specific time";
+            }
 
         } else {
             $message = 'You can have up to 11 vouchers totally selected';
         }
-        $voucherIdWant = $groupVoucherWant[0];
-        $ids = $this->getConcentratedVendorVoucherIds();
-        $idAdded = $voucherIdWant->getIdVendorVoucher();
-        $newTotalNumber = 0;
-        if (isset($ids[$idAdded])) {
-            $newTotalNumber = $ids[$idAdded];
-        }
-        $newTotalNumber = $newTotalNumber + 1;
-        //we get the max voucher can have, if does not exist we get 0
-        $maxVoucherFromVendorThatCanHave = getMaxVendorVoucher($conn, $idAdded);
 
-        if ($newTotalNumber < $maxVoucherFromVendorThatCanHave) {
-            array_push($this->arrayGroupVouchersWant, $groupVoucherWant);
-            $message = "OK";
-        } else {
-            $message = "Can Not Have More Than $maxVoucherFromVendorThatCanHave vouchers in that specific time";
-        }
-        return $message;
     }
 
     public function checkIfVoucherStillAvailable() : string {

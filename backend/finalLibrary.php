@@ -268,3 +268,20 @@ function getMaxVendorVoucher($conn, $idVendorVoucher) : int {
     }
     return $number;
 }
+
+function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : array {
+    $query = "SELECT id, DATE_FORMAT(dateVoucher, '%Y-%m-%d %H:%i:%s')
+            FROM VendorVoucher
+            WHERE idVendor = ? AND existenceVoucher > ? AND DATE(dateVoucher) = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ii', $idVendor, $numberVoucher, $date);
+    $possiblePackages = [];
+    if ($stmt->execute()) {
+        $id = $date1 = '-1';
+        $stmt->bind_result($id, $date1);
+        while ($stmt->fetch()) {
+            array_push($possiblePackages, [$id, $date1]);
+        }
+    }
+    return $possiblePackages;
+}

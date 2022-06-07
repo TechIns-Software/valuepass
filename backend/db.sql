@@ -1,3 +1,4 @@
+-- TODO: add Default values
 -- id of to be started from 1
 CREATE TABLE Language (
     id int NOT NULL,
@@ -56,8 +57,8 @@ CREATE TABLE Vendor (
     idCategory int NOT NULL,
     FOREIGN KEY (idCategory) REFERENCES CategoryVendor(id),
     idPaymentInfoActivity int NOT NULL,
-    FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity(id)
-
+    FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity(id),
+    isCompleted binary(1) DEFAULT 0
 )ENGINE=InnoDB;
 CREATE TABLE VendorTranslate (
     idVendor int NOT NULL,
@@ -208,9 +209,89 @@ CREATE TABLE ImportantInformationDescriptionTranslate (
 )ENGINE=InnoDB;
 
 -- up here have been created DB Scheme
+-- //////////////////////////////////////////////
+-- our BD
+-- TODO add field in vendor message about vouchers, 2 columns
+CREATE TABLE VoucherRules (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+    hasTimeStartRestriction binary(1),
+    infantTolerance binary(1) NOT NULL,
+    childAcceptance binary(1) NOT NULL,
+    infantPrice int
+)ENGINE=InnoDB;
+CREATE TABLE VoucherRulesByDay (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idVoucherRule int NOT NULL,
+    FOREIGN KEY (idVoucherRule) REFERENCES VoucherRules(id),
+    dayString varchar(100) NOT NULL,
+    timeVoucher varchar (100) NOT NULL,
+    numberVoucher int NOT NULL
 
+)ENGINE=InnoDB;
+CREATE TABLE VoucherJustCreation (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idVoucherRule int NOT NULL,
+    FOREIGN KEY (idVoucherRule) REFERENCES VoucherRules(id),
+    numberVoucher int NOT NULL
+)ENGINE=InnoDB;
+-- //////////////////////////////////////////////
+-- TODO: this table must be refreshed!
+CREATE TABLE VendorVoucher (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+    starterVouchers int NOT NULL,
+    existenceVoucher int NOT NULL,
+    dateVoucher date NOT NULL
 
+)ENGINE=InnoDB;
+-- /////////////////////////////////////////////////////////////////
+-- For our DB
 
+CREATE TABLE User (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    name varchar(100) NOT NULL,
+    email varchar(100) NOT NULL,
+    promotionsAvailable binary(1) NOT NULL,
+    password varchar(100) NOT NULL,
+    isConfirmed binary(1)
+)ENGINE=InnoDB;
+
+CREATE TABLE UserConfirmation(
+    idUser int NOT NULL,
+    FOREIGN KEY (idUser) REFERENCES User(id),
+    confirmationNumber int NOT NULL,
+    dateSend date
+)ENGINE=InnoDB;
+CREATE TABLE Payment (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idUser int NOT NULL,
+    FOREIGN KEY (idUser) REFERENCES User(id),
+    totalAmount int NOT NULL
+)ENGINE=InnoDB;
+CREATE TABLE Voucher (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idVendorVoucher int NOT NULL,
+    FOREIGN KEY (idVendorVoucher) REFERENCES VendorVoucher(id),
+    idPayment int NOT NULL,
+    FOREIGN KEY (idPayment) REFERENCES Payment(id),
+    price int,
+    ageLimitation int,
+    infantNumber int,
+    extraMoney int
+
+)ENGINE=InnoDB;
+
+-- /////////////////////////////////////////////////////////////////
 
 
 

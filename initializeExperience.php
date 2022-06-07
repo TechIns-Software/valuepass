@@ -8,3 +8,5 @@ $languageId = $_SESSION['languageId'];
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = serialize([]);
 }
+?>
+<script src="backend/js/cart.js"></script>
