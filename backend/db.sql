@@ -58,7 +58,10 @@ CREATE TABLE Vendor (
     FOREIGN KEY (idCategory) REFERENCES CategoryVendor(id),
     idPaymentInfoActivity int NOT NULL,
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity(id),
-    isCompleted binary(1) DEFAULT 0
+    isCompleted binary(1) DEFAULT 0,
+    googleMapsString varchar(200) NOT NULL,
+    voucherMessage1 text,
+    voucherMessage2 text
 )ENGINE=InnoDB;
 CREATE TABLE VendorTranslate (
     idVendor int NOT NULL,
@@ -209,9 +212,24 @@ CREATE TABLE ImportantInformationDescriptionTranslate (
 )ENGINE=InnoDB;
 
 -- up here have been created DB Scheme
+
+
 -- //////////////////////////////////////////////
 -- our BD
--- TODO add field in vendor message about vouchers, 2 columns
+
+CREATE TABLE VoucherGenerateOptions (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+    dayString varchar(100) NOT NULL,
+    timeVoucher varchar (100) NOT NULL,
+    numberVoucher int NOT NULL
+
+)ENGINE=InnoDB;
+-- //////////////////////////////////////////////
+
+
 CREATE TABLE VoucherRules (
     id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
@@ -222,24 +240,7 @@ CREATE TABLE VoucherRules (
     childAcceptance binary(1) NOT NULL,
     infantPrice int
 )ENGINE=InnoDB;
-CREATE TABLE VoucherRulesByDay (
-    id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    idVoucherRule int NOT NULL,
-    FOREIGN KEY (idVoucherRule) REFERENCES VoucherRules(id),
-    dayString varchar(100) NOT NULL,
-    timeVoucher varchar (100) NOT NULL,
-    numberVoucher int NOT NULL
 
-)ENGINE=InnoDB;
-CREATE TABLE VoucherJustCreation (
-    id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    idVoucherRule int NOT NULL,
-    FOREIGN KEY (idVoucherRule) REFERENCES VoucherRules(id),
-    numberVoucher int NOT NULL
-)ENGINE=InnoDB;
--- //////////////////////////////////////////////
 -- TODO: this table must be refreshed!
 CREATE TABLE VendorVoucher (
     id int NOT NULL AUTO_INCREMENT,
@@ -270,6 +271,9 @@ CREATE TABLE UserConfirmation(
     confirmationNumber int NOT NULL,
     dateSend date
 )ENGINE=InnoDB;
+
+
+
 CREATE TABLE Payment (
     id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
@@ -282,50 +286,15 @@ CREATE TABLE Voucher (
     PRIMARY KEY (id),
     idVendorVoucher int NOT NULL,
     FOREIGN KEY (idVendorVoucher) REFERENCES VendorVoucher(id),
-    idPayment int NOT NULL,
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+    idPayment int,
     FOREIGN KEY (idPayment) REFERENCES Payment(id),
+    isAdult binary(1) NOT NULL,
     price int,
-    ageLimitation int,
     infantNumber int,
     extraMoney int
 
 )ENGINE=InnoDB;
 
--- /////////////////////////////////////////////////////////////////
-
-
-
-CREATE TABLE Payment(
-    id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-)ENGINE=InnoDB;
-
-
-
-CREATE TABLE Voucher (
-    id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    idVendor int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
-    price_adult int NOT NULL ,
-    price_kid int NOT NULL,
-    date_restriction binary,
-    date DATE,
-    categoryId int NOT NULL,
-    FOREIGN KEY (categoryId) REFERENCES Category(id),
---     user id someway to store
-    status int NOT NULL, --taken, reserve until payment, free
---     somehow to know if can be free
-
-)ENGINE=InnoDB;
-
-
-CREATE TABLE VoucherOfPayments (
-    id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    idVoucher int NOT NULL,
-    FOREIGN KEY (idVoucher) REFERENCES Voucher(id),
-    idPayment int NOT NULL,
-    FOREIGN KEY (idPayment) REFERENCES Payment(id)
-)ENGINE=InnoDB;
 
