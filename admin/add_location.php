@@ -26,7 +26,7 @@ $languages =  getAllLanguages($conn) ;
             foreach ($languages as $language ) {  ?>
         
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Location <?php echo  $language[1] ?> Language</label>
+                <label for="exampleInputEmail1" class="form-label">Location <span class="flag-icon flag-icon-<?php echo  $language[2] ?>"> </label>
                 <input type="text" name="loc<?php echo  $language[0] ?>" class="form-control" id="locname<?php echo  $language[0] ?>" placeholder="name">
                 <textarea  name="des<?php echo  $language[0] ?>"   id="locdescription<?php echo  $language[0] ?>" class="form-control my-2" cols="30" rows="2"  placeholder="Description"></textarea>
             </div>       
@@ -38,7 +38,7 @@ $languages =  getAllLanguages($conn) ;
 </div>
 
 
-<script src="js/conn.js"></script>
+<!-- <script src="js/conn.js"></script> -->
 <script src="js/add_location.js"></script>
 
 <?php

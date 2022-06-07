@@ -30,6 +30,9 @@
   <!-- Plugin styles -->
   <link href="../assets/css/dataTables.bootstrap4.css" rel="stylesheet">
 
+  <!-- for flags  -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+
 
 
   <link href="" rel="stylesheet">

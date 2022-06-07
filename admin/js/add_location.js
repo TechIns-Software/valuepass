@@ -14,7 +14,7 @@ document.getElementById('addlocationbtn').addEventListener(
         // }
 
        const empty = datalocations.find(element => element['value'] == "");
-       if (!empty){
+       if (empty){
            alert("Πρέπει να συμπληρώσεις όλα τα πεδία");
        }else{
 
@@ -35,7 +35,12 @@ document.getElementById('addlocationbtn').addEventListener(
                 data : data1,
                 action : 'addlocation',
                 numberoflocations : numberofloc
-            }
+            },
+            success: function(data) {
+                alert("Επιτυχή Προσθήκη Τοποθεσίας")
+                document.getElementById("locationform").reset();
+
+            },
 
         });
        }

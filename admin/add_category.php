@@ -1,43 +1,50 @@
-
     <?php
-       $title="Προσθήκη Κατηργορίας";
+
+    if (!isset($conn)) {
+        include '../connection.php';
+    }
+
+    $title = "Προσθήκη Κατηργορίας";
     include_once "header.php";
+    include 'admin_library.php';
+
+    $languages =  getAllLanguages($conn);
 
     ?>
 
 
 
-<div class="content-wrapper">
-    <div class="container-fluid">
-        <div class="loc_title">
-            <h4>Εισαγωγή Κατηγορίας</h4>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="loc_title">
+                <h4>Εισαγωγή Κατηγορίας</h4>
+            </div>
+
+            <form id="categoryform">
+
+                <?php
+                // for each language the admin has to enter a location
+                // TODO : WHILE LOOP WHITH ALL THE LANGUAGES WITH INPUTS
+
+
+                foreach ($languages as $language) {  ?>
+
+                    <div class="mb-3">
+                        <label for="label<?php echo  $language[0] ?>" class="form-label">Category  <span class="flag-icon flag-icon-<?php echo  $language[2] ?>"> </label>
+                        <input type="text" name="<?php echo  $language[0] ?>" class="form-control" id="cat<?php echo  $language[0] ?>" placeholder="Category">
+                    </div>
+                <?php   }  ?>
+
+                <button type="submit" class="btn btn-primary" id="categoryaddbtn" >Εισαγωγή Κατηγορίας</button>
+            </form>
         </div>
-
-        <form id="myform">
-
-            <?php
-            // for each language the admin has to enter a location
-            // TODO : WHILE LOOP WHITH ALL THE LANGUAGES WITH INPUTS
-            ?>
-
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Τοποθεσία (flag)</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Πρέπει να μπει τοποθεσία σε όλες τις γλώσσες</div>
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Εισαγωγή Τοποθεσίας</button>
-        </form>
     </div>
-</div>
 
+    <script src="js/add_category.js"></script>
 
 
     <?php
-    
+
     include_once "footer.php";
 
     ?>

@@ -11,7 +11,7 @@ session_start();
 
 if (
     $_POST["action"] == "addlocation" ||
-    $_POST["action"] == "addlabel" ||
+    $_POST["action"] == "addlabels" ||
     $_POST["action"] == "addcategory" ||
     $_POST["action"] == "createbestoff"
 ) { 
@@ -20,7 +20,8 @@ if (
         $data_langs =$_POST["data"];
          
         // print_r($data_langs);
-        $last_id=lastInstertedid($conn);
+        $table = 'destination';
+        $last_id=lastInstertedid($conn,$table);
         addrowDestination($conn,($last_id + 1 ));
 
         foreach ($data_langs as $data_lang ) {
@@ -29,6 +30,34 @@ if (
         }
 
 
+
+    } else   if ( $_POST["action"] == "addlabels"){
+        $data_labels =$_POST["data"];
+         
+        // print_r($data_labels);
+        $table = 'labelsbox';
+        $last_id=lastInstertedid($conn,$table);
+        addrowLabelBox($conn,($last_id + 1 ));
+
+        foreach ($data_labels as $data_label ) {
+            $id_lang = $data_label[0]; 
+            AddLabelBoxTranslate($conn,($last_id+1), $id_lang ,$data_label[1]);
+        }
+
+
+    } else  if ( $_POST["action"] == "addcategory"){
+
+        $data_labels =$_POST["data"];
+         
+        // print_r($data_labels);
+        $table = 'categoryvendor';
+        $last_id=lastInstertedid($conn,$table);
+        addrowCategoryVendor($conn,($last_id + 1 ));
+
+        foreach ($data_labels as $data_label ) {
+            $id_lang = $data_label[0]; 
+            AddCategoryVendorTranslate($conn,($last_id+1), $id_lang ,$data_label[1]);
+        }
 
     }
 
