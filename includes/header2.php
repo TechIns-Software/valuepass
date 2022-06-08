@@ -62,7 +62,7 @@
 	</header> -->
 
 	
-   <!--Start Navigation-->
+
    <header id="header">
 				<div class="container">
 					<div class="row">
@@ -73,13 +73,13 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-                            <!--Start Logo -->
+                           
 							<div class="logo-nav">
 								<a href="index.html">
 									<img src="images/logo.png" alt="Company logo" />
 								</a>
 							</div>
-                            <!--End Logo -->
+                           
 							<div class="clear-toggle"></div>
 							<div id="main-menu" class="collapse scroll navbar-right">
 								<ul class="nav">
@@ -103,7 +103,7 @@
 									<li> <a href="#contact">Contact</a> </li>
 										
 								</ul>
-							</div><!-- end main-menu -->
+							</div>
 						</div>
 					</div>
 				</div>

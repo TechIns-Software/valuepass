@@ -100,115 +100,140 @@ include_once 'includes/header1.php';
     </div>
 
 
-   
-
-
-    <section class="wrapper">
-        <div class="container">
-            <div class="row">
+			<div class="container container-custom margin_80_55 col-lg-12 ">
+				<section class="add_bottom_45">
                 <div class="main_title_2">
                     <span><em></em></span>
                     <h2>Locations</h2>
                     <p>Check here the available locations</p>
                 </div>
+					<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
-                <div class="col-lg-3  col-md-4 col-sm-12">
-                    <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
-                        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-                        <div class="card-img-overlay d-flex flex-column">
-                            <div class="card-body">
+						<!-- version 1 carsouel ready css 
+						<div class="item">
+							<a href="adventure-detail.html" class="grid_item_adventure">
+								<figure>
+									<div class="score"><strong>7.9</strong></div>
+									<img src="assets/img/10.jpg" class="img-fluid" alt="">
+									<div class="info">
+										<em>3 days in Patagonia</em>
+										<h3>Horseback ride through Valencia</h3>
+									</div>
+								</figure>
+							</a>
+						</div>  -->
 
-                            </div>
-                            <div class="card-footer">
-                                <h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-                                <small class="card-meta mb-2">25 Advetures</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
 
-                <div class="col-lg-3  col-md-4 col-sm-12">
-                    <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
-                        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-                        <div class="card-img-overlay d-flex flex-column">
-                            <div class="card-body">
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            </div>
-                            <div class="card-footer">
-                                <h4 class="card-title mt-0 "><a class="text-white" herf="#">Naxos</a></h4>
-                                <small class="card-meta mb-2">25 Advetures</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?andros');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?andros" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
 
-                <div class="col-lg-3  col-md-4 col-sm-12">
-                    <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?samos');">
-                        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?samos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-                        <div class="card-img-overlay d-flex flex-column">
-                            <div class="card-body">
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Andros</a></h4>
+										<small class="card-meta mb-2">15 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            </div>
-                            <div class="card-footer">
-                                <h4 class="card-title mt-0 "><a class="text-white" herf="#">Samos</a></h4>
-                                <small class="card-meta mb-2">25 Advetures</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
 
-                <div class="col-lg-3  col-md-4 col-sm-12">
-                    <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?crete');">
-                        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?crete" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-                        <div class="card-img-overlay d-flex flex-column">
-                            <div class="card-body">
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Naxos</a></h4>
+										<small class="card-meta mb-2">8 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            </div>
-                            <div class="card-footer">
-                                <h4 class="card-title mt-0 "><a class="text-white" herf="#">Crete</a></h4>
-                                <small class="card-meta mb-2">35 Advetures</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?crete');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?crete" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
 
-                <div class="col-lg-3  col-md-4 col-sm-12">
-                    <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-                        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-                        <div class="card-img-overlay d-flex flex-column">
-                            <div class="card-body">
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Crete</a></h4>
+										<small class="card-meta mb-2">35 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            </div>
-                            <div class="card-footer">
-                                <h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-                                <small class="card-meta mb-2">25 Advetures</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?greece');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?greece" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
 
-                <div class="col-lg-3  col-md-4 col-sm-12">
-                    <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?greece');">
-                        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?greece" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-                        <div class="card-img-overlay d-flex flex-column">
-                            <div class="card-body">
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            </div>
-                            <div class="card-footer">
-                                <h4 class="card-title mt-0 "><a class="text-white" herf="#">Ροδος</a></h4>
-                                <small class="card-meta mb-2">25 Advetures</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+								<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+								<div class="card-img-overlay d-flex flex-column">
+									<div class="card-body">
+
+									</div>
+									<div class="card-footer">
+										<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
+										<small class="card-meta mb-2">25 Advetures</small>
+									</div>
+								</div>
+							</div>
+						</div>
 
 
+					</div>
 
+				</section>
+			</div>
 
-            </div>
-
-        </div>
-    </section>
 
 
     <div class="container margin_80_55">
