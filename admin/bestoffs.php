@@ -1,7 +1,13 @@
 <?php
+if (!isset($conn)) {
+    include '../connection.php';
+}
+
 $title = "Best offs";
 include_once "header.php";
+include 'admin_library.php';
 
+$destinations = GetAllDestinations($conn);
 ?>
 
 
@@ -13,13 +19,11 @@ include_once "header.php";
         </div>
 
         <ul class="list-group d-flex justify-content-between">
-            <li class="list-group-item"><a href="create_bestoff.php?id=1">Mykonos</a> </li> 
-            <li class="list-group-item"><a href="create_bestoff.php?id=2">Naxos</a> </li>
-            <li class="list-group-item"><a href="create_bestoff.php?id=3">Andros</a> </li>
-            <li class="list-group-item"><a href="create_bestoff.php?id=4">Ios</a> </li>
-            <li class="list-group-item"><a href="create_bestoff.php?id=5">Crete</a> </li>
-            <li class="list-group-item"><a href="create_bestoff.php?id=6">Mykonos</a> </li>
 
+
+            <?php foreach ($destinations as $destination) {  ?>
+                <li class="list-group-item"><a href="create_bestoff.php?id=<?php echo $destination[1] ?>"><?php echo $destination[0] ?></a> </li>
+            <?php }     ?>
         </ul>
 
     </div>

@@ -99,7 +99,7 @@
             <span class="nav-link-text">Best offs</span>
           </a>
         </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
+	<!-- 	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
           <a class="nav-link" href="bookmarks.html">
             <i class="fa fa-fw fa-heart"></i>
             <span class="nav-link-text">Highlights</span>
@@ -130,7 +130,7 @@
               <a href="tables.html">Tables</a>
             </li>
           </ul>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">

@@ -118,3 +118,23 @@ function AddCategoryVendorTranslate($conn, $idCategory, $idlang, $name)
     }
     $stmt->close();
 }
+
+
+
+// Get All Destinations
+function GetAllDestinations($conn,)
+{
+    $query = "SELECT dt.name , dt.idDestination  FROM destination as d , destinationtranslate as dt where dt.idDestination = d.id group by dt.idDestination ;
+    ";
+    $stmt = $conn->prepare($query);
+
+    $stmt->execute();
+    $name= $id_dest =  '';
+    $stmt->bind_result($name, $id_dest);
+    $destinations = [];
+    while ($stmt->fetch()) {
+        array_push($destinations, [$name, $id_dest]);
+    }
+    $stmt->close();
+    return $destinations;
+}
