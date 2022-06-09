@@ -285,3 +285,17 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : 
     }
     return $possiblePackages;
 }
+
+function getVendorForCart($conn, $idVendorVoucher) : array {
+    $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice
+            FROM Vendor AS V, VendorVoucher AS VV
+            WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
+    $stmt = $conn->prepare($query);
+    $priceAdult = $priceKid = $priceInfant = -1;
+    if ($stmt->execute()) {
+        $stmt->bind_result($priceAdult, $priceKid, $priceInfant);
+        while ($stmt->fetch()) {}
+    }
+    return [$priceAdult, $priceKid, $priceInfant];
+}
+

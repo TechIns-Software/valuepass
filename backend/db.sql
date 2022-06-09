@@ -61,7 +61,9 @@ CREATE TABLE Vendor (
     isCompleted binary(1) DEFAULT 0,
     googleMapsString varchar(200) NOT NULL,
     voucherMessage1 text,
-    voucherMessage2 text
+    voucherMessage2 text,
+    infantPrice int
+    --number,email,website,IBAN, personal message to them who take voucher
 )ENGINE=InnoDB;
 CREATE TABLE VendorTranslate (
     idVendor int NOT NULL,
@@ -237,8 +239,7 @@ CREATE TABLE VoucherRules (
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
     hasTimeStartRestriction binary(1),
     infantTolerance binary(1) NOT NULL,
-    childAcceptance binary(1) NOT NULL,
-    infantPrice int
+    childAcceptance binary(1) NOT NULL
 )ENGINE=InnoDB;
 
 -- TODO: this table must be refreshed!

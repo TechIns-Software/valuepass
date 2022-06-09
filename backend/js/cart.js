@@ -35,7 +35,9 @@ function deleteItem(idVendorItem) {
 
     const callBackFnc = (data) => {
         if (data[0] === "OK") {
-            alert('Success');
+            location.reload();
+        } else {
+            alert(data[0]);
         }
         //TODO:check message return and inform user
         console.log(data);

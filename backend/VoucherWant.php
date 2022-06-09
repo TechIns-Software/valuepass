@@ -9,6 +9,7 @@ class VoucherWant
     private int $idVendorVoucher;
     private bool $isAdult;
     private int $numberOfInfant;
+    private float $price;
 
     /**
      * VoucherWant constructor.
@@ -49,5 +50,22 @@ class VoucherWant
     {
         return $this->numberOfInfant;
     }
+
+    /**
+     * @return float
+     */
+    public function getPrice(): float
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice(float $price): void
+    {
+        $this->price = $price;
+    }
+
 
 }
