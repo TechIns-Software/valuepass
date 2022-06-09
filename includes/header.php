@@ -29,8 +29,6 @@
 	<link href="assets/css/vendors.css" rel="stylesheet">
 
 	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>
-    <!-- ALTERNATIVE COLORS CSS -->
-    <link href="#" id="colors" rel="stylesheet">
 	
 	<!-- Modernizr -->
 	<script src="assets/js/modernizr.js"></script>
