@@ -299,3 +299,38 @@ function getVendorForCart($conn, $idVendorVoucher) : array {
     return [$priceAdult, $priceKid, $priceInfant];
 }
 
+
+//Get all Languages
+function getAllLanguages($conn)
+{
+    $query = "Select * FROM language";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $id = $language = $icon = '';
+    $stmt->bind_result($id, $language, $icon);
+    $languages = [];
+    while ($stmt->fetch()) {
+        array_push($languages, [$id, $language, $icon]);
+    }
+    $stmt->close();
+    return $languages;
+}
+
+
+//Get Menu with right language
+function GetMenu($conn,$lang){
+    $query="SELECT mt.name FROM menutranslate as mt, menu as m where  mt.idMenu=m.id and mt.idLanguage=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $lang);
+
+    if ($stmt->execute()) {
+        $menu_options= [];
+        $stmt->bind_result($menu_options);
+
+        $menu= [];
+        while ($stmt->fetch()) {
+            array_push($menu, $menu_options);
+        }
+    }
+    return $menu;
+}

@@ -1,44 +1,77 @@
 <?php
-$title = "Homeapage";
+$title = "Homepage | ValuePass";
 include_once 'includes/header.php';
+
+
 ?>
-
-
 <main>
-	<section class="header-video adventure">
-		<div id="hero_video">
-			<div class="wrapper">
-				<div class="container container-custom  ">
-					<div class="row ">
 
-						<div class="col-lg-6    col-md-12 ">
-							<small> Discover everything you need to know about your Vacation Experiences… </small>
-							<h3>Value Pass</h3>
-							<p>Hosted journeys to extraordinary and unique places.</p>
-							<a href="adventure-detail.html" class="btn_1">How it works</a>
-						</div>
+	<!-- START SLIDER -->
+	<div id="rev_slider_44_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
+		<!-- Start revolution slider 5.4.8 fullscreen mode -->
+		<div id="rev_slider_44" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8">
+			<ul>
+				<!-- start slide 01 -->
+				<li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="01" data-param1="01" data-description="">
+					<!-- main image -->
+					<img src="assets/img/4.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-						<div class="col-lg-6    d-none d-md-block  ">
-							<div class="row">
-								<div class="col-6 py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
-								<div class="col-6  py-2  hero-imgs"> <img src="assets/img/10.jpg" class="img-fluid" alt=""></div>
-								<div class="col-4  py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
-								<div class="col-4  py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
-								<div class="col-4  py-2 hero-imgs"> <img src="assets/img/4.jpg" class="img-fluid" alt=""></div>
-							</div>
-						</div>
+					<div class="rev-slider-mask"></div>
 
+					<!-- main text layer -->
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;">Discover authentic <br>experiences !</div>
 
+					<!-- small text layer -->
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-02" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','16','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Explore hidden treasures!
 					</div>
 
-				</div>
-			</div>
-		</div>
-		<!-- <img src="assets/videos/vid1.mp4" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960"> -->
+					<!-- btn layer -->
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="tours-grid-isotope.html" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">Learn More
+					</a>
+				</li>
+				<!-- end slide 01 -->
+				<!-- start slide 02 -->
+				<li data-index="rs-74" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="02" data-param1="02" data-description="">
+					<!-- main image -->
+					<img src="assets/img/2.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-		<video src="assets/videos/vid1.mp4" autoplay loop playsinline muted></video>
-	</section>
-	<!-- /header-video -->
+					<div class="rev-slider-mask"></div>
+
+					<!-- main text layer -->
+					<div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center" id="slide-411-layer-04" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Great places<br> to discover</div>
+
+					<!-- small text layer -->
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-05" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Top rated tours, hotels and restaurants.
+					</div>
+
+					<!-- btn layer -->
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="tours-grid-sidebar.html" id="slide-411-layer-06" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']">Learn How it works
+					</a>
+				</li>
+				<!-- end slide 02 -->
+				<!-- start slide 03 -->
+				<li data-index="rs-75" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="03" data-param1="03" data-description="">
+					<!-- main image -->
+					<img src="assets/img/10.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+					<div class="rev-slider-mask"></div>
+
+					<!-- main text layer -->
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Finally...<br> it's time to relax</div>
+
+					<!-- small text layer -->
+					<div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center" id="slide-411-layer-08" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Top rated tours, hotels and restaurants.
+					</div>
+
+					<!-- btn layer -->
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="tours-grid-sidebar.html" id="slide-411-layer-09" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">Get Started Now
+					</a>
+				</li>
+				<!-- end slide 01 -->
+			</ul>
+		</div>
+	</div>
+	<!-- END REVOLUTION SLIDER -->
 
 
 	<div class="container margin_80_55">
@@ -94,116 +127,144 @@ include_once 'includes/header.php';
 
 	</div>
 
+	<div class="container container-custom margin_80_55 col-lg-12 ">
+		<section class="add_bottom_45">
+			<div class="main_title_2">
+				<span><em></em></span>
+				<h2>Locations</h2>
+				<p>Check here the available locations</p>
+			</div>
 
-		<section class="wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="main_title_2">
-						<span><em></em></span>
-						<h2>Locations</h2>
-						<p>Check here the available locations</p>
-					</div>
+			<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
-					<div class="col-lg-3  col-md-4 col-sm-12">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
+				<!-- version 1 carsouel ready css 
+						<div class="item">
+							<a href="adventure-detail.html" class="grid_item_adventure">
+								<figure>
+									<div class="score"><strong>7.9</strong></div>
+									<img src="assets/img/10.jpg" class="img-fluid" alt="">
+									<div class="info">
+										<em>3 days in Patagonia</em>
+										<h3>Horseback ride through Valencia</h3>
+									</div>
+								</figure>
+							</a>
+						</div>  -->
 
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
+				<div class="item">
+					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
+						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<div class="card-img-overlay d-flex flex-column">
+							<div class="card-body">
+		
+							</div>
+							<div class="card-footer">
+								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
+								<small class="card-meta mb-2">25 Advetures</small>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-lg-3  col-md-4 col-sm-12">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?island');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?island" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Naxos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3  col-md-4 col-sm-12">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Samos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3  col-md-4 col-sm-12">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?samos');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?samos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3  col-md-4 col-sm-12">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3  col-md-4 col-sm-12">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-
-
 				</div>
 
+				<div class="item">
+					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?andros');">
+						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?andros" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<div class="card-img-overlay d-flex flex-column">
+							<div class="card-body">
+
+							</div>
+							<div class="card-footer">
+								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Andros</a></h4>
+								<small class="card-meta mb-2">15 Advetures</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
+						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<div class="card-img-overlay d-flex flex-column">
+							<div class="card-body">
+
+							</div>
+							<div class="card-footer">
+								<h4 class="card-title mt-0 "><a class="text-white"href="adventures.php?id=1">Naxos</a></h4>
+								<small class="card-meta mb-2">8 Advetures</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?crete');">
+						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?crete" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<div class="card-img-overlay d-flex flex-column">
+							<div class="card-body">
+
+							</div>
+							<div class="card-footer">
+								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Crete</a></h4>
+								<small class="card-meta mb-2">35 Advetures</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?greece');">
+						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?greece" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<div class="card-img-overlay d-flex flex-column">
+							<div class="card-body">
+
+							</div>
+							<div class="card-footer">
+								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
+								<small class="card-meta mb-2">25 Advetures</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<div class="card-img-overlay d-flex flex-column">
+							<div class="card-body">
+
+							</div>
+							<div class="card-footer">
+								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
+								<small class="card-meta mb-2">25 Advetures</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<div class="card-img-overlay d-flex flex-column">
+							<div class="card-body">
+
+							</div>
+							<div class="card-footer">
+								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
+								<small class="card-meta mb-2">25 Advetures</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
 			</div>
+
 		</section>
+	</div>
 
 
-		<div class="container margin_80_55">
+
+	<div class="container margin_80_55">
 		<section>
 			<div class="newsletter-subscribe  container">
 				<div class="container">
@@ -233,7 +294,7 @@ include_once 'includes/header.php';
 			</div>
 		</section>
 	</div>
-	
+
 
 
 </main>
@@ -244,10 +305,13 @@ include_once 'includes/header.php';
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
 				<!-- <p><img src="img/logo.svg" width="150" height="36" alt=""></p> -->
+				<a href="index.php" class="fs-3 fw-bolder">
+				VALUEPASS
+			</a>
 				<p>Mea nibh meis philosophia eu. Duis legimus efficiantur ea sea. Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. Nihil facilisi indoctum an vix, ut delectus expetendis vis.</p>
 				<div class="follow_us">
 					<ul>
-						<li>Follow us</li>
+						<li><?php echo $menu[12] ?> </li>
 						<li><a href="#0"><i class="ti-facebook"></i></a></li>
 						<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
 						<li><a href="#0"><i class="ti-google"></i></a></li>
@@ -257,17 +321,17 @@ include_once 'includes/header.php';
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 ms-lg-auto">
-				<h5>Useful links</h5>
+				<h5> <?php echo $menu[8] ?></h5>
 				<ul class="links">
-					<li><a href="about.html">About</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="register.html">Register</a></li>
-					<li><a href="blog.html">News &amp; Events</a></li>
-					<li><a href="contacts.html">Contacts</a></li>
+					<li><a href="#"> <?php echo $menu[1] ?></a></li>
+					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
+					<li><a href="#"><?php echo $menu[7] ?></a></li>
+					<li><a href="#"> <?php echo $menu[5] ?></a></li>
+
 				</ul>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<h5>Contact with Us</h5>
+				<h5><?php echo $menu[9] ?></h5>
 				<ul class="contacts">
 					<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
 					<li><a href="mailto:info@Panagea.com"><i class="ti-email"></i> info@Panagea.com</a></li>
@@ -277,7 +341,7 @@ include_once 'includes/header.php';
 		<!--/row-->
 		<hr>
 		<div class="row">
-			<div class="col-lg-6">
+			<!-- <div class="col-lg-6">
 				<ul id="footer-selector">
 					<li>
 						<div class="styled-select" id="lang-selector">
@@ -297,13 +361,13 @@ include_once 'includes/header.php';
 							</select>
 						</div>
 					</li>
-					<!-- <li><img src="img/cards_all.svg" alt=""></li> -->
+					
 				</ul>
-			</div>
-			<div class="col-lg-6">
+			</div> -->
+			<div class="col-lg-12">
 				<ul id="additional_links">
-					<li><a href="#0">Terms and conditions</a></li>
-					<li><a href="#0">Privacy</a></li>
+					<li><a href="#0"><?php echo $menu[10] ?></a></li>
+					<li><a href="#0"><?php echo $menu[11] ?></a></li>
 					<li><span>© TechIns</span></li>
 				</ul>
 			</div>
@@ -369,6 +433,130 @@ include_once 'includes/header.php';
 <script src="assets/js/main.js"></script>
 <script src="assets/js/validate.js"></script>
 
+<!-- SLIDER REVOLUTION SCRIPTS  -->
+<script src="assets/js/jquery.themepunch.tools.min.js"></script>
+<script src="assets/js/jquery.themepunch.revolution.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.video.min.js"></script>
+
+
+<script>
+	var tpj = jQuery;
+
+	var revapi44;
+	tpj(document).ready(function() {
+		if (tpj("#rev_slider_44").revolution == undefined) {
+			revslider_showDoubleJqueryError("#rev_slider_44");
+		} else {
+			revapi44 = tpj("#rev_slider_44").show().revolution({
+				sliderType: "standard",
+				jsFileLocation: "assets/js/",
+				sliderLayout: "fullscreen",
+				dottedOverlay: "none",
+				delay: 4500,
+				navigation: {
+					keyboardNavigation: "on",
+					keyboard_direction: "horizontal",
+					mouseScrollNavigation: "off",
+					mouseScrollReverse: "default",
+					onHoverStop: "off",
+					touch: {
+						touchenabled: "on",
+						touchOnDesktop: "on",
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						swipe_direction: "horizontal",
+						drag_block_vertical: false
+					},
+					arrows: {
+						enable: true,
+						style: 'erinyen',
+						tmp: '',
+						rtl: false,
+						hide_onleave: true,
+						hide_onmobile: true,
+						hide_under: 767,
+						hide_over: 9999,
+						hide_delay: 0,
+						hide_delay_mobile: 0,
+
+						left: {
+							container: 'slider',
+							h_align: 'left',
+							v_align: 'center',
+							h_offset: 60,
+							v_offset: 0
+						},
+
+						right: {
+							container: 'slider',
+							h_align: 'right',
+							v_align: 'center',
+							h_offset: 60,
+							v_offset: 0
+						}
+					},
+					bullets: {
+						enable: true,
+						style: 'zeus',
+						direction: 'horizontal',
+						rtl: false,
+
+						container: 'slider',
+						h_align: 'center',
+						v_align: 'bottom',
+						h_offset: 0,
+						v_offset: 30,
+						space: 7,
+
+						hide_onleave: false,
+						hide_onmobile: false,
+						hide_under: 0,
+						hide_over: 767,
+						hide_delay: 200,
+						hide_delay_mobile: 1200
+					},
+				},
+				responsiveLevels: [1240, 1025, 778, 480],
+				visibilityLevels: [1920, 1500, 1025, 768],
+				gridwidth: [1200, 991, 778, 480],
+				gridheight: [1025, 1366, 1025, 868],
+				lazyType: "none",
+				shadow: 0,
+				spinner: "spinner4",
+				stopLoop: "off",
+				stopAfterLoops: -1,
+				stopAtSlide: -1,
+				shuffle: "off",
+				autoHeight: "on",
+				fullScreenAutoWidth: "on",
+				fullScreenAlignForce: "off",
+				fullScreenOffsetContainer: "",
+				disableProgressBar: "on",
+				hideThumbsOnMobile: "on",
+				hideSliderAtLimit: 0,
+				hideCaptionAtLimit: 0,
+				hideAllCaptionAtLimit: 0,
+				debugMode: false,
+				fallbacks: {
+					simplifyAll: "off",
+					nextSlideOnWindowFocus: "off",
+					disableFocusListener: false,
+				}
+			});
+		}
+	});
+</script>
+
+
+<script src="changeLanguage.js"></script>
 
 
 

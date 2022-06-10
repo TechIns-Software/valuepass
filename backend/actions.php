@@ -141,6 +141,5 @@ if ($_POST['action'] == 'addProduct') {
     } else {
         $message = "You Have to Create or Sign in in your Account first";
     }
-}
+} 
 echo json_encode([$message]);
-

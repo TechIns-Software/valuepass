@@ -7,13 +7,14 @@ if (!isset($_GET['id'])) {
 }
 $title = "Adventures";
 include_once 'includes/header.php';
-include 'backend/finalLibrary.php';
+// include 'backend/finalLibrary.php';
 $idDestination = $_GET['id'];
-$vendors = getVendors($conn, $idDestination, $languageId);
-$bestOffs = getVendors($conn, $idDestination, $languageId, true);
-if (count($vendors) <= 0) {
-//    header('location: index.php');
-}
+$languageId=1;
+// $vendors = getVendors($conn, $idDestination, $languageId);
+// $bestOffs = getVendors($conn, $idDestination, $languageId, true);
+// if (count($vendors) <= 0) {
+//  header('location: index.php');
+// }
 ?>
 
 <main>
@@ -45,9 +46,9 @@ if (count($vendors) <= 0) {
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
                 <?php
-                foreach ($bestOffs as $vendorBestOff) {
+                // foreach ($bestOffs as $vendorBestOff) {
 
-                }
+                // }
                 ?>
 
 
@@ -158,9 +159,9 @@ if (count($vendors) <= 0) {
 			<div class="row">
 
                 <?php
-                foreach ($bestOffs as $vendorBestOff) {
+                // foreach ($bestOffs as $vendorBestOff) {
 
-                }
+                // }
                 ?>
 
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
