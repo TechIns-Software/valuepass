@@ -1,9 +1,10 @@
 <?php
 $title = "Homepage | ValuePass";
+include 'initializeExperience.php';
 include_once 'includes/header.php';
-
-
 ?>
+
+
 <main>
 
 	<!-- START SLIDER -->
@@ -137,7 +138,7 @@ include_once 'includes/header.php';
 
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
-				<!-- version 1 carsouel ready css 
+				<!-- version 1 carsouel ready css
 						<div class="item">
 							<a href="adventure-detail.html" class="grid_item_adventure">
 								<figure>
@@ -156,7 +157,7 @@ include_once 'includes/header.php';
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
 							<div class="card-body">
-		
+
 							</div>
 							<div class="card-footer">
 								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
@@ -361,7 +362,7 @@ include_once 'includes/header.php';
 							</select>
 						</div>
 					</li>
-					
+
 				</ul>
 			</div> -->
 			<div class="col-lg-12">

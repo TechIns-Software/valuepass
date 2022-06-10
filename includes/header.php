@@ -1,7 +1,6 @@
 <?php
 
 $url = $_SERVER['REQUEST_URI'];
-session_start();
 
 if (!isset($conn)) {
 	include 'connection.php';
@@ -10,12 +9,7 @@ if (!isset($conn)) {
 include 'backend/finalLibrary.php';
 $languages =  getAllLanguages($conn);
 
-
-if ( !isset($_SESSION['lang']) ){
-	//Lang 1 is greek language and  2 is English
-	$_SESSION['lang'] = 1;
-}
-$menu = GetMenu($conn,$_SESSION['lang']);
+$menu = GetMenu($conn, $_SESSION['languageId']);
 // print_r($menu );
 ?>
 
