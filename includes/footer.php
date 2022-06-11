@@ -8,8 +8,8 @@
 		<!-- INPUT QUANTITY  -->
 		<!-- <script src="assets/js/input_qty.js"></script> -->
 
-	<!-- Map -->
 
+		<script src="changeLanguage.js"></script>
     </body>
 
 </html>

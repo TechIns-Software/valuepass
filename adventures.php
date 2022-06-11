@@ -7,14 +7,14 @@ if (!isset($_GET['id'])) {
 }
 $title = "Adventures";
 include_once 'includes/header.php';
-// include 'backend/finalLibrary.php';
+include 'backend/finalLibrary.php';
 $idDestination = $_GET['id'];
 $languageId=1;
-// $vendors = getVendors($conn, $idDestination, $languageId);
-// $bestOffs = getVendors($conn, $idDestination, $languageId, true);
-// if (count($vendors) <= 0) {
-//  header('location: index.php');
-// }
+$vendors = getVendors($conn, $idDestination, $languageId);
+$bestOffs = getVendors($conn, $idDestination, $languageId, true);
+if (count($vendors) <= 0) {
+ header('location: index.php');
+}
 ?>
 
 <main>
@@ -679,5 +679,7 @@ $languageId=1;
 
 
 </body>
+
+<script src="changeLanguage.js"></script>
 
 </html>

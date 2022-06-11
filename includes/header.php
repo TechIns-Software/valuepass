@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $url = $_SERVER['REQUEST_URI'];
 
