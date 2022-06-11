@@ -6,9 +6,9 @@
 if (!isset($conn)) {
     include 'connection.php';
 }
+include 'initializeExperience.php';
 $title = "Cart";
 include_once 'includes/header.php';
-include 'initializeExperience.php';
 include 'backend/includeClasses.php';
 $cart = unserialize($_SESSION['cart']);
 ?>

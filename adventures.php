@@ -5,6 +5,7 @@ if (!isset($conn)) {
 if (!isset($_GET['id'])) {
     header('location: index.php');
 }
+include 'initializeExperience.php';
 $title = "Adventures";
 include_once 'includes/header.php';
 $idDestination = $_GET['id'];
@@ -12,7 +13,7 @@ $languageId=1;
 $vendors = getVendors($conn, $idDestination, $languageId);
 $bestOffs = getVendors($conn, $idDestination, $languageId, true);
 if (count($vendors) <= 0) {
- header('location: index.php');
+//    header('location: index.php');
 }
 ?>
 
