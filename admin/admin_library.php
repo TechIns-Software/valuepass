@@ -81,7 +81,7 @@ function addrowLabelBox($conn, $id)
 // Add Location for all existing  languages
 function AddLabelBoxTranslate($conn, $idlabelbox, $idlang, $name)
 {
-    $query = "INSERT INTO `LabelsBoxTranslate` (`idLabelsBox`, `idLAnguage`, `name`) VALUES (?,?,?)";
+    $query = "INSERT INTO `LabelsBoxTranslate` (`idLabelsBox`, `idLanguage`, `name`) VALUES (?,?,`?`)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idlabelbox, $idlang,  $name);
     if ($stmt->execute()) {
