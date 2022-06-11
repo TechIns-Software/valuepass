@@ -3,7 +3,7 @@
 //Get all Languages
 function getAllLanguages($conn)
 {
-    $query = "Select * FROM language";
+    $query = "Select * FROM Language";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $language = $icon = '';
@@ -44,7 +44,7 @@ function lastInstertedid($conn, $table)
 // Add one row in Destinations 
 function addrowDestination($conn, $id)
 {
-    $query = "INSERT INTO `destination` (`id`,`image1`,`image2`) VALUES ($id,'path1','path2')";
+    $query = "INSERT INTO `Destination` (`id`,`image1`,`image2`) VALUES ($id,'path1','path2')";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
@@ -54,7 +54,7 @@ function addrowDestination($conn, $id)
 // Add Location for all existing  languages
 function AddLocationTranslate($conn, $idlang, $iddest, $name, $descr)
 {
-    $query = "INSERT INTO `destinationtranslate`(`idLanguage`, `idDestination`, `name`, `description`) VALUES (?,?,?,?)";
+    $query = "INSERT INTO `DestinationTranslate`(`idLanguage`, `idDestination`, `name`, `description`) VALUES (?,?,?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iiss', $idlang, $iddest, $name, $descr);
     if ($stmt->execute()) {
@@ -71,7 +71,7 @@ function AddLocationTranslate($conn, $idlang, $iddest, $name, $descr)
 // Add one row in Labelbox
 function addrowLabelBox($conn, $id)
 {
-    $query = "INSERT INTO `labelsbox` (`id`,`orderNumber`) VALUES ( $id , 99 )";
+    $query = "INSERT INTO `Labelsbox` (`id`,`orderNumber`) VALUES ( $id , 99 )";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
@@ -81,7 +81,7 @@ function addrowLabelBox($conn, $id)
 // Add Location for all existing  languages
 function AddLabelBoxTranslate($conn, $idlabelbox, $idlang, $name)
 {
-    $query = "INSERT INTO `labelsboxtranslate` (`idLabelsBox`, `idLAnguage`, `name`) VALUES (?,?,?)";
+    $query = "INSERT INTO `LabelsBoxTranslate` (`idLabelsBox`, `idLAnguage`, `name`) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idlabelbox, $idlang,  $name);
     if ($stmt->execute()) {
@@ -98,7 +98,7 @@ function AddLabelBoxTranslate($conn, $idlabelbox, $idlang, $name)
 // Add one row in CategoryVendor
 function addrowCategoryVendor($conn, $id)
 {
-    $query = "INSERT INTO `categoryvendor` (`id`) VALUES ( $id )";
+    $query = "INSERT INTO `CategoryVendor` (`id`) VALUES ( $id )";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
@@ -108,7 +108,7 @@ function addrowCategoryVendor($conn, $id)
 // Add Location for all existing  languages
 function AddCategoryVendorTranslate($conn, $idCategory, $idlang, $name)
 {
-    $query = "INSERT INTO `categoryvendortranslate` (`idCategoryVendor`, `idLanguage`, `name`) VALUES (?,?,?)";
+    $query = "INSERT INTO `CategoryVendorTranslate` (`idCategoryVendor`, `idLanguage`, `name`) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idCategory, $idlang,  $name);
     if ($stmt->execute()) {
@@ -124,7 +124,7 @@ function AddCategoryVendorTranslate($conn, $idCategory, $idlang, $name)
 // Get All Destinations
 function GetAllDestinations($conn,)
 {
-    $query = "SELECT dt.name , dt.idDestination  FROM destination as d , destinationtranslate as dt where dt.idDestination = d.id group by dt.idDestination ;
+    $query = "SELECT dt.name , dt.idDestination  FROM Destination as d , DestinationTranslate as dt where dt.idDestination = d.id group by dt.idDestination ;
     ";
     $stmt = $conn->prepare($query);
 

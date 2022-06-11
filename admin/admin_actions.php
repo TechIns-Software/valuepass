@@ -20,7 +20,7 @@ if (
         $data_langs =$_POST["data"];
          
         // print_r($data_langs);
-        $table = 'destination';
+        $table = 'Destination';
         $last_id=lastInstertedid($conn,$table);
         addrowDestination($conn,($last_id + 1 ));
 
@@ -35,7 +35,7 @@ if (
         $data_labels =$_POST["data"];
          
         // print_r($data_labels);
-        $table = 'labelsbox';
+        $table = 'LabelsBox';
         $last_id=lastInstertedid($conn,$table);
         addrowLabelBox($conn,($last_id + 1 ));
 
@@ -50,7 +50,7 @@ if (
         $data_labels =$_POST["data"];
          
         // print_r($data_labels);
-        $table = 'categoryvendor';
+        $table = 'CategoryVendor';
         $last_id=lastInstertedid($conn,$table);
         addrowCategoryVendor($conn,($last_id + 1 ));
 
