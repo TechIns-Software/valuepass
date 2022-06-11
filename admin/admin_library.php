@@ -71,7 +71,7 @@ function AddLocationTranslate($conn, $idlang, $iddest, $name, $descr)
 // Add one row in Labelbox
 function addrowLabelBox($conn, $id)
 {
-    $query = "INSERT INTO `Labelsbox` (`id`,`orderNumber`) VALUES ( $id , 99 )";
+    $query = "INSERT INTO `LabelsBox` (`id`,`orderNumber`) VALUES ( $id , 99 )";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
@@ -129,7 +129,7 @@ function GetAllDestinations($conn,)
     $stmt = $conn->prepare($query);
 
     $stmt->execute();
-    $name= $id_dest =  '';
+    $name = $id_dest =  '';
     $stmt->bind_result($name, $id_dest);
     $destinations = [];
     while ($stmt->fetch()) {
