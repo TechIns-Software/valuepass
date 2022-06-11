@@ -42,10 +42,10 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 	<link href="assets/css/vendors.css" rel="stylesheet">
 
 	<!-- REVOLUTION SLIDER CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome2.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/settings.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/font-awesome2.css">
+	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/settings.css">
+	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/navigation.css">
 
 	<!-- FOR FLAGS -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
@@ -90,18 +90,18 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</a>
 				<nav id="menu" class="main-menu">
 					<ul>
-						<li><span><a href="index.php"><?php echo $menu[1]?></a></span></li>
-						<li><span><a href="index.php"><?php echo $menu[6]?></a></span>
+						<li><span><a href="index.php"><?php echo $menu[1] ?></a></span></li>
+						<li><span><a href="index.php"><?php echo $menu[6] ?></a></span>
 							<ul>
 
 								<?php
 								foreach ($languages  as $language) {  ?>
-									<li><a href="javascript:void(0);"  onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
+									<li><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
 								<?php	} ?>
 
 							</ul>
 						</li>
-						<li><span><a href="#"><?php echo $menu[4]?></a></span></li>
+						<li><span><a href="#"><?php echo $menu[4] ?></a></span></li>
 						<!-- <li><span><a href="adventure_page.php">Experience Page</a></span></li> -->
 						<!-- <li><span><a href="#" target="_parent">Buy VP</a></span></li> -->
 					</ul>
@@ -135,19 +135,19 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</a>
 				<nav id="menu" class="main-menu">
 					<ul>
-						<li><span><a href="index.php"> <?php echo $menu[0]?> </a></span></li>
+						<li><span><a href="index.php"> <?php echo $menu[0] ?> </a></span></li>
 
-						<li><span><a href="index.php"> <?php echo $menu[6]?> </a></span>
+						<li><span><a href="index.php"> <?php echo $menu[6] ?> </a></span>
 							<ul>
 								<?php
 
 								foreach ($languages  as $language) {  ?>
-									<li><a href="javascript:void(0);"  onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
+									<li><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
 								<?php	} ?>
 
 							</ul>
 						</li>
-						<li><span><a href="adventures.php?id=1"> <?php echo $menu[3]?> </a></span></li>
+						<li><span><a href="adventures.php?id=1"> <?php echo $menu[3] ?> </a></span></li>
 						<!-- <li><span><a href="adventure_page.php">Experience Page</a></span></li> -->
 						<!-- <li><span><a href="#" target="_parent">Buy VP</a></span></li> -->
 					</ul>

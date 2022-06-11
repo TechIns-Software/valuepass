@@ -2,7 +2,7 @@
 session_start();
 $langSelected = $_POST["language"];
 
- $_SESSION["lang"] = $langSelected ;
+ $_SESSION["languageId"] = $langSelected ;
 
 
 // if ($langSelected == "greek") {

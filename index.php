@@ -7,72 +7,195 @@ include_once 'includes/header.php';
 
 <main>
 
-	<!-- START SLIDER -->
-	<div id="rev_slider_44_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
-		<!-- Start revolution slider 5.4.8 fullscreen mode -->
-		<div id="rev_slider_44" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8">
-			<ul>
-				<!-- start slide 01 -->
-				<li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="01" data-param1="01" data-description="">
-					<!-- main image -->
-					<img src="assets/img/4.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-					<div class="rev-slider-mask"></div>
+<!-- START SLIDER -->
+<div id="rev_slider_44_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
+                    <!-- Start revolution slider 5.4.8 fullscreen mode -->
+                    <div id="rev_slider_44" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8">
+                        <ul> 
+                            <!-- start slide 01 -->
+                            <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
+                                <!-- main image -->
+                                <img src="http://www.ansonika.com/panagea/revolution-slider/assets/images/slide_1.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;">Discover authentic <br>experiences !</div>
+                                <div class="rev-slider-mask"></div> 
 
-					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-02" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','16','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Explore hidden treasures!
-					</div>
+                                <!-- main text layer -->
+                                <div class="tp-caption tp-resizeme text-white text-center"
+                                     id="slide-411-layer-01"
+                                     data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                     data-type="text"
+                                     data-whitespace="nowrap"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" 
+                                     data-width="auto"
+                                     data-height="auto"
+                                     data-fontsize="['70','53','60','35']"
+                                     data-lineheight="['70','59','70','39']"
+                                     data-letterspacing="['-2','-1','-1','-1']"
+                                     data-responsive="off"
+                                     data-responsive_offset="off"
+                                     data-paddingtop="['0','0','0','0']"
+                                     data-paddingbottom="['15','8','8','8']"
+                                     data-paddingright="['0','0','0','0']"
+                                     data-paddingleft="['0','0','0','0']"
+                                     style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;">Start to Enjoy <br>unique places</div>
 
-					<!-- btn layer -->
-					<a class="tp-caption tp-resizeme rs-btn btn_1" href="tours-grid-isotope.html" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">Learn More
-					</a>
-				</li>
-				<!-- end slide 01 -->
-				<!-- start slide 02 -->
-				<li data-index="rs-74" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="02" data-param1="02" data-description="">
-					<!-- main image -->
-					<img src="assets/img/2.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                                <!-- small text layer -->
+                                <div class="tp-caption tp-resizeme text-white text-center"
+                                     id="slide-411-layer-02" 
+                                     data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                     data-type="text"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" 
+                                     data-width="auto"
+                                     data-height="auto"
+                                     data-fontsize="['19','16','19','14']"
+                                     data-lineheight="['28','14','23','20']"
+                                     data-letterspacing="['0.5','0.5','0.5','0.5']"
+                                     data-responsive="off"
+                                     data-responsive_offset="on">Top rated tours, hotels and restaurants.
+								</div> 
 
-					<div class="rev-slider-mask"></div>
+                                <!-- btn layer -->
+                                <a class="tp-caption tp-resizeme rs-btn btn_1"
+                                   href="tours-grid-isotope.html"
+                                   id="slide-411-layer-03" 
+                                   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                   data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                                   data-whitespace="nowrap"
+                                   data-type="button"
+                                   data-responsive="off"
+                                   data-responsive_offset="off"
+                                   data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                   data-textAlign="['center','center','center','center']">Get Started Now 
+                                </a>         
+                            </li>
+                            <!-- end slide 01 -->
+                            <!-- start slide 02 -->
+                            <li data-index="rs-74" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-rotate="0"  data-saveperformance="off"  data-title="02" data-param1="02" data-description="">
+                                <!-- main image -->
+                                <img src="http://www.ansonika.com/panagea/revolution-slider/assets/images/slide_2.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center" id="slide-411-layer-04" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Great places<br> to discover</div>
+                                <div class="rev-slider-mask"></div> 
 
-					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-05" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Top rated tours, hotels and restaurants.
-					</div>
+                                <!-- main text layer -->
+                                <div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center"
+                                     id="slide-411-layer-04" 
+                                     data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                     data-type="text"
+                                     data-whitespace="nowrap"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" 
+                                     data-width="auto"
+                                     data-height="auto"
+                                     data-fontsize="['70','53','60','35']"
+                                     data-lineheight="['70','59','70','39']"
+                                     data-letterspacing="['-2','-1','-1','-1']"
+                                     data-responsive="off"
+                                     data-responsive_offset="off"
+                                     data-paddingtop="['0','0','0','0']"
+                                     data-paddingbottom="['15','8','8','8']"
+                                     data-paddingright="['0','0','0','0']"
+                                     data-paddingleft="['0','0','0','0']"
+                                     style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Great places<br> to discover</div>
 
-					<!-- btn layer -->
-					<a class="tp-caption tp-resizeme rs-btn btn_1" href="tours-grid-sidebar.html" id="slide-411-layer-06" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']">Learn How it works
-					</a>
-				</li>
-				<!-- end slide 02 -->
-				<!-- start slide 03 -->
-				<li data-index="rs-75" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="03" data-param1="03" data-description="">
-					<!-- main image -->
-					<img src="assets/img/10.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                                <!-- small text layer -->
+                                <div class="tp-caption tp-resizeme text-white text-center"
+                                     id="slide-411-layer-05" 
+                                     data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                     data-type="text"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" 
+                                     data-width="auto"
+                                     data-height="auto"
+                                     data-fontsize="['19','13','19','14']"
+                                     data-lineheight="['28','14','23','20']"
+                                     data-letterspacing="['0.5','0.5','0.5','0.5']"
+                                     data-responsive="off"
+                                     data-responsive_offset="on">Top rated tours, hotels and restaurants.
+                                 </div> 
 
-					<div class="rev-slider-mask"></div>
+                                <!-- btn layer -->
+                                <a class="tp-caption tp-resizeme rs-btn btn_1"
+                                   href="tours-grid-sidebar.html"
+                                   id="slide-411-layer-06" 
+                                   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                   data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                                   data-whitespace="nowrap"
+                                   data-type="button"
+                                   data-responsive="off"
+                                   data-responsive_offset="off"
+                                   data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                   data-textAlign="['center','center','center','center']"
+                                   data-paddingleft="['34','34','34','34']">Get Started Now 
+                                </a>       
+                            </li>
+                            <!-- end slide 02 -->
+                            <!-- start slide 03 -->
+                            <li data-index="rs-75" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-rotate="0"  data-saveperformance="off"  data-title="03" data-param1="03" data-description="">
+                                <!-- main image -->
+                                <img src="http://www.ansonika.com/panagea/revolution-slider/assets/images/slide_3.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
-					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Finally...<br> it's time to relax</div>
+                                <div class="rev-slider-mask"></div> 
 
-					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center" id="slide-411-layer-08" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Top rated tours, hotels and restaurants.
-					</div>
+                                <!-- main text layer -->
+                                <div class="tp-caption tp-resizeme text-white text-center"
+                                     id="slide-411-layer-07" 
+                                     data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                     data-type="text"
+                                     data-whitespace="nowrap"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" 
+                                     data-width="auto"
+                                     data-height="auto"
+                                     data-fontsize="['70','53','60','35']"
+                                     data-lineheight="['70','59','70','39']"
+                                     data-letterspacing="['-2','-1','-1','-1']"
+                                     data-responsive="off"
+                                     data-responsive_offset="off"
+                                     data-paddingtop="['0','0','0','0']"
+                                     data-paddingbottom="['15','8','8','8']"
+                                     data-paddingright="['0','0','0','0']"
+                                     data-paddingleft="['0','0','0','0']"
+                                     style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Finally...<br> it's time to relax</div>
 
-					<!-- btn layer -->
-					<a class="tp-caption tp-resizeme rs-btn btn_1" href="tours-grid-sidebar.html" id="slide-411-layer-09" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">Get Started Now
-					</a>
-				</li>
-				<!-- end slide 01 -->
-			</ul>
-		</div>
-	</div>
+                                <!-- small text layer -->
+                                <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center"
+                                     id="slide-411-layer-08" 
+                                     data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                     data-type="text"
+                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" 
+                                     data-width="auto"
+                                     data-height="auto"
+                                     data-fontsize="['19','13','19','14']"
+                                     data-lineheight="['28','14','23','20']"
+                                     data-letterspacing="['0.5','0.5','0.5','0.5']"
+                                     data-responsive="off"
+                                     data-responsive_offset="on">Top rated tours, hotels and restaurants.
+                                 </div> 
+
+                                <!-- btn layer -->
+                                <a class="tp-caption tp-resizeme rs-btn btn_1"
+                                   href="tours-grid-sidebar.html"
+                                   id="slide-411-layer-09" 
+                                   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                   data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                                   data-whitespace="nowrap"
+                                   data-type="button"
+                                   data-responsive="off"
+                                   data-responsive_offset="off"
+                                   data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                   data-textAlign="['center','center','center','center']">Get Started Now 
+                                </a>
+                            </li>
+                            <!-- end slide 01 -->
+                        </ul>
+                    </div>
+                </div>
 	<!-- END REVOLUTION SLIDER -->
+	
 
 
 	<div class="container margin_80_55">
@@ -435,126 +558,126 @@ include_once 'includes/header.php';
 <script src="assets/js/validate.js"></script>
 
 <!-- SLIDER REVOLUTION SCRIPTS  -->
-<script src="assets/js/jquery.themepunch.tools.min.js"></script>
-<script src="assets/js/jquery.themepunch.revolution.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="assets/js/extensions/revolution.extension.video.min.js"></script>
-
+<script src="assets/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+<script src="assets/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="assets/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+<!-- <script src="assets/js/revapi44.js"></script> -->
 
 <script>
-	var tpj = jQuery;
+			var tpj=jQuery;
+			
+			var revapi44;
+			tpj(document).ready(function() {
+				 if (tpj("#rev_slider_44").revolution == undefined) {
+            revslider_showDoubleJqueryError("#rev_slider_44");
+        } else {
+            revapi44 = tpj("#rev_slider_44").show().revolution({
+                sliderType: "standard",
+                jsFileLocation: "assets/revolution-slider/js/",
+                sliderLayout: "fullscreen",
+                dottedOverlay: "none",
+                delay: 4500,
+                navigation: {
+                    keyboardNavigation: "on",
+                    keyboard_direction: "horizontal",
+                    mouseScrollNavigation: "off",
+                    mouseScrollReverse: "default",
+                    onHoverStop: "off",
+                    touch: {
+                        touchenabled: "on",
+                        touchOnDesktop: "on",
+                        swipe_threshold: 75,
+                        swipe_min_touches: 1,
+                        swipe_direction: "horizontal",
+                        drag_block_vertical: false
+                    },
+                    arrows: {
+                        enable: true,
+                        style: 'erinyen',
+                        tmp: '',
+                        rtl: false,
+                        hide_onleave: true,
+                        hide_onmobile: true,
+                        hide_under: 767,
+                        hide_over: 9999,
+                        hide_delay: 0,
+                        hide_delay_mobile: 0,
 
-	var revapi44;
-	tpj(document).ready(function() {
-		if (tpj("#rev_slider_44").revolution == undefined) {
-			revslider_showDoubleJqueryError("#rev_slider_44");
-		} else {
-			revapi44 = tpj("#rev_slider_44").show().revolution({
-				sliderType: "standard",
-				jsFileLocation: "assets/js/",
-				sliderLayout: "fullscreen",
-				dottedOverlay: "none",
-				delay: 4500,
-				navigation: {
-					keyboardNavigation: "on",
-					keyboard_direction: "horizontal",
-					mouseScrollNavigation: "off",
-					mouseScrollReverse: "default",
-					onHoverStop: "off",
-					touch: {
-						touchenabled: "on",
-						touchOnDesktop: "on",
-						swipe_threshold: 75,
-						swipe_min_touches: 1,
-						swipe_direction: "horizontal",
-						drag_block_vertical: false
-					},
-					arrows: {
-						enable: true,
-						style: 'erinyen',
-						tmp: '',
-						rtl: false,
-						hide_onleave: true,
-						hide_onmobile: true,
-						hide_under: 767,
-						hide_over: 9999,
-						hide_delay: 0,
-						hide_delay_mobile: 0,
+                        left: {
+                            container: 'slider',
+                            h_align: 'left',
+                            v_align: 'center',
+                            h_offset: 60,
+                            v_offset: 0
+                        },
 
-						left: {
-							container: 'slider',
-							h_align: 'left',
-							v_align: 'center',
-							h_offset: 60,
-							v_offset: 0
-						},
+                        right: {
+                            container: 'slider',
+                            h_align: 'right',
+                            v_align: 'center',
+                            h_offset: 60,
+                            v_offset: 0
+                        }
+                    },
+                    bullets: {
+                        enable: true,
+                        style: 'zeus',
+                        direction: 'horizontal',
+                        rtl: false,
 
-						right: {
-							container: 'slider',
-							h_align: 'right',
-							v_align: 'center',
-							h_offset: 60,
-							v_offset: 0
-						}
-					},
-					bullets: {
-						enable: true,
-						style: 'zeus',
-						direction: 'horizontal',
-						rtl: false,
+                        container: 'slider',
+                        h_align: 'center',
+                        v_align: 'bottom',
+                        h_offset: 0,
+                        v_offset: 30,
+                        space: 7,
 
-						container: 'slider',
-						h_align: 'center',
-						v_align: 'bottom',
-						h_offset: 0,
-						v_offset: 30,
-						space: 7,
-
-						hide_onleave: false,
-						hide_onmobile: false,
-						hide_under: 0,
-						hide_over: 767,
-						hide_delay: 200,
-						hide_delay_mobile: 1200
-					},
-				},
-				responsiveLevels: [1240, 1025, 778, 480],
-				visibilityLevels: [1920, 1500, 1025, 768],
-				gridwidth: [1200, 991, 778, 480],
-				gridheight: [1025, 1366, 1025, 868],
-				lazyType: "none",
-				shadow: 0,
-				spinner: "spinner4",
-				stopLoop: "off",
-				stopAfterLoops: -1,
-				stopAtSlide: -1,
-				shuffle: "off",
-				autoHeight: "on",
-				fullScreenAutoWidth: "on",
-				fullScreenAlignForce: "off",
-				fullScreenOffsetContainer: "",
-				disableProgressBar: "on",
-				hideThumbsOnMobile: "on",
-				hideSliderAtLimit: 0,
-				hideCaptionAtLimit: 0,
-				hideAllCaptionAtLimit: 0,
-				debugMode: false,
-				fallbacks: {
-					simplifyAll: "off",
-					nextSlideOnWindowFocus: "off",
-					disableFocusListener: false,
+                        hide_onleave: false,
+                        hide_onmobile: false,
+                        hide_under: 0,
+                        hide_over: 767,
+                        hide_delay: 200,
+                        hide_delay_mobile: 1200
+                    },
+                },
+                responsiveLevels: [1240, 1025, 778, 480],
+                visibilityLevels: [1920, 1500, 1025, 768],
+                gridwidth: [1200, 991, 778, 480],
+                gridheight: [1025, 1366, 1025, 868],
+                lazyType: "none",
+                shadow: 0,
+                spinner: "spinner4",
+                stopLoop: "off",
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+                shuffle: "off",
+                autoHeight: "on",
+                fullScreenAutoWidth: "on",
+                fullScreenAlignForce: "off",
+                fullScreenOffsetContainer: "",
+                disableProgressBar: "on",
+                hideThumbsOnMobile: "on",
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLimit: 0,
+                debugMode: false,
+                fallbacks: {
+                    simplifyAll: "off",
+                    nextSlideOnWindowFocus: "off",
+                    disableFocusListener: false,
+                }
+            });
 				}
 			});
-		}
-	});
-</script>
+	</script>
 
 
 <script src="changeLanguage.js"></script>
