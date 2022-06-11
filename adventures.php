@@ -7,7 +7,6 @@ if (!isset($_GET['id'])) {
 }
 $title = "Adventures";
 include_once 'includes/header.php';
-include 'backend/finalLibrary.php';
 $idDestination = $_GET['id'];
 $languageId=1;
 $vendors = getVendors($conn, $idDestination, $languageId);

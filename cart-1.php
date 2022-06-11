@@ -10,7 +10,6 @@ $title = "Cart";
 include_once 'includes/header.php';
 include 'initializeExperience.php';
 include 'backend/includeClasses.php';
-include 'backend/finalLibrary.php';
 $cart = unserialize($_SESSION['cart']);
 ?>
 <main>
