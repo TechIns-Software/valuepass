@@ -303,7 +303,7 @@ function getVendorForCart($conn, $idVendorVoucher) : array {
 //Get all Languages
 function getAllLanguages($conn)
 {
-    $query = "Select * FROM language";
+    $query = "Select * FROM Language";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $language = $icon = '';
@@ -319,7 +319,7 @@ function getAllLanguages($conn)
 
 //Get Menu with right language
 function GetMenu($conn,$lang){
-    $query="SELECT mt.name FROM menutranslate as mt, menu as m where  mt.idMenu=m.id and mt.idLanguage=?";
+    $query="SELECT mt.name FROM MenuTranslate as mt, Menu as m where  mt.idMenu=m.id and mt.idLanguage=?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $lang);
 
