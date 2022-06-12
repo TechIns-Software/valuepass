@@ -43,14 +43,9 @@ if (count($vendors) <= 0) {
 				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
 			</div>
 
-			<div id="reccomended_adventure" class="owl-carousel owl-theme">
+			<!-- <div id="reccomended_adventure" class="owl-carousel owl-theme">
 
-                <?php
-                // foreach ($bestOffs as $vendorBestOff) {
-
-                // }
-                ?>
-
+ 
 
 				<div class="item">
 					<a href="adventure_page.php" class="grid_item_adventure">
@@ -130,9 +125,9 @@ if (count($vendors) <= 0) {
 				</div>
 
 			</div>
-			<!-- /reccomended_aventure -->
-		</section>
-		<!-- /section -->
+		
+		</section> -->
+
 
 		<div class="container   text-center my-2">
 			<div class="main_title_3 d-block">

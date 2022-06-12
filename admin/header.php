@@ -65,7 +65,7 @@
           </a>
         </li> -->
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookings">
-          <a class="nav-link" href="createvendor.php">
+          <a class="nav-link" href="createvendor_s1.php">
             <i class="fa fa-fw fa-calendar-check-o"></i>
             <span class="nav-link-text">Δημιουργία Vendor <span class="badge badge-pill badge-primary">6 New</span></span>
           </a>

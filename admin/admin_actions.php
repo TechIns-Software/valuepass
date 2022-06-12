@@ -12,7 +12,8 @@ try {
         $_POST["action"] == "addlocation" ||
         $_POST["action"] == "addlabels" ||
         $_POST["action"] == "addcategory" ||
-        $_POST["action"] == "createbestoff"
+        $_POST["action"] == "createbestoff" ||
+        $_POST["action"] == "addVendor1"
     ) {
         if ($_POST["action"] == "addlocation") {
             $numberloc = $_POST["numberoflocations"];
@@ -51,10 +52,23 @@ try {
                 $id_lang = $data_label[0];
                 AddCategoryVendorTranslate($conn, ($last_id + 1), $id_lang, $data_label[1]);
             }
+        } else if ($_POST["action"] == "addVendor1") {
+            $data_st1 = $_POST["data"];
+            print_r($data_st1);
+
+            $destId =   $data_st1[0];
+            $priceAdult =   $data_st1[1];
+            $originalPrice =   $data_st1[2];
+            $discount =   $data_st1[3];
+            $priceKid =   $data_st1[4];
+            $priceInfant =   $data_st1[5];
+            $categoryId =   $data_st1[6];
+            $paymentCategoryId =   $data_st1[7];
+
+            AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $priceInfant, $categoryId, $paymentCategoryId);
+
         }
     }
 } catch (Exception $exception) {
     var_dump($exception);
 }
-
-
