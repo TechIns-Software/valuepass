@@ -196,11 +196,11 @@ $cart = unserialize($_SESSION['cart']);
             <div class="col-lg-3 col-md-6 ms-lg-auto">
                 <h5>Useful links</h5>
                 <ul class="links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="blog.html">News &amp; Events</a></li>
-                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#l">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">News &amp; Events</a></li>
+                    <li><a href="#">Contacts</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -292,7 +292,7 @@ $cart = unserialize($_SESSION['cart']);
             </div>
             <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
             <div class="text-center">
-                Don’t have an account? <a href="register.html">Sign up</a>
+                Don’t have an account? <a href="#">Sign up</a>
             </div>
             <div id="forgot_pw">
                 <div class="form-group">

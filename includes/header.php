@@ -62,7 +62,7 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 
 		<?php
 
-		if (strpos($url, 'index.php') !== false) { 	?>
+		if ($home == true) { ?>
 
 			<header class="header menu_fixed">
 				<div id="preloader">
@@ -76,9 +76,10 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 					</a>
 				</div>
 				<ul id="top_menu">
-					<li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
-					<!-- <li><a href="cart-1.html" class="cart-menu-btn " title="Cart"><strong>4</strong></a></li>
-					<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>  -->
+					<!-- <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li> -->
+					<li> </li>
+					 <li><a href="#" class="cart-menu-btn " title="Cart"><strong>1</strong></a></li>
+					<!--<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>  -->
 				</ul>
 				<!-- /top_menu -->
 				<a href="#menu" class="btn_mobile">
@@ -90,7 +91,7 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</a>
 				<nav id="menu" class="main-menu">
 					<ul>
-						<li><span><a href="index.php"><?php echo $menu[1] ?></a></span></li>
+						<li><span><a href="index.php#how"><?php echo $menu[1] ?></a></span></li>
 						<li><span><a href="index.php"><?php echo $menu[6] ?></a></span>
 							<ul>
 
@@ -121,8 +122,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 					</a>
 				</div>
 				<ul id="top_menu">
-					<li><a href="cart-1.php" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
-					<li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
+					<li></li>
+					<li><a href="#" class="cart-menu-btn" title="Cart"><strong>1</strong></a></li>
 					<!-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
 				</ul>
 				<!-- /top_menu -->

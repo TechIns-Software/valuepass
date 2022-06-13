@@ -1,6 +1,7 @@
 <?php
 $title = "Adveture page";
-
+session_start();
+$home = 0;
 include_once 'includes/header.php';
 ?>
 
@@ -8,7 +9,7 @@ include_once 'includes/header.php';
 	<section class="hero_in hotels_detail ">
 		<div class="wrapper ">
 			<div class="container ">
-				<h1 class="fadeInUp"><span></span>Detail page</h1>
+				<h1 class="fadeInUp"><span></span>Mykonos Page</h1>
 			</div>
 			<span class="magnific-gallery">
 				<a href="assets/img/10.jpg" class="btn_photos" title="Photo title" data-effect="mfp-zoom-in">View photos <br>& videos</a>
@@ -73,7 +74,7 @@ include_once 'includes/header.php';
 					<div class="box_grid">
 						<div class="wrapper">
 							<!-- <small>Historic</small> -->
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -429,7 +430,8 @@ include_once 'includes/header.php';
 				<a href="index.php" class="fs-3 fw-bolder">
 				VALUEPASS
 			</a>
-				<p>Mea nibh meis philosophia eu. Duis legimus efficiantur ea sea. Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. Nihil facilisi indoctum an vix, ut delectus expetendis vis.</p>
+			<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations</p>
+				<p>Get inspired for your next trip</p>
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
@@ -530,7 +532,7 @@ include_once 'includes/header.php';
 			</div>
 			<div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
 			<div class="text-center">
-				Don’t have an account? <a href="register.html">Sign up</a>
+				Don’t have an account? <a href="#">Sign up</a>
 			</div>
 			<div id="forgot_pw">
 				<div class="form-group">

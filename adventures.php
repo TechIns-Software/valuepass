@@ -7,6 +7,7 @@ if (!isset($_GET['id'])) {
 }
 include 'initializeExperience.php';
 $title = "Adventures";
+$home = 0;
 include_once 'includes/header.php';
 $idDestination = $_GET['id'];
 $languageId=1;
@@ -162,13 +163,13 @@ if (count($vendors) <= 0) {
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -190,13 +191,13 @@ if (count($vendors) <= 0) {
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -218,13 +219,13 @@ if (count($vendors) <= 0) {
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -246,13 +247,13 @@ if (count($vendors) <= 0) {
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -274,13 +275,13 @@ if (count($vendors) <= 0) {
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -302,13 +303,13 @@ if (count($vendors) <= 0) {
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -330,13 +331,13 @@ if (count($vendors) <= 0) {
 				<div class="col-xl-4 col-lg-6 col-md-6 isotope-item popular">
 					<div class="box_grid">
 						<figure>
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -364,14 +365,14 @@ if (count($vendors) <= 0) {
 					<div class="box_grid">
 						<figure>
 							
-							<a href="tour-detail.html"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="#"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 								
 							</a>
 
 						</figure>
 						<div class="wrapper">
 							<small>Historic</small>
-							<h3><a href="tour-detail.html"><b>Mykonos :</b> Arc Triomphe</a></h3>
+							<h3><a href="#"><b>Mykonos :</b> Arc Triomphe</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
 							<p class="addons">
@@ -472,15 +473,14 @@ if (count($vendors) <= 0) {
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
 				<!-- <p><img src="img/logo.svg" width="150" height="36" alt=""></p> -->
-				
-				
-			<p class="fs-3 fw-bolder valuepasslogo">
-			VALUEPASS
-			</p>
-				<p>Mea nibh meis philosophia eu. Duis legimus efficiantur ea sea. Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. Nihil facilisi indoctum an vix, ut delectus expetendis vis.</p>
+				<a href="index.php" class="fs-3 fw-bolder">
+				VALUEPASS
+			</a>
+				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations</p>
+				<p>Get inspired for your next trip</p>
 				<div class="follow_us">
 					<ul>
-						<li>Follow us</li>
+						<li><?php echo $menu[12] ?> </li>
 						<li><a href="#0"><i class="ti-facebook"></i></a></li>
 						<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
 						<li><a href="#0"><i class="ti-google"></i></a></li>
@@ -490,37 +490,27 @@ if (count($vendors) <= 0) {
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 ms-lg-auto">
-				<h5>Useful links</h5>
+				<h5> <?php echo $menu[8] ?></h5>
 				<ul class="links">
-					<li><a href="about.html">About</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="register.html">Register</a></li>
-					<li><a href="blog.html">News &amp; Events</a></li>
-					<li><a href="contacts.html">Contacts</a></li>
+					<li><a href="#"> <?php echo $menu[1] ?></a></li>
+					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
+					<li><a href="#"><?php echo $menu[7] ?></a></li>
+					<li><a href="#"> <?php echo $menu[5] ?></a></li>
+
 				</ul>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<h5>Contact with Us</h5>
+				<h5><?php echo $menu[9] ?></h5>
 				<ul class="contacts">
 					<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
 					<li><a href="mailto:info@Panagea.com"><i class="ti-email"></i> info@Panagea.com</a></li>
 				</ul>
-				<div id="newsletter">
-					<h6>Newsletter</h6>
-					<div id="message-newsletter"></div>
-					<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-						<div class="form-group">
-							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
-							<input type="submit" value="Submit" id="submit-newsletter">
-						</div>
-					</form>
-				</div>
 			</div>
 		</div>
 		<!--/row-->
 		<hr>
 		<div class="row">
-			<div class="col-lg-6">
+			<!-- <div class="col-lg-6">
 				<ul id="footer-selector">
 					<li>
 						<div class="styled-select" id="lang-selector">
@@ -540,14 +530,14 @@ if (count($vendors) <= 0) {
 							</select>
 						</div>
 					</li>
-					<!-- <li><img src="img/cards_all.svg" alt=""></li> -->
+
 				</ul>
-			</div>
-			<div class="col-lg-6">
+			</div> -->
+			<div class="col-lg-12">
 				<ul id="additional_links">
-					<li><a href="#0">Terms and conditions</a></li>
-					<li><a href="#0">Privacy</a></li>
-					<li><span>© Panagea</span></li>
+					<li><a href="#0"><?php echo $menu[10] ?></a></li>
+					<li><a href="#0"><?php echo $menu[11] ?></a></li>
+					<li><span>© TechIns</span></li>
 				</ul>
 			</div>
 		</div>
