@@ -57,7 +57,7 @@ $vendorid = 0;
 
     <script>
         var numberofActivities
-        const languagesinfos = JSON.parse(`<?php echo json_encode($languages) ?>`);
+        var languagesinfos = JSON.parse(`<?php echo json_encode($languages) ?>`);
 
         document.getElementById('genereteinputs').addEventListener(
             'click', (e) => {
@@ -95,9 +95,9 @@ $vendorid = 0;
                     placeholderdescription = " Περιγραφή "+`${element[1]}`  + "Activity ";
 
                     
-                    rows += "<div class='my-3"+act[index]+" > <h6> "+element[1] +" </h6>";
-                    rows += "<input type='text' class='form-control my-2' id="+inputheadername+"  name= "+inputheadername+" placeholder="+placeholdername+">"
-                    rows += "<input type='text' class='form-control my-2' id="+inputdescriptionname+"  name= "+inputdescriptionname+" placeholder="+placeholderdescription+">"
+                    rows += "<div class='my-3' > <h6> "+element[1] +" </h6>";
+                    rows += "<input type='text' class='form-control my-2 headAcivity' id="+inputheadername+"  name= "+inputheadername+" placeholder="+placeholdername+">"
+                    rows += "<input type='text' class='form-control my-2 descriptionAcivity' id="+inputdescriptionname+"  name= "+inputdescriptionname+" placeholder="+placeholderdescription+">"
                     rows += "</div>"
 
                 });
