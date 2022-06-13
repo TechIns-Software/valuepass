@@ -10,13 +10,14 @@ if (!isset($_SESSION['vendorcreateid']) && $_SESSION['vendorcreatestep'] = 1) {
 }
 
 
+$_SESSION['vendorcreateid'] = 12;
+
 $title = "Δημιουργία Vendor | Step 2";
 include_once "header.php";
 include 'admin_library.php';
 
 
 $languages = getAllLanguages($conn);
-
 
 $vendorid = 0;
 ?>
@@ -43,11 +44,8 @@ $vendorid = 0;
                     <div class=" col-lg-12 col-md-12  my-3" id="geninpt"> </div>
 
 
-
-
-
                 </div>
-                <button> <a href="createvendor_s3.php">Next Step</a> </button>
+                 <a  class="btn btn-danger p-2 my-3" id="createbtn2" href="createvendor_s3.php">Next Step</a> 
             </form>
 
         </div>
@@ -60,11 +58,6 @@ $vendorid = 0;
     <script>
         var numberofActivities
         const languagesinfos = JSON.parse(`<?php echo json_encode($languages) ?>`);
-
-        languagesinfos.forEach(element => {
-            console.log(element)
-
-        });
 
         document.getElementById('genereteinputs').addEventListener(
             'click', (e) => {
@@ -86,23 +79,23 @@ $vendorid = 0;
 
 
         function drawTable() {
-            let headStringForm = '<form id="categoriesform" >';
+            var headStringForm = '<form id="activitiesform" >';
+            var rows=""; 
 
-            let rows 
-
-            let bodyForm
+            var bodyForm="";
             for (var index = 1; index <= numberofActivities; index++) {
 
                 rows += "<div class='my-3'> <h4>Αctivity "+index +" </h4>";
                 languagesinfos.forEach(element => {
 
+
                     inputheadername = "header" + element[0] + "_" + index;
                     placeholdername = " Όνομα "+`${element[1]}` + "Activity " ;
-                    inputdescriptionname = "header" + element[0] + "_" + index;
+                    inputdescriptionname = "description" + element[0] + "_" + index;
                     placeholderdescription = " Περιγραφή "+`${element[1]}`  + "Activity ";
 
                     
-                    rows += "<div class='my-3'> <h6> "+element[1] +" </h6>";
+                    rows += "<div class='my-3"+act[index]+" > <h6> "+element[1] +" </h6>";
                     rows += "<input type='text' class='form-control my-2' id="+inputheadername+"  name= "+inputheadername+" placeholder="+placeholdername+">"
                     rows += "<input type='text' class='form-control my-2' id="+inputdescriptionname+"  name= "+inputdescriptionname+" placeholder="+placeholderdescription+">"
                     rows += "</div>"
@@ -113,14 +106,16 @@ $vendorid = 0;
 
             }
   
-
             bodyForm += rows + '</form>';
-            
+            $("#geninpt").empty();
             $("#geninpt").append(headStringForm + bodyForm);
 
 
         }
     </script>
+
+
+<script src="js/createvendor2.js"></script>
     <?php
 
     include_once "footer.php";

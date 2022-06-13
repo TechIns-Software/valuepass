@@ -85,7 +85,7 @@ function AddLabelBoxTranslate($conn, $idlabelbox, $idlang, $name)
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idlabelbox, $idlang,  $name);
     if ($stmt->execute()) {
-        echo json_encode(["success", "Επιτυχής Προσθήκη Περιοχής"]);
+        echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
     } else {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
     }
@@ -112,7 +112,7 @@ function AddCategoryVendorTranslate($conn, $idCategory, $idlang, $name)
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idCategory, $idlang,  $name);
     if ($stmt->execute()) {
-        echo json_encode(["success", "Επιτυχής Προσθήκη Περιοχής"]);
+        echo json_encode(["success", "Επιτυχής Προσθήκη Κατηγορίας"]);
     } else {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
     }
@@ -180,6 +180,7 @@ function GetAllPaymentInfos($conn)
 
 
 
+// Add Data in the Vendor page 
 function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId) {
 
     $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity` )
@@ -188,7 +189,7 @@ function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount, 
     $stmt->bind_param('idddddii', $destId , $priceAdult , $originalPrice , $discount ,  $priceKid  , $infantPrice, $idCategory, $paymentCategoryId);
 
     if ($stmt->execute()) {
-        echo json_encode(["success", "Επιτυχής Προσθήκη Περιοχής"]);
+        echo json_encode(["success", "Επιτυχής Προσθήκη Vendor"]);
     } else {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
     }
@@ -197,6 +198,36 @@ function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount, 
     // echo "THIS IS THE LAST ID ". $lastid ;
     $_SESSION['vendorcreateid'] =    $lastid ;
     $_SESSION['vendorcreatestep'] =  1 ;
+    $stmt->close();
+
+}
+
+
+// Add one row in AboutActivity
+function addrowAboutActivity($conn, $id)
+{
+    $query = "INSERT INTO `AboutActivity` (`idVendor`) VALUES ($id)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+
+
+// Add Data in the addAboutActivityTranslate table
+function addAboutActivityTranslate($conn , $last_id , $id_lang ,$head,$description) {
+
+    $query = "INSERT INTO `AboutActivityTranslate` (`idAboutActivity`, `idLanguage`, `head`, `description`)  VALUES (?,?,?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iiss', $last_id , $id_lang , $head , $description);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Activity"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+
     $stmt->close();
 
 }

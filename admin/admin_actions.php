@@ -13,7 +13,8 @@ try {
         $_POST["action"] == "addlabels" ||
         $_POST["action"] == "addcategory" ||
         $_POST["action"] == "createbestoff" ||
-        $_POST["action"] == "addVendor1"
+        $_POST["action"] == "addVendor1" ||
+        $_POST["action"] == "addActivities"
     ) {
         if ($_POST["action"] == "addlocation") {
             $numberloc = $_POST["numberoflocations"];
@@ -54,7 +55,7 @@ try {
             }
         } else if ($_POST["action"] == "addVendor1") {
             $data_st1 = $_POST["data"];
-            print_r($data_st1);
+            // print_r($data_st1);
 
             $destId =   $data_st1[0];
             $priceAdult =   $data_st1[1];
@@ -66,6 +67,30 @@ try {
             $paymentCategoryId =   $data_st1[7];
 
             AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $priceInfant, $categoryId, $paymentCategoryId);
+        } else if ($_POST["action"] == "addActivities") {
+
+            $data_activities =   $_POST["data"];
+
+            print_r($data_activities);
+
+            // $last_ids = array();
+
+            // for ($i = 0; $i < count($data_activities) / 2; $i++) {
+            //     addrowAboutActivity($conn, $_SESSION['vendorcreateid']);
+            //     $lastid = $conn->insert_id;
+            //     echo "This is last id  " . $lastid;
+            //     array_push($last_ids, $lastid);
+            // }
+
+            //     $id_lang = substr($data_act[$i][0], -3, 1);
+            //     $head = $data_act[$i][1];
+            //     $description = $data_act[$i][3];
+            //     addAboutActivityTranslate($conn, $lastid, $id_lang, $head, $description);
+
+
+            // $i++
+
+
 
         }
     }
