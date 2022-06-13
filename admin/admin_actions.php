@@ -16,7 +16,8 @@ try {
         $_POST["action"] == "addVendor1" ||
         $_POST["action"] == "addActivities" ||
         $_POST["action"] == "addHighlights" ||
-        $_POST["action"] == "addIncludesService"
+        $_POST["action"] == "addIncludesService" ||
+        $_POST["action"] == "addImportantInfo" 
     ) {
         if ($_POST["action"] == "addlocation") {
             $numberloc = $_POST["numberoflocations"];
@@ -155,6 +156,76 @@ try {
             foreach ($included_services as $included_service) {
                 addVendorIncludedService($conn, $_SESSION['vendorcreateid'], $included_service);
             }
+
+            
+        } else if ($_POST["action"] == "addImportantInfo"){
+
+            $headers =   $_POST["headers"];
+            $descriptions =   $_POST["descriptions"];
+            $numberOfImportants =   $_POST["numberOfImportants"];
+
+            $allLanguages = getAllLanguages($conn);
+
+            $headersfinal = array();
+            foreach ($headers as $key => $value) {
+                $temp = explode(",", $key);
+                $idlang = $temp[0];
+                $idrespondAct = $temp[1];
+                echo   $idlang;
+                echo "--";
+                echo   $idrespondAct;
+                echo "--";
+                array_push($headersfinal, $value);
+            }
+           
+
+            echo "----------------------------------";
+
+            $desckfinal = array();
+            foreach ($descriptions as $key => $value) {
+                $temp = explode(",", $key);
+                $idlang = $temp[0];
+                $idrespondAct = $temp[1];
+                echo   $idlang;
+                echo "--";
+                echo   $idrespondAct;
+                echo "--";
+                array_push($desckfinal, $value);
+            }
+
+          
+
+            $number0flanguages = count($allLanguages);
+            for ($i = 0; $i < count($headersfinal); $i++) {
+                $whichLang = $i %  $number0flanguages;
+                if ($whichLang  == 0) {
+                    addrowImportantHead($conn, $_SESSION['vendorcreateid']);
+                    $lastid = $conn->insert_id;
+                }
+
+                $id_lang = $allLanguages[$whichLang][0];
+                $activityHeader = $headersfinal[$i];
+                $activityDescri = $desckfinal[$i];
+
+                $Descri_arr = explode (",",$activityDescri);
+
+                var_dump($Descri_arr);
+
+
+                echo "------------------";
+                echo count($Descri_arr);
+                addImportantInformationHeadTranslate($conn, $lastid, $id_lang, $activityHeader);
+                
+                for ($k=0; $k < count($Descri_arr) ; $k++) { 
+                    addrowImportantInformationDescription($conn, $lastid);
+                    $last_id2 =  $conn->insert_id;
+
+                    addImportantInformationDescriptionTranslate($conn,$last_id2, $id_lang , $Descri_arr[$k]);
+
+                }
+            }
+
+
         }
     }
 } catch (Exception $exception) {

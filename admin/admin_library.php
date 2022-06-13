@@ -294,3 +294,56 @@ function addVendorIncludedService($conn, $idVendor, $idIncludedService)
 
     $stmt->close();
 }
+
+
+function addrowImportantHead($conn, $id)
+{
+    $query = "INSERT INTO `ImportantInformationHead` (`idVendor`) VALUES ($id)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+// Add Data in the addVendorIncludedService table
+function addImportantInformationHeadTranslate($conn, $idVendor, $idlang, $name)
+{
+
+    $query = "INSERT INTO `ImportantInformationHeadTranslate` (`idImportantInformationHead`,`idLanguage`,`name`)  VALUES (?,?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iis', $idVendor,$idlang, $name);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη VendorIncludedService"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+
+    $stmt->close();
+}
+
+
+function addrowImportantInformationDescription($conn, $id)
+{
+    $query = "INSERT INTO `ImportantInformationDescription` (`idImportantInformationHead`) VALUES ($id)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+// Add Data in the addVendorIncludedService table
+function addImportantInformationDescriptionTranslate($conn, $idImportantInformationDescription , $idLanguage , $name)
+{ 
+    $query = "INSERT INTO `ImportantInformationDescriptionTranslate` (`idImportantInformationDescription`, `idLanguage`, `name`)  VALUES (?,?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iis', $idImportantInformationDescription ,$idLanguage , $name);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη VendorIncludedService"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+
+    $stmt->close();
+}
+

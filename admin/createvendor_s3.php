@@ -131,7 +131,7 @@ $vendorid = 0;
     </script>
 
 
-    <script src="js/createvendors3.js"></script>
+    <script src="js/createvendor3.js"></script>
 
     <?php
 

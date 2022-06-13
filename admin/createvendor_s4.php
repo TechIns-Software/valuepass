@@ -3,14 +3,24 @@ if (!isset($conn)) {
     include '../connection.php';
 }
 
-$_SESSION['step'] = 4;
-$title = "Δημιουργία Vendor | Step " . $_SESSION['step'];
+
+// if (!isset($_SESSION['vendorcreateid']) && $_SESSION['vendorcreatestep'] == 3) {
+//     header("createvendor_s1.php");
+// } else {
+//     $_SESSION['vendorcreatestep']++;
+// }
+
+$_SESSION['vendorcreateid'] = 12;
+
+
+$title = "Δημιουργία Vendor | Step ";
 include_once "header.php";
 include 'admin_library.php';
 
-$destinations = GetAllDestinations($conn);
+$languages = getAllLanguages($conn);
 
-$vendorid=0;
+
+$vendorid = 0;
 ?>
 
 <div class="content-wrapper">
@@ -19,41 +29,89 @@ $vendorid=0;
 
             <div class="col-12 loc_title">
                 <h4>Δημιουργία Vendor </h4>
-                <h5> Step : <?php echo $_SESSION['step'];  ?> </h5>
+                <h5> Step : </h5>
             </div>
-            <form id="createvendor1" class="form border container">
+            <form id="createvendor1" class="form  container-fluid">
                 <div class="row">
 
-              
-                    <div class=" col-lg-4 col-md-12  my-3">
+
+                    <div class=" col-lg-12 col-md-12  my-3">
                         <label for="exampleInputPassword1" class="form-label">Number of Important Informations</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1">
-                        <button class="btn btn-info my-3">Generate</button>
+                        <input type="number" class="form-control" id="numhightlights">
+                        <button class="btn btn-info my-3" id="genereteinputs">Generate</button>
                     </div>
 
-                    <div class=" col-lg-12 col-md-12  my-3 ">
-                        <label for="exampleInputPassword1" class="form-label">Important Information 1 </label>
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Header Gr">
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Description Gr">
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Header GB">
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Description GB">
+                    <div class="col-lg-12 col-md-12  my-3">
+                        <div id="geninpt"></div>
                     </div>
 
-
-                    <div class=" col-lg-12 col-md-12  my-3 ">
-                        <label for="exampleInputPassword1" class="form-label">Important Information  2 </label>
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Header Gr">
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Description Gr">
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Header GB">
-                        <input type="text" class="form-control my-2" id="exampleInputPassword1" placeholder="Description GB">
-                    </div>
+                    
 
                 </div>
-                <button class="btn btn-primary my-3"> Submit </button> 
+    
+                <a class="btn btn-danger p-2 my-3" id="createbtn4" href="createvendor_s5.php">Next Step</a>
             </form>
 
         </div>
     </div>
+
+
+    <script>
+        var numberofActivities
+        var languagesinfos = JSON.parse(`<?php echo json_encode($languages) ?>`);
+
+        document.getElementById('genereteinputs').addEventListener(
+            'click', (e) => {
+                e.preventDefault();
+
+                numberofInfos = $("#numhightlights").val();
+                console.log("im in")
+
+                if (numberofInfos == 0) {
+                    alert("Πρέπει να δημιουργήσεις τουλάχστον ένα Important Information");
+                }
+                drawTable();
+
+            }
+
+        );
+
+
+        function drawTable() {
+            var headStringForm = '<form id="highlightsform container-fluid" >';
+            headStringForm += ' <div class="row">';
+            var rows = "";
+
+            var bodyForm = "";
+            for (var index = 1; index <= numberofInfos; index++) {
+
+                rows += "<div class='col-lg-6 col-md-12 my-3'> <h4> Important Information  : " + index + " </h4>";
+                languagesinfos.forEach(element => {
+
+                    inputheadername = `ImportantHead ${element[0]} - ${index}`;
+                    placeholderheader = `ImportantHead`;
+
+                    inputdescription = `Description${element[0]} - ${index}`;
+                    placeholderdescription = 'Bullet1,Bullet2,Bullet3,Bullet4';
+
+
+                    rows += `<div class='my-3' > <h6> ${element[1]} </h6>`;
+                    rows += `<input type='text' class='form-control my-2 ImportantHead' id=${inputheadername}  name=${inputheadername} placeholder=${placeholderheader}>`;
+                    rows += `<input type='text' class='form-control my-2 ImportantDesc' id=${inputdescription}  name=${inputdescription} placeholder=${placeholderdescription}>`;
+                    rows += "</div>";
+
+                });
+                rows += "</div>"
+            }
+            bodyForm += rows + '</div></form>';
+            $("#geninpt").empty();
+            $("#geninpt").append(headStringForm + bodyForm);
+
+
+        }
+    </script>
+
+    <script src="js/createvendor4.js"></script>
 
 
 
