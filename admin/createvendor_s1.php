@@ -15,7 +15,7 @@ $vendorid = 0;
 $destinations = GetAllDestinations($conn);
 
 $categories = GetAllCategories($conn);
-$paymentsInfos = GetAllPaymentInfos($conn) ;
+$paymentsInfos = GetAllPaymentInfos($conn);
 ?>
 
 <div class="content-wrapper">
@@ -83,8 +83,8 @@ $paymentsInfos = GetAllPaymentInfos($conn) ;
                     <div class="col-lg-4 col-md-12  my-3">
                         <label for="paymentinfo" class="form-label"> Choose Payment Info Activity </label>
                         <select name="paymentinfo" id="paymentinfo" class="form-control">
-    
-                        <?php foreach ($paymentsInfos as $paymentsInfo) {   ?>
+
+                            <?php foreach ($paymentsInfos as $paymentsInfo) {   ?>
                                 <option value="<?php echo $paymentsInfo[1] ?>"><?php echo $paymentsInfo[0] ?></option>
 
                             <?php } ?>

@@ -72,3 +72,27 @@ INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage
 
 INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values ("2",1,"Πλήρωσε Αργότερα","");
 INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values ("2",2,"Pay Later","");
+
+
+
+
+
+INSERT INTO `IncludedService` (`id`) VALUES (1);
+INSERT INTO `IncludedService` (`id`) VALUES (2);
+INSERT INTO `IncludedService` (`id`) VALUES (3);
+INSERT INTO `IncludedService` (`id`) VALUES (4);
+
+
+insert into `IncludedServiceTranslate` (idIncludedService, idLanguage, name) VALUES (1,1,"Παραλαβή και παράδοση");
+insert into `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (1,2,"Pickup and drop-off");
+ 
+insert into `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (2,1,"Είσοδος ");
+insert into `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (2,2,"Entrance Fee");
+
+insert into `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (3,1,"Τοπική Βοήθεια");
+insert into `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (3,2," Local Assistant");
+
+insert into `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (4,1," Προσωπικά έξοδα");
+insert into `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (4,2,"Personal Expenses");
+
+ 

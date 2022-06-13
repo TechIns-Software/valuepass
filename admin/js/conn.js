@@ -1,4 +1,4 @@
-function getAjax(data, callbackFnc, relativePosition='', url='admin_actions.php') {
+function getAjax(data, callbackFnc, relativePosition = '', url = 'admin_actions.php') {
     $.ajax({
         type: "POST",
         url: relativePosition + url,
@@ -11,5 +11,5 @@ function getAjax(data, callbackFnc, relativePosition='', url='admin_actions.php'
         //     console.log(cc);
         // }
     });
- 
+
 }

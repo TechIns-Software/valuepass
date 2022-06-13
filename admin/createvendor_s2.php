@@ -3,7 +3,7 @@ if (!isset($conn)) {
     include '../connection.php';
 }
 
-if (!isset($_SESSION['vendorcreateid']) && $_SESSION['vendorcreatestep'] = 1) {
+if (!isset($_SESSION['vendorcreateid']) && $_SESSION['vendorcreatestep'] == 1) {
     header("createvendor_s1.php");
 } else {
     $_SESSION['vendorcreatestep']++;
@@ -33,7 +33,6 @@ $vendorid = 0;
             <form id="createvendor1" class="form border container">
                 <div class="row">
 
-
                     <div class=" col-lg-12 col-md-12  my-3">
                         <label for="exampleInputPassword1" class="form-label">Number of About Activity headers</label>
                         <input type="number" class="form-control" id="numactivities">
@@ -45,7 +44,7 @@ $vendorid = 0;
 
 
                 </div>
-                 <a  class="btn btn-danger p-2 my-3" id="createbtn2" href="createvendor_s3.php">Next Step</a> 
+                <a class="btn btn-danger p-2 my-3" id="createbtn2" href="createvendor_s3.php">Next Step</a>
             </form>
 
         </div>
@@ -53,7 +52,7 @@ $vendorid = 0;
 
 
 
-    <!-- <script src="js/createvendor2.js"></script> -->
+
 
     <script>
         var numberofActivities
@@ -80,24 +79,24 @@ $vendorid = 0;
 
         function drawTable() {
             var headStringForm = '<form id="activitiesform" >';
-            var rows=""; 
+            var rows = "";
 
-            var bodyForm="";
+            var bodyForm = "";
             for (var index = 1; index <= numberofActivities; index++) {
 
-                rows += "<div class='my-3'> <h4>Αctivity "+index +" </h4>";
+                rows += "<div class='my-3'> <h4>Αctivity " + index + " </h4>";
                 languagesinfos.forEach(element => {
 
 
                     inputheadername = "header" + element[0] + "_" + index;
-                    placeholdername = " Όνομα "+`${element[1]}` + "Activity " ;
+                    placeholdername = " Όνομα " + `${element[1]}` + "Activity ";
                     inputdescriptionname = "description" + element[0] + "_" + index;
-                    placeholderdescription = " Περιγραφή "+`${element[1]}`  + "Activity ";
+                    placeholderdescription = " Περιγραφή " + `${element[1]}` + "Activity ";
 
-                    
-                    rows += "<div class='my-3' > <h6> "+element[1] +" </h6>";
-                    rows += "<input type='text' class='form-control my-2 headAcivity' id="+inputheadername+"  name= "+inputheadername+" placeholder="+placeholdername+">"
-                    rows += "<input type='text' class='form-control my-2 descriptionAcivity' id="+inputdescriptionname+"  name= "+inputdescriptionname+" placeholder="+placeholderdescription+">"
+
+                    rows += "<div class='my-3' > <h6> " + element[1] + " </h6>";
+                    rows += "<input type='text' class='form-control my-2 headAcivity' id=" + inputheadername + "  name= " + inputheadername + " placeholder=" + placeholdername + ">"
+                    rows += "<input type='text' class='form-control my-2 descriptionAcivity' id=" + inputdescriptionname + "  name= " + inputdescriptionname + " placeholder=" + placeholderdescription + ">"
                     rows += "</div>"
 
                 });
@@ -105,7 +104,7 @@ $vendorid = 0;
 
 
             }
-  
+
             bodyForm += rows + '</form>';
             $("#geninpt").empty();
             $("#geninpt").append(headStringForm + bodyForm);
@@ -115,7 +114,7 @@ $vendorid = 0;
     </script>
 
 
-<script src="js/createvendor2.js"></script>
+    <script src="js/createvendor2.js"></script>
     <?php
 
     include_once "footer.php";

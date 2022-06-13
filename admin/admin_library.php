@@ -181,12 +181,13 @@ function GetAllPaymentInfos($conn)
 
 
 // Add Data in the Vendor page 
-function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId) {
+function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId)
+{
 
     $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity` )
      VALUES (?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('idddddii', $destId , $priceAdult , $originalPrice , $discount ,  $priceKid  , $infantPrice, $idCategory, $paymentCategoryId);
+    $stmt->bind_param('idddddii', $destId, $priceAdult, $originalPrice, $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId);
 
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη Vendor"]);
@@ -196,10 +197,9 @@ function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount, 
 
     $lastid = $conn->insert_id;
     // echo "THIS IS THE LAST ID ". $lastid ;
-    $_SESSION['vendorcreateid'] =    $lastid ;
-    $_SESSION['vendorcreatestep'] =  1 ;
+    $_SESSION['vendorcreateid'] =    $lastid;
+    $_SESSION['vendorcreatestep'] =  1;
     $stmt->close();
-
 }
 
 
@@ -216,11 +216,12 @@ function addrowAboutActivity($conn, $id)
 
 
 // Add Data in the addAboutActivityTranslate table
-function addAboutActivityTranslate($conn , $last_id , $id_lang ,$head,$description) {
+function addAboutActivityTranslate($conn, $last_id, $id_lang, $head, $description)
+{
 
     $query = "INSERT INTO `AboutActivityTranslate` (`idAboutActivity`, `idLanguage`, `head`, `description`)  VALUES (?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iiss', $last_id , $id_lang , $head , $description);
+    $stmt->bind_param('iiss', $last_id, $id_lang, $head, $description);
 
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη Activity"]);
@@ -229,5 +230,67 @@ function addAboutActivityTranslate($conn , $last_id , $id_lang ,$head,$descripti
     }
 
     $stmt->close();
+}
 
+
+// Add one row in Highlight
+function addrowHighlight($conn, $id)
+{
+    $query = "INSERT INTO `Highlight` (`idVendor`) VALUES ($id)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+
+// Add Data in the HighlightTranslate table
+function addHighlightTranslate($conn, $last_id, $id_lang, $name)
+{
+
+    $query = "INSERT INTO `HighlightTranslate` (`idHighlight`, `idLanguage`, `name`)  VALUES (?,?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iis', $last_id, $id_lang, $name);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Highlight"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+
+    $stmt->close();
+}
+
+function getAllIncludeServices($conn)
+{
+
+    $query = "select ins.id , inst.name from IncludedService as ins ,IncludedServiceTranslate as inst where ins.id = inst.idIncludedService  group by inst.idIncludedService ";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $id = $name =  '';
+    $stmt->bind_result($id, $name);
+    $includedServices = [];
+    while ($stmt->fetch()) {
+        array_push($includedServices, [$id, $name]);
+    }
+    $stmt->close();
+    return $includedServices;
+}
+
+
+// Add Data in the addVendorIncludedService table
+function addVendorIncludedService($conn, $idVendor, $idIncludedService)
+{
+
+    $query = "INSERT INTO `VendorIncludedService` (`idVendor`,`idIncludedService`)  VALUES (?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ii', $idVendor, $idIncludedService);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη VendorIncludedService"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+
+    $stmt->close();
 }

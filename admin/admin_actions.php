@@ -14,7 +14,9 @@ try {
         $_POST["action"] == "addcategory" ||
         $_POST["action"] == "createbestoff" ||
         $_POST["action"] == "addVendor1" ||
-        $_POST["action"] == "addActivities"
+        $_POST["action"] == "addActivities" ||
+        $_POST["action"] == "addHighlights" ||
+        $_POST["action"] == "addIncludesService"
     ) {
         if ($_POST["action"] == "addlocation") {
             $numberloc = $_POST["numberoflocations"];
@@ -69,29 +71,90 @@ try {
             AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $priceInfant, $categoryId, $paymentCategoryId);
         } else if ($_POST["action"] == "addActivities") {
 
-            $data_activities =   $_POST["data"];
+            $headers =   $_POST["headers"];
+            $descriptions =   $_POST["description"];
+            $numberofact =   $_POST["numberofact"];
 
-            print_r($data_activities);
+            $allLanguages = getAllLanguages($conn);
 
-            // $last_ids = array();
+            $headersfinal = array();
+            foreach ($headers as $key => $value) {
+                $temp = explode(",", $key);
+                $idlang = $temp[0];
+                $idrespondAct = $temp[1];
+                echo   $idlang;
+                echo "--";
+                echo   $idrespondAct;
+                echo "--";
+                array_push($headersfinal, $value);
+            }
 
-            // for ($i = 0; $i < count($data_activities) / 2; $i++) {
-            //     addrowAboutActivity($conn, $_SESSION['vendorcreateid']);
-            //     $lastid = $conn->insert_id;
-            //     echo "This is last id  " . $lastid;
-            //     array_push($last_ids, $lastid);
-            // }
+            echo "----------------------------------";
 
-            //     $id_lang = substr($data_act[$i][0], -3, 1);
-            //     $head = $data_act[$i][1];
-            //     $description = $data_act[$i][3];
-            //     addAboutActivityTranslate($conn, $lastid, $id_lang, $head, $description);
+            $desckfinal = array();
+            foreach ($descriptions as $key => $value) {
+                $temp = explode(",", $key);
+                $idlang = $temp[0];
+                $idrespondAct = $temp[1];
+                echo   $idlang;
+                echo "--";
+                echo   $idrespondAct;
+                echo "--";
+                array_push($desckfinal, $value);
+            }
+
+            $number0flanguages = count($allLanguages);
+            for ($i = 0; $i < count($headersfinal); $i++) {
+                $whichLang = $i %  $number0flanguages;
+                if ($whichLang  == 0) {
+                    addrowAboutActivity($conn, $_SESSION['vendorcreateid']);
+                    $lastid = $conn->insert_id;
+                }
+                $id_lang = $allLanguages[$whichLang][0];
+                $activityHeader = $headersfinal[$i];
+                $activityDescri = $desckfinal[$i];
+
+                addAboutActivityTranslate($conn, $lastid, $id_lang, $activityHeader, $activityDescri);
+            }
+        } else if ($_POST["action"] == "addHighlights") {
+
+            $headers = $_POST["headers"];
+            $numhightlights = $_POST["numhightlights"];
+
+            $allLanguages = getAllLanguages($conn);
 
 
-            // $i++
+            $headersfinal = array();
+            foreach ($headers as $key => $value) {
+                $temp = explode(",", $key);
+                $idlang = $temp[0];
+                $idrespondAct = $temp[1];
+                echo   $idlang;
+                echo "--";
+                echo   $idrespondAct;
+                echo "--";
+                array_push($headersfinal, $value);
+            }
+            print_r($headersfinal);
 
+            $number0flanguages = count($allLanguages);
+            for ($i = 0; $i < count($headersfinal); $i++) {
+                $whichLang = $i %  $number0flanguages;
+                if ($whichLang  == 0) {
+                    addrowHighlight($conn, $_SESSION['vendorcreateid']);
+                    $lastid = $conn->insert_id;
+                }
+                $id_lang = $allLanguages[$whichLang][0];
+                $activityHeader = $headersfinal[$i];
 
+                addHighlightTranslate($conn, $lastid, $id_lang, $activityHeader);
+            }
+        } else if ($_POST["action"] == "addIncludesService") {
+            $included_services =  $_POST["selectedincludes"];
 
+            foreach ($included_services as $included_service) {
+                addVendorIncludedService($conn, $_SESSION['vendorcreateid'], $included_service);
+            }
         }
     }
 } catch (Exception $exception) {
