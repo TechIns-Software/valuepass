@@ -187,26 +187,26 @@ CREATE TABLE AboutActivityTranslate (
     description varchar (200)
 )ENGINE=InnoDB;
 CREATE TABLE ImportantInformationHead (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor(id)
 )ENGINE=InnoDB;
 CREATE TABLE ImportantInformationDescription (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idImportantInformationHead int NOT NULL,
     FOREIGN KEY (idImportantInformationHead) REFERENCES ImportantInformationHead(id)
 )ENGINE=InnoDB;
 CREATE TABLE ImportantInformationHeadTranslate (
-    idImportantInformationHead int NOT NULL,
+    idImportantInformationHead int NOT NULL AUTO_INCREMENT,
     FOREIGN KEY (idImportantInformationHead) REFERENCES ImportantInformationHead(id),
     idLanguage int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language(id),
     name varchar(80)
 )ENGINE=InnoDB;
 CREATE TABLE ImportantInformationDescriptionTranslate (
-    idImportantInformationDescription int NOT NULL,
+    idImportantInformationDescription int NOT NULL AUTO_INCREMENT,
     FOREIGN KEY (idImportantInformationDescription) REFERENCES ImportantInformationDescription(id),
     idLanguage int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language(id),
