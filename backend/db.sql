@@ -253,6 +253,12 @@ CREATE TABLE VendorVoucher (
     dateVoucher date NOT NULL
 
 )ENGINE=InnoDB;
+
+ALTER TABLE VendorVoucher ADD COLUMN reserved int DEFAULT 0;
+CREATE TABLE VendorVoucherBook (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+)ENGINE=InnoDB;
 -- /////////////////////////////////////////////////////////////////
 -- For our DB
 
@@ -297,7 +303,7 @@ CREATE TABLE Voucher (
     extraMoney int
 
 )ENGINE=InnoDB;
-
+-- TODO: price and extra money needed?extra money where to go?
 
 
 CREATE TABLE Menu (
