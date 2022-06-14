@@ -68,11 +68,10 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				<div id="preloader">
 					<div data-loader="circle-side"></div>
 				</div><!-- /Page Preload -->
-				<div id="logo">
-					<a href="index.php" class="fs-3 fw-bolder">
-						<!-- <img src="img/logo.svg" width="150" height="36" alt="" class="logo_normal">
-				<img src="img/logo_sticky.svg" width="150" height="36" alt="" class="logo_sticky"> -->
-						VALUEPASS
+				<div id="logo" >
+					<a href="index.php" >
+						<img src="assets/img/valuepass3logo.png" width="80" height="80" alt="" class="logo_normal">
+						<img src="assets/img/valuepass3logo.png" width="60" height="60" alt="" class="logo_sticky"> 
 					</a>
 				</div>
 				<ul id="top_menu">
@@ -116,9 +115,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</div><!-- /Page Preload -->
 				<div id="logo">
 					<a href="index.php" class="fs-3 fw-bolder">
-						<!-- <img src="img/logo.svg" width="150" height="36" alt="" class="logo_normal">
-				<img src="img/logo_sticky.svg" width="150" height="36" alt="" class="logo_sticky"> -->
-						VALUEPASS
+						<img src="assets/img/valuepass3logo.png" width="60" height="60" alt="" class="logo_normal">
+						<img src="assets/img/valuepass3logo.png" width="60" height="60" alt="" class="logo_sticky"> 
 					</a>
 				</div>
 				<ul id="top_menu">
