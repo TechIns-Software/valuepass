@@ -3,14 +3,13 @@ if (!isset($conn)) {
     include '../connection.php';
 }
 
-if (!isset($_SESSION['vendorcreateid']) && $_SESSION['vendorcreatestep'] == 1) {
-    header("createvendor_s1.php");
-} else {
-    $_SESSION['vendorcreatestep']++;
-}
+// if (!isset($_SESSION['vendorcreateid']) && $_SESSION['vendorcreatestep'] == 1) {
+//     header("createvendor_s1.php");
+// } else {
+//     $_SESSION['vendorcreatestep']++;
+// }
 
 
-$_SESSION['vendorcreateid'] = 12;
 
 $title = "Δημιουργία Vendor | Step 2";
 include_once "header.php";
@@ -34,9 +33,9 @@ $vendorid = 0;
                 <div class="row">
 
                     <div class=" col-lg-12 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Number of About Activity headers</label>
-                        <input type="number" class="form-control" id="numactivities">
-                        <button class="btn btn-info my-3" id="genereteinputs">Generate</button>
+                        <label for="exampleInputPassword1" class="form-label">Αριθμός Πληροφοριων Δραστηριότηας (About Activity bullets)</label>
+                        <input type="number" class="form-control" id="numactivities" placeholder="Εισάγετε των αριθμό των δραστηριοτήτων">
+                        <button class="btn btn-info my-3" id="genereteinputs">Δημιουργία</button>
                     </div>
 
 
@@ -44,7 +43,7 @@ $vendorid = 0;
 
 
                 </div>
-                <a class="btn btn-danger p-2 my-3" id="createbtn2" href="createvendor_s3.php">Next Step</a>
+                <a class="btn btn-danger p-2 my-3" id="createbtn2" href="createvendor_s3.php">Επόμενο Βήμα</a>
             </form>
 
         </div>

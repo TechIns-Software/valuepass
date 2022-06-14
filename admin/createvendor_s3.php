@@ -11,11 +11,11 @@ if (!isset($conn)) {
 // }
 
 
-$_SESSION['vendorcreateid'] = 12;
 
 
-$_SESSION['step'] = 3;
-$title = "Δημιουργία Vendor | Step " . $_SESSION['step'];
+
+
+$title = "Δημιουργία Vendor | Step 3 ";
 include_once "header.php";
 include 'admin_library.php';
 
@@ -32,16 +32,16 @@ $vendorid = 0;
 
             <div class="col-12 loc_title">
                 <h4>Δημιουργία Vendor </h4>
-                <h5> Step : <?php echo $_SESSION['step'];  ?> </h5>
+                <h5> Step : 3 </h5>
             </div>
             <form id="createvendor1" class="form border container">
                 <div class="row">
 
 
                     <div class=" col-lg-12 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Number of HightLights </label>
+                        <label for="exampleInputPassword1" class="form-label">Αριθμός HightLights Δραστηριότητας </label>
                         <input type="number" class="form-control" id="numhightlights">
-                        <button class="btn btn-info my-3" id="genereteinputs">Generate</button>
+                        <button class="btn btn-info my-3" id="genereteinputs">Δημιουργία</button>
                     </div>
 
 
@@ -49,7 +49,7 @@ $vendorid = 0;
 
 
                     <div class=" col-lg-12 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Check what Includes in this Exprience</label>
+                        <label for="exampleInputPassword1" class="form-label">Επιλέξτε τι περιλαμβάνει το Expreinece <small> (Μπορείτε περισσότερα απο ένα)</small>  </label>
 
 
                         <?php
@@ -70,7 +70,7 @@ $vendorid = 0;
 
 
                 </div>
-                <a class="btn btn-danger p-2 my-3" id="createbtn3" href="createvendor_s4.php">Next Step</a>
+                <a class="btn btn-danger p-2 my-3" id="createbtn3" href="createvendor_s4.php">Επόμενο Βήμα</a>
             </form>
 
         </div>

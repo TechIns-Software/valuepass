@@ -3,9 +3,9 @@ if (!isset($conn)) {
     include '../connection.php';
 }
 
-$_SESSION['step'] = 1;
 
-$title = "Δημιουργία Vendor | Step " . $_SESSION['step'];
+
+$title = "Δημιουργία Vendor | Step  1" ;
 
 include_once "header.php";
 include 'admin_library.php';
@@ -24,12 +24,12 @@ $paymentsInfos = GetAllPaymentInfos($conn);
 
             <div class="col-12 loc_title">
                 <h4>Δημιουργία Vendor </h4>
-                <h5> Step : <?php echo $_SESSION['step'];  ?> </h5>
+                <h5> Step : 1 </h5>
             </div>
             <form id="createvendor1" class="form border container">
                 <div class="row">
                     <div class="col-lg-4 col-md-12  my-3">
-                        <label for="location" class="form-label"> Choose Location - Island</label>
+                        <label for="location" class="form-label">Διαλέξτε Τοποθεσία - Νησί </label>
                         <select name="location" id="location" class="form-control">
                             <?php foreach ($destinations as $destination) {   ?>
                                 <option value="<?php echo $destination[1] ?>"><?php echo $destination[0] ?></option>
@@ -39,37 +39,37 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                     </div>
 
                     <div class=" col-lg-4 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Price Adult</label>
+                        <label for="exampleInputPassword1" class="form-label">Τιμή  Eνήλικα</label>
                         <input type="number" name="priceAdult" class="form-control" id="priceadult">
                     </div>
 
 
                     <div class=" col-lg-4 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Original Price</label>
+                        <label for="exampleInputPassword1" class="form-label">Κανονική  Τιμή</label>
                         <input type="number" name="originalPrice" class="form-control" id="originalPrice">
                     </div>
 
                     <div class=" col-lg-4 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Discount </label>
+                        <label for="exampleInputPassword1" class="form-label">Εκπτωση (%) </label>
                         <input type="number" name="discount" class="form-control" id="discount">
                     </div>
 
 
                     <div class=" col-lg-4 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Price Kid</label>
+                        <label for="exampleInputPassword1" class="form-label">Τιμή Παιδίου </label>
                         <input type="number" name="priceKid" class="form-control" id="priceKid">
                     </div>
 
 
                     <div class=" col-lg-4 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Infant Price</label>
+                        <label for="exampleInputPassword1" class="form-label">Τιμή μωρού</label>
                         <input type="number" name="priceInfant" class="form-control" id="priceInfant">
                     </div>
 
 
 
                     <div class="col-lg-4 col-md-12  my-3">
-                        <label for="category" class="form-label"> Choose Category </label>
+                        <label for="category" class="form-label"> Επιλογή Κατηγορίας</label>
                         <select name="category" id="category" class="form-control">
                             <?php foreach ($categories as $categorie) {   ?>
                                 <option value="<?php echo $categorie[1] ?>"><?php echo $categorie[0] ?></option>
@@ -81,7 +81,7 @@ $paymentsInfos = GetAllPaymentInfos($conn);
 
 
                     <div class="col-lg-4 col-md-12  my-3">
-                        <label for="paymentinfo" class="form-label"> Choose Payment Info Activity </label>
+                        <label for="paymentinfo" class="form-label"> Επιλογή Πληρωμής   </label>
                         <select name="paymentinfo" id="paymentinfo" class="form-control">
 
                             <?php foreach ($paymentsInfos as $paymentsInfo) {   ?>
@@ -92,7 +92,7 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                     </div>
 
                 </div>
-                <a class="btn btn-danger p-2 my-3" id="createbtn1" href="createvendor_s2.php?id=<?php echo $vendorid; ?>">Next Step</a>
+                <a class="btn btn-danger p-2 my-3" id="createbtn1" href="createvendor_s2.php?id=<?php echo $vendorid; ?>">Επόμενο Βήμα</a>
             </form>
 
         </div>

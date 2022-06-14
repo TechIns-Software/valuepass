@@ -84,8 +84,7 @@ include_once 'includes/header.php';
 			<span><em></em></span>
 			<h2>How it works</h2>
 			<p>Spend less money doing it more</p>
-			<p><?php $url.= $_SERVER['REQUEST_URI']; 
-			echo $url    ?></p>
+
 		</div>
 		<div class="row">
 			<div class="col-lg-4 col-md-6">

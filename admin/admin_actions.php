@@ -17,7 +17,11 @@ try {
         $_POST["action"] == "addActivities" ||
         $_POST["action"] == "addHighlights" ||
         $_POST["action"] == "addIncludesService" ||
-        $_POST["action"] == "addImportantInfo" 
+        $_POST["action"] == "addImportantInfo" ||
+        $_POST["action"] == "addVendorInfos" ||
+        $_POST["action"] == "addRatedCategory" ||
+        $_POST["action"] == "addRatedCategoryValues"
+
     ) {
         if ($_POST["action"] == "addlocation") {
             $numberloc = $_POST["numberoflocations"];
@@ -156,9 +160,7 @@ try {
             foreach ($included_services as $included_service) {
                 addVendorIncludedService($conn, $_SESSION['vendorcreateid'], $included_service);
             }
-
-            
-        } else if ($_POST["action"] == "addImportantInfo"){
+        } else if ($_POST["action"] == "addImportantInfo") {
 
             $headers =   $_POST["headers"];
             $descriptions =   $_POST["descriptions"];
@@ -171,13 +173,13 @@ try {
                 $temp = explode(",", $key);
                 $idlang = $temp[0];
                 $idrespondAct = $temp[1];
-                echo   $idlang;
-                echo "--";
-                echo   $idrespondAct;
-                echo "--";
+                // echo   $idlang;
+                // echo "--";
+                // echo   $idrespondAct;
+                // echo "--";
                 array_push($headersfinal, $value);
             }
-           
+
 
             echo "----------------------------------";
 
@@ -186,46 +188,80 @@ try {
                 $temp = explode(",", $key);
                 $idlang = $temp[0];
                 $idrespondAct = $temp[1];
-                echo   $idlang;
-                echo "--";
-                echo   $idrespondAct;
-                echo "--";
+                // echo   $idlang;
+                // echo "--";
+                // echo   $idrespondAct;
+                // echo "--";
                 array_push($desckfinal, $value);
             }
 
-          
+
 
             $number0flanguages = count($allLanguages);
             for ($i = 0; $i < count($headersfinal); $i++) {
                 $whichLang = $i %  $number0flanguages;
                 if ($whichLang  == 0) {
-                    addrowImportantHead($conn, $_SESSION['vendorcreateid']);
-                    $lastid = $conn->insert_id;
+                    $table = 'ImportantInformationHead';
+                    $last_id = lastInstertedid($conn, $table);
+                    $last_id++;
+                    addrowImportantHead($conn, $last_id + 1, $_SESSION['vendorcreateid']);
+
+                    $lastid = lastInstertedid($conn, $table);
+
+                    echo "this is whichLang --> : " . $whichLang;
+                    echo "this is lastid --> : " . $last_id;
                 }
+
 
                 $id_lang = $allLanguages[$whichLang][0];
                 $activityHeader = $headersfinal[$i];
                 $activityDescri = $desckfinal[$i];
 
-                $Descri_arr = explode (",",$activityDescri);
+                $Descri_arr = explode(",", $activityDescri);
 
-                var_dump($Descri_arr);
-
-
-                echo "------------------";
-                echo count($Descri_arr);
                 addImportantInformationHeadTranslate($conn, $lastid, $id_lang, $activityHeader);
-                
-                for ($k=0; $k < count($Descri_arr) ; $k++) { 
-                    addrowImportantInformationDescription($conn, $lastid);
-                    $last_id2 =  $conn->insert_id;
 
-                    addImportantInformationDescriptionTranslate($conn,$last_id2, $id_lang , $Descri_arr[$k]);
+                if ($whichLang  == 0) {
 
+                    $table2 = 'ImportantInformationDescription';
+                    $last = lastInstertedid($conn, $table2);
+                    addrowImportantInformationDescription($conn, ($last + 1), $lastid);
+                }
+
+                for ($k = 0; $k < count($Descri_arr); $k++) {
+                    $last_id2 = lastInstertedid($conn, $table2);
+                    addImportantInformationDescriptionTranslate($conn, $last_id2, $id_lang, $Descri_arr[$k]);
                 }
             }
+        } else  if ($_POST["action"] == "addVendorInfos") {
+            $vendorInfos = $_POST['data'];
+
+            foreach ($vendorInfos as $vendorInfo) {
+                $id_loc = substr($vendorInfo[0], -1);
+                AddVendorTranslate($conn, $_SESSION['vendorcreateid'], $id_loc,  $vendorInfo[1], $vendorInfo[2], $vendorInfo[3], $vendorInfo[4]);
+            }
+        } else  if ($_POST["action"] == "addRatedCategory") {
+
+            $data_labels = $_POST["data"];
+
+            // print_r($data_labels);
+            $table = 'RatedCategory';
+            $last_id = lastInstertedid($conn, $table);
+            addrowRatedCategory($conn, ($last_id + 1));
+
+            foreach ($data_labels as $data_label) {
+                $id_lang = $data_label[0];
+                AddRatedCategoryTranslate($conn, ($last_id + 1), $id_lang, $data_label[1]);
+            }
+        } else  if ($_POST["action"] == "addRatedCategoryValues") {
+
+            $data_r_categories = $_POST["ratedcategories"];
 
 
+            foreach ($data_r_categories as $data_r_category) {
+                $id_cat = $data_r_category[0];
+                AddRated($conn, $id_cat, $_SESSION['vendorcreateid'] ,$data_r_category[1]);
+            }
         }
     }
 } catch (Exception $exception) {

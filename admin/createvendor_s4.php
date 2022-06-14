@@ -9,11 +9,11 @@ if (!isset($conn)) {
 // } else {
 //     $_SESSION['vendorcreatestep']++;
 // }
+session_start();
 
-$_SESSION['vendorcreateid'] = 12;
 
 
-$title = "Δημιουργία Vendor | Step ";
+$title = "Δημιουργία Vendor | Step  4";
 include_once "header.php";
 include 'admin_library.php';
 
@@ -29,27 +29,25 @@ $vendorid = 0;
 
             <div class="col-12 loc_title">
                 <h4>Δημιουργία Vendor </h4>
-                <h5> Step : </h5>
+                <h5> Step : 4</h5>
             </div>
             <form id="createvendor1" class="form  container-fluid">
                 <div class="row">
 
 
                     <div class=" col-lg-12 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Number of Important Informations</label>
+                        <label for="exampleInputPassword1" class="form-label"> Αριθμός Σημαντικών Πληροφοριών ( Important Informations )</label>
                         <input type="number" class="form-control" id="numhightlights">
-                        <button class="btn btn-info my-3" id="genereteinputs">Generate</button>
+                        <button class="btn btn-info my-3" id="genereteinputs">Δημιουργία </button>
                     </div>
 
                     <div class="col-lg-12 col-md-12  my-3">
                         <div id="geninpt"></div>
                     </div>
 
-                    
-
                 </div>
     
-                <a class="btn btn-danger p-2 my-3" id="createbtn4" href="createvendor_s5.php">Next Step</a>
+                <a class="btn btn-danger p-2 my-3" id="createbtn4" href="createvendor_s5.php">Επόμενο Βήμα</a>
             </form>
 
         </div>
@@ -71,9 +69,7 @@ $vendorid = 0;
                     alert("Πρέπει να δημιουργήσεις τουλάχστον ένα Important Information");
                 }
                 drawTable();
-
             }
-
         );
 
 

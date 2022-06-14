@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Ansonika">
   <title><?php echo $title ?></title>
-	
+
   <!-- Favicons-->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
@@ -18,9 +17,9 @@
   <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
 
   <!-- GOOGLE WEB FONT -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Bootstrap core CSS-->
   <link href="..\assets\css\bootstrap4.min.css" rel="stylesheet">
   <!-- Main styles -->
@@ -33,19 +32,14 @@
   <!-- for flags  -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 
-
-
-  <link href="" rel="stylesheet">
-
-	
 </head>
 
 <body class="fixed-nav sticky-footer" id="page-top">
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">
-        <!-- <img src="img/logo.png" alt="" width="150" height="36"> -->
-				VALUEPASS
+      <!-- <img src="img/logo.png" alt="" width="150" height="36"> -->
+      VALUEPASS ADMIN
     </a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -58,48 +52,54 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-		<!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
           <a class="nav-link" href="messages.html">
             <i class="fa fa-fw fa-envelope-open"></i>
             <span class="nav-link-text">Messages</span>
           </a>
         </li> -->
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookings">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookings">
           <a class="nav-link" href="createvendor_s1.php">
             <i class="fa fa-fw fa-calendar-check-o"></i>
             <span class="nav-link-text">Δημιουργία Vendor <span class="badge badge-pill badge-primary">6 New</span></span>
           </a>
         </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings">
             <i class="fa fa-fw fa-list"></i>
             <span class="nav-link-text">Προσθήκη</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMylistings">
             <li>
-              <a href="add_location.php">Τοποθεσίας-Νησιού 
-                  <!-- <span class="badge badge-pill badge-primary">6</span> -->
-                </a>
+              <a href="add_location.php">Τοποθεσίας-Νησιού
+                <!-- <span class="badge badge-pill badge-primary">6</span> -->
+              </a>
             </li>
-			<li>
-              <a href="add_labels.php">Labels (5 hours / small group. etc) 
-                  <!-- <span class="badge badge-pill badge-success">6</span> -->
-                </a>
+            <li>
+              <a href="add_labels.php">Labels (5 hours / small group. etc)
+                <!-- <span class="badge badge-pill badge-success">6</span> -->
+              </a>
             </li>
-			<li>
-              <a href="add_category.php">Category 
-                  <!-- <span class="badge badge-pill badge-danger">6</span> -->
-                </a>
+            <li>
+              <a href="add_category.php">Category
+                <!-- <span class="badge badge-pill badge-danger">6</span> -->
+              </a>
+            </li>
+
+            <li>
+              <a href="add_ratedCategory.php">Rated Category
+                <!-- <span class="badge badge-pill badge-danger">6</span> -->
+              </a>
             </li>
           </ul>
         </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">
           <a class="nav-link" href="bestoffs.php">
             <i class="fa fa-fw fa-star"></i>
             <span class="nav-link-text">Best offs</span>
           </a>
         </li>
-	<!-- 	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
+        <!-- 	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
           <a class="nav-link" href="bookmarks.html">
             <i class="fa fa-fw fa-heart"></i>
             <span class="nav-link-text">Highlights</span>

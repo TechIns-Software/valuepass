@@ -296,9 +296,9 @@ function addVendorIncludedService($conn, $idVendor, $idIncludedService)
 }
 
 
-function addrowImportantHead($conn, $id)
+function addrowImportantHead($conn, $id, $idvendor)
 {
-    $query = "INSERT INTO `ImportantInformationHead` (`idVendor`) VALUES ($id)";
+    $query = "INSERT INTO `ImportantInformationHead` (`id`,`idVendor`) VALUES ($id,$idvendor)";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
@@ -306,12 +306,12 @@ function addrowImportantHead($conn, $id)
 
 
 // Add Data in the addVendorIncludedService table
-function addImportantInformationHeadTranslate($conn, $idVendor, $idlang, $name)
+function addImportantInformationHeadTranslate($conn, $idImportantInformationHead, $idlang, $name)
 {
 
     $query = "INSERT INTO `ImportantInformationHeadTranslate` (`idImportantInformationHead`,`idLanguage`,`name`)  VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iis', $idVendor,$idlang, $name);
+    $stmt->bind_param('iis', $idImportantInformationHead, $idlang, $name);
 
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη VendorIncludedService"]);
@@ -323,20 +323,20 @@ function addImportantInformationHeadTranslate($conn, $idVendor, $idlang, $name)
 }
 
 
-function addrowImportantInformationDescription($conn, $id)
+function addrowImportantInformationDescription($conn, $id, $idimportant)
 {
-    $query = "INSERT INTO `ImportantInformationDescription` (`idImportantInformationHead`) VALUES ($id)";
+    $query = "INSERT INTO `ImportantInformationDescription` (`id`,`idImportantInformationHead`) VALUES ($id,$idimportant)";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
 }
 
 // Add Data in the addVendorIncludedService table
-function addImportantInformationDescriptionTranslate($conn, $idImportantInformationDescription , $idLanguage , $name)
-{ 
+function addImportantInformationDescriptionTranslate($conn, $idImportantInformationDescription, $idLanguage, $name)
+{
     $query = "INSERT INTO `ImportantInformationDescriptionTranslate` (`idImportantInformationDescription`, `idLanguage`, `name`)  VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iis', $idImportantInformationDescription ,$idLanguage , $name);
+    $stmt->bind_param('iis', $idImportantInformationDescription, $idLanguage, $name);
 
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη VendorIncludedService"]);
@@ -347,3 +347,77 @@ function addImportantInformationDescriptionTranslate($conn, $idImportantInformat
     $stmt->close();
 }
 
+
+
+
+
+function addVendorTranslate($conn, $idVendor, $idLanguage, $name, $descSmall, $descbig, $descfull)
+{ 
+    $query = "INSERT INTO `VendorTranslate` (`idVendor`, `idLanguage`, `name`, `descriptionSmall`, `descriptionBig`, `descriptionFull`)  VALUES (?,?,?,?,?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iissss', $idVendor, $idLanguage, $name, $descSmall, $descbig, $descfull);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη VendorTranslate"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+
+    $stmt->close();
+}
+
+
+function addrowRatedCategory($conn,$id) {
+    $query = "INSERT INTO `RatedCategory` (`id`, `orderNumber`) VALUES ($id,99)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+function AddRatedCategoryTranslate($conn, $idlRatedCategory, $idlang, $name)
+{
+    $query = "INSERT INTO `RatedCategoryTranslate` (`idRatedCategory`, `idLanguage`, `nameCategory`) VALUES (?,?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iis', $idlRatedCategory, $idlang,  $name);
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+    $stmt->close();
+}
+
+
+
+function getRatedCategories($conn)
+{
+    $query = "SELECT rc.id,rct.nameCategory FROM RatedCategory AS rc , RatedCategoryTranslate AS rct WHERE rc.id = rct.idRatedCategory GROUP BY rct.idRatedCategory ; ";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $id = $categoryName = '';
+    $stmt->bind_result($id, $categoryName);
+    $ratedCategories = [];
+    while ($stmt->fetch()) {
+        array_push($ratedCategories, [$id, $categoryName]);
+    }
+    $stmt->close();
+    return $ratedCategories;
+}
+
+
+function AddRated($conn, $id_cat, $idVendor , $stars) {
+
+    $query = "INSERT INTO `Rated` (`idRatedCategory`, `idVendor`, `stars`) VALUES (?,?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iii', $id_cat, $idVendor,  $stars);
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+    $stmt->close();
+
+
+
+}
