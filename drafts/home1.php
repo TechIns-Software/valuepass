@@ -303,7 +303,7 @@ include_once 'includes/header1.php';
                 <h5>Contact with Us</h5>
                 <ul class="contacts">
                     <li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
-                    <li><a href="mailto:info@Panagea.com"><i class="ti-email"></i> info@Panagea.com</a></li>
+                    <li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
                 </ul>
             </div>
         </div>

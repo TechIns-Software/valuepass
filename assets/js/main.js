@@ -22,7 +22,7 @@
         keyboardNavigation: { enable: !0, enhance: !0 },
         navbar: { title: "MENU" },
         navbars: [
-          { position: "bottom", content: ['<a href="#0"> © 2022 TechIns</a>'] },
+          { position: "bottom", content: ['<a href="#0"> © 2022 ValuePass</a>'] },
         ],
       },
       {

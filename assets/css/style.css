@@ -3880,31 +3880,25 @@ a.box_feat h3 {
 }
 
 .vpvoucher_price1{
-    margin: .4em ;
+    margin: .4em 0 ;
+    padding: .3em;
     width: fit-content;
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.671);
     color: #121921;
-    border-radius: .3em;
+    border-radius: 3em;
     font-weight: 500;
 }
 
 .final_price1{
-    margin: .4em ;
     width: fit-content;
-    background-color: rgba(170, 170, 170, 0.63);
+    margin: .4em ;
+    padding: .3em;
+    width: fit-content;
+    background-color: rgba(170, 170, 170, 0.445);
     color: #121921;
-    border-radius: .3em;
+    border-radius: 3em;
     font-weight: 500;
 }
-
-
-
-
-
-
-
-
-
 
 
 .box_grid .wrapper h3 {
@@ -10890,14 +10884,14 @@ html[xmlns] .slides {
 
 
 .buy_button{
-    background-color: #004dda;
-    width: fit-content;
-    padding: .3em;
-    border-radius: .5em;
+    background-color: #0071eb;
+ 
+    padding: .2em .8em;
+    border-radius: 5em;
     color: white;
     font-size: 1em;
     font-weight: 600;
-
+ 
 }
 
 

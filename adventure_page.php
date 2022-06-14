@@ -25,7 +25,7 @@ include_once 'includes/header.php';
 		<nav class="secondary_nav sticky_horizontal">
 			<div class="container">
 				<ul class="clearfix">
-					<li><a href="#description" class="active">Buy VP Voucher</a></li>
+					<li><a href="#book" class="active">Buy VP Voucher</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -86,7 +86,7 @@ include_once 'includes/header.php';
 								<p>Buy your Value Pass Voucher <br> Reserve Now & Pay Later for your activity <br> Offer this as a gift (Active click) </p>
 							</li>
 							<li>
-								<p class="buy_button">Buy Now </p>
+								<a href="#book" class="buy_button my-2 ">Book Now </a>
 							</li>
 						</ul>
 
@@ -123,11 +123,11 @@ include_once 'includes/header.php';
 
 							<p> Learn about Syros industrial past on a day trip through the island. Learn about Syros industrial past at the Tomato Industrial Museum in Syros, discover ancient Greek mythology and music at the Symposium Music and Mythology Culture Center, and visit a local farm.
 
-							Begin your tour with a convenient pickup near your Syros hotel, and head to Parakopi to explore the island's tomato industry. Visit the Tomato Industrial Museum and learn about the traditional methods of tomato producers. After your visit, enjoy local products in Parakopi.</p>
+								Begin your tour with a convenient pickup near your Syros hotel, and head to Parakopi to explore the island's tomato industry. Visit the Tomato Industrial Museum and learn about the traditional methods of tomato producers. After your visit, enjoy local products in Parakopi.</p>
 
 							<p> Learn about Syros industrial past on a day trip through the island. Learn about Syros industrial past at the Tomato Industrial Museum in Syros, discover ancient Greek mythology and music at the Symposium Music and Mythology Culture Center, and visit a local farm.
 
-							Begin your tour with a convenient pickup near your Syros hotel, and head to Parakopi to explore the island's tomato industry. Visit the Tomato Industrial Museum and learn about the traditional methods of tomato producers. After your visit, enjoy local products in Parakopi.</p>
+								Begin your tour with a convenient pickup near your Syros hotel, and head to Parakopi to explore the island's tomato industry. Visit the Tomato Industrial Museum and learn about the traditional methods of tomato producers. After your visit, enjoy local products in Parakopi.</p>
 
 						</div>
 					</div>
@@ -137,11 +137,11 @@ include_once 'includes/header.php';
 						<div class="col-lg-6">
 							<h4 class="underline">Includes</h4>
 							<ul>
-								<li><i class="fa fa-money" aria-hidden="true"></i> Pickup and drop-off</li>
-								<li><i class="fa fa-info-circle" aria-hidden="true"> </i> Entrance Fees</li>
-								<li><i class="fa fa-info-circle" aria-hidden="true"></i> Local Assistant</li>
-								<li><i class="fa fa-info-circle" aria-hidden="true"></i> Tips</li>
-								<li><i class="fa fa-info-circle" aria-hidden="true"></i> Personal expenses </li>
+								<li><i class="fa fa-check fa-lg" aria-hidden="true"></i> Pickup and drop-off</li>
+								<li><i class="fa fa-check  fa-lg" aria-hidden="true"></i> Entrance Fees</li>
+								<li><i class="fa fa-check  fa-lg" aria-hidden="true"></i> Local Assistant</li>
+								<li><i class="fa fa-check  fa-lg" aria-hidden="true"></i>Tips</li>
+								<li><i class="fa fa-check fa-lg" aria-hidden="true"></i> Personal expenses </li>
 
 							</ul>
 						</div>
@@ -152,33 +152,77 @@ include_once 'includes/header.php';
 					</div>
 
 
-			
-						<div class="row">
-							<div class="col-lg-12">
-								<h4 class="underline">Important information</h4>
 
-								<div class="row">
-									<div class="col-lg-6 col-md-12">
-										<b> What to bring </b>
-										<ul>
-											<li>Swimwear</li>
-											<li>Extra T-shirt </li>
-											<li>A Small backpack for your clothes</li>
-										</ul>
-									</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<h4 class="underline">Important information</h4>
 
-
+							<div class="row">
+								<div class="col-lg-6 col-md-12">
+									<b  > What to bring </b>
+									<ul class="ps-3">
+										<li ><i class="fas fa-swimmer fa-lg "></i> Swimwear</li>
+										<li ><i class="fas fa-tshirt fa-lg"></i>  Extra T-shirt </li>
+										<li  ><i class="fas fa-passport fa-lg"></i>  ID card</li>
+									</ul>
 								</div>
 
-							</div>
-						</div>
 
-			
+							</div>
+
+						</div>
+					</div>
+
+
 
 				</div>
 			</div>
 		</div>
 
+
+		<section id="book"> 
+		<div class="container margin_60_35" >
+			<div class="row">
+				<div class="col-lg-8">
+
+				<div class="box_detail booking">
+							<div class="price">
+								<span>Check availability </span>
+								
+							</div>
+
+							<div class="form-group input-dates">
+								<input class="form-control" type="text" name="dates" placeholder="When..">
+								<i class="icon_calendar"></i>
+							</div>
+
+							<div class="panel-dropdown">
+								<a href="#">Guests <span class="qtyTotal">1</span></a>
+								<div class="panel-dropdown-content right">
+									<div class="qtyButtons">
+										<label>Adults</label>
+										<input type="text" name="qtyInput" value="1">
+									</div>
+									<div class="qtyButtons">
+										<label>Childrens</label>
+										<input type="text" name="qtyInput" value="0">
+									</div>
+									<div class="qtyButtons">
+										<label>Infants</label>
+										<input type="text" name="qtyInput" value="0">
+									</div>
+								</div>
+							</div>
+
+
+							<a href="#" class=" add_top_30 btn_1 full-width purchase">Check availability</a>
+							<!-- <a href="wishlist.html" class="btn_1 full-width outline wishlist"><i class="icon_heart"></i> Add to wishlist</a> -->
+							<div class="text-center"><small>No money charged in this step</small></div>
+						</div>
+				</div>
+			</div>
+		</div>
+		</section>
 
 
 		<div class="container container-custom margin_80_55 col-lg-12 ">
@@ -315,55 +359,6 @@ include_once 'includes/header.php';
 			</section>
 		</div>
 
-
-
-
-
-		<!-- <div class="add-review">
-								<h5>Leave a Review</h5>
-								<form>
-									<div class="row">
-										<div class="form-group col-md-6">
-											<label>Name and Lastname *</label>
-											<input type="text" name="name_review" id="name_review" placeholder="" class="form-control">
-										</div>
-										<div class="form-group col-md-6">
-											<label>Email *</label>
-											<input type="email" name="email_review" id="email_review" class="form-control">
-										</div>
-										<div class="form-group col-md-6">
-											<label>Rating </label>
-											<div class="custom-select-form">
-											<select name="rating_review" id="rating_review" class="wide">
-												<option value="1">1 (lowest)</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5" selected>5 (medium)</option>
-												<option value="6">6</option>
-												<option value="7">7</option>
-												<option value="8">8</option>
-												<option value="9">9</option>
-												<option value="10">10 (highest)</option>
-											</select>
-											</div>
-										</div>
-										<div class="form-group col-md-12">
-											<label>Your Review</label>
-											<textarea name="review_text" id="review_text" class="form-control" style="height:130px;"></textarea>
-										</div>
-										<div class="form-group col-md-12 add_top_20">
-											<input type="submit" value="Submit" class="btn_1" id="submit-review">
-										</div>
-									</div>
-								</form>
-							</div> -->
-	</div>
-
-	</div>
-
-	</div>
-
 	</div>
 
 </main>
@@ -374,12 +369,10 @@ include_once 'includes/header.php';
 	<div class="container margin_60_35">
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
-				<!-- <p><img src="img/logo.svg" width="150" height="36" alt=""></p> -->
-				<a href="index.php" class="fs-3 fw-bolder">
-					VALUEPASS
-				</a>
-				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations</p>
-				<p>Get inspired for your next trip</p>
+			<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p>
+				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
+					 All our proposals are hand-picked by our team! . </p>
+					  <b>  Get inspired for your next trip </b>
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
@@ -405,36 +398,14 @@ include_once 'includes/header.php';
 				<h5><?php echo $menu[9] ?></h5>
 				<ul class="contacts">
 					<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
-					<li><a href="mailto:info@Panagea.com"><i class="ti-email"></i> info@Panagea.com</a></li>
+					<li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
 				</ul>
 			</div>
 		</div>
 		<!--/row-->
 		<hr>
 		<div class="row">
-			<!-- <div class="col-lg-6">
-				<ul id="footer-selector">
-					<li>
-						<div class="styled-select" id="lang-selector">
-							<select>
-								<option value="English" selected>English</option>
-								<option value="French">French</option>
-								<option value="Spanish">Spanish</option>
-								<option value="Russian">Russian</option>
-							</select>
-						</div>
-					</li>
-					<li>
-						<div class="styled-select" id="currency-selector">
-							<select>
-								<option value="US Dollars" selected>US Dollars</option>
-								<option value="Euro">Euro</option>
-							</select>
-						</div>
-					</li>
 
-				</ul>
-			</div> -->
 			<div class="col-lg-12">
 				<ul id="additional_links">
 					<li><a href="#0"><?php echo $menu[10] ?></a></li>
@@ -500,12 +471,18 @@ include_once 'includes/header.php';
 
 <div id="toTop"></div><!-- Back to top button -->
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Vck_vRXDPR8ILH8ZLOeGSEz_n4YR0mU"></script> -->
-<!-- <script src="assets/js/map_single_hotel.js"></script> -->
-<!-- <script src="assets/js/infobox.js"></script> -->
+
+<script src="assets/js/common_scripts.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/validate.js"></script>
+		<!-- INPUT QUANTITY  -->
+		<script src="assets/js/input_qty.js"></script>
+		<script src="changeLanguage.js"></script>
+
+
 
 <!-- DATEPICKER  -->
-<!-- <script>
+<script>
 	$(function() {
 		$('input[name="dates"]').daterangepicker({
 			autoUpdateInput: false,
@@ -523,10 +500,13 @@ include_once 'includes/header.php';
 			$(this).val('');
 		});
 	});
-</script> -->
+</script>
 
 
-<?php
-include_once 'includes/footer.php';
 
-?>
+
+
+    </body>
+
+</html>
+

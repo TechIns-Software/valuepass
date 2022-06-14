@@ -84,45 +84,47 @@ include_once 'includes/header.php';
 			<span><em></em></span>
 			<h2>How it works</h2>
 			<p>Spend less money doing it more</p>
+			<p><?php $url.= $_SERVER['REQUEST_URI']; 
+			echo $url    ?></p>
 		</div>
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" href="#0">
+				<a class="box_feat" >
 					<i class="pe-7s-medal"></i>
 					<h3>Personalized </h3>
 					<p>Pick your destination, attraction, schedule and create your own bucket list</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" href="#0">
+				<a class="box_feat" >
 					<i class="pe-7s-gift"></i>
 					<h3> Pampered </h3>
 					<p>We always have a present for you  <br> <b> (Free Vouchers) </b> </p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" href="#0">
+				<a class="box_feat" >
 					<i class="pe-7s-culture"></i>
 					<h3>Flexible </h3>
 					<p>Free Cancellation, Re-scheduling & Payment Options</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" href="#0">
+				<a class="box_feat" >
 					<i class="pe-7s-phone"></i>
 					<h3>Convenient </h3>
 					<p> Control everything easily from your smartphone. <br> Receive detailed info at your preferred e-mail</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" href="#0">
+				<a class="box_feat" >
 					<i class="pe-7s-credit"></i>
 					<h3>Secured </h3>
 					<p>Highly secured payment procedure</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6 ">
-				<a class="box_feat" href="#0">
+				<a class="box_feat" >
 					<i class="pe-7s-chat"></i>
 					<h3>Supportive </h3>
 					<p >Ask everything you want to know. Our support team is here to answer every question </p>
@@ -317,11 +319,11 @@ include_once 'includes/header.php';
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
-						<li><a href="#0"><i class="ti-facebook"></i></a></li>
-						<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
-						<li><a href="#0"><i class="ti-google"></i></a></li>
-						<li><a href="#0"><i class="ti-pinterest"></i></a></li>
-						<li><a href="#0"><i class="ti-instagram"></i></a></li>
+						<li><a ><i class="ti-facebook"></i></a></li>
+						<li><a ><i class="ti-twitter-alt"></i></a></li>
+						<li><a ><i class="ti-google"></i></a></li>
+						<li><a ><i class="ti-pinterest"></i></a></li>
+						<li><a ><i class="ti-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -339,7 +341,7 @@ include_once 'includes/header.php';
 				<h5><?php echo $menu[9] ?></h5>
 				<ul class="contacts">
 					<li><a href="tel://6980999416"><i class="ti-mobile"></i> + 6980999416</a></li>
-					<li><a href="mailto:info@Panagea.com"><i class="ti-email"></i> info@TechIns.com</a></li>
+					<li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
 				</ul>
 			</div>
 		</div>
@@ -349,9 +351,9 @@ include_once 'includes/header.php';
 
 			<div class="col-lg-12">
 				<ul id="additional_links">
-					<li><a href="#0"><?php echo $menu[10] ?></a></li>
-					<li><a href="#0"><?php echo $menu[11] ?></a></li>
-					<li><span>© TechIns</span></li>
+					<li><a ><?php echo $menu[10] ?></a></li>
+					<li><a ><?php echo $menu[11] ?></a></li>
+					<li><span>© ValuePass</span></li>
 				</ul>
 			</div>
 		</div>
@@ -368,8 +370,8 @@ include_once 'includes/header.php';
 	</div>
 	<form>
 		<div class="sign-in-wrapper">
-			<a href="#0" class="social_bt facebook">Login with Facebook</a>
-			<a href="#0" class="social_bt google">Login with Google</a>
+			<a  class="social_bt facebook">Login with Facebook</a>
+			<a  class="social_bt google">Login with Google</a>
 			<div class="divider"><span>Or</span></div>
 			<div class="form-group">
 				<label>Email</label>

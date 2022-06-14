@@ -77,7 +77,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				<ul id="top_menu">
 					<!-- <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li> -->
 					<li> </li>
-					 <li><a href="#" class="cart-menu-btn " title="Cart"><strong>1</strong></a></li>
+					<!-- for number in cart just add strong elemnt inside li  -->
+					 <li><a href="#" class="cart-menu-btn " title="Cart"></a></li>
 					<!--<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>  -->
 				</ul>
 				<!-- /top_menu -->
@@ -108,20 +109,20 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</nav>
 			</header>
 
-		<?php	} else { ?>
-			<header class="header menu_fixed">
+		<?php	} else if (strpos($url ,'cart-1.php') !== false) { ?>
+			<header class="header menu_fixed bg-primary">
 				<div id="preloader">
 					<div data-loader="circle-side"></div>
 				</div><!-- /Page Preload -->
 				<div id="logo">
-					<a href="index.php" class="fs-3 fw-bolder">
-						<img src="assets/img/valuepass3logo.png" width="60" height="60" alt="" class="logo_normal">
-						<img src="assets/img/valuepass3logo.png" width="60" height="60" alt="" class="logo_sticky"> 
+					<a href="index.php" class="fs-3 fw-bolder"> 
+						<img src="assets\img\valuepass3logo.png" width="60" height="60" alt="" class="logo_normal">
+						<img src="assets\img\valuepass3logo.png" width="60" height="60" alt="" class="logo_sticky"> 
 					</a>
 				</div>
 				<ul id="top_menu">
 					<li></li>
-					<li><a href="#" class="cart-menu-btn" title="Cart"><strong>1</strong></a></li>
+					<li><a href="#" class="cart-menu-btn" title="Cart"></a></li>
 					<!-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
 				</ul>
 				<!-- /top_menu -->
@@ -153,7 +154,54 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</nav>
 			</header>
 
-		<?php }	?>
+		<?php } else{ 	?>
+
+			<header class="header menu_fixed">
+				<div id="preloader">
+					<div data-loader="circle-side"></div>
+				</div><!-- /Page Preload -->
+				<div id="logo">
+					<a href="index.php" class="fs-3 fw-bolder">
+						<img src="assets/img/valuepass3logo.png" width="60" height="60" alt="" class="logo_normal">
+						<img src="assets/img/valuepass3logo.png" width="60" height="60" alt="" class="logo_sticky"> 
+					</a>
+				</div>
+				<ul id="top_menu">
+					<li></li>
+					<li><a href="#" class="cart-menu-btn" title="Cart"></a></li>
+					<!-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
+				</ul>
+				<!-- /top_menu -->
+				<a href="#menu" class="btn_mobile">
+					<div class="hamburger hamburger--spin" id="hamburger">
+						<div class="hamburger-box">
+							<div class="hamburger-inner"></div>
+						</div>
+					</div>
+				</a>
+				<nav id="menu" class="main-menu">
+					<ul>
+						<li><span><a href="index.php"> <?php echo $menu[0] ?> </a></span></li>
+
+						<li><span><a href="index.php"> <?php echo $menu[6] ?> </a></span>
+							<ul>
+								<?php
+
+								foreach ($languages  as $language) {  ?>
+									<li><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
+								<?php	} ?>
+
+							</ul>
+						</li>
+						<li><span><a href="adventures.php?id=1"> <?php echo $menu[3] ?> </a></span></li>
+						<!-- <li><span><a href="adventure_page.php">Experience Page</a></span></li> -->
+						<!-- <li><span><a href="#" target="_parent">Buy VP</a></span></li> -->
+					</ul>
+				</nav>
+			</header>
 
 
+
+
+		<?php } ?>
 		<!-- /header -->
