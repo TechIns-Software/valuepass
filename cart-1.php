@@ -32,7 +32,6 @@ $cart = unserialize($_SESSION['cart']);
         <div class="container margin_60_35">
             <div class="row">
                 <?php
-                var_dump($cart);
                 //TODO: We need that calculation in backend as well, so make function
                 if (count($cart) == 0) {
 
@@ -129,7 +128,7 @@ $cart = unserialize($_SESSION['cart']);
                         $canOrderVouchers = false;
                     }
                     $lengthHowManyPay = count($allVouchers);
-                    if (count($allVouchers) == 3) {
+                    if (count($allVouchers) <= 3 ) {
                         $lengthHowManyPay = count($allVouchers);
                     } elseif (count($allVouchers) > 3 && count($allVouchers) <= 5) {
                         $lengthHowManyPay = count($allVouchers) - 1;
@@ -149,6 +148,7 @@ $cart = unserialize($_SESSION['cart']);
                             $less = $less + $allVouchers[$counter]->getPrice();
                         }
                     }
+//                    TODO: when voucher is 1 or 0
                     ?>
                     <aside class="col-lg-4">
                         <div style="min-height: 30px;background-color: white"></div>
