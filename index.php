@@ -16,16 +16,16 @@ include_once 'includes/header.php';
 			<ul>
 				<!-- start slide 01 -->
 				<li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="01" data-param1="01" data-description="">
-					<!-- main image --> 
+					<!-- main image -->
 					<img src="assets/img/slider_images/happy1.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
 					<div class="rev-slider-mask"></div>
 
 					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;">Explore hidden  <br> treasures! </div>
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;">Explore hidden <br> treasures! </div>
 
 					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-02" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','16','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">VP adds value to your personal travel package! 
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-02" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','16','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">VP adds value to your personal travel package!
 					</div>
 
 					<!-- btn layer -->
@@ -44,7 +44,7 @@ include_once 'includes/header.php';
 					<div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center" id="slide-411-layer-04" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','50','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> Discover authentic<br>experiences!</div>
 
 					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-05" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on"> VP is the passport of today’s eclectic traveler! 
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-05" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on"> VP is the passport of today’s eclectic traveler!
 					</div>
 
 					<!-- btn layer -->
@@ -63,7 +63,7 @@ include_once 'includes/header.php';
 					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','50','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Escape vacations <br> traps!</div>
 
 					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center" id="slide-411-layer-08" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Delve below the surface of your destination! 
+					<div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center" id="slide-411-layer-08" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Delve below the surface of your destination!
 					</div>
 
 					<!-- btn layer -->
@@ -71,11 +71,25 @@ include_once 'includes/header.php';
 					</a>
 				</li>
 				<!-- end slide 03 -->
-				
+
 			</ul>
 		</div>
 	</div>
 	<!-- END REVOLUTION SLIDER -->
+
+	<div class="bg_color_1 shadow bgbanner">
+			<div class="container container-custom margin_80_55 ">
+				<div class="main_title_2">
+					<h2>Value Pass Offers is Active only in Board</h2>
+					<p class="fs-2">Don't Miss it !</p>
+				</div>
+
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bg_color_1 -->
+
+
 
 
 
@@ -88,46 +102,46 @@ include_once 'includes/header.php';
 		</div>
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" >
+				<a class="box_feat">
 					<i class="pe-7s-medal"></i>
 					<h3>Personalized </h3>
 					<p>Pick your destination, attraction, schedule and create your own bucket list</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" >
+				<a class="box_feat">
 					<i class="pe-7s-gift"></i>
 					<h3> Pampered </h3>
-					<p>We always have a present for you  <br> <b> (Free Vouchers) </b> </p>
+					<p>We always have a present for you <br> <b> (Free Vouchers) </b> </p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" >
+				<a class="box_feat">
 					<i class="pe-7s-culture"></i>
 					<h3>Flexible </h3>
 					<p>Free Cancellation, Re-scheduling & Payment Options</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" >
+				<a class="box_feat">
 					<i class="pe-7s-phone"></i>
 					<h3>Convenient </h3>
 					<p> Control everything easily from your smartphone. <br> Receive detailed info at your preferred e-mail</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<a class="box_feat" >
+				<a class="box_feat">
 					<i class="pe-7s-credit"></i>
 					<h3>Secured </h3>
 					<p>Highly secured payment procedure</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6 ">
-				<a class="box_feat" >
+				<a class="box_feat">
 					<i class="pe-7s-chat"></i>
 					<h3>Supportive </h3>
-					<p >Ask everything you want to know. Our support team is here to answer every question </p>
-					
+					<p>Ask everything you want to know. Our support team is here to answer every question </p>
+
 				</a>
 			</div>
 		</div>
@@ -312,17 +326,17 @@ include_once 'includes/header.php';
 			<div class="col-lg-5 col-md-12 pe-5">
 				<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p>
 				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
-					 All our proposals are hand-picked by our team! . </p>
-					  <b>  Get inspired for your next trip </b>
-			
+					All our proposals are hand-picked by our team! . </p>
+				<b> Get inspired for your next trip </b>
+
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
-						<li><a ><i class="ti-facebook"></i></a></li>
-						<li><a ><i class="ti-twitter-alt"></i></a></li>
-						<li><a ><i class="ti-google"></i></a></li>
-						<li><a ><i class="ti-pinterest"></i></a></li>
-						<li><a ><i class="ti-instagram"></i></a></li>
+						<li><a><i class="ti-facebook"></i></a></li>
+						<li><a><i class="ti-twitter-alt"></i></a></li>
+						<li><a><i class="ti-google"></i></a></li>
+						<li><a><i class="ti-pinterest"></i></a></li>
+						<li><a><i class="ti-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -350,8 +364,8 @@ include_once 'includes/header.php';
 
 			<div class="col-lg-12">
 				<ul id="additional_links">
-					<li><a ><?php echo $menu[10] ?></a></li>
-					<li><a ><?php echo $menu[11] ?></a></li>
+					<li><a><?php echo $menu[10] ?></a></li>
+					<li><a><?php echo $menu[11] ?></a></li>
 					<li><span>© ValuePass</span></li>
 				</ul>
 			</div>
@@ -369,8 +383,8 @@ include_once 'includes/header.php';
 	</div>
 	<form>
 		<div class="sign-in-wrapper">
-			<a  class="social_bt facebook">Login with Facebook</a>
-			<a  class="social_bt google">Login with Google</a>
+			<a class="social_bt facebook">Login with Facebook</a>
+			<a class="social_bt google">Login with Google</a>
 			<div class="divider"><span>Or</span></div>
 			<div class="form-group">
 				<label>Email</label>

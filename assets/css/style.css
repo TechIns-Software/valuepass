@@ -1152,7 +1152,7 @@ header.sticky .hamburger-inner::before {
     background-color: rgba(0, 0, 0, .6);
     background-blend-mode: darken; */
 
-    background: url(../img/4.jpg) center center no-repeat;
+    background: url(../img/slider_images/happy2.webp) center center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -3852,15 +3852,20 @@ a.box_feat h3 {
 .voted {
     color: rgb(235, 214, 26);
 }
-
-
-.box_grid .wrapper p .voucher_av b {
-    color: rgb(231, 54, 41);
+.voucher_av{
     font-weight: 700;
-
 }
 
-.box_grid .wrapper p .prev_price b {
+.voucher_av b {
+    color: rgb(231, 54, 41);
+    font-weight: 700;
+}
+
+
+
+
+
+.prev_price b {
     color: rgb(218, 124, 17);
     font-weight: 700;
     text-decoration: line-through;
@@ -10897,3 +10902,10 @@ html[xmlns] .slides {
 
 
 
+.bgbanner{
+    /* background-color: lightcoral; */
+    background: rgb(17,96,183);
+background: linear-gradient(209deg, rgba(17,96,183,0.8) 4%, rgba(38,227,212,0.8) 81%);
+border-radius: 2em;
+margin: 1em 3em ;
+}
