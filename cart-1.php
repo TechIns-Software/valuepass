@@ -32,6 +32,7 @@ $cart = unserialize($_SESSION['cart']);
         <div class="container margin_60_35">
             <div class="row">
                 <?php
+                var_dump($cart);
                 //TODO: We need that calculation in backend as well, so make function
                 if (count($cart) == 0) {
 
