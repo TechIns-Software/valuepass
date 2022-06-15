@@ -46,6 +46,9 @@ $cart = unserialize($_SESSION['cart']);
                             Activity
                         </th>
                         <th>
+                            Date
+                        </th>
+                        <th>
                             Vouchers
                         </th>
                         <th>
@@ -63,7 +66,8 @@ $cart = unserialize($_SESSION['cart']);
                         $priceChild = $arrayPrices[1];
                         $priceInfant = $arrayPrices[2];
                         $imageVendor = $arrayPrices[3];
-                        $nameVendor = $arrayPrices[4];
+                        $dateVoucher = $arrayPrices[4];
+                        $nameVendor = $arrayPrices[5];
                         $adults = 0;
                         $children = 0;
                         $infants = 0;
@@ -88,6 +92,9 @@ $cart = unserialize($_SESSION['cart']);
                                     <img src="http://via.placeholder.com/150x150/ccc/fff/thumb_cart_1.jpg" alt="Image">
                                 </div>
                                 <span class="item_cart"><?php echo $nameVendor;?></span>
+                            </td>
+                            <td>
+                                <?php echo $dateVoucher;?>
                             </td>
                             <td>
                                 Adults: <?php echo $adults;?>

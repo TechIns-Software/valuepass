@@ -274,7 +274,7 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : 
             FROM VendorVoucher
             WHERE idVendor = ? AND existenceVoucher > ? AND DATE(dateVoucher) = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('ii', $idVendor, $numberVoucher, $date);
+    $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
     if ($stmt->execute()) {
         $id = $date1 = '-1';
@@ -286,19 +286,44 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : 
     return $possiblePackages;
 }
 
+//session already exists
 function getVendorForCart($conn, $idVendorVoucher) : array {
-    $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice
+    $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, VV.dateVoucher
             FROM Vendor AS V, VendorVoucher AS VV
             WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
     $stmt = $conn->prepare($query);
-    $priceAdult = $priceKid = $priceInfant = -1;
+    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $dateVoucher = -1;
     if ($stmt->execute()) {
-        $stmt->bind_result($priceAdult, $priceKid, $priceInfant);
+        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $dateVoucher);
         while ($stmt->fetch()) {}
     }
-    return [$priceAdult, $priceKid, $priceInfant];
+    $idLanguage = $_SESSION['languageId'];
+    $query2 = "SELECT VT.name
+            FROM VendorTranslate AS VT
+            WHERE VT.idVendor = $idVendor AND idLanguage = $idLanguage";
+    $stmt2 = $conn->prepare($query2);
+    $vendorName = "";
+    if ($stmt2->execute()) {
+        $stmt2->bind_result($vendorName);
+        while ($stmt2->fetch()) {}
+    }
+    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName];
 }
 
+function checkIfVendorVouchersIsStillAvailableInLocalhost($conn, $cart) {
+    $idsVendorVouchers = [];
+    foreach ($cart as $arrayOfVoucherWant) {
+        $idVendorVoucher = $arrayOfVoucherWant[0]->getIdVendorVoucher();
+        if (isset($ids[$idVendorVoucher])) {
+            $idsVendorVouchers[$idVendorVoucher] = $ids[$idVendorVoucher] + count($arrayOfVoucherWant);
+        } else {
+            $idsVendorVouchers[$idVendorVoucher] = count($arrayOfVoucherWant);
+        }
+    }
+    foreach ($idsVendorVouchers as $idVendor => $sumOfVoucherWants) {
+
+    }
+}
 
 //Get all Languages
 function getAllLanguages($conn)
@@ -334,3 +359,4 @@ function GetMenu($conn,$lang){
     }
     return $menu;
 }
+

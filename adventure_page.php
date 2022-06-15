@@ -5,7 +5,7 @@ include 'initializeExperience.php';
 include_once 'includes/header.php';
 ?>
 <!--TODO: id vendor-->
-<input value="1" id="vendorId" hidden>
+<input value="3" id="vendorId" hidden>
 <main>
 	<section class="hero_in hotels_detail ">
 		<div class="wrapper ">
@@ -220,6 +220,7 @@ include_once 'includes/header.php';
 							<!-- <a href="wishlist.html" class="btn_1 full-width outline wishlist"><i class="icon_heart"></i> Add to wishlist</a> -->
 							<div class="text-center"><small>No money charged in this step</small></div>
 						</div>
+                    <div id="option"></div>
 				</div>
 			</div>
 		</div>

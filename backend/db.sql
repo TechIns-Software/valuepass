@@ -376,3 +376,13 @@ INSERT INTO `menutranslate` (`idMenu`, `idLanguage`, `name`) VALUES
 (13, 1, 'Ακολουθηστε μας'),
 (13, 2, 'Follow Us');
 
+INSERT INTO CategoryVendor() VALUES ();
+INSERT INTO PaymentInfoActivity() VALUES ();
+INSERT INTO Destination() VALUES ();
+INSERT INTO Vendor(idDestination, priceAdult, originalPrice, discount, priceKid, idCategory, idPaymentInfoActivity)
+VALUES (1, 10, 15, 30, 8, 1, 1);
+INSERT INTO VendorVoucher(idVendor, starterVouchers, existenceVoucher, dateVoucher)
+VALUES
+(3, 10, 10, NOW() + INTERVAL 1 DAY);
+INSERT INTO VendorTranslate(idVendor, idLanguage, name, descriptionSmall, descriptionBig, descriptionFull)
+values (3,1, 'name1', '', '',''),(3,2,'name2','','','');

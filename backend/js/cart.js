@@ -76,6 +76,7 @@ function getPackagesAvailable() {
 
                         console.log(data);
                     } else {
+                        document.getElementById('option').outerHTML = data[0];
 
                     }
                 }
