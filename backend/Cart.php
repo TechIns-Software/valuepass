@@ -58,6 +58,7 @@ class Cart
                 $newTotalNumber = $ids[$idAdded];
             }
             $newTotalNumber = $newTotalNumber + 1;
+            echo $idAdded;
             //we get the max voucher can have, if does not exist we get 0
             $maxVoucherFromVendorThatCanHave = getMaxVendorVoucher($conn, $idAdded);
 
