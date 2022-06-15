@@ -122,6 +122,7 @@ if ($_POST['action'] == 'addProduct') {
             );
             //return HTML
             if (count($possiblePackages) == 0) {
+                $message = "NoneFound";
 //                $message = did not find available options
             } else {
                 $message = '';

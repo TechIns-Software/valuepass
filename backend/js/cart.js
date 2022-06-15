@@ -46,45 +46,54 @@ function deleteItem(idVendorItem) {
 }
 
 function getPackagesAvailable() {
-    //TODO make sure that a vendor no children, then in backend we check if to take only adults
-    //TODO add a hidden input field that has idVendor
     const idVendor = document.getElementById('vendorId').value;
     const dateString = document.getElementById('date').value;
-    const numberAdults = document.getElementById('adultsInput')
-    const numberChildren = document.getElementById('childrenInput')
-    const numberInfants = document.getElementById('infantsInput')
+    const numberAdults = $('#adultsInput').val();
+    const numberChildren = $('#childrenInput').val();
+    const numberInfants = $('#infantsInput').val();
+    console.log(numberChildren, numberAdults, numberInfants);
+    console.log(dateString, idVendor);
     if (
-        Number(numberAdults.value) &&
-        Number(numberChildren.value) &&
-        Number(numberInfants.value)
+        Number(numberAdults) ||
+        Number(numberChildren)
     ) {
-        if (Number(numberInfants.value) > 0 && numberAdults.value == 0) {
-            numberAdults.value = 0;
-            numberChildren.value = 0;
-            numberInfants.value = 0;
+        if (numberInfants > 0 && numberAdults == 0) {
+
         } else {
-            const data = {
-                'action': 'getPackagesAvailable',
-                'idVendor': idVendor,
-                'date': dateString,
-                'adults': numberAdults.value,
-                'children': numberChildren.value,
-                'infants': numberInfants.value
-            };
+            if (dateString) {
+                const newFormatDate = $('#date').attr('value2');
+                console.log(newFormatDate);
+                const data = {
+                    'action': 'getPackagesAvailable',
+                    'idVendor': idVendor,
+                    'date': newFormatDate,
+                    'adults': numberAdults,
+                    'children': numberChildren,
+                    'infants': numberInfants
+                };
+                const callBack = (data) => {
+                    if (data[0] === 'NoneFound') {
+
+                        console.log(data);
+                    } else {
+
+                    }
+                }
+                getAjax(data, callBack);
+
+            }
+
         }
-    } else {
-        numberAdults.value = 0;
-        numberChildren.value = 0;
-        numberInfants.value = 0;
     }
 }
 
+//no needed right now
 function addPersonInInputField(idInput, idMinusIcon) {
     const inputField = document.getElementById(idInput);
     inputField.value = Number(inputField.value) + 1;
     idMinusIcon.disabled = false;
 }
-
+//no needed right now
 function removePersonInInputField(idInput, idMinusIcon) {
     const inputField = document.getElementById(idInput);
     inputField.value = Number(inputField.value) - 1;

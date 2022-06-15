@@ -1,10 +1,11 @@
 <?php
 $title = "Adveture page";
-session_start();
 $home = 0;
+include 'initializeExperience.php';
 include_once 'includes/header.php';
 ?>
-
+<!--TODO: id vendor-->
+<input value="1" id="vendorId" hidden>
 <main>
 	<section class="hero_in hotels_detail ">
 		<div class="wrapper ">
@@ -180,7 +181,7 @@ include_once 'includes/header.php';
 		</div>
 
 
-		<section id="book"> 
+		<section id="book">
 		<div class="container margin_60_35" >
 			<div class="row">
 				<div class="col-lg-8">
@@ -188,34 +189,34 @@ include_once 'includes/header.php';
 				<div class="box_detail booking">
 							<div class="price">
 								<span>Check availability </span>
-								
+
 							</div>
 
 							<div class="form-group input-dates">
-								<input class="form-control" type="text" name="dates" placeholder="When..">
+								<input id="date" class="form-control" type="text" name="dates" placeholder="When..">
 								<i class="icon_calendar"></i>
 							</div>
 
 							<div class="panel-dropdown">
-								<a href="#">Guests <span class="qtyTotal">1</span></a>
+								<a href="#">People <span class="qtyTotal">0</span></a>
 								<div class="panel-dropdown-content right">
 									<div class="qtyButtons">
 										<label>Adults</label>
-										<input type="text" name="qtyInput" value="1">
+										<input id="adultsInput" type="text" name="qtyInput" value="0">
 									</div>
 									<div class="qtyButtons">
-										<label>Childrens</label>
-										<input type="text" name="qtyInput" value="0">
+										<label>Children</label>
+										<input id="childrenInput" type="text" name="qtyInput" value="0">
 									</div>
 									<div class="qtyButtons">
 										<label>Infants</label>
-										<input type="text" name="qtyInput" value="0">
+										<input id="infantsInput" type="text" name="qtyInput" value="0">
 									</div>
 								</div>
 							</div>
 
 
-							<a href="#" class=" add_top_30 btn_1 full-width purchase">Check availability</a>
+							<button onclick="getPackagesAvailable();" class=" add_top_30 btn_1 full-width purchase">Check availability</button>
 							<!-- <a href="wishlist.html" class="btn_1 full-width outline wishlist"><i class="icon_heart"></i> Add to wishlist</a> -->
 							<div class="text-center"><small>No money charged in this step</small></div>
 						</div>
@@ -234,7 +235,7 @@ include_once 'includes/header.php';
 
 				<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
-					<!-- version 1 carsouel ready css 
+					<!-- version 1 carsouel ready css
 						<div class="item">
 							<a href="adventure-detail.html" class="grid_item_adventure">
 								<figure>
@@ -482,31 +483,44 @@ include_once 'includes/header.php';
 
 
 <!-- DATEPICKER  -->
+
 <script>
 	$(function() {
+        const minDate = new Date();
+        minDate.setDate(minDate.getDate() + 1);
+        const maxDate = new Date();
+        maxDate.setDate(maxDate.getDate() + 15);
 		$('input[name="dates"]').daterangepicker({
 			autoUpdateInput: false,
+            singleDatePicker: true,
 			parentEl: '.scroll-fix',
-			minDate: new Date(),
+			minDate: minDate,
+            maxDate: maxDate,
 			opens: 'left',
 			locale: {
 				cancelLabel: 'Clear'
 			}
 		});
 		$('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
-			$(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
+			$(this).val(picker.startDate.format('DD-MM-YYYY'));
+            $(this).attr('value2', picker.startDate.format('YYYY-MM-DD'))
+			// $(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
 		});
 		$('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
 			$(this).val('');
 		});
 	});
+    document.querySelector('.icon_calendar').addEventListener(
+        'click', ()=> {
+            document.getElementById('date').click();
+        }
+    );
 </script>
 
 
 
 
-
     </body>
-
+<script src="backend/js/cart.js"></script>
 </html>
 

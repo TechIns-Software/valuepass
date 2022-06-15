@@ -362,5 +362,5 @@ $cart = unserialize($_SESSION['cart']);
 </div> -->
 
 </body>
-
+<script src="backend/js/cart.js"></script>
 </html>
