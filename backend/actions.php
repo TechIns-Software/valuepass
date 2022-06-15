@@ -72,12 +72,12 @@ if ($_POST['action'] == 'addProduct') {
                     $numberOfNumeric = 0;
                 }
                 $voucherWant = new \ValuePass\VoucherWant(
-                    $idVendor, $product["voucherVendorId"],true, $numberOfNumeric);
+                    $product["voucherVendorId"], $idVendor,true, $numberOfNumeric);
                 array_push($vouchersWant, $voucherWant);
             }
             for ($counter = 0; $counter < $product["children"]; $counter++) {
                 $voucherWant = new \ValuePass\VoucherWant(
-                    $idVendor, 1,false);
+                    $product["voucherVendorId"], $idVendor,false);
                 array_push($vouchersWant, $voucherWant);
             }
             if (count($vouchersWant) == 0) {
