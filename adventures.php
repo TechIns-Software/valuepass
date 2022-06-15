@@ -5,6 +5,7 @@ if (!isset($conn)) {
 if (!isset($_GET['id'])) {
 	header('location: index.php');
 }
+include 'backend/includeClasses.php';
 include 'initializeExperience.php';
 $title = "Adventures";
 $home = 0;

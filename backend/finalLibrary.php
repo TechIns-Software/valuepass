@@ -76,17 +76,23 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     $vendors = [];
     if ($stmt->execute()) {
         $id = "";
+        $ids = [];
         while ($stmt->fetch()) {
-            $vendor = getVendor($conn, $id, $idLanguage, false);
-            array_push($vendors, $vendor);
+            array_push($ids, $id);
         }
+
+    }
+    $stmt->close();
+    foreach ($ids as $id) {
+        $vendor = getVendor($conn, $id, $idLanguage, false);
+        array_push($vendors, $vendor);
     }
     return $vendors;
 }
 
 function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
     $query = "SELECT V.id, V.priceAdult, V.originalPrice, V.discount,
-                        V.priceKid, V.idDestination, V.image, VT.name, VT.descriptionSmall, CV.name, C.id
+                        V.priceKid, V.idDestination, V.imageBasic, VT.name, VT.descriptionSmall, CVT.name, CV.id
               FROM Vendor AS V, VendorTranslate AS VT, CategoryVendor as CV,
                         CategoryVendorTranslate CVT
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
@@ -96,13 +102,15 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
     $stmt->bind_param('ii', $idVendor, $idLanguage);
     if ($stmt->execute()) {
         $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $description = $categoryName = $categoryId = '';
-        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $description, $name, $categoryName);
+        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $description, $categoryName, $categoryId);
         while ($stmt->fetch()) {}
+        if (!$id) {
+            return null;
+        }
         $vendor = New \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
             $discount, $priceKid, $description, $image, $name
         );
-
         $query1 ="SELECT LBT.name
                 FROM LabelBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT
                 WHERE VLB.idVendor = $id AND LBT.idLanguage = $idLanguage 
