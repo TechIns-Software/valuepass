@@ -7,6 +7,7 @@ document.getElementById('createbtn3').addEventListener(
         e.preventDefault();
         insertHighlights();
         insertIncludes();
+        insertlabels() ;
 
         if (flag == true) {
             alert("Επιτυχή Προσθήκη  Προχωρήστε στο βήμα 4");
@@ -52,7 +53,7 @@ function insertHighlights() {
 
 function insertIncludes() {
 
-    var includedInputs = document.querySelectorAll('input[type="checkbox"]:checked')
+    var includedInputs =   $("input.includeserv:checkbox:checked")
     var selected = [];
 
     selected = Array.from(includedInputs).map(x => x.value)
@@ -71,7 +72,7 @@ function insertIncludes() {
                 action: 'addIncludesService'
             },
             success: function (data) {
-                flag = true
+              
             },
 
         });
@@ -79,14 +80,37 @@ function insertIncludes() {
     }
 
 
+}
 
 
+function insertlabels() {
+
+    var labelsinputs= $("input.labels:checkbox:checked")
+    var selectedlabels = [];
+
+    selectedlabels = Array.from(labelsinputs).map(x => x.value); 
 
 
+    if (selectedlabels.length == 0) {
+        alert("Πρέπει να επιλέξεις τουλάχιστον ένα Label ");
 
+    } else {
 
+        url = "admin_actions.php"
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+                selectedlabels: selectedlabels,
+                action: 'addSelectedlabels'
+            },
+            success: function (data) {
+                flag = true
+            },
 
+        });
 
+    }
 
 
 }

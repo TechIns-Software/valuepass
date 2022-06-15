@@ -37,6 +37,11 @@ function lastInstertedid($conn, $table)
     }
     // echo json_encode([$message]);
     $stmt->close();
+
+    //
+    if(!is_numeric($last_id)){
+        $last_id = 1;
+    }
     return  $last_id;
 }
 
@@ -417,7 +422,55 @@ function AddRated($conn, $id_cat, $idVendor , $stars) {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
     }
     $stmt->close();
+}
+
+
+function CheckImage1($conn,$id) {
+
+    $query = "SELECT image1 FROM Destination  WHERE id = $id ";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $image1 = '';
+    $stmt->bind_result($image1);
+    $text = '';
+    while ($stmt->fetch()) {
+        $text = $image1;
+    }
+    $stmt->close();
+    return $text;
+
+}
 
 
 
+
+function  getAllLabels($conn) {
+
+    $query = "SELECT lb.id , lbt.name FROM LabelsBox AS lb ,LabelsBoxTranslate AS lbt WHERE lb.id = lbt.idLabelsBox  GROUP BY  lbt.idLabelsBox ";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $id = $name =  '';
+    $stmt->bind_result($id, $name);
+    $includedServices = [];
+    while ($stmt->fetch()) {
+        array_push($includedServices, [$id, $name]);
+    }
+    $stmt->close();
+    return $includedServices;
+}
+
+
+function addSelectedLalels ($conn,$idVendor, $idLabelsBox){
+
+    $query = "INSERT INTO `vendorlabelsbox` (`idVendor`,`idLabelsBox`)  VALUES (?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ii', $idVendor, $idLabelsBox);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Label "]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+
+    $stmt->close();
 }

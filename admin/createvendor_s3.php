@@ -22,6 +22,7 @@ include 'admin_library.php';
 $languages = getAllLanguages($conn);
 
 $includedServices = getAllIncludeServices($conn);
+$labels = getAllLabels($conn);
 
 $vendorid = 0;
 ?>
@@ -48,8 +49,8 @@ $vendorid = 0;
                     <div class=" col-lg-8 col-md-12  my-3" id="geninpt"></div>
 
 
-                    <div class=" col-lg-12 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Επιλέξτε τι περιλαμβάνει το Expreinece <small> (Μπορείτε περισσότερα απο ένα)</small>  </label>
+                    <div class=" col-lg-6 col-md-12  my-3">
+                        <h5 for="exampleInputPassword1" class="form-label">Επιλέξτε τα Includes για το Expreinece <br> <small> (Μπορείτε περισσότερα απο ένα) </small> </h5>
 
 
                         <?php
@@ -69,6 +70,24 @@ $vendorid = 0;
 
 
 
+
+                    <div class=" col-lg-6 col-md-12  my-3">
+                        <h5 for="exampleInputPassword1" class="form-label">Επιλέξτε τα labels που θέλετε για το Expreinece <br> <small> (Μπορείτε περισσότερα απο ένα) </small> </h5>
+
+
+                        <?php
+
+                        foreach ($labels as $label) {  ?>
+
+                            <div class="form-check">
+                                <input class="form-check-input labels" type="checkbox" value="<?php echo  $label[0] ?>" id="<?php echo  $label[0] ?>">
+                                <label class="form-check-label" for="includeserv<?php echo  $label[0] ?>">
+                                    <?php echo  $label[1] ?>
+                                </label>
+                            </div>
+                        <?php  } ?>
+
+                    </div>
                 </div>
                 <a class="btn btn-danger p-2 my-3" id="createbtn3" href="createvendor_s4.php">Επόμενο Βήμα</a>
             </form>

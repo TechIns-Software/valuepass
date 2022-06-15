@@ -5,7 +5,7 @@ include 'initializeExperience.php';
 include_once 'includes/header.php';
 ?>
 <!--TODO: id vendor-->
-<input value="3" id="vendorId" hidden>
+<input value="1" id="vendorId" hidden>
 <main>
 	<section class="hero_in hotels_detail ">
 		<div class="wrapper ">
@@ -160,11 +160,37 @@ include_once 'includes/header.php';
 
 							<div class="row">
 								<div class="col-lg-6 col-md-12">
-									<b  > What to bring </b>
+									<b> What to bring </b>
 									<ul class="ps-3">
-										<li ><i class="fas fa-swimmer fa-lg "></i> Swimwear</li>
-										<li ><i class="fas fa-tshirt fa-lg"></i>  Extra T-shirt </li>
-										<li  ><i class="fas fa-passport fa-lg"></i>  ID card</li>
+										<li><i class="fas fa-swimmer fa-lg "></i> Swimwear</li>
+										<li><i class="fas fa-tshirt fa-lg"></i> Extra T-shirt </li>
+										<li><i class="fas fa-passport fa-lg"></i> ID card</li>
+									</ul>
+								</div>
+
+
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-lg-12">
+							<h5 class="">All of our supliers have met the seven standards of our rating :</h5>
+
+							<div class="row">
+								<div class="col-lg-6 col-md-12">
+									<ul class="ps-3">
+										<li> <b>1. Customer Service Quality </b> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> </li>
+										<li> <b>2. Personalization & Flexibility </b> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i><i class="icon_star voted"></i></li>
+										<li> <b>3. Safety & Sanitary Standards (Covid-19 included) </b> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i><i class="icon_star voted"></i> </li>
+										<li> <b>4. Quality of Materials </b> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i><i class="icon_star voted"></i> </li>
+										<li> <b>5. Ethical Labor Practices </b> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i><i class="icon_star voted"></i> </li>
+										<li> <b>6. Environmental Responsibility </b> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i><i class="icon_star voted"></i> </li>
+										<li> <b>7. Respect for Local Cultures </b> <i class="icon_star voted"></i> </li>
+
+
 									</ul>
 								</div>
 
@@ -176,17 +202,19 @@ include_once 'includes/header.php';
 
 
 
+
+
 				</div>
 			</div>
 		</div>
 
 
 		<section id="book">
-		<div class="container margin_60_35" >
-			<div class="row">
-				<div class="col-lg-8">
+			<div class="container margin_60_35">
+				<div class="row">
+					<div class="col-lg-8">
 
-				<div class="box_detail booking">
+						<div class="box_detail booking">
 							<div class="price">
 								<span>Check availability </span>
 
@@ -371,10 +399,10 @@ include_once 'includes/header.php';
 	<div class="container margin_60_35">
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
-			<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p>
+				<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p>
 				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
-					 All our proposals are hand-picked by our team! . </p>
-					  <b>  Get inspired for your next trip </b>
+					All our proposals are hand-picked by our team! . </p>
+				<b> Get inspired for your next trip </b>
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
@@ -475,11 +503,11 @@ include_once 'includes/header.php';
 
 
 <script src="assets/js/common_scripts.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/validate.js"></script>
-		<!-- INPUT QUANTITY  -->
-		<script src="assets/js/input_qty.js"></script>
-		<script src="changeLanguage.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/validate.js"></script>
+<!-- INPUT QUANTITY  -->
+<script src="assets/js/input_qty.js"></script>
+<script src="changeLanguage.js"></script>
 
 
 
@@ -487,16 +515,16 @@ include_once 'includes/header.php';
 
 <script>
 	$(function() {
-        const minDate = new Date();
-        minDate.setDate(minDate.getDate() + 1);
-        const maxDate = new Date();
-        maxDate.setDate(maxDate.getDate() + 15);
+		const minDate = new Date();
+		minDate.setDate(minDate.getDate() + 1);
+		const maxDate = new Date();
+		maxDate.setDate(maxDate.getDate() + 15);
 		$('input[name="dates"]').daterangepicker({
 			autoUpdateInput: false,
-            singleDatePicker: true,
+			singleDatePicker: true,
 			parentEl: '.scroll-fix',
 			minDate: minDate,
-            maxDate: maxDate,
+			maxDate: maxDate,
 			opens: 'left',
 			locale: {
 				cancelLabel: 'Clear'
@@ -504,24 +532,24 @@ include_once 'includes/header.php';
 		});
 		$('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
 			$(this).val(picker.startDate.format('DD-MM-YYYY'));
-            $(this).attr('value2', picker.startDate.format('YYYY-MM-DD'))
+			$(this).attr('value2', picker.startDate.format('YYYY-MM-DD'))
 			// $(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
 		});
 		$('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
 			$(this).val('');
 		});
 	});
-    document.querySelector('.icon_calendar').addEventListener(
-        'click', ()=> {
-            document.getElementById('date').click();
-        }
-    );
+	document.querySelector('.icon_calendar').addEventListener(
+		'click', () => {
+			document.getElementById('date').click();
+		}
+	);
 </script>
 
 
 
 
-    </body>
+</body>
 <script src="backend/js/cart.js"></script>
-</html>
 
+</html>
