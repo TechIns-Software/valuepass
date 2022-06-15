@@ -1,4 +1,5 @@
 -- TODO: add Default values
+-- TODO: Web and Nikos change tables of date types
 -- id of to be started from 1
 CREATE TABLE Language (
     id int NOT NULL,
@@ -250,7 +251,7 @@ CREATE TABLE VendorVoucher (
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
     starterVouchers int NOT NULL,
     existenceVoucher int NOT NULL,
-    dateVoucher date NOT NULL
+    dateVoucher datetime NOT NULL
 
 )ENGINE=InnoDB;
 
@@ -276,7 +277,7 @@ CREATE TABLE UserConfirmation(
     idUser int NOT NULL,
     FOREIGN KEY (idUser) REFERENCES User(id),
     confirmationNumber int NOT NULL,
-    dateSend date
+    dateSend datetime
 )ENGINE=InnoDB;
 
 
@@ -314,11 +315,11 @@ CREATE TABLE Menu (
 
 
 CREATE TABLE MenuTranslate (
-    idMenu int NOT NULL, 
+    idMenu int NOT NULL,
     FOREIGN KEY (idMenu) REFERENCES Menu(id),
     idLanguage int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language(id),
-    name varchar(100) NOT NULL 
+    name varchar(100) NOT NULL
 )ENGINE=InnoDB;
 
 
@@ -374,3 +375,4 @@ INSERT INTO `menutranslate` (`idMenu`, `idLanguage`, `name`) VALUES
 (12, 2, 'Our Privacy'),
 (13, 1, 'Ακολουθηστε μας'),
 (13, 2, 'Follow Us');
+
