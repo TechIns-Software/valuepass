@@ -54,16 +54,17 @@ if ($_POST['action'] == 'addProduct') {
         $product = $_POST['product'];
         //TODO: change condition + add vendorId condition
         if (!isset(
-                $product["vendorId"],
+                $product["voucherVendorId"],
                 $product["adults"],
                 $product["children"],
+                $product["idVendor"],
                 $product["infants"]
             ) || !is_numeric($product["infants"])) {
             $message = "Something went wrong";
         } else {
-            $product["vendorId"];
-            $vouchersWant = [];
 
+            $vouchersWant = [];
+            $idVendor = $product["idVendor"];
             for ($counter = 0; $counter < $product["adults"]; $counter++) {
                 if ($counter == 0) {
                     $numberOfNumeric = $product["infants"];
@@ -71,12 +72,12 @@ if ($_POST['action'] == 'addProduct') {
                     $numberOfNumeric = 0;
                 }
                 $voucherWant = new \ValuePass\VoucherWant(
-                    1,true, $numberOfNumeric);
+                    $idVendor, $product["voucherVendorId"],true, $numberOfNumeric);
                 array_push($vouchersWant, $voucherWant);
             }
             for ($counter = 0; $counter < $product["children"]; $counter++) {
                 $voucherWant = new \ValuePass\VoucherWant(
-                    1,false, $numberOfNumeric);
+                    $idVendor, 1,false);
                 array_push($vouchersWant, $voucherWant);
             }
             if (count($vouchersWant) == 0) {
@@ -87,6 +88,7 @@ if ($_POST['action'] == 'addProduct') {
                 $message = $cart->addItemsToCart($vouchersWant, $conn);
                 if ($message == "OK") {
                     $_SESSION['cart'] = serialize($cart->getArrayGroupVouchersWant());
+
                 }
             }
         }
@@ -120,6 +122,9 @@ if ($_POST['action'] == 'addProduct') {
             $possiblePackages= getPossibleVouchersPackages(
                 $conn, $idVendor, $totalVouchersWant, $dateSelected
             );
+            $adults = $_POST['adults'];
+            $children = $_POST['children'];
+            $infants = $_POST['infants'];
             //return HTML
             if (count($possiblePackages) == 0) {
                 $message = "NoneFound";
@@ -127,7 +132,7 @@ if ($_POST['action'] == 'addProduct') {
             } else {
                 $message = '';
                 foreach ($possiblePackages as $possiblePackage) {
-//                    $message .= add posible print it
+                    $message = "<button onclick=\"addToCart({'voucherVendorId': $possiblePackage[0],'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">sdfghjkl</button>";
                 }
             }
         }

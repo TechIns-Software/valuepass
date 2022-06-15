@@ -33,16 +33,6 @@ $cart = unserialize($_SESSION['cart']);
             <div class="row">
                 <?php
                 //TODO: We need that calculation in backend as well, so make function
-                $voucherWant1 = new \ValuePass\VoucherWant(1,true, 3);
-                $voucherWant2 = new \ValuePass\VoucherWant(1,true, 0);
-                $voucherWant3 = new \ValuePass\VoucherWant(1, false);
-                $voucherWant4 = new \ValuePass\VoucherWant(1,false);
-                array_push($cart, [$voucherWant1, $voucherWant2, $voucherWant3, $voucherWant4]);
-                $voucherWant1 = new \ValuePass\VoucherWant(1,true, 3);
-                $voucherWant2 = new \ValuePass\VoucherWant(1,true, 0);
-                $voucherWant3 = new \ValuePass\VoucherWant(1, false);
-                $voucherWant4 = new \ValuePass\VoucherWant(1,false);
-                array_push($cart, [$voucherWant1, $voucherWant2, $voucherWant3, $voucherWant4]);
                 if (count($cart) == 0) {
 
                 } else {
@@ -67,13 +57,13 @@ $cart = unserialize($_SESSION['cart']);
                     <?php
                     $allVouchers = [];
                     foreach ($cart as $arrayVouchersWant) {
+                        $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
                         $arrayPrices = getVendorForCart($conn,$arrayVouchersWant[0]->getIdVendorVoucher());
-//                        $priceAdult = $arrayPrices[0];
-//                        $priceChild = $arrayPrices[1];
-//                        $priceInfant = $arrayPrices[2];
-                        $priceAdult = 10;
-                        $priceChild = 5;
-                        $priceInfant = 2;
+                        $priceAdult = $arrayPrices[0];
+                        $priceChild = $arrayPrices[1];
+                        $priceInfant = $arrayPrices[2];
+                        $imageVendor = $arrayPrices[3];
+                        $nameVendor = $arrayPrices[4];
                         $adults = 0;
                         $children = 0;
                         $infants = 0;
@@ -97,7 +87,7 @@ $cart = unserialize($_SESSION['cart']);
                                 <div class="thumb_cart">
                                     <img src="http://via.placeholder.com/150x150/ccc/fff/thumb_cart_1.jpg" alt="Image">
                                 </div>
-                                <span class="item_cart">Persius delenit has cu</span>
+                                <span class="item_cart"><?php echo $nameVendor;?></span>
                             </td>
                             <td>
                                 Adults: <?php echo $adults;?>
@@ -131,7 +121,9 @@ $cart = unserialize($_SESSION['cart']);
                         $canOrderVouchers = false;
                     }
                     $lengthHowManyPay = count($allVouchers);
-                    if (count($allVouchers) > 3 && count($allVouchers) <= 5) {
+                    if (count($allVouchers) == 3) {
+                        $lengthHowManyPay = count($allVouchers);
+                    } elseif (count($allVouchers) > 3 && count($allVouchers) <= 5) {
                         $lengthHowManyPay = count($allVouchers) - 1;
                     } elseif (count($allVouchers) <= 7) {
                         $lengthHowManyPay = count($allVouchers) - 2;

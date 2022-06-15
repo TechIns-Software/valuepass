@@ -73,7 +73,7 @@ class Cart
         } else {
             $message = 'You can have up to 11 vouchers totally selected';
         }
-
+        return $message;
     }
 
     public function checkIfVoucherStillAvailable() : string {
