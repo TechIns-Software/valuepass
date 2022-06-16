@@ -368,6 +368,126 @@ function GetMenu($conn,$lang){
     return $menu;
 }
 
+function setRequestToCentralServer(
+    $data,
+    $url="https://www.insurance-agent-tools.com/valuepass/backend/api/accountconfirm.php"
+) : string {
+
+    $curl = curl_init();
+
+    $fields = array(
+        'field_name_1' => 'Value 1',
+        'field_name_2' => 'Value 2',
+        'field_name_3' => 'Value 3'
+    );
+
+    $json_string = json_encode($fields);
+
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_POST, TRUE);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $json_string);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $dataString = curl_exec($curl);
+
+    curl_close($curl);
+    return $dataString;
+}
+
+function createArrayVouchersSortedFromCart($conn, $cart) {
+    $allVouchers = [];
+
+    $nameVendorArray = [];
+    $dateVoucherArray = [];
+    $adultsArray = [];
+    $childrenArray = [];
+    $infantsArray = [];
+    $amountPayArray = [];
+    $imageVendorArray = [];
+    foreach ($cart as $arrayVouchersWant) {
+        $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
+        $arrayPrices = getVendorForCart($conn, $arrayVouchersWant[0]->getIdVendorVoucher());
+        $priceAdult = $arrayPrices[0];
+        $priceChild = $arrayPrices[1];
+        $priceInfant = $arrayPrices[2];
+        $imageVendor = $arrayPrices[3];
+        $dateVoucher = $arrayPrices[4];
+        $nameVendor = $arrayPrices[5];
+        $adults = 0;
+        $children = 0;
+        $infants = 0;
+        foreach ($arrayVouchersWant as $voucherWant) {
+            if ($voucherWant->isAdult()) {
+                $voucherWant->setPrice($priceAdult + $voucherWant->getNumberOfInfant() * $priceInfant);
+            } else {
+                $voucherWant->setPrice($priceChild);
+
+            }
+            array_push($allVouchers, $voucherWant);
+            $infants = $infants + $voucherWant->getNumberOfInfant();
+            $voucherWant->isAdult() ? $adults = $adults + 1 : $children = $children + 1;
+        }
+        //TODO: getVendor name and image
+        array_push($nameVendorArray, $nameVendor);
+        array_push($dateVoucherArray, $dateVoucher);
+        array_push($adultsArray, $adults);
+        array_push($childrenArray, $children);
+        array_push($infantsArray, $infants);
+        array_push($imageVendorArray, $imageVendor);
+        $amountPay = $priceAdult * $adults + $priceChild * $children + $priceInfant * $infants;
+        array_push($amountPayArray, $amountPay);
+    }
+    //sort from bigger to smaller
+    usort($allVouchers, function($a, $b) {
+        return $b->getPrice() - $a->getPrice();
+    });
+    return array(
+        'allVouchers'=>$allVouchers,
+        'nameVendor'=>$nameVendorArray,
+        'dateVoucher'=>$dateVoucherArray,
+        'imageVendor'=>$imageVendorArray,
+        'adults'=>$adultsArray,
+        'children'=>$childrenArray,
+        'infants'=>$infantsArray,
+        'amountPay'=>$amountPayArray
+    );
+}
+
+function calculatePriceCart($arrayVouchers) {
+    $canOrder = true;
+    if (count($arrayVouchers) < 2 || count($arrayVouchers) > 11) {
+        $canOrder = false;
+    }
+    $lengthHowManyPay = count($arrayVouchers);
+    if (count($arrayVouchers) <= 3) {
+        $lengthHowManyPay = count($arrayVouchers);
+    } elseif (count($arrayVouchers) <= 5) {
+        $lengthHowManyPay = count($arrayVouchers) - 1;
+    } elseif (count($arrayVouchers) <= 7) {
+        $lengthHowManyPay = count($arrayVouchers) - 2;
+    } elseif (count($arrayVouchers) <= 9) {
+        $lengthHowManyPay = count($arrayVouchers) - 3;
+    } else { //we do not care if more than 11, he cannot order
+        $lengthHowManyPay = count($arrayVouchers) - 4;
+    }
+    $totalToPay = 0;
+    $less = 0;
+    for ($counter = 0; $counter < count($arrayVouchers); $counter++) {
+        if ($counter + 1 <= $lengthHowManyPay) {
+            $totalToPay = $totalToPay + $arrayVouchers[$counter]->getPrice();
+        } else {
+            $less = $less + $arrayVouchers[$counter]->getPrice();
+        }
+    }
+    return array(
+        'totalPay'=>$totalToPay,
+        'moneyEarned'=>$less,
+        'vouchersPay'=>$lengthHowManyPay,
+        'canOrder'=>$canOrder
+    );
+}
+
 
 function getTemplateVoucher($VoucherId ,$adults ,$children ,$infants ,$idVendor) {
 

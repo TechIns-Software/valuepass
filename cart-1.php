@@ -9,11 +9,11 @@ if (!isset($conn)) {
 include 'initializeExperience.php';
 $title = "Cart";
 
-$url.= $_SERVER['REQUEST_URI']; 
+$urr = $_SERVER['REQUEST_URI'];
 
 include_once 'includes/header.php';
 include 'backend/includeClasses.php';
-$cart = unserialize($_SESSION['cart']);
+$cartArray = unserialize($_SESSION['cart']);
 ?>
 <main>
 <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
@@ -33,10 +33,11 @@ $cart = unserialize($_SESSION['cart']);
             <div class="row">
                 <?php
                 //TODO: We need that calculation in backend as well, so make function
-                if (count($cart) == 0) { ?>
+                if (count($cartArray) == 0) { ?>
                     <div class="col-lg-12 h-100">
-                  
+
                     </div>
+                if (count($cartArray) == 0) {
 
                     <?php   } else {
                     ?>
@@ -61,33 +62,23 @@ $cart = unserialize($_SESSION['cart']);
                     </thead>
                     <tbody>
                     <?php
-                    $allVouchers = [];
-                    foreach ($cart as $arrayVouchersWant) {
-                        $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
-                        $arrayPrices = getVendorForCart($conn,$arrayVouchersWant[0]->getIdVendorVoucher());
-                        $priceAdult = $arrayPrices[0];
-                        $priceChild = $arrayPrices[1];
-                        $priceInfant = $arrayPrices[2];
-                        $imageVendor = $arrayPrices[3];
-                        $dateVoucher = $arrayPrices[4];
-                        $nameVendor = $arrayPrices[5];
-                        $adults = 0;
-                        $children = 0;
-                        $infants = 0;
-                        foreach ($arrayVouchersWant as $voucherWant) {
-                            if ($voucherWant->isAdult()) {
-                                $voucherWant->setPrice($priceAdult + $voucherWant->getNumberOfInfant() * $priceInfant);
-                            } else {
-                                $voucherWant->setPrice($priceChild);
-
-                            }
-                            array_push($allVouchers, $voucherWant);
-                            $infants = $infants + $voucherWant->getNumberOfInfant();
-                            $voucherWant->isAdult() ? $adults = $adults + 1 : $children = $children + 1;
-                        }
-                        //TODO: getVendor name and image
-
-                        $amountPay = $priceAdult * $adults + $priceChild * $children + $priceInfant * $infants;
+                    $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray);
+                    $allVouchers = $objectVouchersDisplay['allVouchers'];
+                    $nameVendorArray = $objectVouchersDisplay['nameVendor'];
+                    $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
+                    $imageVendorArray = $objectVouchersDisplay['imageVendor'];
+                    $adultsArray = $objectVouchersDisplay['imageVendor'];
+                    $childrenArray = $objectVouchersDisplay['children'];
+                    $infantsArray = $objectVouchersDisplay['infants'];
+                    $amountPayArray = $objectVouchersDisplay['amountPay'];
+                    for ($counter = 0; $counter < count($nameVendorArray); $counter++) {
+                        $nameVendor = $nameVendorArray[$counter];
+                        $dateVoucher = $dateVoucherArray[$counter];
+                        $adults = $adultsArray[$counter];
+                        $children = $childrenArray[$counter];
+                        $infants = $infantsArray[$counter];
+                        $amountPay = $amountPayArray[$counter];
+                        $imageVendor = $imageVendorArray[$counter];
                     ?>
                         <tr>
                             <td>
@@ -115,10 +106,7 @@ $cart = unserialize($_SESSION['cart']);
                         </tr>
                     <?php
                     }
-                    //sort from bigger to smaller
-                    usort($allVouchers, function($a, $b) {
-                        return $b->getPrice() - $a->getPrice();
-                    });
+
                     ?>
                     </tbody>
                     </table>
@@ -126,31 +114,7 @@ $cart = unserialize($_SESSION['cart']);
                     </div>
                     <!-- /col -->
                     <?php
-                    $canOrderVouchers = true;
-                    if (count($allVouchers) < 2 || count($allVouchers) > 11) {
-                        $canOrderVouchers = false;
-                    }
-                    $lengthHowManyPay = count($allVouchers);
-                    if (count($allVouchers) <= 3 ) {
-                        $lengthHowManyPay = count($allVouchers);
-                    } elseif (count($allVouchers) > 3 && count($allVouchers) <= 5) {
-                        $lengthHowManyPay = count($allVouchers) - 1;
-                    } elseif (count($allVouchers) <= 7) {
-                        $lengthHowManyPay = count($allVouchers) - 2;
-                    } elseif (count($allVouchers) <= 9) {
-                        $lengthHowManyPay = count($allVouchers) - 3;
-                    } elseif (count($allVouchers) <= 11) {
-                        $lengthHowManyPay = count($allVouchers) - 4;
-                    }
-                    $totalToPay = 0;
-                    $less = 0;
-                    for ($counter = 0; $counter < count($allVouchers); $counter++) {
-                        if ($counter + 1 <= $lengthHowManyPay) {
-                            $totalToPay = $totalToPay + $allVouchers[$counter]->getPrice();
-                        } else {
-                            $less = $less + $allVouchers[$counter]->getPrice();
-                        }
-                    }
+                    $calculateCartObject = calculatePriceCart($allVouchers);
 //                    TODO: when voucher is 1 or 0
                     ?>
                     <aside class="col-lg-4">
@@ -158,15 +122,15 @@ $cart = unserialize($_SESSION['cart']);
                         <div class="box_detail">
                             <div id="total_cart">
                                 Total <span class="float-end">
-                                <span style="text-decoration: line-through"><?php echo $totalToPay + $less;?></span> / <?php echo $totalToPay;?>$
+                                <span style="text-decoration: line-through"><?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];?></span> / <?php echo $calculateCartObject['totalPay'];?>
                             </span>
                             </div>
                             <ul class="cart_details">
                                 <li>Total Vouchers Get<span><?php echo count($allVouchers);?></span></li>
-                                <li>Vouchers Pay<span><?php echo $lengthHowManyPay;?></span></li>
-                                <li>Vouchers Get Free<span><?php echo count($allVouchers) - $lengthHowManyPay;?></span></li>
+                                <li>Vouchers Pay<span><?php echo $calculateCartObject['vouchersPay'];?></span></li>
+                                <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay'];?></span></li>
                             </ul>
-                            <input type="button" value="Checkout" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($canOrderVouchers ? '' : 'disabled');?>>
+                            <input onclick="" type="button" value="Checkout" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled');?>>
                             <!--                        <div class="text-center"><small>No money charged in this step</small></div>-->
                         </div>
                     </aside>

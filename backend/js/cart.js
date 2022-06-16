@@ -88,6 +88,25 @@ function getPackagesAvailable() {
     }
 }
 
+function checkout() {
+    const data = {
+        'action': 'checkout'
+    };
+    const callBack = (data) => {
+        if (data[0] === 'mustSignIn') {
+
+        } else if (data[0] === 'muchProducts') {
+
+        } else if (data[0] === 'lessProducts') {
+
+        } else if (data[0] === 'unavailableVouchers') {
+
+        } else {
+
+        }
+    };
+}
+
 //no needed right now
 function addPersonInInputField(idInput, idMinusIcon) {
     const inputField = document.getElementById(idInput);

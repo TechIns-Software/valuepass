@@ -145,8 +145,34 @@ if ($_POST['action'] == 'addProduct') {
         // says that we are waiting if ok proccess
         //TODO: our payment provider must rejects payments after 10 minutes
         //request and payment proccess
+        $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
+        $progress = $cart->progressForPayment();
+        if ($progress == true) {
+            //check if are available and if from our DB
+            //TODO: for payment we need some extra fields
+
+            $dataToSend = $cart->getConcentratedVendorVoucherIds();
+
+            $answer = json_decode(setRequestToCentralServer());
+            if ($answer['status'] == 'OK') {
+                $urlRedirect = $answer['url'];
+            } elseif ($answer['status'] == 'notAvailable') {
+                //inform that not available and remove from his cart
+                $arrayUnavailable = $answer['unavailable'];
+                //TODO: to be checked
+                $cart->removeIdsFromGroupOfVouchers($arrayUnavailable);
+                $message = "Unfortunately before a moment some vouchers have been reserved!";
+            } elseif ($answer['status'] == '') {
+
+            } else {
+                //other error
+            }
+
+        } else {
+            $message = $progress;
+        }
     } else {
-        $message = "You Have to Create or Sign in in your Account first";
+        $message = "mustSignIn";
     }
 } 
 echo json_encode([$message]);

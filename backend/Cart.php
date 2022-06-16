@@ -93,13 +93,19 @@ class Cart
     }
 
 
-    public function progressForPayment() {
-        if ($this->checkBottomLimit() && $this->checkUpperLimit()) {
-            //
+    public function progressForPayment() : bool|string {
+        $isBottomOk = $this->checkBottomLimit();
+        $isUpperOk = $this->checkUpperLimit();
+        if ($isUpperOk && $isBottomOk) {
+            return true;
+        } elseif (!$isBottomOk) {
+            return 'lessProducts';
+        } else {
+            return 'muchProducts';
         }
     }
     //ok
-    private function getConcentratedVendorVoucherIds() : array {
+    public function getConcentratedVendorVoucherIds() : array {
         $ids = array();
         foreach ($this->arrayGroupVouchersWant as $groupVoucherWant) {
             if (isset($ids[$groupVoucherWant[0]->getIdVendorVoucher()])) {
@@ -111,4 +117,24 @@ class Cart
         }
         return $ids;
     }
+
+    public function removeIdsFromGroupOfVouchers($arrayIds) : void {
+        $flagFound = false;
+        foreach ($arrayIds as $idsRemove) {
+            for ($counter = 0; $counter < count($this->arrayGroupVouchersWant); $counter++) {
+                $idItemOfVouchers = $this->arrayGroupVouchersWant[$counter][0]->getIdVendor();
+                if ($idItemOfVouchers == $idsRemove) {
+                    //TODO: check it for no ending loop
+                    $this->removeItemFromCart($counter);
+                    $flagFound = true;
+                    break;
+                }
+            }
+
+        }
+        if ($flagFound) {
+            $this->removeIdsFromGroupOfVouchers($arrayIds);
+        }
+    }
+
 }
