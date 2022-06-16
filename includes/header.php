@@ -78,7 +78,7 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 					<!-- <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li> -->
 					<li> </li>
 					<!-- for number in cart just add strong elemnt inside li  -->
-					 <li><a href="#" class="cart-menu-btn " title="Cart"></a></li>
+					 <li><a href="cart-1.php" class="cart-menu-btn " title="Cart"></a></li>
 					<!--<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>  -->
 				</ul>
 				<!-- /top_menu -->
@@ -122,7 +122,7 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</div>
 				<ul id="top_menu">
 					<li></li>
-					<li><a href="#" class="cart-menu-btn" title="Cart"></a></li>
+					<li><a href="cart-1.php" class="cart-menu-btn" title="Cart"></a></li>
 					<!-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
 				</ul>
 				<!-- /top_menu -->
@@ -168,7 +168,7 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</div>
 				<ul id="top_menu">
 					<li></li>
-					<li><a href="#" class="cart-menu-btn" title="Cart"></a></li>
+					<li><a href="cart-1.php" class="cart-menu-btn" title="Cart"></a></li>
 					<!-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
 				</ul>
 				<!-- /top_menu -->

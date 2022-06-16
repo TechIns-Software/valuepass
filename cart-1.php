@@ -171,7 +171,7 @@ $cartArray = unserialize($_SESSION['cart']);
 				<ul class="links">
 					<li><a href="#"> <?php echo $menu[1] ?></a></li>
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
-					<li><a href="#"><?php echo $menu[7] ?></a></li>
+					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
 					<li><a href="#"> <?php echo $menu[5] ?></a></li>
 
 				</ul>

@@ -5,10 +5,7 @@ include 'initializeExperience.php';
 include_once 'includes/header.php';
 ?>
 
-
 <main>
-
-
 	<!-- START SLIDER -->
 	<div id="rev_slider_44_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
 		<!-- Start revolution slider 5.4.8 fullscreen mode -->
@@ -80,17 +77,14 @@ include_once 'includes/header.php';
 	<div class="bg_color_1 shadow bgbanner">
 			<div class="container container-custom margin_80_55 ">
 				<div class="main_title_2">
-					<h2>Value Pass Offers is Active only in Board</h2>
-					<p class="fs-2">Don't Miss it !</p>
+					<h2>ValuePass Offers are only Available Onboard</h2>
+					<p class="fs-2"> <strong> Don't Miss it !!!</strong></p>
 				</div>
 
 			</div>
 			<!-- /container -->
 		</div>
 		<!-- /bg_color_1 -->
-
-
-
 
 
 	<div id="how" class="container margin_80_55">
@@ -290,7 +284,7 @@ include_once 'includes/header.php';
 			<div class="newsletter-subscribe  container">
 				<div class="container">
 					<div class="intro">
-						<h2 class="text-center newsletter">Subscribe to our Newsletter</h2>
+						<h2 class="text-center newsletter">Sign Up to our Newsletter to Get More Experiences</h2>
 						<p class="text-center"> Sign up now to receive personalized itineraries and attraction proposals in your inbox
 						</p>
 					</div>
@@ -299,16 +293,16 @@ include_once 'includes/header.php';
 						<div class="form-group"><select class="form-select" name="" id="">
 
 								<option value="" disabled selected> Choose your Voucher ValuePass </option>
-								<option value="2 Vouchers for 14€"> 2 Vouchers for 14€</option>
-								<option value="3 Vouchers from21€ + extra 1 free Voucher value10€"> 3 Vouchers from 21€ + extra 1 free Voucher value 10€</option>
-								<option value="4 Vouchers from28€ +extra 2 free Voucher value 20€"> 4 Vouchers from 28€ +extra 2 free Voucher value 20€</option>
-								<option value="5 Vouchers from35€ +extra 2 free Voucher value 30€"> 5 Vouchers from 35€ +extra 2 free Voucher value 30€</option>
-								<option value="6 Vouchers from42€ + extra 3 free Voucher value40€"> 6 Vouchers from 42€ + extra 3 free Voucher value 40€</option>
-								<option value="7 Vouchers from49€ +extra3 free Voucher value50€"> 7 Vouchers from 49€ +extra 3 free Voucher value 50€</option>
+								<option value="2 Vouchers"> 2 Vouchers </option>
+								<option value="3 Vouchers + extra 1 free Voucher "> 3 Vouchers + extra 1 free Voucher </option>
+								<option value="4 Vouchers + extra 2 free Voucher "> 4 Vouchers + extra 2 free Voucher </option>
+								<option value="5 Vouchers + extra 2 free Voucher "> 5 Vouchers + extra 2 free Voucher </option>
+								<option value="6 Vouchers + extra 3 free Voucher"> 6 Vouchers + extra 3 free Voucher </option>
+								<option value="7 Vouchers + extra3 free Voucher "> 7 Vouchers + extra 3 free Voucher </option>
 
 							</select></div>
 
-						<div class="form-group"><button class="btn btn-primary" type="button">Subscribe </button></div>
+						<div class="form-group"><button class="btn btn-primary" type="button">Sign Up </button></div>
 					</form>
 				</div>
 			</div>
@@ -345,7 +339,7 @@ include_once 'includes/header.php';
 				<ul class="links">
 					<li><a href="#"> <?php echo $menu[1] ?></a></li>
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
-					<li><a href="#"><?php echo $menu[7] ?></a></li>
+					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
 					<li><a href="#"> <?php echo $menu[5] ?></a></li>
 
 				</ul>

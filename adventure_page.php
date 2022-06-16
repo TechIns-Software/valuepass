@@ -75,23 +75,16 @@ include_once 'includes/header.php';
 							<h3><a href="#"><b>Syros :</b> Swimming Lessons </a></h3>
 							<p>Every July, Voulgari Beach invites young swimmers of the island between the ages of 5 to 12, to attend a series of swimming lessons and show the level of their skills in order to win a commemorative diploma in Triathlon.</p>
 							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
-							<p class="addons">
-								<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> </span> <br> <span class="voucher_av">Vouchers Available <b> 8/10</b></span> <br><span class="prev_price"> Initial Price <b>120 € </b> per person</span>
-							</p>
-							<p class="vpvoucher_price1 m-0 p-1 ">Buy VP Voucher <b>12€ </b> per person</p>
-							<p class="vp_discount m-0 ">You Save 20% 24€</p>
-							<p class="final_price1 m-0  p-1"> Final Price <span>84€ </span> per person</p>
+							<span class="criteria"> Our Criteria Rating  <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
+							<p class=" voucher_av "> Vouchers Available  <b>4/10 </b> </p>
+							<p class=" prev_price my-0" >Initial Price <span class="prev_price_value" >120 €</span>  <span class="perperson">per person</span> </p>
+							<p class="vpvoucher_price1 my-0  ">Buy VP Vouchers <span class="vpvoucher_price1_value"> 12€ </span><span class="perperson">per person</span></p>
+							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
+							<p class="final_price1 my-0"> Final Price  <span class="final_price1_value">84€ </span><span class="perperson">per person</span> </p>
+							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
+						 <button  class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
+						 <p class="my-0 perperson">Reserve Now & Pay Later for your activity </p>	
 						</div>
-						<ul>
-							<li>
-								<p>Buy your Value Pass Voucher <br> Reserve Now & Pay Later for your activity <br> Offer this as a gift (Active click) </p>
-							</li>
-							<li>
-								<a href="#book" class="buy_button my-2 ">Book Now </a>
-							</li>
-						</ul>
-
-
 
 					</div>
 
@@ -104,11 +97,11 @@ include_once 'includes/header.php';
 							<section>
 								<h4 class="underline">Experience</h4>
 								<ul>
-									<li><i class="fa fa-money" aria-hidden="true"></i> Savor delicious local ingredients at the Tomato Industrial Museum and a farm</li>
-									<li><i class="fa fa-info-circle" aria-hidden="true"> </i> Learn about ancient Greek culture at the Symposium Music and Mythology Center</li>
-									<li><i class="fa fa-info-circle" aria-hidden="true"></i> Visit a local farm and learn about the production methods on a guided tour</li>
-									<li><i class="fa fa-info-circle" aria-hidden="true"></i> Discover the importance of tomatoes at the Tomato Factory Industrial Museum</li>
-									<li><i class="fa fa-info-circle" aria-hidden="true"></i> Make music by playing an ancient Greek harp with the help of an instructor</li>
+									<li><i class="fa fa-money" aria-hidden="true"></i>  Savor delicious local ingredients at the Tomato Industrial Museum and a farm</li>
+									<li><i class="fas fa-handshake fa-lg" aria-hidden="true"> </i>  Learn about ancient Greek culture at the Symposium Music and Mythology Center</li>
+									<li><i class="fas fa-utensils fa-lg" aria-hidden="true"></i>  Visit a local farm and learn about the production methods on a guided tour</li>
+									<li><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>  Discover the importance of tomatoes at the Tomato Factory Industrial Museum</li>
+									<li><i class="fas fa-music fa-lg" aria-hidden="true"></i>  Make music by playing an ancient Greek harp with the help of an instructor</li>
 
 								</ul>
 							</section>
@@ -135,14 +128,14 @@ include_once 'includes/header.php';
 
 
 					<div class="row">
-						<div class="col-lg-6">
+						<div class="col-lg-6 includes">
 							<h4 class="underline">Includes</h4>
 							<ul>
-								<li><i class="fa fa-check fa-lg" aria-hidden="true"></i> Pickup and drop-off</li>
-								<li><i class="fa fa-check  fa-lg" aria-hidden="true"></i> Entrance Fees</li>
-								<li><i class="fa fa-check  fa-lg" aria-hidden="true"></i> Local Assistant</li>
-								<li><i class="fa fa-check  fa-lg" aria-hidden="true"></i>Tips</li>
-								<li><i class="fa fa-check fa-lg" aria-hidden="true"></i> Personal expenses </li>
+								<li><i style="color: green;" class="fa fa-check fa-lg" aria-hidden="true"></i> <span> Pickup and drop-off </span></li>
+								<li><i  style="color: green;" class="fa fa-check  fa-lg" aria-hidden="true"></i> <span>Entrance Fees </span> </li>
+								<li><i  style="color: green;" class="fa fa-check  fa-lg" aria-hidden="true"></i> <span>Tips</span> </li>
+								<li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i> <span> Local Assistant</span> </li>
+								<li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i>  <span> Personal expenses </span> </li>
 
 							</ul>
 						</div>
@@ -159,7 +152,7 @@ include_once 'includes/header.php';
 							<h4 class="underline">Important information</h4>
 
 							<div class="row">
-								<div class="col-lg-6 col-md-12">
+								<div class="col-lg-6 col-md-12 importantinfosli">
 									<b> What to bring </b>
 									<ul class="ps-3">
 										<li><i class="fas fa-swimmer fa-lg "></i> Swimwear</li>
@@ -177,7 +170,7 @@ include_once 'includes/header.php';
 
 					<div class="row">
 						<div class="col-lg-12">
-							<h5 class="">All of our supliers have met the seven standards of our rating :</h5>
+							<h5 class="">All of our suplies have met the seven standards of our rating :</h5>
 
 							<div class="row">
 								<div class="col-lg-6 col-md-12">
@@ -419,7 +412,7 @@ include_once 'includes/header.php';
 				<ul class="links">
 					<li><a href="#"> <?php echo $menu[1] ?></a></li>
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
-					<li><a href="#"><?php echo $menu[7] ?></a></li>
+					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
 					<li><a href="#"> <?php echo $menu[5] ?></a></li>
 
 				</ul>

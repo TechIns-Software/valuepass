@@ -87,7 +87,7 @@
             </li>
 
             <li>
-              <a href="add_ratedCategory.php">Rated Category
+              <a href="add_ratedcategory.php">Rated Category
                 <!-- <span class="badge badge-pill badge-danger">6</span> -->
               </a>
             </li>
