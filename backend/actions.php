@@ -132,7 +132,7 @@ if ($_POST['action'] == 'addProduct') {
             } else {
                 $message = '';
                 foreach ($possiblePackages as $possiblePackage) {
-                    $message = "<button onclick=\"addToCart({'voucherVendorId': $possiblePackage[0],'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">sdfghjkl</button>";
+                    $message = "<button class='btn btn-primary' onclick=\"addToCart({'voucherVendorId': $possiblePackage[0],'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button>";
                 }
             }
         }
