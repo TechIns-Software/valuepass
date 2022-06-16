@@ -33,9 +33,12 @@ $cart = unserialize($_SESSION['cart']);
             <div class="row">
                 <?php
                 //TODO: We need that calculation in backend as well, so make function
-                if (count($cart) == 0) {
+                if (count($cart) == 0) { ?>
+                    <div class="col-lg-12 h-100">
+                  
+                    </div>
 
-                } else {
+                    <?php   } else {
                     ?>
                     <div class="col-lg-8">
                     <div class="box_cart">

@@ -132,7 +132,8 @@ if ($_POST['action'] == 'addProduct') {
             } else {
                 $message = '';
                 foreach ($possiblePackages as $possiblePackage) {
-                    $message = "<button class='btn btn-primary' onclick=\"addToCart({'voucherVendorId': $possiblePackage[0],'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button>";
+                    $message =  getTemplateVoucher($possiblePackage[0] ,$adults ,$children ,$infants ,$idVendor) ;
+//                    $message = "<button class='btn btn-primary' onclick=\"addToCart({'voucherVendorId': $possiblePackage[0],'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button>";
                 }
             }
         }

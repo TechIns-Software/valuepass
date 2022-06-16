@@ -368,3 +368,19 @@ function GetMenu($conn,$lang){
     return $menu;
 }
 
+
+function getTemplateVoucher($VoucherId ,$adults ,$children ,$infants ,$idVendor) {
+
+$message = `<div class='col-sm-6 '>` ;
+
+$message .= " <h4> Voucher : Experience Name $VoucherId  </h4>  <ul>";
+    $message .= " <li> Adults : $adults </li>";
+    $message .=  "<li> Children :$children </li>";
+    $message .= "<li> Infants : $infants </li> </ul>";
+    $message .= "  <p>Price </p>";
+    $message .= "  <button class='btn btn-primary' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button>" ;
+    $message .= " </div>";
+
+    return $message ;
+
+}
