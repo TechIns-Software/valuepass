@@ -491,14 +491,14 @@ function calculatePriceCart($arrayVouchers) {
 
 function getTemplateVoucher($VoucherId ,$adults ,$children ,$infants ,$idVendor) {
 
-$message = "<div class='col-lg-6  voucherticket'>" ;
+$message = "<div class='col-lg-12  vouchertemplate'>" ;
 
-$message .= " <h4> Voucher : Experience Name $VoucherId  </h4>  <ul>";
-    $message .= " <li> <b>Adults</b>  : $adults </li>";
-    $message .=  "<li> <b>Children</b>  :$children </li>";
-    $message .= "<li> <b> Infants</b>  : $infants </li> </ul>";
-    $message .= "  <h4>Price </h4>";
-    $message .= "  <button class='btn btn-primary' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button>" ;
+$message .= "<div class='title'> <h4>  Experience Name $VoucherId  </h4> </div> <div class='pricebreakdown'> <ul>";
+    $message .= " <li> Adults  : <b>$adults </b>  </li>";
+    $message .=  "<li> Children  : <b> $children </b> </li>";
+    $message .= "<li>  Infants  : <b> $infants </b </li> </ul> </div> <div class='price'>";
+    $message .= "  <h5 >Price <b>  €</b> <br> <small>All taxes and fees included</small>   </h5></div> <div class='addtocartsection'>";
+    $message .= "  <button onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
     $message .= " </div>";
 
     return $message ;
