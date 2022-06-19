@@ -224,6 +224,8 @@ if ($errorProcess) {
             'redirect'=>$redirectLink
         )
     );
+    //TODO: can not use JS, from PHP should redirect, add in object attributes needed from Alpha Bank
+
     //https://stackoverflow.com/questions/5647461/how-do-i-send-a-post-request-with-php
     //https://reqbin.com/code/php/ky6hlmcs/php-post-request-example
     $curl = curl_init();
