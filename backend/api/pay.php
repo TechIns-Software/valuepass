@@ -219,9 +219,11 @@ if ($errorProcess) {
     $redirectLink = "";
     $orderIdPayment;
     $orderAmount;
+    //do the process needed
     echo json_encode(
         array(
-            'redirect'=>$redirectLink
+            'redirect'=>$redirectLink,
+            'orderId'=>$orderIdPayment
         )
     );
     //TODO: can not use JS, from PHP should redirect, add in object attributes needed from Alpha Bank
