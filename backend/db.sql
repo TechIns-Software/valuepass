@@ -289,7 +289,8 @@ CREATE TABLE OrderPayment(
     FOREIGN KEY (idUser) REFERENCES User(id),
     orderIdUsed varchar(200),
     orderAmount float NOT NULL,
-    isPaid int DEFAULT 0
+    isPaid int DEFAULT 0,
+    datePayment date
 )ENGINE=InnoDB;
 
 CREATE TABLE OrderVendorVoucher(

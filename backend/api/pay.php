@@ -149,8 +149,8 @@ if ($flagEverythingExists && !$errorProcess) {
      */
     $tempString = str_pad($idUser%100,2,"0",STR_PAD_LEFT);
     $orderIdPayment = date('msyd') . generateRandomString() . $tempString . generateRandomString();
-    $query = "INSERT INTO OrderPayment(idUser, orderIdPayment, orderAmount)
-            VALUES (?, ?, ?);";
+    $query = "INSERT INTO OrderPayment(idUser, orderIdPayment, orderAmount, datePayment)
+            VALUES (?, ?, ?, NOW());";
     $stmtOrderPayment = $conn->prepare($query);
     $stmtOrderPayment->bind_param('isi',$idUser, $orderIdPayment, $orderAmount);
     if ($stmtOrderPayment->execute()) {
