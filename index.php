@@ -298,7 +298,7 @@ include_once 'includes/header.php';
 								<option value="4 Vouchers + extra 2 free Voucher "> 4 Vouchers + extra 2 free Voucher </option>
 								<option value="5 Vouchers + extra 2 free Voucher "> 5 Vouchers + extra 2 free Voucher </option>
 								<option value="6 Vouchers + extra 3 free Voucher"> 6 Vouchers + extra 3 free Voucher </option>
-								<option value="7 Vouchers + extra3 free Voucher "> 7 Vouchers + extra 3 free Voucher </option>
+								<option value="7 Vouchers + extra3 free Voucher "> 7 Vouchers + extra 4 free Voucher </option>
 
 							</select></div>
 

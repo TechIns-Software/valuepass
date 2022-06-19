@@ -25,7 +25,7 @@ if (count($vendors) <= 0) {
 			<div class="wrapper">
 				<div class="container container-custom">
 					<h3>{ Location Name }</h3>
-					<p>Hosted journeys to extra ordinary and unique places.</p>
+					<p>Hosted journeys to <span class="extraordinary" > extraordinary </span> and unique places.</p>
 					<a href="#bestof" class="btn_1">Explore more</a>
 				</div>
 			</div>

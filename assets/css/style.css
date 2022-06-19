@@ -3946,9 +3946,10 @@ a.box_feat h3 {
   font-weight: 700;
 }
 
-s {
+.prev_price2 s {
   color: rgb(218, 124, 17) !important;
-  font-weight: 700 !important;
+  font-weight: 900 !important;
+  font-size:medium;
   text-decoration: line-through !important;
   text-decoration-color: red !important;
 }
@@ -10949,7 +10950,7 @@ html[xmlns] .slides {
   border-radius: 5em;
   color: white;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 700;
   border: none !important;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
@@ -11049,7 +11050,9 @@ border-bottom: 1px solid gray;
 
 
 
-
+.extraordinary{
+  color: blue;
+}
 
 
 
