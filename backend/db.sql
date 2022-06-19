@@ -305,7 +305,8 @@ CREATE TABLE OrderVendorVoucher(
     isAdult binary(1) NOT NULL,
     numberInfants int
 );
-
+-- TODO: think Payment is Order table
+-- so not needed payment array
 -- maybe not needed
 CREATE TABLE Payment (
     id int NOT NULL AUTO_INCREMENT,
@@ -321,8 +322,8 @@ CREATE TABLE Voucher (
     FOREIGN KEY (idVendorVoucher) REFERENCES VendorVoucher(id),
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
-    idPayment int,
-    FOREIGN KEY (idPayment) REFERENCES Payment(id),
+    idOrder int,
+    FOREIGN KEY (idOrder) REFERENCES OrderPayment(id),
     isAdult binary(1) NOT NULL,
     price int,
     infantNumber int,
