@@ -205,7 +205,7 @@ if (count($vendors) <= 0) {
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="#"><b>Syros :</b> Climbing</a></h3>
+							<h3><a href="adventure_page.php#book"><b>Syros :</b> Climbing</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -228,7 +228,7 @@ if (count($vendors) <= 0) {
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="#"><b>Syros :</b> Swimming</a></h3>
+							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -250,7 +250,7 @@ if (count($vendors) <= 0) {
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="#"><b>Syros :</b> Swimming</a></h3>
+							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -272,7 +272,7 @@ if (count($vendors) <= 0) {
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="#"><b>Syros :</b> Swimming</a></h3>
+							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -294,7 +294,7 @@ if (count($vendors) <= 0) {
 						</figure>
 						<div class="wrapper best  ">
 							<small>Watersports</small>
-							<h3><a href="#"><b>Syros :</b> Scuba Diving</a></h3>
+							<h3><a href="adventure_page.php#book"><b>Syros :</b> Scuba Diving</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -316,7 +316,7 @@ if (count($vendors) <= 0) {
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="#"><b>Syros :</b> Swimming</a></h3>
+							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
