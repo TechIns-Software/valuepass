@@ -250,6 +250,7 @@ CREATE TABLE VendorVoucher (
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
     starterVouchers int NOT NULL,
+    reserved int NOT NULL,
     existenceVoucher int NOT NULL,
     dateVoucher datetime NOT NULL
 
@@ -258,7 +259,8 @@ CREATE TABLE VendorVoucher (
 ALTER TABLE VendorVoucher ADD COLUMN reserved int DEFAULT 0;
 CREATE TABLE VendorVoucherBook (
     id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
+    PRIMARY KEY (id)
+    -- ψωδφωφδω
 )ENGINE=InnoDB;
 -- /////////////////////////////////////////////////////////////////
 -- For our DB
@@ -280,8 +282,30 @@ CREATE TABLE UserConfirmation(
     dateSend datetime
 )ENGINE=InnoDB;
 
+CREATE TABLE OrderPayment(
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idUser int NOT NULL,
+    FOREIGN KEY (idUser) REFERENCES User(id),
+    orderIdUsed varchar(200),
+    orderAmount float NOT NULL,
+    isPaid int DEFAULT 0
+)ENGINE=InnoDB;
 
+CREATE TABLE OrderVendorVoucher(
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idOrderPayment int NOT NULL,
+    FOREIGN KEY (idOrderPayment) REFERENCES OrderPayment(id),
+    idVendorVoucher int NOT NULL,
+    FOREIGN KEY (idVendorVoucher) REFERENCES VendorVoucher(id),
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+    isAdult binary(1) NOT NULL,
+    numberInfants int
+);
 
+-- maybe not needed
 CREATE TABLE Payment (
     id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
