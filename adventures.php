@@ -24,8 +24,8 @@ if (count($vendors) <= 0) {
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
-					<h3>{ Location Name }</h3>
-					<p>Hosted journeys to <span class="extraordinary" > extraordinary </span> and unique places.</p>
+					<h3 >Location Name</h3>
+					<p>Hosted journeys to  extraordinary  and unique places.</p>
 					<a href="#bestof" class="btn_1">Explore more</a>
 				</div>
 			</div>
@@ -60,7 +60,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 					</div>
 				</div>
@@ -79,7 +79,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 					</div>
 				</div>
@@ -97,7 +97,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 					</div>
 				</div>
@@ -115,7 +115,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 					</div>
 				</div>
@@ -133,7 +133,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 					</div>
 				</div>
@@ -151,7 +151,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 					</div>
 				</div>
@@ -214,7 +214,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 						</div>
 					</div>
@@ -237,7 +237,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 						</div>
 					</div>
@@ -259,7 +259,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 						</div>
 					</div>
@@ -281,7 +281,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 						</div>
 					</div>
@@ -303,7 +303,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 						</div>
 					</div>
@@ -325,7 +325,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<div class=" buy_button2" > <a href="adventure_page.php#book">Book Now </a>  </div>
+							<a href="adventure_page.php#book"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
 						</div>
 					</div>

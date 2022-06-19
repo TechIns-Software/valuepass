@@ -474,3 +474,41 @@ function addSelectedLalels ($conn,$idVendor, $idLabelsBox){
 
     $stmt->close();
 }
+
+function getAvailableExperiences($conn,$idLoc) {
+    $query = "SELECT v.id, vt.name ,vt.descriptionSmall FROM Vendor AS v, VendorTranslate AS vt WHERE v.id = vt.idVendor AND v.idDestination = $idLoc GROUP BY v.id ";
+
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $id = $name = $description = '';
+    $stmt->bind_result($id, $name, $description);
+    $availableExperiences = [];
+    while ($stmt->fetch()) {
+        array_push($availableExperiences, [$id, $name , $description]);
+    }
+    $stmt->close();
+
+    return $availableExperiences ;
+}
+
+function getBestofLocation($conn ,$location){
+
+    $query = "SELECT id , idVendor FROM BestOff WHERE idDestination = $location ";
+
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $id = $idVendor =  '';
+    $stmt->bind_result($id, $idVendor);
+    $bestofbylocations = [];
+    while ($stmt->fetch()) {
+        array_push($bestofbylocations, [$id, $idVendor]);
+    }
+
+    $stmt->close();
+    return $bestofbylocations ;
+
+}
+
+function DeleteBestofByLocation($conn,$id){
+    
+}

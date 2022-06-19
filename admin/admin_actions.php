@@ -21,9 +21,9 @@ try {
         $_POST["action"] == "addVendorInfos" ||
         $_POST["action"] == "addRatedCategory" ||
         $_POST["action"] == "addRatedCategoryValues" ||
-        $_POST["action"] == "uploadlocationimages" || 
-        $_POST["action"] == "addSelectedlabels" 
-
+        $_POST["action"] == "uploadlocationimages" ||
+        $_POST["action"] == "addSelectedlabels" ||
+        $_POST["action"] == "addBestoffs"
 
     ) {
         if ($_POST["action"] == "addlocation") {
@@ -33,9 +33,9 @@ try {
             // print_r($data_langs);
             $table = 'Destination';
             $last_id = lastInstertedid($conn, $table);
-            echo "THIS IS LAST ID --> ".var_dump($last_id) ;
+            echo "THIS IS LAST ID --> " . var_dump($last_id);
             addrowDestination($conn, ($last_id + 1));
-            $_SESSION['DestinationId'] = $last_id +1 ;
+            $_SESSION['DestinationId'] = $last_id + 1;
 
             foreach ($data_langs as $data_lang) {
                 $id_loc = substr($data_lang[0], -1);
@@ -265,7 +265,7 @@ try {
 
             foreach ($data_r_categories as $data_r_category) {
                 $id_cat = $data_r_category[0];
-                AddRated($conn, $id_cat, $_SESSION['vendorcreateid'] ,$data_r_category[1]);
+                AddRated($conn, $id_cat, $_SESSION['vendorcreateid'], $data_r_category[1]);
             }
         } else  if ($_POST["action"] == "addSelectedlabels") {
 
@@ -274,7 +274,11 @@ try {
             foreach ($datalabels as $datalabel) {
                 addSelectedLalels($conn, $_SESSION['vendorcreateid'], $datalabel);
             }
-      
+        } else if ($_POST["action"] == "addBestoffs") {
+            $databesofs = $_POST['bestofdata'];
+            $id_loc = $_POST['location_id'];
+            /// *** NOT FINISHED *** //
+
         }
     }
 } catch (Exception $exception) {

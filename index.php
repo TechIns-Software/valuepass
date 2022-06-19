@@ -166,12 +166,11 @@ include_once 'includes/header.php';
 							</a>
 						</div>  -->
 
-				<div class="item">
+				<div class="item" onclick="location.href='./adventures.php?id=1';">
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
-						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+						<!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
 						<div class="card-img-overlay d-flex flex-column">
 							<div class="card-body">
-
 							</div>
 							<div class="card-footer">
 								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
@@ -181,7 +180,7 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-				<div class="item">
+				<div class="item" onclick="location.href='./adventures.php?id=1';">
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?andros');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?andros" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
@@ -196,7 +195,7 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-				<div class="item">
+				<div class="item" onclick="location.href='./adventures.php?id=1';" >
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
@@ -211,7 +210,7 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-				<div class="item">
+				<div class="item" onclick="location.href='./adventures.php?id=1';">
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?crete');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?crete" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
@@ -226,7 +225,7 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-				<div class="item">
+				<div class="item" onclick="location.href='./adventures.php?id=1';">
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?greece');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?greece" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
@@ -241,12 +240,12 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-				<div class="item">
+	
+				<div class="item" onclick="location.href='./adventures.php?id=1';" >
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
 							<div class="card-body">
-
 							</div>
 							<div class="card-footer">
 								<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
@@ -256,7 +255,7 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-				<div class="item">
+				<div class="item" onclick="location.href='./adventures.php?id=1';">
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
@@ -296,8 +295,8 @@ include_once 'includes/header.php';
 								<option value="2 Vouchers"> 2 Vouchers </option>
 								<option value="3 Vouchers + extra 1 free Voucher "> 3 Vouchers + extra 1 free Voucher </option>
 								<option value="4 Vouchers + extra 2 free Voucher "> 4 Vouchers + extra 2 free Voucher </option>
-								<option value="5 Vouchers + extra 2 free Voucher "> 5 Vouchers + extra 2 free Voucher </option>
-								<option value="6 Vouchers + extra 3 free Voucher"> 6 Vouchers + extra 3 free Voucher </option>
+								<option value="5 Vouchers + extra 2 free Voucher "> 5 Vouchers + extra 3 free Voucher </option>
+								<option value="6 Vouchers + extra 3 free Voucher"> 6 Vouchers + extra 4 free Voucher </option>
 								<option value="7 Vouchers + extra3 free Voucher "> 7 Vouchers + extra 4 free Voucher </option>
 
 							</select></div>

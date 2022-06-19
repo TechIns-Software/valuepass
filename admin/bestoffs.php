@@ -7,6 +7,7 @@ $title = "Best offs";
 include_once "header.php";
 include 'admin_library.php';
 
+
 $destinations = GetAllDestinations($conn);
 ?>
 
@@ -16,6 +17,8 @@ $destinations = GetAllDestinations($conn);
     <div class="container-fluid">
         <div class="loc_title">
             <h4>Δημιουργία Best off <small>(Κάθε location)</small> </h4>
+            <hr>
+            <h5>Επιλέξτε την Τοποθεσία <br> που θέλετε να δημιουργήσετε τα best off </h5> 
         </div>
 
         <ul class="list-group d-flex justify-content-between">

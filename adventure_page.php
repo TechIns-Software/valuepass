@@ -170,7 +170,7 @@ include_once 'includes/header.php';
 
 					<div class="row">
 						<div class="col-lg-12">
-							<h5>All of our supliers have met the seven standards of our rating :</h5>
+							<h5>All of our supplies  have met the seven standards of our rating :</h5>
 
 							<div class="row">
 	
@@ -300,7 +300,7 @@ include_once 'includes/header.php';
 							</a>
 						</div>  -->
 
-					<div class="item">
+					<div class="item" onclick="location.href='./adventures.php?id=1';" >
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -315,7 +315,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="item">
+					<div class="item" onclick="location.href='./adventures.php?id=1';">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?andros');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?andros" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -330,7 +330,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="item">
+					<div class="item" onclick="location.href='./adventures.php?id=1';">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -345,7 +345,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="item">
+					<div class="item" onclick="location.href='./adventures.php?id=1';">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?crete');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?crete" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -360,7 +360,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="item">
+					<div class="item" onclick="location.href='./adventures.php?id=1';">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?greece');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?greece" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -375,7 +375,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="item">
+					<div class="item" onclick="location.href='./adventures.php?id=1';">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -390,7 +390,7 @@ include_once 'includes/header.php';
 						</div>
 					</div>
 
-					<div class="item">
+					<div class="item" onclick="location.href='./adventures.php?id=1';">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
