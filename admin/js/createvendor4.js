@@ -9,7 +9,7 @@ document.getElementById('createbtn4').addEventListener(
 
         if (flag == true) {
             alert("Επιτυχή Προσθήκη  Προχωρήστε στο βήμα 5");
-            // window.location.href = 'createvendor_s5.php';
+            window.location.href = 'createvendor_s5.php';
         }
 
     }

@@ -39,7 +39,7 @@ function lastInstertedid($conn, $table)
     $stmt->close();
 
     //
-    if(!is_numeric($last_id)){
+    if (!is_numeric($last_id)) {
         $last_id = 1;
     }
     return  $last_id;
@@ -357,7 +357,7 @@ function addImportantInformationDescriptionTranslate($conn, $idImportantInformat
 
 
 function addVendorTranslate($conn, $idVendor, $idLanguage, $name, $descSmall, $descbig, $descfull)
-{ 
+{
     $query = "INSERT INTO `VendorTranslate` (`idVendor`, `idLanguage`, `name`, `descriptionSmall`, `descriptionBig`, `descriptionFull`)  VALUES (?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iissss', $idVendor, $idLanguage, $name, $descSmall, $descbig, $descfull);
@@ -372,7 +372,8 @@ function addVendorTranslate($conn, $idVendor, $idLanguage, $name, $descSmall, $d
 }
 
 
-function addrowRatedCategory($conn,$id) {
+function addrowRatedCategory($conn, $id)
+{
     $query = "INSERT INTO `RatedCategory` (`id`, `orderNumber`) VALUES ($id,99)";
     $stmt = $conn->prepare($query);
     $stmt->execute();
@@ -411,7 +412,8 @@ function getRatedCategories($conn)
 }
 
 
-function AddRated($conn, $id_cat, $idVendor , $stars) {
+function AddRated($conn, $id_cat, $idVendor, $stars)
+{
 
     $query = "INSERT INTO `Rated` (`idRatedCategory`, `idVendor`, `stars`) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
@@ -425,7 +427,8 @@ function AddRated($conn, $id_cat, $idVendor , $stars) {
 }
 
 
-function CheckImage1($conn,$id) {
+function CheckImage1($conn, $id)
+{
 
     $query = "SELECT image1 FROM Destination  WHERE id = $id ";
     $stmt = $conn->prepare($query);
@@ -438,13 +441,13 @@ function CheckImage1($conn,$id) {
     }
     $stmt->close();
     return $text;
-
 }
 
 
 
 
-function  getAllLabels($conn) {
+function  getAllLabels($conn)
+{
 
     $query = "SELECT lb.id , lbt.name FROM LabelsBox AS lb ,LabelsBoxTranslate AS lbt WHERE lb.id = lbt.idLabelsBox  GROUP BY  lbt.idLabelsBox ";
     $stmt = $conn->prepare($query);
@@ -460,7 +463,8 @@ function  getAllLabels($conn) {
 }
 
 
-function addSelectedLalels ($conn,$idVendor, $idLabelsBox){
+function addSelectedLalels($conn, $idVendor, $idLabelsBox)
+{
 
     $query = "INSERT INTO `vendorlabelsbox` (`idVendor`,`idLabelsBox`)  VALUES (?,?)";
     $stmt = $conn->prepare($query);
@@ -475,7 +479,8 @@ function addSelectedLalels ($conn,$idVendor, $idLabelsBox){
     $stmt->close();
 }
 
-function getAvailableExperiences($conn,$idLoc) {
+function getAvailableExperiences($conn, $idLoc)
+{
     $query = "SELECT v.id, vt.name ,vt.descriptionSmall FROM Vendor AS v, VendorTranslate AS vt WHERE v.id = vt.idVendor AND v.idDestination = $idLoc GROUP BY v.id ";
 
     $stmt = $conn->prepare($query);
@@ -484,14 +489,15 @@ function getAvailableExperiences($conn,$idLoc) {
     $stmt->bind_result($id, $name, $description);
     $availableExperiences = [];
     while ($stmt->fetch()) {
-        array_push($availableExperiences, [$id, $name , $description]);
+        array_push($availableExperiences, [$id, $name, $description]);
     }
     $stmt->close();
 
-    return $availableExperiences ;
+    return $availableExperiences;
 }
 
-function getBestofLocation($conn ,$location){
+function getBestofLocation($conn, $location)
+{
 
     $query = "SELECT id , idVendor FROM BestOff WHERE idDestination = $location ";
 
@@ -505,10 +511,27 @@ function getBestofLocation($conn ,$location){
     }
 
     $stmt->close();
-    return $bestofbylocations ;
-
+    return $bestofbylocations;
 }
 
-function DeleteBestofByLocation($conn,$id){
-    
+function DeleteBestofByLocation($conn, $id)
+{
+    $query = "DELETE FROM `BestOff` WHERE   idDestination = $id ;";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+function addBestoff($conn, $idloc, $idVendor)
+{ 
+    $query = "INSERT INTO `BestOff` (`idDestination`, `idVendor`) VALUES (?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ii', $idloc, $idVendor);
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Best off"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+    $stmt->close();
 }

@@ -278,6 +278,13 @@ try {
             $databesofs = $_POST['bestofdata'];
             $id_loc = $_POST['location_id'];
             /// *** NOT FINISHED *** //
+            DeleteBestofByLocation($conn, $id_loc);
+
+            if (count($databesofs) > 0){
+                foreach ($databesofs as $databesof) {
+                    addBestoff($conn,  $id_loc, $databesof);
+                }
+            }
 
         }
     }

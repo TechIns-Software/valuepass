@@ -10,6 +10,7 @@ document.getElementById('createbtn5').addEventListener(
         
         if (flag == true ){
             alert("Η Εισαγωγή Vendor Ολοκληρώθηκε ");
+            window.location.href = 'index.php';
         }
 
 

@@ -37,7 +37,7 @@
 <body class="fixed-nav sticky-footer" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="index.php">
       <!-- <img src="img/logo.png" alt="" width="150" height="36"> -->
       VALUEPASS ADMIN
     </a>
@@ -47,7 +47,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="#">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>

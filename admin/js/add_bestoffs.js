@@ -8,6 +8,7 @@ submitbestoffbtn.addEventListener('click', () =>{
     const location_id = $("#locationId").val();
 
     var experienceInputs= $("input.idexper:checkbox:checked")
+    console.log(experienceInputs)
     var selectedexperiences = [];
 
     selectedexperiences = Array.from(experienceInputs).map(x => x.value); 
@@ -26,7 +27,7 @@ submitbestoffbtn.addEventListener('click', () =>{
         },
         success: function (data) {
             alert("Επιτυχή Προσθήκη  Best off ");
-            window.location.href = 'bestoffs.php';
+            // window.location.href = 'bestoffs.php';
         },
 
     });

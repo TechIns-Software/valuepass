@@ -21,7 +21,7 @@ include_once "header.php"; ?>
               </div>
               <div class="mr-5"><h5>26 New Messages!</h5></div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="messages.html">
+            <a class="card-footer text-white clearfix small z-1" href="index.php">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -37,7 +37,7 @@ include_once "header.php"; ?>
               </div>
 				<div class="mr-5"><h5>11 New Reviews!</h5></div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="reviews.html">
+            <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -53,7 +53,7 @@ include_once "header.php"; ?>
               </div>
               <div class="mr-5"><h5>10 New Bookings!</h5></div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="bookings.html">
+            <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -69,7 +69,7 @@ include_once "header.php"; ?>
               </div>
               <div class="mr-5"><h5>10 New Bookmarks!</h5></div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="bookmarks.html">
+            <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
