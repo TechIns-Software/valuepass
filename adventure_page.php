@@ -7,7 +7,7 @@ include_once 'includes/header.php';
 <!--TODO: id vendor-->
 <input value="1" id="vendorId" hidden>
 <main>
-	<section class="hero_in hotels_detail ">
+	<!-- <section class="hero_in hotels_detail ">
 		<div class="wrapper ">
 			<div class="container ">
 				<h1 class="fadeInUp"><span></span>Vendor Page</h1>
@@ -18,11 +18,46 @@ include_once 'includes/header.php';
 				<a href="assets/img/2.jpg" title="Photo title" data-effect="mfp-zoom-in"></a>
 			</span>
 		</div>
-	</section>
+	</section> -->
 	<!--/hero_in-->
 
+	<!-- Slider -->
+	<div id="full-slider-wrapper">
+		<div id="layerslider" style="width:100%;height:650px;">
+			<!-- first slide -->
+			<div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
+				<img src="assets/img/10.jpg" class="ls-bg" alt="Slide background">
+				<h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">Unique <strong>Experiences </strong> 1 </h3>
+				<!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+					Tours - Hotels - Restaurants
+				</p> -->
+				<p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read Description</a></p>
 
-	<div class="bg_color_1">
+			</div>
+			<!-- second slide -->
+			<div class="ls-slide" data-ls="slidedelay:5000; transition2d:103;">
+				<img src="assets/img/4.jpg" class="ls-bg" alt="Slide background">
+				<h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;"><strong>Enjoy</strong> Unforgatable Holidays</h3>
+				<!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+					Tours - Hotels - Restaurants
+				</p> -->
+				<p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read more</a></p>
+			</div>
+			<!-- third slide -->
+			<div class="ls-slide" data-ls="slidedelay: 5000; transition2d:5;">
+				<img src="assets/img/2.jpg" class="ls-bg" alt="Slide background">
+				<h3 class="ls-l slide_typo" style="top:47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;"><strong>Top Attractions</strong> to discover</h3>
+				<!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+					Tours - Hotels - Restaurants
+				</p> -->
+				<p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read more</a></p>
+			</div>
+		</div>
+	</div>
+	<!-- End layerslider -->
+
+
+	<div class=" bg_color_1">
 		<nav class="secondary_nav sticky_horizontal">
 			<div class="container">
 				<ul class="clearfix">
@@ -170,49 +205,49 @@ include_once 'includes/header.php';
 
 					<div class="row">
 						<div class="col-lg-12">
-							<h5>All of our supplies  have met the seven standards of our rating :</h5>
+							<h5>All of our supplies have met the seven standards of our rating :</h5>
 
 							<div class="row">
-	
+
 								<div class="row">
 									<div class="col-lg-3 "> <b>1. Customer Service Quality </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i>  <i class="icon_star voted"></i> </div>
+									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i> <i class="icon_star voted"></i> </div>
 
 								</div>
 
 								<div class="row">
-									<div class="col-lg-3"> <b>2. Personalization & Flexibility </b>  </div>
+									<div class="col-lg-3"> <b>2. Personalization & Flexibility </b> </div>
 									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
 								</div>
 
-								
+
 								<div class="row">
-									<div class="col-lg-3"> <b>3. Safety & Sanitary Standards (Covid-19 included) </b>  </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i>  <i class="icon_star "></i></div>
+									<div class="col-lg-3"> <b>3. Safety & Sanitary Standards (Covid-19 included) </b> </div>
+									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i> <i class="icon_star "></i></div>
 								</div>
 
-								
+
 								<div class="row">
 									<div class="col-lg-3"> <b>4. Quality of Materials</b> </div>
 									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
 								</div>
 
 
-								
+
 								<div class="row">
 									<div class="col-lg-3"> <b>5. Ethical Labor Practices </b> </div>
 									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
 								</div>
 
-								
+
 								<div class="row">
 									<div class="col-lg-3"> <b>6. Environmental Responsibility </b> </div>
 									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
 								</div>
-								
+
 								<div class="row">
-									<div class="col-lg-3"> <b>7. Respect for Local Cultures  </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i> <i class="icon_star voted"></i>   </div>
+									<div class="col-lg-3"> <b>7. Respect for Local Cultures </b> </div>
+									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i> <i class="icon_star voted"></i> </div>
 								</div>
 
 							</div>
@@ -300,7 +335,7 @@ include_once 'includes/header.php';
 							</a>
 						</div>  -->
 
-					<div class="item" onclick="location.href='./adventures.php?id=1';" >
+					<div class="item" onclick="location.href='./adventures.php?id=1';">
 						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
 							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 							<div class="card-img-overlay d-flex flex-column">
@@ -530,6 +565,27 @@ include_once 'includes/header.php';
 <!-- INPUT QUANTITY  -->
 <script src="assets/js/input_qty.js"></script>
 <script src="changeLanguage.js"></script>
+
+
+<!-- Layers Slider -->
+<script src="assets/js/greensock.js"></script>
+<script src="assets/js/layerslider.transitions.js"></script>
+<script src="assets/js/layerslider.kreaturamedia.jquery.js"></script>
+<script>
+	'use strict';
+	$('#layerslider').layerSlider({
+		autoStart: true,
+		navButtons: false,
+		navStartStop: false,
+		showCircleTimer: false,
+		responsive: true,
+		responsiveUnder: 1280,
+		layersContainer: 1200,
+		skinsPath: 'assets/css/layerslider/'
+		// Please make sure that you didn't forget to add a comma to the line endings
+		// except the last line!
+	});
+</script>
 
 
 

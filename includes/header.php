@@ -46,7 +46,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/settings.css">
 	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/layers.css">
 	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/navigation.css">
-
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/layerslider.css">
 	<!-- FOR FLAGS -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 
