@@ -53,7 +53,10 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Historic</small>
 							<h3><a href="adventure_page.php"><b>Syros :</b> Climbing</a></h3>
-							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
+							<p class="text-muted my-0 label">5 hours /Small Group</p>
+							
+							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu</p>
+
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
 							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
@@ -72,6 +75,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Watersports</small>
 							<h3><a href="adventure_page.php"><b>Syros :</b> Climbing</a></h3>
+							<p class="text-muted my-0 label">2 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
@@ -90,6 +94,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
 							<h3><a href="adventure_page.php"><b>Syros :</b> Food</a></h3>
+							<p class="text-muted my-0 label">2 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
@@ -108,6 +113,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
 							<h3><a href="adventure_page.php"><b>Syros :</b> Traditional </a></h3>
+							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
@@ -126,6 +132,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
 							<h3><a href="adventure_page.php"><b>Syros :</b> Traditional </a></h3>
+							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
@@ -144,6 +151,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
 							<h3><a href="adventure_page.php"><b>Syros :</b> Traditional </a></h3>
+							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
@@ -206,6 +214,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Historic</small>
 							<h3><a href="adventure_page.php#book"><b>Syros :</b> Climbing</a></h3>
+							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -229,6 +238,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Historic</small>
 							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
+							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -251,6 +261,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Historic</small>
 							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
+							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -273,6 +284,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Historic</small>
 							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
+							<p class="text-muted my-0 label">5 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -295,6 +307,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Watersports</small>
 							<h3><a href="adventure_page.php#book"><b>Syros :</b> Scuba Diving</a></h3>
+							<p class="text-muted my-0 label">5 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
@@ -317,6 +330,7 @@ if (count($vendors) <= 0) {
 						<div class="wrapper best  ">
 							<small>Historic</small>
 							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
+							<p class="text-muted my-0 label">5 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
