@@ -11059,3 +11059,7 @@ border-bottom: 1px solid gray;
 .label{
   font-size: .7rem;
 }
+
+.displayNone{
+  display: none;
+}
