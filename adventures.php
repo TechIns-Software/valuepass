@@ -63,7 +63,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -85,7 +85,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -106,7 +106,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -127,7 +127,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -148,7 +148,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -169,7 +169,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -227,12 +227,12 @@ if (count($vendors) <= 0) {
 				<div id="exper1" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="1">
 					<div class="box_grid">
 						<figure>
-							<a href="adventure_page.php#book"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="adventure_page.php"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="adventure_page.php#book"><b>Syros :</b> Climbing</a></h3>
+							<h3><a href="adventure_page.php"><b>Syros :</b> Climbing</a></h3>
 							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
@@ -242,7 +242,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -253,12 +253,12 @@ if (count($vendors) <= 0) {
 				<div  id="exper2" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="1">
 					<div class="box_grid">
 						<figure>
-							<a href="adventure_page.php#book"><img src="assets/img/4.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="adventure_page.php"><img src="assets/img/4.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
+							<h3><a href="adventure_page.php"><b>Syros :</b> Swimming</a></h3>
 							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
@@ -268,7 +268,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -278,12 +278,12 @@ if (count($vendors) <= 0) {
 				<div id="exper3" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="1">
 					<div class="box_grid">
 						<figure>
-							<a href="adventure_page.php#book"><img src="assets/img/4.jpg" class="img-fluid" alt="" width="800" height="533">
+							<a href="adventure_page.php"><img src="assets/img/4.jpg" class="img-fluid" alt="" width="800" height="533">
 							</a>
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
+							<h3><a href="adventure_page.php"><b>Syros :</b> Swimming</a></h3>
 							<p class="text-muted my-0 label">3 hours /Small Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
@@ -293,7 +293,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -303,12 +303,12 @@ if (count($vendors) <= 0) {
 				<div  id="exper4" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="1">
 					<div class="box_grid">
 						<figure>
-							<a href="adventure_page.php#book"><img src="assets/img/slider_images/happy3.webp" class="img-fluid" alt="" width="800" height="533">
+							<a href="adventure_page.php"><img src="assets/img/slider_images/happy3.webp" class="img-fluid" alt="" width="800" height="533">
 							</a>
 						</figure>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="adventure_page.php#book"><b>Syros :</b> Swimming</a></h3>
+							<h3><a href="adventure_page.php"><b>Syros :</b> Swimming</a></h3>
 							<p class="text-muted my-0 label">5 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
@@ -318,7 +318,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -328,12 +328,12 @@ if (count($vendors) <= 0) {
 				<div id="exper5"  class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="2">
 					<div class="box_grid">
 						<figure>
-							<a href="adventure_page.php#book"><img src="assets/img/slider_images/happy2.webp" class="img-fluid" alt="" width="800" height="533">
+							<a href="adventure_page.php"><img src="assets/img/slider_images/happy2.webp" class="img-fluid" alt="" width="800" height="533">
 							</a>
 						</figure>
 						<div class="wrapper best  ">
 							<small>Watersports</small>
-							<h3><a href="adventure_page.php#book"><b>Syros :</b> Scuba Diving</a></h3>
+							<h3><a href="adventure_page.php"><b>Syros :</b> Scuba Diving</a></h3>
 							<p class="text-muted my-0 label">5 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
@@ -343,7 +343,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
@@ -353,12 +353,12 @@ if (count($vendors) <= 0) {
 				<div  id="exper6"  class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="3">
 					<div class="box_grid">
 						<figure>
-							<a href="adventure_page.php#book"><img src="assets/img/slider_images/happy1.webp" class="img-fluid" alt="" width="800" height="533">
+							<a href="adventure_page.php"><img src="assets/img/slider_images/happy1.webp" class="img-fluid" alt="" width="800" height="533">
 							</a>
 						</figure>
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
-							<h3><a href="adventure_page.php#book"><b>Syros :</b> Cooking</a></h3>
+							<h3><a href="adventure_page.php"><b>Syros :</b> Cooking</a></h3>
 							<p class="text-muted my-0 label">5 hours /Big Group</p>
 							<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 
@@ -368,7 +368,7 @@ if (count($vendors) <= 0) {
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php#book">
+							<a href="adventure_page.php">
 								<div class=" buy_button2"> Book Now </div>
 							</a>
 						</div>
