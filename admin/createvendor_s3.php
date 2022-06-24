@@ -24,7 +24,6 @@ $languages = getAllLanguages($conn);
 $includedServices = getAllIncludeServices($conn);
 $labels = getAllLabels($conn);
 
-$vendorid = 0;
 ?>
 
 <div class="content-wrapper">
@@ -50,7 +49,7 @@ $vendorid = 0;
 
 
                     <div class=" col-lg-6 col-md-12  my-3">
-                        <h5 for="exampleInputPassword1" class="form-label">Επιλέξτε τα Includes για το Expreinece <br> <small> (Μπορείτε περισσότερα απο ένα) </small> </h5>
+                        <h5 for="exampleInputPassword1" class="form-label">Επιλέξτε τα Includes για το Experience <br> <small> (Μπορείτε περισσότερα απο ένα) </small> </h5>
 
 
                         <?php
@@ -72,7 +71,7 @@ $vendorid = 0;
 
 
                     <div class=" col-lg-6 col-md-12  my-3">
-                        <h5 for="exampleInputPassword1" class="form-label">Επιλέξτε τα labels που θέλετε για το Expreinece <br> <small> (Μπορείτε περισσότερα απο ένα) </small> </h5>
+                        <h5 for="exampleInputPassword1" class="form-label">Επιλέξτε τα labels που θέλετε για το Experience <br> <small> (Μπορείτε περισσότερα απο ένα) </small> </h5>
 
 
                         <?php

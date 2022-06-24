@@ -1,18 +1,20 @@
 
-
+var flag = true;
 document.getElementById('createbtn3').addEventListener(
     'click', (e) => {
 
-        var flag = false;
+        flag = true;
         e.preventDefault();
-        insertHighlights();
-        insertIncludes();
-        insertlabels() ;
+        const ajax1 = insertHighlights();
+        const ajax2 = insertIncludes();
+        const ajax3 =insertlabels();
+        $.when(ajax1, ajax2, ajax3).done(function () {
+            if (flag) {
+                alert("Επιτυχή Προσθήκη  Προχωρήστε στο βήμα 4");
+                window.location.href = 'createvendor_s4.php';
+            }
+        });
 
-        if (flag == true) {
-            alert("Επιτυχή Προσθήκη  Προχωρήστε στο βήμα 4");
-            window.location.href = 'createvendor_s4.php';
-        }
 
     }
 );
@@ -34,7 +36,7 @@ function insertHighlights() {
 
     console.log(objHead);
     url = "admin_actions.php"
-    $.ajax({
+    return $.ajax({
         type: "POST",
         url: url,
         data: {
@@ -44,6 +46,9 @@ function insertHighlights() {
         },
         success: function (data) {
 
+        },
+        error: function (a,b,c) {
+            flag = false;
         },
 
     });
@@ -57,14 +62,15 @@ function insertIncludes() {
     var selected = [];
 
     selected = Array.from(includedInputs).map(x => x.value)
-
+    console.log(selected, "ghjkl");
     if (selected.length == 0) {
-        alert("Πρέπει να επιλέξεις τουλάχιστον ένα ");
+        alert("Δεν επιλέξατε Included Services! ");
+        flag = false;
 
     } else {
 
         url = "admin_actions.php"
-        $.ajax({
+        return $.ajax({
             type: "POST",
             url: url,
             data: {
@@ -72,7 +78,10 @@ function insertIncludes() {
                 action: 'addIncludesService'
             },
             success: function (data) {
-              
+
+            },
+            error: function (a,b,c) {
+                flag = false;
             },
 
         });
@@ -92,12 +101,12 @@ function insertlabels() {
 
 
     if (selectedlabels.length == 0) {
-        alert("Πρέπει να επιλέξεις τουλάχιστον ένα Label ");
-
+        alert("Δεν επιλέξατε Labels -  ");
+        flag = false;
     } else {
 
         url = "admin_actions.php"
-        $.ajax({
+        return $.ajax({
             type: "POST",
             url: url,
             data: {
@@ -105,7 +114,10 @@ function insertlabels() {
                 action: 'addSelectedlabels'
             },
             success: function (data) {
-                flag = true
+
+            },
+            error: function (a,b,c) {
+                flag = false;
             },
 
         });

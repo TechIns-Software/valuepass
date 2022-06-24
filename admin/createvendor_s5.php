@@ -18,7 +18,6 @@ include 'admin_library.php';
 $languages = getAllLanguages($conn);
 $ratedCategories = getRatedCategories($conn);
 
-$vendorid = 0;
 ?>
 
 <div class="content-wrapper">
@@ -46,19 +45,19 @@ $vendorid = 0;
 
                                 <div class=" mb-3 form-floating">
                                     <label for="desc<?php echo  $language[0] ?>" class="form-label">Μικρή περιγραφή <span class="flag-icon flag-icon-<?php echo  $language[2] ?>"> </label>
-                                    <textarea class="form-control" name="desc<?php echo  $language[0] ?>" id="desc<?php echo  $language[0] ?>" cols="5" rows="3">   </textarea>
+                                    <textarea class="form-control" name="desc<?php echo  $language[0] ?>" id="desc<?php echo  $language[0] ?>" cols="5" rows="3"></textarea>
                                 </div>
 
 
                                 <div class=" mb-3 form-floating">
                                     <label for="descbig<?php echo  $language[0] ?>" class="form-label">Μεγάλη περιγραφή <span class="flag-icon flag-icon-<?php echo  $language[2] ?>"> </label>
-                                    <textarea class="form-control" name="descbig<?php echo  $language[0] ?>" id="descbig<?php echo  $language[0] ?>" cols="5" rows="5">   </textarea>
+                                    <textarea class="form-control" name="descbig<?php echo  $language[0] ?>" id="descbig<?php echo  $language[0] ?>" cols="5" rows="5"></textarea>
                                 </div>
 
 
                                 <div class=" mb-3 form-floating">
                                     <label for="descfull<?php echo  $language[0] ?>" class="form-label">Full περιγραφή <span class="flag-icon flag-icon-<?php echo  $language[2] ?>"> </label>
-                                    <textarea class="form-control" name="descfull<?php echo  $language[0] ?>" id="descfull<?php echo  $language[0] ?>" cols="5" rows="8">   </textarea>
+                                    <textarea class="form-control" name="descfull<?php echo  $language[0] ?>" id="descfull<?php echo  $language[0] ?>" cols="5" rows="8"></textarea>
                                 </div>
 
 
@@ -100,11 +99,7 @@ $vendorid = 0;
             </div>
 
 
-            <div class="col-lg-12">
-                <h4>Εισαγωγή φωτογραφίων </h4>
-
-            <button class="btn btn-danger p-2 my-3" id="createbtn5"> Εισαγωγή Vendor</button>
-            </div>
+            <button class="btn btn-danger p-2 my-3" id="createbtn5">Επόμενο Στάδιο</button>
         </div>
 
         <script src="js/createvendor5.js"></script>

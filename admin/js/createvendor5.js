@@ -1,18 +1,17 @@
 
-
+var flag = true;
 document.getElementById('createbtn5').addEventListener(
     'click', (e) => {
         e.preventDefault();
 
-        var flag = false;
-        getRatedCategories();
-        getNames();
-        
-        if (flag == true ){
-            alert("Η Εισαγωγή Vendor Ολοκληρώθηκε ");
-            window.location.href = 'index.php';
-        }
-
+        const ajax1 = getRatedCategories();
+        const ajax2 = getNames();
+        $.when(ajax1, ajax2).done(function () {
+            if (flag) {
+                alert("Προχωρήστε στην εισαγωγή φωτογραφιών");
+                window.location.href = 'addImagesVendor.php';
+            }
+        });
 
     }
 );
@@ -24,6 +23,7 @@ function getNames(){
     const empty = datavendor.find(element => element['value'] == "");
     if (empty) {
         alert("Πρέπει να συμπληρώσεις όλα τα πεδία");
+        flag = false;
     } else {
 
         const data1 = [];
@@ -38,7 +38,7 @@ function getNames(){
 
         console.log(data1)
 
-        url = "admin_actions.php",
+        return url = "admin_actions.php",
             $.ajax({
                 type: "POST",
                 url: url,
@@ -47,9 +47,11 @@ function getNames(){
                     action: 'addVendorInfos'
                 },
                 success: function (data) {
-                    alert("Επιτυχή Προσθήκη Vendor")
                    
                 },
+                error: function (a,b,c) {
+                    flag = false;
+                }
 
             });
 
@@ -68,11 +70,12 @@ function  getRatedCategories() {
     const empty = datacategories.find(element => element[1] == "");
     if (empty) {
         alert("Πρέπει να συμπληρώσεις όλα τα πεδία");
+        flag = false;
     } else {
 
 
         url = "admin_actions.php"
-        $.ajax({
+        return $.ajax({
             type: "POST",
             url: url,
             data: {
@@ -80,7 +83,9 @@ function  getRatedCategories() {
                 action: 'addRatedCategoryValues'
             },
             success: function (data) {
-                flag = true
+            },
+            error: function (a,b,c) {
+                flag = false;
             },
 
         });

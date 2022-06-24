@@ -23,7 +23,9 @@ try {
         $_POST["action"] == "addRatedCategoryValues" ||
         $_POST["action"] == "uploadlocationimages" ||
         $_POST["action"] == "addSelectedlabels" ||
-        $_POST["action"] == "addBestoffs"
+        $_POST["action"] == "addBestoffs" ||
+        $_POST["action"] == "finalizeVendor"
+
 
     ) {
         if ($_POST["action"] == "addlocation") {
@@ -209,7 +211,7 @@ try {
                     $table = 'ImportantInformationHead';
                     $last_id = lastInstertedid($conn, $table);
                     $last_id++;
-                    addrowImportantHead($conn, $last_id + 1, $_SESSION['vendorcreateid']);
+                    addrowImportantHead($conn, $last_id, $_SESSION['vendorcreateid']);
 
                     $lastid = lastInstertedid($conn, $table);
 
@@ -286,6 +288,9 @@ try {
                 }
             }
 
+        } else if ($_POST["action"] == "finalizeVendor") {
+            finalizeVendor($conn, $_SESSION['vendorcreateid']);
+            unset($_SESSION['vendorcreateid']);
         }
     }
 } catch (Exception $exception) {

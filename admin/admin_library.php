@@ -22,18 +22,13 @@ function lastInstertedid($conn, $table)
     $query = "SELECT id FROM $table ORDER BY id DESC LIMIT 0, 1";
     $stmt = $conn->prepare($query);
 
-
+    $last_id = 0; //DEFAULT first ID is 1, so if no row, return 0
     if ($stmt->execute()) {
-        $last_id = -1;
+
         $stmt->bind_result($last_id);
         while ($stmt->fetch()) {
         }
 
-        if ($last_id == -1) {
-            $message = "Wrong Credential";
-        } else {
-            $message = "Success";
-        }
     }
     // echo json_encode([$message]);
     $stmt->close();
@@ -533,5 +528,12 @@ function addBestoff($conn, $idloc, $idVendor)
     } else {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
     }
+    $stmt->close();
+}
+
+function finalizeVendor($conn, $idVendor) {
+    $query = "UPDATE Vendor SET isCompleted = 1 WHERE id = $idVendor";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
     $stmt->close();
 }

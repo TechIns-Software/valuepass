@@ -19,8 +19,6 @@ include 'admin_library.php';
 
 $languages = getAllLanguages($conn);
 
-
-$vendorid = 0;
 ?>
 
 <div class="content-wrapper">

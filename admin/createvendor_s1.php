@@ -10,7 +10,6 @@ $title = "Δημιουργία Vendor | Step  1" ;
 include_once "header.php";
 include 'admin_library.php';
 
-$vendorid = 0;
 
 $destinations = GetAllDestinations($conn);
 
@@ -92,7 +91,7 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                     </div>
 
                 </div>
-                <a class="btn btn-danger p-2 my-3" id="createbtn1" href="createvendor_s2.php?id=<?php echo $vendorid; ?>">Επόμενο Βήμα</a>
+                <a class="btn btn-danger p-2 my-3" id="createbtn1" href="createvendor_s2.php">Επόμενο Βήμα</a>
             </form>
 
         </div>

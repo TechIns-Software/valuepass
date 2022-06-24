@@ -250,17 +250,15 @@ CREATE TABLE VendorVoucher (
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
     starterVouchers int NOT NULL,
-    reserved int NOT NULL,
     existenceVoucher int NOT NULL,
-    dateVoucher datetime NOT NULL
+    dateVoucher datetime NOT NULL,
+    reserved int DEFAULT 0
 
 )ENGINE=InnoDB;
 
-ALTER TABLE VendorVoucher ADD COLUMN reserved int DEFAULT 0;
 CREATE TABLE VendorVoucherBook (
     id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id)
-    -- ψωδφωφδω
 )ENGINE=InnoDB;
 -- /////////////////////////////////////////////////////////////////
 -- For our DB
@@ -305,16 +303,7 @@ CREATE TABLE OrderVendorVoucher(
     isAdult binary(1) NOT NULL,
     numberInfants int
 );
--- TODO: think Payment is Order table
--- so not needed payment array
--- maybe not needed
-CREATE TABLE Payment (
-    id int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    idUser int NOT NULL,
-    FOREIGN KEY (idUser) REFERENCES User(id),
-    totalAmount int NOT NULL
-)ENGINE=InnoDB;
+
 CREATE TABLE Voucher (
     id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
@@ -330,7 +319,6 @@ CREATE TABLE Voucher (
     extraMoney int
 
 )ENGINE=InnoDB;
--- TODO: price and extra money needed?extra money where to go?
 
 
 CREATE TABLE Menu (
@@ -401,6 +389,39 @@ INSERT INTO `menutranslate` (`idMenu`, `idLanguage`, `name`) VALUES
 (12, 2, 'Our Privacy'),
 (13, 1, 'Ακολουθηστε μας'),
 (13, 2, 'Follow Us');
+
+/*
+INSERT INTO PaymentInfoActivity VALUES();
+INSERT INTO PaymentInfoActivity VALUES();
+
+INSERT INTO PaymentInfoActivityTranslate(idPaymentInfoActivity, idLanguage, head, description)
+VALUES(1,1,'Πληρωσε Τωρα', 'Πληρωσε Τωρα'),
+(2,1,'Πληρωσε Μέτα', 'Πληρωσε Μέτα'),
+(1,2,'Pay Now', 'Pay Now'),
+(2,2,'Pay Later', 'Pay Later');
+
+INSERT INTO IncludedService() VALUES ();
+INSERT INTO IncludedServiceTranslate(idIncludedService, idLanguage, name)
+VALUES (1,1,'Ελληνικό label'), (1,2,'English label');
+
+INSERT INTO RatedCategory(orderNumber)
+VALUES (1), (2), (3), (4), (5), (6), (7);
+INSERT INTO RatedCategoryTranslate(idRatedCategory, idLanguage, nameCategory)
+VALUES (1,1,'Ποιότητα Εξυπηρέτησης Πελατών'),
+       (1,2,'Customer Service Quality'),
+       (2,1,'Εξατομίκευση & Ευελιξία'),
+       (2,2,'Personalization & Flexibility'),
+       (3,1,'Πρότυπα ασφάλειας και υγιεινής (συμπεριλαμβανομένου του Covid-19)'),
+       (3,2,'Safety & Sanitary Standards (Covid-19 Included)'),
+       (4,1, 'Ποιότητα Υλικών'),
+       (4,2,'Quality of Materials'),
+       (5,1,'Ηθικές Εργασιακές Πρακτικές'),
+       (5,2,'Ethical Labor Practices'),
+       (6,1,'Περιβαλλοντική Ευθύνη'),
+       (6,2,'Environmental Responsibility'),
+       (7,1, 'Σεβασμός στους Πολιτιστική Κληρονομιά'),
+       (7,2,'Respect for Local Cultures');
+ */
 
 INSERT INTO CategoryVendor() VALUES ();
 INSERT INTO PaymentInfoActivity() VALUES ();

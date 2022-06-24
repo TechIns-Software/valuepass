@@ -56,7 +56,12 @@ function getImportantInfo() {
             action: 'addImportantInfo'
         },
         success: function (data) {
+            alert("Θα μεταφερθείτε στο επόμενο βήμα!");
+            window.location.href = 'createvendor_s5.php';
 
+        },
+        error: function (a,b,c) {
+            alert('Something Went wrong');
         },
 
     });
