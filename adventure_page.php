@@ -61,7 +61,7 @@ include_once 'includes/header.php';
 		<nav class="secondary_nav sticky_horizontal">
 			<div class="container">
 				<ul class="clearfix">
-					<li><a href="#" class="active">Buy VP Voucher</a></li>
+					<li><a href="#book" class="active">Buy VP Voucher</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -117,7 +117,7 @@ include_once 'includes/header.php';
 							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
 							<p class="final_price1 my-0"> Final Price <span class="final_price1_value">84€ </span><span class="perperson">per person</span> </p>
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
-							<button class=" my-2 btn buy_button "> <a href="#">Book Now </a> </button>
+							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
 							<p class="my-0 perperson">Reserve Now your Spot & Pay Later for your activity </p>
 						</div>
 

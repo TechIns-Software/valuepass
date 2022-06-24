@@ -37,7 +37,6 @@ $cartArray = unserialize($_SESSION['cart']);
                     <div class="col-lg-12 h-100">
 
                     </div>
-                if (count($cartArray) == 0) {
 
                     <?php   } else {
                     ?>
