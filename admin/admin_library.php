@@ -461,7 +461,7 @@ function  getAllLabels($conn)
 function addSelectedLalels($conn, $idVendor, $idLabelsBox)
 {
 
-    $query = "INSERT INTO `vendorlabelsbox` (`idVendor`,`idLabelsBox`)  VALUES (?,?)";
+    $query = "INSERT INTO `VendorLabelsBox` (`idVendor`,`idLabelsBox`)  VALUES (?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ii', $idVendor, $idLabelsBox);
 
