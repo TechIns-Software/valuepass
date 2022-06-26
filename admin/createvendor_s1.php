@@ -89,6 +89,13 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                             <?php } ?>
                         </select>
                     </div>
+                    <div class="col-sm-9 my-3">
+                        <input type="file" class="custom-file-input" id="file">
+                        <label class="custom-file-label" for="file">Φωτογραφία</label>
+                    </div>
+                    <div class="col-sm-3 my-3">
+                        <button onclick="addImage(event);" class="form-control">Ανέβασμα</button>
+                    </div>
 
                 </div>
                 <a class="btn btn-danger p-2 my-3" id="createbtn1" href="createvendor_s2.php">Επόμενο Βήμα</a>

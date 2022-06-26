@@ -1,8 +1,12 @@
 
-
+var isImageUploaded = false;
 document.getElementById('createbtn1').addEventListener(
     'click', (e) => {
         e.preventDefault();
+        if (!isImageUploaded) {
+            alert("Παρακαλώ πρώτα ανεβάστε την φωτογραφία");
+            return;
+        }
         const datastep1 = $("#createvendor1").serializeArray();
 
         const empty = datastep1.find(element => element['value'] == "");
@@ -42,3 +46,28 @@ document.getElementById('createbtn1').addEventListener(
 
     }
 );
+
+function addImage(event) {
+    event.preventDefault();
+    var fd = new FormData();
+    var files = $('#file')[0].files;
+
+    // Check file selected or not
+    if (files.length > 0 ) {
+        canUploadImage = false;
+        fd.append('file',files[0]);
+        $.ajax({
+            url: 'uploadBasicVendor.php',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                isImageUploaded = true;
+                alert("Η φωτογραφία ανέβηκε!");
+            },
+        });
+    } else {
+        alert("Παρακαλώ επιλέξτε ένα αρχείο");
+    }
+}

@@ -35,7 +35,7 @@ function lastInstertedid($conn, $table)
 
     //
     if (!is_numeric($last_id)) {
-        $last_id = 1;
+        $last_id = 0;
     }
     return  $last_id;
 }
@@ -184,12 +184,12 @@ function GetAllPaymentInfos($conn)
 function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId)
 {
 
-    $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity` )
-     VALUES (?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity`,  `imageBasic`)
+     VALUES (?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('idddddii', $destId, $priceAdult, $originalPrice, $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId);
-
+    $stmt->bind_param('idddddiis', $destId, $priceAdult, $originalPrice, $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId, $_SESSION['basicImage']);
     if ($stmt->execute()) {
+        unset($_SESSION['basicImage']);
         echo json_encode(["success", "Επιτυχής Προσθήκη Vendor"]);
     } else {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
