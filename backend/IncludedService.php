@@ -6,18 +6,22 @@ namespace ValuePass;
 
 class IncludedService {
     private string $name;
-    private string $icon;
 
     /**
      * IncludedService constructor.
      * @param string $name
-     * @param string $icon
      */
-    public function __construct(string $name, string $icon)
+    public function __construct(string $name)
     {
         $this->name = $name;
-        $this->icon = $icon;
     }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
 
 }

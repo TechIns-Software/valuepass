@@ -13,7 +13,7 @@ class ImportantInformation
      * ImportantInformation constructor.
      * @param string $head
      */
-    public function __construct(string $head, array $descriptions)
+    public function __construct(string $head)
     {
         $this->head = $head;
     }
@@ -22,4 +22,19 @@ class ImportantInformation
         array_push($this->descriptions, $description);
     }
 
+    /**
+     * @return string
+     */
+    public function getHead(): string
+    {
+        return $this->head;
+    }
+
+    /**
+     * @return array
+     */
+    public function getDescriptions(): array
+    {
+        return $this->descriptions;
+    }
 }

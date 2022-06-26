@@ -51,8 +51,8 @@ if (isset($_SESSION['DestinationId'])) {
             <form class="container" method="post" action="" enctype="multipart/form-data" id="myform">
                 <div>
                     <input class="form-control" type="file" id="file" name="file" />
-                    <input hidden id="uploadImageBtn" type="button" class="button" value="Upload" id="but_upload">
-                    <button class="btn  btn-warning my-3" id="uploadbtn"  onclick="uploadImageAsynchronous();">Ανέβασμα Φωτογραφίας</button>
+                    <input hidden id="file" type="button" class="button" value="Upload" id="but_upload">
+                    <button class="btn  btn-warning my-3" id="uploadbtn"  onclick="uploadImageAsynchronous(event);">Ανέβασμα Φωτογραφίας</button>
                 </div>
             </form>
         </div>

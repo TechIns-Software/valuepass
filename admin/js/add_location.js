@@ -1,7 +1,5 @@
-
 var numberofchanges = 0;
-
-
+var waitUntilImageUpload = false;
 document.getElementById('addlocationbtn').addEventListener(
     'click', (e) => {
         e.preventDefault();
@@ -55,7 +53,12 @@ function addLocationInfos() {
 
 
 
-function uploadImageAsynchronous(updating=false) {
+function uploadImageAsynchronous(event) {
+    event.preventDefault();
+    if (waitUntilImageUpload) {
+        alert("Παρακαλώ περιμένετε να αναίβει η πρώτη φωτογραφία πρώτα");
+        return;
+    }
     waitUntilImageUpload = true;
     var fd = new FormData();
     var files = $('#file')[0].files;
@@ -71,16 +74,14 @@ function uploadImageAsynchronous(updating=false) {
             processData: false,
             success: function(response) {
                 waitUntilImageUpload = false;
+                $('#file').val('');
                 if (response != 0) {
                     numberofchanges ++;
                     if (numberofchanges == 1 ) {
                         alert('Η φωτογραφία ανέβηκε επιτυχώς! , Παρακαλώ ανεβάστε την Δευτερη φωτογραφία');
-                        $('#file').val('');
                     } else if  (numberofchanges == 2 ) {
-                        $('#file').val('');
-                        $("#file").prop('disabled', true);
-                        $("#uploadbtn").prop('disabled', true);
                         alert('Ολες οι  φωτογραφίες ανέβηκαν επιτυχώς! ');
+                        window.location = "index.php";
                     }
 
                 } else {

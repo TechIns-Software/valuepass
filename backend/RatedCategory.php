@@ -20,4 +20,20 @@ class RatedCategory
         $this->stars = $stars;
     }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStars(): int
+    {
+        return $this->stars;
+    }
+
 }

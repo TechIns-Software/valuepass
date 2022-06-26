@@ -43,10 +43,10 @@ if(isset($_FILES['file']['name'])) {
                 if ($stmt->execute()) {
                     $response = $filename;
                 } else {
-                    $response = 0;
+                    $response = 1;
                 }
             } else {
-                $response = 0 ;
+                $response = 2 ;
             }
         }
     }

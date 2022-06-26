@@ -77,6 +77,7 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     if ($stmt->execute()) {
         $id = "";
         $ids = [];
+        $stmt->bind_result($id);
         while ($stmt->fetch()) {
             array_push($ids, $id);
         }
@@ -107,15 +108,17 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
         if (!$id) {
             return null;
         }
+        //TODO: image path!basic path
         $vendor = New \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
-            $discount, $priceKid, $description, $image, $name
+//            $discount, $priceKid, $description, $image, $name
+            $discount, $priceKid, $description, '', $name
         );
         $query1 ="SELECT LBT.name
-                FROM LabelBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT
+                FROM LabelsBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT
                 WHERE VLB.idVendor = $id AND LBT.idLanguage = $idLanguage 
                 AND LBT.idLabelsBox = LB.id AND LB.id = VLB.idLabelsBox
-                ORDER BY LB.order ASC;";
+                ORDER BY LB.id ASC;";
         $stmt1 = $conn->prepare($query1);
         if ($stmt1->execute()) {
             $nameLB = '';
@@ -126,7 +129,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
         }
 
 
-        $query2 = "SELECT RCT.nameCategory AND RCV.stars
+        $query2 = "SELECT RCT.nameCategory, RCV.stars
                 FROM RatedCategory RC, Rated AS RCV, RatedCategoryTranslate AS RCT
                 WHERE RCV.idVendor = $id AND RCT.idLanguage = $idLanguage 
                 AND RCT.idRatedCategory = RC.id AND RC.id = RCV.idRatedCategory
@@ -134,8 +137,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
         $stmt2 = $conn->prepare($query2);
         if ($stmt2->execute()) {
             $nameRated = $stars = '';
-            $stmt1->bind_result($nameRated , $stars);
-            while ($stmt1->fetch()) {
+            $stmt2->bind_result($nameRated , $stars);
+            while ($stmt2->fetch()) {
                 $vendor->addRatedCategory(new \ValuePass\RatedCategory($nameRated, $stars));
             }
         }
@@ -154,8 +157,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
             $stmt4 = $conn->prepare($query4);
             if ($stmt4->execute()) {
                 $descriptionFull = $descriptionBig = $paymentActivityHead = $paymentActivityDesc = '';
-                $stmt1->bind_result($descriptionFull, $descriptionBig, $paymentActivityHead, $paymentActivityDesc);
-                while ($stmt1->fetch()) {}
+                $stmt4->bind_result($descriptionFull, $descriptionBig, $paymentActivityHead, $paymentActivityDesc);
+                while ($stmt4->fetch()) {}
                 $vendor->addSimpleField($descriptionFull, $descriptionBig, $paymentActivityHead, $paymentActivityDesc);
             }
 
@@ -171,7 +174,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
 
             $query5 = "SELECT HT.name
                     FROM Highlight AS H, HighlightTranslate AS HT
-                    WHERE H.idVendor = $id AND HT.idHighlight = H.id";
+                    WHERE H.idVendor = $id AND HT.idHighlight = H.id
+                    AND HT.idLanguage = $idLanguage";
             $stmt5 = $conn->prepare($query5);
             if ($stmt5->execute()) {
                 $highlight = "";
@@ -186,20 +190,20 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
                     IncludedServiceTranslate AS IST
                     WHERE VIS.idVendor = $id AND VIS.idIncludedService = IS1.id
                     AND VIS.idIncludedService = IST.idIncludedService
-                    AND IST.language = $idLanguage";
+                    AND IST.idLanguage = $idLanguage";
             $stmt6 = $conn->prepare($query6);
             if ($stmt6->execute()) {
                 $nameService = $icon = '';
                 $stmt6->bind_result($nameService, $icon);
                 while ($stmt6->fetch()) {
-                    $vendor->addIncludedService(new \ValuePass\IncludedService($nameService, $icon));
+                    $vendor->addIncludedService(new \ValuePass\IncludedService($nameService));
                 }
             }
 
             $query7 = "SELECT AAT.head, AAT.description
                     FROM AboutActivity AS AA, AboutActivityTranslate AS AAT
                     WHERE AA.idVendor = $id AND AA.id = AAT.idAboutActivity
-                    AND AAT.language = $idLanguage";
+                    AND AAT.idLanguage = $idLanguage";
             $stmt7 = $conn->prepare($query7);
             if ($stmt7->execute()) {
                 $headAboutActivity = $descriptionAboutActivity = '';
@@ -226,10 +230,12 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
                     if ($previousImportant == $headImportant) {
                         $importantInformation->addDescription($descriptionImportant);
                     } else {
-                        if (!isset($importantInformation)) {
+                        if (isset($importantInformation)) {
                             $vendor->addImportantInformation($importantInformation);
                         }
                         $importantInformation = new \ValuePass\ImportantInformation($headImportant);
+                        $importantInformation->addDescription($descriptionImportant);
+                        $previousImportant = $headImportant;
                     }
                 }
                 $vendor->addImportantInformation($importantInformation);
@@ -243,7 +249,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
 
 function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
     $idDestination = $conn->real_escape_string($idDestination);
-    $query = "SELECT CV.id, CVT.name
+    $query = "SELECT DISTINCT(CV.id), CVT.name
             FROM Vendor AS V, CategoryVendor AS CV, CategoryVendorTranslate AS CVT
             WHERE CVT.idLanguage = $idLanguage AND CVT.idCategoryVendor = CV.id
             AND V.idDestination = ? AND V.idCategory = CV.id";

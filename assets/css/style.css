@@ -4522,7 +4522,6 @@ a.boxed_list:hover i {
   font-weight: 500;
 }
 
-section#description,
 section#reviews {
   border-bottom: 3px solid #ededed;
   margin-bottom: 45px;
@@ -11054,5 +11053,11 @@ border-bottom: 1px solid gray;
   color: blue;
 }
 
+.label{
+  font-size: .7rem;
+}
 
+.displayNone{
+  display: none;
+}
 

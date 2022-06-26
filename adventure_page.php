@@ -1,11 +1,21 @@
 <?php
-$title = "Adveture page";
-$home = 0;
+if (!isset($conn)) {
+    include 'connection.php';
+}
+if (!isset($_GET['id'])) {
+    header('location: index.php');
+}
+include 'backend/includeClasses.php';
 include 'initializeExperience.php';
+$title = "Vendor page";
+$home = 0;
 include_once 'includes/header.php';
+
+$idVendor = $_GET['id'];
+$languageId = 1;
+$vendor = getVendor($conn, $idVendor, $languageId);
 ?>
-<!--TODO: id vendor-->
-<input value="1" id="vendorId" hidden>
+<input value="<?php echo $vendor->getId();?>" id="vendorId" hidden>
 <main>
 	<!-- <section class="hero_in hotels_detail ">
 		<div class="wrapper ">
@@ -58,67 +68,133 @@ include_once 'includes/header.php';
 
 
 	<div class=" bg_color_1">
-		<nav class="secondary_nav sticky_horizontal">
-			<div class="container">
-				<ul class="clearfix">
-					<li><a href="#book" class="active">Buy VP Voucher</a></li>
-				</ul>
-			</div>
-		</nav>
+<!--		<nav class="secondary_nav sticky_horizontal">-->
+<!--			<div class="container">-->
+<!--				<ul class="clearfix">-->
+<!--					<li><a href="#book" class="active">Buy VP Voucher</a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</nav>-->
 		<div class="container margin_60_35">
 			<div class="row">
 				<div class="col-lg-6 col-md-12 ">
 					<section id="description">
 						<h2 class="underline">Description</h2>
-						<p>The central location of the island made Syros one of the most important ports in the Eastern Mediterranean during the 19th century, soon turning it into the commercial, administrative and cultural center of the Cyclades island complex. Hermoupolis still resembles an open-air museum, a live monument of neoclassical architecture with relics and cultural treasures worth discovering. </p>
-						<p>The Municipality of Syros – Hermoupolis in cooperation with the Syros Nautical Club, the Tennis Club and other clubs enables all guests, young and old, to enjoy unique experiences trying out their skills in a variety of sports and water sports such as:
-							Canoe-Kayak , Beach ,Volley,Tennis ,Swimming,Windsurfing ,Water Skiing,Sailing
+						<p>
+                            <?php echo $vendor->getDescriptionBig();?>
 						</p>
 
 						<h2 class="underline">About this Activity</h2>
 						<div class="row py-4">
-							<div class="col-lg-6 col-md-12">
-								<ul class="bullets">
-									<li>No cancellation</li>
-									<li>Duration 4 hours .<small class="text-muted"> Check availability to see
-											starting times.</small> </li>
-									<li>Buy your Voucher &Reserve now & pay later your activity</li>
-									<li>Language : <span class="text-muted">Greek ,English ,France</span></li>
+                            <div class="col-lg-6 col-md-12">
+                                <ul class="bullets">
+                                    <?php
+                                    $aboutActivityArray = $vendor->getAboutActivityArray();
+                                    for ($counter = 0; $counter < ceil(count($aboutActivityArray) / 2); $counter++) {
+                                        ?>
+                                        <li>
+                                            <?php echo $aboutActivityArray[$counter]->getHead();?>
+                                            <small class="text-muted">
+                                                <?php echo $aboutActivityArray[$counter]->getDescription();?>
+                                            </small>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                    <li>
+                                        <?php echo $vendor->getPaymentInfoActivityHead();?>
+                                        <small class="text-muted">
+                                            <?php echo $vendor->getPaymentInfoActivityDescription();?>
+                                        </small>
+                                    </li>
 								</ul>
 							</div>
-							<div class="col-lg-6 col-md-12">
-								<ul class="bullets">
-									<li>Pickup included <span class="text-muted"> Meet your driver at the
-											closest pickup point to your hotel.</span></li>
-									<li> Wheelchair accessible</li>
-									<li>Small group <span class="text-muted"> Limited to 15 participants</span>
-									</li>
-
-								</ul>
-							</div>
+                            <div class="col-lg-6 col-md-12">
+                                <ul class="bullets">
+                                    <?php
+                                    $aboutActivityArray = $vendor->getAboutActivityArray();
+                                    for ($counter = ceil(count($aboutActivityArray) / 2); $counter < count($aboutActivityArray); $counter++) {
+                                        ?>
+                                        <li>
+                                            <?php echo $aboutActivityArray[$counter]->getHead();?>
+                                            <small class="text-muted">
+                                                <?php echo $aboutActivityArray[$counter]->getDescription();?>
+                                            </small>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
 						</div>
 
 					</section>
+                    <section>
+                        <h4 class="underline">Experience</h4>
+                        <ul>
+                            <?php
+                            foreach ($vendor->getHighlights() as $highlight) {
+                                ?>
+                                <li>
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    <?php echo $highlight;?>
+                                </li>
+                                <?php
+                            }
+                            ?>
+
+                        </ul>
+                    </section>
 				</div>
 
 
 				<div class="col-lg-6 col-md-12 ">
-
+                    <?php
+                    $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
+                    $totalToPay = $vendor->getOriginalPrice() - $moneySaved;
+                    ?>
 					<div class="box_grid">
 						<div class="wrapper">
-							<!-- <small>Historic</small> -->
-							<h3><a href="#"><b>Syros :</b> Swimming Lessons </a></h3>
-							<p>Every July, Voulgari Beach invites young swimmers of the island between the ages of 5 to 12, to attend a series of swimming lessons and show the level of their skills in order to win a commemorative diploma in Triathlon.</p>
-							<p> <span class="extras">5 hours /Small group /Pickup Available</span> </p>
-							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
-							<p class=" voucher_av "> Vouchers Available <b>4/10 </b> </p>
-							<p class=" prev_price my-0">Initial Price <span class="prev_price_value">120 €</span> <span class="perperson">per person</span> </p>
-							<p class="vpvoucher_price1 my-0  ">Buy VP Vouchers <span class="vpvoucher_price1_value"> 12€ </span><span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
-							<p class="final_price1 my-0"> Final Price <span class="final_price1_value">84€ </span><span class="perperson">per person</span> </p>
+<!--                            TODO: voucher available, Reserve Now your Spot & Pay Later for your activity-->
+							<h3 style="color: #fc5b62;"><b><?php echo $vendor->getName();?></b></h3>
+							<p><?php echo $vendor->getDescriptionSmall();?></p>
+							<p>
+                                <span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?>
+                                </span>
+                            </p>
+                            <span class="criteria">
+                                Our Criteria Rating
+                                <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
+                                <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
+                            </span>
+							<p class=" voucher_av ">
+                                Vouchers Available
+                                <b>4/10</b>
+                            </p>
+							<p class=" prev_price my-0">
+                                Initial Price
+                                <span class="prev_price_value"><?php echo $vendor->getOriginalPrice();?> €</span>
+                                <span class="perperson">per person</span>
+                            </p>
+							<p class="vpvoucher_price1 my-0">
+                                Buy VP Vouchers
+                                <span class="vpvoucher_price1_value"> <?php echo $vendor->getPriceAdult();?>€ </span>
+                                <span class="perperson">per person</span>
+                            </p>
+							<p class="vp_discount my-0 ">
+                                You Save
+                                <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> €
+                            </p>
+							<p class="final_price1 my-0">
+                                Final Price
+                                <span class="final_price1_value"><?php echo $totalToPay;?>€ </span>
+                                <span class="perperson">per person</span>
+                            </p>
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
 							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
 							<p class="my-0 perperson">Reserve Now your Spot & Pay Later for your activity </p>
+
+
 						</div>
 
 					</div>
@@ -126,38 +202,15 @@ include_once 'includes/header.php';
 				</div>
 
 
+
 				<div class="container margin_60_35">
-					<div class="row">
-						<div class=" col-lg-12 col-md-12">
-							<section>
-								<h4 class="underline">Experience</h4>
-								<ul>
-									<li><i class="fa fa-money" aria-hidden="true"></i> Savor delicious local ingredients at the Tomato Industrial Museum and a farm</li>
-									<li><i class="fas fa-handshake fa-lg" aria-hidden="true"> </i> Learn about ancient Greek culture at the Symposium Music and Mythology Center</li>
-									<li><i class="fas fa-utensils fa-lg" aria-hidden="true"></i> Visit a local farm and learn about the production methods on a guided tour</li>
-									<li><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> Discover the importance of tomatoes at the Tomato Factory Industrial Museum</li>
-									<li><i class="fas fa-music fa-lg" aria-hidden="true"></i> Make music by playing an ancient Greek harp with the help of an instructor</li>
-
-								</ul>
-							</section>
-						</div>
-					</div>
-
-
-
 
 					<div class="row">
 						<div class="col-lg-12  col-md-12 ">
 							<h4 class="underline">Full Description</h4>
-
-							<p> Learn about Syros industrial past on a day trip through the island. Learn about Syros industrial past at the Tomato Industrial Museum in Syros, discover ancient Greek mythology and music at the Symposium Music and Mythology Culture Center, and visit a local farm.
-
-								Begin your tour with a convenient pickup near your Syros hotel, and head to Parakopi to explore the island's tomato industry. Visit the Tomato Industrial Museum and learn about the traditional methods of tomato producers. After your visit, enjoy local products in Parakopi.</p>
-
-							<p> Learn about Syros industrial past on a day trip through the island. Learn about Syros industrial past at the Tomato Industrial Museum in Syros, discover ancient Greek mythology and music at the Symposium Music and Mythology Culture Center, and visit a local farm.
-
-								Begin your tour with a convenient pickup near your Syros hotel, and head to Parakopi to explore the island's tomato industry. Visit the Tomato Industrial Museum and learn about the traditional methods of tomato producers. After your visit, enjoy local products in Parakopi.</p>
-
+                            <p>
+                                <?php echo $vendor->getDescriptionFull();?>
+                            </p>
 						</div>
 					</div>
 
@@ -166,17 +219,20 @@ include_once 'includes/header.php';
 						<div class="col-lg-6 includes">
 							<h4 class="underline">Includes</h4>
 							<ul>
-								<li><i style="color: green;" class="fa fa-check fa-lg" aria-hidden="true"></i> <span> Pickup and drop-off </span></li>
-								<li><i style="color: green;" class="fa fa-check  fa-lg" aria-hidden="true"></i> <span>Entrance Fees </span> </li>
-								<li><i style="color: green;" class="fa fa-check  fa-lg" aria-hidden="true"></i> <span>Tips</span> </li>
-								<li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i> <span> Local Assistant</span> </li>
-								<li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i> <span> Personal expenses </span> </li>
+                                <?php
+                                foreach ($vendor->getIncludedServicesArray() as $includeServices) {
+                                ?>
+                                <li>
+                                    <i style="color: green;" class="fa fa-check fa-lg" aria-hidden="true"></i>
+                                    <span> <?php echo $includeServices->getName();?> </span>
+                                </li>
+                                <?php
+                                }
+                                ?>
+                                <!--								<li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i> <span> Personal expenses </span> </li>-->
 
 							</ul>
 						</div>
-
-
-
 
 					</div>
 
@@ -187,15 +243,24 @@ include_once 'includes/header.php';
 							<h4 class="underline">Important information</h4>
 
 							<div class="row">
-								<div class="col-lg-6 col-md-12 importantinfosli">
-									<b> What to bring </b>
-									<ul class="ps-3">
-										<li><i class="fas fa-swimmer fa-lg "></i> Swimwear</li>
-										<li><i class="fas fa-tshirt fa-lg"></i> Extra T-shirt </li>
-										<li><i class="fas fa-passport fa-lg"></i> ID card</li>
-									</ul>
-								</div>
-
+                                <?php
+                                foreach ($vendor->getImportantInformationArray() as $importantInformation) {
+                                    ?>
+                                <div class="col-sm-12 importantinfosli">
+                                    <b> <?php echo $importantInformation->getHead();?> </b>
+                                    <ul class="ps-3">
+                                        <?php
+                                        foreach ($importantInformation->getDescriptions() as $bullet) {
+                                            ?>
+                                            <li><i class="fas fa-arrow-circle-right fa-lg"></i> <?php echo $bullet;?></li>
+                                        <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                                <?php
+                                }
+                                ?>
 
 							</div>
 
@@ -209,63 +274,33 @@ include_once 'includes/header.php';
 
 							<div class="row">
 
-								<div class="row">
-									<div class="col-lg-3 "> <b>1. Customer Service Quality </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i> <i class="icon_star voted"></i> </div>
-
-								</div>
-
-								<div class="row">
-									<div class="col-lg-3"> <b>2. Personalization & Flexibility </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
-								</div>
-
-
-								<div class="row">
-									<div class="col-lg-3"> <b>3. Safety & Sanitary Standards (Covid-19 included) </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i> <i class="icon_star "></i></div>
-								</div>
-
-
-								<div class="row">
-									<div class="col-lg-3"> <b>4. Quality of Materials</b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
-								</div>
-
-
-
-								<div class="row">
-									<div class="col-lg-3"> <b>5. Ethical Labor Practices </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
-								</div>
-
-
-								<div class="row">
-									<div class="col-lg-3"> <b>6. Environmental Responsibility </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star "></i> <i class="icon_star "></i></div>
-								</div>
-
-								<div class="row">
-									<div class="col-lg-3"> <b>7. Respect for Local Cultures </b> </div>
-									<div class="col-lg-3 text-start"> <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <i class="icon_star voted"></i> <i class="icon_star voted"></i> </div>
-								</div>
+                                <?php
+                                foreach ($vendor->getRatedArray() as $ratedCategory) {
+                                    if ($ratedCategory->getStars() != 0) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-lg-3 ">
+                                            <b><?php echo $ratedCategory->getName();?></b>
+                                        </div>
+                                        <div class="col-lg-3 text-start">
+                                            <?php echo str_repeat('<i class="icon_star voted"></i>', $ratedCategory->getStars());?>
+                                            <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $ratedCategory->getStars());?>
+                                        </div>
+                                    </div>
+                                <?php
+                                    }
+                                }
+                                ?>
 
 							</div>
-
-
-
 						</div>
 					</div>
-
-
-
-
 
 				</div>
 			</div>
 		</div>
 
-
+        <div style="min-height: 20px"></div>
 		<section id="book">
 			<div class="container margin_60_35">
 				<div class="row">

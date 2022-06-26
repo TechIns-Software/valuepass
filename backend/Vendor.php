@@ -32,6 +32,8 @@ class Vendor {
 
     private array $vouchers = array();
 
+    public static int $MAX_STARS = 5;
+
     /**
      * Vendor constructor.
      * @param int $id
@@ -111,5 +113,158 @@ class Vendor {
 
     public function addImportantInformation(ImportantInformation $importantInformation) : void {
         array_push($this->importantInformationArray, $importantInformation);
+    }
+
+    /**
+     * @return int
+     */
+    public function getCategoryId(): int
+    {
+        return $this->categoryId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategoryName(): string
+    {
+        return $this->categoryName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLabelsBoxNames(): array
+    {
+        return $this->labelsBoxNames;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDiscount(): int
+    {
+        return $this->discount;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPriceAdult(): int
+    {
+        return $this->priceAdult;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOriginalPrice(): int
+    {
+        return $this->originalPrice;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAboutActivityArray(): array
+    {
+        return $this->aboutActivityArray;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPaymentInfoActivityHead(): string
+    {
+        return $this->paymentInfoActivityHead;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPaymentInfoActivityDescription(): string
+    {
+        return $this->paymentInfoActivityDescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptionBig(): string
+    {
+        return $this->descriptionBig;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHighlights(): array
+    {
+        return $this->highlights;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptionFull(): string
+    {
+        return $this->descriptionFull;
+    }
+
+    /**
+     * @return array
+     */
+    public function getIncludedServicesArray(): array
+    {
+        return $this->includedServicesArray;
+    }
+
+    /**
+     * @return array
+     */
+    public function getImportantInformationArray(): array
+    {
+        return $this->importantInformationArray;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRatedArray(): array
+    {
+        return $this->ratedArray;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptionSmall(): string
+    {
+        return $this->descriptionSmall;
+    }
+
+    /**
+     * Find average rated
+     * @return int
+     */
+    public function getAverageRated(): int
+    {
+        $sum = 0;
+        foreach ($this->ratedArray as $rated) {
+            $sum = $sum + $rated->getStars();
+        }
+        if (count($this->ratedArray) == 0) {
+            return 0;
+        } else {
+            return round($sum / count($this->ratedArray));
+        }
     }
 }

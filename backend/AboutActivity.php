@@ -20,4 +20,21 @@ class AboutActivity
         $this->description = $description;
     }
 
+    /**
+     * @return string
+     */
+    public function getHead(): string
+    {
+        return $this->head;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+
 }
