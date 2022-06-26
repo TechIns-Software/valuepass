@@ -24,7 +24,8 @@ try {
         $_POST["action"] == "uploadlocationimages" ||
         $_POST["action"] == "addSelectedlabels" ||
         $_POST["action"] == "addBestoffs" ||
-        $_POST["action"] == "finalizeVendor"
+        $_POST["action"] == "finalizeVendor" ||
+        $_POST["action"] == "addIncluded"
 
 
     ) {
@@ -291,6 +292,18 @@ try {
         } else if ($_POST["action"] == "finalizeVendor") {
             finalizeVendor($conn, $_SESSION['vendorcreateid']);
             unset($_SESSION['vendorcreateid']);
+        } else if ($_POST["action"] == "addIncluded") {
+            $data_labels = $_POST["data"];
+            $checked = $_POST["icon"];
+
+            // print_r($data_labels);
+            $table = 'IncludedService';
+            $last_id = lastInstertedid($conn, $table);
+            addrowIncludedService($conn, ($last_id + 1), $checked);
+            foreach ($data_labels as $data_label) {
+                $id_lang = $data_label[0];
+                AddIncludedServiceTranslate($conn, ($last_id + 1), $id_lang, $data_label[1]);
+            }
         }
     }
 } catch (Exception $exception) {

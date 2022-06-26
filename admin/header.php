@@ -92,6 +92,11 @@
                 <!-- <span class="badge badge-pill badge-danger">6</span> -->
               </a>
             </li>
+              <li>
+                  <a href="addIncluded.php">Included
+                      <!-- <span class="badge badge-pill badge-primary">6</span> -->
+                  </a>
+              </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">

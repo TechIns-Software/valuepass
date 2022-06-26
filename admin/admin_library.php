@@ -77,6 +77,14 @@ function addrowLabelBox($conn, $id)
     $stmt->close();
 }
 
+// Add one row in IncludedService
+function addrowIncludedService($conn, $id, $icon)
+{
+    $query = "INSERT INTO `IncludedService` (`id`,`icon`) VALUES ( $id , '$icon')";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
 
 // Add Location for all existing  languages
 function AddLabelBoxTranslate($conn, $idlabelbox, $idlang, $name)
@@ -92,6 +100,20 @@ function AddLabelBoxTranslate($conn, $idlabelbox, $idlang, $name)
     $stmt->close();
 }
 
+// Add IncludedService for all existing  languages
+function AddIncludedServiceTranslate($conn, $idIncludedService, $idlang, $name)
+{
+    $query = "INSERT INTO `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (?,?,?)";
+    echo $query;
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iis', $idIncludedService, $idlang,  $name);
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+    $stmt->close();
+}
 
 
 
