@@ -16,7 +16,7 @@ $languages =  getAllLanguages($conn);
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="loc_title">
-                <h4>Εισαγωγή Label</h4>
+                <h4>Εισαγωγή Included</h4>
             </div>
 
             <form id="labelform">
