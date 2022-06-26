@@ -37,15 +37,15 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                         </select>
                     </div>
 
-                    <div class=" col-lg-4 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label">Τιμή  Eνήλικα</label>
-                        <input type="number" name="priceAdult" class="form-control" id="priceadult">
-                    </div>
-
 
                     <div class=" col-lg-4 col-md-12  my-3">
                         <label for="exampleInputPassword1" class="form-label">Κανονική  Τιμή</label>
                         <input type="number" name="originalPrice" class="form-control" id="originalPrice">
+                    </div>
+
+                    <div class=" col-lg-4 col-md-12  my-3">
+                        <label for="exampleInputPassword1" class="form-label">Τιμή  Eνήλικα</label>
+                        <input type="number" name="priceAdult" class="form-control" id="priceadult">
                     </div>
 
                     <div class=" col-lg-4 col-md-12  my-3">
@@ -83,8 +83,10 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                         <label for="paymentinfo" class="form-label"> Επιλογή Πληρωμής   </label>
                         <select name="paymentinfo" id="paymentinfo" class="form-control">
 
-                            <?php foreach ($paymentsInfos as $paymentsInfo) {   ?>
-                                <option value="<?php echo $paymentsInfo[1] ?>"><?php echo $paymentsInfo[0] ?></option>
+                            <?php foreach ($paymentsInfos as $paymentsInfo) {
+                                $show = (($paymentsInfo[0] == 2.1) ? 'Πληρωμή Νωρίτερα': 'Πληρωμή Νωρίτερα - κατά την διάρκεια');
+                                ?>
+                                <option value="<?php echo $paymentsInfo[1] ?>"><?php echo $show ?></option>
 
                             <?php } ?>
                         </select>
