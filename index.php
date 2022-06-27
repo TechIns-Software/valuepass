@@ -91,7 +91,7 @@ include_once 'includes/header.php';
 	<div id="how" class="container margin_80_55">
 		<div class="main_title_2">
 			<span><em></em></span>
-			<h2>How it works</h2>
+			<h2> <b> Why ValuePass </b></h2>
 			<p>Spend less money doing it more</p>
 
 		</div>

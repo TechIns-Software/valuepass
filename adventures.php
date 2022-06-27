@@ -286,9 +286,6 @@ if (count($vendors) <= 0) {
 
             </div>
 
-				<?php
-				}
-				?>
 
 			</div>
 
