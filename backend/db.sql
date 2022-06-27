@@ -360,6 +360,7 @@ INSERT INTO `menu` (`id`, `orderNumber`) VALUES
 (11, 11),
 (12, 12),
 (13, 13);
+(14, 14);
 
 
 INSERT INTO `menutranslate` (`idMenu`, `idLanguage`, `name`) VALUES
@@ -389,6 +390,8 @@ INSERT INTO `menutranslate` (`idMenu`, `idLanguage`, `name`) VALUES
 (12, 2, 'Our Privacy'),
 (13, 1, 'Ακολουθηστε μας'),
 (13, 2, 'Follow Us');
+(14, 1, 'Αγοράστε τουλάχιστον 2 vouchers για τις ίδιες ή διαφορετικές δραστηριότητες και το 3ο voucher to λαμβάνετε δωρεάν . Τα δώρα σας δεν τελειώνουν ποτέ!'),
+(14, 2, 'Purchase at least 2 vouchers for the same or different activities and up to 3rd voucher you get free vouchers. Your presents never end!');
 
 /*
 INSERT INTO PaymentInfoActivity VALUES();

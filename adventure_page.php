@@ -176,6 +176,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 
 				<div class="col-lg-6 col-md-12 ">
 					<?php
+				
 					$moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
 					$totalToPay = $vendor->getOriginalPrice() - $moneySaved;
 					?>
@@ -219,7 +220,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 							</p>
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
 							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
-							<p class="my-0 perperson">Purchase at least 2 vouchers for the same or different activities and up to 3rd voucher you get free vouchers. Your presents never end! </p>
+							<p class="my-0 perperson"> <?php echo $menu[13] ; ?> </p>
 
 
 						</div>
