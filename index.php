@@ -19,11 +19,11 @@ include_once 'includes/header.php';
 					<div class="rev-slider-mask"></div>
 
 					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['70','53','60','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;">Explore hidden <br> treasures! </div>
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['50','43','25','10']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Escape the tourist traps <br> with unforgettable travel experiences.</div>
 
 					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-02" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','16','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">VP adds value to your personal travel package!
-					</div>
+					<!-- <div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-02" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','16','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">VP adds value to your personal travel package!
+					</div> -->
 
 					<!-- btn layer -->
 					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">Get Started Now
@@ -38,11 +38,11 @@ include_once 'includes/header.php';
 					<div class="rev-slider-mask"></div>
 
 					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center" id="slide-411-layer-04" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','50','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> Discover authentic<br>experiences!</div>
+					<div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center" id="slide-411-layer-04" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> Get beneath the surface <br>of these destinations.</div>
 
 					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-05" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on"> VP is the passport of today’s eclectic traveler!
-					</div>
+					<!-- <div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-05" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on"> VP is the passport of today’s eclectic traveler!
+					</div> -->
 
 					<!-- btn layer -->
 					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-06" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']">How it works
@@ -57,11 +57,12 @@ include_once 'includes/header.php';
 					<div class="rev-slider-mask"></div>
 
 					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','50','35']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Escape vacations <br> traps!</div>
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">All our proposals <br> are hand-picked by our team!
+					</div>
 
 					<!-- small text layer -->
-					<div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center" id="slide-411-layer-08" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Delve below the surface of your destination!
-					</div>
+					<!-- <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center" id="slide-411-layer-08" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Delve below the surface of your destination!
+					</div> -->
 
 					<!-- btn layer -->
 					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-09" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
@@ -75,16 +76,16 @@ include_once 'includes/header.php';
 	<!-- END REVOLUTION SLIDER -->
 
 	<div class="bg_color_1 shadow bgbanner">
-			<div class="container container-custom margin_80_55 ">
-				<div class="main_title_2">
-					<h2>ValuePass Offers are only Available Onboard</h2>
-					<p class="fs-2"> <strong> Don't Miss it !!!</strong></p>
-				</div>
-
+		<div class="container container-custom margin_80_55 ">
+			<div class="banner_title">
+				<h2>ValuePass Offers are only Available Onboard</h2>
+				<p class="fs-2"> <strong> Don't Miss it !</strong></p>
 			</div>
-			<!-- /container -->
+
 		</div>
-		<!-- /bg_color_1 -->
+		<!-- /container -->
+	</div>
+	<!-- /bg_color_1 -->
 
 
 	<div id="how" class="container margin_80_55">
@@ -195,7 +196,7 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-				<div class="item" onclick="location.href='./adventures.php?id=1';" >
+				<div class="item" onclick="location.href='./adventures.php?id=1';">
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
@@ -240,8 +241,8 @@ include_once 'includes/header.php';
 					</div>
 				</div>
 
-	
-				<div class="item" onclick="location.href='./adventures.php?id=1';" >
+
+				<div class="item" onclick="location.href='./adventures.php?id=1';">
 					<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
 						<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 						<div class="card-img-overlay d-flex flex-column">
@@ -335,14 +336,26 @@ include_once 'includes/header.php';
 			</div>
 			<div class="col-lg-3 col-md-6 ms-lg-auto">
 				<h5> <?php echo $menu[8] ?></h5>
-				<ul class="links">
-					<li><a href="#"> <?php echo $menu[1] ?></a></li>
+
+				<ul class="links ">
+					<li><a href="#"><?php echo $menu[6] ?></a>
+						<ul>
+
+							<?php
+							foreach ($languages  as $language) {  ?>
+								<li class=" ps-3"><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
+							<?php	} ?>
+
+						</ul>
+					</li>
+
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
 					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
 					<li><a href="#"> <?php echo $menu[5] ?></a></li>
 
 				</ul>
 			</div>
+
 			<div class="col-lg-3 col-md-6">
 				<h5><?php echo $menu[9] ?></h5>
 				<ul class="contacts">

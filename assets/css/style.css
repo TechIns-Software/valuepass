@@ -53,7 +53,8 @@
   }
 
   header.sticky .main-menu>ul>li span>a {
-    color: #444;
+    /* color: #444; */
+    color: rgb(255, 255, 255);
   }
 
   header.sticky .main-menu>ul>li span:hover>a {
@@ -455,6 +456,7 @@ ul {
   text-align: center;
   margin-bottom: 45px;
   position: relative;
+  colo
 }
 
 .main_title_2 span {
@@ -468,7 +470,8 @@ ul {
 .main_title_2 span em {
   width: 60px;
   height: 2px;
-  background-color: #fc5b62;
+  /* background-color: #fc5b62; */
+  background-color: #004d88;
   display: block;
   margin: auto;
 }
@@ -530,7 +533,8 @@ ul {
 .main_title_3 span em {
   width: 60px;
   height: 2px;
-  background-color: #fc5b62;
+  /* background-color: #fc5b62; */
+  background-color: #004d88;
   display: block;
 }
 
@@ -591,7 +595,8 @@ h3.slide_typo {
 }
 
 a {
-  color: #fc5b62;
+  /* color: #fc5b62; */
+  color: #004d88;
   text-decoration: none;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -612,7 +617,8 @@ a:hover {
 a.btn_1 {
   border: none;
   color: #fff;
-  background: #fc5b62;
+  /* background: #fc5b62; */
+  background: #ff5533;
   outline: 0;
   cursor: pointer;
   display: inline-block;
@@ -635,7 +641,7 @@ a.btn_1 {
 
 .btn_1:hover,
 a.btn_1:hover {
-  background: #0054a6;
+  /* background: #0054a6; */
   color: #fff;
 }
 
@@ -754,7 +760,8 @@ a.btn_map {
 }
 
 a.btn_map:hover {
-  color: #fc5b62;
+  /* color: #fc5b62; */
+  color: #004d88;
 }
 
 a.btn_map:before {
@@ -837,6 +844,7 @@ header.header.sticky {
 
 header.header.sticky .logo_normal {
   display: none;
+
 }
 
 header.header.sticky .logo_sticky {
@@ -3067,7 +3075,8 @@ video {
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
-  background: #fc5b62 !important;
+  /* background: #fc5b62 !important; */
+  background: #004d88 !important;
 }
 
 .owl-theme .owl-dots .owl-dot span {
@@ -3876,7 +3885,7 @@ a.box_feat h3 {
 }
 
 .prev_price .prev_price_value {
-  color: rgb(26, 1, 245);
+  color: #004d88;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: line-through;
@@ -3893,9 +3902,7 @@ a.box_feat h3 {
 }
 
 .vpvoucher_price1 .vpvoucher_price1_value {
-  /* color: rgb(26, 1, 245); */
   color: #004d88;
-  
   font-size: 1rem;
   font-weight: 700;
 }
@@ -3923,7 +3930,7 @@ a.box_feat h3 {
 }
 
 .final_price1 .final_price1_value {
-  color: rgb(26, 1, 245);
+  color: #004d88;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -10918,7 +10925,7 @@ html[xmlns] .slides {
 }
 
 .buy_button {
-  background-color: #0071eb;
+  background-color: #004d88;
   border-radius: 5em;
   color: white;
   font-size: 1.2em;
@@ -11062,3 +11069,16 @@ html[xmlns] .slides {
 .vendorname a{
   color: black!important;
 }
+
+.banner_title{
+  text-align: center;
+}
+
+.banner_title h2{
+  color: white;
+}
+
+.banner_title p {
+  color:  #004d88;
+}
+

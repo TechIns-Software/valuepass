@@ -524,7 +524,8 @@ html {
   .btn_1 {
     border: none;
     color: #fff;
-    background: #fc5b62;
+    /* background: #fc5b62; */
+    background: #ff5533;
     cursor: pointer;
     padding: 10px 15px;
     display: inline-block;

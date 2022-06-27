@@ -182,7 +182,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 					<div class="box_grid">
 						<div class="wrapper">
 							<!--                            TODO: voucher available, Reserve Now your Spot & Pay Later for your activity-->
-							<h3 ><?php echo $vendor->getName(); ?></h3>
+							<h3><?php echo $vendor->getName(); ?></h3>
 							<p><?php echo $vendor->getDescriptionSmall(); ?></p>
 							<p>
 								<span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?>
@@ -209,7 +209,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 							</p>
 
 							<p class="vp_discount my-0 ">
-								 Save
+								Save
 								<?php echo $vendor->getDiscount(); ?>% or <?php echo $moneySaved; ?> €
 							</p>
 							<p class="final_price1 my-0">
@@ -219,7 +219,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 							</p>
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
 							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
-							<p class="my-0 perperson">Purchase at least 2 vouchers for the same or  different activities and up to 3rd voucher you get free vouchers. Your presents never end! </p>
+							<p class="my-0 perperson">Purchase at least 2 vouchers for the same or different activities and up to 3rd voucher you get free vouchers. Your presents never end! </p>
 
 
 						</div>
@@ -594,8 +594,18 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 			</div>
 			<div class="col-lg-3 col-md-6 ms-lg-auto">
 				<h5> <?php echo $menu[8] ?></h5>
-				<ul class="links">
-					<li><a href="#"> <?php echo $menu[1] ?></a></li>
+				<ul class="links ">
+					<li><a href="#"><?php echo $menu[6] ?></a>
+						<ul>
+
+							<?php
+							foreach ($languages  as $language) {  ?>
+								<li class=" ps-3"><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
+							<?php	} ?>
+
+						</ul>
+					</li>
+
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
 					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
 					<li><a href="#"> <?php echo $menu[5] ?></a></li>

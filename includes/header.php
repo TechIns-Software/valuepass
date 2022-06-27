@@ -71,8 +71,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</div><!-- /Page Preload -->
 				<div id="logo" >
 					<a href="index.php" >
-						<img src="assets/img/valuepassLogo.png" width="80" height="80" alt="" class="logo_normal">
-						<img src="assets/img/valuepassLogo.png" width="60" height="60" alt="" class="logo_sticky"> 
+						<img src="assets/img/valuepassLogo.png" width="140" height="70" alt=""  class="logo_normal">
+						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky"> 
 					</a>
 				</div>
 				<ul id="top_menu">
@@ -117,8 +117,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</div><!-- /Page Preload -->
 				<div id="logo">
 					<a href="index.php" class="fs-3 fw-bolder"> 
-						<img src="assets\img\valuepassLogo.png" width="60" height="60" alt="" class="logo_normal">
-						<img src="assets\img\valuepassLogo.png" width="60" height="60" alt="" class="logo_sticky"> 
+					<img src="assets/img/valuepassLogo.png" width="140" height="70" alt=""  class="logo_normal">
+						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky"> 
 					</a>
 				</div>
 				<ul id="top_menu">
@@ -163,8 +163,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</div><!-- /Page Preload -->
 				<div id="logo">
 					<a href="index.php" class="fs-3 fw-bolder">
-						<img src="assets/img/valuepassLogo.png" width="60" height="60" alt="" class="logo_normal">
-						<img src="assets/img/valuepassLogo.png" width="60" height="60" alt="" class="logo_sticky"> 
+					<img src="assets/img/valuepassLogo.png" width="140" height="70" alt=""  class="logo_normal">
+						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky"> 
 					</a>
 				</div>
 				<ul id="top_menu">

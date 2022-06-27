@@ -16,7 +16,7 @@ include 'backend/includeClasses.php';
 $cartArray = unserialize($_SESSION['cart']);
 ?>
 <main>
-<!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
+    <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
 
     <div style="height: unset;max-height: 85px;background: #0a53be" class="hero_in cart_section">
         <div class="wrapper">
@@ -38,102 +38,102 @@ $cartArray = unserialize($_SESSION['cart']);
 
                     </div>
 
-                    <?php   } else {
-                    ?>
+                <?php   } else {
+                ?>
                     <div class="col-lg-8">
-                    <div class="box_cart">
-                    <table class="table cart-list">
-                    <thead>
-                    <tr>
-                        <th>
-                            Activity
-                        </th>
-                        <th>
-                            Date
-                        </th>
-                        <th>
-                            Vouchers
-                        </th>
-                        <th>
-                            Total Price
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray);
-                    $allVouchers = $objectVouchersDisplay['allVouchers'];
-                    $nameVendorArray = $objectVouchersDisplay['nameVendor'];
-                    $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
-                    $imageVendorArray = $objectVouchersDisplay['imageVendor'];
-                    $adultsArray = $objectVouchersDisplay['imageVendor'];
-                    $childrenArray = $objectVouchersDisplay['children'];
-                    $infantsArray = $objectVouchersDisplay['infants'];
-                    $amountPayArray = $objectVouchersDisplay['amountPay'];
-                    for ($counter = 0; $counter < count($nameVendorArray); $counter++) {
-                        $nameVendor = $nameVendorArray[$counter];
-                        $dateVoucher = $dateVoucherArray[$counter];
-                        $adults = $adultsArray[$counter];
-                        $children = $childrenArray[$counter];
-                        $infants = $infantsArray[$counter];
-                        $amountPay = $amountPayArray[$counter];
-                        $imageVendor = $imageVendorArray[$counter];
-                    ?>
-                        <tr>
-                            <td>
-                                <div class="thumb_cart">
-                                    <img src="http://via.placeholder.com/150x150/ccc/fff/thumb_cart_1.jpg" alt="Image">
-                                </div>
-                                <span class="item_cart"><?php echo $nameVendor;?></span>
-                            </td>
-                            <td>
-                                <?php echo $dateVoucher;?>
-                            </td>
-                            <td>
-                                Adults: <?php echo $adults;?>
-                                <br>
-                                Children: <?php echo $children;?>
-                                <br>
-                                Infants: <?php echo $infants;?>
-                            </td>
-                            <td>
-                                <strong><?php echo $amountPay;?>€</strong>
-                            </td>
-                            <td class="options" style="width:5%; text-align:center;">
-                                <a href="javascript:deleteItem(0);"><i class="icon-trash"></i></a>
-                            </td>
-                        </tr>
-                    <?php
-                    }
+                        <div class="box_cart">
+                            <table class="table cart-list">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Activity
+                                        </th>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Vouchers
+                                        </th>
+                                        <th>
+                                            Total Price
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray);
+                                    $allVouchers = $objectVouchersDisplay['allVouchers'];
+                                    $nameVendorArray = $objectVouchersDisplay['nameVendor'];
+                                    $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
+                                    $imageVendorArray = $objectVouchersDisplay['imageVendor'];
+                                    $adultsArray = $objectVouchersDisplay['imageVendor'];
+                                    $childrenArray = $objectVouchersDisplay['children'];
+                                    $infantsArray = $objectVouchersDisplay['infants'];
+                                    $amountPayArray = $objectVouchersDisplay['amountPay'];
+                                    for ($counter = 0; $counter < count($nameVendorArray); $counter++) {
+                                        $nameVendor = $nameVendorArray[$counter];
+                                        $dateVoucher = $dateVoucherArray[$counter];
+                                        $adults = $adultsArray[$counter];
+                                        $children = $childrenArray[$counter];
+                                        $infants = $infantsArray[$counter];
+                                        $amountPay = $amountPayArray[$counter];
+                                        $imageVendor = $imageVendorArray[$counter];
+                                    ?>
+                                        <tr>
+                                            <td>
+                                                <div class="thumb_cart">
+                                                    <img src="http://via.placeholder.com/150x150/ccc/fff/thumb_cart_1.jpg" alt="Image">
+                                                </div>
+                                                <span class="item_cart"><?php echo $nameVendor; ?></span>
+                                            </td>
+                                            <td>
+                                                <?php echo $dateVoucher; ?>
+                                            </td>
+                                            <td>
+                                                Adults: <?php echo $adults; ?>
+                                                <br>
+                                                Children: <?php echo $children; ?>
+                                                <br>
+                                                Infants: <?php echo $infants; ?>
+                                            </td>
+                                            <td>
+                                                <strong><?php echo $amountPay; ?>€</strong>
+                                            </td>
+                                            <td class="options" style="width:5%; text-align:center;">
+                                                <a href="javascript:deleteItem(0);"><i class="icon-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
 
-                    ?>
-                    </tbody>
-                    </table>
-                    </div>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <!-- /col -->
                     <?php
                     $calculateCartObject = calculatePriceCart($allVouchers);
-//                    TODO: when voucher is 1 or 0
+                    //                    TODO: when voucher is 1 or 0
                     ?>
                     <aside class="col-lg-4">
                         <div style="min-height: 30px;background-color: white"></div>
                         <div class="box_detail">
                             <div id="total_cart">
                                 Total <span class="float-end">
-                                <span style="text-decoration: line-through"><?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];?></span> / <?php echo $calculateCartObject['totalPay'];?>
-                            </span>
+                                    <span style="text-decoration: line-through"><?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned']; ?></span> / <?php echo $calculateCartObject['totalPay']; ?>
+                                </span>
                             </div>
                             <ul class="cart_details">
-                                <li>Total Vouchers Get<span><?php echo count($allVouchers);?></span></li>
-                                <li>Vouchers Pay<span><?php echo $calculateCartObject['vouchersPay'];?></span></li>
-                                <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay'];?></span></li>
+                                <li>Total Vouchers Get<span><?php echo count($allVouchers); ?></span></li>
+                                <li>Vouchers Pay<span><?php echo $calculateCartObject['vouchersPay']; ?></span></li>
+                                <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span></li>
                             </ul>
-                            <input onclick="" type="button" value="Checkout" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled');?>>
+                            <input onclick="" type="button" value="Checkout" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
                             <!--                        <div class="text-center"><small>No money charged in this step</small></div>-->
                         </div>
                     </aside>
-                    <?php
+                <?php
                 }
                 ?>
 
@@ -147,46 +147,56 @@ $cartArray = unserialize($_SESSION['cart']);
 <!--/main-->
 
 <footer>
-	<div class="container margin_60_35">
-		<div class="row">
-			<div class="col-lg-5 col-md-12 pe-5">
-			<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt="logo"></p>
-				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
-					 All our proposals are hand-picked by our team! . </p>
-					  <b>  Get inspired for your next trip </b>
-				<div class="follow_us">
-					<ul>
-						<li><?php echo $menu[12] ?> </li>
-						<li><a href="#0"><i class="ti-facebook"></i></a></li>
-						<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
-						<li><a href="#0"><i class="ti-google"></i></a></li>
-						<li><a href="#0"><i class="ti-pinterest"></i></a></li>
-						<li><a href="#0"><i class="ti-instagram"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 ms-lg-auto">
-				<h5> <?php echo $menu[8] ?></h5>
-				<ul class="links">
-					<li><a href="#"> <?php echo $menu[1] ?></a></li>
-					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
-					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
-					<li><a href="#"> <?php echo $menu[5] ?></a></li>
+    <div class="container margin_60_35">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 pe-5">
+                <p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt="logo"></p>
+                <p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
+                    All our proposals are hand-picked by our team! . </p>
+                <b> Get inspired for your next trip </b>
+                <div class="follow_us">
+                    <ul>
+                        <li><?php echo $menu[12] ?> </li>
+                        <li><a href="#0"><i class="ti-facebook"></i></a></li>
+                        <li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
+                        <li><a href="#0"><i class="ti-google"></i></a></li>
+                        <li><a href="#0"><i class="ti-pinterest"></i></a></li>
+                        <li><a href="#0"><i class="ti-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 ms-lg-auto">
+                <h5> <?php echo $menu[8] ?></h5>
+                <ul class="links ">
+                    <li><a href="#"><?php echo $menu[6] ?></a>
+                        <ul>
 
-				</ul>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<h5><?php echo $menu[9] ?></h5>
-				<ul class="contacts">
-					<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
-					<li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
-				</ul>
-			</div>
-		</div>
-		<!--/row-->
-		<hr>
-		<div class="row">
-			<!-- <div class="col-lg-6">
+                            <?php
+                            foreach ($languages  as $language) {  ?>
+                                <li class=" ps-3"><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> <?php echo $language[1] ?></a> </li>
+                            <?php    } ?>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="#"> <?php echo $menu[4] ?> </a></li>
+                    <li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
+                    <li><a href="#"> <?php echo $menu[5] ?></a></li>
+
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5><?php echo $menu[9] ?></h5>
+                <ul class="contacts">
+                    <li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
+                    <li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/row-->
+        <hr>
+        <div class="row">
+            <!-- <div class="col-lg-6">
 				<ul id="footer-selector">
 					<li>
 						<div class="styled-select" id="lang-selector">
@@ -209,15 +219,15 @@ $cartArray = unserialize($_SESSION['cart']);
 
 				</ul>
 			</div> -->
-			<div class="col-lg-12">
-				<ul id="additional_links">
-					<li><a href="#0"><?php echo $menu[10] ?></a></li>
-					<li><a href="#0"><?php echo $menu[11] ?></a></li>
-					<li><span>© ValuePass</span></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+            <div class="col-lg-12">
+                <ul id="additional_links">
+                    <li><a href="#0"><?php echo $menu[10] ?></a></li>
+                    <li><a href="#0"><?php echo $menu[11] ?></a></li>
+                    <li><span>© ValuePass</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
 <!--/footer-->
 </div>
@@ -329,4 +339,5 @@ $cartArray = unserialize($_SESSION['cart']);
 
 </body>
 <script src="backend/js/cart.js"></script>
+
 </html>
