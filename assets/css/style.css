@@ -805,7 +805,7 @@ header {
   width: 100%;
   padding: 20px 30px;
   z-index: 99999999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  /*border-bottom: 1px solid rgba(255, 255, 255, 0);*/
 }
 
 @media (max-width: 767px) {
@@ -824,8 +824,8 @@ header.header.sticky {
   -webkit-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  border-bottom: 1px solid #ededed;
-  background-color: #fff;
+  /*border-bottom: 1px solid #ededed;*/
+  background-color: #4084c6;
   padding: 15px 20px;
 }
 
@@ -933,7 +933,7 @@ ul#top_menu li a.wishlist_bt_top:before {
 .sticky ul#top_menu li a.cart-menu-btn:before,
 .sticky ul#top_menu li a.login:before,
 .sticky ul#top_menu li a.wishlist_bt_top:before {
-  color: #444;
+  color: #fff;
 }
 
 ul#top_menu li a.wishlist_bt_top {
@@ -1117,7 +1117,8 @@ ul#top_menu li a.logged img {
 header.sticky .hamburger-inner,
 header.sticky .hamburger-inner::after,
 header.sticky .hamburger-inner::before {
-  background-color: #444;
+  /*background-color: #444;*/
+  background-color: #fff;
 }
 
 #logo {
