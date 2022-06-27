@@ -37,34 +37,31 @@ if ($vendor == Null) {
 	<!-- Slider -->
 	<div id="full-slider-wrapper">
 		<div id="layerslider" style="width:100%;height:650px;">
-			<!-- first slide -->
-			<div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
-				<img src="assets/img/10.jpg" class="ls-bg" alt="Slide background">
-				<h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">Unique <strong>Experiences </strong> 1 </h3>
-				<!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
-					Tours - Hotels - Restaurants
-				</p> -->
-				<p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read Description</a></p>
+            <?php
+            $dummyCounter = 0;
+            foreach ($vendor->getImages() as $imagePath) {
+                $dummyArray = [
+                        'Unique <strong>Experience </strong>',
+                    '<strong>Enjoy</strong> Unforgettable Holidays',
+                    '<strong>Top Attractions</strong> to discover'
+                ];
+                ?>
+                <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
+                    <img src="vendorImages/<?php echo $vendor->getId() .'/' .$imagePath;?>" class="ls-bg" alt="Slide background">
+                    <h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+                        <?php echo $dummyArray[$dummyCounter % 3]?>
+                    </h3>
+                    <!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+                        Tours - Hotels - Restaurants
+                    </p> -->
+<!--                    <p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read Description</a></p>-->
 
-			</div>
-			<!-- second slide -->
-			<div class="ls-slide" data-ls="slidedelay:5000; transition2d:103;">
-				<img src="assets/img/4.jpg" class="ls-bg" alt="Slide background">
-				<h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;"><strong>Enjoy</strong> Unforgatable Holidays</h3>
-				<!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
-					Tours - Hotels - Restaurants
-				</p> -->
-				<p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read more</a></p>
-			</div>
-			<!-- third slide -->
-			<div class="ls-slide" data-ls="slidedelay: 5000; transition2d:5;">
-				<img src="assets/img/2.jpg" class="ls-bg" alt="Slide background">
-				<h3 class="ls-l slide_typo" style="top:47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;"><strong>Top Attractions</strong> to discover</h3>
-				<!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
-					Tours - Hotels - Restaurants
-				</p> -->
-				<p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read more</a></p>
-			</div>
+                </div>
+            <?php
+                $dummyCounter = $dummyCounter + 1;
+            }
+            ?>
+
 		</div>
 	</div>
 	<!-- End layerslider -->

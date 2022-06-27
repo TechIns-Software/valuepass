@@ -275,4 +275,12 @@ class Vendor {
     {
         return $this->pathToImage;
     }
+
+    /**
+     * @return array
+     */
+    public function getImages(): array
+    {
+        return $this->images;
+    }
 }
