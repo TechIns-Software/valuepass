@@ -53,14 +53,14 @@ if (count($vendors) <= 0) {
 						</a>
 						<div class="wrapper best  ">
 							<small>Historic</small>
-							<h3><a href="adventure_page.php"><b>Syros :</b> Climbing</a></h3>
+							<h3 class="vendorname"><a href="adventure_page.php">Syros : Climbing</a></h3>
                             <p class="text-muted my-0 label">3 hours /Small Group</p>
                             <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
+							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
+							<p class="vp_discount my-0 "> Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
 							<a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
@@ -73,14 +73,14 @@ if (count($vendors) <= 0) {
 						</a>
 						<div class="wrapper best  ">
 							<small>Watersports</small>
-							<h3><a href="adventure_page.php"><b>Syros :</b> Climbing</a></h3>
+							<h3 class="vendorname"><a href="adventure_page.php">Syros : Climbing</a></h3>
                             <p class="text-muted my-0 label">3 hours /Small Group</p>
                             <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
+							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
+							<p class="vp_discount my-0 "> Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
 							<a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
@@ -92,14 +92,14 @@ if (count($vendors) <= 0) {
 						</a>
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
-							<h3><a href="adventure_page.php"><b>Syros :</b> Food</a></h3>
+							<h3 class="vendorname" ><a href="adventure_page.php">Syros : Food</a></h3>
                             <p class="text-muted my-0 label">3 hours /Small Group</p>
                             <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
+							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
+							<p class="vp_discount my-0 "> Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
 							<a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
@@ -111,14 +111,14 @@ if (count($vendors) <= 0) {
 						</a>
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
-							<h3><a href="adventure_page.php"><b>Syros :</b> Traditional </a></h3>
+							<h3 class="vendorname"><a href="adventure_page.php">Syros : Traditional </a></h3>
                             <p class="text-muted my-0 label">3 hours /Small Group</p>
                             <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
+							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
+							<p class="vp_discount my-0 "> Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
 							<a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
@@ -130,14 +130,14 @@ if (count($vendors) <= 0) {
 						</a>
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
-							<h3><a href="adventure_page.php"><b>Syros :</b> Traditional </a></h3>
+							<h3 class="vendorname"><a href="adventure_page.php">Syros : Traditional </a></h3>
                             <p class="text-muted my-0 label">3 hours /Small Group</p>
                             <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
+							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
+							<p class="vp_discount my-0 "> Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
 							<a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
@@ -149,14 +149,14 @@ if (count($vendors) <= 0) {
 						</a>
 						<div class="wrapper best  ">
 							<small>Gastronomy</small>
-							<h3><a href="adventure_page.php"><b>Syros :</b> Traditional </a></h3>
+							<h3 class="vendorname"><a href="adventure_page.php">Syros : Traditional </a></h3>
                             <p class="text-muted my-0 label">3 hours /Small Group</p>
                             <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. b</p>
 							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
 							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
 							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
+							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
+							<p class="vp_discount my-0 "> Save 30% or 24 € </p>
 							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
 							<a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a> 
 						</div>
@@ -213,7 +213,7 @@ if (count($vendors) <= 0) {
                         </figure>
                         <div class="wrapper best  ">
                             <small><?php echo $vendor->getCategoryName();?></small>
-                            <h3><a href="adventure_page.php"><b><?php echo $vendor->getName();?></b></a></h3>
+                            <h3 class="vendorname" ><a href="adventure_page.php"><?php echo $vendor->getName();?></a></h3>
                             <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <span class="criteria">
                                 Our Criteria Rating
@@ -221,9 +221,9 @@ if (count($vendors) <= 0) {
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                             </span>
                             <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-                            <p class="prev_price2 my-0"> Initial Price <s><?php echo $vendor->getOriginalPrice();?> € </s> <span class="perperson">per person</span></p>
                             <p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person</span></p>
-                            <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> € </p>
+                            <p class="prev_price2 my-0"> Initial Price <s><?php echo $vendor->getOriginalPrice();?> € </s> <span class="perperson">per person</span></p>
+                            <p class="vp_discount my-0 "> Save <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> € </p>
                             <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person</span></p>
                             <a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a>
                         </div>

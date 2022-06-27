@@ -3883,7 +3883,7 @@ a.box_feat h3 {
 
 .vpvoucher_price1 {
   margin: 0.4em 0;
-  padding: 0.3em;
+  padding: 0.3em 0;
   width: fit-content;
   background-color: rgba(255, 255, 0, 0.671);
   color: #121921;
@@ -3892,7 +3892,9 @@ a.box_feat h3 {
 }
 
 .vpvoucher_price1 .vpvoucher_price1_value {
-  color: rgb(26, 1, 245);
+  /* color: rgb(26, 1, 245); */
+  color: #004d88;
+  
   font-size: 1rem;
   font-weight: 700;
 }
@@ -3910,8 +3912,8 @@ a.box_feat h3 {
 
 .final_price1 {
   width: fit-content;
-  margin: 0.4em;
-  padding: 0.3em;
+  margin: 0.4em 0;
+  padding: 0.3em 0;
   width: fit-content;
   background-color: rgba(170, 170, 170, 0.445);
   color: #121921;
@@ -3958,8 +3960,8 @@ a.box_feat h3 {
 }
 
 .vpvoucher_price2 {
-  margin: 0.4em;
-  padding: 0.3em;
+  margin: 0.4em 0 ;
+  padding: 0.3em 0 ;
   width: fit-content;
   background-color: rgba(255, 255, 0, 0.671);
   color: #121921;
@@ -3969,8 +3971,8 @@ a.box_feat h3 {
 
 .final_price2 {
   width: fit-content;
-  margin: 0.4em;
-  padding: 0.3em;
+  margin: 0.4em 0;
+  padding: 0.3em 0;
   background-color: rgba(170, 170, 170, 0.445);
   color: #121921;
   border-radius: 2em;
@@ -11054,4 +11056,8 @@ html[xmlns] .slides {
 
 .details{
   font-weight: 600;
+}
+
+.vendorname a{
+  color: black!important;
 }

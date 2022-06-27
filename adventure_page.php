@@ -182,7 +182,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 					<div class="box_grid">
 						<div class="wrapper">
 							<!--                            TODO: voucher available, Reserve Now your Spot & Pay Later for your activity-->
-							<h3 style="color: #fc5b62;"><b><?php echo $vendor->getName(); ?></b></h3>
+							<h3 ><?php echo $vendor->getName(); ?></h3>
 							<p><?php echo $vendor->getDescriptionSmall(); ?></p>
 							<p>
 								<span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?>
@@ -197,18 +197,19 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 								Vouchers Available
 								<b>4/10</b>
 							</p>
-							<p class=" prev_price my-0">
-								Initial Price
-								<span class="prev_price_value"><?php echo $vendor->getOriginalPrice(); ?> €</span>
-								<span class="perperson">per person</span>
-							</p>
 							<p class="vpvoucher_price1 my-0">
 								Buy VP Vouchers
 								<span class="vpvoucher_price1_value"> <?php echo $vendor->getPriceAdult(); ?>€ </span>
 								<span class="perperson">per person</span>
 							</p>
+							<p class=" prev_price my-0">
+								Initial Price
+								<span class="prev_price_value"><?php echo $vendor->getOriginalPrice(); ?> €</span>
+								<span class="perperson">per person</span>
+							</p>
+
 							<p class="vp_discount my-0 ">
-								You Save
+								 Save
 								<?php echo $vendor->getDiscount(); ?>% or <?php echo $moneySaved; ?> €
 							</p>
 							<p class="final_price1 my-0">
@@ -218,7 +219,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 							</p>
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
 							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
-							<p class="my-0 perperson">Reserve Now your Spot & Pay Later for your activity </p>
+							<p class="my-0 perperson">Purchase at least 2 vouchers for the same or  different activities and up to 3rd voucher you get free vouchers. Your presents never end! </p>
 
 
 						</div>
