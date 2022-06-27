@@ -277,40 +277,6 @@ include_once 'includes/header.php';
 		</section>
 	</div>
 
-
-
-	<div class="container margin_80_55">
-		<section>
-			<div class="newsletter-subscribe  container">
-				<div class="container">
-					<div class="intro">
-						<h2 class="text-center newsletter">Sign Up to our Newsletter to Get More Experiences</h2>
-						<p class="text-center"> Sign up now to receive personalized itineraries and attraction proposals in your inbox
-						</p>
-					</div>
-					<form class="form-inline" method="post">
-						<div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
-						<div class="form-group"><select class="form-select" name="" id="">
-
-								<option value="" disabled selected> Choose your Voucher ValuePass </option>
-								<option value="2 Vouchers"> 2 Vouchers </option>
-								<option value="3 Vouchers + extra 1 free Voucher "> 3 Vouchers + extra 1 free Voucher </option>
-								<option value="4 Vouchers + extra 2 free Voucher "> 4 Vouchers + extra 2 free Voucher </option>
-								<option value="5 Vouchers + extra 2 free Voucher "> 5 Vouchers + extra 3 free Voucher </option>
-								<option value="6 Vouchers + extra 3 free Voucher"> 6 Vouchers + extra 4 free Voucher </option>
-								<option value="7 Vouchers + extra3 free Voucher "> 7 Vouchers + extra 4 free Voucher </option>
-
-							</select></div>
-
-						<div class="form-group"><button class="btn btn-primary" type="button">Sign Up </button></div>
-					</form>
-				</div>
-			</div>
-		</section>
-	</div>
-
-
-
 </main>
 
 
