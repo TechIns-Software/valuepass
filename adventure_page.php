@@ -1,9 +1,9 @@
 <?php
 if (!isset($conn)) {
-    include 'connection.php';
+	include 'connection.php';
 }
 if (!isset($_GET['id'])) {
-    header('location: index.php');
+	header('location: index.php');
 }
 include 'backend/includeClasses.php';
 include 'initializeExperience.php';
@@ -15,7 +15,7 @@ $idVendor = $_GET['id'];
 $languageId = 1;
 $vendor = getVendor($conn, $idVendor, $languageId);
 ?>
-<input value="<?php echo $vendor->getId();?>" id="vendorId" hidden>
+<input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>
 <main>
 	<!-- <section class="hero_in hotels_detail ">
 		<div class="wrapper ">
@@ -68,128 +68,154 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 
 
 	<div class=" bg_color_1">
-<!--		<nav class="secondary_nav sticky_horizontal">-->
-<!--			<div class="container">-->
-<!--				<ul class="clearfix">-->
-<!--					<li><a href="#book" class="active">Buy VP Voucher</a></li>-->
-<!--				</ul>-->
-<!--			</div>-->
-<!--		</nav>-->
+		<!--		<nav class="secondary_nav sticky_horizontal">-->
+		<!--			<div class="container">-->
+		<!--				<ul class="clearfix">-->
+		<!--					<li><a href="#book" class="active">Buy VP Voucher</a></li>-->
+		<!--				</ul>-->
+		<!--			</div>-->
+		<!--		</nav>-->
 		<div class="container margin_60_35">
 			<div class="row">
-				<div class="col-lg-6 col-md-12 ">
+				<div class="col-lg-6 col-md-12   ">
 					<section id="description">
-						<h2 class="underline">Description</h2>
-						<p>
-                            <?php echo $vendor->getDescriptionBig();?>
-						</p>
 
-						<h2 class="underline">About this Activity</h2>
-						<div class="row py-4">
-                            <div class="col-lg-6 col-md-12">
-                                <ul class="bullets">
-                                    <?php
-                                    $aboutActivityArray = $vendor->getAboutActivityArray();
-                                    for ($counter = 0; $counter < ceil(count($aboutActivityArray) / 2); $counter++) {
-                                        ?>
-                                        <li>
-                                            <?php echo $aboutActivityArray[$counter]->getHead();?>
-                                            <small class="text-muted">
-                                                <?php echo $aboutActivityArray[$counter]->getDescription();?>
-                                            </small>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                    <li>
-                                        <?php echo $vendor->getPaymentInfoActivityHead();?>
-                                        <small class="text-muted">
-                                            <?php echo $vendor->getPaymentInfoActivityDescription();?>
-                                        </small>
-                                    </li>
-								</ul>
+						<div class=" d-flex    justify-content-between  my-4    collapsebtn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+							<h2 class=" d-flex align-items-center   "> Description </h2>
+							<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
+						</div>
+
+						<div class="collapse shadow" id="collapseExample">
+							<div class=" ">
+								<div class="row">
+									<div class="col-lg-8 col-md-12  ">
+										<p class="details">
+											<?php echo $vendor->getDescriptionBig(); ?>
+										</p>
+									</div>
+								</div>
 							</div>
-                            <div class="col-lg-6 col-md-12">
-                                <ul class="bullets">
-                                    <?php
-                                    $aboutActivityArray = $vendor->getAboutActivityArray();
-                                    for ($counter = ceil(count($aboutActivityArray) / 2); $counter < count($aboutActivityArray); $counter++) {
-                                        ?>
-                                        <li>
-                                            <?php echo $aboutActivityArray[$counter]->getHead();?>
-                                            <small class="text-muted">
-                                                <?php echo $aboutActivityArray[$counter]->getDescription();?>
-                                            </small>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </div>
+						</div>
+
+
+
+						<div class=" d-flex    justify-content-between my-4  " data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+							<h2 class=" d-flex align-items-center   "> About this Activity </h2>
+							<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
+						</div>
+
+
+
+
+						<div class="collapse shadow" id="collapseExample1">
+							<div>
+								<div class="row">
+									<div class="col-lg-8 col-md-12  details ">
+										<ul class="bullets">
+											<?php
+											$aboutActivityArray = $vendor->getAboutActivityArray();
+											for ($counter = 0; $counter < ceil(count($aboutActivityArray) / 2); $counter++) {
+											?>
+												<li>
+													<?php echo $aboutActivityArray[$counter]->getHead(); ?>
+													<small class="text-muted">
+														<?php echo $aboutActivityArray[$counter]->getDescription(); ?>
+													</small>
+												</li>
+											<?php
+											}
+											?>
+											<li>
+												<?php echo $vendor->getPaymentInfoActivityHead(); ?>
+												<small class="text-muted">
+													<?php echo $vendor->getPaymentInfoActivityDescription(); ?>
+												</small>
+											</li>
+										</ul>
+
+									</div>
+								</div>
+							</div>
 						</div>
 
 					</section>
-                    <section>
-                        <h4 class="underline">Experience</h4>
-                        <ul>
-                            <?php
-                            foreach ($vendor->getHighlights() as $highlight) {
-                                ?>
-                                <li>
-                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                    <?php echo $highlight;?>
-                                </li>
-                                <?php
-                            }
-                            ?>
 
-                        </ul>
-                    </section>
+					<section>
+
+
+						<div class=" d-flex    justify-content-between my-4  " data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+							<h4 class=" d-flex align-items-center   "> Highlights </h4>
+							<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
+						</div>
+
+
+						<div class="collapse shadow" id="collapseExample2">
+							<div class=" ">
+								<div class="row">
+									<div class="col-lg-8 col-md-12  details ">
+										<ul>
+											<?php
+											foreach ($vendor->getHighlights() as $highlight) {
+											?>
+												<li>
+													<i class="fa fa-arrow-right" aria-hidden="true"></i>
+													<?php echo $highlight; ?>
+												</li>
+											<?php
+											}
+											?>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 
 
 				<div class="col-lg-6 col-md-12 ">
-                    <?php
-                    $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
-                    $totalToPay = $vendor->getOriginalPrice() - $moneySaved;
-                    ?>
+					<?php
+					$moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
+					$totalToPay = $vendor->getOriginalPrice() - $moneySaved;
+					?>
 					<div class="box_grid">
 						<div class="wrapper">
-<!--                            TODO: voucher available, Reserve Now your Spot & Pay Later for your activity-->
-							<h3 style="color: #fc5b62;"><b><?php echo $vendor->getName();?></b></h3>
-							<p><?php echo $vendor->getDescriptionSmall();?></p>
+							<!--                            TODO: voucher available, Reserve Now your Spot & Pay Later for your activity-->
+							<h3 style="color: #fc5b62;"><b><?php echo $vendor->getName(); ?></b></h3>
+							<p><?php echo $vendor->getDescriptionSmall(); ?></p>
 							<p>
-                                <span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?>
-                                </span>
-                            </p>
-                            <span class="criteria">
-                                Our Criteria Rating
-                                <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
-                                <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
-                            </span>
+								<span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?>
+								</span>
+							</p>
+							<span class="criteria">
+								Our Criteria Rating
+								<?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
+								<?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
+							</span>
 							<p class=" voucher_av ">
-                                Vouchers Available
-                                <b>4/10</b>
-                            </p>
+								Vouchers Available
+								<b>4/10</b>
+							</p>
 							<p class=" prev_price my-0">
-                                Initial Price
-                                <span class="prev_price_value"><?php echo $vendor->getOriginalPrice();?> €</span>
-                                <span class="perperson">per person</span>
-                            </p>
+								Initial Price
+								<span class="prev_price_value"><?php echo $vendor->getOriginalPrice(); ?> €</span>
+								<span class="perperson">per person</span>
+							</p>
 							<p class="vpvoucher_price1 my-0">
-                                Buy VP Vouchers
-                                <span class="vpvoucher_price1_value"> <?php echo $vendor->getPriceAdult();?>€ </span>
-                                <span class="perperson">per person</span>
-                            </p>
+								Buy VP Vouchers
+								<span class="vpvoucher_price1_value"> <?php echo $vendor->getPriceAdult(); ?>€ </span>
+								<span class="perperson">per person</span>
+							</p>
 							<p class="vp_discount my-0 ">
-                                You Save
-                                <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> €
-                            </p>
+								You Save
+								<?php echo $vendor->getDiscount(); ?>% or <?php echo $moneySaved; ?> €
+							</p>
 							<p class="final_price1 my-0">
-                                Final Price
-                                <span class="final_price1_value"><?php echo $totalToPay;?>€ </span>
-                                <span class="perperson">per person</span>
-                            </p>
+								Final Price
+								<span class="final_price1_value"><?php echo $totalToPay; ?>€ </span>
+								<span class="perperson">per person</span>
+							</p>
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
 							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
 							<p class="my-0 perperson">Reserve Now your Spot & Pay Later for your activity </p>
@@ -207,31 +233,65 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 
 					<div class="row">
 						<div class="col-lg-12  col-md-12 ">
-							<h4 class="underline">Full Description</h4>
-                            <p>
-                                <?php echo $vendor->getDescriptionFull();?>
-                            </p>
+
+
+							<div class=" d-flex    justify-content-between  my-3    " data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+								<h4 class=" d-flex align-items-center   "> Full Description </h4>
+								<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
+							</div>
+
+							<div class="collapse shadow" id="collapseExample3">
+								<div class=" ">
+									<div class="row">
+										<div class="col-lg-8 col-md-12  details ">
+											<p>
+												<?php echo $vendor->getDescriptionFull(); ?>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
 						</div>
 					</div>
 
 
 					<div class="row">
-						<div class="col-lg-6 includes">
-							<h4 class="underline">Includes</h4>
-							<ul>
-                                <?php
-                                foreach ($vendor->getIncludedServicesArray() as $includeServices) {
-                                ?>
-                                <li>
-                                    <i style="color: green;" class="fa fa-check fa-lg" aria-hidden="true"></i>
-                                    <span> <?php echo $includeServices->getName();?> </span>
-                                </li>
-                                <?php
-                                }
-                                ?>
-                                <!--								<li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i> <span> Personal expenses </span> </li>-->
+						<div class="col-lg-12 includes">
 
-							</ul>
+
+							<div class=" d-flex    justify-content-between  my-3   " data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
+								<h4 class=" d-flex align-items-center   "> Includes </h4>
+								<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
+							</div>
+
+
+
+
+							<div class="collapse shadow" id="collapseExample4">
+								<div class=" ">
+									<div class="row">
+										<div class="col-lg-8 col-md-12  details ">
+											<ul>
+												<?php
+												foreach ($vendor->getIncludedServicesArray() as $includeServices) {
+												?>
+													<li>
+														<i style="color: green;" class="fa fa-check fa-lg" aria-hidden="true"></i>
+														<span> <?php echo $includeServices->getName(); ?> </span>
+													</li>
+												<?php
+												}
+												?>
+												<!-- <li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i> <span> Personal expenses </span> </li>-->
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 
 					</div>
@@ -240,28 +300,37 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 
 					<div class="row">
 						<div class="col-lg-12">
-							<h4 class="underline">Important information</h4>
 
-							<div class="row">
-                                <?php
-                                foreach ($vendor->getImportantInformationArray() as $importantInformation) {
-                                    ?>
-                                <div class="col-sm-12 importantinfosli">
-                                    <b> <?php echo $importantInformation->getHead();?> </b>
-                                    <ul class="ps-3">
-                                        <?php
-                                        foreach ($importantInformation->getDescriptions() as $bullet) {
-                                            ?>
-                                            <li><i class="fas fa-arrow-circle-right fa-lg"></i> <?php echo $bullet;?></li>
-                                        <?php
-                                        }
-                                        ?>
-                                    </ul>
-                                </div>
-                                <?php
-                                }
-                                ?>
+							<div class=" d-flex    justify-content-between  my-3   " data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
+								<h4 class=" d-flex align-items-center   "> Important information </h4>
+								<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
+							</div>
 
+							<div class="collapse shadow" id="collapseExample5">
+								<div class=" ">
+									<div class="row">
+										<div class="col-lg-8 col-md-12  details ">
+											<?php
+											foreach ($vendor->getImportantInformationArray() as $importantInformation) {
+											?>
+												<div class="col-sm-12 importantinfosli">
+													<b> <?php echo $importantInformation->getHead(); ?> </b>
+													<ul class="ps-3">
+														<?php
+														foreach ($importantInformation->getDescriptions() as $bullet) {
+														?>
+															<li><i class="fas fa-arrow-circle-right fa-lg"></i> <?php echo $bullet; ?></li>
+														<?php
+														}
+														?>
+													</ul>
+												</div>
+											<?php
+											}
+											?>
+										</div>
+									</div>
+								</div>
 							</div>
 
 						</div>
@@ -270,29 +339,45 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 
 					<div class="row">
 						<div class="col-lg-12">
-							<h5>All of our supplies have met the seven standards of our rating :</h5>
+							<h5></h5>
 
-							<div class="row">
-
-                                <?php
-                                foreach ($vendor->getRatedArray() as $ratedCategory) {
-                                    if ($ratedCategory->getStars() != 0) {
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-lg-3 ">
-                                            <b><?php echo $ratedCategory->getName();?></b>
-                                        </div>
-                                        <div class="col-lg-3 text-start">
-                                            <?php echo str_repeat('<i class="icon_star voted"></i>', $ratedCategory->getStars());?>
-                                            <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $ratedCategory->getStars());?>
-                                        </div>
-                                    </div>
-                                <?php
-                                    }
-                                }
-                                ?>
-
+							<div class=" d-flex    justify-content-between  my-3   " data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
+								<h5 class=" d-flex align-items-center   "> All of our supplies have met the seven standards of our rating : </h4>
+									<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
 							</div>
+
+
+
+
+							<div class="collapse shadow" id="collapseExample6">
+								<div class=" ">
+									<div class="row">
+										<div class="col-lg-8 col-md-12   ">
+
+
+											<?php
+											foreach ($vendor->getRatedArray() as $ratedCategory) {
+												if ($ratedCategory->getStars() != 0) {
+											?>
+													<div class="row">
+														<div class="col-lg-3 ">
+															<b><?php echo $ratedCategory->getName(); ?></b>
+														</div>
+														<div class="col-lg-3 text-start">
+															<?php echo str_repeat('<i class="icon_star voted"></i>', $ratedCategory->getStars()); ?>
+															<?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $ratedCategory->getStars()); ?>
+														</div>
+													</div>
+											<?php
+												}
+											}
+											?>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 
@@ -300,7 +385,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 			</div>
 		</div>
 
-        <div style="min-height: 20px"></div>
+		<div style="min-height: 20px"></div>
 		<section id="book">
 			<div class="container margin_60_35">
 				<div class="row">
