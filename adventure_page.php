@@ -343,7 +343,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 							<h5></h5>
 
 							<div class=" d-flex    justify-content-between  my-3   " data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
-								<h5 class=" d-flex align-items-center   "> All of our supplies have met the seven standards of our rating : </h4>
+								<h5 class=" d-flex align-items-center   "> All of our supplies have met the seven standards of our rating : </h5>
 									<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
 							</div>
 
