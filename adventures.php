@@ -22,19 +22,17 @@ if (count($vendors) <= 0) {
 ?>
 
 <main>
-	<section class="header-video adventure">
+	<section style="background-image: url('<?php echo $destination->getImage2();?>')" class="header-video adventure">
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
 					<h3><?php echo $destination->getName();?></h3>
-					<p>Hosted journeys to extraordinary and unique places.</p>
-					<a href="#bestof" class="btn_1">Explore more</a>
 				</div>
 			</div>
 		</div>
 
-		<video src="assets/videos/vid2.mp4" autoplay loop playsinline muted></video>
-		<!-- <img src="assets/img/10.jpg" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960"> -->
+<!--		<video src="assets/videos/vid2.mp4" autoplay loop playsinline muted></video>-->
+<!--		 <img src="assets/img/10.jpg" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960">-->
 	</section>
 	<!-- /header-video -->
     <div class="bg_color_1 shadow bgbanner">
