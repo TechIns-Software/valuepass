@@ -182,7 +182,7 @@ $destinations = getDestinations($conn, $idLanguage);
                                 <div class="card-body">
                                 </div>
                                 <div class="card-footer">
-                                    <h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1">Mykonos</a></h4>
+                                    <h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=1"><?php echo $destination->getName();?></a></h4>
                                     <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors();?> Activities</small>
                                 </div>
                             </div>
