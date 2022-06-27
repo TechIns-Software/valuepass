@@ -12,6 +12,7 @@ $home = 0;
 include_once 'includes/header.php';
 $idDestination = $_GET['id'];
 $languageId = 1;
+$destination = getDestinations($conn, $languageId)[0];
 $vendors = getVendors($conn, $idDestination, $languageId);
 $bestOffs = getVendors($conn, $idDestination, $languageId, true);
 $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
@@ -25,7 +26,7 @@ if (count($vendors) <= 0) {
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
-					<h3>Location Name</h3>
+					<h3><?php echo $destination->getName();?></h3>
 					<p>Hosted journeys to extraordinary and unique places.</p>
 					<a href="#bestof" class="btn_1">Explore more</a>
 				</div>
@@ -57,132 +58,40 @@ if (count($vendors) <= 0) {
 
 			<div id="reccomended" class="owl-carousel owl-theme">
 
-				<div class="item">
-					<div class="box_grid">
-						<a href="adventure_page.php"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="933">
-						</a>
-						<div class="wrapper best  ">
-							<small>Historic</small>
-							<h3 class="vendorname"><a href="adventure_page.php">Syros : Climbing</a></h3>
-							<p class="text-muted my-0 label">3 hours /Small Group</p>
+                <?php
+                foreach ($bestOffs as $vendor) {
+                    $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
+                    $totalToPay = $vendor->getOriginalPrice() - $moneySaved;
 
-							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
-							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 "> Save 30% or 24 € </p>
-							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php">
-								<div class=" buy_button2"> Book Now </div>
-							</a>
-						</div>
-					</div>
-				</div>
+                    ?>
+                    <div class="item">
+                        <div class="box_grid">
+                            <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
+                                <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>"
+                                     class="img-fluid" alt="" width="800" height="933">
+                            </a>
+                            <div class="wrapper best ">
+                                <small><?php echo $vendor->getCategoryName();?></small>
+                                <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
+                                <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
 
-				<div class="item">
-					<div class="box_grid">
-						<a href="adventure_page.php"><img src="assets/img/4.jpg" class="img-fluid" alt="" width="800" height="933">
-						</a>
-						<div class="wrapper best  ">
-							<small>Watersports</small>
-
-							<h3 class="vendorname"><a href="adventure_page.php">Syros : Climbing</a></h3>
-							<p class="text-muted my-0 label">3 hours /Small Group</p>
-
-							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
-							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
-							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
-							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php">
-								<div class=" buy_button2"> Book Now </div>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="box_grid">
-						<a href="adventure_page.php"><img src="assets/img/slider_images/happy1.webp" class="img-fluid" alt="" width="800" height="933">
-						</a>
-						<div class="wrapper best  ">
-							<small>Gastronomy</small>
-							<h3 class="vendorname"><a href="adventure_page.php">Syros : Food</a></h3>
-							<p class="text-muted my-0 label">3 hours /Small Group</p>
-							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
-							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
-							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
-							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php">
-								<div class=" buy_button2"> Book Now </div>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="box_grid">
-						<a href="adventure_page.php"><img src="assets/img/slider_images/happy2.webp" class="img-fluid" alt="" width="800" height="933">
-						</a>
-						<div class="wrapper best  ">
-							<small>Gastronomy</small>
-							<h3 class="vendorname"><a href="adventure_page.php">Syros : Traditional </a></h3>
-							<p class="text-muted my-0 label">3 hours /Small Group</p>
-							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
-							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
-							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
-							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php">
-								<div class=" buy_button2"> Book Now </div>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="box_grid">
-						<a href="adventure_page.php"><img src="assets/img/slider_images/happy3.webp" class="img-fluid" alt="" width="800" height="933">
-						</a>
-						<div class="wrapper best  ">
-							<small>Gastronomy</small>
-
-							<h3 class="vendorname"><a href="adventure_page.php">Syros : Traditional </a></h3>
-							<p class="text-muted my-0 label">3 hours /Small Group</p>
-
-							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
-							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
-							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
-							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php">
-								<div class=" buy_button2"> Book Now </div>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="box_grid">
-						<a href="adventure_page.php"><img src="assets/img/slider_images/happy4.webp" class="img-fluid" alt="" width="800" height="933">
-						</a>
-						<div class="wrapper best  ">
-							<small>Gastronomy</small>
-							<h3 class="vendorname"><a href="adventure_page.php">Syros : Traditional </a></h3>
-							<p class="text-muted my-0 label">3 hours /Small Group</p>
-							<span class="criteria"> Our Criteria Rating <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"> <i class="icon_star voted"></i> </i> <i class="icon_star "></i> </span>
-							<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-							<p class="prev_price2 my-0"> Initial Price <s>120 € </s> <span class="perperson">per person</span></p>
-							<p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b>12€ </b> <span class="perperson">per person</span></p>
-							<p class="vp_discount my-0 ">You Save 30% or 24 € </p>
-							<p class="final_price2 my-0 mb-2"> Final Price <b>84€ </b> <span class="perperson">per person</span></p>
-							<a href="adventure_page.php">
-								<div class=" buy_button2"> Book Now </div>
-							</a>
-						</div>
-					</div>
-				</div>
+                                <span class="criteria">
+                                    Our Criteria Rating
+                                    <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
+                                    <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
+                                </span>
+                                <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
+                                <p class="prev_price2 my-0"> Initial Price <s><?php echo $vendor->getOriginalPrice();?> € </s> <span class="perperson">per person</span></p>
+                                <p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person</span></p>
+                                <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> € </p>
+                                <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person</span></p>
+                                <a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
 
 
 			</div>
@@ -192,7 +101,7 @@ if (count($vendors) <= 0) {
 
 
 
-	<div class="container   text-center my-2">
+	<div class="container text-center my-2">
 		<div class="main_title_3 d-block">
 			<h2>Type of experience</h2>
 		</div>
@@ -229,12 +138,13 @@ if (count($vendors) <= 0) {
                 <div id="exper<?php echo $vendor->getId();?>" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="<?php echo $vendor->getCategoryId();?>">
                     <div class="box_grid">
                         <figure>
-                            <a href="adventure_page.php"><img src="assets/img/10.jpg" class="img-fluid" alt="" width="800" height="533">
+                            <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
+                                <img src="images/location_images/<?php echo $vendor->getPathToImage();?>" class="img-fluid" alt="" width="800" height="533">
                             </a>
                         </figure>
                         <div class="wrapper best  ">
                             <small><?php echo $vendor->getCategoryName();?></small>
-                            <h3><a href="adventure_page.php"><b><?php echo $vendor->getName();?></b></a></h3>
+                            <h3><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><b><?php echo $vendor->getName();?></b></a></h3>
                             <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <span class="criteria">
                                 Our Criteria Rating
@@ -256,17 +166,8 @@ if (count($vendors) <= 0) {
                 ?>
 
             </div>
-
-
-			</div>
-
-
-		</div>
-		<!-- /row -->
-	</div>
-	</div>
-
-	</div>
+        </div>
+    </div>
 
 
 </main>

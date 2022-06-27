@@ -12,25 +12,28 @@ function getDestinations($conn, $idLanguage) : array{
     $stmt1->bind_param('i', $idLanguage);
     $stmt2 = $conn->prepare($query2);
     $destinations = [];
-    if ($stmt1->execute() && $stmt2->execute()) {
-        $id = $name = $description = $image1 = $sum = '';
-        $stmt2->bind_result($sum);
+    if ($stmt2->execute()) {
+        $id = $name = $description = $image1 = $sum = $idDestination = '';
+        $stmt2->bind_result($sum, $idDestination);
         $sums = [];
         while ($stmt2->fetch()) {
-            array_push($sums, $sum);
+            $sums[$idDestination] = $sum;
         }
         $stmt2->close();
+        $stmt1->execute();
         $stmt1->bind_result($id, $name, $description, $image1);
         $counter = 0;
         while ($stmt1->fetch()) {
+            $numberVendors = isset($sums[$counter]) ? intval($sums[$counter]) : 0;
             $destination = new \ValuePass\Destination(
                 $id, $name, $description,
-                image1: $image1, numberOfVendors: $sums[$counter]
+                image1: $image1, numberOfVendors: $numberVendors
             );
             array_push($destinations, $destination);
             $counter = $counter + 1;
         }
     }
+//    var_dump($destinations);
     $stmt1->close();
     return $destinations;
 }
@@ -111,8 +114,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
         //TODO: image path!basic path
         $vendor = New \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
-//            $discount, $priceKid, $description, $image, $name
-            $discount, $priceKid, $description, '', $name
+            $discount, $priceKid, $description, $image, $name
+//            $discount, $priceKid, $description, '', $name
         );
         $query1 ="SELECT LBT.name
                 FROM LabelsBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT

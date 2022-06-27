@@ -14,6 +14,9 @@ include_once 'includes/header.php';
 $idVendor = $_GET['id'];
 $languageId = 1;
 $vendor = getVendor($conn, $idVendor, $languageId);
+if ($vendor == Null) {
+//    header('location: index.php');
+}
 ?>
 <input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>
 <main>

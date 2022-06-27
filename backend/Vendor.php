@@ -267,4 +267,12 @@ class Vendor {
             return round($sum / count($this->ratedArray));
         }
     }
+
+    /**
+     * @return string
+     */
+    public function getPathToImage(): string
+    {
+        return $this->pathToImage;
+    }
 }
