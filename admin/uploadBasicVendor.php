@@ -26,7 +26,7 @@ if(isset($_FILES['file']['name'])) {
 
     /* Check file extension */
     if (!file_exists($directory)) {
-        mkdir($directory, 0774, true);
+        mkdir($directory, 0777, true);
     }
     if(in_array($imageFileType, $valid_extensions)) {
         if(move_uploaded_file($_FILES['file']['tmp_name'],$location)) {
