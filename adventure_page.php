@@ -280,8 +280,8 @@ if ($vendor == Null) {
 												foreach ($vendor->getIncludedServicesArray() as $includeServices) {
 												?>
 													<li>
-														<i style="color: green;" class="fa fa-check fa-lg" aria-hidden="true"></i>
-														<span> <?php echo $includeServices->getName(); ?> </span>
+														<i style="color: <?php echo ($includeServices->getIcon() == 1 ? 'green' : 'red') ?>;" class="fa fa-check fa-lg" aria-hidden="true"></i>
+                                                        <span> <?php echo $includeServices->getName(); ?> </span>
 													</li>
 												<?php
 												}

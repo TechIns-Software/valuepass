@@ -202,7 +202,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
                 $nameService = $icon = '';
                 $stmt6->bind_result($nameService, $icon);
                 while ($stmt6->fetch()) {
-                    $vendor->addIncludedService(new \ValuePass\IncludedService($nameService));
+                    $vendor->addIncludedService(new \ValuePass\IncludedService($nameService, $icon));
                 }
             }
 
