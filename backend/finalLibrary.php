@@ -44,16 +44,15 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
 }
 
 function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destination{
-    $query = "SELECT DT.name, DT.description, D.image2
+    $query = "SELECT D.id, DT.name, DT.description, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
-                WHERE D.id = ?; AND D.id = DT.idDestination AND DT.idLanguage = ?";
+                WHERE D.id = $idDestination AND D.id = DT.idDestination AND DT.idLanguage = $idLanguage ";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('ii', $idDestination, $idLanguage);
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
         $stmt->bind_result($id, $name, $description, $image2);
         $destination = new \ValuePass\Destination(
-            $id, $name, $description,
+            intval($id), $name, $description,
             image2: $image2
         );
     }
