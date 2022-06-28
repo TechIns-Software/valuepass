@@ -42,7 +42,7 @@ CREATE TABLE PaymentInfoActivityTranslate (
     idLanguage int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language(id),
     head varchar(100),
-    description varchar (200)
+    description text
 
 )ENGINE=InnoDB;
 CREATE TABLE Vendor (

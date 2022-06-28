@@ -67,11 +67,11 @@ INSERT INTO `CategoryVendorTranslate` (`idCategoryVendor`, `idLanguage`, name) V
 INSERT INTO `PaymentInfoActivity` (`id`) VALUES (1);
 INSERT INTO `PaymentInfoActivity` (`id`) VALUES (2);
 
-INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values ("1",1,"Πλήρωσε Τώρα","");
-INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values ("1",2,"Pay Now","");
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (1,2.1,"Αγοράστε τώρα ένα κουπόνι VP για την κράτηση της δραστηριότητάς σας και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.");
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (1, 2,2.1,"Buy a VP voucher for your activity reservation now and pay later for your activity with a discount when you arrive. Check your activity voucher once you have booked for full details.");
 
-INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values ("2",1,"Πλήρωσε Αργότερα","");
-INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values ("2",2,"Pay Later","");
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (2,1,1.1,"Αγοράστε το κουπόνι VP που κάνετε κράτηση τώρα και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε ή μπορείτε να πληρώσετε νωρίτερα αν θέλετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.");
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (2,2,1.1,"Buy VP Voucher you Reserve Now your Spot & Pay Later for your Activity with a Discount when you arrive, or you can pay earlier if you like. Check your activity voucher once you have booked for full details.");
 
 
 
