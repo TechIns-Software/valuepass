@@ -71,9 +71,8 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     $idDestination = $conn->real_escape_string($idDestination);
     if ($isBestOff) {
         $query0 = "SELECT V.id
-            FROM Vendor AS V, BestOff AS BO, BestOffOrder AS BOO
-            WHERE V.idDestination = ? AND V.id = BO.idVendor AND BOO.idBestOff = BO.id AND V.isCompleted = 1
-            ORDER BY BOO.number ASC";
+            FROM Vendor AS V, BestOff AS BO
+            WHERE V.idDestination = ? AND V.id = BO.idVendor AND V.isCompleted = 1";
     } else {
         $query0 = "SELECT V.id
             FROM Vendor AS V
