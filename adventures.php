@@ -22,7 +22,7 @@ if (count($vendors) <= 0) {
 ?>
 
 <main>
-	<section style="background-image: url('images/location_images/ <?php echo $destination->getImage2();?>')" class="header-video adventure">
+	<section style="background-image: url('images/location_images/<?php echo $destination->getImage2();?>')" class="header-video adventure">
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
