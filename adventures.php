@@ -39,8 +39,12 @@ if (count($vendors) <= 0) {
     <div class="bg_color_1 shadow bgbanner">
         <div class="container container-custom margin_80_55 ">
             <div class="main_title_2">
-                <h6 style="color: white">Purchase at least 2 vouchers for the same or
-                    different activities and up to 3rd voucher you get free vouchers. Your presents never end!</h6>
+                <h6 class="text-center" style="color: white">
+                    Buy at least 2 vouchers for different activities and
+                    up to 3 in order to get more free !
+                    <br>
+                    Your gifts never end !
+                </h6>
             </div>
 
         </div>
