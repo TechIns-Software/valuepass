@@ -12,9 +12,9 @@ $home = 0;
 include_once 'includes/header.php';
 $idDestination = $_GET['id'];
 $languageId = 1;
-$destination = getDestinations($conn, $languageId, $idDestination);
+$destination = getDestinations($conn, $languageId, $idDestination)[0];
 $vendors = getVendors($conn, $idDestination, $languageId);
-$bestOffs = getVendors($conn, $idDestination, $languageId, true)[0];
+$bestOffs = getVendors($conn, $idDestination, $languageId, true);
 $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 if (count($vendors) <= 0) {
 	//   header('location: index.php');
