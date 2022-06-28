@@ -73,8 +73,8 @@ try {
             // print_r($data_st1);
 
             $destId =   $data_st1[0];
-            $priceAdult =   $data_st1[1];
-            $originalPrice =   $data_st1[2];
+            $priceAdult =   $data_st1[2];
+            $originalPrice =   $data_st1[1];
             $discount =   $data_st1[3];
             $priceKid =   $data_st1[4];
             $priceInfant =   $data_st1[5];
