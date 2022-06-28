@@ -137,7 +137,7 @@ if (count($vendors) <= 0) {
                     <div class="box_grid">
                         <figure>
                             <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
-                                <img src="images/location_images/<?php echo $vendor->getPathToImage();?>" class="img-fluid" alt="" width="800" height="533">
+                                <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>" class="img-fluid" alt="" width="800" height="533">
                             </a>
                         </figure>
                         <div class="wrapper best  ">
