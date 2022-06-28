@@ -12,7 +12,7 @@ $home = 0;
 include_once 'includes/header.php';
 $idDestination = $_GET['id'];
 $languageId = 1;
-$destination = getDestinations($conn, $languageId)[0];
+$destination = getDestination($conn, $idDestination, $languageId);
 $vendors = getVendors($conn, $idDestination, $languageId);
 $bestOffs = getVendors($conn, $idDestination, $languageId, true);
 $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
@@ -22,9 +22,7 @@ if (count($vendors) <= 0) {
 ?>
 
 <main>
-
-
-        <section  style="background-image:url('assets/img/10.jpg')" class="header-video adventure ">
+	<section style="background-image: url('images/location_images/<?php echo $destination->getImage2();?>')" class="header-video adventure">
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
@@ -34,17 +32,9 @@ if (count($vendors) <= 0) {
 			</div>
 		</div>
 
+<!--		<video src="assets/videos/vid2.mp4" autoplay loop playsinline muted></video>-->
 <!--		 <img src="assets/img/10.jpg" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960">-->
 	</section>
-
-
-
-
-
-
-
-
-
 	<!-- /header-video -->
     <div class="bg_color_1 shadow bgbanner">
         <div class="container container-custom margin_80_55 ">
@@ -68,6 +58,7 @@ if (count($vendors) <= 0) {
 
 <!--            TODO : FIX ME -->
 			<div id="reccomended" class="owl-carousel owl-theme">
+
                 <?php
                 foreach ($bestOffs as $vendor) {
                     $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
@@ -149,7 +140,7 @@ if (count($vendors) <= 0) {
                     <div class="box_grid">
                         <figure>
                             <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
-                                <img src="images/location_images/<?php echo $vendor->getPathToImage();?>" class="img-fluid" alt="" width="800" height="533">
+                                <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>" class="img-fluid" alt="" width="800" height="533">
                             </a>
                         </figure>
                         <div class="wrapper best  ">

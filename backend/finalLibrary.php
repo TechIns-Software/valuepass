@@ -1,9 +1,14 @@
 <?php
 //$mysqli -> real_escape_string(escapestring)
-function getDestinations($conn, $idLanguage) : array{
-    $query1 = "SELECT D.id, DT.name, DT.description, D.image1
+function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
+    if ($idDestination != 0) {
+        $addition = " AND D.id = $idDestination ";
+    } else {
+        $addition = '';
+    }
+    $query1 = "SELECT D.id, DT.name, DT.description, D.image1, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
-                WHERE D.id = DT.idDestination AND DT.idLanguage = ?
+                WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
                 ORDER BY id ASC;";
     $query2 = "SELECT SUM(id), idDestination FROM Vendor
                 GROUP BY idDestination
@@ -13,7 +18,7 @@ function getDestinations($conn, $idLanguage) : array{
     $stmt2 = $conn->prepare($query2);
     $destinations = [];
     if ($stmt2->execute()) {
-        $id = $name = $description = $image1 = $sum = $idDestination = '';
+        $id = $name = $description = $image1 = $sum = $idDestination = $image2 = '';
         $stmt2->bind_result($sum, $idDestination);
         $sums = [];
         while ($stmt2->fetch()) {
@@ -21,13 +26,13 @@ function getDestinations($conn, $idLanguage) : array{
         }
         $stmt2->close();
         $stmt1->execute();
-        $stmt1->bind_result($id, $name, $description, $image1);
+        $stmt1->bind_result($id, $name, $description, $image1, $image2);
         $counter = 0;
         while ($stmt1->fetch()) {
             $numberVendors = isset($sums[$counter]) ? intval($sums[$counter]) : 0;
             $destination = new \ValuePass\Destination(
                 $id, $name, $description,
-                image1: $image1, numberOfVendors: $numberVendors
+                $image1, $image2, $numberVendors
             );
             array_push($destinations, $destination);
             $counter = $counter + 1;
@@ -39,16 +44,16 @@ function getDestinations($conn, $idLanguage) : array{
 }
 
 function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destination{
-    $query = "SELECT DT.name, DT.description, D.image2
+    $query = "SELECT D.id, DT.name, DT.description, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
-                WHERE D.id = ?; AND D.id = DT.idDestination AND DT.idLanguage = ?";
+                WHERE D.id = $idDestination AND D.id = DT.idDestination AND DT.idLanguage = $idLanguage ";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('ii', $idDestination, $idLanguage);
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
         $stmt->bind_result($id, $name, $description, $image2);
+        while ($stmt->fetch()) {}
         $destination = new \ValuePass\Destination(
-            $id, $name, $description,
+            intval($id), $name, $description,
             image2: $image2
         );
     }
@@ -66,9 +71,8 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     $idDestination = $conn->real_escape_string($idDestination);
     if ($isBestOff) {
         $query0 = "SELECT V.id
-            FROM Vendor AS V, BestOff AS BO, BestOffOrder AS BOO
-            WHERE V.idDestination = ? AND V.id = BO.idVendor AND BOO.idBestOff = BO.id AND V.isCompleted = 1
-            ORDER BY BOO.number ASC";
+            FROM Vendor AS V, BestOff AS BO
+            WHERE V.idDestination = ? AND V.id = BO.idVendor AND V.isCompleted = 1";
     } else {
         $query0 = "SELECT V.id
             FROM Vendor AS V
