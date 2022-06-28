@@ -41,7 +41,7 @@ CREATE TABLE PaymentInfoActivityTranslate (
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity(id),
     idLanguage int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language(id),
-    head varchar(100),
+    head double(10,2),
     description text
 
 )ENGINE=InnoDB;
@@ -341,12 +341,12 @@ CREATE TABLE MenuTranslate (
 -- Some data for menu and language
 
 
-INSERT INTO `language` (`id`, `language`, `icon`) VALUES
+INSERT INTO `Language` (`id`, `language`, `icon`) VALUES
 (1, 'Ελληνικά', 'gr'),
 (2, 'English', 'gb');
 
 
-INSERT INTO `menu` (`id`, `orderNumber`) VALUES
+INSERT INTO `Menu` (`id`, `orderNumber`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -363,7 +363,7 @@ INSERT INTO `menu` (`id`, `orderNumber`) VALUES
 (14, 14);
 
 
-INSERT INTO `menutranslate` (`idMenu`, `idLanguage`, `name`) VALUES
+INSERT INTO `MenuTranslate` (`idMenu`, `idLanguage`, `name`) VALUES
 (1, 1, 'Αρχική'),
 (2, 1, 'Πως λειτουργεί'),
 (3, 1, 'Τοποθεσίες'),
