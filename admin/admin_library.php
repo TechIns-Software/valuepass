@@ -3,7 +3,7 @@
 //Get all Languages
 function getAllLanguages($conn)
 {
-    $query = "Select * FROM Language id = 2;";
+    $query = "Select * FROM Language WHERE id = 2;";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $language = $icon = '';
