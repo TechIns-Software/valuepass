@@ -2408,7 +2408,12 @@ a#moveDown {
 }
 
 .header-video {
-  background: 0 0;
+  /*background: 0 0;*/
+  -webkit-background-size: cover!important;
+  -moz-background-size: cover!important;
+  -o-background-size: cover!important;
+  background-size: cover!important;
+  height: 70vh!important;
 }
 
 video {
@@ -2506,7 +2511,7 @@ video {
 }
 
 .hero_single.version_2:before {
-  /* background: url(../img/home_section_1.jpg) center center no-repeat; */
+   /*background: url(../img/10.jpg) center center no-repeat;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6655,6 +6660,7 @@ ul.list_3 li:before {
   text-align: left;
   font-size: 14px;
   font-size: 0.875rem;
+
 }
 
 .header-video.adventure .wrapper small {

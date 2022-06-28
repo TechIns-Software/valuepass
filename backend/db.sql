@@ -359,7 +359,7 @@ INSERT INTO `menu` (`id`, `orderNumber`) VALUES
 (10, 10),
 (11, 11),
 (12, 12),
-(13, 13);
+(13, 13),
 (14, 14);
 
 
@@ -389,23 +389,23 @@ INSERT INTO `menutranslate` (`idMenu`, `idLanguage`, `name`) VALUES
 (12, 1, 'Η πολιτική μας'),
 (12, 2, 'Our Privacy'),
 (13, 1, 'Ακολουθηστε μας'),
-(13, 2, 'Follow Us');
+(13, 2, 'Follow Us'),
 (14, 1, 'Αγοράστε τουλάχιστον 2 vouchers για τις ίδιες ή διαφορετικές δραστηριότητες και το 3ο voucher to λαμβάνετε δωρεάν . Τα δώρα σας δεν τελειώνουν ποτέ!'),
 (14, 2, 'Purchase at least 2 vouchers for the same or different activities and up to 3rd voucher you get free vouchers. Your presents never end!');
 
-/*
-INSERT INTO PaymentInfoActivity VALUES();
-INSERT INTO PaymentInfoActivity VALUES();
 
-INSERT INTO PaymentInfoActivityTranslate(idPaymentInfoActivity, idLanguage, head, description)
-VALUES(1,1,'Πληρωσε Τωρα', 'Πληρωσε Τωρα'),
-(2,1,'Πληρωσε Μέτα', 'Πληρωσε Μέτα'),
-(1,2,'Pay Now', 'Pay Now'),
-(2,2,'Pay Later', 'Pay Later');
+INSERT INTO `PaymentInfoActivity` (`id`) VALUES (1);
+INSERT INTO `PaymentInfoActivity` (`id`) VALUES (2);
 
-INSERT INTO IncludedService() VALUES ();
-INSERT INTO IncludedServiceTranslate(idIncludedService, idLanguage, name)
-VALUES (1,1,'Ελληνικό label'), (1,2,'English label');
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (1,2,2.1,"Αγοράστε τώρα ένα κουπόνι VP για την κράτηση της δραστηριότητάς σας και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.");
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (1, 2,2.1,"Buy a VP voucher for your activity reservation now and pay later for your activity with a discount when you arrive. Check your activity voucher once you have booked for full details.");
+
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (2,1,1.1,"Αγοράστε το κουπόνι VP που κάνετε κράτηση τώρα και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε ή μπορείτε να πληρώσετε νωρίτερα αν θέλετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.");
+INSERT INTO `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`) values (2,2,1.1,"Buy VP Voucher you Reserve Now your Spot & Pay Later for your Activity with a Discount when you arrive, or you can pay earlier if you like. Check your activity voucher once you have booked for full details.");
+
+
+
+
 
 INSERT INTO RatedCategory(orderNumber)
 VALUES (1), (2), (3), (4), (5), (6), (7);
@@ -424,6 +424,11 @@ VALUES (1,1,'Ποιότητα Εξυπηρέτησης Πελατών'),
        (6,2,'Environmental Responsibility'),
        (7,1, 'Σεβασμός στους Πολιτιστική Κληρονομιά'),
        (7,2,'Respect for Local Cultures');
+
+  /*
+       INSERT INTO IncludedService() VALUES ();
+INSERT INTO IncludedServiceTranslate(idIncludedService, idLanguage, name)
+VALUES (1,1,'Ελληνικό label'), (1,2,'English label');
  */
 
 INSERT INTO CategoryVendor() VALUES ();

@@ -98,8 +98,7 @@ if ($vendor == Null) {
 							</div>
 						</div>
 
-
-
+                        
 						<div class=" d-flex    justify-content-between my-4  " data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
 							<h2 class=" d-flex align-items-center   "> About this Activity </h2>
 							<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>

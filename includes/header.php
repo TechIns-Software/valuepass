@@ -51,7 +51,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 	<!-- FOR FLAGS -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 
-	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>
+<!--	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>-->
+    <script src="assets/js/fontawesome.js"></script>
 	<!-- Modernizr -->
 	<script src="assets/js/modernizr.js"></script>
 
