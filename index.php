@@ -170,8 +170,10 @@ $destinations = getDestinations($conn, $idLanguage);
 		<section class="add_bottom_45">
 			<div class="main_title_2">
 				<span><em></em></span>
-				<h2>Locations</h2>
-				<p>Check here the available locations</p>
+                .  στην επικεφαλίδα
+
+				<h2>1. Destinations</h2>
+				<p>2. Check here the available destinations</p>
 			</div>
 
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
