@@ -1,13 +1,13 @@
 <?php
 if (!isset($conn)) {
-    include 'connection.php';
+	include 'connection.php';
 }
 $title = "Homepage | ValuePass";
 $home = 1;
 include 'backend/includeClasses.php';
 include 'initializeExperience.php';
 include_once 'includes/header.php';
-$idLanguage = 1;
+$idLanguage = $_SESSION["languageId"];
 $destinations = getDestinations($conn, $idLanguage);
 ?>
 
@@ -18,19 +18,12 @@ $destinations = getDestinations($conn, $idLanguage);
 		<div id="rev_slider_44" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8">
 			<ul>
 				<!-- start slide 01 -->
-				<li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="01" data-param1="01" data-description="">
+				<li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power1.easeInOut" data-easeout="Power2.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="01" data-param1="01" data-description="">
 					<!-- main image -->
 					<img src="assets/img/slider_images/happy1.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
 					<div class="rev-slider-mask"></div>
-
 					<!-- main text layer -->
 					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['50','43','30','25']" data-lineheight="['70','45','35','30']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Escape the tourist traps <br> with unforgettable travel <br> experiences.</div>
-
-					<!-- small text layer -->
-					<!-- <div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-02" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','16','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">VP adds value to your personal travel package!
-					</div> -->
-
 					<!-- btn layer -->
 					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">Get Started Now
 					</a>
@@ -40,16 +33,9 @@ $destinations = getDestinations($conn, $idLanguage);
 				<li data-index="rs-74" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="02" data-param1="02" data-description="">
 					<!-- main image -->
 					<img src="assets/img/slider_images/happy2.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
 					<div class="rev-slider-mask"></div>
-
 					<!-- main text layer -->
 					<div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center" id="slide-411-layer-04" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> Get beneath the surface <br>of these destinations.</div>
-
-					<!-- small text layer -->
-					<!-- <div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-05" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on"> VP is the passport of today’s eclectic traveler!
-					</div> -->
-
 					<!-- btn layer -->
 					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-06" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']">How it works
 					</a>
@@ -66,15 +52,46 @@ $destinations = getDestinations($conn, $idLanguage);
 					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">All our proposals <br> are hand-picked by our team!
 					</div>
 
-					<!-- small text layer -->
-					<!-- <div class="tp-caption tp-resizeme alt-font text-white font-weight-300 text-center" id="slide-411-layer-08" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['65','100','-5','15']" data-width="auto" data-height="auto" data-fontsize="['19','13','19','14']" data-lineheight="['28','14','23','20']" data-letterspacing="['0.5','0.5','0.5','0.5']" data-responsive="off" data-responsive_offset="on">Delve below the surface of your destination!
-					</div> -->
-
 					<!-- btn layer -->
 					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-09" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
 					</a>
 				</li>
 				<!-- end slide 03 -->
+
+				<!-- start slide 04 -->
+				<li data-index="rs-76" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power2.easeInOut" data-easeout="Power2.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="04" data-param1="04" data-description="">
+					<!-- main image -->
+					<img src="assets/img/slider_images/happy4.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+					<div class="rev-slider-mask"></div>
+
+					<!-- main text layer -->
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-08" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','23']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">ValuePass adds value <br> to your personal travel package!
+					</div>
+
+					<!-- btn layer -->
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-10" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
+					</a>
+				</li>
+				<!-- end slide 04 -->
+
+
+				<!-- start slide 05 -->
+				<li data-index="rs-77" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power2.easeInOut" data-easeout="Power2.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="05" data-param1="05" data-description="">
+					<!-- main image -->
+					<img src="assets/img/slider_images/happy5.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+					<div class="rev-slider-mask"></div>
+
+					<!-- main text layer -->
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-08" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','40','30']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Discover authentic <br> experiences!
+					</div>
+
+					<!-- btn layer -->
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-10" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
+					</a>
+				</li>
+				<!-- end slide 05 -->
 
 			</ul>
 		</div>
@@ -172,25 +189,25 @@ $destinations = getDestinations($conn, $idLanguage);
 								</figure>
 							</a>
 						</div>  -->
-                <?php
-                foreach ($destinations as $destination) {
-                    ?>
-                    <div class="item" onclick="location.href='./adventures.php?id=<?php echo $destination->getId();?>';">
-                        <div class="card text-white card-has-bg click-col" style="background-image:url('images/location_images/<?php echo $destination->getImage1();?>');">
-                            <!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
-                            <div class="card-img-overlay d-flex flex-column">
-                                <div class="card-body">
-                                </div>
-                                <div class="card-footer">
-                                    <h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=<?php echo $destination->getId();?>"><?php echo $destination->getName();?></a></h4>
-                                    <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors();?> Activities</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                }
-                ?>
+				<?php
+				foreach ($destinations as $destination) {
+				?>
+					<div class="item" onclick="location.href='./adventures.php?id=<?php echo $destination->getId(); ?>';">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('images/location_images/<?php echo $destination->getImage1(); ?>');">
+							<!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a></h4>
+									<small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> Activities</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php
+				}
+				?>
 
 
 
@@ -247,7 +264,6 @@ $destinations = getDestinations($conn, $idLanguage);
 			<div class="col-lg-3 col-md-6">
 				<h5><?php echo $menu[9] ?></h5>
 				<ul class="contacts">
-					<li><a href="tel://6980999416"><i class="ti-mobile"></i> + 6980999416</a></li>
 					<li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
 				</ul>
 			</div>
