@@ -6,7 +6,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
     } else {
         $addition = '';
     }
-    $query1 = "SELECT D.id, DT.name, DT.description, D.image1
+    $query1 = "SELECT D.id, DT.name, DT.description, D.image1, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
                 WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
                 ORDER BY id ASC;";
@@ -18,7 +18,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
     $stmt2 = $conn->prepare($query2);
     $destinations = [];
     if ($stmt2->execute()) {
-        $id = $name = $description = $image1 = $sum = $idDestination = '';
+        $id = $name = $description = $image1 = $sum = $idDestination = $image2 = '';
         $stmt2->bind_result($sum, $idDestination);
         $sums = [];
         while ($stmt2->fetch()) {
@@ -26,13 +26,13 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
         }
         $stmt2->close();
         $stmt1->execute();
-        $stmt1->bind_result($id, $name, $description, $image1);
+        $stmt1->bind_result($id, $name, $description, $image1, $image2);
         $counter = 0;
         while ($stmt1->fetch()) {
             $numberVendors = isset($sums[$counter]) ? intval($sums[$counter]) : 0;
             $destination = new \ValuePass\Destination(
                 $id, $name, $description,
-                image1: $image1, numberOfVendors: $numberVendors
+                $image1, $image2, $numberVendors
             );
             array_push($destinations, $destination);
             $counter = $counter + 1;
