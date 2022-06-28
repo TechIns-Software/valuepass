@@ -259,7 +259,7 @@ function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
     $query = "SELECT DISTINCT(CV.id), CVT.name
             FROM Vendor AS V, CategoryVendor AS CV, CategoryVendorTranslate AS CVT
             WHERE CVT.idLanguage = $idLanguage AND CVT.idCategoryVendor = CV.id
-            AND V.idDestination = ? AND V.idCategory = CV.id";
+            AND V.idDestination = ? AND V.idCategory = CV.id AND V.isCompleted = 1;";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $idDestination);
     $categories = [];
