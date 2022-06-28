@@ -12,7 +12,7 @@ $home = 0;
 include_once 'includes/header.php';
 
 $idVendor = $_GET['id'];
-$languageId = 1;
+$languageId = $_SESSION["languageId"];
 $vendor = getVendor($conn, $idVendor, $languageId);
 $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 if ($vendor == Null) {
@@ -540,7 +540,7 @@ if ($vendor == Null) {
 			<div class="col-lg-3 col-md-6">
 				<h5><?php echo $menu[9] ?></h5>
 				<ul class="contacts">
-					<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
+
 					<li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
 				</ul>
 			</div>
