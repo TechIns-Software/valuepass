@@ -83,7 +83,7 @@ if (count($vendors) <= 0) {
                                 <p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person</span></p>
                                 <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> € </p>
                                 <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person</span></p>
-                                <a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a>
+                                <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@ if (count($vendors) <= 0) {
                             <p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person</span></p>
                             <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> € </p>
                             <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person</span></p>
-                            <a href="adventure_page.php"><div class=" buy_button2" > Book Now  </div></a>
+                            <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
                         </div>
                     </div>
                 </div>

@@ -67,12 +67,12 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     if ($isBestOff) {
         $query0 = "SELECT V.id
             FROM Vendor AS V, BestOff AS BO, BestOffOrder AS BOO
-            WHERE V.idDestination = ? AND V.id = BO.idVendor AND BOO.idBestOff = BO.id
+            WHERE V.idDestination = ? AND V.id = BO.idVendor AND BOO.idBestOff = BO.id AND V.isCompleted = 1
             ORDER BY BOO.number ASC";
     } else {
         $query0 = "SELECT V.id
             FROM Vendor AS V
-            WHERE V.idDestination = ?";
+            WHERE V.idDestination = ? AND V.isCompleted = 1";
     }
     $stmt = $conn->prepare($query0);
     $stmt->bind_param('i', $idDestination);
