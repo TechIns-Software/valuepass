@@ -9,10 +9,10 @@ class Vendor {
     private int $categoryId;
     private string $categoryName;
     private int $idDestination;
-    private int $priceAdult;
-    private int $originalPrice;
-    private int $discount;
-    private int $priceKid;
+    private float $priceAdult;
+    private float $originalPrice;
+    private float $discount;
+    private float $priceKid;
     private string $pathToImage;
     private string $name;
     private string $descriptionSmall;
@@ -40,18 +40,18 @@ class Vendor {
      * @param int $categoryId
      * @param string $categoryName
      * @param int $idDestination
-     * @param int $priceAdult
-     * @param int $originalPrice
-     * @param int $discount
-     * @param int $priceKid
+     * @param float $priceAdult
+     * @param float $originalPrice
+     * @param float $discount
+     * @param float $priceKid
      * @param string $descriptionSmall
      * @param string $pathToImage
      * @param string $name
      */
     public function __construct(
         int $id, int $categoryId, string $categoryName,
-        int $idDestination, int $priceAdult, int $originalPrice, int $discount,
-        int $priceKid, string $descriptionSmall, string $pathToImage,
+        int $idDestination, float $priceAdult, float $originalPrice, float $discount,
+        float $priceKid, string $descriptionSmall, string $pathToImage,
         string $name
     )
     {
@@ -158,7 +158,7 @@ class Vendor {
     /**
      * @return int
      */
-    public function getPriceAdult(): int
+    public function getPriceAdult(): float
     {
         return $this->priceAdult;
     }
@@ -166,7 +166,7 @@ class Vendor {
     /**
      * @return int
      */
-    public function getOriginalPrice(): int
+    public function getOriginalPrice(): float
     {
         return $this->originalPrice;
     }
