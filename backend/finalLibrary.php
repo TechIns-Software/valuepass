@@ -51,6 +51,7 @@ function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destina
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
         $stmt->bind_result($id, $name, $description, $image2);
+        while ($stmt->fetch()) {}
         $destination = new \ValuePass\Destination(
             intval($id), $name, $description,
             image2: $image2
