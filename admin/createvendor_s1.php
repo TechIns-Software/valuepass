@@ -85,6 +85,7 @@ $paymentsInfos = GetAllPaymentInfos($conn);
 
                             <?php foreach ($paymentsInfos as $paymentsInfo) {
                                 $show = (($paymentsInfo[0] == 2.1) ? 'Πληρωμή Νωρίτερα': 'Πληρωμή Νωρίτερα - κατά την διάρκεια');
+                                echo $paymentsInfo[2];
                                 ?>
                                 <option value="<?php echo $paymentsInfo[1] ?>"><?php echo $show ?></option>
 

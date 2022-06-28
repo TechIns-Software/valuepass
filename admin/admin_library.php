@@ -186,15 +186,15 @@ function GetAllCategories($conn)
 // Get All PaymentInfos
 function GetAllPaymentInfos($conn)
 {
-    $query = "SELECT piat.head , piat.idPaymentInfoActivity FROM PaymentInfoActivity as pia , PaymentInfoActivityTranslate as piat WHERE piat.idPaymentInfoActivity = pia.id group by piat.idPaymentInfoActivity ; ";
+    $query = "SELECT piat.head , piat.idPaymentInfoActivity, piat.description FROM PaymentInfoActivity as pia , PaymentInfoActivityTranslate as piat WHERE piat.idLanguage = 2 AND piat.idPaymentInfoActivity = pia.id group by piat.idPaymentInfoActivity ; ";
     $stmt = $conn->prepare($query);
 
     $stmt->execute();
-    $head = $id_paymentinfo =  '';
-    $stmt->bind_result($head, $id_paymentinfo);
+    $head = $id_paymentinfo = $temp =  '';
+    $stmt->bind_result($head, $id_paymentinfo, $temp);
     $paymentsInfos = [];
     while ($stmt->fetch()) {
-        array_push($paymentsInfos, [$head, $id_paymentinfo]);
+        array_push($paymentsInfos, [$head, $id_paymentinfo, $temp]);
     }
     $stmt->close();
     return $paymentsInfos;
