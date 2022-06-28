@@ -178,7 +178,7 @@ if ($vendor == Null) {
 					<?php
 				
 					$moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
-					$totalToPay = $vendor->getOriginalPrice() - $moneySaved;
+					$totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
 					?>
 					<div class="box_grid">
 						<div class="wrapper">
@@ -450,7 +450,7 @@ if ($vendor == Null) {
                         <?php
                         foreach ($bestOffs as $vendor) {
                             $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
-                            $totalToPay = $vendor->getOriginalPrice() - $moneySaved;
+                            $totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
 
                             ?>
                             <div class="item">

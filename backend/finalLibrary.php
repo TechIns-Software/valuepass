@@ -244,7 +244,9 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
                         $previousImportant = $headImportant;
                     }
                 }
-                $vendor->addImportantInformation($importantInformation);
+                if (isset($importantInformation)) {
+                    $vendor->addImportantInformation($importantInformation);
+                }
             }
         }
 

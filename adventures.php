@@ -66,7 +66,7 @@ if (count($vendors) <= 0) {
                 <?php
                 foreach ($bestOffs as $vendor) {
                     $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
-                    $totalToPay = $vendor->getOriginalPrice() - $moneySaved;
+                    $totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
 
                     ?>
                     <div class="item">
@@ -137,7 +137,7 @@ if (count($vendors) <= 0) {
 				<?php
 				foreach ($vendors as $vendor) {
 					$moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
-					$totalToPay = $vendor->getOriginalPrice() - $moneySaved;
+					$totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
 				?>
 
                 <div id="exper<?php echo $vendor->getId();?>" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="<?php echo $vendor->getCategoryId();?>">
