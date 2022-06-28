@@ -196,7 +196,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
                     IncludedServiceTranslate AS IST
                     WHERE VIS.idVendor = $id AND VIS.idIncludedService = IS1.id
                     AND VIS.idIncludedService = IST.idIncludedService
-                    AND IST.idLanguage = $idLanguage";
+                    AND IST.idLanguage = $idLanguage
+                    ORDER BY icon DESC ";
             $stmt6 = $conn->prepare($query6);
             if ($stmt6->execute()) {
                 $nameService = $icon = '';

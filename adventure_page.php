@@ -155,14 +155,16 @@ if ($vendor == Null) {
 									<div class="col-lg-8 col-md-12  details ">
 										<ul>
 											<?php
-											foreach ($vendor->getHighlights() as $highlight) {
-											?>
-												<li>
-													<i class="fa fa-arrow-right" aria-hidden="true"></i>
-													<?php echo $highlight; ?>
-												</li>
-											<?php
-											}
+                                            if (count($vendor->getHighlights()) > 0) {
+                                                foreach ($vendor->getHighlights() as $highlight) {
+                                                    ?>
+                                                    <li>
+                                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                        <?php echo $highlight; ?>
+                                                    </li>
+                                                    <?php
+                                                }
+                                            }
 											?>
 
 										</ul>
@@ -277,17 +279,17 @@ if ($vendor == Null) {
 										<div class="col-lg-8 col-md-12  details ">
 											<ul>
 												<?php
-												foreach ($vendor->getIncludedServicesArray() as $includeServices) {
+                                                if (count($vendor->getIncludedServicesArray()) > 0) {
+                                                    foreach ($vendor->getIncludedServicesArray() as $includeServices) {
+                                                        ?>
+                                                        <li>
+                                                            <i style="color: <?php echo ($includeServices->getIcon() == 1 ? 'green' : 'red') ?>;" class="fa fa-check fa-lg" aria-hidden="true"></i>
+                                                            <span> <?php echo $includeServices->getName(); ?> </span>
+                                                        </li>
+                                                        <?php
+                                                    }
+                                                }
 												?>
-													<li>
-														<i style="color: <?php echo ($includeServices->getIcon() == 1 ? 'green' : 'red') ?>;" class="fa fa-check fa-lg" aria-hidden="true"></i>
-                                                        <span> <?php echo $includeServices->getName(); ?> </span>
-													</li>
-												<?php
-												}
-												?>
-												<!-- <li><i style="color: red;" class="fas fa-times fa-lg" aria-hidden="true"></i> <span> Personal expenses </span> </li>-->
-
 											</ul>
 										</div>
 									</div>
@@ -313,22 +315,24 @@ if ($vendor == Null) {
 									<div class="row">
 										<div class="col-lg-8 col-md-12  details ">
 											<?php
-											foreach ($vendor->getImportantInformationArray() as $importantInformation) {
-											?>
-												<div class="col-sm-12 importantinfosli">
-													<b> <?php echo $importantInformation->getHead(); ?> </b>
-													<ul class="ps-3">
-														<?php
-														foreach ($importantInformation->getDescriptions() as $bullet) {
-														?>
-															<li><i class="fas fa-arrow-circle-right fa-lg"></i> <?php echo $bullet; ?></li>
-														<?php
-														}
-														?>
-													</ul>
-												</div>
-											<?php
-											}
+                                            if (count($vendor->getImportantInformationArray()) > 0) {
+                                                foreach ($vendor->getImportantInformationArray() as $importantInformation) {
+                                                    ?>
+                                                    <div class="col-sm-12 importantinfosli">
+                                                        <b> <?php echo $importantInformation->getHead(); ?> </b>
+                                                        <ul class="ps-3">
+                                                            <?php
+                                                            foreach ($importantInformation->getDescriptions() as $bullet) {
+                                                                ?>
+                                                                <li><i class="fas fa-arrow-circle-right fa-lg"></i> <?php echo $bullet; ?></li>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </ul>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            }
 											?>
 										</div>
 									</div>
