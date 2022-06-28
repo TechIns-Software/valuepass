@@ -27,7 +27,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
         $stmt2->close();
         $stmt1->execute();
         $stmt1->bind_result($id, $name, $description, $image1, $image2);
-        $counter = 0;
+        $counter = 1;
         while ($stmt1->fetch()) {
             $numberVendors = isset($sums[$counter]) ? intval($sums[$counter]) : 0;
             $destination = new \ValuePass\Destination(
