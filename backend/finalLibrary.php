@@ -1,9 +1,14 @@
 <?php
 //$mysqli -> real_escape_string(escapestring)
-function getDestinations($conn, $idLanguage) : array{
+function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
+    if ($idDestination != 0) {
+        $addition = " AND D.id = $idDestination ";
+    } else {
+        $addition = '';
+    }
     $query1 = "SELECT D.id, DT.name, DT.description, D.image1
                 FROM Destination AS D, DestinationTranslate AS DT
-                WHERE D.id = DT.idDestination AND DT.idLanguage = ?
+                WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
                 ORDER BY id ASC;";
     $query2 = "SELECT SUM(id), idDestination FROM Vendor
                 GROUP BY idDestination
