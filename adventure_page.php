@@ -14,6 +14,7 @@ include_once 'includes/header.php';
 $idVendor = $_GET['id'];
 $languageId = 1;
 $vendor = getVendor($conn, $idVendor, $languageId);
+$bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 if ($vendor == Null) {
 //    header('location: index.php');
 }
@@ -434,139 +435,63 @@ if ($vendor == Null) {
 		</section>
 
 
-		<div class="container container-custom margin_80_55 col-lg-12 ">
-			<section class="add_bottom_45">
-				<div class="main_title_3">
-					<span><em></em></span>
-					<h2>You might also like...</h2>
-				</div>
+        <?php
+        if (count($bestOffs) > 0) {
+            ?>
+            <div id="bestof" class="container container-custom margin_80_55">
+                <section class="add_bottom_45">
+                    <div class="main_title_3">
+                        <span><em></em></span>
+                        <h2>Best of Experiences </h2>
+                        <!-- <p>Some of our favorite experiences </p> -->
+                    </div>
 
-				<div id="reccomended_adventure" class="owl-carousel owl-theme">
+                    <div id="reccomended" class="owl-carousel owl-theme">
 
-					<!-- version 1 carsouel ready css
-						<div class="item">
-							<a href="adventure-detail.html" class="grid_item_adventure">
-								<figure>
-									<div class="score"><strong>7.9</strong></div>
-									<img src="assets/img/10.jpg" class="img-fluid" alt="">
-									<div class="info">
-										<em>3 days in Patagonia</em>
-										<h3>Horseback ride through Valencia</h3>
-									</div>
-								</figure>
-							</a>
-						</div>  -->
+                        <?php
+                        foreach ($bestOffs as $vendor) {
+                            $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
+                            $totalToPay = $vendor->getOriginalPrice() - $moneySaved;
 
-					<div class="item" onclick="location.href='./adventures.php?id=1';">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?mykonos');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
+                            ?>
+                            <div class="item">
+                                <div class="box_grid">
+                                    <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
+                                        <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>"
+                                             class="img-fluid" alt="" width="800" height="933">
+                                    </a>
+                                    <div class="wrapper best ">
+                                        <small><?php echo $vendor->getCategoryName();?></small>
+                                        <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
+                                        <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
 
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item" onclick="location.href='./adventures.php?id=1';">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?andros');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?andros" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Andros</a></h4>
-									<small class="card-meta mb-2">15 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item" onclick="location.href='./adventures.php?id=1';">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?naxos');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?naxos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Naxos</a></h4>
-									<small class="card-meta mb-2">8 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item" onclick="location.href='./adventures.php?id=1';">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?crete');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?crete" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Crete</a></h4>
-									<small class="card-meta mb-2">35 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item" onclick="location.href='./adventures.php?id=1';">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?greece');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?greece" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item" onclick="location.href='./adventures.php?id=1';">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item" onclick="location.href='./adventures.php?id=1';">
-						<div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-							<img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-							<div class="card-img-overlay d-flex flex-column">
-								<div class="card-body">
-
-								</div>
-								<div class="card-footer">
-									<h4 class="card-title mt-0 "><a class="text-white" herf="#">Mykonos</a></h4>
-									<small class="card-meta mb-2">25 Advetures</small>
-								</div>
-							</div>
-						</div>
-					</div>
+                                        <span class="criteria">
+                                    Our Criteria Rating
+                                    <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
+                                            <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
+                                </span>
+                                        <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
+                                        <p class="prev_price2 my-0"> Initial Price <s><?php echo $vendor->getOriginalPrice();?> € </s> <span class="perperson">per person</span></p>
+                                        <p class="vpvoucher_price2 my-0  ">Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person</span></p>
+                                        <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>% or <?php echo $moneySaved;?> € </p>
+                                        <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person</span></p>
+                                        <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
 
 
-				</div>
+                    </div>
 
-			</section>
-		</div>
+                </section>
+            </div>
+        <?php
+        }
+        ?>
+
 
 	</div>
 

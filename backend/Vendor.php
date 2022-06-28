@@ -283,4 +283,12 @@ class Vendor {
     {
         return $this->images;
     }
+
+    /**
+     * @return int
+     */
+    public function getIdDestination(): int
+    {
+        return $this->idDestination;
+    }
 }
