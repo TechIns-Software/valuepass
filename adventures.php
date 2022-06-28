@@ -14,7 +14,7 @@ $idDestination = $_GET['id'];
 $languageId = 1;
 $destination = getDestination($conn, $idDestination, $languageId);
 $vendors = getVendors($conn, $idDestination, $languageId);
-$bestOffs = getVendors($conn, $idDestination, $languageId, true)[0];
+$bestOffs = getVendors($conn, $idDestination, $languageId, true);
 $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 if (count($vendors) <= 0) {
 	//   header('location: index.php');
