@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['languageName'], $_SESSION['languageId'])) {
     $_SESSION['languageName'] = 'english';
-    $_SESSION['languageId'] = 1;
+    $_SESSION['languageId'] = 2;
 }
 $languageId = $_SESSION['languageId'];
 if (!isset($_SESSION['cart'])) {
