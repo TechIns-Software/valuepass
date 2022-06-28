@@ -10,7 +10,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
                 FROM Destination AS D, DestinationTranslate AS DT
                 WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
                 ORDER BY id ASC;";
-    $query2 = "SELECT SUM(id), idDestination FROM Vendor
+    $query2 = "SELECT COUNT(id), idDestination FROM Vendor
                 GROUP BY idDestination
                 ORDER BY idDestination ASC;";
     $stmt1 = $conn->prepare($query1);
@@ -115,7 +115,6 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
         if (!$id) {
             return null;
         }
-        //TODO: image path!basic path
         $vendor = New \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
             $discount, $priceKid, $description, $image, $name
