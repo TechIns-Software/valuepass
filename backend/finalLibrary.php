@@ -293,17 +293,19 @@ function getMaxVendorVoucher($conn, $idVendorVoucher) : int {
 }
 
 function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : array {
-    $query = "SELECT id, DATE_FORMAT(dateVoucher, '%Y-%m-%d %H:%i:%s')
-            FROM VendorVoucher
-            WHERE idVendor = ? AND existenceVoucher > ? AND DATE(dateVoucher) = ?";
+    $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
+            V.priceAdult, V.priceKid, V.infantPrice
+            FROM VendorVoucher AS VV, Vendor AS V
+            WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
+            AND V.id = VV.idVendor";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
     if ($stmt->execute()) {
-        $id = $date1 = '-1';
-        $stmt->bind_result($id, $date1);
+        $id = $date1 = $priceAdult = $priceKid = $infantPrice = '-1';
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice]);
         }
     }
     return $possiblePackages;
@@ -504,8 +506,30 @@ function calculatePriceCart($arrayVouchers) {
 }
 
 
-function getTemplateVoucher($VoucherId ,$adults ,$children ,$infants ,$idVendor) {
+function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '') {
+    if (count($package) == 0) {
+        $message = "<div class='col-lg-12 vouchertemplate2'>";
+        $message .= " <div class='container'> <div  class='row'> ";
+        $message .=   "   <div class='col'><div style='min-height: 5px;'></div> ";
+        $message .=       "  <div class='title '>";
+        $message .=      "  </div> ";
+        $message .=   " </div> ";
+        $message .=  " </div> ";
+        $message .=  " <div class='row border-bottom'> ";
+        $message .=      " <div class='col-12'> ";
+        $message .=       "  <div class='price text-center'> ";
+        $message .=          " <h5> Unfortunately no Vouchers found for that day </h5> ";
+        $message .=  " </div> ";
+        $message .=  "</div> ";
+        return $message;
+    }
 
+    $VoucherId = $package[0];
+    $date = $package[1];
+    $priceAdult = $package[2];
+    $priceKid = $package[3];
+    $priceInfant = $package[4];
+    $totalPrice = $priceAdult * $adults + $priceKid * $children + $priceInfant * $infants;
 // $message = "<div class='col-lg-12  vouchertemplate'>" ;
 
 // $message .= "<div class='title'> <h4>  Experience Name $VoucherId  </h4> </div> <div class='pricebreakdown'> <h5>Price Breakdown </h5> <ul>";
@@ -516,31 +540,48 @@ function getTemplateVoucher($VoucherId ,$adults ,$children ,$infants ,$idVendor)
 //     $message .= "  <button onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
 //     $message .= " </div>";
 
-
+    $day = substr($date, 0, 10);
+    $hour = substr($date, 11);
 
     $message = "<div class='col-lg-12 vouchertemplate2'>";
-    $message .= " <div class='container'> <div class='row'> ";
-    $message .=   "   <div class='col'> ";
+    $message .= " <div class='container'> <div  class='row'> ";
+    $message .=   "   <div class='col'><div style='min-height: 5px;'></div> ";
     $message .=       "  <div class='title '>";
-    $message .=        "  <h4> Experience Name $VoucherId </h4> ";
+    $message .=        "  <h4> <span style='color: black'>Experience Name: </span> $nameVendor </h4> ";
     $message .=      "  </div> ";
     $message .=   " </div> ";
     $message .=  " </div> ";
+
+    $message .=  " <div class='row border-bottom'> ";
+    $message .=      " <div class='col-12'> ";
+    $message .=       "  <div class='price text-center'> ";
+    $message .=          " <h5> Date </h5> ";
+    $message .=          " <ul> ";
+    $message .=             " <li> Day : <b> $day </b></li>";
+    $message .=             " <li> Hour : <b> $hour </b></li> ";
+    $message .=     " </ul> ";
+    $message .=  " </div> ";
+    $message .=  "</div> ";
+
     $message .=  " <div class='row border-bottom'> ";
     $message .=      " <div class='col-8  py-2'> ";
     $message .=       "  <div class='pricebreakdown2'> ";
     $message .=          " <h5>Price Breakdown </h5> ";
     $message .=          " <ul> ";
-    $message .=             " <li> Adults : <b>$adults  </b> x <span> 5 €</span> </li> ";
-    $message .=             " <li> Children : <b> $children </b> x <span> 15 €</span> </li> ";
-    $message .=         " <li> Infants : <b> $infants  </b> x <span> 40 € </span></li> ";
+    $message .=             " <li> Adults : <b>$adults  </b> x <span> $priceAdult €</span> </li> ";
+    if ($children != 0) {
+        $message .=             " <li> Children : <b> $children </b> x <span> $priceAdult €</span> </li> ";
+    }
+    if ($infants != 0) {
+        $message .=         " <li> Infants : <b> $infants  </b> x <span> $priceInfant € </span></li> ";
+    }
     $message .=     " </ul> ";
     $message .=  " </div> ";
     $message .=  "</div> ";
     $message .= " <div class='col  py-2'> ";
     $message .=  " <div class='price'> ";
     $message .=    "     <h5 >Total Price  </h5> ";
-    $message .=     "   <h4> 50 € </h4> ";
+    $message .=     "   <h4> $totalPrice € </h4> ";
     $message .=      " <small> All taxes and fees included</small>  ";
     $message .=  " </div> ";
     $message .=   " </div> ";

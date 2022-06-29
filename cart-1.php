@@ -113,7 +113,8 @@ $cartArray = unserialize($_SESSION['cart']);
                         <div class="box_detail">
                             <div id="total_cart">
                                 Total <span class="float-end">
-                                    <span style="text-decoration: line-through"><?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned']; ?></span> / <?php echo $calculateCartObject['totalPay']; ?>
+                                    <span style="<?php echo ($calculateCartObject['moneyEarned'] == 0 ? '': 'text-decoration: line-through')?>"><?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned']; ?></span>
+                                    / <?php echo $calculateCartObject['totalPay']; ?>
                                 </span>
                             </div>
                             <ul class="cart_details">
