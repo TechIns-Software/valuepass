@@ -86,7 +86,8 @@ $destinations = getDestinations($conn, $idLanguage);
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
-					<i class="pe-7s-medal"></i>
+					<!-- <i class="pe-7s-medal"></i> -->
+					<object class="SvgImage" data="assets/icons/fingerprint.svg" type="image/svg+xml"></object>
 					<h3>Personalized </h3>
 					<p>Pick your destination, attraction, schedule and create your own bucket list</p>
 				</a>
@@ -100,7 +101,8 @@ $destinations = getDestinations($conn, $idLanguage);
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
-					<i class="pe-7s-culture"></i>
+					<!-- <i class="pe-7s-culture"></i> -->
+					<object class="SvgImage" data="assets/icons/spring.svg" type="image/svg+xml"></object>
 					<h3>Flexible </h3>
 					<p>Free Cancellation, Re-scheduling & Payment Options</p>
 				</a>

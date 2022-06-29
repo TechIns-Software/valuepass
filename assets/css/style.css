@@ -11013,7 +11013,7 @@ box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
   font-size: 1.3em;
   font-weight: 500;
   font-family: 'Merriweather', serif;
-  line-height:1.7em;
+  line-height:2em;
 }
 
 
@@ -11179,4 +11179,9 @@ height: 70vh;
 margin: auto;
 width: fit-content;
 
+}
+
+.SvgImage{
+  width: 45%!important;
+  color:#FF5533 !important;
 }

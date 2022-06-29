@@ -42,7 +42,8 @@ if (count($vendors) <= 0) {
                 <h6 class="text-center destbannertext" style="color: white">
                     Buy at least 2 vouchers for different activities and
                     up to 3 in order to get more for free !
-                   
+                   <br>
+                   <br>
                  <p > Your gifts never end !  </p> 
                 </h6>
             </div>
