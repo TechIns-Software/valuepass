@@ -20,7 +20,7 @@ if (count($vendors) <= 0) {
 ?>
 
 <main>
-	<section style="background: url('images/location_images/<?php echo $destination->getImage2();?>') 50% 50% fixed" class="header-video adventure">
+	<section style="background: url('images/location_images/<?php echo $destination->getImage2();?>') 50% 50% " class="header-video adventure">
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
