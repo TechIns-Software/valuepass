@@ -11,6 +11,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
                 WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
                 ORDER BY id ASC;";
     $query2 = "SELECT COUNT(id), idDestination FROM Vendor
+                WHERE isCompleted = 1
                 GROUP BY idDestination
                 ORDER BY idDestination ASC;";
     $stmt1 = $conn->prepare($query1);
