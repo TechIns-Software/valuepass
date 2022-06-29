@@ -422,6 +422,7 @@ function createArrayVouchersSortedFromCart($conn, $cart) {
     $infantsArray = [];
     $amountPayArray = [];
     $imageVendorArray = [];
+    $idVendorArray = [];
     foreach ($cart as $arrayVouchersWant) {
         $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
         $arrayPrices = getVendorForCart($conn, $arrayVouchersWant[0]->getIdVendorVoucher());
@@ -446,6 +447,7 @@ function createArrayVouchersSortedFromCart($conn, $cart) {
             $voucherWant->isAdult() ? $adults = $adults + 1 : $children = $children + 1;
         }
         //TODO: getVendor name and image
+        array_push($idVendorArray, $idVendorDisplayed);
         array_push($nameVendorArray, $nameVendor);
         array_push($dateVoucherArray, $dateVoucher);
         array_push($adultsArray, $adults);
@@ -467,7 +469,8 @@ function createArrayVouchersSortedFromCart($conn, $cart) {
         'adults'=>$adultsArray,
         'children'=>$childrenArray,
         'infants'=>$infantsArray,
-        'amountPay'=>$amountPayArray
+        'amountPay'=>$amountPayArray,
+        'vendorId'=>$idVendorDisplayed
     );
 }
 

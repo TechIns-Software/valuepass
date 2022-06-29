@@ -56,11 +56,12 @@ if (!isset($cartArray)) {
                                 <tbody>
                                     <?php
                                     $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray);
+                                    $vendorId = $objectVouchersDisplay['vendorId'];
                                     $allVouchers = $objectVouchersDisplay['allVouchers'];
                                     $nameVendorArray = $objectVouchersDisplay['nameVendor'];
                                     $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
                                     $imageVendorArray = $objectVouchersDisplay['imageVendor'];
-                                    $adultsArray = $objectVouchersDisplay['imageVendor'];
+                                    $adultsArray = $objectVouchersDisplay['adults'];
                                     $childrenArray = $objectVouchersDisplay['children'];
                                     $infantsArray = $objectVouchersDisplay['infants'];
                                     $amountPayArray = $objectVouchersDisplay['amountPay'];
@@ -76,7 +77,7 @@ if (!isset($cartArray)) {
                                         <tr>
                                             <td>
                                                 <div class="thumb_cart">
-                                                    <img src="http://via.placeholder.com/150x150/ccc/fff/thumb_cart_1.jpg" alt="Image">
+                                                    <img src="vendorImages/<?php echo $vendorId.'/'.$imageVendor?>" alt="Image">
                                                 </div>
                                                 <span class="item_cart"><?php echo $nameVendor; ?></span>
                                             </td>
