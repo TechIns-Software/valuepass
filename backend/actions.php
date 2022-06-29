@@ -113,7 +113,8 @@ if ($_POST['action'] == 'addProduct') {
         $_POST['children'],
         $_POST['infants'],
         $_POST['idVendor'],
-        $_POST['date']
+        $_POST['date'],
+        $_POST['nameVendor']
     )) {
         if (conditionForPackage()) {
             $idVendor = $_POST['idVendor'];
@@ -125,14 +126,15 @@ if ($_POST['action'] == 'addProduct') {
             $adults = $_POST['adults'];
             $children = $_POST['children'];
             $infants = $_POST['infants'];
+            $nameVendor = $_POST['nameVendor'];
             //return HTML
             if (count($possiblePackages) == 0) {
-                $message = "NoneFound";
+                $message = getTemplateVoucher() ;
 //                $message = did not find available options
             } else {
                 $message = '';
                 foreach ($possiblePackages as $possiblePackage) {
-                    $message =  getTemplateVoucher($possiblePackage[0] ,$adults ,$children ,$infants ,$idVendor) ;
+                    $message .= getTemplateVoucher($possiblePackage ,$adults ,$children ,$infants ,$idVendor, $nameVendor) ;
 //                    $message = "<button class='btn btn-primary' onclick=\"addToCart({'voucherVendorId': $possiblePackage[0],'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button>";
                 }
             }

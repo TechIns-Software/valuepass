@@ -185,7 +185,7 @@ if ($vendor == Null) {
 					<div class="box_grid">
 						<div class="wrapper">
 							<!--                            TODO: voucher available, Reserve Now your Spot & Pay Later for your activity-->
-							<h3><?php echo $vendor->getName(); ?></h3>
+							<h3 id="nameVendor"><?php echo $vendor->getName(); ?></h3>
 							<p>
 								<span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?>
 								</span>

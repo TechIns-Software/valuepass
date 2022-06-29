@@ -63,24 +63,20 @@ function getPackagesAvailable() {
             if (dateString) {
                 const newFormatDate = $('#date').attr('value2');
                 console.log(newFormatDate);
+                const nameVendor = document.getElementById('nameVendor').innerText;
                 const data = {
                     'action': 'getPackagesAvailable',
                     'idVendor': idVendor,
                     'date': newFormatDate,
                     'adults': numberAdults,
                     'children': numberChildren,
-                    'infants': numberInfants
+                    'infants': numberInfants,
+                    'nameVendor': nameVendor
                 };
+                console.log(data);
                 const callBack = (data) => {
-                    if (data[0] === 'NoneFound') {
-
-                        console.log(data);
-                    } else {
-                        $("#option").empty();
-                        $("#option").append(data[0]);
-                        // document.getElementById('option').outerHTML = data[0];
-
-                    }
+                    $("#option").empty();
+                    $("#option").append(data[0]);
                 }
                 getAjax(data, callBack);
 
