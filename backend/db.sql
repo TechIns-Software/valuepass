@@ -431,13 +431,6 @@ INSERT INTO IncludedServiceTranslate(idIncludedService, idLanguage, name)
 VALUES (1,1,'Ελληνικό label'), (1,2,'English label');
  */
 
-INSERT INTO CategoryVendor() VALUES ();
-INSERT INTO PaymentInfoActivity() VALUES ();
-INSERT INTO Destination() VALUES ();
-INSERT INTO Vendor(idDestination, priceAdult, originalPrice, discount, priceKid, idCategory, idPaymentInfoActivity)
-VALUES (1, 10, 15, 30, 8, 1, 1);
 INSERT INTO VendorVoucher(idVendor, starterVouchers, existenceVoucher, dateVoucher)
 VALUES
 (1, 10, 10, NOW() + INTERVAL 1 DAY);
-INSERT INTO VendorTranslate(idVendor, idLanguage, name, descriptionSmall, descriptionBig, descriptionFull)
-values (1,1, 'name1', '', '',''),(1,2,'name2','','','');

@@ -15,6 +15,7 @@ class Vendor {
     private float $priceKid;
     private string $pathToImage;
     private string $name;
+    private int $forHowManyPersonsIs;
     private array $labelsBoxNames = [];
     private array $ratedArray = [];
 
@@ -44,12 +45,13 @@ class Vendor {
      * @param float $priceKid
      * @param string $pathToImage
      * @param string $name
+     * @param int $forHowManyPersonsIs
      */
     public function __construct(
         int $id, int $categoryId, string $categoryName,
         int $idDestination, float $priceAdult, float $originalPrice, float $discount,
         float $priceKid, string $pathToImage,
-        string $name
+        string $name, int $forHowManyPersonsIs
     )
     {
         $this->id = $id;
@@ -62,6 +64,7 @@ class Vendor {
         $this->priceKid = $priceKid;
         $this->pathToImage = $pathToImage;
         $this->name = $name;
+        $this->forHowManyPersonsIs = $forHowManyPersonsIs;
     }
 
 
@@ -279,4 +282,13 @@ class Vendor {
     {
         return $this->idDestination;
     }
+
+    /**
+     * @return int
+     */
+    public function getForHowManyPersonsIs(): int
+    {
+        return $this->forHowManyPersonsIs;
+    }
+
 }

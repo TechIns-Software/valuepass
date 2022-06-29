@@ -85,10 +85,10 @@ if (count($vendors) <= 0) {
                                     <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                                 </span>
                                 <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-                                <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person</span></p>
-                                <p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice();?> € </s> <span class="perperson">per person</span></p>
+                                <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
+                                <p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice();?> €</s> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
                                 <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>%</p>
-                                <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person </span></p>
+                                <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
                                 <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
                             </div>
                         </div>
@@ -156,10 +156,10 @@ if (count($vendors) <= 0) {
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                             </span>
                             <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-                            <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person </span></p>
-                            <p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice();?> € </s> <span class="perperson">per person</span></p>
+                            <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
+                            <p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice();?> €</s> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
                             <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>% </p>
-                            <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person</span></p>
+                            <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
                             <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
                         </div>
                     </div>

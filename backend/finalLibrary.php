@@ -101,7 +101,7 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
 
 function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
     $query = "SELECT V.id, V.priceAdult, V.originalPrice, V.discount,
-                        V.priceKid, V.idDestination, V.imageBasic, VT.name, CVT.name, CV.id
+                        V.priceKid, V.idDestination, V.imageBasic, VT.name, CVT.name, CV.id, V.forHowManyPersonsIs
               FROM Vendor AS V, VendorTranslate AS VT, CategoryVendor as CV,
                         CategoryVendorTranslate CVT
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
@@ -110,15 +110,15 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ii', $idVendor, $idLanguage);
     if ($stmt->execute()) {
-        $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $categoryName = $categoryId = '';
-        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId);
+        $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs = '';
+        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs);
         while ($stmt->fetch()) {}
         if (!$id) {
             return null;
         }
         $vendor = New \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
-            $discount, $priceKid, $image, $name
+            $discount, $priceKid, $image, $name, $forHowManyPersonsIs
         );
         $query1 ="SELECT LBT.name
                 FROM LabelsBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT
