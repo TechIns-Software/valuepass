@@ -36,6 +36,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">
+
 	<!-- BASE CSS -->
 	<link href="assets\bootstrap-5.1.3\dist\css\bootstrap.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
@@ -46,13 +48,13 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/settings.css">
 	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/layers.css">
 	<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/navigation.css">
-	
+
 	<link rel="stylesheet" type="text/css" href="assets/css/layerslider.css">
 	<!-- FOR FLAGS -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 
-<!--	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>-->
-    <script src="assets/js/fontawesome.js"></script>
+	<!--	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>-->
+	<script src="assets/js/fontawesome.js"></script>
 	<!-- Modernizr -->
 	<script src="assets/js/modernizr.js"></script>
 
@@ -70,17 +72,17 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				<div id="preloader">
 					<div data-loader="circle-side"></div>
 				</div><!-- /Page Preload -->
-				<div id="logo" >
-					<a href="index.php" >
-						<img src="assets/img/valuepassLogo.png" width="140" height="70" alt=""  class="logo_normal">
-						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky"> 
+				<div id="logo">
+					<a href="index.php">
+						<img src="assets/img/valuepassLogo.png" width="140" height="70" alt="" class="logo_normal">
+						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky">
 					</a>
 				</div>
 				<ul id="top_menu">
 					<!-- <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li> -->
 					<li> </li>
 					<!-- for number in cart just add strong elemnt inside li  -->
-					 <li><a href="cart-1.php" class="cart-menu-btn " title="Cart"></a></li>
+					<li><a href="cart-1.php" class="cart-menu-btn " title="Cart"></a></li>
 					<!--<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>  -->
 				</ul>
 				<!-- /top_menu -->
@@ -111,15 +113,15 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</nav>
 			</header>
 
-		<?php	} else if (strpos($url ,'cart-1.php') !== false  && $home == false) { ?>
+		<?php	} else if (strpos($url, 'cart-1.php') !== false  && $home == false) { ?>
 			<header class="header menu_fixed  bg-primary">
 				<div id="preloader">
 					<div data-loader="circle-side"></div>
 				</div><!-- /Page Preload -->
 				<div id="logo">
-					<a href="index.php" class="fs-3 fw-bolder"> 
-					<img src="assets/img/valuepassLogo.png" width="140" height="70" alt=""  class="logo_normal">
-						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky"> 
+					<a href="index.php" class="fs-3 fw-bolder">
+						<img src="assets/img/valuepassLogo.png" width="140" height="70" alt="" class="logo_normal">
+						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky">
 					</a>
 				</div>
 				<ul id="top_menu">
@@ -156,7 +158,7 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</nav>
 			</header>
 
-		<?php } else{ 	?>
+		<?php } else { 	?>
 
 			<header class="header menu_fixed">
 				<div id="preloader">
@@ -164,8 +166,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</div><!-- /Page Preload -->
 				<div id="logo">
 					<a href="index.php" class="fs-3 fw-bolder">
-					<img src="assets/img/valuepassLogo.png" width="140" height="70" alt=""  class="logo_normal">
-						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky"> 
+						<img src="assets/img/valuepassLogo.png" width="140" height="70" alt="" class="logo_normal">
+						<img src="assets/img/valuepassLogo.png" width="100" height="60" alt="" class="logo_sticky">
 					</a>
 				</div>
 				<ul id="top_menu">

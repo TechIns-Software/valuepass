@@ -111,12 +111,12 @@ if ($vendor == Null) {
 							<div>
 								<div class="row">
 									<div class="col-lg-8 col-md-12  details ">
-										<ul class="bullets">
+										<ul class="">
 											<?php
 											$aboutActivityArray = $vendor->getAboutActivityArray();
 											for ($counter = 0; $counter < ceil(count($aboutActivityArray) / 2); $counter++) {
 											?>
-												<li>
+												<li><i class="fa fa-arrow-right" aria-hidden="true"></i>
 													<?php echo $aboutActivityArray[$counter]->getHead(); ?>
 													<small class="text-muted">
 														<?php echo $aboutActivityArray[$counter]->getDescription(); ?>
@@ -126,10 +126,8 @@ if ($vendor == Null) {
 											}
 											?>
 											<li>
-												<?php echo $vendor->getPaymentInfoActivityHead(); ?>
-												<small class="text-muted">
-													<?php echo $vendor->getPaymentInfoActivityDescription(); ?>
-												</small>
+												<i class="fa fa-arrow-right" aria-hidden="true"></i>
+												<?php echo $vendor->getPaymentInfoActivityDescription(); ?>
 											</li>
 										</ul>
 
@@ -282,8 +280,15 @@ if ($vendor == Null) {
 													foreach ($vendor->getIncludedServicesArray() as $includeServices) {
 												?>
 														<li>
-															<i style="color: <?php echo ($includeServices->getIcon() == 1 ? 'green' : 'red') ?>;" class="fa fa-check fa-lg" aria-hidden="true"></i>
-															<span> <?php echo $includeServices->getName(); ?> </span>
+															<?php if ($includeServices->getIcon() == 1) { ?>
+																<i style="color:green" class="fa fa-check fa-lg" aria-hidden="true"></i>
+																<span> <?php echo $includeServices->getName(); ?> </span>
+															<?php } else { ?>
+																<i style="color:red" class="fas fa-engine-warning"></i>
+																<span> <?php echo $includeServices->getName(); ?> </span>
+
+															<?php } ?>
+
 														</li>
 												<?php
 													}
@@ -506,7 +511,8 @@ if ($vendor == Null) {
 	<div class="container margin_60_35">
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
-				<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p>
+				<!-- <p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p> -->
+				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
 				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
 					All our proposals are hand-picked by our team! . </p>
 				<b> Get inspired for your next trip </b>
@@ -537,7 +543,6 @@ if ($vendor == Null) {
 
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
 					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
-					<li><a href="#"> <?php echo $menu[5] ?></a></li>
 
 				</ul>
 			</div>

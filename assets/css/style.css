@@ -59,7 +59,7 @@
 
   header.sticky .main-menu>ul>li span:hover>a {
     opacity: 1;
-    color: #fc5b62;
+    color: #000000;
   }
 
   .main-menu ul ul {
@@ -832,7 +832,8 @@ header.header.sticky {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   /*border-bottom: 1px solid #ededed;*/
-  background-color: #4084c6;
+  /* background-color: #4084c6; */
+  background-color: #FF5533;
   padding: 15px 20px;
 }
 
@@ -1426,15 +1427,16 @@ main {
 }
 
 footer {
-  background-color: #121921;
+  /* background-color: #121921; */
+  background-color: #FF5533;
   color: #fbfbfb;
-  color: rgba(255, 255, 255, 0.7);
+  /* color: rgba(255, 255, 255, 0.7); */
 }
 
 footer h5 {
   color: #fff;
   margin: 25px 0;
-  font-size: 18px;
+  font-size:20px;
   font-size: 1.125rem;
 }
 
@@ -1461,7 +1463,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-  color: #fc5b62;
+  color: #000000;
   opacity: 1;
 }
 
@@ -2413,7 +2415,13 @@ a#moveDown {
   -moz-background-size: cover!important;
   -o-background-size: cover!important;
   background-size: cover!important;
+  background-position: center!important;
   height: 70vh!important;
+
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 120%;
+  background-size: cover; */
 }
 
 video {
@@ -6690,13 +6698,19 @@ ul.list_3 li:before {
 }
 
 @media (max-width: 1024px) {
-  /* .header-video.adventure #hero_video {
-        background: #ccc url(../img/bg_fallback_video_adventure.jpg) center right;
+ .header-video {
+        /*  background: #ccc url(../img/bg_fallback_video_adventure.jpg) center right;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover
-    } */
+
+*/
+          background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 120%;
+  background-size: cover;
+    } 
 
   .header-video.adventure #hero_video>div {
     background-color: #000;
@@ -10532,6 +10546,7 @@ TODO : MOVE THIS TO OTHER FILE
   background-position: center center;
   background-size: 120%;
   background-size: cover;
+
 }
 
 .card-has-bg::before {
@@ -10979,13 +10994,26 @@ html[xmlns] .slides {
 }
 
 .bgbanner {
-  /* background-color: lightcoral; */
-  background: rgb(17, 96, 183);
+
+  /* background: rgb(17, 96, 183);
   background: linear-gradient(209deg,
       rgba(17, 96, 183, 0.8) 4%,
-      rgba(38, 227, 212, 0.8) 81%);
+      rgba(38, 227, 212, 0.8) 81%); */
+
+      background: rgb(255,85,51);
+      background: linear-gradient(209deg, rgba(255,85,51,0.9612219887955182) 4%, rgba(255,71,35,0.8883928571428571) 81%);
+      -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5); 
+box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+
   border-radius: 2em;
   margin: 1em 3em;
+}
+
+.destbannertext{
+  font-size: 1.3em;
+  font-weight: 500;
+  font-family: 'Merriweather', serif;
+  line-height:1.7em;
 }
 
 
