@@ -65,7 +65,7 @@ $destinations = getDestinations($conn, $idLanguage);
 		<div class="container container-custom margin_80_55 ">
 			<div class="banner_title">
 				<h2>ValuePass Offers are only Available Onboard</h2>
-				<p class="fs-2"> <strong> Don't Miss it !</strong></p>
+				<p class="fs-2"> <strong> Don't Miss it</strong></p>
 			</div>
 
 		</div>

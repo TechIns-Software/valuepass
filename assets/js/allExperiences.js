@@ -4,11 +4,12 @@ const experiencesElements = [...document.getElementById('experiences').children]
 const storesCategory = [];
 const storesIdElement = []
 for (let ccc = 1; ccc <= experiencesElements.length; ccc++) {
-    storesCategory.push($(`#exper${ccc}`).attr('data-category'));
+    // storesCategory.push($(`#exper${ccc}`).attr('data-category'));
     // storesIdElement.push(`exper${ccc}`)
 }
 
 experiencesElements.forEach(element => {
+    storesCategory.push($(`#${element.id}`).attr('data-category'))
     storesIdElement.push(element.id)
 });
 

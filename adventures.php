@@ -42,7 +42,7 @@ if (count($vendors) <= 0) {
 				<?php echo $menu[13] ?>
                    <br>
                    <br>
-				   <p class="fs-2"> <strong> Your gifts never end ! </strong>  </p> 
+				   <p class="fs-2"> <strong> Your gifts never end </strong>  </p> 
                 </h2>
             </div>
 

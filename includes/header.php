@@ -99,7 +99,7 @@ $voucherNumber = $cartHeader->getNumberOfVoucher();
 				</a>
 				<nav id="menu" class="main-menu">
 					<ul>
-						<li><span><a href="index.php#how"><?php echo $menu[1] ?></a></span></li>
+						<li><span><a href="how.php"><?php echo $menu[1] ?></a></span></li>
 						<li><span><a href="index.php"><?php echo $menu[6] ?></a></span>
 							<ul>
 

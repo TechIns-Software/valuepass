@@ -38,8 +38,9 @@ function changeCategory(value, checked) {
 function displayAvailableCategories() {
     // I loop all the elements and i get the data-category value , if includes to filterIdsCat
     // array display if not displayNone
-    for (let cc1 = 1; cc1 <= storesCategory.length; cc1++) {
-        const elementShow = document.getElementById(`exper${cc1}`);
+    for (let cc1 = 0; cc1 < storesIdElement.length; cc1++) {
+        const id1= storesIdElement[cc1];
+        const elementShow = document.getElementById(`${id1}`);
         const categoryVal =elementShow.getAttribute("data-category");
 
         //if no elements in array just display all the elements
