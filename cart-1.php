@@ -116,8 +116,16 @@ if (!isset($cartArray)) {
                         <div class="box_detail">
                             <div id="total_cart">
                                 Total <span class="float-end">
-                                    <span style="<?php echo ($calculateCartObject['moneyEarned'] == 0 ? '': 'text-decoration: line-through')?>"><?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned']; ?></span>
-                                    / <?php echo $calculateCartObject['totalPay']; ?>
+                                    <?php
+                                    if ($calculateCartObject['moneyEarned'] != 0) {
+                                        ?>
+                                        <span style="text-decoration: line-through">
+                                            <?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned']; ?>
+                                        </span> /
+                                        <?php
+                                    }
+                                    echo $calculateCartObject['totalPay'];
+                                    ?>
                                 </span>
                             </div>
                             <ul class="cart_details">
