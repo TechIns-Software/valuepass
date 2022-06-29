@@ -117,7 +117,7 @@ $voucherNumber = $cartHeader->getNumberOfVoucher();
 				</nav>
 			</header>
 
-		<?php	} else if (strpos($url, 'cart-1.php') !== false  && $home == false) { ?>
+		<?php	} else if (strpos($url, 'cart-1.php') !== false || strpos($url, 'how.php') !== false && $home == false) { ?>
 			<header class="header menu_fixed  cart-bg">
 				<div id="preloader">
 					<div data-loader="circle-side"></div>
