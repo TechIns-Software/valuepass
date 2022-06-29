@@ -203,13 +203,17 @@ function GetAllPaymentInfos($conn)
 
 
 // Add Data in the Vendor page 
-function AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId)
+function AddVendor1(
+    $conn,  $destId,  $priceAdult,  $originalPrice,  $discount,
+    $priceKid, $infantPrice, $idCategory, $paymentCategoryId, $howManyForVoucher
+)
 {
 
-    $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity`,  `imageBasic`)
-     VALUES (?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity`,  `imageBasic`, `forHowManyPersonsIs`)
+     VALUES (?,?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('idddddiis', $destId, $priceAdult, $originalPrice, $discount,  $priceKid, $infantPrice, $idCategory, $paymentCategoryId, $_SESSION['basicImage']);
+    $stmt->bind_param('idddddiisi', $destId, $priceAdult, $originalPrice, $discount,  $priceKid,
+        $infantPrice, $idCategory, $paymentCategoryId, $_SESSION['basicImage'], $howManyForVoucher);
     if ($stmt->execute()) {
         unset($_SESSION['basicImage']);
         echo json_encode(["success", "Επιτυχής Προσθήκη Vendor"]);

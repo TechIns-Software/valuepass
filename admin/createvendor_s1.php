@@ -92,6 +92,10 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                             <?php } ?>
                         </select>
                     </div>
+                    <div class="col-lg-4 col-md-12  my-3">
+                        <label for="numberOfPeoplePerVoucher" class="form-label">Πόσα άτομα αντιστοιχίζεται το Voucher</label>
+                        <input type="number" value="1" name="numberOfPeoplePerVoucher" class="form-control" id="numberOfPeoplePerVoucher">
+                    </div>
                     <div class="col-sm-9 my-3">
                         <input type="file" class="custom-file-input" id="file">
                         <label class="custom-file-label" for="file">Φωτογραφία</label>

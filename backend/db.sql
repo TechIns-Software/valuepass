@@ -63,7 +63,8 @@ CREATE TABLE Vendor (
     googleMapsString varchar(200) NOT NULL,
     voucherMessage1 text,
     voucherMessage2 text,
-    infantPrice int
+    infantPrice int,
+    forHowManyPersonsIs int DEFAULT 1
     -- number,email,website,IBAN, personal message to them who take voucher
 )ENGINE=InnoDB;
 CREATE TABLE VendorTranslate (

@@ -80,8 +80,12 @@ try {
             $priceInfant =   $data_st1[5];
             $categoryId =   $data_st1[6];
             $paymentCategoryId =   $data_st1[7];
+            $howManyForVoucher = $data_st1[8];
 
-            AddVendor1($conn,  $destId,  $priceAdult,  $originalPrice,  $discount,  $priceKid, $priceInfant, $categoryId, $paymentCategoryId);
+            AddVendor1(
+                $conn,  $destId,  $priceAdult,  $originalPrice,  $discount,
+                $priceKid, $priceInfant, $categoryId, $paymentCategoryId, $howManyForVoucher
+            );
         } else if ($_POST["action"] == "addActivities") {
 
             $headers =   $_POST["headers"];
