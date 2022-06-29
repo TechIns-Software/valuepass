@@ -95,7 +95,7 @@ $destinations = getDestinations($conn, $idLanguage);
 				<a class="box_feat">
 					<i class="pe-7s-gift"></i>
 					<h3> Pampered </h3>
-					<p>We always have a present for you . <br> <?php echo $menu[13] ?>  <br> <b> (Free Vouchers) </b> </p>
+                    <p>We always have a present for you. <br><b> <?php echo $menu[13] ?> </b></p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
