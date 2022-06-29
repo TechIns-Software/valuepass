@@ -282,7 +282,7 @@ if ($vendor == Null) {
 																<i style="color:green" class="fa fa-check fa-lg" aria-hidden="true"></i>
 																<span> <?php echo $includeServices->getName(); ?> </span>
 															<?php } else { ?>
-																<i style="color:red" class="fas fa-engine-warning"></i>
+																<i style="color:red"  class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 																<span> <?php echo $includeServices->getName(); ?> </span>
 
 															<?php } ?>
