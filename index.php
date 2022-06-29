@@ -4,8 +4,6 @@ if (!isset($conn)) {
 }
 $title = "Homepage | ValuePass";
 $home = 1;
-include 'backend/includeClasses.php';
-include 'initializeExperience.php';
 include_once 'includes/header.php';
 $idLanguage = $_SESSION["languageId"];
 $destinations = getDestinations($conn, $idLanguage);

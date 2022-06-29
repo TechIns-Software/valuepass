@@ -137,4 +137,11 @@ class Cart
         }
     }
 
+    public function getNumberOfVoucher() : int {
+        $sum = 0;
+        foreach ($this->arrayGroupVouchersWant as $groupVoucherWant) {
+            $sum = $sum + count($groupVoucherWant);
+        }
+        return $sum;
+    }
 }

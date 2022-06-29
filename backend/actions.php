@@ -35,6 +35,8 @@ if (!isset($conn)) {
 include 'finalLibrary.php';
 include 'includeClasses.php';
 $message = "You did not provide the request correctly";
+$message2 = "";
+
 if ($_POST['action'] == 'signIn') {
     //request to our server
     $_SESSION['isLogged'] = 1;
@@ -86,6 +88,7 @@ if ($_POST['action'] == 'addProduct') {
 
                 $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
                 $message = $cart->addItemsToCart($vouchersWant, $conn);
+                $message2 = $cart->getNumberOfVoucher();
                 if ($message == "OK") {
                     $_SESSION['cart'] = serialize($cart->getArrayGroupVouchersWant());
 
@@ -177,4 +180,4 @@ if ($_POST['action'] == 'addProduct') {
         $message = "mustSignIn";
     }
 } 
-echo json_encode([$message]);
+echo json_encode([$message, $message2]);

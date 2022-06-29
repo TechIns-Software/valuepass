@@ -6,14 +6,16 @@
 if (!isset($conn)) {
     include 'connection.php';
 }
-include 'initializeExperience.php';
+
 $title = "Cart";
 $home = 0 ;
 $urr = $_SERVER['REQUEST_URI'];
 
 include_once 'includes/header.php';
-include 'backend/includeClasses.php';
-$cartArray = unserialize($_SESSION['cart']);
+
+if (!isset($cartArray)) {
+    $cartArray = unserialize($_SESSION['cart']);
+}
 ?>
 <main>
     <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
@@ -92,7 +94,7 @@ $cartArray = unserialize($_SESSION['cart']);
                                                 <strong><?php echo $amountPay; ?>€</strong>
                                             </td>
                                             <td class="options" style="width:5%; text-align:center;">
-                                                <a href="javascript:deleteItem(0);"><i class="icon-trash"></i></a>
+                                                <a href="javascript:deleteItem(<?php echo $counter;?>);"><i class="icon-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php

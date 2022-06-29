@@ -5,8 +5,6 @@ if (!isset($conn)) {
 if (!isset($_GET['id'])) {
 	header('location: index.php');
 }
-include 'backend/includeClasses.php';
-include 'initializeExperience.php';
 $title = "Vendor page";
 $home = 0;
 include_once 'includes/header.php';

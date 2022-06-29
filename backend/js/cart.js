@@ -19,9 +19,11 @@ function addToCart(objectOfDetails) {
         "action": 'addProduct',
         'product': objectOfDetails
     };
-    const callBackFnc = (date) => {
+    const callBackFnc = (data) => {
         //TODO:check message return and inform user
-        console.log(data);
+        if (data[1] !== '') {
+            document.getElementById('cartNumberShow').innerText = data[1];
+        }
     }
     getAjax(data, callBackFnc);
 
