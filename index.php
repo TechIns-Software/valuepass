@@ -23,7 +23,7 @@ $destinations = getDestinations($conn, $idLanguage);
 					<!-- main text layer -->
 					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['50','43','30','25']" data-lineheight="['70','45','35','30']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Spend less <br>  doing more</div>
 					<!-- btn layer -->
-					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">Get Started Now
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
 					</a>
 				</li>
 				<!-- end slide 01 -->
@@ -84,7 +84,8 @@ $destinations = getDestinations($conn, $idLanguage);
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
-					<i class="pe-7s-medal"></i>
+					<!-- <i class="pe-7s-medal"></i> -->
+					<object class="SvgImage" data="assets/icons/fingerprint.svg" type="image/svg+xml"></object>
 					<h3>Personalized </h3>
 					<p>Pick your destination, attraction, schedule and create your own bucket list</p>
 				</a>
@@ -98,7 +99,8 @@ $destinations = getDestinations($conn, $idLanguage);
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
-					<i class="pe-7s-culture"></i>
+					<!-- <i class="pe-7s-culture"></i> -->
+					<object class="SvgImage" data="assets/icons/spring.svg" type="image/svg+xml"></object>
 					<h3>Flexible </h3>
 					<p>Free Cancellation, Re-scheduling & Payment Options</p>
 				</a>
@@ -186,7 +188,7 @@ $destinations = getDestinations($conn, $idLanguage);
 	<div class="container margin_60_35">
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
-				<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p>
+				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
 				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
 					All our proposals are hand-picked by our team! . </p>
 				<b> Get inspired for your next trip </b>
@@ -219,7 +221,7 @@ $destinations = getDestinations($conn, $idLanguage);
 
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
 					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
-					<li><a href="#"> <?php echo $menu[5] ?></a></li>
+					
 
 				</ul>
 			</div>

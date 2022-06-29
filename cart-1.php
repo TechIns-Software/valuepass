@@ -146,7 +146,7 @@ if (!isset($cartArray)) {
     <div class="container margin_60_35">
         <div class="row">
             <div class="col-lg-5 col-md-12 pe-5">
-                <p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt="logo"></p>
+            <p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
                 <p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
                     All our proposals are hand-picked by our team! . </p>
                 <b> Get inspired for your next trip </b>
@@ -177,7 +177,6 @@ if (!isset($cartArray)) {
 
                     <li><a href="#"> <?php echo $menu[4] ?> </a></li>
                     <li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
-                    <li><a href="#"> <?php echo $menu[5] ?></a></li>
 
                 </ul>
             </div>

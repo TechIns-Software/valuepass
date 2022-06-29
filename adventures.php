@@ -20,7 +20,7 @@ if (count($vendors) <= 0) {
 ?>
 
 <main>
-	<section style="background-image: url('images/location_images/<?php echo $destination->getImage2();?>')" class="header-video adventure">
+	<section style="background: url('images/location_images/<?php echo $destination->getImage2();?>') 50% 50% fixed" class="header-video adventure">
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
@@ -37,11 +37,12 @@ if (count($vendors) <= 0) {
     <div class="bg_color_1 shadow bgbanner">
         <div class="container container-custom margin_80_55 ">
             <div class="main_title_2">
-                <h6 class="text-center" style="color: white">
+                <h6 class="text-center destbannertext" style="color: white">
                     Buy at least 2 vouchers for different activities and
-                    up to 3 in order to get more free !
-                    <br>
-                    Your gifts never end !
+                    up to 3 in order to get more for free !
+                   <br>
+                   <br>
+                 <p > Your gifts never end !  </p> 
                 </h6>
             </div>
 
@@ -180,7 +181,8 @@ if (count($vendors) <= 0) {
 	<div class="container margin_60_35">
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
-				<p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p>
+				<!-- <p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p> -->
+				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
 				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
 					All our proposals are hand-picked by our team! . </p>
 				<b> Get inspired for your next trip </b>
@@ -211,7 +213,6 @@ if (count($vendors) <= 0) {
 
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
 					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
-					<li><a href="#"> <?php echo $menu[5] ?></a></li>
 
 				</ul>
 			</div>
