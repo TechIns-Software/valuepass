@@ -11140,3 +11140,15 @@ html[xmlns] .slides {
   color:  #004d88;
 }
 
+.novoucherincard{
+  /* background-color: #0a53be; */
+  width: 100%;
+height: 70vh;
+
+}
+
+.novoucherincard h3,.novoucherincard h4{
+margin: auto;
+width: fit-content;
+
+}

@@ -64,7 +64,7 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 
 		<?php
 
-		if ($home == true) { ?>
+		if ($home == 1) { ?>
 
 			<header class="header menu_fixed">
 				<div id="preloader">
@@ -111,8 +111,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 				</nav>
 			</header>
 
-		<?php	} else if (strpos($url ,'cart-1.php') !== false) { ?>
-			<header class="header menu_fixed bg-primary">
+		<?php	} else if (strpos($url ,'cart-1.php') !== false  && $home == false) { ?>
+			<header class="header menu_fixed  bg-primary">
 				<div id="preloader">
 					<div data-loader="circle-side"></div>
 				</div><!-- /Page Preload -->

@@ -8,7 +8,7 @@ if (!isset($conn)) {
 }
 include 'initializeExperience.php';
 $title = "Cart";
-
+$home = 0 ;
 $urr = $_SERVER['REQUEST_URI'];
 
 include_once 'includes/header.php';
@@ -18,29 +18,21 @@ $cartArray = unserialize($_SESSION['cart']);
 <main>
     <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
 
-    <div style="height: unset;max-height: 85px;background: #0a53be" class="hero_in cart_section">
-        <div class="wrapper">
-            <div class="container">
-
-                <!-- End bs-wizard -->
-            </div>
-        </div>
-    </div>
-    <div style="min-height: 25px;background-color: white"></div>
-    <!--/hero_in-->
-    <div class="bg_color_1">
-        <div class="container margin_60_35">
+        <div class="container container-custom margin_80_55">
             <div class="row">
                 <?php
                 //TODO: We need that calculation in backend as well, so make function
                 if (count($cartArray) == 0) { ?>
-                    <div class="col-lg-12 h-100">
-
+                    <div class="col-lg-12  novoucherincard">
+                        <h3 class="my-5">No Vouchers in the card</h3>
+                      <h4 class="my-5"> <a href="adventures.php">Go Back and select your Experience</a> </h4>
                     </div>
 
                 <?php   } else {
+
                 ?>
-                    <div class="col-lg-8">
+                <div style="min-height: 110px;"></div>
+                    <div class="col-lg-8 ">
                         <div class="box_cart">
                             <table class="table cart-list">
                                 <thead>
@@ -140,9 +132,10 @@ $cartArray = unserialize($_SESSION['cart']);
             </div>
             <!-- /row -->
         </div>
-        <!-- /container -->
-    </div>
-    <!-- /bg_color_1 -->
+  
+
+    
+
 </main>
 <!--/main-->
 
