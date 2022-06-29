@@ -118,7 +118,7 @@ $voucherNumber = $cartHeader->getNumberOfVoucher();
 			</header>
 
 		<?php	} else if (strpos($url, 'cart-1.php') !== false  && $home == false) { ?>
-			<header class="header menu_fixed  bg-primary">
+			<header class="header menu_fixed  cart-bg">
 				<div id="preloader">
 					<div data-loader="circle-side"></div>
 				</div><!-- /Page Preload -->
