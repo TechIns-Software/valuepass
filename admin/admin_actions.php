@@ -246,7 +246,7 @@ try {
 
             foreach ($vendorInfos as $vendorInfo) {
                 $id_loc = substr($vendorInfo[0], -1);
-                AddVendorTranslate($conn, $_SESSION['vendorcreateid'], $id_loc,  $vendorInfo[1], $vendorInfo[2], $vendorInfo[3], $vendorInfo[4]);
+                AddVendorTranslate($conn, $_SESSION['vendorcreateid'], $id_loc,  $vendorInfo[1], $vendorInfo[2], $vendorInfo[3]);
             }
         } else  if ($_POST["action"] == "addRatedCategory") {
 

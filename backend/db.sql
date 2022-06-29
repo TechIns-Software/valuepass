@@ -71,8 +71,7 @@ CREATE TABLE VendorTranslate (
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
     idLanguage int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language(id),
-    name varchar(100) NOT NULL ,
-    descriptionSmall varchar (80) NOT NUll,
+    name varchar(100) NOT NULL,
     descriptionBig text NOT NULL,
     descriptionFull text NOT NULL
 

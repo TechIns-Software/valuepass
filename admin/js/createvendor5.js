@@ -27,13 +27,12 @@ function getNames(){
     } else {
 
         const data1 = [];
-        for (let i = 0; i < datavendor.length; i += 4) {
+        for (let i = 0; i < datavendor.length; i += 3) {
             const nameof = datavendor[i]['name'];
             const nameval = datavendor[i]['value'];
-            const smalldesc = datavendor[i + 1]['value'];
-            const bigdesc = datavendor[i + 2]['value'];
-            const fulldesc = datavendor[i + 3]['value'];
-            data1.push([nameof,nameval, smalldesc, bigdesc,fulldesc]);
+            const bigdesc = datavendor[i + 1]['value'];
+            const fulldesc = datavendor[i + 2]['value'];
+            data1.push([nameof,nameval, bigdesc,fulldesc]);
         }
 
         console.log(data1)

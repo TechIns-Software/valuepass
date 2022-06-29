@@ -15,8 +15,6 @@ class Vendor {
     private float $priceKid;
     private string $pathToImage;
     private string $name;
-    private string $descriptionSmall;
-
     private array $labelsBoxNames = [];
     private array $ratedArray = [];
 
@@ -44,14 +42,13 @@ class Vendor {
      * @param float $originalPrice
      * @param float $discount
      * @param float $priceKid
-     * @param string $descriptionSmall
      * @param string $pathToImage
      * @param string $name
      */
     public function __construct(
         int $id, int $categoryId, string $categoryName,
         int $idDestination, float $priceAdult, float $originalPrice, float $discount,
-        float $priceKid, string $descriptionSmall, string $pathToImage,
+        float $priceKid, string $pathToImage,
         string $name
     )
     {
@@ -63,7 +60,6 @@ class Vendor {
         $this->originalPrice = $originalPrice;
         $this->discount = $discount;
         $this->priceKid = $priceKid;
-        $this->descriptionSmall = $descriptionSmall;
         $this->pathToImage = $pathToImage;
         $this->name = $name;
     }
@@ -241,14 +237,6 @@ class Vendor {
     public function getRatedArray(): array
     {
         return $this->ratedArray;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescriptionSmall(): string
-    {
-        return $this->descriptionSmall;
     }
 
     /**

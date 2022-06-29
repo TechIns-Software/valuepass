@@ -373,11 +373,11 @@ function addImportantInformationDescriptionTranslate($conn, $idImportantInformat
 
 
 
-function addVendorTranslate($conn, $idVendor, $idLanguage, $name, $descSmall, $descbig, $descfull)
+function addVendorTranslate($conn, $idVendor, $idLanguage, $name, $descbig, $descfull)
 {
-    $query = "INSERT INTO `VendorTranslate` (`idVendor`, `idLanguage`, `name`, `descriptionSmall`, `descriptionBig`, `descriptionFull`)  VALUES (?,?,?,?,?,?)";
+    $query = "INSERT INTO `VendorTranslate` (`idVendor`, `idLanguage`, `name`, `descriptionBig`, `descriptionFull`)  VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iissss', $idVendor, $idLanguage, $name, $descSmall, $descbig, $descfull);
+    $stmt->bind_param('iisss', $idVendor, $idLanguage, $name, $descbig, $descfull);
 
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη VendorTranslate"]);

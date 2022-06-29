@@ -44,12 +44,6 @@ $ratedCategories = getRatedCategories($conn);
 
 
                                 <div class=" mb-3 form-floating">
-                                    <label for="desc<?php echo  $language[0] ?>" class="form-label">Μικρή περιγραφή <span class="flag-icon flag-icon-<?php echo  $language[2] ?>"> </label>
-                                    <textarea class="form-control" name="desc<?php echo  $language[0] ?>" id="desc<?php echo  $language[0] ?>" cols="5" rows="3"></textarea>
-                                </div>
-
-
-                                <div class=" mb-3 form-floating">
                                     <label for="descbig<?php echo  $language[0] ?>" class="form-label">Μεγάλη περιγραφή <span class="flag-icon flag-icon-<?php echo  $language[2] ?>"> </label>
                                     <textarea class="form-control" name="descbig<?php echo  $language[0] ?>" id="descbig<?php echo  $language[0] ?>" cols="5" rows="5"></textarea>
                                 </div>
