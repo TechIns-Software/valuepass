@@ -11011,20 +11011,24 @@ html[xmlns] .slides {
   font-size: 20px !important;
   font-weight: 500 !important;
   line-height: 24px !important;
-  color: rgb(252, 91, 98) !important;
+  color: #004d88!important;
   word-spacing: 0px !important;
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid gray;
 }
-
-
 
 
 .pricebreakdown {
   font-weight: 600;
-  color: gray;
-  background-color: lightblue;
+  width: fit-content;
+  /* color: gray; */
+  /* background-color: lightblue; */
   border-radius: .3em;
-  padding: 0 .3em;
+  padding: 0 .5em;
+}
+
+.pricebreakdown h5{
+  font-size: 1em;
+  font-weight: 600;
 }
 
 
@@ -11039,18 +11043,66 @@ html[xmlns] .slides {
   color: green;
 }
 
+.vouchertemplate_footer{
+  background-color: rgba(151, 198, 255, 0.27);
+}
+
 .addtocartsection button {
 
   text-align: center;
   width: fit-content;
   padding: 0.4em;
   margin: 1em auto !important;
-  background-color: #0071eb;
+  background-color: #004d88;
   border-radius: 5em;
   color: white;
   font-size: 1em;
   font-weight: 600;
   border: none !important;
+}
+
+.vouchertemplate2{
+  border: .2em solid lightgray;
+  border-radius: 1em;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vouchertemplate2 .title h4 {
+  font-family: Poppins, Helvetica, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  color: #004d88!important;
+  word-spacing: 0px !important;
+  border-bottom: 2px solid black;
+}
+
+.pricebreakdown2 h5{
+  border-bottom: 1px solid gray;
+  width: fit-content;
+}
+
+.pricebreakdown2 ul li b {
+  font-weight: 700;
+  color: green
+}
+
+.pricebreakdown2 ul li span {
+  font-weight: 600;
+  color: black
+}
+
+.price h5{
+  font-weight: 700;
+  color: #0078a8;
+
+}
+
+.price small{
+  font-size: .8rem;
+  margin: 0;
+  color: green;
 }
 
 

@@ -16,7 +16,7 @@ $languageId = $_SESSION["languageId"];
 $vendor = getVendor($conn, $idVendor, $languageId);
 $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 if ($vendor == Null) {
-//    header('location: index.php');
+	//    header('location: index.php');
 }
 ?>
 <input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>
@@ -38,30 +38,30 @@ if ($vendor == Null) {
 	<!-- Slider -->
 	<div id="full-slider-wrapper">
 		<div id="layerslider" style="width:100%;height:650px;">
-            <?php
-            $dummyCounter = 0;
-            foreach ($vendor->getImages() as $imagePath) {
-                $dummyArray = [
-                        'Unique <strong>Experience </strong>',
-                    '<strong>Enjoy</strong> Unforgettable Holidays',
-                    '<strong>Top Attractions</strong> to discover'
-                ];
-                ?>
-                <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
-                    <img src="vendorImages/<?php echo $vendor->getId() .'/' .$imagePath;?>" class="ls-bg" alt="Slide background">
-                    <h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
-                        <?php echo $dummyArray[$dummyCounter % 3]?>
-                    </h3>
-                    <!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+			<?php
+			$dummyCounter = 0;
+			foreach ($vendor->getImages() as $imagePath) {
+				$dummyArray = [
+					'Unique <strong>Experience </strong>',
+					'<strong>Enjoy</strong> Unforgettable Holidays',
+					'<strong>Top Attractions</strong> to discover'
+				];
+			?>
+				<div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
+					<img src="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>" class="ls-bg" alt="Slide background">
+					<h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+						<?php echo $dummyArray[$dummyCounter % 3] ?>
+					</h3>
+					<!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
                         Tours - Hotels - Restaurants
                     </p> -->
-<!--                    <p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read Description</a></p>-->
+					<!--                    <p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read Description</a></p>-->
 
-                </div>
-            <?php
-                $dummyCounter = $dummyCounter + 1;
-            }
-            ?>
+				</div>
+			<?php
+				$dummyCounter = $dummyCounter + 1;
+			}
+			?>
 
 		</div>
 	</div>
@@ -98,7 +98,7 @@ if ($vendor == Null) {
 							</div>
 						</div>
 
-                        
+
 						<div class=" d-flex    justify-content-between my-4  " data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
 							<h2 class=" d-flex align-items-center   "> About this Activity </h2>
 							<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
@@ -155,16 +155,16 @@ if ($vendor == Null) {
 									<div class="col-lg-8 col-md-12  details ">
 										<ul>
 											<?php
-                                            if (count($vendor->getHighlights()) > 0) {
-                                                foreach ($vendor->getHighlights() as $highlight) {
-                                                    ?>
-                                                    <li>
-                                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                                        <?php echo $highlight; ?>
-                                                    </li>
-                                                    <?php
-                                                }
-                                            }
+											if (count($vendor->getHighlights()) > 0) {
+												foreach ($vendor->getHighlights() as $highlight) {
+											?>
+													<li>
+														<i class="fa fa-arrow-right" aria-hidden="true"></i>
+														<?php echo $highlight; ?>
+													</li>
+											<?php
+												}
+											}
 											?>
 
 										</ul>
@@ -178,7 +178,7 @@ if ($vendor == Null) {
 
 				<div class="col-lg-6 col-md-12 ">
 					<?php
-				
+
 					$moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
 					$totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
 					?>
@@ -221,7 +221,7 @@ if ($vendor == Null) {
 							</p>
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
 							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
-							<p class="my-0 perperson"> <?php echo $menu[13] ; ?> </p>
+							<p class="my-0 perperson"> <?php echo $menu[13]; ?> </p>
 
 
 						</div>
@@ -278,16 +278,16 @@ if ($vendor == Null) {
 										<div class="col-lg-8 col-md-12  details ">
 											<ul>
 												<?php
-                                                if (count($vendor->getIncludedServicesArray()) > 0) {
-                                                    foreach ($vendor->getIncludedServicesArray() as $includeServices) {
-                                                        ?>
-                                                        <li>
-                                                            <i style="color: <?php echo ($includeServices->getIcon() == 1 ? 'green' : 'red') ?>;" class="fa fa-check fa-lg" aria-hidden="true"></i>
-                                                            <span> <?php echo $includeServices->getName(); ?> </span>
-                                                        </li>
-                                                        <?php
-                                                    }
-                                                }
+												if (count($vendor->getIncludedServicesArray()) > 0) {
+													foreach ($vendor->getIncludedServicesArray() as $includeServices) {
+												?>
+														<li>
+															<i style="color: <?php echo ($includeServices->getIcon() == 1 ? 'green' : 'red') ?>;" class="fa fa-check fa-lg" aria-hidden="true"></i>
+															<span> <?php echo $includeServices->getName(); ?> </span>
+														</li>
+												<?php
+													}
+												}
 												?>
 											</ul>
 										</div>
@@ -314,24 +314,24 @@ if ($vendor == Null) {
 									<div class="row">
 										<div class="col-lg-8 col-md-12  details ">
 											<?php
-                                            if (count($vendor->getImportantInformationArray()) > 0) {
-                                                foreach ($vendor->getImportantInformationArray() as $importantInformation) {
-                                                    ?>
-                                                    <div class="col-sm-12 importantinfosli">
-                                                        <b> <?php echo $importantInformation->getHead(); ?> </b>
-                                                        <ul class="ps-3">
-                                                            <?php
-                                                            foreach ($importantInformation->getDescriptions() as $bullet) {
-                                                                ?>
-                                                                <li><i class="fas fa-arrow-circle-right fa-lg"></i> <?php echo $bullet; ?></li>
-                                                                <?php
-                                                            }
-                                                            ?>
-                                                        </ul>
-                                                    </div>
-                                                    <?php
-                                                }
-                                            }
+											if (count($vendor->getImportantInformationArray()) > 0) {
+												foreach ($vendor->getImportantInformationArray() as $importantInformation) {
+											?>
+													<div class="col-sm-12 importantinfosli">
+														<b> <?php echo $importantInformation->getHead(); ?> </b>
+														<ul class="ps-3">
+															<?php
+															foreach ($importantInformation->getDescriptions() as $bullet) {
+															?>
+																<li><i class="fas fa-arrow-circle-right fa-lg"></i> <?php echo $bullet; ?></li>
+															<?php
+															}
+															?>
+														</ul>
+													</div>
+											<?php
+												}
+											}
 											?>
 										</div>
 									</div>
@@ -348,7 +348,7 @@ if ($vendor == Null) {
 
 							<div class=" d-flex    justify-content-between  my-3   " data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
 								<h5 class=" d-flex align-items-center   "> All of our supplies have met the seven standards of our rating : </h5>
-									<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
+								<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
 							</div>
 
 
@@ -437,62 +437,63 @@ if ($vendor == Null) {
 		</section>
 
 
-        <?php
-        if (count($bestOffs) > 0) {
-            ?>
-            <div id="bestof" class="container container-custom margin_80_55">
-                <section class="add_bottom_45">
-                    <div class="main_title_3">
-                        <span><em></em></span>
-                        <h2>Best of Experiences </h2>
-                        <!-- <p>Some of our favorite experiences </p> -->
-                    </div>
+		<?php
+		if (count($bestOffs) > 0) {
+		?>
+			<div id="bestof" class="container container-custom margin_80_55">
+				<section class="add_bottom_45">
+					<div class="main_title_3">
+						<span><em></em></span>
+						<h2>Best of Experiences </h2>
+						<!-- <p>Some of our favorite experiences </p> -->
+					</div>
 
-                    <div id="reccomended" class="owl-carousel owl-theme">
+					<div id="reccomended" class="owl-carousel owl-theme">
 
-                        <?php
-                        foreach ($bestOffs as $vendor) {
-                            $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
-                            $totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
+						<?php
+						foreach ($bestOffs as $vendor) {
+							$moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
+							$totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
 
-                            ?>
-                            <div class="item">
-                                <div class="box_grid">
-                                    <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
-                                        <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>"
-                                             class="img-fluid" alt="" width="800" height="933">
-                                    </a>
-                                    <div class="wrapper best ">
-                                        <small><?php echo $vendor->getCategoryName();?></small>
-                                        <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
-                                        <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
+						?>
+							<div class="item">
+								<div class="box_grid">
+									<a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
+										<img src="vendorImages/<?php echo $vendor->getId() . '/' . $vendor->getPathToImage(); ?>" class="img-fluid" alt="" width="800" height="933">
+									</a>
+									<div class="wrapper best ">
+										<small><?php echo $vendor->getCategoryName(); ?></small>
+										<h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>"><?php echo $vendor->getName(); ?></a></h3>
+										<p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?></p>
 
-                                        <span class="criteria">
-                                    Our Criteria Rating
-                                    <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
-                                            <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
-                                </span>
-                                        <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-                                        <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson">per person </span></p>
-                                        <p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice();?> € </s> <span class="perperson">per person</span></p>
-                                        <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>%</p>
-                                        <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson">per person</span></p>
-                                        <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                        ?>
+										<span class="criteria">
+											Our Criteria Rating
+											<?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
+											<?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
+										</span>
+										<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
+										<p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult(); ?>€ </b> <span class="perperson">per person </span></p>
+										<p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice(); ?> € </s> <span class="perperson">per person</span></p>
+										<p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount(); ?>%</p>
+										<p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay; ?>€ </b> <span class="perperson">per person</span></p>
+										<a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
+											<div class=" buy_button2"> Book Now </div>
+										</a>
+									</div>
+								</div>
+							</div>
+						<?php
+						}
+						?>
 
 
-                    </div>
+					</div>
 
-                </section>
-            </div>
-        <?php
-        }
-        ?>
+				</section>
+			</div>
+		<?php
+		}
+		?>
 
 
 	</div>

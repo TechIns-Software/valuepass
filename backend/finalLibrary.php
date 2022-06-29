@@ -350,7 +350,7 @@ function checkIfVendorVouchersIsStillAvailableInLocalhost($conn, $cart) {
 //Get all Languages
 function getAllLanguages($conn)
 {
-    $query = "Select * FROM Language";
+    $query = "Select * FROM Language where id =2";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $language = $icon = '';
@@ -505,16 +505,56 @@ function calculatePriceCart($arrayVouchers) {
 
 function getTemplateVoucher($VoucherId ,$adults ,$children ,$infants ,$idVendor) {
 
-$message = "<div class='col-lg-12  vouchertemplate'>" ;
+// $message = "<div class='col-lg-12  vouchertemplate'>" ;
 
-$message .= "<div class='title'> <h4>  Experience Name $VoucherId  </h4> </div> <div class='pricebreakdown'> <ul>";
-    $message .= " <li> Adults  : <b>$adults </b>  </li>";
-    $message .=  "<li> Children  : <b> $children </b> </li>";
-    $message .= "<li>  Infants  : <b> $infants </b </li> </ul> </div> <div class='price'>";
-    $message .= "  <h5 >Price <b>  €</b> <br> <small>All taxes and fees included</small>   </h5></div> <div class='addtocartsection'>";
-    $message .= "  <button onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
-    $message .= " </div>";
+// $message .= "<div class='title'> <h4>  Experience Name $VoucherId  </h4> </div> <div class='pricebreakdown'> <h5>Price Breakdown </h5> <ul>";
+//     $message .= " <li> Adults  : <b>$adults  x </b> <span> 5 €</span>   </li>";
+//     $message .=  "<li> Children  : <b> $children  x</b>  <span> 15 €</span> </li>";
+//     $message .= "<li>  Infants  : <b> $infants x </b </li>  <span> 40 €</span> </ul> </div> <div class='price'>";
+//     $message .= "  <h5 >Price <b>  €</b> <br> <small>All taxes and fees included</small>   </h5></div> <div class='addtocartsection'>";
+//     $message .= "  <button onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
+//     $message .= " </div>";
 
+
+
+    $message = "<div class='col-lg-12 vouchertemplate2'>";
+    $message .= " <div class='container'> <div class='row'> ";
+    $message .=   "   <div class='col'> ";
+    $message .=       "  <div class='title '>";
+    $message .=        "  <h4> Experience Name $VoucherId </h4> ";
+    $message .=      "  </div> ";
+    $message .=   " </div> ";
+    $message .=  " </div> ";
+    $message .=  " <div class='row border-bottom'> ";
+    $message .=      " <div class='col-8  py-2'> ";
+    $message .=       "  <div class='pricebreakdown2'> ";
+    $message .=          " <h5>Price Breakdown </h5> ";
+    $message .=          " <ul> ";
+    $message .=             " <li> Adults : <b>$adults  </b> x <span> 5 €</span> </li> ";
+    $message .=             " <li> Children : <b> $children </b> x <span> 15 €</span> </li> ";
+    $message .=         " <li> Infants : <b> $infants  </b> x <span> 40 € </span></li> ";
+    $message .=     " </ul> ";
+    $message .=  " </div> ";
+    $message .=  "</div> ";
+    $message .= " <div class='col  py-2'> ";
+    $message .=  " <div class='price'> ";
+    $message .=    "     <h5 >Total Price  </h5> ";
+    $message .=     "   <h4> 50 € </h4> ";
+    $message .=      " <small> All taxes and fees included</small>  ";
+    $message .=  " </div> ";
+    $message .=   " </div> ";
+    $message .=  "  </div> ";
+
+    $message .=  " <div class='row'> ";
+    $message .=   "  <div class='col'> ";
+    $message .=     "   <div class='addtocartsection'> ";
+    $message .=     "  <button onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
+    $message .=   "  </div> ";
+    $message .=   " </div> ";
+
+    $message .=   " </div> ";
+    $message .=   " </div> ";
+    $message .=  " </div> ";
     return $message ;
 
 }
