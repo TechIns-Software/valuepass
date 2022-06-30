@@ -573,7 +573,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .=          " <ul> ";
     $message .=             " <li> Adults : <b>$adults  </b> x <span> $priceAdult €</span> </li> ";
     if ($children != 0) {
-        $message .=             " <li> Children : <b> $children </b> x <span> $priceAdult €</span> </li> ";
+        $message .=             " <li> Children : <b> $children </b> x <span> $priceKid €</span> </li> ";
     }
     if ($infants != 0) {
         $message .=         " <li> Infants : <b> $infants  </b> x <span> $priceInfant € </span></li> ";
