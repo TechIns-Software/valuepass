@@ -77,7 +77,7 @@ if (!isset($cartArray)) {
                                         <tr>
                                             <td>
                                                 <div class="thumb_cart">
-                                                    <img src="vendorImages/<?php echo $vendorId.'/'.$imageVendor?>" alt="Image">
+                                                    <img src="vendorImages/<?php echo $vendorId[$counter].'/'.$imageVendor?>" alt="Image">
                                                 </div>
                                                 <span class="item_cart"><?php echo $nameVendor; ?></span>
                                             </td>

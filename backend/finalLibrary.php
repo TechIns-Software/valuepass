@@ -470,7 +470,7 @@ function createArrayVouchersSortedFromCart($conn, $cart) {
         'children'=>$childrenArray,
         'infants'=>$infantsArray,
         'amountPay'=>$amountPayArray,
-        'vendorId'=>$idVendorDisplayed
+        'vendorId'=>$idVendorArray
     );
 }
 
