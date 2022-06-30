@@ -225,8 +225,9 @@ CREATE TABLE VoucherGenerateOptions (
     PRIMARY KEY (id),
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
-    dayString varchar(100) NOT NULL,
-    timeVoucher varchar (100) NOT NULL,
+    isDateRestrict binary(1) NOT NULL,
+    dayString varchar(30),
+    timeVoucher varchar (30),
     numberVoucher int NOT NULL
 
 )ENGINE=InnoDB;
