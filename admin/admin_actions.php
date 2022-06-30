@@ -320,7 +320,7 @@ try {
                 $time =  $value.":00";
                 echo $time ;
               // TODO :  CHANGE THE NUMBERVOUCHER ex 999 | We must find the last inserted  NUMBERVOUCHER
-            addVoucherRules($conn,1,1 ,$day,$time,999);
+            addVoucherRules($conn,$_SESSION['vendorcreateid'],1 ,$day,$time,999);
             }
 
         }  else if ($_POST["action"] == "addVoucherRules" && $_POST["type"] == "oneDay" ){
@@ -333,7 +333,7 @@ try {
                 $day = $temp_string[0] ;
                 $time =  $value;
               // TODO :  CHANGE THE NUMBERVOUCHER ex 999 | We must find the last inserted  NUMBERVOUCHER
-            addVoucherRules($conn,1,0 ,$day,$time,999);
+            addVoucherRules($conn,$_SESSION['vendorcreateid'],0 ,$day,$time,999);
             }
 
         }
