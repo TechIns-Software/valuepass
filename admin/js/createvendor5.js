@@ -9,7 +9,7 @@ document.getElementById('createbtn5').addEventListener(
         $.when(ajax1, ajax2).done(function () {
             if (flag) {
                 alert("Προχωρήστε στην εισαγωγή φωτογραφιών");
-                window.location.href = 'addImagesVendor.php';
+                window.location.href = 'createvendor_s6.php';
             }
         });
 

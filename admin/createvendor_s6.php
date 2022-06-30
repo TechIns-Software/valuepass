@@ -27,14 +27,7 @@ include 'admin_library.php';
 
             <form id="createvendor1" class="form  container-fluid">
                 <div class="row">
-
-
-                    <div class=" col-lg-12 col-md-12  my-3">
-                        <label for="exampleInputPassword1" class="form-label"> Αριθμός Σημαντικών Πληροφοριών ( Important Informations )</label>
-                        <input type="number" class="form-control" id="numhightlights">
-                        <button class="btn btn-info my-3" id="genereteinputs">Δημιουργία </button>
-                    </div>
-
+                        <?php showDay('day0');?>
                     <div class="col-lg-12 col-md-12  my-3">
                         <div id="geninpt"></div>
                     </div>
@@ -45,58 +38,43 @@ include 'admin_library.php';
         <button class="btn btn-danger p-2 my-3" id="createbtn6">Επόμενο Στάδιο</button>
     </div>
 
-        <script>
-
-            document.getElementById('genereteinputs').addEventListener(
-                'click', (e) => {
-                    e.preventDefault();
-
-                    numberofInfos = $("#numhightlights").val();
-                    console.log("im in")
-
-                    if (numberofInfos == 0) {
-                        alert("Πρέπει να δημιουργήσεις τουλάχστον ένα Important Information");
-                    }
-                    drawTable();
-                }
-            );
-
-            function drawTable() {
-                var headStringForm = '<form id="highlightsform container-fluid" >';
-                headStringForm += ' <div class="row">';
-                var rows = "";
-
-                var bodyForm = "";
-                for (var index = 1; index <= numberofInfos; index++) {
-
-                    rows += "<div class='col-lg-6 col-md-12 my-3'> <h4> Important Information  : " + index + " </h4>";
-                    languagesinfos.forEach(element => {
-
-                        inputheadername = `ImportantHead ${element[0]} - ${index}`;
-                        placeholderheader = `ImportantHead`;
-
-                        inputdescription = `Description${element[0]} - ${index}`;
-                        placeholderdescription = 'Bullet1,Bullet2,Bullet3,Bullet4';
-
-
-                        rows += `<div class='my-3' > <h6> ${element[1]} </h6>`;
-                        rows += `<input type='text' class='form-control my-2 ImportantHead' id=${inputheadername}  name=${inputheadername} placeholder=${placeholderheader}>`;
-                        rows += `<input type='text' class='form-control my-2 ImportantDesc' id=${inputdescription}  name=${inputdescription} placeholder=${placeholderdescription}>`;
-                        rows += "</div>";
-
-                    });
-                    rows += "</div>"
-                }
-                bodyForm += rows + '</div></form>';
-                $("#geninpt").empty();
-                $("#geninpt").append(headStringForm + bodyForm);
-
-
-            }
-        </script>
     <script src="js/createvendor6.js"></script>
 <?php
-
+function showDay($nameDay) {
+    ?>
+    <div class=" col-lg-12 col-md-12  my-3">
+        <label for="exampleInputPassword1" class="form-label">
+            ΔΕΥΤΕΡΑ
+        </label>
+        <select name="<?php echo $nameDay;?>" class="form-control">
+        <option value="12:00">12:00</option>
+        <option value="12:30">12:30</option>
+        <option value="01:00">01:00</option>
+        <option value="01:30">01:30</option>
+        <option value="02:00">02:00</option>
+        <option value="02:30">02:30</option>
+        <option value="03:00">03:00</option>
+        <option value="03:30">03:30</option>
+        <option value="04:00">04:00</option>
+        <option value="04:30">04:30</option>
+        <option value="05:00">05:00</option>
+        <option value="05:30">05:30</option>
+        <option value="06:00">06:00</option>
+        <option value="06:30">06:30</option>
+        <option value="07:00">07:00</option>
+        <option value="07:30">07:30</option>
+        <option value="08:00">08:00</option>
+        <option value="08:30">08:30</option>
+        <option value="09:00">09:00</option>
+        <option value="09:30">09:30</option>
+        <option value="10:00">10:00</option>
+        <option value="10:30">10:30</option>
+        <option value="11:00">11:00</option>
+        <option value="11:30">11:30</option>
+    </select>
+    </div>
+    <?php
+}
 include_once "footer.php";
 
 ?>
