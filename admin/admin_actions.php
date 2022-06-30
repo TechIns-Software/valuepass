@@ -25,7 +25,8 @@ try {
         $_POST["action"] == "addSelectedlabels" ||
         $_POST["action"] == "addBestoffs" ||
         $_POST["action"] == "finalizeVendor" ||
-        $_POST["action"] == "addIncluded"
+        $_POST["action"] == "addIncluded" || 
+        $_POST["action"] == "addVoucherRules" 
 
 
     ) {
@@ -308,6 +309,33 @@ try {
                 $id_lang = $data_label[0];
                 AddIncludedServiceTranslate($conn, ($last_id + 1), $id_lang, $data_label[1]);
             }
+        } else if ($_POST["action"] == "addVoucherRules" && $_POST["type"] == "allWeek" ){
+            $voucherules_data = $_POST["voucherules"];
+
+            foreach ($voucherules_data as $key => $value) {
+                $day="";
+                $temp_string=explode("_",$key );
+
+                $day = $temp_string[0] ;
+                $time =  $value.":00";
+                echo $time ;
+              // TODO :  CHANGE THE NUMBERVOUCHER ex 999 | We must find the last inserted  NUMBERVOUCHER
+            addVoucherRules($conn,1,1 ,$day,$time,999);
+            }
+
+        }  else if ($_POST["action"] == "addVoucherRules" && $_POST["type"] == "oneDay" ){
+            $voucherules_data = $_POST["voucherules"];
+
+            foreach ($voucherules_data as $key => $value) {
+                $day="";
+                $temp_string=explode("_",$key );
+
+                $day = $temp_string[0] ;
+                $time =  $value;
+              // TODO :  CHANGE THE NUMBERVOUCHER ex 999 | We must find the last inserted  NUMBERVOUCHER
+            addVoucherRules($conn,1,0 ,$day,$time,999);
+            }
+
         }
     }
 } catch (Exception $exception) {

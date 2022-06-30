@@ -11193,3 +11193,7 @@ width: fit-content;
 .isotope-item{
   height:100%
 }
+
+.dissapear{
+  display: none;
+}

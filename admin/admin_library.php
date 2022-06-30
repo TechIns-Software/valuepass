@@ -563,3 +563,24 @@ function finalizeVendor($conn, $idVendor) {
     $stmt->execute();
     $stmt->close();
 }
+
+function addVoucherRules($conn,$idVendor = -1,$isDateRestrict = false ,$dayString = '',$timeVoucher = '',$numberVoucher = 999){
+    if($isDateRestrict){
+        $query="INSERT INTO `VoucherGenerateOptions` (`idVendor`, `isDateRestrict`, `dayString`, `timeVoucher`, `numberVoucher`) VALUES (?,?,?,?,?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('iissi', $idVendor,$isDateRestrict, $dayString,$timeVoucher,$numberVoucher);
+    }else{
+        $query="INSERT INTO `VoucherGenerateOptions` (`idVendor`, `isDateRestrict`, `dayString`, `timeVoucher`, `numberVoucher`) VALUES (?,?,?,?,?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('iissi', $idVendor,$isDateRestrict, $dayString,$timeVoucher,$numberVoucher);
+    }
+
+
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη Vendor Rule"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+    $stmt->close();
+
+}
