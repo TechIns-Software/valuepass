@@ -81,8 +81,8 @@ function sendData() {
             action: 'addVoucherRules'
         },
         success: function (data) {
-            alert("Ολα καλά. Μεταφορά στην αρχή");
-            window.location.href = 'index.php';
+            alert("Ολα καλά. Μεταφορά στην σελίδα για ανέβασμα Φωτογρφιών Vendor");
+            window.location.href = 'addImagesVendor.php';
 
         },
         error: function (a, b, c) {
