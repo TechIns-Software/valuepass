@@ -13,6 +13,7 @@ function getAllLanguages($conn)
         array_push($languages, [$id, $language, $icon]);
     }
     $stmt->close();
+
     return $languages;
 }
 
@@ -21,8 +22,10 @@ function lastInstertedid($conn, $table)
 {
     $query = "SELECT id FROM $table ORDER BY id DESC LIMIT 0, 1";
     $stmt = $conn->prepare($query);
-
     $last_id = 0; //DEFAULT first ID is 1, so if no row, return 0
+    // $result=mysqli_query($conn,$query); test
+    // $rowcount=mysqli_num_rows($result); test
+
     if ($stmt->execute()) {
 
         $stmt->bind_result($last_id);
@@ -32,8 +35,6 @@ function lastInstertedid($conn, $table)
     }
     // echo json_encode([$message]);
     $stmt->close();
-
-    //
     if (!is_numeric($last_id)) {
         $last_id = 0;
     }

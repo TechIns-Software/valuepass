@@ -93,7 +93,7 @@ $destinations = getDestinations($conn, $idLanguage);
 			
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
-					<i class="pe-7s-gift"></i>
+				<object class="SvgImage" data="assets/icons/gift.svg" type="image/svg+xml"></object>
 					<h3> Pampered </h3>
                     <p>We always have a present for you. <br><?php echo $menu[13] ?></p>
 				</a>
@@ -108,21 +108,21 @@ $destinations = getDestinations($conn, $idLanguage);
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
-					<i class="pe-7s-phone"></i>
+				<object class="SvgImage" data="assets/icons/smartphone.svg" type="image/svg+xml"></object>
 					<h3>Convenient </h3>
 					<p> Control everything easily from your smartphone. <br> Receive detailed info at your preferred e-mail</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
-					<i class="pe-7s-credit"></i>
+				<object class="SvgImage" data="assets/icons/credit-card.svg" type="image/svg+xml"></object>
 					<h3>Secured </h3>
 					<p>Highly secured payment procedure</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
-					<i class="pe-7s-chat"></i>
+				<object class="SvgImage" data="assets/icons/support.svg" type="image/svg+xml"></object>
 					<h3>Supportive </h3>
 					<p>Ask everything you want to know. Our support team is here to answer every question </p>
 
