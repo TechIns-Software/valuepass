@@ -348,6 +348,8 @@ CREATE TABLE Admin (
     PRIMARY KEY(id)
 )ENGINE=InnoDB;
 
+--- USERNAME: spanos55
+-- PASSWORD:spanos1234
 
 -- Some data for menu and language
 
