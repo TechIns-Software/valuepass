@@ -1,6 +1,11 @@
 <?php 
 $title="Dashboard";
-include_once "header.php"; ?>
+include_once "header.php";
+
+if ( !isset($_SESSION['admin'])){
+  // header('location:login.php');
+}
+?>
   
   <div class="content-wrapper">
     <div class="container-fluid">

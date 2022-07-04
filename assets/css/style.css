@@ -1203,7 +1203,7 @@ header.sticky .hamburger-inner::before {
 }
 
 .hero_in.hotels:before {
-  background: url(../img/hero_in_bg_4.jpg) center center no-repeat;
+  background: url(../assets\img\slider_images\2small.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -5184,7 +5184,7 @@ ul.hotel_facilities li img {
 
 #login_bg,
 #register_bg {
-  background: url(../img/hero_in_bg_3.jpg) center center no-repeat fixed;
+  background: url(../img/slider_images/2small.jpg) center center no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -5226,7 +5226,7 @@ ul.hotel_facilities li img {
   left: 0;
   top: 0;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: rgba(8, 175, 252, 0.986);
   min-height: 100vh;
 }
 
@@ -5272,7 +5272,7 @@ ul.hotel_facilities li img {
   left: 0;
   bottom: 30px;
   width: 100%;
-  color: #999;
+  color: rgb(255, 255, 255);
   font-weight: 500;
 }
 
@@ -9548,7 +9548,7 @@ ul.bullets li:before {
 }
 
 .checkboxes label {
-  color: #999;
+  color: white;
 }
 
 a#forgot {
