@@ -1,10 +1,12 @@
-<?php 
+<?php
+session_start();
+if ( !isset($_SESSION['admin'])){
+    header('location:login.php');
+}
 $title="Dashboard";
 include_once "header.php";
 
-if ( !isset($_SESSION['admin'])){
-  // header('location:login.php');
-}
+
 ?>
   
   <div class="content-wrapper">
@@ -119,7 +121,7 @@ if ( !isset($_SESSION['admin'])){
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="#0">Logout</a>
+            <a class="btn btn-primary" href="logout.php">Logout</a>
           </div>
         </div>
       </div>

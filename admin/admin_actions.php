@@ -26,7 +26,8 @@ try {
         $_POST["action"] == "addBestoffs" ||
         $_POST["action"] == "finalizeVendor" ||
         $_POST["action"] == "addIncluded" || 
-        $_POST["action"] == "addVoucherRules" 
+        $_POST["action"] == "addVoucherRules" ||
+        $_POST["action"] == "adminLogin"
 
 
     ) {
@@ -186,25 +187,15 @@ try {
                 $temp = explode(",", $key);
                 $idlang = $temp[0];
                 $idrespondAct = $temp[1];
-                // echo   $idlang;
-                // echo "--";
-                // echo   $idrespondAct;
-                // echo "--";
                 array_push($headersfinal, $value);
             }
 
-
-            echo "----------------------------------";
 
             $desckfinal = array();
             foreach ($descriptions as $key => $value) {
                 $temp = explode(",", $key);
                 $idlang = $temp[0];
                 $idrespondAct = $temp[1];
-                // echo   $idlang;
-                // echo "--";
-                // echo   $idrespondAct;
-                // echo "--";
                 array_push($desckfinal, $value);
             }
 
@@ -218,11 +209,7 @@ try {
                     $last_id = lastInstertedid($conn, $table);
                     $last_id++;
                     addrowImportantHead($conn, $last_id, $_SESSION['vendorcreateid']);
-
                     $lastid = lastInstertedid($conn, $table);
-
-                    echo "this is whichLang --> : " . $whichLang;
-                    echo "this is lastid --> : " . $last_id;
                 }
 
 
@@ -335,6 +322,14 @@ try {
               // TODO :  CHANGE THE NUMBERVOUCHER ex 999 | We must find the last inserted  NUMBERVOUCHER
             addVoucherRules($conn,$_SESSION['vendorcreateid'],0 ,$day,$time,999);
             }
+
+        }  else if ($_POST["action"] == "adminLogin"){
+            $credentials =  $_POST["data"];
+            $username = $credentials['username'];
+            $password = $credentials['password'];
+
+            checkLogin($conn,$username,$password);
+
 
         }
     }

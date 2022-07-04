@@ -339,6 +339,15 @@ CREATE TABLE MenuTranslate (
 )ENGINE=InnoDB;
 
 
+CREATE TABLE Admin (
+    id int NOT NULL AUTO_INCREMENT,
+    username varchar(100) NOT NULL,
+    password varchar(200) NOT NULL,
+    name varchar(200) ,
+    surname  varchar(200),
+    PRIMARY KEY(id)
+)ENGINE=InnoDB;
+
 
 -- Some data for menu and language
 

@@ -45,12 +45,12 @@
 				<a href="index.html"><img src="../assets/img/valuepassLogo.png" width="100" height="80" alt="" class="logo_sticky"></a>
 			</figure>
 
-			<h4>Login to Admin Panel</h4>
-			  <form>
+			<h4 >Login to Admin Panel</h4>
+			  <form id="loginForm">
 
 				<div class="form-group">
-					<label>Email</label>
-					<input type="email" class="form-control" name="email" id="email">
+					<label>Username</label>
+					<input type="text" class="form-control" name="username" id="username">
 					<i class="icon_mail_alt"></i>
 				</div>
 				<div class="form-group">
@@ -58,17 +58,8 @@
 					<input type="password" class="form-control" name="password" id="password" value="">
 					<i class="icon_lock_alt"></i>
 				</div>
-				<div class="clearfix add_bottom_30">
-					<div class="checkboxes float-start">
-						<label class="container_check">Remember me
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-					</div>
-					<!-- <div class="float-end mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div> -->
-				</div>
-				
-				
+
+                  <a href="#0" class="btn_1 rounded full-width" id="btnLogin">Login to Panagea</a>
 			</form>
 			<div class="copy">© Valuepass </div>
 		</aside>
@@ -79,6 +70,7 @@
     <script src="..\assets\js\common_scripts.js"></script>
     <script src="..\assets\js\main.js"></script>
 	<script src="..\assets\js\validate.js"></script>
+    <script src="js/login.js"></script>
 
 	
   
