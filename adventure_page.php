@@ -65,6 +65,22 @@ if ($vendor == Null) {
 	</div>
 	<!-- End layerslider -->
 
+    <div class="bg_color_1 shadow bgbanner2">
+
+        <div class="banner_title2 ">
+            <p >  Buy your vouchers on board  </p>
+            <p >  reserve your spot,  </p>
+            <p >  and pay the provider </p>
+            <p > with a discount   </p>
+            <p > when you arrive  </p>
+            <p > at your activity location.   </p>
+            <!--				   <p class="fs-2"> <strong> Your gifts never end </strong>  </p> -->
+        </div>
+
+
+        <!-- /container -->
+    </div>
+
 
 	<div class=" bg_color_1">
 		<!--		<nav class="secondary_nav sticky_horizontal">-->
@@ -195,26 +211,25 @@ if ($vendor == Null) {
 								Vouchers Available
 								<b>4/10</b>
 							</p>
-							<p class="vpvoucher_price1 my-0">
-								Buy VP Vouchers
-								<span class="vpvoucher_price1_value"> <?php echo $vendor->getPriceAdult(); ?>€ </span>
-								<span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span>
-							</p>
-							<p class=" prev_price my-0">
-								Initial Price
-								<span class="prev_price_value"><?php echo $vendor->getOriginalPrice(); ?> €</span>
-								<span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span>
-							</p>
+							<div class="row ">
+									<div class="col d-flex nowrap buyvp_label"> Buy VP Voucher </div>
+									<div class="col buyvp_value"> <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></div>
+								</div>
 
-							<p class="vp_discount my-0 ">
-								Save
-								<?php echo $vendor->getDiscount(); ?>%
-							</p>
-							<p class="final_price1 my-0">
-								Final Price
-								<span class="final_price1_value"><?php echo $totalToPay; ?>€ </span>
-								<span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span>
-							</p>
+								<div class="row">
+									<div class="col"> From </div>
+									<div class="col from_price"> <?php echo $vendor->getOriginalPrice();?> € </div>
+								</div>
+
+								<div class="row">
+									<div class="col"> Pay </div>
+									<div class="col pay_value"> <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span> </div>
+								</div>
+
+								<div class="row">
+									<div class="col">  <p class="vp_discount my-0 ">Save  <?php echo $vendor->getDiscount();?>% in total</p></div>
+								</div>
+
 							<!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
 							<button class=" my-2 btn buy_button "> <a href="#book">Book Now </a> </button>
 							<p class="my-0 perperson"> <?php echo $menu[13]; ?> </p>
@@ -350,7 +365,7 @@ if ($vendor == Null) {
 							<h5></h5>
 
 							<div class=" d-flex    justify-content-between  my-3   " data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
-								<h5 class=" d-flex align-items-center   "> All of our supplies have met the seven standards of our rating : </h5>
+								<h5 class=" d-flex align-items-center   "> All of our suppliers have met the seven standards of our rating</h5>
 								<span class="d-flex align-items-center fs-3"><i class="icon-plus"></i></span>
 							</div>
 
@@ -405,16 +420,13 @@ if ($vendor == Null) {
 
 							</div>
 
-							<div class="form-group input-dates">
-								<input id="date" class="form-control" type="text" name="dates" placeholder="When..">
-								<i class="icon_calendar"></i>
-							</div>
 
+										<!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
 							<div class="panel-dropdown">
-								<a href="#">People <span class="qtyTotal">0</span></a>
+								<a href="#">Adults <span class="qtyTotal">0</span></a>
 								<div class="panel-dropdown-content right">
 									<div class="qtyButtons">
-										<label>Adults</label>
+										<label>Adults <small> (11-99)</small></label>
 										<input id="adultsInput" type="text" name="qtyInput" value="0">
 									</div>
 									<div class="qtyButtons">
@@ -426,6 +438,11 @@ if ($vendor == Null) {
 										<input id="infantsInput" type="text" name="qtyInput" value="0">
 									</div>
 								</div>
+							</div>
+
+							<div class="form-group input-dates">
+								<input id="date" class="form-control" type="text" name="dates" placeholder="Choose your date ">
+								<i class="icon_calendar"></i>
 							</div>
 
 
@@ -447,7 +464,7 @@ if ($vendor == Null) {
 				<section class="add_bottom_45">
 					<div class="main_title_3">
 						<span><em></em></span>
-						<h2>Best of Experiences </h2>
+						<h2>You might be interested in... </h2>
 						<!-- <p>Some of our favorite experiences </p> -->
 					</div>
 
@@ -475,10 +492,25 @@ if ($vendor == Null) {
 											<?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
 										</span>
 										<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-										<p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult(); ?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
-										<p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice(); ?> €</s> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
-										<p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount(); ?>%</p>
-										<p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay; ?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
+										<div class="row ">
+									<div class="col d-flex nowrap buyvp_label"> Buy VP Voucher </div>
+									<div class="col buyvp_value"> <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></div>
+								</div>
+
+								<div class="row">
+									<div class="col"> From </div>
+									<div class="col from_price"> <?php echo $vendor->getOriginalPrice();?> € </div>
+								</div>
+
+								<div class="row">
+									<div class="col"> Pay </div>
+									<div class="col pay_value"> <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span> </div>
+								</div>
+
+								<div class="row">
+									<div class="col">  <p class="vp_discount my-0 ">Save  <?php echo $vendor->getDiscount();?>% in total</p></div>
+								</div>
+										
 										<a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
 											<div class=" buy_button2"> Book Now </div>
 										</a>
@@ -517,11 +549,11 @@ if ($vendor == Null) {
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
-						<li><a href="#0"><i class="ti-facebook"></i></a></li>
-						<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
-						<li><a href="#0"><i class="ti-google"></i></a></li>
-						<li><a href="#0"><i class="ti-pinterest"></i></a></li>
-						<li><a href="#0"><i class="ti-instagram"></i></a></li>
+                        <li><a><i class="ti-facebook"></i></a></li>
+                        <li><a><i class="ti-instagram"></i></a></li>
+                        <!--						<li><a><i class="ti-twitter-alt"></i></a></li>-->
+                        <!--						<li><a><i class="ti-google"></i></a></li>-->
+                        <!--						<li><a><i class="ti-pinterest"></i></a></li>-->
 					</ul>
 				</div>
 			</div>

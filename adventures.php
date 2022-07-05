@@ -35,18 +35,16 @@ if (count($vendors) <= 0) {
 	</section>
 	<!-- /header-video -->
     <div class="bg_color_1 shadow bgbanner">
-        <div class="container container-custom margin_80_55 ">
-            <div class="main_title_2">
-                <h2 class="text-center banner_title" style="color: white">
-				<!-- Buy at least 2 vouchers. With 3 or more you get your free vouchers and your presents never end! -->
-				<?php echo $menu[13] ?>
-                   <br>
-                   <br>
-				   <p class="fs-2"> <strong> Your gifts never end </strong>  </p> 
-                </h2>
+
+            <div class="banner_title ">
+                <p class="flex-nowrap">  Buy at least 2 vouchers. </p>
+                <p class="flex-nowrap">  With 3 or more  </p>
+                <p class="flex-nowrap">  you get your free vouchers </p>
+                <p class="flex-nowrap"> and your presents never end! </p>
+                <!--				   <p class="fs-2"> <strong> Your gifts never end </strong>  </p> -->
             </div>
 
-        </div>
+
         <!-- /container -->
     </div>
     <!-- /bg_color_1 -->
@@ -84,11 +82,33 @@ if (count($vendors) <= 0) {
                                     <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                     <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                                 </span>
-                                <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-                                <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
+								<p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
+
+
+								<div class="row ">
+									<div class="col d-flex nowrap buyvp_label"> Buy VP Voucher </div>
+									<div class="col buyvp_value"> <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></div>
+								</div>
+
+								<div class="row">
+									<div class="col"> From </div>
+									<div class="col from_price"> <?php echo $vendor->getOriginalPrice();?> € </div>
+								</div>
+
+								<div class="row">
+									<div class="col"> Pay </div>
+									<div class="col pay_value"> <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span> </div>
+								</div>
+
+								<div class="row">
+									<div class="col">  <p class="vp_discount my-0 ">Save  <?php echo $vendor->getDiscount();?>% in total</p></div>
+
+								</div>
+                     
+                                <!-- <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
                                 <p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice();?> €</s> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
                                 <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>%</p>
-                                <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
+                                <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p> -->
                                 <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
                             </div>
                         </div>
@@ -156,10 +176,27 @@ if (count($vendors) <= 0) {
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                             </span>
                             <p class=""> <span class="voucher_av">Vouchers Available <b> 4/10</b></span> </p>
-                            <p class="vpvoucher_price2 my-0  "> Buy VP Voucher <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
-                            <p class="prev_price2 my-0"> <b>Initial Price</b> <s><?php echo $vendor->getOriginalPrice();?> €</s> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
-                            <p class="vp_discount my-0 ">You Save <?php echo $vendor->getDiscount();?>% </p>
-                            <p class="final_price2 my-0 mb-2"> Final Price <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></p>
+
+							<div class="row ">
+									<div class="col d-flex nowrap buyvp_label"> Buy VP Voucher </div>
+									<div class="col buyvp_value"> <b><?php echo $vendor->getPriceAdult();?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span></div>
+								</div>
+
+								<div class="row">
+									<div class="col"> From </div>
+									<div class="col from_price"> <?php echo $vendor->getOriginalPrice();?> € </div>
+								</div>
+
+								<div class="row">
+									<div class="col"> Pay </div>
+									<div class="col pay_value"> <b><?php echo $totalToPay;?>€ </b> <span class="perperson"><?php echo ($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for '.$vendor->getForHowManyPersonsIs().' participants')?></span> </div>
+								</div>
+
+								<div class="row">
+									<div class="col">  <p class="vp_discount my-0 ">Save  <?php echo $vendor->getDiscount();?>% in total</p></div>
+
+								</div>
+
                             <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > Book Now  </div></a>
                         </div>
                     </div>
@@ -189,11 +226,11 @@ if (count($vendors) <= 0) {
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
-						<li><a href="#0"><i class="ti-facebook"></i></a></li>
-						<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
-						<li><a href="#0"><i class="ti-google"></i></a></li>
-						<li><a href="#0"><i class="ti-pinterest"></i></a></li>
-						<li><a href="#0"><i class="ti-instagram"></i></a></li>
+                        <li><a><i class="ti-facebook"></i></a></li>
+                        <li><a><i class="ti-instagram"></i></a></li>
+                        <!--						<li><a><i class="ti-twitter-alt"></i></a></li>-->
+                        <!--						<li><a><i class="ti-google"></i></a></li>-->
+                        <!--						<li><a><i class="ti-pinterest"></i></a></li>-->
 					</ul>
 				</div>
 			</div>

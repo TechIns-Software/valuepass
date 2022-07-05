@@ -3925,11 +3925,41 @@ a.box_feat h3 {
   font-weight: 700;
 }
 
-.vp_discount {
-  color: red;
+/* LATEST LAYOUT OF VOUCHER DISPLAY PRICES START */
+.buyvp_label{
+  background-color: rgba(255, 255, 0, 0.671);
+  color: #121921;
   font-weight: 700;
-  font-size: 1em;
+  word-wrap:break-word!important;
+  white-space: nowrap!important;
 }
+
+.buyvp_value{
+  background-color: rgba(255, 255, 0, 0.671);
+  color: #121921;
+  font-weight: 700;
+}
+
+.from_price{
+text-decoration: line-through;
+font-weight: 700;
+color: #121921;
+}
+
+.pay_value b{
+  color:   #FF5533;
+  font-weight: 700;
+}
+
+
+
+.vp_discount {
+  color:   #FF5533 ;
+  font-weight: 700;
+  font-size: .9em;
+}
+/* LATEST LAYOUT OF VOUCHER DISPLAY PRICES  END*/
+
 
 .final_price1 {
   width: fit-content;
@@ -11009,6 +11039,22 @@ box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
   margin: 1em 3em;
 }
 
+
+.bgbanner2 {
+
+  /* background: rgb(17, 96, 183);
+  background: linear-gradient(209deg,
+      rgba(17, 96, 183, 0.8) 4%,
+      rgba(38, 227, 212, 0.8) 81%); */
+
+  background: rgb(255,85,51);
+  background: linear-gradient(209deg, rgba(255,85,51,0.9612219887955182) 4%, rgba(255,71,35,0.8883928571428571) 81%);
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+
+  border-radius: 2em;
+  margin: 1em 3em;
+}
 .destbannertext{
   font-size: 1.3em;
   font-weight: 500;
@@ -11156,17 +11202,116 @@ box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
   color: black!important;
 }
 
+
+
+
+
+
 .banner_title{
+  margin: 0!important;
+  padding: 2em  1em!important;
+  text-align: center;
+  line-height:2em!important;
+
+  color: white!important;
+  word-wrap:break-word!important;
+  white-space: nowrap;
+}
+
+
+
+.banner_title p{
+  font-family:  Poppins, Helvetica, sans-serif;
+  font-size: 2em !important;
+  font-weight: 600!important;
+  margin: 0!important;
+  padding: 0!important;
+  
+}
+
+@media only screen and (max-width: 559px){
+
+  .banner_title p{
+    font-size: 1.4em !important;
+    font-weight: 400!important;
+  }
+}
+
+@media only screen and (max-width: 400px){
+
+  .banner_title p{
+    font-size: 1em !important;
+    font-weight: 400!important;
+  }
+}
+
+@media only screen and (max-width: 315px){
+
+  .banner_title p{
+    font-size: .8em !important;
+    font-weight: 400!important;
+  }
+}
+
+
+
+.banner_title2{
+  margin: 0!important;
+  padding: 2em  1em!important;
+  text-align: center;
+  line-height:2.5em!important;
+
+  color: white!important;
+  word-wrap:break-word!important;
+  white-space: nowrap;
+}
+
+.banner_title2 p{
+  font-family:  Poppins, Helvetica, sans-serif;
+  font-size: 2em !important;
+  font-weight: 600!important;
+  margin: 0!important;
+  padding: 0!important;
+
+}
+
+
+.banner_title3{
   text-align: center;
 }
 
-.banner_title h2{
+.banner_title3 h2{
   color: white;
 }
 
-.banner_title p {
+.banner_title3 p {
   color:  #004d88;
 }
+
+@media only screen and (max-width: 559px){
+
+  .banner_title2 p{
+    font-size: 1.4em !important;
+    font-weight: 400!important;
+  }
+}
+
+@media only screen and (max-width: 400px){
+
+  .banner_title2 p{
+    font-size: 1em !important;
+    font-weight: 400!important;
+  }
+}
+
+@media only screen and (max-width: 315px){
+
+  .banner_title2 p{
+    font-size: .8em !important;
+    font-weight: 400!important;
+  }
+}
+
 
 .novoucherincard{
   /* background-color: #0a53be; */

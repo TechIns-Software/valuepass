@@ -21,7 +21,7 @@ $destinations = getDestinations($conn, $idLanguage);
 					<img src="assets/img/slider_images/1small.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 					<div class="rev-slider-mask"></div>
 					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['50','43','30','25']" data-lineheight="['70','45','35','30']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Spend less <br>  doing more</div>
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['50','43','40','25']" data-lineheight="['70','45','60','30']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Spend less <br>  doing more</div>
 					<!-- btn layer -->
 					<a class="tp-caption tp-resizeme rs-btn btn_1" href="#how" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
 					</a>
@@ -42,7 +42,7 @@ $destinations = getDestinations($conn, $idLanguage);
 				<!-- start slide 03 -->
 				<li data-index="rs-75" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="03" data-param1="03" data-description="">
 					<!-- main image -->
-					<img src="assets/img/slider_images/happy2.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+					<img src="assets/img/slider_images/3small.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
 					<div class="rev-slider-mask"></div>
 
@@ -63,8 +63,9 @@ $destinations = getDestinations($conn, $idLanguage);
 
 	<div class="bg_color_1 shadow bgbanner">
 		<div class="container container-custom margin_80_55 ">
-			<div class="banner_title">
+			<div class="banner_title3">
 				<h2>ValuePass Offers are only Available Onboard</h2>
+
 				<p class="fs-2"> <strong> Don't Miss it</strong></p>
 			</div>
 
@@ -78,7 +79,7 @@ $destinations = getDestinations($conn, $idLanguage);
 		<div class="main_title_2">
 			<span><em></em></span>
 			<h2> <b> Why ValuePass </b></h2>
-			<p>Spend less money doing it more</p>
+			<p>Spend less doing more…</p>
 
 		</div>
 		<div class="row">
@@ -103,7 +104,8 @@ $destinations = getDestinations($conn, $idLanguage);
 					<!-- <i class="pe-7s-culture"></i> -->
 					<object class="SvgImage" data="assets/icons/spring.svg" type="image/svg+xml"></object>
 					<h3>Flexible </h3>
-					<p>Free Cancellation, Re-scheduling & Payment Options</p>
+					<p>Free Cancellation,  Payment Options & Re-scheduling  </p>
+                    <b data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?" >Read More</b>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
@@ -137,7 +139,7 @@ $destinations = getDestinations($conn, $idLanguage);
 			<div class="main_title_2">
 				<span><em></em></span>
 				<h2>Destinations</h2>
-				<p>Check here the available destinations</p>
+				<p>Create your bucket list on board!</p>
 			</div>
 
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
@@ -198,10 +200,11 @@ $destinations = getDestinations($conn, $idLanguage);
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
 						<li><a><i class="ti-facebook"></i></a></li>
-						<li><a><i class="ti-twitter-alt"></i></a></li>
-						<li><a><i class="ti-google"></i></a></li>
-						<li><a><i class="ti-pinterest"></i></a></li>
-						<li><a><i class="ti-instagram"></i></a></li>
+                        <li><a><i class="ti-instagram"></i></a></li>
+<!--						<li><a><i class="ti-twitter-alt"></i></a></li>-->
+<!--						<li><a><i class="ti-google"></i></a></li>-->
+<!--						<li><a><i class="ti-pinterest"></i></a></li>-->
+
 					</ul>
 				</div>
 			</div>
