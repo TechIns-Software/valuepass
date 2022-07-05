@@ -234,9 +234,9 @@ Yes / No (Check your activity voucher once you book for full details)</p>
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
 				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
-				<p>Escape the tourist traps with unforgettable travel experiences . Get beneath the surface of these destinations .
-					All our proposals are hand-picked by our team! . </p>
-				<b> Get inspired for your next trip </b>
+                <p>Escape the tourist traps with unforgettable travel experiences.<br> Get beneath the surface of these destinations.<br>
+                    All our proposals are hand-picked by our team! </p>
+                <b> Get inspired for your next trip </b>
 
 				<div class="follow_us">
 					<ul>
