@@ -11342,3 +11342,7 @@ width: fit-content;
 .dissapear{
   display: none;
 }
+
+.custom-pop{
+  cursor: pointer;
+}

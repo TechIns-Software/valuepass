@@ -105,7 +105,9 @@ $destinations = getDestinations($conn, $idLanguage);
 					<object class="SvgImage" data="assets/icons/spring.svg" type="image/svg+xml"></object>
 					<h3>Flexible </h3>
 					<p>Free Cancellation,  Payment Options & Re-scheduling  </p>
-                    <b data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?" >Read More</b>
+                    <b class="custom-pop" data-container="body" data-toggle="popover" data-placement="top" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="ValuePass vouchers are not canceled, but we are always looking to offer you the best alternative solutions regarding the activity providers we promote if something goes wrong.
+            You'll find more information in your confirmation email
+" >Read More</b>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6">
@@ -115,6 +117,7 @@ $destinations = getDestinations($conn, $idLanguage);
 					<p> Control everything easily from your smartphone. <br> Receive detailed info at your preferred e-mail</p>
 				</a>
 			</div>
+
 			<div class="col-lg-4 col-md-6">
 				<a class="box_feat">
 				<object class="SvgImage" data="assets/icons/credit-card.svg" type="image/svg+xml"></object>
@@ -431,6 +434,17 @@ $destinations = getDestinations($conn, $idLanguage);
 		}
 	});
 </script>
+
+<script src="assets/js/popper.min.js"></script>
+
+<script>
+        $(function () {
+  $('[data-toggle="popover"]').popover();
+
+});
+
+
+    </script>
 
 
 <script src="changeLanguage.js"></script>
