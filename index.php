@@ -446,7 +446,7 @@ $destinations = getDestinations($conn, $idLanguage);
 
     </script>
 
-
+<script></script>
 <script src="changeLanguage.js"></script>
 
 
