@@ -14,178 +14,168 @@ $destinations = getDestinations($conn, $idLanguage);
 	<div id="how" class="container margin_80_55">
 		<div class="main_title_2">
 			<h1> <b>How it works </b></h1>
-			<p>Learn how you can spend  less money and  doing it more</p>
+			<p>Learn how you can spend less money and doing it more</p>
 		</div>
 
 	</div>
 
-	<div class="bg_color_1">
-		<div class="container margin_80_55">
-			<div class="main_title_2">
-				<h2> <b>Step 1</b></h2>
-				<p>Choose your Destination</p>
-				<span><em></em></span>
 
-				<div class="row">
-
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Syros</h3>
-					</div>
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Tinos</h3>
-					</div>
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Mykonos</h3>
-					</div>
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Paros</h3>
-					</div>
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Naxos</h3>
-					</div>
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Santorini</h3>
-					</div>
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Chania-Crete</h3>
-					</div>
-					<div class="col-lg-4 col-md-6 col-6">
-						<h3 class="text-muted">Athens</h3>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="container-fluid margin_80_55">
-		<div class="main_title_2">
-			<h2> <b>Step 2</b></h2>
-			<p class="m-1">Choose your experience / Book your seat / Choose your schedule / Add to cart</p>
-			<p class="m-1">All of our suppliers have met the seven quality standards of our rating:</p>
-			<span><em></em></span>
+	<section id="questions" class="section">
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 ">
-					<h3>1. Customer Service Quality</h3>
-				</div>
-				<div class="col-lg-12">
-					<h3>2. Personalization & Flexibility</h3>
-				</div>
-				<div class="col-lg-12">
-					<h3>3. Safety & Sanitary Standards (Covid-19 included)</h3>
-				</div>
-				<div class="col-lg-12">
-					<h3>4. Quality of Materials</h3>
-				</div>
-				<div class="col-lg-12">
-					<h3>5. Ethical Labor Practices</h3>
-				</div>
-				<div class="col-lg-12">
-					<h3>6. Environmental Responsibility</h3>
-				</div>
-				<div class="col-lg-12">
-					<h3>7. Respect for Local Cultures</h3>
+				<!--Start Accordion-->
+				<div class="col-12">
+					<div class="panel-group accordion-main" id="accordion">
+
+						<!--About accordion #9-->
+
+						<div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="true" aria-controls="collapseExample">
+							<h6 class="panel-title accordion-toggle">
+								<b>Step 1. </b> Choose your Destination
+							</h6>
+						</div>
+						<div id="collapse1" class=" collapse">
+							<div class="panel-body">
+								<div class="row p-4">
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Syros</h3>
+									</div>
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Tinos</h3>
+									</div>
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Mykonos</h3>
+									</div>
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Paros</h3>
+									</div>
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Naxos</h3>
+									</div>
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Santorini</h3>
+									</div>
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Chania-Crete</h3>
+									</div>
+									<div class="col-lg-4 col-md-6 col-6">
+										<h3 class="text-muted">Athens</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="true" aria-controls="collapseExample">
+							<h6 class="panel-title accordion-toggle">
+								<b>Step 2. </b> Choose your experience / Book your activity / Choose your schedule / Add to the cart
+							</h6>
+						</div>
+						<div id="collapse2" class=" collapse">
+							<div class="panel-body px-4">
+
+								<p> • Buy your vouchers on board reserve your spot, and pay the provider with a discount when you arrive at your activity location. (Check your activity voucher once you book for full details). </p>
+							</div>
+						</div>
+
+
+
+						<div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3" role="button" aria-expanded="true" aria-controls="collapseExample">
+							<h6 class="panel-title accordion-toggle">
+								<b>Step 3. </b> Buy at least two (2) Vouchers with 3 or more you get for free vouchers and your presents never end!
+							</h6>
+
+						</div>
+						<div id="collapse3" class=" collapse">
+							<div class="panel-body">
+								<div class="row px-4">
+									<p class="m-0"> Save from 20% to 30% discount on the initial price </p>
+
+									<h6> <i class="fa-solid fa-money-bill"></i> 3 Vouchers from + extra <b> 1 </b> free Voucher </h6>
+
+
+									<h6> <i class="fa-solid fa-money-bill"></i> 4 Vouchers from + extra <b>2 </b> free Voucher </h6>
+
+
+									<h6> <i class="fa-solid fa-money-bill"></i> 5 Vouchers from + extra <b> 3</b> free Voucher </h6>
+
+
+									<h6> <i class="fa-solid fa-money-bill"></i> 6 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+
+
+									<h6> <i class="fa-solid fa-money-bill"></i> 7 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+
+								</div>
+
+							</div>
+						</div>
+
+
+						<div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4" role="button" aria-expanded="true" aria-controls="collapseExample">
+							<h6 class="panel-title accordion-toggle">
+								<b>Step 4. </b> Enter your name, phone number, and email address here.
+							</h6>
+						</div>
+						<div id="collapse4" class=" collapse">
+							<div class="panel-body">
+								<div class="row px-4">
+									<p class="m-0"> <b> Name : </b> </p>
+									<p class="m-0"> <b> Phone: </b> <small>(all calls are made through Viber, Whatsapp, or other free calling apps unless otherwise stated)</small> </p>
+									<p class="m-0"> <b> Email : </b> </p>
+									<ul>
+										<li> • By signing up, I agree to receiving email updates in accordance with ValuePass privacy policy.</li>
+										<li> • We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email).</li>
+										<li> • Do you like to receive new offers in your email for the following month? (optional)
+											Yes / No (Check your activity voucher once you book for full details)</li>
+									</ul>
+
+								</div>
+
+							</div>
+						</div>
+
+						<div class="panel-heading collapsed  " data-bs-toggle="collapse" href="#collapse5" role="button" aria-expanded="true" aria-controls="collapseExample">
+							<h6 class="panel-title accordion-toggle">
+								<b>Step 5. </b> Pay with your credit card and receive the QR code and all needed information in your email <small> (Supplier Information – Contact Details + Google Maps Location Pin, etc.)</small>
+							</h6>
+						</div>
+						<div id="collapse5" class=" collapse">
+							<div class="panel-body">
+								<div class="row px-4">
+									<ul>
+										<li> • If you are unable to attend the attraction, you must cancel it at least from 12 hours to 24 hours in advance, depending on the activity provider. (Check your activity voucher once you book for full details)</li>
+										<li> • We would like to inform you that your credit card details are immediately deleted at the end of the payment process. </li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+
+
+
+
+
+					</div>
+					<!--/.row-->
 				</div>
 			</div>
 		</div>
-	</div>
+		<!--/.container-->
+		</div>
+	</section>
 
 
-	<div class="bg_color_1 ">
-		<div class="container margin_80_55">
+	<div class="container container-custom margin_80_55 col-lg-12 ">
+		<section class="add_bottom_45">
 			<div class="main_title_2">
-				<h2> <b>Step 3</b></h2>
-				<p>Buy at least two (2) Vouchers and save from 20% to 30% discount the initial price</p>
 				<span><em></em></span>
-				<div class="row">
-
-					<div class="col-lg-12 my-1 ">
-						<h4> <i class="fa-solid fa-money-bill"></i>  3 Vouchers from + extra <b> 1 </b> free Voucher </h4>
-					</div>
-					<div class="col-lg-12 my-1">
-						 <h4>  <i class="fa-solid fa-money-bill"></i> 4 Vouchers from + extra <b>2 </b> free Voucher </h4>
-					</div>
-					<div class="col-lg-12 my-1">
-						<h4> <i class="fa-solid fa-money-bill"></i>  5 Vouchers from + extra <b> 3</b> free Voucher </h4>
-					</div>
-					<div class="col-lg-12 my-1">
-						<h4> <i class="fa-solid fa-money-bill"></i> 6 Vouchers from + extra <b> 4 </b> free Voucher </h4>
-					</div>
-					<div class="col-lg-12 my-1">
-						<h4> <i class="fa-solid fa-money-bill"></i> 7 Vouchers from + extra <b> 4 </b> free Voucher </h4>
-					</div>
-
-				</div>
+				<h2>Destinations</h2>
+				<p>Check here the available destinations</p>
 			</div>
-		</div>
-	</div>
 
+			<div id="reccomended_adventure" class="owl-carousel owl-theme">
 
-
-	<div class="container margin_80_55">
-		<div class="main_title_2">
-			<h2> <b>Step 4</b></h2>
-			<p> Enter your name, phone number, and email address here <br> </p>
-			<span><em></em></span>
-			<div class="row ">
-				<div class="col-3  "></div>
-				<div class="col-lg-6  text-center "> 
-					<p>Before you start the process, you must accept the Terms and Conditions. Enter your <b>Name</b> , your <b> Phone</b> and your <b>Email</b></p>
-				 </div>
-				 <div class="col-3"> </div>
-				 <div class="col-12"> <p> By signing up, I agree to receiving email updates in accordance with ValuePass privacy policy.</p>
-				 <p> We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email).</p>
-				 <p> Do you like to receive new offers in your email for the following month? (optional)
-Yes / No (Check your activity voucher once you book for full details)</p>
-				
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-
-	<div class="bg_color_1 ">
-		<div class="container margin_80_55">
-			<div class="main_title_2">
-				<h2> <b>Step 5</b></h2>
-				<p>Pay with your credit card and receive the QR code and all needed information to your email (Supplier Information – Contact Details + Google Maps Location Pin)</p>
-				<span><em></em></span>
-				<div class="row">
-
-					<div class="col-lg-12 my-1 ">
-						<p>  Buying VP Voucher, you Reserve Now your Spot & Pay Later for your Activity with Discount when you arrive. <b> (Check your activity voucher once you book for full details) </b> </p>
-					</div>
-					<div class="col-lg-12 my-1">
-						 <p>   Pay for the experience when you reach your destination and supplier and some attractions may require payment at least 24 hours prior to the start time <b> (Check your activity voucher once you book for full details) </b></p>
-					</div>
-					<div class="col-lg-12 my-1">
-						<p > If you are unable to attend the attraction, you must cancel it at least 24 hours in advance. <b>(Check your activity voucher once you book for full details) </b>  </p>
-					</div>
-					<div class="col-lg-12 my-1">
-						<p>  We would like to inform you that at the end of the payment process, your credit card details are immediately destroyed.</p>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	
-		<div class="container container-custom margin_80_55 col-lg-12 ">
-			<section class="add_bottom_45">
-				<div class="main_title_2">
-					<span><em></em></span>
-					<h2>Destinations</h2>
-					<p>Check here the available destinations</p>
-				</div>
-
-				<div id="reccomended_adventure" class="owl-carousel owl-theme">
-
-					<!-- version 1 carsouel ready css
+				<!-- version 1 carsouel ready css
 						<div class="item">
 							<a href="adventure-detail.html" class="grid_item_adventure">
 								<figure>
@@ -198,32 +188,32 @@ Yes / No (Check your activity voucher once you book for full details)</p>
 								</figure>
 							</a>
 						</div>  -->
-					<?php
-					foreach ($destinations as $destination) {
-					?>
-						<div class="item" onclick="location.href='./adventures.php?id=<?php echo $destination->getId(); ?>';">
-							<div class="card text-white card-has-bg click-col" style="background-image:url('images/location_images/<?php echo $destination->getImage1(); ?>');">
-								<!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
-								<div class="card-img-overlay d-flex flex-column">
-									<div class="card-body">
-									</div>
-									<div class="card-footer">
-										<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a></h4>
-										<small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> Activities</small>
-									</div>
+				<?php
+				foreach ($destinations as $destination) {
+				?>
+					<div class="item" onclick="location.href='./adventures.php?id=<?php echo $destination->getId(); ?>';">
+						<div class="card text-white card-has-bg click-col" style="background-image:url('images/location_images/<?php echo $destination->getImage1(); ?>');">
+							<!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="card-body">
+								</div>
+								<div class="card-footer">
+									<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a></h4>
+									<small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> Activities</small>
 								</div>
 							</div>
 						</div>
-					<?php
-					}
-					?>
+					</div>
+				<?php
+				}
+				?>
 
 
 
-				</div>
+			</div>
 
-			</section>
-		</div>
+		</section>
+	</div>
 
 
 </main>
@@ -234,9 +224,9 @@ Yes / No (Check your activity voucher once you book for full details)</p>
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
 				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
-                <p>Escape the tourist traps with unforgettable travel experiences.<br> Get beneath the surface of these destinations.<br>
-                    All our proposals are hand-picked by our team! </p>
-                <b> Get inspired for your next trip </b>
+				<p>Escape the tourist traps with unforgettable travel experiences.<br> Get beneath the surface of these destinations.<br>
+					All our proposals are hand-picked by our team! </p>
+				<b> Get inspired for your next trip </b>
 
 				<div class="follow_us">
 					<ul>
@@ -363,7 +353,7 @@ Yes / No (Check your activity voucher once you book for full details)</p>
 <script src="assets/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
 <script src="assets/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="assets/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
-<!-- <script src="assets/js/revapi44.js"></script> -->
+<script src="assets/js/revapi44.js"></script>
 
 <script>
 	var tpj = jQuery;
@@ -472,6 +462,8 @@ Yes / No (Check your activity voucher once you book for full details)</p>
 		}
 	});
 </script>
+
+
 
 
 <script src="changeLanguage.js"></script>

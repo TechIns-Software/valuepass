@@ -3512,6 +3512,7 @@ a.box_feat {
   border-radius: 3px;
   overflow: hidden;
   border-radius: 5em;
+  min-height: 350px!important;
 }
 
 @media (max-width: 767px) {
@@ -11346,3 +11347,111 @@ width: fit-content;
 .custom-pop{
   cursor: pointer;
 }
+
+
+/*end news*/
+/*-----------------------------------------------------------------*/
+/*  Why Choose Us - questions section
+/*-----------------------------------------------------------------*/
+
+
+#why-choose {
+  background:#FBFBFB;
+}
+
+.tabs-main {
+  padding-right: 15px;
+  margin-bottom:30px;
+}
+
+.accordion-main {
+  padding-left: 15px;
+  margin-bottom:30px;
+}
+
+.tabs .nav-tabs li a {
+  border-radius:1px;
+  color:#272727;
+  font-weight: 700;
+  font-size: 16px;
+  padding:8px 16px;
+  background:#F3F0F0;
+  border-top:2px solid #F3F0F0;
+}
+
+.tabs .nav-tabs li.active a {
+  border-top: 2px solid #7EC13F;
+  background: #FFF;
+  color: #272727;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: none;
+}
+
+.tabs .nav-tabs li a:hover {
+  background:#ededed;
+}
+
+.tabs .nav-tabs li.active a:hover {
+  background:#FFF;
+}
+
+.tabs .tab-content {
+  border:1px solid #dbdbdb;
+  border-top:none;
+  padding:25px 15px;
+  font-size:14px;
+  color:#a9a9a9;
+}
+
+.panel-group .panel-heading {
+  cursor: pointer;
+  padding: 15px 15px;
+}
+
+.panel-body ul li {
+  margin-bottom:5px;
+  line-height:20px;
+  font-weight:300;
+}
+
+.panel-body ul li i {
+  margin-right:5px;
+}
+
+.panel-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #272727;
+  text-transform: none;
+}
+
+.panel-group .panel {
+  background: rgba(243, 243, 243, 0.59);
+  border: 1px solid #F0EDED;
+  margin-bottom: 20px;
+  border-radius: 0px;
+  box-shadow: 0px 1px 0px #CCC;
+}
+
+.panel-group .panel-body {
+  border: none;
+}
+
+
+#accordion .accordion-toggle:after {
+  /* symbol for "opening" panels */
+  font-family:'FontAwesome';
+  content:"\f068";
+  float: right;
+  color: #393535;
+  font-size: 12px;
+}
+
+#accordion .panel-heading.collapsed .accordion-toggle:after {
+  /* symbol for "collapsed" panels */
+  content:"\f067";
+}
+/*questions end*/
+
+

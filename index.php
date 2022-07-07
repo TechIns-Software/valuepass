@@ -21,10 +21,12 @@ $destinations = getDestinations($conn, $idLanguage);
 					<img src="assets/img/slider_images/1small.jpg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 					<div class="rev-slider-mask"></div>
 					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['50','43','40','25']" data-lineheight="['70','45','60','30']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Spend less <br>  doing more</div>
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-01" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['50','43','40','25']" data-lineheight="['70','45','60','30']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Spend less <br> doing more</div>
 					<!-- btn layer -->
-					<a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-03" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-03" data-bs-toggle="modal" data-bs-target="#howitworks" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
 					</a>
+
+
 				</li>
 				<!-- end slide 01 -->
 				<!-- start slide 02 -->
@@ -35,7 +37,7 @@ $destinations = getDestinations($conn, $idLanguage);
 					<!-- main text layer -->
 					<div class="tp-caption tp-resizeme alt-font text-white font-weight-600 text-center" id="slide-411-layer-04" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> Discover authentic experiences <br> with a single click! </div>
 					<!-- btn layer -->
-					<a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-06" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']">How it works
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-06" data-bs-toggle="modal" data-bs-target="#howitworks" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']">How it works
 					</a>
 				</li>
 				<!-- end slide 02 -->
@@ -47,11 +49,11 @@ $destinations = getDestinations($conn, $idLanguage);
 					<div class="rev-slider-mask"></div>
 
 					<!-- main text layer -->
-					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Explore hand-picked gems <br> at your ease!  
+					<div class="tp-caption tp-resizeme text-white text-center" id="slide-411-layer-07" data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto" data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']" data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off" data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']" data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']" style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Explore hand-picked gems <br> at your ease!
 					</div>
 
 					<!-- btn layer -->
-					<a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-09" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
+					<a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-09" data-bs-toggle="modal" data-bs-target="#howitworks" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']" data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off" data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']">How it works
 					</a>
 				</li>
 				<!-- end slide 03 -->
@@ -83,51 +85,75 @@ $destinations = getDestinations($conn, $idLanguage);
 
 		</div>
 		<div class="row">
-			<div class="col-lg-4 col-md-6">
-				<a class="box_feat">
+			<div class="col-lg-4 col-md-6  " >
+				<a class="box_feat ">
 					<!-- <i class="pe-7s-medal"></i> -->
 					<object class="SvgImage" data="assets/icons/fingerprint.svg" type="image/svg+xml"></object>
 					<h3>Personalized </h3>
 					<p>Pick your destination, attraction, schedule and create your own bucket list</p>
 				</a>
 			</div>
-			
-			<div class="col-lg-4 col-md-6">
+
+			<div class="col-lg-4 col-md-6  " >
 				<a class="box_feat">
-				<object class="SvgImage" data="assets/icons/gift.svg" type="image/svg+xml"></object>
+					<object class="SvgImage" data="assets/icons/gift.svg" type="image/svg+xml"></object>
 					<h3> Pampered </h3>
-                    <p>We always have a present for you. <br><?php echo $menu[13] ?></p>
+					<p>We always have a present for you. <br><?php echo $menu[13] ?></p>
+					<!-- Button trigger modal -->
+					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Read More</b>
 				</a>
 			</div>
-			<div class="col-lg-4 col-md-6">
+
+
+
+
+			<div class="col-lg-4 col-md-6 " >
 				<a class="box_feat">
 					<!-- <i class="pe-7s-culture"></i> -->
 					<object class="SvgImage" data="assets/icons/spring.svg" type="image/svg+xml"></object>
 					<h3>Flexible </h3>
-					<p>Free Cancellation,  Payment Options & Re-scheduling  </p>
-                    <b class="custom-pop" data-container="body" data-toggle="popover" data-placement="top" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="ValuePass vouchers are not canceled, but we are always looking to offer you the best alternative solutions regarding the activity providers we promote if something goes wrong.
-            You'll find more information in your confirmation email
-" >Read More</b>
+					<p>Free Cancellation, Payment Options & Re-scheduling </p>
+					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Read More</b>
 				</a>
 			</div>
-			<div class="col-lg-4 col-md-6">
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+				<div style="min-height: 120px;"></div>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel1">Flexible Info</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+
+							<p> ValuePass vouchers are not canceled, but we are always looking to offer you the best alternative solutions regarding the activity providers we promote if something goes wrong. You'll find more information in your confirmation email</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
-				<object class="SvgImage" data="assets/icons/smartphone.svg" type="image/svg+xml"></object>
+					<object class="SvgImage" data="assets/icons/smartphone.svg" type="image/svg+xml"></object>
 					<h3>Convenient </h3>
 					<p> Control everything easily from your smartphone. <br> Receive detailed info at your preferred e-mail</p>
 				</a>
 			</div>
 
-			<div class="col-lg-4 col-md-6">
+
+
+			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
-				<object class="SvgImage" data="assets/icons/credit-card.svg" type="image/svg+xml"></object>
+					<object class="SvgImage" data="assets/icons/credit-card.svg" type="image/svg+xml"></object>
 					<h3>Secured </h3>
 					<p>Highly secured payment procedure</p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
-				<object class="SvgImage" data="assets/icons/support.svg" type="image/svg+xml"></object>
+					<object class="SvgImage" data="assets/icons/support.svg" type="image/svg+xml"></object>
 					<h3>Supportive </h3>
 					<p>Ask everything you want to know. Our support team is here to answer every question </p>
 
@@ -136,6 +162,37 @@ $destinations = getDestinations($conn, $idLanguage);
 		</div>
 
 	</div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div style="min-height: 120px;"></div>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel"> Pampered Info : <small> Save from 20% to 30% discount on the initial price </small> </h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+
+							<div class="col-lg-12 my-1 ">
+								<h6> 3 Vouchers from + extra <b> 1 </b> free Voucher </h6>
+							</div>
+							<div class="col-lg-12 my-1">
+								<h6> 4 Vouchers from + extra <b>2 </b> free Voucher </h6>
+							</div>
+							<div class="col-lg-12 my-1">
+								<h6> 5 Vouchers from + extra <b> 3</b> free Voucher </h6>
+							</div>
+							<div class="col-lg-12 my-1">
+								<h6> 6 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+							</div>
+							<div class="col-lg-12 my-1">
+								<h6> 7 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 	<div class="container container-custom margin_80_55 col-lg-12 ">
 		<section class="add_bottom_45">
@@ -196,17 +253,17 @@ $destinations = getDestinations($conn, $idLanguage);
 			<div class="col-lg-5 col-md-12 pe-5">
 				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
 				<p>Escape the tourist traps with unforgettable travel experiences.<br> Get beneath the surface of these destinations.<br>
-                    All our proposals are hand-picked by our team! </p>
+					All our proposals are hand-picked by our team! </p>
 				<b> Get inspired for your next trip </b>
 
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>
 						<li><a><i class="ti-facebook"></i></a></li>
-                        <li><a><i class="ti-instagram"></i></a></li>
-<!--						<li><a><i class="ti-twitter-alt"></i></a></li>-->
-<!--						<li><a><i class="ti-google"></i></a></li>-->
-<!--						<li><a><i class="ti-pinterest"></i></a></li>-->
+						<li><a><i class="ti-instagram"></i></a></li>
+						<!--						<li><a><i class="ti-twitter-alt"></i></a></li>-->
+						<!--						<li><a><i class="ti-google"></i></a></li>-->
+						<!--						<li><a><i class="ti-pinterest"></i></a></li>-->
 
 					</ul>
 				</div>
@@ -228,7 +285,7 @@ $destinations = getDestinations($conn, $idLanguage);
 
 					<li><a href="#"> <?php echo $menu[4] ?> </a></li>
 					<li><a href="cart-1.php"><?php echo $menu[7] ?></a></li>
-					
+
 
 				</ul>
 			</div>
@@ -257,6 +314,163 @@ $destinations = getDestinations($conn, $idLanguage);
 <!--/footer-->
 </div>
 <!-- page -->
+
+<!-- Modal -->
+<div class="modal fade" id="howitworks" tabindex="-1" aria-labelledby="howitworks" aria-hidden="true">
+	<div style="min-height: 120px;"></div>
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="howitworks">How it works </h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row">
+						<!--Start Accordion-->
+						<div class="col-12">
+							<div class="panel-group accordion-main" id="accordion">
+
+								<!--About accordion #9-->
+
+								<div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="true" aria-controls="collapseExample">
+									<h6 class="panel-title accordion-toggle">
+										<b>Step 1. </b> Choose your Destination
+									</h6>
+								</div>
+								<div id="collapse1" class=" collapse">
+									<div class="panel-body">
+										<div class="row p-4">
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Syros</h3>
+											</div>
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Tinos</h3>
+											</div>
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Mykonos</h3>
+											</div>
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Paros</h3>
+											</div>
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Naxos</h3>
+											</div>
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Santorini</h3>
+											</div>
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Chania-Crete</h3>
+											</div>
+											<div class="col-lg-4 col-md-6 col-6">
+												<h3 class="text-muted">Athens</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="true" aria-controls="collapseExample">
+									<h6 class="panel-title accordion-toggle">
+										<b>Step 2. </b> Choose your experience / Book your activity / Choose your schedule / Add to the cart
+									</h6>
+								</div>
+								<div id="collapse2" class=" collapse">
+									<div class="panel-body px-4">
+
+										<p> • Buy your vouchers on board reserve your spot, and pay the provider with a discount when you arrive at your activity location. (Check your activity voucher once you book for full details). </p>
+									</div>
+								</div>
+
+
+
+								<div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3" role="button" aria-expanded="true" aria-controls="collapseExample">
+									<h6 class="panel-title accordion-toggle">
+										<b>Step 3. </b> Buy at least two (2) Vouchers with 3 or more you get for free vouchers and your presents never end!
+									</h6>
+
+								</div>
+								<div id="collapse3" class=" collapse">
+									<div class="panel-body">
+										<div class="row px-4">
+											<p class="m-0"> Save from 20% to 30% discount on the initial price </p>
+
+											<h6> <i class="fa-solid fa-money-bill"></i> 3 Vouchers from + extra <b> 1 </b> free Voucher </h6>
+
+
+											<h6> <i class="fa-solid fa-money-bill"></i> 4 Vouchers from + extra <b>2 </b> free Voucher </h6>
+
+
+											<h6> <i class="fa-solid fa-money-bill"></i> 5 Vouchers from + extra <b> 3</b> free Voucher </h6>
+
+
+											<h6> <i class="fa-solid fa-money-bill"></i> 6 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+
+
+											<h6> <i class="fa-solid fa-money-bill"></i> 7 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+
+										</div>
+
+									</div>
+								</div>
+
+
+								<div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4" role="button" aria-expanded="true" aria-controls="collapseExample">
+									<h6 class="panel-title accordion-toggle">
+										<b>Step 4. </b> Enter your name, phone number, and email address here.
+									</h6>
+								</div>
+								<div id="collapse4" class=" collapse">
+									<div class="panel-body">
+										<div class="row px-4">
+											<p class="m-0"> <b> Name : </b> </p>
+											<p class="m-0"> <b> Phone: </b> <small>(all calls are made through Viber, Whatsapp, or other free calling apps unless otherwise stated)</small> </p>
+											<p class="m-0"> <b> Email : </b> </p>
+											<ul>
+												<li> • By signing up, I agree to receiving email updates in accordance with ValuePass privacy policy.</li>
+												<li> • We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email).</li>
+												<li> • Do you like to receive new offers in your email for the following month? (optional)
+													Yes / No (Check your activity voucher once you book for full details)</li>
+											</ul>
+
+										</div>
+
+									</div>
+								</div>
+
+								<div class="panel-heading collapsed  " data-bs-toggle="collapse" href="#collapse5" role="button" aria-expanded="true" aria-controls="collapseExample">
+									<h6 class="panel-title accordion-toggle">
+										<b>Step 5. </b> Pay with your credit card and receive the QR code and all needed information in your email <small> (Supplier Information – Contact Details + Google Maps Location Pin, etc.)</small>
+									</h6>
+								</div>
+								<div id="collapse5" class=" collapse">
+									<div class="panel-body">
+										<div class="row px-4">
+											<ul>
+												<li> • If you are unable to attend the attraction, you must cancel it at least from 12 hours to 24 hours in advance, depending on the activity provider. (Check your activity voucher once you book for full details)</li>
+												<li> • We would like to inform you that your credit card details are immediately deleted at the end of the payment process. </li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+
+
+
+
+
+							</div>
+							<!--/.row-->
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <!-- Sign In Popup -->
 <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
@@ -438,13 +652,11 @@ $destinations = getDestinations($conn, $idLanguage);
 <script src="assets/js/popper.min.js"></script>
 
 <script>
-        $(function () {
-  $('[data-toggle="popover"]').popover();
+	$(function() {
+		$('[data-toggle="popover"]').popover();
 
-});
-
-
-    </script>
+	});
+</script>
 
 <script></script>
 <script src="changeLanguage.js"></script>
