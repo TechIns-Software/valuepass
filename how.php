@@ -123,10 +123,9 @@ $destinations = getDestinations($conn, $idLanguage);
 									<p class="m-0"> <b> Phone: </b> <small>(all calls are made through Viber, Whatsapp, or other free calling apps unless otherwise stated)</small> </p>
 									<p class="m-0"> <b> Email : </b> </p>
 									<ul>
-										<li> • By signing up, I agree to receiving email updates in accordance with ValuePass privacy policy.</li>
-										<li> • We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email).</li>
-										<li> • Do you like to receive new offers in your email for the following month? (optional)
-											Yes / No (Check your activity voucher once you book for full details)</li>
+                                        <li> • By signing up, I agree that the activity provider may be informed of my booking via email under the ValuePass privacy policy</li>
+                                        <li> •	We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email).</li>
+                                        <li> • We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email)</li>
 									</ul>
 
 								</div>
