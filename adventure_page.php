@@ -280,24 +280,6 @@ if ($vendor == Null) {
 						<div class="col-lg-12 includes">
 
 
-						<div class="panel-group accordion-main my-2" id="accordion">
-								<!--About accordion #9-->
-								<div class="panel">
-									<div class="panel-heading  collapsed"  data-bs-toggle="collapse" href="#collapse5" role="button" aria-expanded="true" aria-controls="collapseExample">
-										<h6 class="panel-title accordion-toggle ">
-											Includes
-										</h6>
-									</div>
-									<div id="collapse5" class=" collapse">
-										<div class="panel-body px-2">
-											<p>
-												<?php echo $vendor->getDescriptionFull(); ?>
-											</p>
-
-										</div>
-									</div>
-								</div>
-							</div>
 
                             <div class="panel-group accordion-main my-2" id="accordion">
                                 <!--About accordion #9-->
