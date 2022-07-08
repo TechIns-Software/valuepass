@@ -11455,3 +11455,7 @@ width: fit-content;
 /*questions end*/
 
 
+.map_section{
+  width: 100%!important;
+  max-height: min-content!important;
+}
