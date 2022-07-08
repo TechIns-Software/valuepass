@@ -96,12 +96,23 @@ $paymentsInfos = GetAllPaymentInfos($conn);
                         <label for="numberOfPeoplePerVoucher" class="form-label">Πόσα άτομα αντιστοιχίζεται το Voucher</label>
                         <input type="number" value="1" name="numberOfPeoplePerVoucher" class="form-control" id="numberOfPeoplePerVoucher">
                     </div>
-                    <div class="col-sm-9 my-3">
+                    <div class="col-sm-5 my-3">
+                    <label class="custom-file-label" for="file">Φωτογραφία</label>
                         <input type="file" class="custom-file-input" id="file">
-                        <label class="custom-file-label" for="file">Φωτογραφία</label>
+                     
                     </div>
-                    <div class="col-sm-3 my-3">
-                        <button onclick="addImage(event);" class="form-control">Ανέβασμα</button>
+                    <div class="col-sm-5 my-3">
+                        <button onclick="addImage(event);" class="form-control">Ανέβασμα Φωτογραφίας</button>
+                    </div>
+
+
+                    <div class="col-sm-5 my-3">
+                    <label class="custom-file-label" for="filemap">Εικόνα Google Map</label>
+                        <input type="file" class="custom-file-input" id="filemap">
+                     
+                    </div>
+                    <div class="col-sm-5 my-3">
+                        <button onclick="addGoogleMapImage(event);" class="form-control">Ανέβασμα Εικόνας Google Map</button>
                     </div>
 
                 </div>

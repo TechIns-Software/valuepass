@@ -71,3 +71,30 @@ function addImage(event) {
         alert("Παρακαλώ επιλέξτε ένα αρχείο");
     }
 }
+
+
+
+function addGoogleMapImage(event) {
+    event.preventDefault();
+    var fd = new FormData();
+    var files = $('#filemap')[0].files;
+
+    // Check file selected or not
+    if (files.length > 0 ) {
+        canUploadImage = false;
+        fd.append('file',files[0]);
+        $.ajax({
+            url: 'uploadMapImageVendor.php',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                isImageUploaded = true;
+                alert("Η φωτογραφία ανέβηκε!");
+            },
+        });
+    } else {
+        alert("Παρακαλώ επιλέξτε ένα αρχείο");
+    }
+}

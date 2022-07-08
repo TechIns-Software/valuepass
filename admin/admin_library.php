@@ -210,13 +210,15 @@ function AddVendor1(
 )
 {
 
-    $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity`,  `imageBasic`, `forHowManyPersonsIs`)
-     VALUES (?,?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity`,  `imageBasic`, `forHowManyPersonsIs`,`googleMapsString`)
+     VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('idddddiisi', $destId, $priceAdult, $originalPrice, $discount,  $priceKid,
-        $infantPrice, $idCategory, $paymentCategoryId, $_SESSION['basicImage'], $howManyForVoucher);
+    $stmt->bind_param('idddddiisis', $destId, $priceAdult, $originalPrice, $discount,  $priceKid,
+        $infantPrice, $idCategory, $paymentCategoryId, $_SESSION['basicImage'], $howManyForVoucher,$_SESSION['mapImage']);
     if ($stmt->execute()) {
         unset($_SESSION['basicImage']);
+        unset($_SESSION['mapImage'] );
+        
         echo json_encode(["success", "Επιτυχής Προσθήκη Vendor"]);
     } else {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
