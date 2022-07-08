@@ -335,6 +335,7 @@ if ($vendor == Null) {
                                     </div>
                                     <div id="collapse7" class=" collapse">
                                         <div class="panel-body px-2" >
+											<img src="assets/img/map_exaple.png"  width="100%"  height="400" alt="map">
                                             <ul>
                                                 <?php
                                                 if (count($vendor->getImportantInformationArray()) > 0) {
