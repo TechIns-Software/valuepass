@@ -438,7 +438,7 @@ if ($vendor == Null) {
 								<a href="#">Adults <span class="qtyTotal">0</span></a>
 								<div class="panel-dropdown-content right">
 									<div class="qtyButtons">
-										<label>Adults <small> (11-99)</small></label>
+										<label>Adults <small> (13-99)</small></label>
 										<input id="adultsInput" type="text" name="qtyInput" value="0">
 									</div>
 									<div class="qtyButtons">
