@@ -1,0 +1,166 @@
+{
+  "update": true,
+  "languages": {
+    "1": {
+      "name": "English",
+      "icon": "englishClassCSS"
+    },
+    "2": {
+      "name": "Ελληνικά",
+      "icon": "greekClassCSS"
+    }
+  },
+
+  "destinations": {
+    "1": {
+      "version": 11,
+      "image1": {
+        "path": "absolutePath",
+        "version": 1
+      },
+      "image2": {
+        "path": "absolutePath",
+        "version": 1
+      },
+      "languages": {
+        "1": {
+          "name": "Mykonos",
+          "description": "description"
+        },
+        "2": {}
+      }
+    },
+    "2": {}
+  },
+  "categoryVendor": {
+    "1": {
+      "version": 1,
+      "languages": {
+        "1": {
+          "name": "WaterSport"
+        },
+        "2": {}
+      }
+    },
+    "2": {}
+  },
+  "paymentInfoActivity": {
+    "1": {
+      "version": 1,
+      "languages": {
+        "head": 1.1,
+        "description": "description"
+      }
+    },
+    "2": {}
+  },
+  "labelsBox": {
+    "1": {
+      "version": 1,
+      "languages": {
+        "1": {
+          "name": "3 hours"
+        },
+        "2": {}
+      }
+    },
+    "2": {}
+  },
+  "ratedCategory": {
+    "version": 1,
+    "1": {
+      "orderNumber": 1,
+      "languages": {
+        "1": {
+          "name": "Health"
+        },
+        "2": {}
+      }
+    }
+  },
+  "includedService": {
+    "1": {
+      "version": 1,
+      "icon": "icon",
+      "languages": {
+        "1": {
+          "name": "Επιδόρπιο"
+        },
+        "2": {}
+      }
+    },
+    "2": {}
+  },
+  "vendors": {
+    "1": {
+      "version": 1,
+      "isBestOff": true,
+      "idDestination": 1,
+      "priceAdult": 11.0,
+      "originalPrice": 70.0,
+      "discount": 30.0,
+      "priceKid": 30.0,
+      "infantPrice": 30.0,
+      "imageBasic": {
+        "path": "absolutePath",
+        "version": 1
+      },
+      "idCategory": 1,
+      "idPaymentInfo": 1,
+      "googleMapString": {
+        "path": "absolutePath",
+        "version": 1
+      },
+      "forHowManyPersonsIs": 1,
+      "labelsBox": [1,2,3,4],
+      "images": [
+        {
+          "path": "absolutePath",
+          "version": 1
+        },
+        {
+          "path": "absolutePath",
+          "version": 1
+        }
+      ],
+      "rated": {
+        "1": 5,
+        "7": 4
+      },
+      "includedServices": [1,2,3,4],
+      "languages": {
+        "1": {
+          "voucherMessage1": "message1",
+          "voucherMessage2": "message2",
+          "name": "Mykonos Paradise",
+          "descriptionBig": "ghj",
+          "descriptionFull": "ghj",
+          "highlights": [
+            "highlight1",
+            "highlight2"
+          ],
+          "aboutActivity": [
+            {
+              "head": "head",
+              "description": "description"
+            },
+            {}
+          ],
+          "importantInformation": [
+            {
+              "importantInformationHeadName": "Σημαντικές Πληροφορίες",
+              "descriptions": ["1","dfg"]
+            },
+            {}
+          ]
+        }
+      }
+    },
+    "2": {}
+  },
+
+
+
+  "version For each element": 2
+
+}
