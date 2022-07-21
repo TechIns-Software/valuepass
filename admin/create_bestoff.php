@@ -36,10 +36,10 @@ foreach ($bestof_idVendors as $bestof_idVendor) {
             <?php foreach ($AvailableExperiences as $AvailableExperience) { ?>
 
                 <div class="col-sm-3 my-2">
-                    <div class="card">
+                    <div class="card" style="height: 100%">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $AvailableExperience[1] ?></h5>
-                            <p class="card-text "> <?php echo $AvailableExperience[2] ?> </p>
+
                             <div class="form-check">
 
                                <?php if (in_array($AvailableExperience[0] , $checkedVendors)) { ?>

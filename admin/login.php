@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Panagea - Premium site template for travel agencies, hotels and restaurant listing.">
     <meta name="author" content="Ansonika">
-    <title>Panagea | Premium site template for travel agencies, hotels and restaurant listing.</title>
+    <title>Login to Admin Panel</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -59,7 +59,7 @@
 					<i class="icon_lock_alt"></i>
 				</div>
 
-                  <a href="#0" class="btn_1 rounded full-width" id="btnLogin">Login to Panagea</a>
+                  <a href="#0" class="btn_1 rounded full-width" id="btnLogin">Login </a>
 			</form>
 			<div class="copy">© Valuepass </div>
 		</aside>

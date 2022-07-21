@@ -505,15 +505,15 @@ function addSelectedLalels($conn, $idVendor, $idLabelsBox)
 
 function getAvailableExperiences($conn, $idLoc)
 {
-    $query = "SELECT v.id, vt.name ,vt.descriptionSmall FROM Vendor AS v, VendorTranslate AS vt WHERE v.id = vt.idVendor AND v.idDestination = $idLoc GROUP BY v.id ";
+    $query = "SELECT v.id, vt.name  FROM Vendor AS v, VendorTranslate AS vt WHERE v.id = vt.idVendor AND v.idDestination = $idLoc GROUP BY v.id ";
 
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $name = $description = '';
-    $stmt->bind_result($id, $name, $description);
+    $stmt->bind_result($id, $name);
     $availableExperiences = [];
     while ($stmt->fetch()) {
-        array_push($availableExperiences, [$id, $name, $description]);
+        array_push($availableExperiences, [$id, $name]);
     }
     $stmt->close();
 
