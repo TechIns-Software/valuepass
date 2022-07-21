@@ -137,6 +137,7 @@
       "includedServices": [1,2,3,4],
       "languages": {
         "1": {
+          "version": 1,
           "voucherMessage1": "message1",
           "voucherMessage2": "message2",
           "name": "Mykonos Paradise",
