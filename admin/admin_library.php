@@ -1,9 +1,14 @@
 <?php
 
 //Get all Languages
-function getAllLanguages($conn)
+function getAllLanguages($conn,$flag = false)
 {
-    $query = "Select * FROM Language WHERE id = 2;";
+    if ($flag == false ){
+        $query = "Select * FROM Language WHERE id = 2";
+    }else{
+        $query = "Select * FROM Language  ";
+    }
+
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $language = $icon = '';

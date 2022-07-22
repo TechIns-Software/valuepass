@@ -8,7 +8,7 @@ $title = "Προσθήκη Rated  Κατηγορίας";
 include_once "header.php";
 include 'admin_library.php';
 
-$languages =  getAllLanguages($conn);
+$languages =  getAllLanguages($conn,true);
 
 ?>
 

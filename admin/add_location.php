@@ -7,7 +7,7 @@ $title = "Προσθήκη Τοποθεσίας";
 include_once "header.php";
 include 'admin_library.php';
 
-$languages =  getAllLanguages($conn);
+$languages =  getAllLanguages($conn,true);
 
 // If destination id is set must be unset
 if (isset($_SESSION['DestinationId'])) {

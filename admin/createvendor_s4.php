@@ -17,7 +17,7 @@ $title = "Δημιουργία Vendor | Step  4";
 include_once "header.php";
 include 'admin_library.php';
 
-$languages = getAllLanguages($conn);
+$languages = getAllLanguages($conn,true);
 
 ?>
 
