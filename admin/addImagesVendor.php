@@ -5,8 +5,8 @@ if (!isset($conn)) {
 
 
 
-$title = "Προσθήκη Φωτογραφιών | Step  6" ;
-
+$title = "Προσθήκη Φωτογραφιών | Step  7" ;
+session_start();
 include_once "header.php";
 include 'admin_library.php';
 ?>
@@ -30,23 +30,35 @@ include 'admin_library.php';
 
             </div>
         </div>
+
+        <div class="col-md-12 my-5">
+            <h2 class="text-center border-bottom">Στοιχεία για Είσοδο Vendor</h2>
+
+            <h3 class="text-center">Username Vendor : <b><?php if (isset($_SESSION['vendor_username'])){
+                echo $_SESSION['vendor_username']; }else {
+                echo  "Username not available";
+                }; ?>
+
+
+            <h3 class="text-center">Password Vendor :<b> <?php  if  ( isset($_SESSION['vendor_password']) ){
+
+                        echo $_SESSION['vendor_password'];  }else{
+                        echo  "Password not available";
+                    }  ;?> </b> </h3>
+        </div>
         <div style="min-height: 25px;"></div>
-    </div>
-    <div class="container fixed-bottom">
+
         <div class="row">
-            <div class="col-sm-6">
-                <h2 class="text-center">Ολοκλήρωση</h2>
+
+            <div class="col-md-12">
+                <h2 class="text-center">Ολοκλήρωση Vendor</h2>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-12">
                 <div class="text-center">
                     <button onclick="vendorCreationEnd(event);" class="btn btn-secondary btn-lg">Επιβεβαίωση</button>
                 </div>
                 <div style="min-height: 150px;"></div>
             </div>
-        </div>
-
-        <div class="">
-
         </div>
     </div>
 </div>

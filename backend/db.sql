@@ -61,8 +61,7 @@ CREATE TABLE Vendor (
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity(id),
     isCompleted binary(1) DEFAULT 0,
     googleMapsString varchar(200) NOT NULL,
-    voucherMessage1 text,
-    voucherMessage2 text,
+
     infantPrice int,
     forHowManyPersonsIs int DEFAULT 1
     -- number,email,website,IBAN, personal message to them who take voucher
@@ -75,8 +74,22 @@ CREATE TABLE VendorTranslate (
     name varchar(100) NOT NULL,
     descriptionBig text NOT NULL,
     descriptionFull text NOT NULL
+    voucherMessage1 text,
+    voucherMessage2 text,
 
 )ENGINE=InnoDB;
+
+CREATE TABLE VendorLogin (
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+    username text NOT NULL,
+    password text NOT NULL,
+    email text,
+    phone text,
+)ENGINE=InnoDB;
+
+
+
 CREATE TABLE BestOff (
     id int NOT NULL AUTO_INCREMENT, -- not sure needed
     PRIMARY KEY (id),

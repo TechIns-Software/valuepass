@@ -309,6 +309,11 @@ try {
               // TODO :  CHANGE THE NUMBERVOUCHER ex 999 | We must find the last inserted  NUMBERVOUCHER
             addVoucherRules($conn,$_SESSION['vendorcreateid'],1 ,$day,$time,999);
             }
+            $vendor_username = random_password(4);
+            $_SESSION['vendor_username']  =  $_SESSION['vendorcreateid']."".$vendor_username;
+            $vendor_password = random_password(8);
+            $_SESSION['vendor_password'] =  $vendor_password."_". $_SESSION['vendorcreateid'];
+            addVendorPasswords($conn,$_SESSION['vendorcreateid'],$_SESSION['vendor_username'] , $_SESSION['vendor_password'] );
 
         }  else if ($_POST["action"] == "addVoucherRules" && $_POST["type"] == "oneDay" ){
             $voucherules_data = $_POST["voucherules"];
@@ -321,7 +326,13 @@ try {
                 $time =  $value;
               // TODO :  CHANGE THE NUMBERVOUCHER ex 999 | We must find the last inserted  NUMBERVOUCHER
             addVoucherRules($conn,$_SESSION['vendorcreateid'],0 ,$day,$time,999);
+
             }
+            $vendor_username = random_password(4);
+            $_SESSION['vendor_username']  =  $_SESSION['vendorcreateid']."".$vendor_username;
+            $vendor_password = random_password(8);
+            $_SESSION['vendor_password'] =  $vendor_password."_". $_SESSION['vendorcreateid'];
+            addVendorPasswords($conn,$_SESSION['vendorcreateid'],$_SESSION['vendor_username'] , $_SESSION['vendor_password'] );
 
         }  else if ($_POST["action"] == "adminLogin"){
             $credentials =  $_POST["data"];

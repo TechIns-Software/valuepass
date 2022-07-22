@@ -8,7 +8,7 @@ document.getElementById('createbtn5').addEventListener(
         const ajax2 = getNames();
         $.when(ajax1, ajax2).done(function () {
             if (flag) {
-                alert("Προχωρήστε στην εισαγωγή φωτογραφιών");
+                alert("Προχωρήστε στο επόμενο βήμα με τους κανόνες του voucher");
                 window.location.href = 'createvendor_s6.php';
             }
         });

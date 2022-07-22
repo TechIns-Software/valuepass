@@ -607,9 +607,9 @@ function checkLogin ($conn,$username,$password){
         echo json_encode(array('success' => 0));
     }else{
 
-        $_SESSION['admin'] =$loginUser[0][0];
-         $_SESSION['adminName'] =$loginUser[0][1];
-         $_SESSION['adminSurname'] =$loginUser[0][2];
+        $_SESSION['admin'] = $loginUser[0][0];
+         $_SESSION['adminName'] = $loginUser[0][1];
+         $_SESSION['adminSurname'] = $loginUser[0][2];
         echo json_encode(array('success' => 1));
     }
 
@@ -629,4 +629,19 @@ function checkLogin ($conn,$username,$password){
 //         header('location:index.php');
 //     }
     $stmt->close();
+}
+
+function addVendorPasswords($conn, $id, $username,$password)
+{
+    $query = "INSERT INTO `VendorLogin` (`idVendor`, `username`, `password` ) VALUES ( $id ,'$username','$password')";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+function random_password( $length = 7 ) {
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
+    $password = substr( str_shuffle( $chars ), 0, $length );
+    return $password;
 }
