@@ -13,7 +13,7 @@ include 'admin_library.php';
 
 $destinations = GetAllDestinations($conn);
 
-$categories = GetAllCategories($conn);
+$categories = getAllCategories($conn);
 $paymentsInfos = GetAllPaymentInfos($conn);
 ?>
 
