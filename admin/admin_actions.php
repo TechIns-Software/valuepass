@@ -27,7 +27,9 @@ try {
         $_POST["action"] == "finalizeVendor" ||
         $_POST["action"] == "addIncluded" || 
         $_POST["action"] == "addVoucherRules" ||
-        $_POST["action"] == "adminLogin"
+        $_POST["action"] == "adminLogin" ||
+        $_POST["action"] == "vendorLogin"
+
 
 
     ) {
@@ -339,9 +341,12 @@ try {
             $username = $credentials['username'];
             $password = $credentials['password'];
 
-            checkLogin($conn,$username,$password);
-
-
+            checkLogin($conn,$username,$password,'admin');
+        } else if ($_POST["action"] == "vendorLogin"){
+            $credentials =  $_POST["data"];
+            $username = $credentials['username'];
+            $password = $credentials['password'];
+            checkLogin($conn,$username,$password,'vendor');
         }
     }
 } catch (Exception $exception) {

@@ -5232,6 +5232,16 @@ ul.hotel_facilities li img {
   background-size: cover;
 }
 
+#login_bg1{
+  background: url(../img/bg_images/pic1.jpg) center center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+
 #login figure,
 #register figure {
   text-align: center;

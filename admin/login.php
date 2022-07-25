@@ -59,7 +59,7 @@
 					<i class="icon_lock_alt"></i>
 				</div>
 
-                  <a href="#0" class="btn_1 rounded full-width" id="btnLogin">Login </a>
+                  <a href="#0" class="btn_1 rounded full-width" id="btnLogin" ">Login </a>
 			</form>
 			<div class="copy">© Valuepass </div>
 		</aside>

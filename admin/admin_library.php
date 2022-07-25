@@ -593,46 +593,49 @@ function addVoucherRules($conn,$idVendor = -1,$isDateRestrict = false ,$dayStrin
 
 }
 
-function checkLogin ($conn,$username,$password){
+function checkLogin ($conn,$username,$password,$fromwho){
+    if ($fromwho == 'admin'){
+        $query = "SELECT id , name, surname   FROM Admin WHERE username= '".$username."' and password ='".$password."' ";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
 
-    $query = "SELECT id , name, surname   FROM Admin WHERE username= '".$username."' and password ='".$password."' ";
-    $stmt = $conn->prepare($query);
-    $stmt->execute();
+        $id = $name = $surname= '';
+        $stmt->bind_result($id, $name,$surname);
+        $loginUser = [];
+        while ($stmt->fetch()) {
+            array_push($loginUser, [$id, $name,$surname]);
+        }
+        if (empty($loginUser)){
+            echo json_encode(array('success' => 0));
+        }else{
 
-    $id = $name = $surname= '';
-    $stmt->bind_result($id, $name,$surname);
-    $loginUser = [];
-    while ($stmt->fetch()) {
-        array_push($loginUser, [$id, $name,$surname]);
+            $_SESSION['admin'] = $loginUser[0][0];
+            $_SESSION['adminName'] = $loginUser[0][1];
+            $_SESSION['adminSurname'] = $loginUser[0][2];
+            echo json_encode(array('success' => 1));
+        }
+
+    }else if  ($fromwho == 'vendor'){
+        $query = "SELECT idVendor, email, phone  FROM VendorLogin WHERE username= '".$username."' and password ='".$password."' ";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        $id = $email = $phone = '';
+        $stmt->bind_result($id, $email,$phone);
+        $loginUser = [];
+        while ($stmt->fetch()) {
+            array_push($loginUser, [$id, $email,$phone]);
+        }
+        if (empty($loginUser)){
+            echo json_encode(array('success' => 0));
+        }else{
+            $_SESSION['idVendor'] = $loginUser[0][0];
+            $_SESSION['email'] = $loginUser[0][1];
+            $_SESSION['phone'] = $loginUser[0][2];
+            echo json_encode(array('success' => 1));
+        }
+
     }
-
-
-    if (empty($loginUser)){
-
-        echo json_encode(array('success' => 0));
-    }else{
-
-        $_SESSION['admin'] = $loginUser[0][0];
-         $_SESSION['adminName'] = $loginUser[0][1];
-         $_SESSION['adminSurname'] = $loginUser[0][2];
-        echo json_encode(array('success' => 1));
-    }
-
-//
-//     $result=mysqli_query($conn,$query);
-//     $rowcount=mysqli_num_rows($result);
-//    $loginUser = [];
-//     if ( $rowcount > 0){
-//         $id = $name = $surname =  '';
-//         $stmt->bind_result($id, $name,$surname);
-//         while ($stmt->fetch()) {
-//             array_push($loginUser, [$id, $name,$surname]);
-//         }
-//         $_SESSION['admin'] =$loginUser[0];
-//         $_SESSION['adminName'] =$loginUser[1];
-//         $_SESSION['adminSurname'] =$loginUser[2];
-//         header('location:index.php');
-//     }
     $stmt->close();
 }
 
