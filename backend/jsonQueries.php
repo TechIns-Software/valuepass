@@ -362,7 +362,7 @@ function extraVendorInfo($conn,$languageid ,$VendorId){
 
   $extrainfo1 = [ ...$extrainfo1, ['aboutActivity'=> $aboutActivity]];
 
-    $query4 = "SELECT DISTINCT  IIHT.name, IIDT.name
+    $query4 = "SELECT DISTINCT  IIH.id, IIHT.name, IIDT.name
                     FROM ImportantInformationHead AS IIH, ImportantInformationHeadTranslate AS IIHT,
                     ImportantInformationDescription AS IID, ImportantInformationDescriptionTranslate AS IIDT
                     WHERE IIH.idVendor = $VendorId
@@ -374,18 +374,31 @@ function extraVendorInfo($conn,$languageid ,$VendorId){
                     ORDER BY IIH.id";
     $stmt = $conn->prepare($query4);
     $stmt->execute();
-    $importantHead = $description =  '';
+   $id = $importantHead = $description1 =  '';
     $importantInfo = [];
-    $stmt->bind_result( $importantHead, $description);
-
+    $stmt->bind_result($id, $importantHead, $description1);
+    $ids =[];
+    $headers = [];
+    $descriptions = [];
     while ($stmt->fetch()) {
-        $importantInfo[$importantHead] =[];
-        $importantInfo[$importantHead] =[...$importantInfo[$importantHead],$description ];
+        array_push( $ids, $id);
+        array_push( $headers, $importantHead);
+        array_push( $descriptions, $description1);
+//        $importantInfo[$id] =[];
+//        $importantInfo[$id] =[...$importantInfo[$id],$description ];
 //        array_push( $importantInfo[$importantHead],$description);
 //        array_push($importantInfo , [$head $description]);
     }
+    $descr = [];
+        for ($i =0 ; $i<count($ids) ; $i++){
+            if ($ids[$i] == $ids[$i+1]){
+                $importantInfo = ['importantInformationHeadName'=> $headers[$i],[$description1[$i]] ];
+            }
+
+        }
+
     $stmt->close();
 
-    return $extrainfo1;
+    return $importantInfo;
 }
 
