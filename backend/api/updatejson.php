@@ -200,6 +200,7 @@ $original_obj = [ ...$original_obj,$vendor_obj];
 
 
 file_put_contents('test.json',[date('Y-m-d H:i:s'),json_encode($original_obj)]);
+header('location:../../admin/');
 
 //$myJSON = json_encode($original_obj);
 //echo $myJSON;

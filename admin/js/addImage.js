@@ -47,8 +47,8 @@ function vendorCreationEnd(event) {
             action: 'finalizeVendor',
         },
         success: function () {
-            alert("Επιτυχή Προσθήκη.Μπορείτε να Προχωρήστε στον επόμενο Vendor");
-            window.location.href = 'createvendor_s1.php';
+            alert("Επιτυχή Προσθήκη");
+            window.location.href = '../backend/api/updatejson.php';
         },
 
     });
