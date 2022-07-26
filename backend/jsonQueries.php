@@ -374,31 +374,28 @@ function extraVendorInfo($conn,$languageid ,$VendorId){
                     ORDER BY IIH.id";
     $stmt = $conn->prepare($query4);
     $stmt->execute();
-   $id = $importantHead = $description1 =  '';
+   $id = $importantHead = $description1 = $previousImportant =  '';
     $importantInfo = [];
     $stmt->bind_result($id, $importantHead, $description1);
-    $ids =[];
-    $headers = [];
-    $descriptions = [];
+    $tempdescriptions = [];
     while ($stmt->fetch()) {
-        array_push( $ids, $id);
-        array_push( $headers, $importantHead);
-        array_push( $descriptions, $description1);
-//        $importantInfo[$id] =[];
-//        $importantInfo[$id] =[...$importantInfo[$id],$description ];
-//        array_push( $importantInfo[$importantHead],$description);
-//        array_push($importantInfo , [$head $description]);
-    }
-    $descr = [];
-        for ($i =0 ; $i<count($ids) ; $i++){
-            if ($ids[$i] == $ids[$i+1]){
-                $importantInfo = ['importantInformationHeadName'=> $headers[$i],[$description1[$i]] ];
-            }
 
+        if ($previousImportant == $importantHead){
+            array_push($tempdescriptions,$description1);
+            $importantInfo[$id] = ['importantInformationHeadName'=> $importantHead,'descriptions'=>$tempdescriptions] ;
+        }else{
+            $tempdescriptions = [];
+            $tempdescriptions = [ ...$tempdescriptions, $description1] ;
+            $importantInfo [$id]= ['importantInformationHeadName'=> $importantHead,'descriptions'=>$tempdescriptions] ;
+            $previousImportant == $importantHead;
         }
+
+    }
+
+    $extrainfo1 = [ ...$extrainfo1, ['importantInformation'=> $importantInfo]];
 
     $stmt->close();
 
-    return $importantInfo;
+    return $extrainfo1;
 }
 

@@ -169,8 +169,8 @@ foreach ( $allVendorIds as $allVendorId){
     $includedService_ids =VendorIncludedService($conn,$allVendorId);
     $language_temp = [];
     foreach ($languages as $language ){
-//        $extraVendorInfo = extraVendorInfo($conn,$language[0],$allVendorId);
-//        array_push($language_temp,['version'=>12 ]);
+        $extraVendorInfo = extraVendorInfo($conn,$language[0],$allVendorId);
+        array_push($language_temp,[$language[0]=>$extraVendorInfo ]);
     }
 
     foreach ($basicVendorInfos as $basicVendorInfo){
@@ -188,7 +188,8 @@ foreach ( $allVendorIds as $allVendorId){
             'labelbox'=>$labelbox_array,
             'images'=>$vendorImages,
             'rated'=>$rated,
-            'includedServices'=>$includedService_ids
+            'includedServices'=>$includedService_ids,
+            'languages' => $language_temp
         ];
 
     }
@@ -201,5 +202,4 @@ $original_obj = [ ...$original_obj,$vendor_obj];
 file_put_contents('test.json',[date('Y-m-d H:i:s'),json_encode($original_obj)]);
 
 //$myJSON = json_encode($original_obj);
-////
 //echo $myJSON;
