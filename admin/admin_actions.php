@@ -28,7 +28,8 @@ try {
         $_POST["action"] == "addIncluded" || 
         $_POST["action"] == "addVoucherRules" ||
         $_POST["action"] == "adminLogin" ||
-        $_POST["action"] == "vendorLogin"
+        $_POST["action"] == "vendorLogin" ||
+        $_POST["action"] == "createSupplier"
 
 
 
@@ -347,7 +348,18 @@ try {
             $username = $credentials['username'];
             $password = $credentials['password'];
             checkLogin($conn,$username,$password,'vendor');
+        } else if($_POST["action"] == "createSupplier"){
+            $supplierData= $_POST['data'];
+
+            $supplierName= $supplierData[0][1];
+            $supplierDescription= $supplierData[1][1];
+            $supplierUsername= $supplierData[2][1];
+            $supplierPassword= $supplierData[3][1];
+
+            addSupplier($conn,$supplierUsername,$supplierPassword,$supplierName,$supplierDescription,);
+
         }
+
     }
 } catch (Exception $exception) {
     var_dump($exception);

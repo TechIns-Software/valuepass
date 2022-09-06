@@ -1,11 +1,11 @@
 <?php
 
 //Get all Languages
-function getAllLanguages($conn,$flag = false)
+function getAllLanguages($conn, $flag = false)
 {
-    if ($flag == false ){
+    if ($flag == false) {
         $query = "Select * FROM Language WHERE id = 2";
-    }else{
+    } else {
         $query = "Select * FROM Language  ";
     }
 
@@ -43,7 +43,7 @@ function lastInstertedid($conn, $table)
     if (!is_numeric($last_id)) {
         $last_id = 0;
     }
-    return  $last_id;
+    return $last_id;
 }
 
 
@@ -72,8 +72,6 @@ function AddLocationTranslate($conn, $idlang, $iddest, $name, $descr)
 }
 
 
-
-
 // Add one row in Labelbox
 function addrowLabelBox($conn, $id)
 {
@@ -97,7 +95,7 @@ function AddLabelBoxTranslate($conn, $idlabelbox, $idlang, $name)
 {
     $query = "INSERT INTO `LabelsBoxTranslate` (`idLabelsBox`, `idLanguage`, `name`) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iis', $idlabelbox, $idlang,  $name);
+    $stmt->bind_param('iis', $idlabelbox, $idlang, $name);
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
     } else {
@@ -112,7 +110,7 @@ function AddIncludedServiceTranslate($conn, $idIncludedService, $idlang, $name)
     $query = "INSERT INTO `IncludedServiceTranslate` (`idIncludedService`, `idLanguage`, `name`) VALUES (?,?,?)";
     echo $query;
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iis', $idIncludedService, $idlang,  $name);
+    $stmt->bind_param('iis', $idIncludedService, $idlang, $name);
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
     } else {
@@ -120,7 +118,6 @@ function AddIncludedServiceTranslate($conn, $idIncludedService, $idlang, $name)
     }
     $stmt->close();
 }
-
 
 
 // Add one row in CategoryVendor
@@ -138,7 +135,7 @@ function AddCategoryVendorTranslate($conn, $idCategory, $idlang, $name)
 {
     $query = "INSERT INTO `CategoryVendorTranslate` (`idCategoryVendor`, `idLanguage`, `name`) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iis', $idCategory, $idlang,  $name);
+    $stmt->bind_param('iis', $idCategory, $idlang, $name);
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη Κατηγορίας"]);
     } else {
@@ -146,7 +143,6 @@ function AddCategoryVendorTranslate($conn, $idCategory, $idlang, $name)
     }
     $stmt->close();
 }
-
 
 
 // Get All Destinations
@@ -157,7 +153,7 @@ function GetAllDestinations($conn)
     $stmt = $conn->prepare($query);
 
     $stmt->execute();
-    $name = $id_dest =  '';
+    $name = $id_dest = '';
     $stmt->bind_result($name, $id_dest);
     $destinations = [];
     while ($stmt->fetch()) {
@@ -168,7 +164,6 @@ function GetAllDestinations($conn)
 }
 
 
-
 // Get All Categories
 function GetAllCategories($conn)
 {
@@ -176,7 +171,7 @@ function GetAllCategories($conn)
     $stmt = $conn->prepare($query);
 
     $stmt->execute();
-    $name = $id_cat =  '';
+    $name = $id_cat = '';
     $stmt->bind_result($name, $id_cat);
     $categories = [];
     while ($stmt->fetch()) {
@@ -187,8 +182,6 @@ function GetAllCategories($conn)
 }
 
 
-
-
 // Get All PaymentInfos
 function GetAllPaymentInfos($conn)
 {
@@ -196,7 +189,7 @@ function GetAllPaymentInfos($conn)
     $stmt = $conn->prepare($query);
 
     $stmt->execute();
-    $head = $id_paymentinfo = $temp =  '';
+    $head = $id_paymentinfo = $temp = '';
     $stmt->bind_result($head, $id_paymentinfo, $temp);
     $paymentsInfos = [];
     while ($stmt->fetch()) {
@@ -207,10 +200,9 @@ function GetAllPaymentInfos($conn)
 }
 
 
-
-// Add Data in the Vendor page 
+// Add Data in the Vendor page
 function AddVendor1(
-    $conn,  $destId,  $priceAdult,  $originalPrice,  $discount,
+    $conn, $destId, $priceAdult, $originalPrice, $discount,
     $priceKid, $infantPrice, $idCategory, $paymentCategoryId, $howManyForVoucher
 )
 {
@@ -218,12 +210,12 @@ function AddVendor1(
     $query = "INSERT INTO `Vendor` (`idDestination` , `priceAdult` , `originalPrice`, `discount`, `priceKid` ,`infantPrice` , `idCategory` , `idPaymentInfoActivity`,  `imageBasic`, `forHowManyPersonsIs`,`googleMapsString`)
      VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('idddddiisis', $destId, $priceAdult, $originalPrice, $discount,  $priceKid,
-        $infantPrice, $idCategory, $paymentCategoryId, $_SESSION['basicImage'], $howManyForVoucher,$_SESSION['mapImage']);
+    $stmt->bind_param('idddddiisis', $destId, $priceAdult, $originalPrice, $discount, $priceKid,
+        $infantPrice, $idCategory, $paymentCategoryId, $_SESSION['basicImage'], $howManyForVoucher, $_SESSION['mapImage']);
     if ($stmt->execute()) {
         unset($_SESSION['basicImage']);
-        unset($_SESSION['mapImage'] );
-        
+        unset($_SESSION['mapImage']);
+
         echo json_encode(["success", "Επιτυχής Προσθήκη Vendor"]);
     } else {
         echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
@@ -231,8 +223,8 @@ function AddVendor1(
 
     $lastid = $conn->insert_id;
     // echo "THIS IS THE LAST ID ". $lastid ;
-    $_SESSION['vendorcreateid'] =    $lastid;
-    $_SESSION['vendorcreatestep'] =  1;
+    $_SESSION['vendorcreateid'] = $lastid;
+    $_SESSION['vendorcreatestep'] = 1;
     $stmt->close();
 }
 
@@ -245,8 +237,6 @@ function addrowAboutActivity($conn, $id)
     $stmt->execute();
     $stmt->close();
 }
-
-
 
 
 // Add Data in the addAboutActivityTranslate table
@@ -277,7 +267,6 @@ function addrowHighlight($conn, $id)
 }
 
 
-
 // Add Data in the HighlightTranslate table
 function addHighlightTranslate($conn, $last_id, $id_lang, $name)
 {
@@ -301,7 +290,7 @@ function getAllIncludeServices($conn)
     $query = "select ins.id , inst.name from IncludedService as ins ,IncludedServiceTranslate as inst where ins.id = inst.idIncludedService  group by inst.idIncludedService ";
     $stmt = $conn->prepare($query);
     $stmt->execute();
-    $id = $name =  '';
+    $id = $name = '';
     $stmt->bind_result($id, $name);
     $includedServices = [];
     while ($stmt->fetch()) {
@@ -382,9 +371,6 @@ function addImportantInformationDescriptionTranslate($conn, $idImportantInformat
 }
 
 
-
-
-
 function addVendorTranslate($conn, $idVendor, $idLanguage, $name, $descbig, $descfull)
 {
     $query = "INSERT INTO `VendorTranslate` (`idVendor`, `idLanguage`, `name`, `descriptionBig`, `descriptionFull`)  VALUES (?,?,?,?,?)";
@@ -414,7 +400,7 @@ function AddRatedCategoryTranslate($conn, $idlRatedCategory, $idlang, $name)
 {
     $query = "INSERT INTO `RatedCategoryTranslate` (`idRatedCategory`, `idLanguage`, `nameCategory`) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iis', $idlRatedCategory, $idlang,  $name);
+    $stmt->bind_param('iis', $idlRatedCategory, $idlang, $name);
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
     } else {
@@ -422,7 +408,6 @@ function AddRatedCategoryTranslate($conn, $idlRatedCategory, $idlang, $name)
     }
     $stmt->close();
 }
-
 
 
 function getRatedCategories($conn)
@@ -446,7 +431,7 @@ function AddRated($conn, $id_cat, $idVendor, $stars)
 
     $query = "INSERT INTO `Rated` (`idRatedCategory`, `idVendor`, `stars`) VALUES (?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('iii', $id_cat, $idVendor,  $stars);
+    $stmt->bind_param('iii', $id_cat, $idVendor, $stars);
     if ($stmt->execute()) {
         echo json_encode(["success", "Επιτυχής Προσθήκη Label"]);
     } else {
@@ -473,15 +458,13 @@ function CheckImage1($conn, $id)
 }
 
 
-
-
-function  getAllLabels($conn)
+function getAllLabels($conn)
 {
 
     $query = "SELECT lb.id , lbt.name FROM LabelsBox AS lb ,LabelsBoxTranslate AS lbt WHERE lb.id = lbt.idLabelsBox  GROUP BY  lbt.idLabelsBox ";
     $stmt = $conn->prepare($query);
     $stmt->execute();
-    $id = $name =  '';
+    $id = $name = '';
     $stmt->bind_result($id, $name);
     $includedServices = [];
     while ($stmt->fetch()) {
@@ -532,7 +515,7 @@ function getBestofLocation($conn, $location)
 
     $stmt = $conn->prepare($query);
     $stmt->execute();
-    $id = $idVendor =  '';
+    $id = $idVendor = '';
     $stmt->bind_result($id, $idVendor);
     $bestofbylocations = [];
     while ($stmt->fetch()) {
@@ -553,7 +536,7 @@ function DeleteBestofByLocation($conn, $id)
 
 
 function addBestoff($conn, $idloc, $idVendor)
-{ 
+{
     $query = "INSERT INTO `BestOff` (`idDestination`, `idVendor`) VALUES (?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ii', $idloc, $idVendor);
@@ -565,22 +548,24 @@ function addBestoff($conn, $idloc, $idVendor)
     $stmt->close();
 }
 
-function finalizeVendor($conn, $idVendor) {
+function finalizeVendor($conn, $idVendor)
+{
     $query = "UPDATE Vendor SET isCompleted = 1 WHERE id = $idVendor";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
 }
 
-function addVoucherRules($conn,$idVendor = -1,$isDateRestrict = false ,$dayString = '',$timeVoucher = '',$numberVoucher = 999){
-    if($isDateRestrict){
-        $query="INSERT INTO `VoucherGenerateOptions` (`idVendor`, `isDateRestrict`, `dayString`, `timeVoucher`, `numberVoucher`) VALUES (?,?,?,?,?)";
+function addVoucherRules($conn, $idVendor = -1, $isDateRestrict = false, $dayString = '', $timeVoucher = '', $numberVoucher = 999)
+{
+    if ($isDateRestrict) {
+        $query = "INSERT INTO `VoucherGenerateOptions` (`idVendor`, `isDateRestrict`, `dayString`, `timeVoucher`, `numberVoucher`) VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('iissi', $idVendor,$isDateRestrict, $dayString,$timeVoucher,$numberVoucher);
-    }else{
-        $query="INSERT INTO `VoucherGenerateOptions` (`idVendor`, `isDateRestrict`, `dayString`, `timeVoucher`, `numberVoucher`) VALUES (?,?,?,?,?)";
+        $stmt->bind_param('iissi', $idVendor, $isDateRestrict, $dayString, $timeVoucher, $numberVoucher);
+    } else {
+        $query = "INSERT INTO `VoucherGenerateOptions` (`idVendor`, `isDateRestrict`, `dayString`, `timeVoucher`, `numberVoucher`) VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('iissi', $idVendor,$isDateRestrict, $dayString,$timeVoucher,$numberVoucher);
+        $stmt->bind_param('iissi', $idVendor, $isDateRestrict, $dayString, $timeVoucher, $numberVoucher);
     }
 
 
@@ -593,21 +578,22 @@ function addVoucherRules($conn,$idVendor = -1,$isDateRestrict = false ,$dayStrin
 
 }
 
-function checkLogin ($conn,$username,$password,$fromwho){
-    if ($fromwho == 'admin'){
-        $query = "SELECT id , name, surname   FROM Admin WHERE username= '".$username."' and password ='".$password."' ";
+function checkLogin($conn, $username, $password, $fromwho)
+{
+    if ($fromwho == 'admin') {
+        $query = "SELECT id , name, surname   FROM Admin WHERE username= '" . $username . "' and password ='" . $password . "' ";
         $stmt = $conn->prepare($query);
         $stmt->execute();
 
-        $id = $name = $surname= '';
-        $stmt->bind_result($id, $name,$surname);
+        $id = $name = $surname = '';
+        $stmt->bind_result($id, $name, $surname);
         $loginUser = [];
         while ($stmt->fetch()) {
-            array_push($loginUser, [$id, $name,$surname]);
+            array_push($loginUser, [$id, $name, $surname]);
         }
-        if (empty($loginUser)){
+        if (empty($loginUser)) {
             echo json_encode(array('success' => 0));
-        }else{
+        } else {
 
             $_SESSION['admin'] = $loginUser[0][0];
             $_SESSION['adminName'] = $loginUser[0][1];
@@ -615,20 +601,20 @@ function checkLogin ($conn,$username,$password,$fromwho){
             echo json_encode(array('success' => 1));
         }
 
-    }else if  ($fromwho == 'vendor'){
-        $query = "SELECT idVendor, email, phone  FROM VendorLogin WHERE username= '".$username."' and password ='".$password."' ";
+    } else if ($fromwho == 'vendor') {
+        $query = "SELECT idVendor, email, phone  FROM VendorLogin WHERE username= '" . $username . "' and password ='" . $password . "' ";
         $stmt = $conn->prepare($query);
         $stmt->execute();
 
         $id = $email = $phone = '';
-        $stmt->bind_result($id, $email,$phone);
+        $stmt->bind_result($id, $email, $phone);
         $loginUser = [];
         while ($stmt->fetch()) {
-            array_push($loginUser, [$id, $email,$phone]);
+            array_push($loginUser, [$id, $email, $phone]);
         }
-        if (empty($loginUser)){
+        if (empty($loginUser)) {
             echo json_encode(array('success' => 0));
-        }else{
+        } else {
             $_SESSION['idVendor'] = $loginUser[0][0];
             $_SESSION['email'] = $loginUser[0][1];
             $_SESSION['phone'] = $loginUser[0][2];
@@ -639,7 +625,7 @@ function checkLogin ($conn,$username,$password,$fromwho){
     $stmt->close();
 }
 
-function addVendorPasswords($conn, $id, $username,$password)
+function addVendorPasswords($conn, $id, $username, $password)
 {
     $query = "INSERT INTO `VendorLogin` (`idVendor`, `username`, `password` ) VALUES ( $id ,'$username','$password')";
     $stmt = $conn->prepare($query);
@@ -648,8 +634,88 @@ function addVendorPasswords($conn, $id, $username,$password)
 }
 
 
-function random_password( $length = 7 ) {
+function random_password($length = 7)
+{
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
-    $password = substr( str_shuffle( $chars ), 0, $length );
+    $password = substr(str_shuffle($chars), 0, $length);
     return $password;
 }
+
+// Get All Suppliers
+function GetAllSuppliers($conn)
+{
+    $query = "SELECT id,username,name,description FROM Suppliers  ";
+
+    $stmt = $conn->prepare($query);
+
+    $stmt->execute();
+    $id = $username = $name = $description = '';
+    $stmt->bind_result($id, $username, $name, $description);
+    $suppliers = [];
+    while ($stmt->fetch()) {
+        array_push($suppliers, [$id, $username, $name, $description]);
+    }
+    $stmt->close();
+    return $suppliers;
+}
+
+// Get All Usernames
+function GetAllUsernames($conn)
+{
+    $query = "SELECT username FROM Suppliers  ";
+
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $username = '';
+    $stmt->bind_result($username);
+    $usernames = [];
+    while ($stmt->fetch()) {
+        array_push($usernames, $username);
+    }
+    $stmt->close();
+    return $usernames;
+}
+
+// Add Supplier
+function addSupplier($conn,  $username, $password, $name, $description,)
+{
+    $query = "INSERT INTO `Suppliers` (`username`, `password`, `name`, `description`) VALUES ('$username','$password','$name','$description')";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+function getVendorsWithoutSupplier($conn){
+    $query = "SELECT V.id ,V.imageBasic , Vt.name FROM Vendor as V ,VendorTranslate as Vt ,VoucherSuppliers as Vs where Vt.idVendor = V.id AND Vs.idVendor!=V.id ";
+
+    $stmt = $conn->prepare($query);
+
+    $stmt->execute();
+    $id = $imageBasic = $name = '';
+    $stmt->bind_result($id, $imageBasic, $name);
+    $vendors = [];
+    while ($stmt->fetch()) {
+        array_push($vendors, [$id, $imageBasic, $name]);
+    }
+    $stmt->close();
+    return $vendors;
+}
+
+function getVendorsWithSupplier($conn,$id){
+    $query = "SELECT V.id ,V.imageBasic , Vt.name FROM Vendor as V ,VendorTranslate as Vt ,VoucherSuppliers as Vs where Vt.idVendor = V.id AND Vs.idVendor=V.id and Vs.idSupplier= $id  ";
+
+    $stmt = $conn->prepare($query);
+
+    $stmt->execute();
+    $id = $imageBasic = $name = '';
+    $stmt->bind_result($id, $imageBasic, $name);
+    $vendors = [];
+    while ($stmt->fetch()) {
+        array_push($vendors, [$id, $imageBasic, $name]);
+    }
+    $stmt->close();
+    return $vendors;
+}
+
+
+
+

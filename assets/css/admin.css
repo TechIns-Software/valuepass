@@ -1194,3 +1194,14 @@ html {
   .dissapear{
     display: none;
   }
+
+  .displayNone{
+    display: none;
+  }
+
+  #messageSuccess,#messageSuccess1{
+  color:green;
+}
+  #messageError,messageError1{
+    color: red;
+  }

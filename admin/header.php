@@ -105,6 +105,31 @@
             <span class="nav-link-text">Best offs</span>
           </a>
         </li>
+
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings2">
+                  <i class="fa fa-fw fa-list"></i>
+                  <span class="nav-link-text">Προμηθευτές</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseMylistings2">
+                  <li>
+                      <a href="supplier_creation.php">Δημιουργία Προμηθευτή
+                          <!-- <span class="badge badge-pill badge-primary">6</span> -->
+                      </a>
+                  </li>
+                  <li>
+                      <a href="add_labels.php">Αντιστοίχηση Vendor με προμηθευτή
+                          <!-- <span class="badge badge-pill badge-success">6</span> -->
+                      </a>
+                  </li>
+                  <li>
+                      <a href="suppliers.php">Ολοι οι Προμηθευτές
+                          <!-- <span class="badge badge-pill badge-danger">6</span> -->
+                      </a>
+                  </li>
+
+              </ul>
+          </li>
         <!-- 	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
           <a class="nav-link" href="bookmarks.html">
             <i class="fa fa-fw fa-heart"></i>

@@ -361,9 +361,25 @@ CREATE TABLE Admin (
     PRIMARY KEY(id)
 )ENGINE=InnoDB;
 
+CREATE TABLE Suppliers (
+    id int NOT NULL AUTO_INCREMENT,
+    username varchar(100) NOT NULL,
+    password varchar(200) NOT NULL,
+    name varchar(200) ,
+    description  varchar(200),
+    PRIMARY KEY(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE VoucherSuppliers (
+    idSupplier int NOT NULL AUTO_INCREMENT,
+    FOREIGN KEY (idSupplier) REFERENCES Suppliers(id),
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+     PRIMARY KEY (idSupplier)
+)ENGINE=InnoDB;
+
 --- USERNAME: spanos55
 -- PASSWORD:spanos1234
-
 -- Some data for menu and language
 
 
