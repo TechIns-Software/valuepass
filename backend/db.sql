@@ -45,6 +45,7 @@ CREATE TABLE PaymentInfoActivityTranslate (
     description text
 
 )ENGINE=InnoDB;
+-- TODO voucherMessage1, voucherMessage2 to VendorTranslate to go, and all its usage
 CREATE TABLE Vendor (
     id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
@@ -73,10 +74,9 @@ CREATE TABLE VendorTranslate (
     FOREIGN KEY (idLanguage) REFERENCES Language(id),
     name varchar(100) NOT NULL,
     descriptionBig text NOT NULL,
-    descriptionFull text NOT NULL
+    descriptionFull text NOT NULL,
     voucherMessage1 text,
-    voucherMessage2 text,
-
+    voucherMessage2 text
 )ENGINE=InnoDB;
 
 CREATE TABLE VendorLogin (
@@ -85,7 +85,7 @@ CREATE TABLE VendorLogin (
     username text NOT NULL,
     password text NOT NULL,
     email text,
-    phone text,
+    phone text
 )ENGINE=InnoDB;
 
 
@@ -229,7 +229,26 @@ CREATE TABLE ImportantInformationDescriptionTranslate (
 
 -- up here have been created DB Scheme
 
+CREATE TABLE Versions(
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    name varchar(80) NOT NULL,
+    version INT DEFAULT 1
+)ENGINE=InnoDB;
 
+INSERT INTO Versions(name) VALUES
+('valuepass'),('language'),('destination'),
+('categoryVendor'),('paymentInfoActivity'),
+('labelsBox'),('ratedCategory'),
+('includedService'),('vendors');
+
+CREATE TABLE VersionVendor(
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    idVendor int NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor(id),
+    version INT DEFAULT 1
+)ENGINE=InnoDB;
 -- //////////////////////////////////////////////
 -- our BD
 
@@ -377,7 +396,7 @@ CREATE TABLE VoucherSuppliers (
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
 )ENGINE=InnoDB;
 
---- USERNAME: spanos55
+-- USERNAME: spanos55
 -- PASSWORD:spanos1234
 -- Some data for menu and language
 
@@ -473,7 +492,13 @@ VALUES (1,1,'Ποιότητα Εξυπηρέτησης Πελατών'),
 INSERT INTO IncludedServiceTranslate(idIncludedService, idLanguage, name)
 VALUES (1,1,'Ελληνικό label'), (1,2,'English label');
  */
-
-INSERT INTO VendorVoucher(idVendor, starterVouchers, existenceVoucher, dateVoucher)
-VALUES
-(1, 10, 10, NOW() + INTERVAL 1 DAY);
+CREATE TABLE Version(
+    id int NOT NULL,
+    PRIMARY KEY (id),
+    name varchar(50),
+    version varchar(50)
+)ENGINE=InnoDB;
+INSERT INTO Version(name, version) VALUES ('Menu', 0);
+-- INSERT INTO VendorVoucher(idVendor, starterVouchers, existenceVoucher, dateVoucher)
+-- VALUES
+-- (1, 10, 10, NOW() + INTERVAL 1 DAY);
