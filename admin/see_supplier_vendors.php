@@ -15,7 +15,7 @@ if (isset($_GET['id']) &&  $_GET['id']) {
     echo "Υπήρξε κάποιο πρόβλημα. Προσπαθήστε αργότερα";
 }
 
-     $vendors = getVendorsWithSupplier($conn,$supplierid);
+     $vendors = getVendorsSupplier($conn,$supplierid,true);
 ?>
 
 

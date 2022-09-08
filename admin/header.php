@@ -118,7 +118,7 @@
                       </a>
                   </li>
                   <li>
-                      <a href="add_labels.php">Αντιστοίχηση Vendor με προμηθευτή
+                      <a href="supplier_selection.php">Αντιστοίχηση Vendor με προμηθευτή
                           <!-- <span class="badge badge-pill badge-success">6</span> -->
                       </a>
                   </li>

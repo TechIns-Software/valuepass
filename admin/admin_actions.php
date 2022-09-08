@@ -29,7 +29,9 @@ try {
         $_POST["action"] == "addVoucherRules" ||
         $_POST["action"] == "adminLogin" ||
         $_POST["action"] == "vendorLogin" ||
-        $_POST["action"] == "createSupplier"
+        $_POST["action"] == "createSupplier"||
+        $_POST["action"] == "supplierVendor"
+
 
 
 
@@ -357,8 +359,20 @@ try {
             $supplierPassword= $supplierData[3][1];
 
             addSupplier($conn,$supplierUsername,$supplierPassword,$supplierName,$supplierDescription,);
+        } else if($_POST["action"] == "supplierVendor"){
+            $vendordatas = $_POST['vendordata'];
+            $supplier = $_POST['supplier'];
+
+            DeleteSupplierVendor($conn, $supplier);
+
+            if (count($vendordatas) > 0){
+                foreach ($vendordatas as $vendordata) {
+                    addVendorToSupplier($conn,  $supplier, $vendordata);
+                }
+            }
 
         }
+
 
     }
 } catch (Exception $exception) {

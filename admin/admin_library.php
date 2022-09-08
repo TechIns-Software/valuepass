@@ -700,9 +700,20 @@ function getVendorsWithoutSupplier($conn){
     return $vendors;
 }
 
-function getVendorsWithSupplier($conn,$id){
-    $query = "SELECT V.id ,V.imageBasic , Vt.name FROM Vendor as V ,VendorTranslate as Vt ,VoucherSuppliers as Vs where Vt.idVendor = V.id AND Vs.idVendor=V.id and Vs.idSupplier= $id  ";
+function getVendorsSupplier($conn, $id,$hassupplier = true){
+    if ($hassupplier) {
+        $query = "SELECT V.id ,V.imageBasic , Vt.name FROM Vendor as V ,VendorTranslate as Vt ,VoucherSuppliers as Vs where Vt.idVendor = V.id AND Vs.idVendor=V.id and Vs.idSupplier= $id  ";
+    }else{
+        $query = "Select V.id, V.imageBasic, VT.name
+from Vendor AS V, VendorTranslate AS VT
+Where V.id = VT.idVendor AND V.id NOT IN
+(
+    Select Vs.idVendor
+    From VoucherSuppliers as Vs, Vendor as V
+    Where Vs.idVendor = V.id
+)  ";
 
+    }
     $stmt = $conn->prepare($query);
 
     $stmt->execute();
@@ -715,6 +726,27 @@ function getVendorsWithSupplier($conn,$id){
     $stmt->close();
     return $vendors;
 }
+
+function DeleteSupplierVendor ($conn,$supplier_id){
+    $query = "DELETE FROM `VoucherSuppliers` WHERE   idSupplier = $supplier_id ;";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+function addVendorToSupplier($conn, $supplier_id, $idVendor)
+{
+    $query = "INSERT INTO `VoucherSuppliers` (`idSupplier`, `idVendor`) VALUES (?,?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ii', $supplier_id, $idVendor);
+    if ($stmt->execute()) {
+        echo json_encode(["success", "Επιτυχής Προσθήκη"]);
+    } else {
+        echo json_encode(["fail", "Υπήρξε Κάποιο Θέμα"]);
+    }
+    $stmt->close();
+}
+
 
 
 

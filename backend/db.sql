@@ -371,11 +371,10 @@ CREATE TABLE Suppliers (
 )ENGINE=InnoDB;
 
 CREATE TABLE VoucherSuppliers (
-    idSupplier int NOT NULL AUTO_INCREMENT,
+    idSupplier int ,
     FOREIGN KEY (idSupplier) REFERENCES Suppliers(id),
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor(id),
-     PRIMARY KEY (idSupplier)
 )ENGINE=InnoDB;
 
 --- USERNAME: spanos55
