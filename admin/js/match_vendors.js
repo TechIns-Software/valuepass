@@ -27,7 +27,7 @@ submitvendorsbtn.addEventListener('click', () => {
             action: 'supplierVendor'
         },
         success: function (data) {
-            alert("Επιτυχή Αντιστοίχηση Supplier Vendor ");
+            alert("Επιτυχή Αντιστοίχηση Supplier Vendor. ");
             window.location.href = `match_vendors.php?id=${supplier_id}`;
         },
 
