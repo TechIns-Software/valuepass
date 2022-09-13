@@ -11,7 +11,6 @@
       "icon": "greekClassCSS"
     }
   },
-
   "destinations": {
     "version": 1,
     "1": {
@@ -119,7 +118,12 @@
         "version": 1
       },
       "forHowManyPersonsIs": 1,
-      "labelsBox": [1,2,3,4],
+      "labelsBox": [
+        1,
+        2,
+        3,
+        4
+      ],
       "images": [
         {
           "path": "absolutePath",
@@ -134,7 +138,12 @@
         "1": 5,
         "7": 4
       },
-      "includedServices": [1,2,3,4],
+      "includedServices": [
+        1,
+        2,
+        3,
+        4
+      ],
       "languages": {
         "1": {
           "version": 1,
@@ -157,7 +166,10 @@
           "importantInformation": [
             {
               "importantInformationHeadName": "Σημαντικές Πληροφορίες",
-              "descriptions": ["1","dfg"]
+              "descriptions": [
+                "1",
+                "dfg"
+              ]
             },
             {}
           ]
@@ -166,6 +178,4 @@
     },
     "2": {}
   }
-
-
 }

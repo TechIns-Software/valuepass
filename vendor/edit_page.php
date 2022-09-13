@@ -6,7 +6,6 @@ if ( !isset($_SESSION['tempurl'])){
     $_SESSION['tempurl'] = $tempurl ;
 }
 
-
 if ( !isset($_SESSION['idVendor'])){
     header('location:login.php');
 }
@@ -15,7 +14,7 @@ include_once "header.php";
 ?>
 <div class="container text-center">'
 
-    <h3>Welcome Vendor Admin  </h3>
+    <h3>EDIT PAGE </h3>
 
 
 </div>

@@ -30,7 +30,7 @@ document.getElementById('btnLogin').addEventListener(
                         if (jsonData.success == "1")
                         {
                             alert("All good");
-                            location.href = 'index.php';
+                            location.href = jsonData.tempurl;
                         }
                         else
                         {

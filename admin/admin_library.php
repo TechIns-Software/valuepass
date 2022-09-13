@@ -598,7 +598,8 @@ function checkLogin($conn, $username, $password, $fromwho)
             $_SESSION['admin'] = $loginUser[0][0];
             $_SESSION['adminName'] = $loginUser[0][1];
             $_SESSION['adminSurname'] = $loginUser[0][2];
-            echo json_encode(array('success' => 1));
+
+            echo json_encode(array('success' => 1 ));
         }
 
     } else if ($fromwho == 'vendor') {
@@ -618,7 +619,10 @@ function checkLogin($conn, $username, $password, $fromwho)
             $_SESSION['idVendor'] = $loginUser[0][0];
             $_SESSION['email'] = $loginUser[0][1];
             $_SESSION['phone'] = $loginUser[0][2];
-            echo json_encode(array('success' => 1));
+            if ( !isset($_SESSION['tempurl'])){
+                $_SESSION['tempurl'] = "index.php";
+            }
+            echo json_encode(array('success' => 1,'tempurl' => $_SESSION['tempurl']));
         }
 
     }
