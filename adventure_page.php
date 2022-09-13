@@ -11,11 +11,12 @@ include_once 'includes/header.php';
 
 $idVendor = $_GET['id'];
 $languageId = $_SESSION["languageId"];
+$languageId = 2;
 $vendor = getVendor($conn, $idVendor, $languageId);
-$bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
-if ($vendor == Null) {
-	//    header('location: index.php');
+if (is_null($vendor)) {
+    header('location: index.php');
 }
+$bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 ?>
 <input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>
 <main>

@@ -4,14 +4,14 @@ CREATE TABLE Language
     PRIMARY KEY (id),
     language varchar(100),
     icon     varchar(50)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE RatedCategory
 (
     id          int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     orderNumber int NOT NULL
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE RatedCategoryTranslate
 (
@@ -20,14 +20,14 @@ CREATE TABLE RatedCategoryTranslate
     idLanguage      int          NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     nameCategory    varchar(250) NOT NULL
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE Menu
 (
     id      int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     version bigint DEFAULT 0
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE MenuTranslate
 (
@@ -36,7 +36,7 @@ CREATE TABLE MenuTranslate
     idLanguage int          NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name       varchar(100) NOT NULL
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE Destination
 (
@@ -47,7 +47,7 @@ CREATE TABLE Destination
     version       bigint DEFAULT 0,
     image1Version bigint DEFAULT 0,
     image2Version bigint DEFAULT 0
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE DestinationTranslate
 (
@@ -57,14 +57,14 @@ CREATE TABLE DestinationTranslate
     FOREIGN KEY (idDestination) REFERENCES Destination (id),
     name          varchar(150),
     description   text DEFAULT ' '
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE CategoryVendor
 (
     id      int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     version bigint DEFAULT 0
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE CategoryVendorTranslate
 (
@@ -73,13 +73,13 @@ CREATE TABLE CategoryVendorTranslate
     idLanguage       int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name             varchar(150)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE PaymentInfoActivity
 (
     id int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE PaymentInfoActivityTranslate
 (
@@ -87,10 +87,9 @@ CREATE TABLE PaymentInfoActivityTranslate
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity (id),
     idLanguage            int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
-    head                  double(10, 2
-) ,
-    description text
-)ENGINE=InnoDB;
+    head                  double(10, 2),
+    description           text
+) ENGINE = InnoDB;
 
 CREATE TABLE Vendor
 (
@@ -113,7 +112,7 @@ CREATE TABLE Vendor
     googleMapsImageVersion bigint,
     infantPrice            int,
     forHowManyPersonsIs    int
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE VendorTranslate
 (
@@ -124,7 +123,7 @@ CREATE TABLE VendorTranslate
     name            varchar(100) NOT NULL,
     descriptionBig  text         NOT NULL,
     descriptionFull text         NOT NULL
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE BestOff
 (
@@ -135,14 +134,14 @@ CREATE TABLE BestOff
     idVendor      int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     version       bigint DEFAULT 0
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE LabelsBox
 (
     id      int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     version bigint DEFAULT 0
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 CREATE TABLE LabelsBoxTranslate
 (
     idLabelsBox int NOT NULL,
@@ -150,7 +149,7 @@ CREATE TABLE LabelsBoxTranslate
     idLanguage  int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name        varchar(100)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE VendorLabelsBox
 (
@@ -160,7 +159,7 @@ CREATE TABLE VendorLabelsBox
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     idLabelsBox int NOT NULL,
     FOREIGN KEY (idLabelsBox) REFERENCES LabelsBox (id)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE VendorImages
 (
@@ -169,7 +168,7 @@ CREATE TABLE VendorImages
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     image    varchar(100)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE Highlight
 (
@@ -177,7 +176,7 @@ CREATE TABLE Highlight
     PRIMARY KEY (id),
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE HighlightTranslate
 (
@@ -186,7 +185,7 @@ CREATE TABLE HighlightTranslate
     idLanguage  int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name        text
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE Rated
 (
@@ -195,7 +194,7 @@ CREATE TABLE Rated
     idVendor        int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     stars           int NOT NULL
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE IncludedService
 (
@@ -203,7 +202,7 @@ CREATE TABLE IncludedService
     PRIMARY KEY (id),
     icon    varchar(100),
     version bigint DEFAULT 0
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 CREATE TABLE IncludedServiceTranslate
 (
     idIncludedService int  NOT NULL,
@@ -211,7 +210,7 @@ CREATE TABLE IncludedServiceTranslate
     idLanguage        int  NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name              text NOT NULL
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE VendorIncludedService
 (
@@ -221,14 +220,14 @@ CREATE TABLE VendorIncludedService
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     idIncludedService int not null,
     FOREIGN KEY (idIncludedService) REFERENCES IncludedService (id)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 CREATE TABLE AboutActivity
 (
     id       int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 CREATE TABLE AboutActivityTranslate
 (
     idAboutActivity int NOT NULL,
@@ -237,7 +236,7 @@ CREATE TABLE AboutActivityTranslate
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     head            text,
     description     text
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE ImportantInformationHead
 (
@@ -245,14 +244,14 @@ CREATE TABLE ImportantInformationHead
     PRIMARY KEY (id),
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 CREATE TABLE ImportantInformationDescription
 (
     id                         int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idImportantInformationHead int NOT NULL,
     FOREIGN KEY (idImportantInformationHead) REFERENCES ImportantInformationHead (id)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 CREATE TABLE ImportantInformationHeadTranslate
 (
     idImportantInformationHead int NOT NULL AUTO_INCREMENT,
@@ -260,7 +259,7 @@ CREATE TABLE ImportantInformationHeadTranslate
     idLanguage                 int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name                       text
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 CREATE TABLE ImportantInformationDescriptionTranslate
 (
     idImportantInformationDescription int NOT NULL AUTO_INCREMENT,
@@ -268,20 +267,20 @@ CREATE TABLE ImportantInformationDescriptionTranslate
     idLanguage                        int NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name                              text
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE VendorVoucher
 (
-    id               int      NOT NULL AUTO_INCREMENT,
+    id               int       NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
-    idVendor         int      NOT NULL,
+    idVendor         int       NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     isDateRestrict   binary(1) NOT NULL,
-    starterVouchers  int      NOT NULL,
-    existenceVoucher int      NOT NULL,
-    dateVoucher      datetime NOT NULL,
+    starterVouchers  int       NOT NULL,
+    existenceVoucher int       NOT NULL,
+    dateVoucher      datetime  NOT NULL,
     reserved         int
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE Version
 (
@@ -289,7 +288,7 @@ CREATE TABLE Version
     PRIMARY KEY (id),
     version bigint NOT NULL DEFAULT 0,
     name    varchar(256)
-)ENGINE=InnoDB;
+) ENGINE = InnoDB;
 
 INSERT INTO Version(name)
 VALUES ('general'),

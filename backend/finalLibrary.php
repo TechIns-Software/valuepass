@@ -11,7 +11,6 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
                 WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
                 ORDER BY id ASC;";
     $query2 = "SELECT COUNT(id), idDestination FROM Vendor
-                WHERE isCompleted = 1
                 GROUP BY idDestination
                 ORDER BY idDestination ASC;";
     $stmt1 = $conn->prepare($query1);
@@ -44,7 +43,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
     return $destinations;
 }
 
-function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destination{
+function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destination | null{
     $query = "SELECT D.id, DT.name, DT.description, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
                 WHERE D.id = $idDestination AND D.id = DT.idDestination AND DT.idLanguage = $idLanguage ";
@@ -53,6 +52,10 @@ function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destina
         $id = $name = $description = $image2 = '';
         $stmt->bind_result($id, $name, $description, $image2);
         while ($stmt->fetch()) {}
+    }
+    if ($id == "") {
+        $destination = null;
+    } else {
         $destination = new \ValuePass\Destination(
             intval($id), $name, $description,
             image2: $image2
@@ -73,11 +76,11 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     if ($isBestOff) {
         $query0 = "SELECT V.id
             FROM Vendor AS V, BestOff AS BO
-            WHERE V.idDestination = ? AND V.id = BO.idVendor AND V.isCompleted = 1";
+            WHERE V.idDestination = ? AND V.id = BO.idVendor";
     } else {
         $query0 = "SELECT V.id
             FROM Vendor AS V
-            WHERE V.idDestination = ? AND V.isCompleted = 1";
+            WHERE V.idDestination = ?";
     }
     $stmt = $conn->prepare($query0);
     $stmt->bind_param('i', $idDestination);
@@ -261,7 +264,7 @@ function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
     $query = "SELECT DISTINCT(CV.id), CVT.name
             FROM Vendor AS V, CategoryVendor AS CV, CategoryVendorTranslate AS CVT
             WHERE CVT.idLanguage = $idLanguage AND CVT.idCategoryVendor = CV.id
-            AND V.idDestination = ? AND V.idCategory = CV.id AND V.isCompleted = 1;";
+            AND V.idDestination = ? AND V.idCategory = CV.id;";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $idDestination);
     $categories = [];

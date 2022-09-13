@@ -11,12 +11,12 @@ include_once 'includes/header.php';
 $idDestination = $_GET['id'];
 $languageId = $_SESSION["languageId"];
 $destination = getDestination($conn, $idDestination, $languageId);
+if (is_null($destination)) {
+    header('location: index.php');
+}
 $vendors = getVendors($conn, $idDestination, $languageId);
 $bestOffs = getVendors($conn, $idDestination, $languageId, true);
 $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
-if (count($vendors) <= 0) {
-	//   header('location: index.php');
-}
 ?>
 
 <main>
