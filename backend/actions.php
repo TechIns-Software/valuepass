@@ -37,19 +37,6 @@ include 'includeClasses.php';
 $message = "You did not provide the request correctly";
 $message2 = "";
 
-if ($_POST['action'] == 'signIn') {
-    //request to our server
-    $_SESSION['isLogged'] = 1;
-    $_SESSION["userId"] = 1;
-} elseif ($_POST['action'] == 'signUp') {
-    //request to our server
-    $_SESSION['isLogged'] = 1;
-    $_SESSION["userId"] = 1;
-} elseif ($_POST['action'] == 'logOut') {
-    //this option only for if is log in
-    session_destroy();
-    $message = "OK";
-}
 
 if ($_POST['action'] == 'addProduct') {
     if (isset($_POST['product'])) {
@@ -144,40 +131,35 @@ if ($_POST['action'] == 'addProduct') {
         }
     }
 } elseif ($_POST['action'] == 'checkOut') {
-    if (isset($_SESSION['isLogged']) && $_SESSION['isLogged'] == 1) {
-        $userId = $_SESSION["userId"];
-        //TODO: we have to reduce existence number and add column that
-        // says that we are waiting if ok proccess
-        //TODO: our payment provider must rejects payments after 10 minutes
-        //request and payment proccess
-        $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
-        $progress = $cart->progressForPayment();
-        if ($progress == true) {
-            //check if are available and if from our DB
-            //TODO: for payment we need some extra fields
+    //TODO: we have to reduce existence number and add column that
+    // says that we are waiting if ok proccess
+    //TODO: our payment provider must rejects payments after 10 minutes
+    //request and payment proccess
+    $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
+    $progress = $cart->progressForPayment();
+    if ($progress == true) {
+        //check if are available and if from our DB
+        //TODO: for payment we need some extra fields
 
-            $dataToSend = $cart->getConcentratedVendorVoucherIds();
+        $dataToSend = $cart->getConcentratedVendorVoucherIds();
 
-            $answer = json_decode(setRequestToCentralServer());
-            if ($answer['status'] == 'OK') {
-                $urlRedirect = $answer['url'];
-            } elseif ($answer['status'] == 'notAvailable') {
-                //inform that not available and remove from his cart
-                $arrayUnavailable = $answer['unavailable'];
-                //TODO: to be checked
-                $cart->removeIdsFromGroupOfVouchers($arrayUnavailable);
-                $message = "Unfortunately before a moment some vouchers have been reserved!";
-            } elseif ($answer['status'] == '') {
-
-            } else {
-                //other error
-            }
+        $answer = json_decode(setRequestToCentralServer());
+        if ($answer['status'] == 'OK') {
+            $urlRedirect = $answer['url'];
+        } elseif ($answer['status'] == 'notAvailable') {
+            //inform that not available and remove from his cart
+            $arrayUnavailable = $answer['unavailable'];
+            //TODO: to be checked
+            $cart->removeIdsFromGroupOfVouchers($arrayUnavailable);
+            $message = "Unfortunately before a moment some vouchers have been reserved!";
+        } elseif ($answer['status'] == '') {
 
         } else {
-            $message = $progress;
+            //other error
         }
+
     } else {
-        $message = "mustSignIn";
+        $message = $progress;
     }
 } 
 echo json_encode([$message, $message2]);

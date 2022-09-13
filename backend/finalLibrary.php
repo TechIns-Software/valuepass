@@ -65,11 +65,6 @@ function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destina
     return $destination;
 }
 
-function getBestOff($conn, $idLanguage, $idDestination) : array{
-    $idDestination = $conn->real_escape_string($idDestination);
-    $vendors = getVendors($conn, $idDestination, $idLanguage, isBestOff: true);
-
-}
 
 function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : array {
     $idDestination = $conn->real_escape_string($idDestination);
