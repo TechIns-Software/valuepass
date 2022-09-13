@@ -397,3 +397,16 @@ VALUES (1, 1, 'Ποιότητα Εξυπηρέτησης Πελατών'),
        (6, 2, 'Environmental Responsibility'),
        (7, 1, 'Σεβασμός στους Πολιτιστική Κληρονομιά'),
        (7, 2, 'Respect for Local Cultures');
+
+INSERT INTO Version(name)
+VALUES ('general'),
+       ('ratedCategory'),
+       ('menu'),
+       ('destination'),
+       ('categoryVendor'),
+       ('paymentInfoActivity'),
+       ('vendor'),
+       ('labelsBox'),
+       ('includedService'),
+       ('language');
+

@@ -498,7 +498,19 @@ CREATE TABLE Version(
                         name varchar(50),
                         version varchar(50)
 )ENGINE=InnoDB;
-INSERT INTO Version(name, version) VALUES ('Menu', 0);
+
+INSERT INTO Version(name)
+VALUES ('general'),
+       ('ratedCategory'),
+       ('menu'),
+       ('destination'),
+       ('categoryVendor'),
+       ('paymentInfoActivity'),
+       ('vendor'),
+       ('labelsBox'),
+       ('includedService'),
+       ('language');
+
 -- INSERT INTO VendorVoucher(idVendor, starterVouchers, existenceVoucher, dateVoucher)
 -- VALUES
 -- (1, 10, 10, NOW() + INTERVAL 1 DAY);
