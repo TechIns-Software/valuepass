@@ -110,7 +110,7 @@ CREATE TABLE Vendor
     idPaymentInfoActivity  int          NOT NULL,
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity (id),
     googleMapsImage        varchar(100) NOT NULL,
-    googleMapsImageVersion version bigint,
+    googleMapsImageVersion bigint,
     infantPrice            int,
     forHowManyPersonsIs    int
 )ENGINE=InnoDB;
@@ -286,6 +286,7 @@ CREATE TABLE VendorVoucher
 CREATE TABLE Version
 (
     id      int    NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
     version bigint NOT NULL DEFAULT 0,
     name    varchar(256)
 )ENGINE=InnoDB;
