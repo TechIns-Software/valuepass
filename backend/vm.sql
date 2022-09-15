@@ -45,8 +45,9 @@ CREATE TABLE Destination
     image1        varchar(100),
     image2        varchar(100),
     version       bigint DEFAULT 0,
-    image1Version bigint DEFAULT 0,
-    image2Version bigint DEFAULT 0
+    image1Version bigint DEFAULT -1,
+    image2Version bigint DEFAULT -1,
+    isOkForShowing binary(1) DEFAULT 0
 ) ENGINE = InnoDB;
 
 CREATE TABLE DestinationTranslate
@@ -93,9 +94,9 @@ CREATE TABLE PaymentInfoActivityTranslate
 
 CREATE TABLE Vendor
 (
-    id                     int          NOT NULL AUTO_INCREMENT,
+    id                     int          NOT NULL,
     version                bigint DEFAULT 0,
-    PRIMARY KEY (id),
+    isOkForShowing binary(1) DEFAULT 0,
     idDestination          int          NOT NULL,
     FOREIGN KEY (idDestination) REFERENCES Destination (id),
     priceAdult             float        NOT NULL,
@@ -103,13 +104,13 @@ CREATE TABLE Vendor
     discount               float        NOT NULL,
     priceKid               float        NOT NULL,
     imageBasic             varchar(100),
-    imageBasicVersion      bigint DEFAULT 0,
+    imageBasicVersion      bigint DEFAULT -1,
     idCategory             int          NOT NULL,
     FOREIGN KEY (idCategory) REFERENCES CategoryVendor (id),
     idPaymentInfoActivity  int          NOT NULL,
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity (id),
     googleMapsImage        varchar(100) NOT NULL,
-    googleMapsImageVersion bigint,
+    googleMapsImageVersion bigint DEFAULT -1,
     infantPrice            int,
     forHowManyPersonsIs    int
 ) ENGINE = InnoDB;
@@ -163,8 +164,7 @@ CREATE TABLE VendorLabelsBox
 
 CREATE TABLE VendorImages
 (
-    id       int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
+    id       int,
     idVendor int NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     image    varchar(100)
@@ -409,4 +409,5 @@ VALUES ('general'),
        ('labelsBox'),
        ('includedService'),
        ('language');
+
 
