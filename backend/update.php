@@ -375,7 +375,6 @@ foreach ($basicImagesToChange as $idVendorBasicImage) {
 $updatedGoogleMaps = [];
 foreach ($googleMapsImageToChange as $idVendorGoogleMaps) {
     $imagePathName = $vendors[$idVendorGoogleMaps]['googleMapString']['path'];
-    //TODO: both paths to change
     $url = "https://valuepass.gr/vendorImages/$idVendorGoogleMaps/$imagePathName";
     $targetFileName = "../vendorImages/$idVendorGoogleMaps/$imagePathName";
     if (!file_exists($targetFileName)) {
@@ -439,7 +438,6 @@ foreach ($updatedBasic as $idVendor) {
 
 foreach ($updatedGoogleMaps as $idVendor) {
     $imagePathName = $vendors[$idVendor]['googleMapString']['path'];
-    //TODO: both paths to change
     $targetFileName = "../vendorImages/$idVendor/$imagePathName";
     //update sql
 
