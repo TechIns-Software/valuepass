@@ -3,8 +3,6 @@
 include_once 'api/apiLibrary.php';
 
 
-
-
 if (!isset($conn)) {
     include '../connection.php';
 }
@@ -12,13 +10,13 @@ if (!isset($conn)) {
 $versionJSON = 1;
 
 
-$filename = 'example.json';
+$filename = 'api/example.json';
 if (!file_exists($filename)) {
     exit('No file found!');
 }
 
 $json = file_get_contents($filename);
-$respone = json_decode($json,true);
+$respone = json_decode($json, true);
 $element_expected = array(
     'version',
     'languages',
@@ -28,14 +26,14 @@ $element_expected = array(
     'labelsBox',
     'ratedCategory',
     'includedService',
-    'vendors'
+    'vendors',
+    'menu'
 );
 
 foreach ($element_expected as $idVendor => $version) {
-    if (!array_key_exists($idVendor, $respone)) {
+    if (!array_key_exists($version, $respone)) {
         exit('File is not well structured');
     }
-
 }
 
 // # Start only for data
@@ -44,12 +42,27 @@ $versions = getVersions($conn);
 if ($versions['general'] < $respone['version']) {
     if ($versions['destination'] < $respone['destinations']) {
         $idsOfDestination = getIdVersionOfElementsOfArray($conn, 'Destination');
-        foreach ($respone['destinations'] as $idDestination=> $destinationValue) {
+        foreach ($respone['destinations'] as $idDestination => $destinationValue) {
             if ($idDestination != 'version') {
+
                 $idDestination = intval($idDestination);
                 if (array_key_exists($idDestination, $idsOfDestination)) {
+
+
                     if ($idsOfDestination[$idDestination] < $destinationValue['version']) {
-                        //update
+
+
+                        foreach ($destinationValue['languages'] as $idLanguage => $destLangObj) {
+//                            echo $destLangObj['name'];
+//                            echo $destLangObj['description'];
+//                            echo  $idDestination;
+//                            echo 'this is LANGUAGE'. $idLanguage;
+//                            echo '<hr>';
+
+//                            updateDestinationLanguages($conn,$idLanguage,$idDestination,$destLangObj['name'],$destLangObj['description']);
+
+                        }
+
                     }
                 }
 
@@ -58,16 +71,27 @@ if ($versions['general'] < $respone['version']) {
         }
 
     }
+
     if ($versions['categoryVendor'] < $respone['categoryVendor']) {
 
         $idsOfCategoryVendor = getIdVersionOfElementsOfArray($conn, 'CategoryVendor');
-        foreach ($respone['categoryVendor'] as $idCategoryVendor=> $idCategoryVendorValue) {
+        foreach ($respone['categoryVendor'] as $idCategoryVendor => $idCategoryVendorValue) {
             if ($idCategoryVendor != 'version') {
                 $idCategoryVendor = intval($idCategoryVendor);
                 if (array_key_exists($idCategoryVendor, $idsOfCategoryVendor)) {
-                    if ($idsOfCategoryVendor[$idCategoryVendor] < $idCategoryVendorValue['version']) {
-                        //update
+
+
+                    foreach ($idCategoryVendorValue['languages'] as $idLanguage => $catObj) {
+
+//                        echo 'THIS IS THE CATEGORY ID -->'.$idCategoryVendor;
+//                        echo  'THIS IS THE LANGUAGE-->'.$idLanguage;
+//                        echo  $catObj['name'];
+//                        echo '<hr>';
+
+//                        updateCategoryVendor($conn,$idLanguage,$idCategoryVendor,$catObj['name']);
+
                     }
+
                 }
             }
 
@@ -76,60 +100,82 @@ if ($versions['general'] < $respone['version']) {
     }
     if ($versions['paymentInfoActivity'] < $respone['paymentInfoActivity']) {
         $idsOfPayment = getIdVersionOfElementsOfArray($conn, 'PaymentInfoActivity');
-        foreach ($respone['paymentInfoActivity'] as $idPayment=> $paymentValue) {
+        foreach ($respone['paymentInfoActivity'] as $idPayment => $paymentValue) {
             if ($idPayment != 'version') {
                 $idPayment = intval($idPayment);
                 if (array_key_exists($idPayment, $idsOfPayment)) {
-                    if ($idsOfPayment[$idPayment] < $paymentValue['version']) {
-                        //update
+
+                    foreach ($paymentValue['languages'] as $idLanguage => $paymentInfoObj) {
+//                        echo 'THIS IS THE PAYMENTINFO ID -->'.$idPayment;
+//                        echo  'THIS IS THE LANGUAGE-->'.$idLanguage;
+//                        echo  $paymentInfoObj['description'];
+//                        echo '<hr>';
+
+//                        updatePaymentInfo($conn,$idLanguage,$idPayment,$paymentInfoObj['description']);
                     }
+
                 }
             }
         }
     }
+
     if ($versions['labelsBox'] < $respone['labelsBox']) {
         $idsOfLabelsBox = getIdVersionOfElementsOfArray($conn, 'LabelsBox');
-        foreach ($respone['labelsBox'] as $idLabelsBox=> $labelsBoxValue) {
-            if ($idLabelsBox!= 'version') {
+        foreach ($respone['labelsBox'] as $idLabelsBox => $labelsBoxValue) {
+            if ($idLabelsBox != 'version') {
                 $idLabelsBox = intval($idLabelsBox);
-                if (in_array($idLabelsBox, $idsOfLabelsBox)) {
-                    if ($idsOfLabelsBox[$idLabelsBox] < $labelsBoxValue['version']) {
-                        //update
-                    }
-                }
+                if (array_key_exists($idLabelsBox, $idsOfLabelsBox)) {
+                    foreach ($labelsBoxValue['languages'] as $idLanguage => $labelBoxObj) {
+//                        echo 'THIS IS THE LABEL ID -->'.$idLabelsBox;
+//                        echo  'THIS IS THE LANGUAGE-->'.$idLanguage;
+//                        echo  $labelBoxObj['name'];
+//                        echo '<hr>';
 
+//                        updateLabelBox($conn,$idLanguage,$idLabelsBox,$labelBoxObj['name']);
+                    }
+
+                }
             }
         }
     }
-//    if ($versions['ratedCategory'] < $respone['ratedCategory']) {}
+
+////    if ($versions['ratedCategory'] < $respone['ratedCategory']) {}
     if ($versions['includedService'] < $respone['includedService']) {
         $idsOfIncludedService = getIdVersionOfElementsOfArray($conn, 'IncludedService');
-        foreach ($respone['includedService'] as $idIncludedService=> $includedServiceValue) {
+        foreach ($respone['includedService'] as $idIncludedService => $includedServiceValue) {
             if ($idIncludedService != 'version') {
                 $idIncludedService = intval($idIncludedService);
-                if (in_array($idIncludedService, $idsOfIncludedService)) {
-                    if ($idsOfIncludedService[$idIncludedService] < $includedServiceValue['version']) {
-                        //update
-                    }
-                }
-            }
-        }
-    }
-    if ($versions['menu'] < $respone['menu']) {
-        //update
-    }
-    if ($versions['vendor'] < $respone['vendors']) {
-        $idsOfVendors = getIdVersionOfElementsOfArray($conn, 'Vendor');
-        foreach ($respone['vendors'] as $idVendor=> $vendorValue) {
-            if ($idVendor != 'version') {
-                $idVendor = intval($idVendor);
-                if (in_array($idVendor, $idsOfVendors)) {
-                    //update
-                }
+                if (array_key_exists($idIncludedService, $idsOfIncludedService)) {
 
+                    foreach ($includedServiceValue['languages'] as $idLanguage => $includeServObj) {
+//                        echo 'THIS IS THE INCLUDE ID -->' . $idIncludedService;
+//                        echo 'THIS IS THE LANGUAGE-->' . $idLanguage;
+//                        echo $includeServObj['name'];
+//                        echo '<hr>';
+
+//                        updateIncludeService($conn,$idLanguage,$idIncludedService,$includeServObj['name']);
+                    }
+
+                }
             }
         }
     }
+
+//    if ($versions['menu'] < $respone['menu']) {
+//        //update
+//    }
+//    if ($versions['vendor'] < $respone['vendors']) {
+//        $idsOfVendors = getIdVersionOfElementsOfArray($conn, 'Vendor');
+//        foreach ($respone['vendors'] as $idVendor => $vendorValue) {
+//            if ($idVendor != 'version') {
+//                $idVendor = intval($idVendor);
+//                if (in_array($idVendor, $idsOfVendors)) {
+//                    //update
+//                }
+//
+//            }
+//        }
+//    }
 }
 
 // # Continue with data
@@ -138,7 +184,7 @@ $allIds = getAllIds($conn);
 
 //foreach ($respone['language'] as ){}
 
-foreach ($respone['destinations'] as $idDestination=>$destinationValue) {
+foreach ($respone['destinations'] as $idDestination => $destinationValue) {
     if ($idDestination != 'version') {
         $idDestination = intval($idDestination);
         if (!in_array($idDestination, $allIds['destination'])) {
@@ -147,7 +193,7 @@ foreach ($respone['destinations'] as $idDestination=>$destinationValue) {
     }
 }
 
-foreach ($respone['categoryVendor'] as $idCategoryVendor=> $categoryVendorValue) {
+foreach ($respone['categoryVendor'] as $idCategoryVendor => $categoryVendorValue) {
     if ($idCategoryVendor != 'version') {
         $idCategoryVendor = intval($idCategoryVendor);
         if (!in_array($idCategoryVendor, $allIds['categoryVendor'])) {
@@ -156,7 +202,7 @@ foreach ($respone['categoryVendor'] as $idCategoryVendor=> $categoryVendorValue)
     }
 }
 
-foreach ($respone['labelsBox'] as $idLabelBox=> $labelBoxId) {
+foreach ($respone['labelsBox'] as $idLabelBox => $labelBoxId) {
     if ($idLabelBox != 'version') {
         $idLabelBox = intval($idLabelBox);
         if (!in_array($idLabelBox, $allIds['labelsBox'])) {
@@ -164,7 +210,7 @@ foreach ($respone['labelsBox'] as $idLabelBox=> $labelBoxId) {
         }
     }
 }
-foreach ($respone['includedService'] as $idIncludedService=> $includedServiceValue) {
+foreach ($respone['includedService'] as $idIncludedService => $includedServiceValue) {
     if ($idIncludedService != 'version') {
         $idIncludedService = intval($includedServiceValue);
         if (!in_array($idIncludedService, $allIds['includedService'])) {
@@ -174,7 +220,7 @@ foreach ($respone['includedService'] as $idIncludedService=> $includedServiceVal
 }
 
 
-foreach ($respone['vendors'] as $idVendor=> $valueVendor) {
+foreach ($respone['vendors'] as $idVendor => $valueVendor) {
     if ($idVendor != 'version') {
         $idVendor = intval($idVendor);
         if (!in_array($idVendor, $allIds['vendor'])) {
@@ -182,8 +228,6 @@ foreach ($respone['vendors'] as $idVendor=> $valueVendor) {
         }
     }
 }
-
-
 
 
 //TODO: run sql
@@ -196,7 +240,7 @@ $modifiedImage1 = [];
 $modifiedImage2 = [];
 
 $destinationsDetails = getDestinationsImagesDetails($conn);
-foreach ($destinations as $idDestination=> $destinationValue) {
+foreach ($destinations as $idDestination => $destinationValue) {
     if ($idDestination !== 'version') {
         $idDestination = intval($idDestination);
 
@@ -221,7 +265,7 @@ foreach ($destinations as $idDestination=> $destinationValue) {
 }
 
 $image1Modified = [];
-foreach ($modifiedImage1 as $idDestination=> $imagePathName) {
+foreach ($modifiedImage1 as $idDestination => $imagePathName) {
     $url = "https://valuepass.gr/images/location_images/$imagePathName";
     $targetFileName = "../images/location_images/$imagePathName";
     if (!file_exists($targetFileName)) {
@@ -243,7 +287,7 @@ foreach ($modifiedImage1 as $idDestination=> $imagePathName) {
 }
 
 $image2Modified = [];
-foreach ($modifiedImage2 as $idDestination=> $imagePathName) {
+foreach ($modifiedImage2 as $idDestination => $imagePathName) {
     $url = "https://valuepass.gr/images/location_images/$imagePathName";
     $targetFileName = "../images/location_images/$imagePathName";
     if (!file_exists($targetFileName)) {
@@ -264,11 +308,11 @@ foreach ($modifiedImage2 as $idDestination=> $imagePathName) {
     }
 }
 
-foreach ($image1Modified as $idDestination=> $path) {
+foreach ($image1Modified as $idDestination => $path) {
     //sql
 }
 
-foreach ($image2Modified as $idDestination=> $path) {
+foreach ($image2Modified as $idDestination => $path) {
     //sql
 }
 
@@ -291,7 +335,7 @@ $imagesToBeRemoved = [];
 
 $basicImagesVendor = getImageBasicVendors($conn);
 $imagesAvailableOfAllVendor = getImageVendors($conn);
-foreach ($vendors as $idVendor=> $vendorValue) {
+foreach ($vendors as $idVendor => $vendorValue) {
     if ($idVendor !== 'version') {
         $idVendor = intval($idVendor);
         // # Basic vendor images
@@ -324,9 +368,9 @@ foreach ($vendors as $idVendor=> $vendorValue) {
             $pathImage = $imageObject['path'];
             if (!in_array($idImage, $imagesAvailable)) {
                 $imageToBeAdded = array(
-                    'id'=> $idImage,
+                    'id' => $idImage,
                     'idVendor' => $idVendor,
-                    'path'=> $pathImage
+                    'path' => $pathImage
                 );
                 array_push($imagesToBeAdded, $imageToBeAdded);
                 if (!in_array($idVendor, $vendorsModified)) {
@@ -412,8 +456,8 @@ foreach ($imagesToBeAdded as $imageToAddedObj) {
                 $file
             );
             $innerImagesUploaded[$idImage] = array(
-                'idVendor'=> $idVendorInnerImage,
-                'path'=> $imagePathName
+                'idVendor' => $idVendorInnerImage,
+                'path' => $imagePathName
             );
         } else {
             if (($key = array_search($idVendorInnerImage, $vendorsModified)) !== false) {
@@ -422,8 +466,8 @@ foreach ($imagesToBeAdded as $imageToAddedObj) {
         }
     } else {
         $innerImagesUploaded[$idImage] = array(
-            'idVendor'=> $idVendorInnerImage,
-            'path'=> $imagePathName
+            'idVendor' => $idVendorInnerImage,
+            'path' => $imagePathName
         );
     }
 
@@ -443,7 +487,7 @@ foreach ($updatedGoogleMaps as $idVendor) {
 
 }
 
-foreach ($innerImagesUploaded as $idImage=> $obj) {
+foreach ($innerImagesUploaded as $idImage => $obj) {
     $idVendor = $obj['idVendor'];
     $imagePathName = $obj['path'];
 

@@ -35,6 +35,7 @@ CREATE TABLE CategoryVendorTranslate (
 CREATE TABLE PaymentInfoActivity (
                                      id int NOT NULL AUTO_INCREMENT,
                                      PRIMARY KEY (id)
+                                      version bigint DEFAULT 0
 )ENGINE=InnoDB;
 CREATE TABLE PaymentInfoActivityTranslate (
                                               idPaymentInfoActivity int NOT NULL,

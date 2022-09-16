@@ -1,6 +1,7 @@
 <?php
 
-function getImageBasicVendors($conn) {
+function getImageBasicVendors($conn)
+{
     $query = "SELECT id, imageBasic,
        imageBasicVersion, googleMapsImage, googleMapsImageVersion
             FROM Vendor;";
@@ -11,10 +12,10 @@ function getImageBasicVendors($conn) {
         $stmt->bind_result($idVendor, $imageBasic, $imageBasicVersion, $googleMapsImage, $googleMapsImageVersion);
         while ($stmt->fetch()) {
             $imagesBasicVendor[intval($idVendor)] = array(
-                'imageBasic'=> $imageBasic,
-                'imageBasicVersion'=> $imageBasicVersion,
-                'googleMapsImage'=> $googleMapsImage,
-                'googleMapsImageVersion'=> $googleMapsImageVersion
+                'imageBasic' => $imageBasic,
+                'imageBasicVersion' => $imageBasicVersion,
+                'googleMapsImage' => $googleMapsImage,
+                'googleMapsImageVersion' => $googleMapsImageVersion
             );
         }
     }
@@ -23,7 +24,8 @@ function getImageBasicVendors($conn) {
 }
 
 
-function getImageVendors($conn) {
+function getImageVendors($conn)
+{
     $query = "SELECT id, idVendor FROM VendorImages;";
     $stmt = $conn->prepare($query);
     $imagesAvailable = [];
@@ -44,7 +46,8 @@ function getImageVendors($conn) {
 }
 
 
-function getNotOkForShowingVendors($conn) {
+function getNotOkForShowingVendors($conn)
+{
     $query = "SELECT id FROM Vendor WHERE isOkForShowing = 0;";
     $stmt = $conn->prepare($query);
     $notOkVendors = [];
@@ -59,7 +62,8 @@ function getNotOkForShowingVendors($conn) {
     return $notOkVendors;
 }
 
-function getDestinationsImagesDetails($conn) {
+function getDestinationsImagesDetails($conn)
+{
     $query = "SELECT id, image1, image2, image1Version, image2Version
             FROM Destination;";
     $stmt = $conn->prepare($query);
@@ -69,10 +73,10 @@ function getDestinationsImagesDetails($conn) {
         $stmt->bind_result($idDestination, $image1, $image2, $image1Version, $image2Version);
         while ($stmt->fetch()) {
             $destinations[intval($idDestination)] = array(
-                'image1'=> $image1,
-                'image1Version'=> $image1Version,
-                'image2'=> $image2,
-                'image2Version'=> $image2Version
+                'image1' => $image1,
+                'image1Version' => $image1Version,
+                'image2' => $image2,
+                'image2Version' => $image2Version
             );
         }
     }
@@ -80,7 +84,8 @@ function getDestinationsImagesDetails($conn) {
     return $destinations;
 }
 
-function getNotOkForShowingDestinations($conn) {
+function getNotOkForShowingDestinations($conn)
+{
     $query = "SELECT id FROM Destination WHERE isOkForShowing = 0;";
     $stmt = $conn->prepare($query);
     $notOkVendors = [];
@@ -95,7 +100,8 @@ function getNotOkForShowingDestinations($conn) {
     return $notOkVendors;
 }
 
-function getVersions($conn) {
+function getVersions($conn)
+{
     $query = "SELECT name, version FROM Version;";
     $stmt = $conn->prepare($query);
     $versions = [];
@@ -110,7 +116,8 @@ function getVersions($conn) {
     return $versions;
 }
 
-function getIdsOfArray($conn, $tableName) {
+function getIdsOfArray($conn, $tableName)
+{
     $query = "SELECT id FROM $tableName;";
     $stmt = $conn->prepare($query);
     $ids = [];
@@ -125,7 +132,8 @@ function getIdsOfArray($conn, $tableName) {
     return $ids;
 }
 
-function getAllIds($conn) {
+function getAllIds($conn)
+{
     $tablesName = [
         'Destination', 'CategoryVendor',
         'Vendor', 'LabelsBox', 'IncludedService', 'Language'
@@ -137,7 +145,8 @@ function getAllIds($conn) {
     return $allIds;
 }
 
-function getIdVersionOfElementsOfArray($conn, $tableName) {
+function getIdVersionOfElementsOfArray($conn, $tableName)
+{
     $query = "SELECT id, version FROM $tableName;";
     $stmt = $conn->prepare($query);
     $versions = [];
@@ -151,3 +160,63 @@ function getIdVersionOfElementsOfArray($conn, $tableName) {
     $stmt->close();
     return $versions;
 }
+
+function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description)
+{
+    $query = "UPDATE DestinationTranslate
+        SET 
+        name = '$name',
+        description= '$description' 
+    WHERE  idDestination = '$idDest' AND  idLanguage ='$idLang' ";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+function updateCategoryVendor($conn, $idLang, $idCat, $name)
+{
+    $query = "UPDATE  CategoryVendorTranslate 
+    SET 
+    name = '$name'
+    WHERE  idCategoryVendor = '$idCat'AND idLanguage = '$idLang'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+function updatePaymentInfo($conn, $idLang, $idPayment, $description){
+    $query = "UPDATE  PaymentInfoActivityTranslate 
+    SET 
+    description = '$description'
+    WHERE  idPaymentInfoActivity = '$idPayment'AND idLanguage = '$idLang'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+
+}
+
+function updateLabelBox($conn, $idLang, $idLabelBox, $name){
+    $query = "UPDATE  LabelsBoxTranslate 
+    SET 
+    name = '$name'
+    WHERE  idLabelsBox = '$idLabelBox'AND idLanguage = '$idLang'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+function updateIncludeService($conn, $idLang, $idInclude, $name){
+    $query = "UPDATE  IncludedServiceTranslate 
+    SET 
+    name = '$name'
+    WHERE  idIncludedService = '$idInclude'AND idLanguage = '$idLang'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+
+
