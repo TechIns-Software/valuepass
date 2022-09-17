@@ -50,20 +50,20 @@ class Cart
         //see if can add
         if ($this->checkUpperLimit(count($groupVoucherWant))) {
             //see if can buy from one vendor all these vouchers
-            $voucherIdWant = $groupVoucherWant[0];
+            $vendorVoucherIdWant = $groupVoucherWant[0];
             $ids = $this->getConcentratedVendorVoucherIds();
-            $idAdded = $voucherIdWant->getIdVendorVoucher();
+            $idAdded = $vendorVoucherIdWant->getIdVendorVoucher();
             $newTotalNumber = 0;
             if (isset($ids[$idAdded])) {
                 $newTotalNumber = $ids[$idAdded];
             }
-            $newTotalNumber = $newTotalNumber + 1;
+            $newTotalNumber = $newTotalNumber + count($groupVoucherWant);
             //we get the max voucher can have, if does not exist we get 0
             $maxVoucherFromVendorThatCanHave = getMaxVendorVoucher($conn, $idAdded);
 
             if ($newTotalNumber < $maxVoucherFromVendorThatCanHave) {
-                //TODO: check if they are permission to be checked, fe infants and children
-                //TODO: if exists infants then only with parents
+                //is not checked if infants and children are ok with vendorVoucher
+                //we check in interval server
                 array_push($this->arrayGroupVouchersWant, $groupVoucherWant);
                 $message = "OK";
             } else {
@@ -76,10 +76,6 @@ class Cart
         return $message;
     }
 
-    public function checkIfVoucherStillAvailable() : string {
-
-        return 'Something has changed because of voucher availability';
-    }
 
     //ok
     public function removeItemFromCart($idItem) : string {
@@ -143,5 +139,21 @@ class Cart
             $sum = $sum + count($groupVoucherWant);
         }
         return $sum;
+    }
+
+    public function readyForSendingVendorVoucherData() : array {
+        $products = [];
+        foreach ($this->arrayGroupVouchersWant as $arrayGroupVoucherWant) {
+            //
+            foreach ($arrayGroupVoucherWant as $voucherWant) {
+                $product = array(
+                    'idVendorVoucher'=> $voucherWant->getIdVendorVoucher(),
+                    'isAdult'=> $voucherWant->isAdult(),
+                    'numberInfants'=> $voucherWant->getNumberOfInfant(),
+                );
+                array_push($products, $product);
+            }
+        }
+        return $products;
     }
 }

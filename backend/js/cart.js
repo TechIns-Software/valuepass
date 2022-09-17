@@ -14,7 +14,7 @@ function getAjax(data, callbackFnc, relativePosition='', url='backend/actions.ph
 }
 
 function addToCart(objectOfDetails) {
-    // f.e. objectOfDetails = {'vendorId':1,'adults':2,'children':2,'infants':1}
+    // f.e. objectOfDetails = {'voucherVendorId':1,'adults':2,'children':2,'infants':1, 'vendorId': 1}
     const data = {
         "action": 'addProduct',
         'product': objectOfDetails

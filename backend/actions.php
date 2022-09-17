@@ -56,12 +56,12 @@ if ($_POST['action'] == 'addProduct') {
             $idVendor = $product["idVendor"];
             for ($counter = 0; $counter < $product["adults"]; $counter++) {
                 if ($counter == 0) {
-                    $numberOfNumeric = $product["infants"];
+                    $numberOfInfantsInAdult = $product["infants"];
                 } else {
-                    $numberOfNumeric = 0;
+                    $numberOfInfantsInAdult = 0;
                 }
                 $voucherWant = new \ValuePass\VoucherWant(
-                    $product["voucherVendorId"], $idVendor,true, $numberOfNumeric);
+                    $product["voucherVendorId"], $idVendor,true, $numberOfInfantsInAdult);
                 array_push($vouchersWant, $voucherWant);
             }
             for ($counter = 0; $counter < $product["children"]; $counter++) {
@@ -72,7 +72,6 @@ if ($_POST['action'] == 'addProduct') {
             if (count($vouchersWant) == 0) {
                 $message = "Please select at least one Voucher!";
             } else {
-
                 $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
                 $message = $cart->addItemsToCart($vouchersWant, $conn);
                 $message2 = $cart->getNumberOfVoucher();
@@ -120,43 +119,22 @@ if ($_POST['action'] == 'addProduct') {
             //return HTML
             if (count($possiblePackages) == 0) {
                 $message = getTemplateVoucher() ;
-//                $message = did not find available options
             } else {
                 $message = '';
                 foreach ($possiblePackages as $possiblePackage) {
                     $message .= getTemplateVoucher($possiblePackage ,$adults ,$children ,$infants ,$idVendor, $nameVendor) ;
-//                    $message = "<button class='btn btn-primary' onclick=\"addToCart({'voucherVendorId': $possiblePackage[0],'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button>";
                 }
             }
         }
     }
 } elseif ($_POST['action'] == 'checkOut') {
-    //TODO: we have to reduce existence number and add column that
-    // says that we are waiting if ok proccess
     //TODO: our payment provider must rejects payments after 10 minutes
-    //request and payment proccess
     $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
     $progress = $cart->progressForPayment();
-    if ($progress == true) {
-        //check if are available and if from our DB
-        //TODO: for payment we need some extra fields
+    if ($progress) {
 
         $dataToSend = $cart->getConcentratedVendorVoucherIds();
 
-        $answer = json_decode(setRequestToCentralServer());
-        if ($answer['status'] == 'OK') {
-            $urlRedirect = $answer['url'];
-        } elseif ($answer['status'] == 'notAvailable') {
-            //inform that not available and remove from his cart
-            $arrayUnavailable = $answer['unavailable'];
-            //TODO: to be checked
-            $cart->removeIdsFromGroupOfVouchers($arrayUnavailable);
-            $message = "Unfortunately before a moment some vouchers have been reserved!";
-        } elseif ($answer['status'] == '') {
-
-        } else {
-            //other error
-        }
 
     } else {
         $message = $progress;

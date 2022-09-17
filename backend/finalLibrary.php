@@ -11,6 +11,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
                 WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
                 ORDER BY id ASC;";
     $query2 = "SELECT COUNT(id), idDestination FROM Vendor
+                WHERE isOkForShowing = 1
                 GROUP BY idDestination
                 ORDER BY idDestination ASC;";
     $stmt1 = $conn->prepare($query1);
@@ -65,17 +66,16 @@ function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destina
     return $destination;
 }
 
-
 function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : array {
     $idDestination = $conn->real_escape_string($idDestination);
     if ($isBestOff) {
         $query0 = "SELECT V.id
             FROM Vendor AS V, BestOff AS BO
-            WHERE V.idDestination = ? AND V.id = BO.idVendor";
+            WHERE V.idDestination = ? AND V.id = BO.idVendor AND V.isOkForShowing = 1";
     } else {
         $query0 = "SELECT V.id
             FROM Vendor AS V
-            WHERE V.idDestination = ?";
+            WHERE V.idDestination = ? AND V.isOkForShowing = 1";
     }
     $stmt = $conn->prepare($query0);
     $stmt->bind_param('i', $idDestination);
@@ -97,13 +97,14 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     return $vendors;
 }
 
-function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
+function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) : \ValuePass\Vendor | null{
     $query = "SELECT V.id, V.priceAdult, V.originalPrice, V.discount,
                         V.priceKid, V.idDestination, V.imageBasic, VT.name, CVT.name, CV.id, V.forHowManyPersonsIs
               FROM Vendor AS V, VendorTranslate AS VT, CategoryVendor as CV,
                         CategoryVendorTranslate CVT
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
-                        AND CV.id = V.idCategory AND CV.id = CVT.idCategoryVendor";
+                        AND CV.id = V.idCategory AND CV.id = CVT.idCategoryVendor
+                        AND V.isOkForShowing = 1";
 
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ii', $idVendor, $idLanguage);
@@ -233,6 +234,9 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) {
                 $stmt8->bind_result($headImportant, $descriptionImportant);
                 while ($stmt8->fetch()) {
                     if ($previousImportant == $headImportant) {
+                        if (!isset($importantInformation)) {
+                            $importantInformation = new \ValuePass\ImportantInformation($headImportant);
+                        }
                         $importantInformation->addDescription($descriptionImportant);
                     } else {
                         if (isset($importantInformation)) {
@@ -259,7 +263,7 @@ function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
     $query = "SELECT DISTINCT(CV.id), CVT.name
             FROM Vendor AS V, CategoryVendor AS CV, CategoryVendorTranslate AS CVT
             WHERE CVT.idLanguage = $idLanguage AND CVT.idCategoryVendor = CV.id
-            AND V.idDestination = ? AND V.idCategory = CV.id;";
+            AND V.idDestination = ? AND V.idCategory = CV.id AND V.isOkForShowing = 1";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $idDestination);
     $categories = [];
@@ -271,10 +275,6 @@ function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
         }
     }
     return $categories;
-}
-
-function voucherChangeStatus() {
-//    TODO to be sent tou our BD
 }
 
 function getMaxVendorVoucher($conn, $idVendorVoucher) : int {
@@ -333,20 +333,6 @@ function getVendorForCart($conn, $idVendorVoucher) : array {
     return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName];
 }
 
-function checkIfVendorVouchersIsStillAvailableInLocalhost($conn, $cart) {
-    $idsVendorVouchers = [];
-    foreach ($cart as $arrayOfVoucherWant) {
-        $idVendorVoucher = $arrayOfVoucherWant[0]->getIdVendorVoucher();
-        if (isset($ids[$idVendorVoucher])) {
-            $idsVendorVouchers[$idVendorVoucher] = $ids[$idVendorVoucher] + count($arrayOfVoucherWant);
-        } else {
-            $idsVendorVouchers[$idVendorVoucher] = count($arrayOfVoucherWant);
-        }
-    }
-    foreach ($idsVendorVouchers as $idVendor => $sumOfVoucherWants) {
-
-    }
-}
 
 //Get all Languages
 function getAllLanguages($conn)
@@ -381,33 +367,6 @@ function GetMenu($conn,$lang){
         }
     }
     return $menu;
-}
-
-function setRequestToCentralServer(
-    $data,
-    $url="https://www.insurance-agent-tools.com/valuepass/backend/api/accountconfirm.php"
-) : string {
-
-    $curl = curl_init();
-
-    $fields = array(
-        'field_name_1' => 'Value 1',
-        'field_name_2' => 'Value 2',
-        'field_name_3' => 'Value 3'
-    );
-
-    $json_string = json_encode($fields);
-
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_POST, TRUE);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $json_string);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-    $dataString = curl_exec($curl);
-
-    curl_close($curl);
-    return $dataString;
 }
 
 function createArrayVouchersSortedFromCart($conn, $cart) {
