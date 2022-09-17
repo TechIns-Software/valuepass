@@ -351,7 +351,7 @@ function checkIfVendorVouchersIsStillAvailableInLocalhost($conn, $cart) {
 //Get all Languages
 function getAllLanguages($conn)
 {
-    $query = "Select * FROM Language where id =2";
+    $query = "Select * FROM Language;";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $language = $icon = '';

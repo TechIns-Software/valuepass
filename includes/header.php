@@ -6,7 +6,6 @@ $url = $_SERVER['REQUEST_URI'];
 if (!isset($conn)) {
 	include 'connection.php';
 }
-// MAYBE TODO : FIND THE WAY FOR RELATIVE PATH
 include 'backend/finalLibrary.php';
 $languages =  getAllLanguages($conn);
 

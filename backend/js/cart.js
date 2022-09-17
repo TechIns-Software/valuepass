@@ -88,40 +88,4 @@ function getPackagesAvailable() {
     }
 }
 
-function checkout() {
-    const data = {
-        'action': 'checkout'
-    };
-    const callBack = (data) => {
-        if (data[0] === 'mustSignIn') {
-
-        } else if (data[0] === 'muchProducts') {
-
-        } else if (data[0] === 'lessProducts') {
-
-        } else if (data[0] === 'unavailableVouchers') {
-
-        } else {
-
-        }
-    };
-}
-
-//no needed right now
-function addPersonInInputField(idInput, idMinusIcon) {
-    const inputField = document.getElementById(idInput);
-    inputField.value = Number(inputField.value) + 1;
-    idMinusIcon.disabled = false;
-}
-//no needed right now
-function removePersonInInputField(idInput, idMinusIcon) {
-    const inputField = document.getElementById(idInput);
-    inputField.value = Number(inputField.value) - 1;
-    if (inputField.value < 0) {
-        inputField.value = 0;
-    }
-    if (inputField.value == 0) {
-        idMinusIcon.disabled = true;
-    }
-}
 
