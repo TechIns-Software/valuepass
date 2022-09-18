@@ -101,6 +101,7 @@ if ($versions['general'] < $response['version']) {
         }
 
     }
+
     if ($versions['paymentInfoActivity'] < $response['paymentInfoActivity']['version']) {
         $idsOfPayment = getIdVersionOfElementsOfArray($conn, 'PaymentInfoActivity');
         foreach ($response['paymentInfoActivity'] as $idPayment => $paymentValue) {
@@ -173,6 +174,51 @@ if ($versions['general'] < $response['version']) {
 
         updateMenu($conn, $response['menu']);
     }
+
+}
+
+// # Continue with data
+// Step 2: Check for new entries
+$allIds = getAllIds($conn);
+
+//foreach ($respone['language'] as ){}
+
+foreach ($response['destinations'] as $idDestination => $destinationValue) {
+    if ($idDestination != 'version') {
+        $idDestination = intval($idDestination);
+        if (!in_array($idDestination, $allIds['destination'])) {
+            addDestination($conn, $idDestination, $destinationValue['languages']);
+        }
+    }
+}
+
+foreach ($response['categoryVendor'] as $idCategoryVendor => $categoryVendorValue) {
+    if ($idCategoryVendor != 'version') {
+        $idCategoryVendor = intval($idCategoryVendor);
+        if (!in_array($idCategoryVendor, $allIds['categoryVendor'])) {
+            addCategoryVendor($conn, $idCategoryVendor, $categoryVendorValue['languages']);
+        }
+    }
+}
+
+foreach ($response['labelsBox'] as $idLabelBox => $labelBoxValue) {
+    if ($idLabelBox != 'version') {
+        $idLabelBox = intval($idLabelBox);
+        if (!in_array($idLabelBox, $allIds['labelsBox'])) {
+            addLabelsBox($conn, $idLabelBox, $labelBoxValue['languages']);
+        }
+    }
+}
+foreach ($response['includedService'] as $idIncludedService => $includedServiceValue) {
+    if ($idIncludedService != 'version') {
+        $idIncludedService = intval($includedServiceValue);
+        if (!in_array($idIncludedService, $allIds['includedService'])) {
+            addIncludedService($conn, $idIncludedService, $includedServiceValue['icon'], $includedServiceValue['languages']);
+        }
+    }
+}
+//checked after other
+if ($versions['general'] < $response['version']) {
     if ($versions['vendor'] < $response['vendors']['version']) {
         $idsOfVendors = getIdVersionOfElementsOfArray($conn, 'Vendor');
         foreach ($response['vendors'] as $idVendor => $vendorValue) {
@@ -207,59 +253,33 @@ if ($versions['general'] < $response['version']) {
     }
 }
 
-// # Continue with data
-// Step 2: Check for new entries
-$allIds = getAllIds($conn);
-
-//foreach ($respone['language'] as ){}
-
-foreach ($response['destinations'] as $idDestination => $destinationValue) {
-    if ($idDestination != 'version') {
-        $idDestination = intval($idDestination);
-        if (!in_array($idDestination, $allIds['destination'])) {
-            //add them
-        }
-    }
-}
-
-foreach ($response['categoryVendor'] as $idCategoryVendor => $categoryVendorValue) {
-    if ($idCategoryVendor != 'version') {
-        $idCategoryVendor = intval($idCategoryVendor);
-        if (!in_array($idCategoryVendor, $allIds['categoryVendor'])) {
-            //
-        }
-    }
-}
-
-foreach ($response['labelsBox'] as $idLabelBox => $labelBoxId) {
-    if ($idLabelBox != 'version') {
-        $idLabelBox = intval($idLabelBox);
-        if (!in_array($idLabelBox, $allIds['labelsBox'])) {
-            //
-        }
-    }
-}
-foreach ($response['includedService'] as $idIncludedService => $includedServiceValue) {
-    if ($idIncludedService != 'version') {
-        $idIncludedService = intval($includedServiceValue);
-        if (!in_array($idIncludedService, $allIds['includedService'])) {
-            //
-        }
-    }
-}
-
-
 foreach ($response['vendors'] as $idVendor => $valueVendor) {
     if ($idVendor != 'version') {
         $idVendor = intval($idVendor);
         if (!in_array($idVendor, $allIds['vendor'])) {
-            //add them
+            $basic = array(
+                $isBestOff = $valueVendor['isBestoff'],
+                $idDestination = $valueVendor['idDestination'],
+                $priceAdult = $valueVendor['priceAdult'],
+                $originalPrice = $valueVendor['originalPrice'],
+                $discount = $valueVendor['discount'],
+                $priceKid = $valueVendor['priceKid'],
+                $infantPrice = $valueVendor['infantPrice'],
+                $idCategory = $valueVendor['idCategory'],
+                $idPaymentInfo = $valueVendor['idPaymentInfo'],
+                $forHowManyPersonsIs = $valueVendor['forHowManyPersonsIs']
+            );
+            $labelBoxes = $valueVendor['labelBox'];
+            $includedServices = $valueVendor['labelBox'];
+            $rated = $valueVendor['rated'];
+            $languages = $valueVendor['languages'];
+            vendorFunction(
+                $conn, $idVendor, $basic, $labelBoxes,
+                $includedServices, $rated, $languages, false
+            );
         }
     }
 }
-
-
-//TODO: run sql
 
 // # Step 3: Check if images are modified somehow(add, or remove)
 
@@ -337,20 +357,14 @@ foreach ($modifiedImage2 as $idDestination => $imagePathName) {
     }
 }
 
-foreach ($image1Modified as $idDestination => $path) {
-    //sql
-}
 
-foreach ($image2Modified as $idDestination => $path) {
-    //sql
-}
+updateBasicImages($conn, $image1Modified, $response, 'Destination', 'image1', 'image1Version');
+updateBasicImages($conn, $image2Modified, $response, 'Destination', 'image2', 'image2Version');
 
 $notOkForShowingDestinations = getNotOkForShowingDestinations($conn);
+//$modifiedDestinations contains the ok destinations images changed, both new and old
 $okForShowingDestinations = array_intersect($notOkForShowingDestinations, $modifiedDestinations);
-
-foreach ($okForShowingDestinations as $okDestination) {
-    //sql
-}
+setOkDestinations($conn, $okForShowingDestinations);
 
 $vendors = $response['vendors'];
 
@@ -432,14 +446,14 @@ foreach ($basicImagesToChange as $idVendorBasicImage) {
                 $targetFileName,
                 $file
             );
-            array_push($updatedBasic, $idVendorBasicImage);
+            $updatedBasic[$idVendorBasicImage] = $imagePathName;
         } else {
             if (($key = array_search($idVendorBasicImage, $vendorsModified)) !== false) {
                 unset($vendorsModified[$key]);
             }
         }
     } else {
-        array_push($updatedBasic, $idVendorBasicImage);
+        $updatedBasic[$idVendorBasicImage] = $imagePathName;
     }
 
 }
@@ -457,14 +471,14 @@ foreach ($googleMapsImageToChange as $idVendorGoogleMaps) {
                 $targetFileName,
                 $file
             );
-            array_push($updatedGoogleMaps, $idVendorGoogleMaps);
+            $updatedGoogleMaps[$idVendorGoogleMaps] = $imagePathName;
         } else {
             if (($key = array_search($idVendorGoogleMaps, $vendorsModified)) !== false) {
                 unset($vendorsModified[$key]);
             }
         }
     } else {
-        array_push($updatedGoogleMaps, $idVendorGoogleMaps);
+        $updatedGoogleMaps[$idVendorGoogleMaps] = $imagePathName;
     }
 
 }
@@ -502,41 +516,29 @@ foreach ($imagesToBeAdded as $imageToAddedObj) {
 
 }
 
+updateBasicImages($conn, $updatedBasic, $response, 'Vendor', 'imageBasic', 'imageBasicVersion');
+updateBasicImages($conn, $updatedGoogleMaps, $response, 'Vendor', 'googleMapsImage', 'googleMapsImageVersion');
 
-foreach ($updatedBasic as $idVendor) {
-    $imagePathName = $vendors[$idVendor]['imageBasic']['path'];
-    $targetFileName = "../vendorImages/$idVendor/$imagePathName";
-    //update sql
-}
 
-foreach ($updatedGoogleMaps as $idVendor) {
-    $imagePathName = $vendors[$idVendor]['googleMapString']['path'];
-    $targetFileName = "../vendorImages/$idVendor/$imagePathName";
-    //update sql
+updateInnerImages($conn, $innerImagesUploaded);
 
-}
-
-foreach ($innerImagesUploaded as $idImage => $obj) {
-    $idVendor = $obj['idVendor'];
-    $imagePathName = $obj['path'];
-
-    $targetFileName = "../vendorImages/$idVendor/$imagePathName";
-    //update sql
-}
 
 // NOTE: not isOkForShowing, take all of them compare to the
 //       vendorsModified and these are ok for showing
 $notOkForShowingVendors = getNotOkForShowingVendors($conn);
 $okForShowingNow = array_intersect($notOkForShowingVendors, $vendorsModified);
 
-foreach ($okForShowingNow as $okVendor) {
-    //sql
-}
+setOkVendor($conn, $okForShowingNow);
 
-
+$queryImageRemove = "DELETE FROM VendorImages
+                    WHERE id = ? AND idVendor = ?";
+$stmtImageRemove = $conn->prepare($queryImageRemove);
+$idImage = $idVendor = 0;
+$stmtImageRemove->bind_param('ii', $idImage, $idVendor);
 foreach ($imagesToBeRemoved as $idImage => $idVendor) {
-    if (in_array($idVendor, $vendorsModified)) {
-        //sql
+
+    if (in_array($idVendor, $vendorsModified)) {//because can stay without images
+        $stmtImageRemove->execute();
     }
 }
 

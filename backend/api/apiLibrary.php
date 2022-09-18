@@ -35,10 +35,8 @@ function getImageVendors($conn)
         while ($stmt->fetch()) {
             if (!isset($imagesAvailable[$idVendor])) {
                 $imagesAvailable[$idVendor] = [];
-                array_push($imagesAvailable[$idVendor], intval($idImage));
-            } else {
-                array_push($imagesAvailable[$idVendor], intval($idImage));
             }
+            array_push($imagesAvailable[$idVendor], intval($idImage));
         }
     }
     $stmt->close();
@@ -161,7 +159,7 @@ function getIdVersionOfElementsOfArray($conn, $tableName)
     return $versions;
 }
 
-//TODO: Versions to be updated as well!
+//TODO: Versions to be updated as well!->when added somefield add version as well
 function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description)
 {
     $query = "UPDATE DestinationTranslate
@@ -219,10 +217,18 @@ function updateIncludeService($conn, $idLang, $idInclude, $name){
 }
 
 function updateMenu($conn, $menu) {
+    $query = "UPDATE MenuTranslate
+                        SET name = ?
+                        WHERE idMenu = ? AND idLanguage = ?";
+    $stmt = $conn->prepare($query);
+    $name = "";
+    $menuId = $idLanguage = 1;
+    $stmt->bind_param('sii', $name, $menuId, $idLanguage);
     foreach ($menu as $menuId=> $menuObj) {
         if ($menuId != 'version') {
-            foreach ($menuObj['languages'] as $idLanguage => $menuTextObj) {
-                //todo
+            foreach ($menuObj['languages'] as $idLanguage => $langTransl) {
+                $name = $langTransl['name'];
+                $stmt->execute();
             }
         }
     }
@@ -512,4 +518,128 @@ function vendorFunction(
 
 }
 
+function updateBasicImages($conn, $arr, $response, $table, $nameColumn, $versionNameCol) {
+    $query = "UPDATE $table
+            SET $versionNameCol = ?, $nameColumn = ?
+            WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $newVersion = $path = $id = '-1';
+    $stmt->bind_param('iii', $newVersion , $path, $id);
+    foreach ($arr as $id=>$path) {
+        if (isset($response['destinations']["$id"]['image1']['version'])) {
+            $newVersion = $response['destinations']["$id"]['image1']['version'];
+        } else {
+            $newVersion = 0;
+        }
+        $stmt->execute();
+    }
+    $stmt->close();
+
+}
+
+function setOkDestinations($conn, $idsDestinations) {
+    $query = "UPDATE Destination
+            SET isOkForShowing = 1
+            WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $idDestination = 0;
+    $stmt->bind_param('i', $idDestination);
+    foreach ($idsDestinations as $idDestination) {
+        $stmt->execute();
+    }
+    $stmt->close();
+}
+
+function updateInnerImages($conn, $arr) {
+    $query = "INSERT INTO VendorImages(id, idVendor, image) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($query);
+    $idVendor = $imagePath = $idImage = '-1';
+    $stmt->bind_param('iis', $idImage, $idVendor, $imagePath);
+    foreach ($arr as $idImage=> $objImage) {
+        $idVendor = $objImage['idVendor'];
+        $imagePath = $objImage['path'];
+        $stmt->execute();
+    }
+    $stmt->close();
+
+}
+
+function setOkVendor($conn, $idsVendors) {
+    $query = "UPDATE Vendor
+            SET isOkForShowing = 1
+            WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $idVendor = 0;
+    $stmt->bind_param('i', $idVendor);
+    foreach ($idsVendors as $idVendor) {
+        $stmt->execute();
+    }
+    $stmt->close();
+}
+
+function addDestination($conn, $idDestination, $destinationLangObj) {
+    $query = "INSERT INTO Destination(id) VALUES ($idDestination)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $queryTr = "INSERT INTO DestinationTranslate(idLanguage, idDestination,
+                    name, description) VALUES (?, ?, ?, ?)";
+    $stmtTr = $conn->prepare($queryTr);
+    $idLang = $name = $description = '0';
+    $stmtTr->bind_param('iiss', $idLang, $idDestination, $name, $description);
+    foreach ($destinationLangObj as $idLang=> $langObj) {
+        $name = $langObj['name'];
+        $description = $langObj['description'];
+        $stmtTr->execute();
+    }
+    $stmtTr->close();
+
+}
+
+function addCategoryVendor($conn, $idCategoryVendor, $categoryVendorLangObj) {
+    $query = "INSERT INTO CategoryVendor(id) VALUES ($idCategoryVendor)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $queryTr = "INSERT INTO CategoryVendorTranslate(idLanguage, idCategoryVendor,
+                    name) VALUES (?, ?, ?)";
+    $stmtTr = $conn->prepare($queryTr);
+    $idLang = $name = '0';
+    $stmtTr->bind_param('iis', $idLang, $idCategoryVendor, $name);
+    foreach ($categoryVendorLangObj as $idLang=> $langObj) {
+        $name = $langObj['name'];
+        $stmtTr->execute();
+    }
+    $stmtTr->close();
+}
+
+function addIncludedService($conn, $idIncludedService, $icon, $includedServiceLangObj) {
+    $query = "INSERT INTO IncludedService(id, icon) VALUES ($idIncludedService, $icon)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $queryTr = "INSERT INTO IncludedServiceTranslate(idLanguage, idIncludedService,
+                    name) VALUES (?, ?, ?)";
+    $stmtTr = $conn->prepare($queryTr);
+    $idLang = $name = '0';
+    $stmtTr->bind_param('iis', $idLang, $idIncludedService, $name);
+    foreach ($includedServiceLangObj as $idLang=> $langObj) {
+        $name = $langObj['name'];
+        $stmtTr->execute();
+    }
+    $stmtTr->close();
+}
+
+function addLabelsBox($conn, $idLabelsBox, $LabelBoxLangObj) {
+    $query = "INSERT INTO LabelsBox(id) VALUES ($idLabelsBox)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $queryTr = "INSERT INTO LabelsBoxTranslate(idLanguage, idLabelsBox,
+                    name) VALUES (?, ?, ?)";
+    $stmtTr = $conn->prepare($queryTr);
+    $idLang = $name = '0';
+    $stmtTr->bind_param('iis', $idLang, $idLabelsBox, $name);
+    foreach ($LabelBoxLangObj as $idLang=> $langObj) {
+        $name = $langObj['name'];
+        $stmtTr->execute();
+    }
+    $stmtTr->close();
+}
 
