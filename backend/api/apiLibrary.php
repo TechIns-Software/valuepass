@@ -676,3 +676,44 @@ function createFolderIfNotExists($path) {
     }
 }
 
+
+
+//update json functions
+
+function getIdVendorVoucher($conn) {
+    $query = "SELECT id FROM VendorVoucher;";
+    $stmt = $conn->prepare($query);
+    $idVendorsVoucher = [];
+    if ($stmt->execute()) {
+        $idVendorVoucher = "";
+        $stmt->bind_result($idVendorVoucher);
+        while ($stmt->fetch()) {
+            array_push($idVendorsVoucher, intval($idVendorVoucher));
+        }
+    }
+    $stmt->close();
+    return $idVendorsVoucher;
+}
+
+function vendorVoucherProcedure(
+    $conn, $id, $idVendor, $isDateRestrict,
+    $starterVouchers, $existenceVoucher, $dateVoucher, $isUpdated
+) {
+    if ($isUpdated) {
+        $query = "UPDATE VendorVoucher
+            SET idVendor = ?, isDateRestrict = ?, starterVouchers = ?,
+                existenceVoucher = ?, dateVoucher = ?, id = ? ;";
+    } else {
+        $query = "INSERT INTO VendorVoucher(idVendor, isDateRestrict,
+                    starterVouchers, existenceVoucher, dateVoucher, id)
+                VALUES (?, ?, ?, ?, ?, ?);";
+    }
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('iiiisi', $idVendor, $isDateRestrict,
+        $starterVouchers, $existenceVoucher, $dateVoucher, $id);
+    $stmt->execute();
+    $stmt->close();
+}
+
+
+
