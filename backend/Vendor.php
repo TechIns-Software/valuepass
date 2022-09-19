@@ -16,6 +16,7 @@ class Vendor {
     private string $pathToImage;
     private string $name;
     private int $forHowManyPersonsIs;
+    private string $googleMapsImage;
     private array $labelsBoxNames = [];
     private array $ratedArray = [];
 
@@ -46,12 +47,13 @@ class Vendor {
      * @param string $pathToImage
      * @param string $name
      * @param int $forHowManyPersonsIs
+     * @param string $googleMapsImage
      */
     public function __construct(
         int $id, int $categoryId, string $categoryName,
         int $idDestination, float $priceAdult, float $originalPrice, float $discount,
         float $priceKid, string $pathToImage,
-        string $name, int $forHowManyPersonsIs
+        string $name, int $forHowManyPersonsIs, string $googleMapsImage
     )
     {
         $this->id = $id;
@@ -65,6 +67,7 @@ class Vendor {
         $this->pathToImage = $pathToImage;
         $this->name = $name;
         $this->forHowManyPersonsIs = $forHowManyPersonsIs;
+        $this->googleMapsImage = $googleMapsImage;
     }
 
 
@@ -290,5 +293,15 @@ class Vendor {
     {
         return $this->forHowManyPersonsIs;
     }
+
+    /**
+     * @return string
+     */
+    public function getGoogleMapsImage(): string
+    {
+        return $this->googleMapsImage;
+    }
+
+
 
 }

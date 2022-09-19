@@ -100,7 +100,8 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
 
 function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) : \ValuePass\Vendor | null{
     $query = "SELECT V.id, V.priceAdult, V.originalPrice, V.discount,
-                        V.priceKid, V.idDestination, V.imageBasic, VT.name, CVT.name, CV.id, V.forHowManyPersonsIs
+                        V.priceKid, V.idDestination, V.imageBasic, VT.name,
+                        CVT.name, CV.id, V.forHowManyPersonsIs, V.googleMapsImage
               FROM Vendor AS V, VendorTranslate AS VT, CategoryVendor as CV,
                         CategoryVendorTranslate CVT
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
@@ -110,15 +111,15 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) : \ValuePa
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ii', $idVendor, $idLanguage);
     if ($stmt->execute()) {
-        $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs = '';
-        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs);
+        $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs = $googleMapsImage = '';
+        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs, $googleMapsImage);
         while ($stmt->fetch()) {}
         if (!$id) {
             return null;
         }
         $vendor = New \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
-            $discount, $priceKid, $image, $name, $forHowManyPersonsIs
+            $discount, $priceKid, $image, $name, $forHowManyPersonsIs, $googleMapsImage
         );
         $query1 ="SELECT LBT.name
                 FROM LabelsBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT

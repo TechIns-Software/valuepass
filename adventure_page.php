@@ -328,7 +328,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     <div id="collapse7" class=" collapse">
                                         <div class="panel-body px-2" >
 											<div class="map_section ">
-												<img src="assets/img/map_exaple.png"  class="img-fluid"  alt="map">
+												<img src="vendorImages/<?php echo $vendor->getId() . '/' . $vendor->getGoogleMapsImage(); ?>" class="img-fluid"  alt="map">
 											</div>
                                             <ul>
                                                 <?php
