@@ -35,7 +35,7 @@ CREATE TABLE MenuTranslate
     FOREIGN KEY (idMenu) REFERENCES Menu (id),
     idLanguage int          NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
-    name       varchar(100) NOT NULL
+    name       text NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE Destination
@@ -57,7 +57,7 @@ CREATE TABLE DestinationTranslate
     idDestination int NOT NULL,
     FOREIGN KEY (idDestination) REFERENCES Destination (id),
     name          varchar(150),
-    description   text DEFAULT ' '
+    description   text
 ) ENGINE = InnoDB;
 
 CREATE TABLE CategoryVendor
@@ -110,7 +110,7 @@ CREATE TABLE Vendor
     FOREIGN KEY (idCategory) REFERENCES CategoryVendor (id),
     idPaymentInfoActivity  int          NOT NULL,
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity (id),
-    googleMapsImage        varchar(100) NOT NULL,
+    googleMapsImage        varchar(100),
     googleMapsImageVersion bigint DEFAULT -1,
     infantPrice            int,
     forHowManyPersonsIs    int
