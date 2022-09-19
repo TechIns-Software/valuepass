@@ -1,6 +1,7 @@
 @media only screen and (min-width: 992px) {
   nav#menu.main-menu {
     display: block !important;
+
   }
 
   #mm-menu.main-menu {
@@ -223,8 +224,13 @@
 }
 
 @media only screen and (max-width: 991px) {
+
+  header{
+    background-color: #FF5533!important;
+  }
   nav#menu {
     display: none !important;
+
   }
 
   .mm-menu {
@@ -456,7 +462,6 @@ ul {
   text-align: center;
   margin-bottom: 45px;
   position: relative;
-  colo
 }
 
 .main_title_2 span {
