@@ -281,15 +281,14 @@ CREATE TABLE ImportantInformationDescriptionTranslate
 
 CREATE TABLE VendorVoucher
 (
-    id               int       NOT NULL AUTO_INCREMENT,
+    id               int       NOT NULL,
     PRIMARY KEY (id),
     idVendor         int       NOT NULL,
     FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     isDateRestrict   binary(1) NOT NULL,
     starterVouchers  int       NOT NULL,
     existenceVoucher int       NOT NULL,
-    dateVoucher      datetime  NOT NULL,
-    reserved         int
+    dateVoucher      datetime  NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE Version
