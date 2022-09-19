@@ -551,7 +551,7 @@ function updateBasicImages($conn, $arr, $response, $table, $nameColumn, $version
             WHERE id = ?";
     $stmt = $conn->prepare($query);
     $newVersion = $path = $id = '-1';
-    $stmt->bind_param('iii', $newVersion , $path, $id);
+    $stmt->bind_param('isi', $newVersion , $path, $id);
     foreach ($arr as $id=>$path) {
         if (isset($response['destinations']["$id"]['image1']['version'])) {
             $newVersion = $response['destinations']["$id"]['image1']['version'];

@@ -8,7 +8,8 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
     }
     $query1 = "SELECT D.id, DT.name, DT.description, D.image1, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
-                WHERE D.id = DT.idDestination AND DT.idLanguage = ? $addition
+                WHERE D.id = DT.idDestination AND DT.idLanguage = ?
+                AND D.isOkForShowing = 1 $addition
                 ORDER BY id ASC;";
     $query2 = "SELECT COUNT(id), idDestination FROM Vendor
                 WHERE isOkForShowing = 1
@@ -39,7 +40,6 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
             $counter = $counter + 1;
         }
     }
-//    var_dump($destinations);
     $stmt1->close();
     return $destinations;
 }
@@ -47,7 +47,8 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
 function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destination | null{
     $query = "SELECT D.id, DT.name, DT.description, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
-                WHERE D.id = $idDestination AND D.id = DT.idDestination AND DT.idLanguage = $idLanguage ";
+                WHERE D.id = $idDestination AND D.id = DT.idDestination
+                  AND DT.idLanguage = $idLanguage AND D.isOkForShowing = 1";
     $stmt = $conn->prepare($query);
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
@@ -295,7 +296,7 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : 
             V.priceAdult, V.priceKid, V.infantPrice
             FROM VendorVoucher AS VV, Vendor AS V
             WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
-            AND V.id = VV.idVendor";
+            AND V.id = VV.idVendor AND V.isOkForShowing = 1";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
