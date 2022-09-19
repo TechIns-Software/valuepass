@@ -6,16 +6,22 @@ include_once 'api/apiLibrary.php';
 if (!isset($conn)) {
     include '../connection.php';
 }
+$targetFileName = './update.json';
+$fileDestination = 'https://valuepass.gr/request/update/update.json';
+@$file = file_get_contents($fileDestination);
+if ($file) {
+    file_put_contents(
+        $targetFileName,
+        $file
+    );
 
-$versionJSON = 1;
+}
 
-
-$filename = 'api/example.json';
-if (!file_exists($filename)) {
+if (!file_exists('update.json')) {
     exit('No file found!');
 }
 
-$json = file_get_contents($filename);
+$json = file_get_contents('update.json');
 $response = json_decode($json, true);
 $element_expected = array(
     'version',
@@ -41,7 +47,7 @@ foreach ($element_expected as $idVendor => $version) {
 $versions = getVersions($conn);
 if ($versions['general'] < $response['version']) {
     if ($versions['destination'] < $response['destinations']['version']) {
-        $idsOfDestination = getIdVersionOfElementsOfArray($conn, 'Destination');
+        $idsOfDestination = getIdVersionOfElementsOfArrayWithVersion($conn, 'Destination');
         foreach ($response['destinations'] as $idDestination => $destinationValue) {
             if ($idDestination != 'version') {
 
@@ -164,7 +170,7 @@ $allIds = getAllIds($conn);
 foreach ($response['destinations'] as $idDestination => $destinationValue) {
     if ($idDestination != 'version') {
         $idDestination = intval($idDestination);
-        if (!in_array($idDestination, $allIds['destination'])) {
+        if (!in_array($idDestination, $allIds['Destination'])) {
             addDestination($conn, $idDestination, $destinationValue['languages'], $destinationValue['version']);
         }
     }
@@ -173,7 +179,7 @@ foreach ($response['destinations'] as $idDestination => $destinationValue) {
 foreach ($response['categoryVendor'] as $idCategoryVendor => $categoryVendorValue) {
     if ($idCategoryVendor != 'version') {
         $idCategoryVendor = intval($idCategoryVendor);
-        if (!in_array($idCategoryVendor, $allIds['categoryVendor'])) {
+        if (!in_array($idCategoryVendor, $allIds['CategoryVendor'])) {
             addCategoryVendor($conn, $idCategoryVendor, $categoryVendorValue['languages']);
         }
     }
@@ -182,15 +188,15 @@ foreach ($response['categoryVendor'] as $idCategoryVendor => $categoryVendorValu
 foreach ($response['labelsBox'] as $idLabelBox => $labelBoxValue) {
     if ($idLabelBox != 'version') {
         $idLabelBox = intval($idLabelBox);
-        if (!in_array($idLabelBox, $allIds['labelsBox'])) {
+        if (!in_array($idLabelBox, $allIds['LabelsBox'])) {
             addLabelsBox($conn, $idLabelBox, $labelBoxValue['languages']);
         }
     }
 }
 foreach ($response['includedService'] as $idIncludedService => $includedServiceValue) {
     if ($idIncludedService != 'version') {
-        $idIncludedService = intval($includedServiceValue);
-        if (!in_array($idIncludedService, $allIds['includedService'])) {
+        $idIncludedService = intval($idIncludedService);
+        if (!in_array($idIncludedService, $allIds['IncludedService'])) {
             addIncludedService($conn, $idIncludedService, $includedServiceValue['icon'], $includedServiceValue['languages']);
         }
     }
@@ -198,11 +204,11 @@ foreach ($response['includedService'] as $idIncludedService => $includedServiceV
 //checked after other
 if ($versions['general'] < $response['version']) {
     if ($versions['vendor'] < $response['vendors']['version']) {
-        $idsOfVendors = getIdVersionOfElementsOfArray($conn, 'Vendor');
+        $idsOfVendors = getIdVersionOfElementsOfArrayWithVersion($conn, 'Vendor');
         foreach ($response['vendors'] as $idVendor => $vendorValue) {
             if ($idVendor != 'version') {
                 $idVendor = intval($idVendor);
-                if (in_array($idVendor, $idsOfVendors)) {
+                if (array_key_exists($idVendor, $idsOfVendors)) {
                     if ($idsOfVendors[$idVendor] < $vendorValue['version']) {
                         $basic = array(
                             $isBestOff = $vendorValue['isBestoff'],
@@ -220,7 +226,6 @@ if ($versions['general'] < $response['version']) {
                         $includedServices = $vendorValue['labelBox'];
                         $rated = $vendorValue['rated'];
                         $languages = $vendorValue['languages'];
-
                         vendorFunction(
                             $conn, $idVendor, $basic, $labelBoxes,
                             $includedServices, $rated,
@@ -238,7 +243,7 @@ if ($versions['general'] < $response['version']) {
 foreach ($response['vendors'] as $idVendor => $valueVendor) {
     if ($idVendor != 'version') {
         $idVendor = intval($idVendor);
-        if (!in_array($idVendor, $allIds['vendor'])) {
+        if (!in_array($idVendor, $allIds['Vendor'])) {
             $basic = array(
                 $isBestOff = $valueVendor['isBestoff'],
                 $idDestination = $valueVendor['idDestination'],
@@ -252,7 +257,7 @@ foreach ($response['vendors'] as $idVendor => $valueVendor) {
                 $forHowManyPersonsIs = $valueVendor['forHowManyPersonsIs']
             );
             $labelBoxes = $valueVendor['labelBox'];
-            $includedServices = $valueVendor['labelBox'];
+            $includedServices = $valueVendor['includedServices'];
             $rated = $valueVendor['rated'];
             $languages = $valueVendor['languages'];
             vendorFunction(
@@ -299,7 +304,9 @@ foreach ($destinations as $idDestination => $destinationValue) {
 $image1Modified = [];
 foreach ($modifiedImage1 as $idDestination => $imagePathName) {
     $url = "https://valuepass.gr/images/location_images/$imagePathName";
-    $targetFileName = "../images/location_images/$imagePathName";
+    $targetFileName = "../images/location_images/";
+    createFolderIfNotExists($targetFileName);
+    $targetFileName .= "$imagePathName";
     if (!file_exists($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
@@ -321,7 +328,9 @@ foreach ($modifiedImage1 as $idDestination => $imagePathName) {
 $image2Modified = [];
 foreach ($modifiedImage2 as $idDestination => $imagePathName) {
     $url = "https://valuepass.gr/images/location_images/$imagePathName";
-    $targetFileName = "../images/location_images/$imagePathName";
+    $targetFileName = "../images/location_images/";
+    createFolderIfNotExists($targetFileName);
+    $targetFileName .= "$imagePathName";
     if (!file_exists($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
@@ -367,7 +376,7 @@ foreach ($vendors as $idVendor => $vendorValue) {
         // # Basic vendor images
         $imagesBasicNow = $basicImagesVendor[$idVendor];
         $imageBasicObjectJSON = $vendorValue['imageBasic'];
-        $imageGoogleMapsObjectJSON = $vendorValue['googleMapString'];
+        $imageGoogleMapsObjectJSON = $vendorValue['googleMapsImage'];
         if ($imagesBasicNow['imageBasicVersion'] < $imageBasicObjectJSON['version']) {
             array_push($basicImagesToChange, $idVendor);
             if (!in_array($idVendor, $vendorsModified)) {
@@ -421,7 +430,10 @@ $updatedBasic = [];
 foreach ($basicImagesToChange as $idVendorBasicImage) {
     $imagePathName = $vendors[$idVendorBasicImage]['imageBasic']['path'];
     $url = "https://valuepass.gr/vendorImages/$idVendorBasicImage/$imagePathName";
-    $targetFileName = "../vendorImages/$idVendorBasicImage/$imagePathName";
+    $targetFileName = "../vendorImages/$idVendorBasicImage/";
+    createFolderIfNotExists($targetFileName);
+    $targetFileName .= "$imagePathName";
+
     if (!file_exists($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
@@ -444,9 +456,11 @@ foreach ($basicImagesToChange as $idVendorBasicImage) {
 
 $updatedGoogleMaps = [];
 foreach ($googleMapsImageToChange as $idVendorGoogleMaps) {
-    $imagePathName = $vendors[$idVendorGoogleMaps]['googleMapString']['path'];
+    $imagePathName = $vendors[$idVendorGoogleMaps]['googleMapsImage']['path'];
     $url = "https://valuepass.gr/vendorImages/$idVendorGoogleMaps/$imagePathName";
-    $targetFileName = "../vendorImages/$idVendorGoogleMaps/$imagePathName";
+    $targetFileName = "../vendorImages/$idVendorGoogleMaps/";
+    createFolderIfNotExists($targetFileName);
+    $targetFileName .= "$imagePathName";
     if (!file_exists($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
@@ -473,7 +487,9 @@ foreach ($imagesToBeAdded as $imageToAddedObj) {
     $idImage = $imageToAddedObj['id'];
 
     $url = "https://valuepass.gr/vendorImages/$idVendorInnerImage/$imagePathName";
-    $targetFileName = "../vendorImages/$idVendorInnerImage/$imagePathName";
+    $targetFileName = "../vendorImages/$idVendorInnerImage/";
+    createFolderIfNotExists($targetFileName);
+    $targetFileName .= "$imagePathName";
     if (!file_exists($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {

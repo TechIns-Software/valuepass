@@ -144,6 +144,22 @@ function getAllIds($conn)
 
 function getIdVersionOfElementsOfArray($conn, $tableName)
 {
+    $query = "SELECT id FROM $tableName;";
+    $stmt = $conn->prepare($query);
+    $versions = [];
+    if ($stmt->execute()) {
+        $id = "";
+        $stmt->bind_result($id);
+        while ($stmt->fetch()) {
+            $versions[intval($id)] = intval($id);
+        }
+    }
+    $stmt->close();
+    return $versions;
+}
+
+function getIdVersionOfElementsOfArrayWithVersion($conn, $tableName)
+{
     $query = "SELECT id, version FROM $tableName;";
     $stmt = $conn->prepare($query);
     $versions = [];
@@ -160,13 +176,16 @@ function getIdVersionOfElementsOfArray($conn, $tableName)
 
 function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description, $newVersion)
 {
-    $query = "UPDATE Destination SET version = $newVersion WHERE id = $idLang; ";
-    $query .= "UPDATE DestinationTranslate
-        SET 
-        name = '$name',
-        description= '$description' 
+    $query = "UPDATE Destination SET version = $newVersion WHERE id = $idDest ; ";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+    $query = "UPDATE DestinationTranslate
+        SET name = ?,
+        description= ? 
     WHERE  idDestination = '$idDest' AND  idLanguage ='$idLang'; ";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('ss', $name, $description);
     $stmt->execute();
     $stmt->close();
 }
@@ -176,9 +195,10 @@ function updateCategoryVendor($conn, $idLang, $idCat, $name)
 {
     $query = "UPDATE CategoryVendorTranslate 
     SET 
-    name = '$name'
+    name = ?
     WHERE  idCategoryVendor = '$idCat'AND idLanguage = '$idLang'";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $name);
     $stmt->execute();
     $stmt->close();
 }
@@ -186,9 +206,10 @@ function updateCategoryVendor($conn, $idLang, $idCat, $name)
 function updatePaymentInfo($conn, $idLang, $idPayment, $description){
     $query = "UPDATE  PaymentInfoActivityTranslate 
     SET 
-    description = '$description'
+    description = ?
     WHERE  idPaymentInfoActivity = '$idPayment'AND idLanguage = '$idLang'";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $description);
     $stmt->execute();
     $stmt->close();
 
@@ -197,9 +218,10 @@ function updatePaymentInfo($conn, $idLang, $idPayment, $description){
 function updateLabelBox($conn, $idLang, $idLabelBox, $name){
     $query = "UPDATE  LabelsBoxTranslate 
     SET 
-    name = '$name'
+    name = ?
     WHERE  idLabelsBox = '$idLabelBox'AND idLanguage = '$idLang'";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $name);
     $stmt->execute();
     $stmt->close();
 }
@@ -208,9 +230,10 @@ function updateLabelBox($conn, $idLang, $idLabelBox, $name){
 function updateIncludeService($conn, $idLang, $idInclude, $name){
     $query = "UPDATE  IncludedServiceTranslate 
     SET 
-    name = '$name'
+    name = ?
     WHERE  idIncludedService = '$idInclude'AND idLanguage = '$idLang'";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $name);
     $stmt->execute();
     $stmt->close();
 }
@@ -263,7 +286,7 @@ function vendorFunction(
 
         $queryStars = "UPDATE Rated
                 SET stars = ? 
-                WHERE idVendor = $idVendor AND idRatedCategory = ?";
+                WHERE idVendor = ? AND idRatedCategory = ?";
     } else {
         $queryBasic = "INSERT INTO Vendor(idDestination, priceAdult, originalPrice,
             discount, priceKid, idCategory, idPaymentInfoActivity,
@@ -284,7 +307,7 @@ function vendorFunction(
     $stmtStars = $conn->prepare($queryStars);
     $stars = 5;
     $idRated = 1;
-    $stmtStars->bind_param('ii', $stars, $idRated);
+    $stmtStars->bind_param('iii', $stars, $idVendor, $idRated);
     foreach ($rated as $ratedObj) {
         foreach ($ratedObj as $idRated=>$stars) {
             $stmtStars->execute();
@@ -377,21 +400,20 @@ function vendorFunction(
         $descriptionFull = $languageObject['descriptionFull'];
         if ($updateVendor) {
             $queryVendorTr = "UPDATE VendorTranslate
-                        SET name = '$nameVendorTranslate',
-                            descriptionBig = '$descriptionBig',
-                            descriptionFull = '$descriptionFull'
+                        SET name = ?,
+                            descriptionBig = ?,
+                            descriptionFull = ?
                         WHERE idVendor = $idVendor
                             AND idLanguage = $languageId";
         } else {
             $queryVendorTr = "INSERT INTO VendorTranslate(
                 idVendor, idLanguage, name, descriptionBig, descriptionFull)
-                VALUES ($idVendor, $languageId, '$nameVendorTranslate',
-                        '$descriptionBig', '$descriptionFull'
-                )";
+                VALUES ($idVendor, $languageId, ?, ?, ?)";
         }
 
 
         $stmtVendorTranslate = $conn->prepare($queryVendorTr);
+        $stmtVendorTranslate->bind_param('sss', $nameVendorTranslate, $descriptionBig, $descriptionFull);
         $stmtVendorTranslate->execute();
 
 
@@ -447,8 +469,9 @@ function vendorFunction(
             $description = $langObjImport['description'];
             $queryAboutTranslate = "INSERT INTO AboutActivityTranslate(
                     idAboutActivity, idLanguage, head, description) 
-                    VALUES($idAboutActivityInserted, $idLang, '$head', '$description');";
+                    VALUES($idAboutActivityInserted, $idLang, ?, ?);";
             $stmtAboutTransl = $conn->prepare($queryAboutTranslate);
+            $stmtAboutTransl->bind_param('ss', $head, $description);
             $stmtAboutTransl->execute();
             $stmtAboutTransl->close();
         }
@@ -462,14 +485,16 @@ function vendorFunction(
         foreach ($highlightObj as $idLang=> $highlightItem) {
             $queryAddHighTr = "INSERT INTO HighlightTranslate(
                 idHighlight, idLanguage, name) VALUES
-                            ($idHighlight, $idLang, '$highlightItem')";
+                            ($idHighlight, $idLang, ?)";
             $stmtAddHighTr = $conn->prepare($queryAddHighTr);
+            $stmtAddHighTr->bind_param('s', $highlightItem);
             $stmtAddHighTr->execute();
             $stmtAddHighTr->close();
         }
     }
     $importantInfoDescriptionArray = [];
-    foreach ($highlightMyInternal as $impInfoOBJ) {
+
+    foreach ($importantInfoMyInternal as $impInfoOBJ) {
         $queryAddImpInfHead = "INSERT INTO ImportantInformationHead (idVendor)
                     VALUES ($idVendor)";
         $stmtAddImpInfoHead = $conn->prepare($queryAddImpInfHead);
@@ -482,8 +507,9 @@ function vendorFunction(
             $queryImpInfoHeadTransl = "INSERT INTO
                 ImportantInformationHeadTranslate(
                     idImportantInformationHead, idLanguage, name
-                    ) VALUES ($idImportantHead, $idLang, '$headName');";
+                    ) VALUES ($idImportantHead, $idLang, ?);";
             $stmtImpInfoHeadTransl = $conn->prepare($queryImpInfoHeadTransl);
+            $stmtImpInfoHeadTransl->bind_param('s', $headName);
             $stmtImpInfoHeadTransl->execute();
             $stmtImpInfoHeadTransl->close();
 
@@ -505,8 +531,9 @@ function vendorFunction(
                 $queryAddImpInfoDescTr = "INSERT INTO
                     ImportantInformationDescriptionTranslate(
                         idImportantInformationDescription, idLanguage, name
-                    ) VALUES ($idImportantDescription, $idLang, '$description')";
+                    ) VALUES ($idImportantDescription, $idLang, ?)";
                 $stmtAddImpInfoDescTr = $conn->prepare($queryAddImpInfoDescTr);
+                $stmtAddImpInfoDescTr->bind_param('s', $description);
                 $stmtAddImpInfoDescTr->execute();
                 $stmtAddImpInfoDescTr->close();
 
@@ -641,5 +668,11 @@ function addLabelsBox($conn, $idLabelsBox, $LabelBoxLangObj) {
         $stmtTr->execute();
     }
     $stmtTr->close();
+}
+
+function createFolderIfNotExists($path) {
+    if (!file_exists($path)) {
+        mkdir($path, 0755, true);
+    }
 }
 
