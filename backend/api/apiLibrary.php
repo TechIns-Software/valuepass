@@ -1,5 +1,4 @@
 <?php
-
 function getImageBasicVendors($conn)
 {
     $query = "SELECT id, imageBasic,
@@ -159,14 +158,14 @@ function getIdVersionOfElementsOfArray($conn, $tableName)
     return $versions;
 }
 
-//TODO: Versions to be updated as well!->when added somefield add version as well
-function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description)
+function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description, $newVersion)
 {
-    $query = "UPDATE DestinationTranslate
+    $query = "UPDATE Destination SET version = $newVersion WHERE id = $idLang; ";
+    $query .= "UPDATE DestinationTranslate
         SET 
         name = '$name',
         description= '$description' 
-    WHERE  idDestination = '$idDest' AND  idLanguage ='$idLang' ";
+    WHERE  idDestination = '$idDest' AND  idLanguage ='$idLang'; ";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
@@ -175,7 +174,7 @@ function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description
 
 function updateCategoryVendor($conn, $idLang, $idCat, $name)
 {
-    $query = "UPDATE  CategoryVendorTranslate 
+    $query = "UPDATE CategoryVendorTranslate 
     SET 
     name = '$name'
     WHERE  idCategoryVendor = '$idCat'AND idLanguage = '$idLang'";
@@ -239,7 +238,7 @@ function updateMenu($conn, $menu) {
  */
 function vendorFunction(
     $conn, $idVendor, $basic,
-    $labelBoxes, $includedServices, $rated, $languages, $updateVendor = true
+    $labelBoxes, $includedServices, $rated, $languages, $versionVendor, $updateVendor = true
 ) {
     $isBestOff = $basic[0];
     $idDestination = $basic[1];
@@ -258,7 +257,8 @@ function vendorFunction(
             priceKid = $priceKid, idCategory = $idCategory,
             idPaymentInfoActivity = $idPaymentInfo,
             infantPrice = $infantPrice,
-            forHowManyPersonsIs = $forHowManyPersonsIs
+            forHowManyPersonsIs = $forHowManyPersonsIs,
+            version = $versionVendor
         WHERE id = $idVendor";
 
         $queryStars = "UPDATE Rated
@@ -267,10 +267,10 @@ function vendorFunction(
     } else {
         $queryBasic = "INSERT INTO Vendor(idDestination, priceAdult, originalPrice,
             discount, priceKid, idCategory, idPaymentInfoActivity,
-            infantPrice, forHowManyPersonsIs, id) VALUES (
+            infantPrice, forHowManyPersonsIs, id, version) VALUES (
                 $idDestination, $priceAdult, $originalPrice, $discount,
                 $priceKid, $idCategory, $idPaymentInfo, $infantPrice,
-                $forHowManyPersonsIs, $idVendor
+                $forHowManyPersonsIs, $idVendor, $versionVendor
             );";
 
 
@@ -577,8 +577,8 @@ function setOkVendor($conn, $idsVendors) {
     $stmt->close();
 }
 
-function addDestination($conn, $idDestination, $destinationLangObj) {
-    $query = "INSERT INTO Destination(id) VALUES ($idDestination)";
+function addDestination($conn, $idDestination, $destinationLangObj, $version) {
+    $query = "INSERT INTO Destination(id, version) VALUES ($idDestination, $version)";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $queryTr = "INSERT INTO DestinationTranslate(idLanguage, idDestination,
