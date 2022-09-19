@@ -4,11 +4,15 @@
 
 if (!isset(
     $_POST['name'],
-    $_POST['email'],
-    $_POST['promotions']
-
+    $_POST['email']
 )) {
     exit('Bad Request!');
+}
+if (isset($_POST['promotions'])) {
+    $promotions = true;
+} else {
+    $promotions = false;
+
 }
 session_start();
 $cartArray = unserialize($_SESSION['cart']);
@@ -24,6 +28,9 @@ $products = $cart->readyForSendingVendorVoucherData();
 </head>
 <body>
 <form id="myForm" action="https://valuepass.gr/request/payment/pay.php" method="post">
+    <input hidden name='promotions' value='<?php echo ($promotions) ? "1" : "0" ?>'>
+    <input hidden name='name' value='<?php echo $_POST['name']?>'>
+    <input hidden name='email' value='<?php echo $_POST['email']?>'>
     <?php
     foreach ($products as $counter=> $product) {
         $idVendorVoucher = $product['idVendorVoucher'];
