@@ -2,22 +2,19 @@
 
 // # We receive the page from user details and if ok redirects to ValuePass Server
 
-//if (!isset(
-//    $_POST['name'],
-//    $_POST['email'],
-//    $_POST['promotions']
-//
-//)) {
-//    exit('Bad Request!');
-//}
+if (!isset(
+    $_POST['name'],
+    $_POST['email'],
+    $_POST['promotions']
+
+)) {
+    exit('Bad Request!');
+}
 session_start();
 $cartArray = unserialize($_SESSION['cart']);
 include 'backend/includeClasses.php';
 $cart = new \ValuePass\Cart($cartArray);
 $products = $cart->readyForSendingVendorVoucherData();
-$_POST['name'] = 'Christos';
-$_POST['email'] = 'christosbaztekas@gmail.com';
-$_POST['promotions'] = '1';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +23,6 @@ $_POST['promotions'] = '1';
     <title>Payment</title>
 </head>
 <body>
-<!--TODO: bank link-->
 <form id="myForm" action="https://valuepass.gr/request/payment/pay.php" method="post">
     <?php
     foreach ($products as $counter=> $product) {
