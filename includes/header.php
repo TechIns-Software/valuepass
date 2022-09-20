@@ -32,17 +32,15 @@ $voucherNumber = $cartHeader->getNumberOfVoucher();
 	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="assets/img/logo2.jpg">
 
 	<!-- GOOGLE WEB FONT -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">
+<!--	<link rel="preconnect" href="https://fonts.gstatic.com">-->
+<!--	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">-->
+<!--	<link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">-->
+<!--	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">-->
 
 	<!-- BASE CSS -->
-	<link href="assets\bootstrap-5.1.3\dist\css\bootstrap.css" rel="stylesheet">
+	<link href="assets/bootstrap-5.1.3/dist/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/vendors.css" rel="stylesheet">
 
@@ -54,7 +52,7 @@ $voucherNumber = $cartHeader->getNumberOfVoucher();
 
 	<link rel="stylesheet" type="text/css" href="assets/css/layerslider.css">
 	<!-- FOR FLAGS -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="assets/css/flags.css"  >
 
 	<!--	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>-->
 	<script src="assets/js/fontawesome.js"></script>
