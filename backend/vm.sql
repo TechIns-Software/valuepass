@@ -293,7 +293,7 @@ CREATE TABLE VendorVoucher
 
 CREATE TABLE Version
 (
-    id      int    NOT NULL AUTO_INCREMENT,
+    id      int    NOT NULL,
     PRIMARY KEY (id),
     version bigint NOT NULL DEFAULT 0,
     name    varchar(256)
@@ -407,16 +407,16 @@ VALUES (1, 1, 'Ποιότητα Εξυπηρέτησης Πελατών'),
        (7, 1, 'Σεβασμός στους Πολιτιστική Κληρονομιά'),
        (7, 2, 'Respect for Local Cultures');
 
-INSERT INTO Version(name)
-VALUES ('general'),
-       ('ratedCategory'),
-       ('menu'),
-       ('destination'),
-       ('categoryVendor'),
-       ('paymentInfoActivity'),
-       ('vendor'),
-       ('labelsBox'),
-       ('includedService'),
-       ('language');
+INSERT INTO Version(id, name)
+VALUES (1, 'general'),
+       (2, 'ratedCategory'),
+       (3, 'menu'),
+       (4, 'destination'),
+       (5, 'categoryVendor'),
+       (6, 'paymentInfoActivity'),
+       (7, 'vendor'),
+       (8, 'labelsBox'),
+       (9, 'includedService'),
+       (10, 'language');
 
 

@@ -715,5 +715,17 @@ function vendorVoucherProcedure(
     $stmt->close();
 }
 
+function updateVersionTable($conn, $arrayOfVersions) {
+    $query = "UPDATE Version SET version = ? WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $version = $counter = 0;
+    $stmt->bind_param('ii', $counter, $version);
 
+
+    for ($counter = 1; $counter <= count($arrayOfVersions); $counter++) {
+        $version = $arrayOfVersions[$counter - 1];
+        $stmt->execute();
+    }
+    $stmt->close();
+}
 

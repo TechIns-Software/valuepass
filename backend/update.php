@@ -541,7 +541,19 @@ foreach ($imagesToBeRemoved as $idImage => $idVendor) {
     }
 }
 
-
+$allVersions = [
+    $response['version'],
+    $response['ratedCategory'],
+    $response['menu'],
+    $response['destinations'],
+    $response['categoryVendor'],
+    $response['paymentInfoActivity'],
+    $response['vendors'],
+    $response['labelsBox'],
+    $response['includedService'],
+    $response['languages'],
+];
+updateVersionTable($conn, $allVersions);
 
 
 
