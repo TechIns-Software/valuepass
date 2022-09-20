@@ -371,6 +371,22 @@ function GetMenu($conn,$lang){
     return $menu;
 }
 
+
+function getLanguageIcon ($conn,$langId){
+    $query = "Select icon FROM Language where id =$langId; ";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $icon = '';
+    $stmt->bind_result( $icon);
+    $language_icon = '';
+    while ($stmt->fetch()) {
+        $language_icon = $icon;
+    }
+    $stmt->close();
+    return $language_icon;
+}
+
+
 function createArrayVouchersSortedFromCart($conn, $cart) {
     $allVouchers = [];
 

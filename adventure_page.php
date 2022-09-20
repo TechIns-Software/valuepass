@@ -89,12 +89,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 						<div class="panel-group accordion-main my-2" id="accordion">
 							<!--About accordion #9-->
 							<div class="panel">
-								<div class="panel-heading   collapsed"  data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="true" aria-controls="collapseExample">
+								<div class="panel-heading   "    data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="true" aria-controls="collapseExample">
 									<h6 class="panel-title accordion-toggle">
 										Description
 									</h6>
 								</div>
-								<div id="collapse1" class=" collapse">
+								<div id="collapse1" class=" collapse show">
 									<div class="panel-body px-2">
 										<p class="details">
 											<?php echo $vendor->getDescriptionBig(); ?>

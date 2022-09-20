@@ -254,7 +254,7 @@
     display: block;
     padding: 0;
     background: #fff;
-    min-width: 200px;
+    min-width: 50px;
     -webkit-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.175);
     -moz-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.175);
