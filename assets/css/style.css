@@ -11672,3 +11672,19 @@ html[xmlns] .slides {
   border-radius: 2em;
   padding: 1em;
 }
+
+.title-vendor{
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 1.5em;
+
+  background-color: #de9700;
+  width: fit-content;
+  padding: 0 1em;
+
+  margin: 1em auto;
+
+
+  border-radius: 0px 40px 0px 40px;
+
+}

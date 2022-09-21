@@ -84,6 +84,10 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 		<!--		</nav>-->
 		<div class="container margin_60_35">
 			<div class="row">
+
+                <div class="col-lg-12 title-vendor" >
+                    <h3 ><?php echo $vendor->getName(); ?></h3>
+                </div>
 				<div class="col-lg-6 col-md-12  ">
 					<section id="description">
 						<div class="panel-group accordion-main my-2" id="accordion">
