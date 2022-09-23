@@ -11454,9 +11454,9 @@ html[xmlns] .slides {
 
 .banner_title2{
   margin: 0!important;
-  padding: 2em  1em!important;
+  padding: 1em  !important;
   text-align: center;
-  line-height:2.5em!important;
+  line-height:1.7em!important;
 
   color: white!important;
   word-wrap:break-word!important;
@@ -11675,16 +11675,9 @@ html[xmlns] .slides {
 
 .title-vendor{
   font-family: "Roboto Slab";
-  font-weight: 700;
-  font-size: 1.5em;
-
-  background-color: #de9700;
-  width: fit-content;
-  padding: 0 1em;
-
-  margin: 1em auto;
-
-
-  border-radius: 0px 40px 0px 40px;
+  font-weight: 800;
+  font-size: 1.7em;
+  /*background-color: #de9700;*/
+  text-shadow: 2px 2px 2px rgba(255,118,33,0.2);
 
 }
