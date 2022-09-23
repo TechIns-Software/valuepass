@@ -20,42 +20,52 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 ?>
 <input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>
 <main>
-    <!-- <section class="hero_in hotels_detail ">
+    <section class="hero_in hotels_detail "
+             style="background-image: url(vendorImages/<?php echo $vendor->getId() . '/' . $vendor->getImages()[0]; ?>);background-size: cover;">
         <div class="wrapper ">
-            <div class="container ">
-                <h1 class="fadeInUp"><span></span>Vendor Page</h1>
-            </div>
+            <!--            <div class="container "> -->
+            <!--                <h1 class="fadeInUp"><span></span>Vendor Page</h1> -->
+            <!--            </div> -->
             <span class="magnific-gallery">
-                <a href="assets/img/10.jpg" class="btn_photos" title="Photo title" data-effect="mfp-zoom-in">View photos <br>& videos</a>
-                <a href="assets/img/4.jpg" title="Photo title" data-effect="mfp-zoom-in"></a>
-                <a href="assets/img/2.jpg" title="Photo title" data-effect="mfp-zoom-in"></a>
+                            <?php
+                            $dummyCounter = 0;
+                            foreach ($vendor->getImages() as $imagePath) {
+                                if ($dummyCounter == 0) {
+                                    ?>
+                                    <a href="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>"
+                                       data-effect="mfp-zoom-in" class="btn_photos">View photos <br>& videos</a>
+                                <?php } else { ?>
+                                    <a href="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>"
+                                       data-effect="mfp-zoom-in"></a>
+                                <?php }
+                                $dummyCounter++ ?>
+
+                                <?php
+                            }
+                            ?>
             </span>
         </div>
-    </section> -->
+    </section>
     <!--/hero_in-->
 
     <!-- Slider -->
-    <div id="full-slider-wrapper">
-        <div id="layerslider" style="width:100%;height:650px;">
-            <?php
-            $dummyCounter = 0;
-            foreach ($vendor->getImages() as $imagePath) {
-                ?>
-                <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
-                    <img src="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>" class="ls-bg"
-                         alt="Slide background">
-                    <!-- <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
-                        Tours - Hotels - Restaurants
-                    </p> -->
-                    <!--                    <p class="ls-l" style="top:70%; left:50%;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;"><a class="btn_1 rounded" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='#description'>Read Description</a></p>-->
-
-                </div>
-                <?php
-            }
-            ?>
-
-        </div>
-    </div>
+    <!--    <div id="full-slider-wrapper">-->
+    <!--        <div id="layerslider" style="width:100%;height:650px;">-->
+    <!--            --><?php
+    //            $dummyCounter = 0;
+    //            foreach ($vendor->getImages() as $imagePath) {
+    //                ?>
+    <!--                <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">-->
+    <!--                    <img src="vendorImages/-->
+    <?php //echo $vendor->getId() . '/' . $imagePath; ?><!--" class="ls-bg"-->
+    <!--                         alt="Slide background">-->
+    <!--                </div>-->
+    <!--                --><?php
+    //            }
+    //            ?>
+    <!---->
+    <!--        </div>-->
+    <!--    </div>-->
     <!-- End layerslider -->
 
     <div class="bg_color_1 shadow bgbanner2">
@@ -67,7 +77,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
             <p> with a discount </p>
             <p> when you arrive </p>
             <p> at your activity location. </p>
-            <!--				   <p class="fs-2"> <strong> Your gifts never end </strong>  </p> -->
         </div>
 
 
@@ -85,10 +94,10 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
         <!--		</nav>-->
         <div class="container margin_60_35">
             <div class="row">
-<!---->
-<!--                <div class="col-lg-12  col-md-12 title-vendor">-->
-<!--                    <h3>--><?php //echo $vendor->getName(); ?><!--</h3>-->
-<!--                </div>-->
+                <!---->
+                <!--                <div class="col-lg-12  col-md-12 title-vendor">-->
+                <!--                    <h3>--><?php //echo $vendor->getName(); ?><!--</h3>-->
+                <!--                </div>-->
                 <div class="col-12 title-vendor text-center">
                     <h3><?php echo $vendor->getName(); ?></h3>
                 </div>

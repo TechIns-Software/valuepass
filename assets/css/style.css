@@ -11249,8 +11249,8 @@ html[xmlns] .slides {
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
 
-  border-radius: 2em;
-  margin: 1em 3em;
+  /*border-radius: 2em;*/
+  /*margin: 1em 3em;*/
 }
 .destbannertext{
   font-size: 1.3em;
@@ -11454,9 +11454,9 @@ html[xmlns] .slides {
 
 .banner_title2{
   margin: 0!important;
-  padding: 1em  !important;
+  padding: 1em  1em!important;
   text-align: center;
-  line-height:1.7em!important;
+  line-height:2.5em!important;
 
   color: white!important;
   word-wrap:break-word!important;
