@@ -98,8 +98,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 <!--                <div class="col-lg-12  col-md-12 title-vendor">-->
                 <!--                    <h3>--><?php //echo $vendor->getName(); ?><!--</h3>-->
                 <!--                </div>-->
-                <div class="col-12 title-vendor text-center">
-                    <h3><?php echo $vendor->getName(); ?></h3>
+                <div class="col-12 text-center">
+                    <h5><b><?php echo $vendor->getName(); ?></b></h5>
                 </div>
 
                 <div class="col-lg-6 col-md-12  ">
