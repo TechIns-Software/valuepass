@@ -33,7 +33,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 if ($dummyCounter == 0) {
                                     ?>
                                     <a href="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>"
-                                       data-effect="mfp-zoom-in" class="btn_photos">View photos <br>& videos</a>
+                                       data-effect="mfp-zoom-in" class="btn_photos">View photos</a>
                                 <?php } else { ?>
                                     <a href="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>"
                                        data-effect="mfp-zoom-in"></a>
@@ -71,12 +71,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     <div class="bg_color_1 shadow bgbanner2">
 
         <div class="banner_title2 ">
-            <p> Buy your vouchers on board </p>
-            <p> reserve your spot, </p>
-            <p> and pay the provider </p>
-            <p> with a discount </p>
-            <p> when you arrive </p>
-            <p> at your activity location. </p>
+            <p> Buy your vouchers on board
+           reserve your spot, </p>
+            <p> and pay the provider
+            with a discount </p>
+            <p> when you arrive
+            at your activity location. </p>
         </div>
 
 
