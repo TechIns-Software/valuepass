@@ -19,32 +19,24 @@ if (is_null($vendor)) {
 $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 ?>
 <input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>
+<style>
+    <?php
+    $counter = 0;
+    $stringPreLoad = '';
+    foreach ($vendor->getImages() as $imagePath) {
+        echo ".image$counter {background-image: url(vendorImages/$idVendor/$imagePath);}";
+        $stringPreLoad .= " url('vendorImages/$idVendor/$imagePath') ";
+        $counter = $counter + 1;
+    }
+    ?>
+    body::after{
+        content: <?php echo $stringPreLoad;?>;
+    }
+</style>
 <main>
-    <section class="hero_in hotels_detail "
-             style="background-image: url(vendorImages/<?php echo $vendor->getId() . '/' . $vendor->getImages()[0]; ?>);background-size: cover;">
-        <div class="wrapper ">
-            <!--            <div class="container "> -->
-            <!--                <h1 class="fadeInUp"><span></span>Vendor Page</h1> -->
-            <!--            </div> -->
-            <span class="magnific-gallery">
-                            <?php
-                            $dummyCounter = 0;
-                            foreach ($vendor->getImages() as $imagePath) {
-                                if ($dummyCounter == 0) {
-                                    ?>
-                                    <a href="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>"
-                                       data-effect="mfp-zoom-in" class="btn_photos">View photos</a>
-                                <?php } else { ?>
-                                    <a href="vendorImages/<?php echo $vendor->getId() . '/' . $imagePath; ?>"
-                                       data-effect="mfp-zoom-in"></a>
-                                <?php }
-                                $dummyCounter++ ?>
+    <section id="sliderElement" class="hero_in hotels_detail image0"
+             style="background-size: cover;">
 
-                                <?php
-                            }
-                            ?>
-            </span>
-        </div>
     </section>
     <!--/hero_in-->
 
@@ -724,6 +716,10 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
 
 </body>
-<script src="backend/js/cart.js"></script>
 
+<script src="backend/js/cart.js"></script>
+<script>
+    var lengthImagesSlider = <?php echo count($vendor->getImages())?>;
+</script>
+<script src="assets/js/mySlider.js"></script>
 </html>

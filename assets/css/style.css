@@ -11485,7 +11485,7 @@ html[xmlns] .slides {
   color:  #004d88;
 }
 
-@media only screen and (max-width: 559px){
+@media only screen and (max-width: 800px){
 
   .banner_title2 p{
     font-size: 1.4em !important;
@@ -11493,7 +11493,7 @@ html[xmlns] .slides {
   }
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 470px){
 
   .banner_title2 p{
     font-size: 1em !important;
