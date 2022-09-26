@@ -31,6 +31,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     ?>
     body::after{
         content: <?php echo $stringPreLoad;?>;
+        display: none;
     }
 </style>
 <main>
