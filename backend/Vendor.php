@@ -302,6 +302,20 @@ class Vendor {
         return $this->googleMapsImage;
     }
 
-
+    /**
+     * @return string
+     */
+    public function getForHowManyPersonsIsString(): string
+    {
+        if ($this->getForHowManyPersonsIs() != 99) {
+            if ($this->getForHowManyPersonsIs() == 1) {
+                return 'per person';
+            } else {
+                return 'for '.$this->getForHowManyPersonsIs().' participants';
+            }
+        } else {
+            return 'per group';
+        }
+    }
 
 }

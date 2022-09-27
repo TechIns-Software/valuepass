@@ -220,8 +220,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             </p>
                             <div class="row ">
                                 <div class="col d-flex nowrap buyvp_label"> Buy VP Voucher</div>
-                                <div class="col buyvp_value"><b><?php echo $vendor->getPriceAdult(); ?>€ </b> <span
-                                            class="perperson"><?php echo($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for ' . $vendor->getForHowManyPersonsIs() . ' participants') ?></span>
+                                <div class="col buyvp_value">
+                                    <b><?php echo $vendor->getPriceAdult(); ?>€ </b>
+                                    <span class="perperson">
+                                        <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                    </span>
                                 </div>
                             </div>
 
@@ -232,8 +235,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                             <div class="row">
                                 <div class="col"> Pay</div>
-                                <div class="col pay_value"><b><?php echo $totalToPay; ?>€ </b> <span
-                                            class="perperson"><?php echo($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for ' . $vendor->getForHowManyPersonsIs() . ' participants') ?></span>
+                                <div class="col pay_value">
+                                    <b><?php echo $totalToPay; ?>€ </b>
+                                    <span class="perperson">
+                                        <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                    </span>
                                 </div>
                             </div>
 
@@ -526,9 +532,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     <p class=""><span class="voucher_av">Vouchers Available <b> 4/10</b></span></p>
                                     <div class="row ">
                                         <div class="col d-flex nowrap buyvp_label"> Buy VP Voucher</div>
-                                        <div class="col buyvp_value"><b><?php echo $vendor->getPriceAdult(); ?>
-                                                € </b>
-                                            <span class="perperson"><?php echo($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for ' . $vendor->getForHowManyPersonsIs() . ' participants') ?></span>
+                                        <div class="col buyvp_value">
+                                            <b><?php echo $vendor->getPriceAdult();?>€ </b>
+                                            <span class="perperson">
+                                                <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                            </span>
                                         </div>
                                     </div>
 
@@ -540,8 +548,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                                     <div class="row">
                                         <div class="col"> Pay</div>
-                                        <div class="col pay_value"><b><?php echo $totalToPay; ?>€ </b> <span
-                                                    class="perperson"><?php echo($vendor->getForHowManyPersonsIs() == 1 ? 'per person' : 'for ' . $vendor->getForHowManyPersonsIs() . ' participants') ?></span>
+                                        <div class="col pay_value">
+                                            <b><?php echo $totalToPay; ?>€ </b>
+                                            <span class="perperson">
+                                                <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                            </span>
                                         </div>
                                     </div>
 
