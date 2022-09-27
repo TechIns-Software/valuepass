@@ -12,7 +12,9 @@ $home = 0 ;
 $urr = $_SERVER['REQUEST_URI'];
 
 include_once 'includes/header.php';
-
+if (!isset($idLanguage)) {
+    $idLanguage = $_SESSION["languageId"];
+}
 if (!isset($cartArray)) {
     $cartArray = unserialize($_SESSION['cart']);
 }
@@ -55,7 +57,7 @@ if (!isset($cartArray)) {
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray);
+                                    $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray, $idLanguage);
                                     $vendorId = $objectVouchersDisplay['vendorId'];
                                     $allVouchers = $objectVouchersDisplay['allVouchers'];
                                     $nameVendorArray = $objectVouchersDisplay['nameVendor'];

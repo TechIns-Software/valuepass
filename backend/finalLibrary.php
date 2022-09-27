@@ -311,8 +311,7 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : 
     return $possiblePackages;
 }
 
-//session already exists
-function getVendorForCart($conn, $idVendorVoucher) : array {
+function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
     $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, VV.dateVoucher
             FROM Vendor AS V, VendorVoucher AS VV
             WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
@@ -322,7 +321,6 @@ function getVendorForCart($conn, $idVendorVoucher) : array {
         $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $dateVoucher);
         while ($stmt->fetch()) {}
     }
-    $idLanguage = $_SESSION['languageId'];
     $query2 = "SELECT VT.name
             FROM VendorTranslate AS VT
             WHERE VT.idVendor = $idVendor AND idLanguage = $idLanguage";
@@ -387,7 +385,7 @@ function getLanguageIcon ($conn,$langId){
 }
 
 
-function createArrayVouchersSortedFromCart($conn, $cart) {
+function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage) {
     $allVouchers = [];
 
     $nameVendorArray = [];
@@ -400,7 +398,7 @@ function createArrayVouchersSortedFromCart($conn, $cart) {
     $idVendorArray = [];
     foreach ($cart as $arrayVouchersWant) {
         $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
-        $arrayPrices = getVendorForCart($conn, $arrayVouchersWant[0]->getIdVendorVoucher());
+        $arrayPrices = getVendorForCart($conn, $arrayVouchersWant[0]->getIdVendorVoucher(), $idLanguage);
         $priceAdult = $arrayPrices[0];
         $priceChild = $arrayPrices[1];
         $priceInfant = $arrayPrices[2];
@@ -576,5 +574,27 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .=   " </div> ";
     $message .=  " </div> ";
     return $message ;
+
+}
+
+function getAvailableVendorVoucher($conn, $arrayIVendorVoucherWithAmount) {
+    $query = "SELECT VV.id
+            FROM VendorVoucher AS VV
+            WHERE VV.id = ? AND VV.existenceVoucher > ?;";
+    $stmt = $conn->prepare($query);
+    $idVendorVoucher = $amountVouchers = 0;
+    $stmt->bind_param('ii', $idVendorVoucher, $amountVouchers);
+    $vendorVouchers = [];
+    foreach ($arrayIVendorVoucherWithAmount as $idVendorVoucher => $amountVouchers) {
+        $id = 0;
+        $stmt->execute();
+        $stmt->bind_result($id);
+        while ($stmt->fetch()) {}
+        if ($id != 0) {
+            array_push($vendorVouchers, $idVendorVoucher);
+        }
+    }
+    $stmt->close();
+    return $vendorVouchers;
 
 }

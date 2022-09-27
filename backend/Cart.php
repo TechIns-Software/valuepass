@@ -106,9 +106,9 @@ class Cart
         foreach ($this->arrayGroupVouchersWant as $groupVoucherWant) {
             if (isset($ids[$groupVoucherWant[0]->getIdVendorVoucher()])) {
                 $ids[$groupVoucherWant[0]->getIdVendorVoucher()]
-                    = $ids[$groupVoucherWant[0]->getIdVendorVoucher()] + 1;
+                    = $ids[$groupVoucherWant[0]->getIdVendorVoucher()] + count($groupVoucherWant);
             } else {
-                $ids[$groupVoucherWant[0]->getIdVendorVoucher()] = 1;
+                $ids[$groupVoucherWant[0]->getIdVendorVoucher()] = count($groupVoucherWant);
             }
         }
         return $ids;
@@ -155,5 +155,20 @@ class Cart
             }
         }
         return $products;
+    }
+
+    public function checkIfVendorVouchersInCartStillExists($conn): void {
+        $vendorVoucher = $this->getConcentratedVendorVoucherIds();
+        $stillAvailableVendorVoucher = getAvailableVendorVoucher($conn, $vendorVoucher);
+        $indexesToBeRemoved = [];
+        foreach ($this->arrayGroupVouchersWant as $keyIndex=> $groupOfVouchers) {
+            $idVendorVoucher = $groupOfVouchers[0]->getIdVendorVoucher();
+            if (!in_array($idVendorVoucher, $stillAvailableVendorVoucher)) {
+                array_push($indexesToBeRemoved, $keyIndex);
+            }
+        }
+        foreach ($indexesToBeRemoved as $indexToRemoved) {
+            unset($this->arrayGroupVouchersWant[$indexToRemoved]);
+        }
     }
 }

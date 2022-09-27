@@ -13,6 +13,8 @@ $menu = GetMenu($conn, $_SESSION['languageId']);
 // print_r($menu );
 $cartArray = unserialize($_SESSION['cart']);
 $cartHeader = new \ValuePass\Cart($cartArray);
+$cartHeader->checkIfVendorVouchersInCartStillExists($conn);
+$_SESSION['cart'] = serialize($cartHeader->getArrayGroupVouchersWant());
 $voucherNumber = $cartHeader->getNumberOfVoucher();
 
 $lang_icon =getLanguageIcon($conn,$_SESSION["languageId"])

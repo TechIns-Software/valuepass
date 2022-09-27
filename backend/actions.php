@@ -128,14 +128,10 @@ if ($_POST['action'] == 'addProduct') {
         }
     }
 } elseif ($_POST['action'] == 'checkOut') {
-    //TODO: our payment provider must rejects payments after 10 minutes
     $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
     $progress = $cart->progressForPayment();
     if ($progress) {
-
-        $dataToSend = $cart->getConcentratedVendorVoucherIds();
-
-
+        //TODO
     } else {
         $message = $progress;
     }
