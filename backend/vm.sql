@@ -284,7 +284,6 @@ CREATE TABLE VendorVoucher
     id               int       NOT NULL,
     PRIMARY KEY (id),
     idVendor         int       NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
     isDateRestrict   binary(1) NOT NULL,
     starterVouchers  int       NOT NULL,
     existenceVoucher int       NOT NULL,
