@@ -106,10 +106,11 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) : \ValuePa
                         CategoryVendorTranslate CVT
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
                         AND CV.id = V.idCategory AND CV.id = CVT.idCategoryVendor
+                        AND CVT.idLanguage = ?
                         AND V.isOkForShowing = 1";
 
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('ii', $idVendor, $idLanguage);
+    $stmt->bind_param('iii', $idVendor, $idLanguage, $idLanguage);
     if ($stmt->execute()) {
         $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs = $googleMapsImage = '';
         $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs, $googleMapsImage);
