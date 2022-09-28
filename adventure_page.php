@@ -64,12 +64,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     <div class="bg_color_1 shadow bgbanner2">
 
         <div class="banner_title2 ">
-            <p> Buy your vouchers on board
-           reserve your spot, </p>
-            <p> and pay the provider
-            with a discount </p>
-            <p> when you arrive
-            at your activity location. </p>
+            <p>  <?php echo $menu[58] ?> </p>
+            <p> <?php echo $menu[59] ?> </p>
+            <p>  <?php echo $menu[60] ?> </p>
         </div>
 
 
@@ -103,7 +100,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div class="panel-heading   " data-bs-toggle="collapse" href="#collapse1" role="button"
                                      aria-expanded="true" aria-controls="collapseExample">
                                     <h6 class="panel-title accordion-toggle">
-                                        Description
+                                        <?php echo $menu[61] ?>
                                     </h6>
                                 </div>
                                 <div id="collapse1" class=" collapse show">
@@ -125,7 +122,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2"
                                      role="button" aria-expanded="true" aria-controls="collapseExample">
                                     <h6 class="panel-title accordion-toggle">
-                                        About this Activity
+                                        <?php echo $menu[62] ?>
                                     </h6>
                                 </div>
                                 <div id="collapse2" class=" collapse">
@@ -166,7 +163,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3"
                                      role="button" aria-expanded="true" aria-controls="collapseExample">
                                     <h6 class="panel-title accordion-toggle">
-                                        Highlights
+                                        <?php echo $menu[63] ?>
                                     </h6>
                                 </div>
                                 <div id="collapse3" class=" collapse">
@@ -210,16 +207,16 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 								</span>
                             </p>
                             <span class="criteria">
-								Our Criteria Rating
+								 <?php echo $menu[45] ?>
 								<?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
 							</span>
                             <p class=" voucher_av ">
-                                Vouchers Available
+                                <?php echo $menu[46] ?>
                                 <b>4/10</b>
                             </p>
                             <div class="row ">
-                                <div class="col d-flex nowrap buyvp_label"> Buy VP Voucher</div>
+                                <div class="col d-flex nowrap buyvp_label"><?php echo $menu[47] ?> </div>
                                 <div class="col buyvp_value">
                                     <b><?php echo $vendor->getPriceAdult(); ?>€ </b>
                                     <span class="perperson">
@@ -229,12 +226,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             </div>
 
                             <div class="row">
-                                <div class="col"> From</div>
+                                <div class="col"> <?php echo $menu[49] ?></div>
                                 <div class="col from_price"> <?php echo $vendor->getOriginalPrice(); ?> €</div>
                             </div>
 
                             <div class="row">
-                                <div class="col"> Pay</div>
+                                <div class="col"> <?php echo $menu[50] ?></div>
                                 <div class="col pay_value">
                                     <b><?php echo $totalToPay; ?>€ </b>
                                     <span class="perperson">
@@ -245,13 +242,13 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                             <div class="row">
                                 <div class="col">
-                                    <p class="vp_discount my-0 ">Save <?php echo $vendor->getDiscount(); ?>% in
-                                        total</p>
+                                    <p class="vp_discount my-0 "><?php echo $menu[51] ?> <?php echo $vendor->getDiscount(); ?>% <?php echo $menu[52] ?>
+                                        </p>
                                 </div>
                             </div>
 
                             <!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
-                            <button class=" my-2 btn buy_button "><a href="#book">Book Now </a></button>
+                            <button class=" my-2 btn buy_button "><a href="#book"><?php echo $menu[53] ?> </a></button>
                             <p class="my-0 perperson"> <?php echo $menu[13]; ?> </p>
 
 
@@ -271,7 +268,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4"
                                  role="button" aria-expanded="true" aria-controls="collapseExample">
                                 <h6 class="panel-title accordion-toggle">
-                                    Full Description
+                                    <?php echo $menu[64] ?>
                                 </h6>
                             </div>
                             <div id="collapse4" class=" collapse">
@@ -300,7 +297,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse6"
                                  role="button" aria-expanded="true" aria-controls="collapseExample">
                                 <h6 class="panel-title accordion-toggle">
-                                    Includes
+                                    <?php echo $menu[65] ?>
                                 </h6>
                             </div>
                             <div id="collapse6" class=" collapse">
@@ -347,7 +344,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse7"
                                  role="button" aria-expanded="true" aria-controls="collapseExample">
                                 <h6 class="panel-title accordion-toggle">
-                                    Important information
+                                    <?php echo $menu[66] ?>
                                 </h6>
                             </div>
                             <div id="collapse7" class=" collapse">
@@ -400,7 +397,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     <div class="panel-heading  collapsed" data-target="#collapse8"
                                          data-bs-toggle="collapse" href="#collapse8" role="button">
                                         <h6 class="panel-title accordion-toggle">
-                                            All of our suppliers have met the seven standards of our rating
+                                            <?php echo $menu[67] ?>
                                         </h6>
                                     </div>
                                     <div id="collapse8" class=" collapse">
@@ -447,25 +444,25 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                     <div class="box_detail booking">
                         <div class="price">
-                            <span>Check availability </span>
+                            <span>    <?php echo $menu[68] ?> </span>
 
                         </div>
 
 
                         <!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
                         <div class="panel-dropdown">
-                            <a href="#">Adults <span class="qtyTotal">0</span></a>
+                            <a href="#"> <?php echo $menu[69] ?>  <span class="qtyTotal">0</span></a>
                             <div class="panel-dropdown-content right">
                                 <div class="qtyButtons">
-                                    <label>Adults <small> (13-99)</small></label>
+                                    <label><?php echo $menu[69] ?> <small> (13-99)</small></label>
                                     <input id="adultsInput" type="text" name="qtyInput" value="0">
                                 </div>
                                 <div class="qtyButtons">
-                                    <label>Children</label>
+                                    <label><?php echo $menu[70] ?></label>
                                     <input id="childrenInput" type="text" name="qtyInput" value="0">
                                 </div>
                                 <div class="qtyButtons">
-                                    <label>Infants</label>
+                                    <label><?php echo $menu[71] ?></label>
                                     <input id="infantsInput" type="text" name="qtyInput" value="0">
                                 </div>
                             </div>
@@ -473,17 +470,16 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                         <div class="form-group input-dates">
                             <input id="date" class="form-control" type="text" name="dates"
-                                   placeholder="Choose your date ">
+                                   placeholder="<?php echo $menu[73] ?>">
                             <i class="icon_calendar"></i>
                         </div>
 
 
                         <button onclick="getPackagesAvailable();" class=" add_top_30 btn_1 full-width purchase">
-                            Check
-                            availability
+                            <?php echo $menu[68] ?>
                         </button>
                         <!-- <a href="wishlist.html" class="btn_1 full-width outline wishlist"><i class="icon_heart"></i> Add to wishlist</a> -->
-                        <div class="text-center"><small>No money charged in this step</small></div>
+                        <div class="text-center"><small><?php echo $menu[74] ?></small></div>
                     </div>
                     <div id="option"></div>
                 </div>

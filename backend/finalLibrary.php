@@ -359,12 +359,12 @@ function GetMenu($conn,$lang){
     $stmt->bind_param('i', $lang);
 
     if ($stmt->execute()) {
-        $menu_options= [];
-        $stmt->bind_result($menu_options);
+        $name= '';
+        $stmt->bind_result($name);
 
         $menu= [];
         while ($stmt->fetch()) {
-            array_push($menu, $menu_options);
+            array_push($menu, $name);
         }
     }
     return $menu;

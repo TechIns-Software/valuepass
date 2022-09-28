@@ -66,9 +66,9 @@ $destinations = getDestinations($conn, $idLanguage);
 	<div class="bg_color_1 shadow bgbanner">
 		<div class="container container-custom margin_80_55 ">
 			<div class="banner_title3">
-				<h2>ValuePass Offers are only Available Onboard</h2>
+				<h2><?php echo $menu[14] ?></h2>
 
-				<p class="fs-2"> <strong> Don't Miss it</strong></p>
+				<p class="fs-2"> <strong> <?php echo $menu[15] ?></strong></p>
 			</div>
 
 		</div>
@@ -80,8 +80,8 @@ $destinations = getDestinations($conn, $idLanguage);
 	<div id="how" class="container margin_80_55">
 		<div class="main_title_2">
 			<span><em></em></span>
-			<h2> <b> Why ValuePass </b></h2>
-			<p>Spend less doing more…</p>
+			<h2> <b> <?php echo $menu[16] ?></b></h2>
+			<p><?php echo $menu[17] ?> </p>
 
 		</div>
 		<div class="row">
@@ -89,18 +89,18 @@ $destinations = getDestinations($conn, $idLanguage);
 				<a class="box_feat ">
 					<!-- <i class="pe-7s-medal"></i> -->
 					<object class="SvgImage" data="assets/icons/fingerprint.svg" type="image/svg+xml"></object>
-					<h3>Personalized </h3>
-					<p>Pick your destination, attraction, schedule and create your own bucket list</p>
+					<h3><?php echo $menu[19] ?>  </h3>
+					<p> <?php echo $menu[20] ?> </p>
 				</a>
 			</div>
 
 			<div class="col-lg-4 col-md-6  " >
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/gift.svg" type="image/svg+xml"></object>
-					<h3> Pampered </h3>
-					<p>We always have a present for you. <br><?php echo $menu[13] ?></p>
+					<h3> <?php echo $menu[21] ?>  </h3>
+					<p><?php echo $menu[22] ?> <br><?php echo $menu[13] ?></p>
 					<!-- Button trigger modal -->
-					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Read More</b>
+					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> <?php echo $menu[23] ?></b>
 				</a>
 			</div>
 
@@ -111,9 +111,9 @@ $destinations = getDestinations($conn, $idLanguage);
 				<a class="box_feat">
 					<!-- <i class="pe-7s-culture"></i> -->
 					<object class="SvgImage" data="assets/icons/spring.svg" type="image/svg+xml"></object>
-					<h3>Flexible </h3>
-					<p>Free Cancellation, Payment Options & Re-scheduling </p>
-					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Read More</b>
+					<h3><?php echo $menu[28] ?> </h3>
+					<p><?php echo $menu[29] ?>  </p>
+					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1"> <?php echo $menu[23] ?></b>
 				</a>
 			</div>
 			<!-- Modal -->
@@ -122,12 +122,12 @@ $destinations = getDestinations($conn, $idLanguage);
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel1">Flexible Info</h5>
+							<h5 class="modal-title" id="exampleModalLabel1"><?php echo $menu[30] ?></h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
 
-							<p> ValuePass vouchers are not canceled, but we are always looking to offer you the best alternative solutions regarding the activity providers we promote if something goes wrong. You'll find more information in your confirmation email</p>
+							<p> <?php echo $menu[72] ?> </p>
 
 						</div>
 					</div>
@@ -137,8 +137,8 @@ $destinations = getDestinations($conn, $idLanguage);
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/smartphone.svg" type="image/svg+xml"></object>
-					<h3>Convenient </h3>
-					<p> Control everything easily from your smartphone. <br> Receive detailed info at your preferred e-mail</p>
+					<h3> <?php echo $menu[31] ?></h3>
+					<p> <?php echo $menu[32] ?> </p>
 				</a>
 			</div>
 
@@ -147,15 +147,15 @@ $destinations = getDestinations($conn, $idLanguage);
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/credit-card.svg" type="image/svg+xml"></object>
-					<h3>Secured </h3>
-					<p>Highly secured payment procedure</p>
+					<h3><?php echo $menu[33] ?>  </h3>
+					<p><?php echo $menu[34] ?> </p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/support.svg" type="image/svg+xml"></object>
-					<h3>Supportive </h3>
-					<p>Ask everything you want to know. Our support team is here to answer every question </p>
+					<h3><?php echo $menu[35] ?> </h3>
+					<p> <?php echo $menu[36] ?> </p>
 
 				</a>
 			</div>
@@ -169,25 +169,25 @@ $destinations = getDestinations($conn, $idLanguage);
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel"> Pampered Info : <small> Save from 20% to 30% discount on the initial price </small> </h5>
+							<h5 class="modal-title" id="exampleModalLabel"> <?php echo $menu[24] ?> : <small> <?php echo $menu[25] ?></small> </h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
 
 							<div class="col-lg-12 my-1 ">
-								<h6> 3 Vouchers from + extra <b> 1 </b> free Voucher </h6>
+								<h6> 3 <?php echo $menu[26] ?> <b> 1 </b> <?php echo $menu[27] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 4 Vouchers from + extra <b>2 </b> free Voucher </h6>
+								<h6> 4 <?php echo $menu[26] ?> <b>2 </b> <?php echo $menu[27] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 5 Vouchers from + extra <b> 3</b> free Voucher </h6>
+								<h6> 5 <?php echo $menu[26] ?> <b> 3</b> <?php echo $menu[27] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 6 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+								<h6> 6 <?php echo $menu[26] ?> <b> 4 </b> <?php echo $menu[27] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 7 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+								<h6> 7 <?php echo $menu[26] ?><b> 4 </b> <?php echo $menu[27] ?> </h6>
 							</div>
 						</div>
 					</div>
@@ -198,8 +198,8 @@ $destinations = getDestinations($conn, $idLanguage);
 		<section class="add_bottom_45">
 			<div class="main_title_2">
 				<span><em></em></span>
-				<h2>Destinations</h2>
-				<p>Create your bucket list on board!</p>
+				<h2><?php echo $menu[37] ?></h2>
+				<p> <?php echo $menu[38] ?> </p>
 			</div>
 
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
@@ -228,7 +228,7 @@ $destinations = getDestinations($conn, $idLanguage);
 								</div>
 								<div class="card-footer">
 									<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a></h4>
-									<small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> Activities</small>
+									<small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> <?php echo $menu[3] ?></small>
 								</div>
 							</div>
 						</div>

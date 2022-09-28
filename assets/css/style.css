@@ -11204,12 +11204,14 @@ html[xmlns] .slides {
   border: none !important;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  transition:  all 0.3s ease-in-out 0s;
 }
 
 .buy_button2:hover {
   transform: all;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+  transition:  all 0.3s ease-in-out 0s;
 }
 
 .buy_button2 a {
