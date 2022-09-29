@@ -239,6 +239,15 @@ function updateIncludeService($conn, $idLang, $idInclude, $name){
 }
 
 function updateMenu($conn, $menu) {
+    $queryInitial = "SELECT id FROM Menu";
+    $stmtInitial = $conn->prepare($queryInitial);
+    $stmtInitial->execute();
+    $alreadyIn = [];
+    $idMenu = 0;
+    $stmtInitial->bind_result($idMenu);
+    while ($stmtInitial->fetch()) {
+        array_push($alreadyIn, $idMenu);
+    }
     $query = "UPDATE MenuTranslate
                         SET name = ?
                         WHERE idMenu = ? AND idLanguage = ?";
@@ -252,6 +261,30 @@ function updateMenu($conn, $menu) {
                 $name = $langTransl['name'];
                 $stmt->execute();
             }
+        }
+    }
+    $stmt->close();
+
+    $query2 = "INSERT INTO Menu(id) VALUES (?);";
+    $query3 = "INSERT INTO MenuTranslate(idMenu, idLanguage, name) VALUES (?, ?, ?);";
+
+    foreach ($menu as $menuId=> $menuObj) {
+        if ($menuId != 'version') {
+            if (!in_array($menuId, $alreadyIn)) {
+                $stmt = $conn->prepare($query2);
+                $stmt->bind_param('i', $menuId);
+                $stmt->execute();
+                $stmt->close();
+                $stmt2 = $conn->prepare($query3);
+                $stmt2->bind_param('iis', $menuId, $idLanguage, $name);
+                foreach ($menuObj['languages'] as $idLanguage => $langTransl) {
+                    $name = $langTransl['name'];
+                    $stmt2->execute();
+
+                }
+
+            }
+
         }
     }
 }

@@ -25,8 +25,7 @@ create TABLE RatedCategoryTranslate
 create TABLE Menu
 (
     id      int NOT NULL,
-    PRIMARY KEY (id),
-    version bigint DEFAULT 0
+    PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
 create TABLE MenuTranslate
