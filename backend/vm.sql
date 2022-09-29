@@ -298,17 +298,6 @@ create TABLE Version
     name    varchar(256)
 ) ENGINE = InnoDB;
 
-insert into Version(name)
-values ('general'),
-       ('ratedCategory'),
-       ('menu'),
-       ('destination'),
-       ('categoryVendor'),
-       ('paymentInfoActivity'),
-       ('vendor'),
-       ('labelsBox'),
-       ('includedService');
-
 
 insert into `Language` (`id`, `language`, `icon`)
 VALUES (1, 'Ελληνικά', 'gr'),

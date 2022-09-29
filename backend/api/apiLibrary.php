@@ -719,7 +719,7 @@ function updateVersionTable($conn, $arrayOfVersions) {
     $query = "UPDATE Version SET version = ? WHERE id = ?";
     $stmt = $conn->prepare($query);
     $version = $counter = 0;
-    $stmt->bind_param('ii', $counter, $version);
+    $stmt->bind_param('ii', $version, $counter);
 
 
     for ($counter = 1; $counter <= count($arrayOfVersions); $counter++) {

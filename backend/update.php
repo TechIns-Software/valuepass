@@ -171,7 +171,9 @@ foreach ($response['destinations'] as $idDestination => $destinationValue) {
     if ($idDestination != 'version') {
         $idDestination = intval($idDestination);
         if (!in_array($idDestination, $allIds['Destination'])) {
-            addDestination($conn, $idDestination, $destinationValue['languages'], $destinationValue['version']);
+            if (isset($destinationValue['version'])) {
+                addDestination($conn, $idDestination, $destinationValue['languages'], $destinationValue['version']);
+            }
         }
     }
 }
@@ -543,15 +545,14 @@ foreach ($imagesToBeRemoved as $idImage => $idVendor) {
 
 $allVersions = [
     $response['version'],
-    $response['ratedCategory'],
-    $response['menu'],
-    $response['destinations'],
-    $response['categoryVendor'],
-    $response['paymentInfoActivity'],
-    $response['vendors'],
-    $response['labelsBox'],
-    $response['includedService'],
-    $response['languages'],
+    $response['ratedCategory']['version'],
+    $response['menu']['version'],
+    $response['destinations']['version'],
+    $response['categoryVendor']['version'],
+    $response['paymentInfoActivity']['version'],
+    $response['vendors']['version'],
+    $response['labelsBox']['version'],
+    $response['includedService']['version']
 ];
 updateVersionTable($conn, $allVersions);
 
