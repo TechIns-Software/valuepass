@@ -378,8 +378,7 @@ VALUES (1),
        (72),
        (73),
        (74),
-       (75),
-       (76);
+
 
 
 
@@ -444,181 +443,176 @@ VALUES (1, 1, 'Αρχική'),
        (18, 1, 'Ξοδέψτε λιγότερα κάνοντας περισσότερα…'),
        (18, 2, 'Spend less doing more…'),
 
-       (19, 1, ''),
-       (19, 2, ''),
 
-       (20, 1, 'Εξατομικευμένο'),
-       (20, 2, 'Personalized'),
+       (19, 1, 'Εξατομικευμένο'),
+       (19, 2, 'Personalized'),
 
-      (21, 1, 'Διαλέξτε τον προορισμό σας, το αξιοθέατο, το πρόγραμμα και δημιουργήστε τη δική σας λίστα'),
-       (21, 2, 'Pick your destination, attraction, schedule and create your own bucket list'),
+      (20, 1, 'Διαλέξτε τον προορισμό σας, το αξιοθέατο, το πρόγραμμα και δημιουργήστε τη δική σας λίστα'),
+       (20, 2, 'Pick your destination, attraction, schedule and create your own bucket list'),
 
-      (22, 1, 'Ειδικά Διαλεγμένο'),
-       (22, 2, 'Pampered'),
+      (21, 1, 'Ειδικά Διαλεγμένο'),
+       (21, 2, 'Pampered'),
 
-      (23, 1, 'Έχουμε πάντα ένα δώρο για εσάς.'),
-       (23, 2, 'We always have a present for you.'),
+      (22, 1, 'Έχουμε πάντα ένα δώρο για εσάς.'),
+       (22, 2, 'We always have a present for you.'),
 
-      (24, 1, 'Διαβάστε περισσότερα'),
-       (24, 2, 'Read More'),
+      (23, 1, 'Διαβάστε περισσότερα'),
+       (23, 2, 'Read More'),
 
-        (25, 1, ''),
-       (25, 2, ''),
+      (24, 1, 'Πληροφορίες '),
+       (24, 2, 'Pampered Info'),
 
-      (26, 1, 'Πληροφορίες '),
-       (26, 2, 'Pampered Info'),
+      (25, 1, 'Εξοικονομήστε από 20% έως 30% έκπτωση στην αρχική τιμή'),
+       (25, 2, 'Save from 20% to 30% discount on the initial price'),
 
-      (27, 1, 'Εξοικονομήστε από 20% έως 30% έκπτωση στην αρχική τιμή'),
-       (27, 2, 'Save from 20% to 30% discount on the initial price'),
+    (26, 1, 'Vouchers + επιπλέον'),
+     (26, 2, 'Vouchers  + extra'),
 
-    (28, 1, 'Vouchers + επιπλέον'),
-       (28, 2, 'Vouchers  + extra'),
+    (27, 1, 'Δωρεάν Voucher'),
+     (27, 2, 'Free Voucher'),
 
-    (29, 1, 'Δωρεάν Voucher'),
-       (29, 2, 'Free Voucher'),
+    (28, 1, 'Eυέλικτος'),
+     (28, 2, 'Flexible'),
 
-    (30, 1, 'Eυέλικτος'),
-       (30, 2, 'Flexible'),
+    (29, 1, 'Δωρεάν ακύρωση, επιλογές πληρωμής και επαναπρογραμματισμός'),
+    (29, 2, 'Free Cancellation, Payment Options & Re-scheduling'),
 
-    (31, 1, 'Δωρεάν ακύρωση, επιλογές πληρωμής και επαναπρογραμματισμός'),
-       (31, 2, 'Free Cancellation, Payment Options & Re-scheduling'),
+    (30, 1, 'Πληροφορίες '),
+    (30, 2, 'Flexible Info'),
 
-    (32, 1, 'Πληροφορίες '),
-       (32, 2, 'Flexible Info'),
+    (31, 1, ' Έυκολος Χειρισμός'),
+    (31, 2, 'Convenient'),
 
-    (33, 1, ' Έυκολος Χειρισμός'),
-       (33, 2, 'Convenient'),
-
-    (34, 1, 'Ελέγξτε τα πάντα εύκολα από το smartphone σας.
+    (32, 1, 'Ελέγξτε τα πάντα εύκολα από το smartphone σας.
 Λάβετε λεπτομερείς πληροφορίες στο e-mail που προτιμάτε'),
-       (34, 2, 'Control everything easily from your smartphone.
+    (32, 2, 'Control everything easily from your smartphone.
 Receive detailed info at your preferred e-mail'),
 
-    (35, 1, 'Ασφαλές'),
-       (35, 2, 'Secured'),
+    (33, 1, 'Ασφαλές'),
+    (33, 2, 'Secured'),
 
-    (36, 1, 'Υψηλή ασφάλεια  στην διαδικασία πληρωμής'),
-       (36, 2, 'Highly secured payment procedure'),
+    (34, 1, 'Υψηλή ασφάλεια  στην διαδικασία πληρωμής'),
+    (34, 2, 'Highly secured payment procedure'),
 
-    (37, 1, 'Υποστήριξη'),
-       (37, 2, 'Supportive'),
+    (35, 1, 'Υποστήριξη'),
+    (35, 2, 'Supportive'),
 
-    (38, 1, 'Ρωτήστε όλα όσα θέλετε να μάθετε. Η ομάδα υποστήριξής μας είναι εδώ για να απαντήσει σε κάθε ερώτηση'),
-       (38, 2, 'Ask everything you want to know. Our support team is here to answer every question'),
+    (36, 1, 'Ρωτήστε όλα όσα θέλετε να μάθετε. Η ομάδα υποστήριξής μας είναι εδώ για να απαντήσει σε κάθε ερώτηση'),
+    (36, 2, 'Ask everything you want to know. Our support team is here to answer every question'),
 
-       (39, 1, 'Προορισμοί'),
-       (39, 2, 'Destinations'),
+       (37, 1, 'Προορισμοί'),
+       (37, 2, 'Destinations'),
 
-       (40, 1, 'Δημιουργήστε τη λίστα  των δραστηριοτήτων σας  εν πλω!'),
-       (40, 2, 'Create your bucket list on board!'),
+       (38, 1, 'Δημιουργήστε τη λίστα  των δραστηριοτήτων σας  εν πλω!'),
+       (38, 2, 'Create your bucket list on board!'),
 
-       (41, 1, 'Αγοράστε τουλάχιστον 2 Voucher.'),
-       (41, 2, 'Buy at least 2 vouchers.'),
+       (39, 1, 'Αγοράστε τουλάχιστον 2 Voucher.'),
+       (39, 2, 'Buy at least 2 vouchers.'),
 
-        (42, 1, 'Με τρία η περισσότερα'),
-       (42, 2, 'With 3 or more '),
+       (40, 1, 'Με τρία η περισσότερα'),
+       (40, 2, 'With 3 or more '),
 
-        (43, 1, 'παίρνετε δωρεάν vouchers'),
-       (43, 2, 'you get your free vouchers '),
+       (41, 1, 'παίρνετε δωρεάν vouchers'),
+       (41, 2, 'you get your free vouchers '),
 
-        (44, 1, 'και τα δώρα δεν τελειώνουν ποτέ'),
-       (44, 2, ' and your presents never end!'),
+        (42, 1, 'και τα δώρα δεν τελειώνουν ποτέ'),
+       (42, 2, ' and your presents never end!'),
 
-        (45, 1, 'Αγαπημένες Δραστηριότητες '),
-       (45, 2, 'Best of Experiences'),
+        (43, 1, 'Αγαπημένες Δραστηριότητες '),
+       (43, 2, 'Best of Experiences'),
 
-        (46, 1, 'Τύπος Δραστηριότητας'),
-       (46, 2, 'Type of experience'),
+        (44, 1, 'Τύπος Δραστηριότητας'),
+       (44, 2, 'Type of experience'),
 
-        (47, 1, 'Βαθμολογία Κριτηρίων'),
-       (47, 2, 'Our Criteria Rating'),
+        (45, 1, 'Βαθμολογία Κριτηρίων'),
+       (45, 2, 'Our Criteria Rating'),
 
-        (48, 1, 'Διαθέσιμα Vouchers'),
-       (48, 2, 'Vouchers Available'),
+        (46, 1, 'Διαθέσιμα Vouchers'),
+       (46, 2, 'Vouchers Available'),
 
-        (49, 1, 'Αγόρασε το VP Voucher'),
-       (49, 2, 'Buy VP Voucher'),
+        (47, 1, 'Αγόρασε το VP Voucher'),
+       (47, 2, 'Buy VP Voucher'),
 
-        (50, 1, 'Αγόρασε το VP Voucher'),
-       (50, 2, 'Buy VP Voucher'),
+        (48, 1, 'Αγόρασε το VP Voucher'),
+       (48, 2, 'Buy VP Voucher'),
 
-        (51, 1, 'Απο'),
-       (51, 2, 'From'),
+        (49, 1, 'Απο'),
+       (49, 2, 'From'),
 
-        (52, 1, 'Πλήρωσε'),
-       (52, 2, 'Pay'),
+        (50, 1, 'Πλήρωσε'),
+       (50, 2, 'Pay'),
 
-        (53, 1, 'Εξοικονόμησε'),
-       (53, 2, 'Save'),
+        (51, 1, 'Εξοικονόμησε'),
+       (51, 2, 'Save'),
 
-        (54, 1, 'συνολικά'),
-       (54, 2, 'in total'),
+        (52, 1, 'συνολικά'),
+       (52, 2, 'in total'),
 
-        (55, 1, 'Κάνε Κράτηση'),
-       (55, 2, 'Book Now '),
+        (53, 1, 'Κάνε Κράτηση'),
+       (53, 2, 'Book Now '),
 
-        (56, 1, 'Αποδράστε από τις τουριστικές παγίδες με αξέχαστες ταξιδιωτικές εμπειρίες.'),
-       (56, 2, 'Escape the tourist traps with unforgettable travel experiences.'),
+        (54, 1, 'Αποδράστε από τις τουριστικές παγίδες με αξέχαστες ταξιδιωτικές εμπειρίες.'),
+       (54, 2, 'Escape the tourist traps with unforgettable travel experiences.'),
 
-        (57, 1, 'Μπείτε κάτω από την επιφάνεια αυτών των προορισμών.'),
-       (57, 2, 'Get beneath the surface of these destinations.'),
+        (55, 1, 'Μπείτε κάτω από την επιφάνεια αυτών των προορισμών.'),
+       (55, 2, 'Get beneath the surface of these destinations.'),
 
-        (58, 1, 'Όλες οι προτάσεις μας επιλέγονται από την ομάδα μας!'),
-       (58, 2, ' All our proposals are hand-picked by our team!'),
+        (56, 1, 'Όλες οι προτάσεις μας επιλέγονται από την ομάδα μας!'),
+       (56, 2, ' All our proposals are hand-picked by our team!'),
 
-        (59, 1, 'Εμπνευστείτε για το επόμενο ταξίδι σας'),
-       (59, 2, 'Get inspired for your next trip '),
+        (57, 1, 'Εμπνευστείτε για το επόμενο ταξίδι σας'),
+       (57, 2, 'Get inspired for your next trip '),
 
-        (60, 1, 'Αγοράστε τα Voucher σας στο πλοίο κρατήστε τη θέση σας,'),
-       (60, 2, 'Buy your vouchers on board reserve your spot, '),
+        (58, 1, 'Αγοράστε τα Voucher σας στο πλοίο κρατήστε τη θέση σας,'),
+       (58, 2, 'Buy your vouchers on board reserve your spot, '),
 
-        (61, 1, 'και πληρώστε τον πάροχο με έκπτωση'),
-       (61, 2, 'and pay the provider  with a discount'),
+        (59, 1, 'και πληρώστε τον πάροχο με έκπτωση'),
+       (59, 2, 'and pay the provider  with a discount'),
 
-        (62, 1, 'όταν φτάσεις στην τοποθεσία δραστηριότητάς σας.'),
-       (62, 2, 'when you arrive at your activity location. '),
+        (60, 1, 'όταν φτάσεις στην τοποθεσία δραστηριότητάς σας.'),
+       (60, 2, 'when you arrive at your activity location. '),
 
-        (63, 1, 'Περιγραφή'),
-       (63, 2, 'Description'),
+        (61, 1, 'Περιγραφή'),
+       (61, 2, 'Description'),
 
-        (64, 1, 'Σχετικά με την Δραστηριότητα'),
-       (64, 2, 'About this Activity'),
+        (62, 1, 'Σχετικά με την Δραστηριότητα'),
+       (62, 2, 'About this Activity'),
 
-        (65, 1, 'Highlights'),
-       (65, 2, 'Highlights'),
+        (63, 1, 'Highlights'),
+       (63, 2, 'Highlights'),
 
-        (66, 1, 'Λεπτομερής Περιγραφή'),
-       (66, 2, 'Full Description'),
+        (64, 1, 'Λεπτομερής Περιγραφή'),
+       (64, 2, 'Full Description'),
 
-        (67, 1, 'Τι παρέχονται '),
-       (67, 2, 'Includes'),
+        (65, 1, 'Τι παρέχονται '),
+       (65, 2, 'Includes'),
 
-        (68, 1, 'Σημαντικές Πληροφορίες'),
-       (68, 2, 'Important information'),
+        (66, 1, 'Σημαντικές Πληροφορίες'),
+       (66, 2, 'Important information'),
 
-        (69, 1, 'Όλοι οι προμηθευτές πληρούν τα επτά πρότυπα της αξιολόγησής μας'),
-       (69, 2, 'All of our suppliers have met the seven standards of our rating'),
+        (67, 1, 'Όλοι οι προμηθευτές πληρούν τα επτά πρότυπα της αξιολόγησής μας'),
+       (67, 2, 'All of our suppliers have met the seven standards of our rating'),
 
-        (70, 1, 'Ελέγξτε διαθεσιμότητα'),
-       (70, 2, 'Check availability'),
+        (68, 1, 'Ελέγξτε διαθεσιμότητα'),
+       (68, 2, 'Check availability'),
 
-        (71, 1, 'Ενήλικες'),
-       (71, 2, 'Adults'),
+        (69, 1, 'Ενήλικες'),
+       (69, 2, 'Adults'),
 
-        (72, 1, 'Παιδία'),
-       (72, 2, 'Children'),
+        (70, 1, 'Παιδία'),
+       (70, 2, 'Children'),
 
-        (73, 1, 'Μωρά'),
-       (73, 2, 'Infants'),
+        (71, 1, 'Μωρά'),
+       (71, 2, 'Infants'),
 
-        (74, 1, 'Τα Voucher ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε, εάν κάτι πάει στραβά. Θα βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης'),
-       (74, 2, 'ValuePass vouchers are not canceled, but we are always looking to offer you the best alternative solutions regarding the activity providers we promote if something goes wrong. You`ll find more information in your confirmation email'),
+        (72, 1, 'Τα Voucher ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε, εάν κάτι πάει στραβά. Θα βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης'),
+       (72, 2, 'ValuePass vouchers are not canceled, but we are always looking to offer you the best alternative solutions regarding the activity providers we promote if something goes wrong. You`ll find more information in your confirmation email'),
 
-        (75, 1, 'Διάλεξε Ημερομηνία'),
-       (75, 2, 'Choose your date'),
+        (73, 1, 'Διάλεξε Ημερομηνία'),
+       (73, 2, 'Choose your date'),
 
-        (76, 1, 'Δεν υπάρχει κάποια χρέωση σε αυτό το βήμα'),
-       (76, 2, 'No money charged in this step');
+        (74, 1, 'Δεν υπάρχει κάποια χρέωση σε αυτό το βήμα'),
+       (74, 2, 'No money charged in this step');
 
 
 
