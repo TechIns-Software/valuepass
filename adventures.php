@@ -37,10 +37,10 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
     <div class="bg_color_1 shadow bgbanner">
 
             <div class="banner_title ">
-                <p class="flex-nowrap">  <?php echo $menu[39] ?>  </p>
+                <p class="flex-nowrap">  <?php echo $menu[38] ?>  </p>
+                <p class="flex-nowrap"> <?php echo $menu[39] ?>   </p>
                 <p class="flex-nowrap"> <?php echo $menu[40] ?>   </p>
                 <p class="flex-nowrap"> <?php echo $menu[41] ?>   </p>
-                <p class="flex-nowrap"> <?php echo $menu[42] ?>   </p>
                 <!--				   <p class="fs-2"> <strong> Your gifts never end </strong>  </p> -->
             </div>
 
@@ -52,7 +52,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 		<section class="add_bottom_45">
 			<div class="main_title_3">
 				<span><em></em></span>
-				<h2><?php echo $menu[43] ?> </h2>
+				<h2><?php echo $menu[42] ?> </h2>
 				<!-- <p>Some of our favorite experiences </p> -->
 			</div>
 
@@ -78,15 +78,15 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
 
                                 <span class="criteria">
-                                   <?php echo $menu[45] ?>
+                                   <?php echo $menu[44] ?>
                                     <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                     <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                                 </span>
-								<p class=""> <span class="voucher_av"><?php echo $menu[46] ?> <b> 4/10</b></span> </p>
+								<p class=""> <span class="voucher_av"><?php echo $menu[45] ?> <b> 4/10</b></span> </p>
 
 
 								<div class="row">
-									<div class="col d-flex nowrap buyvp_label"> <?php echo $menu[47] ?> </div>
+									<div class="col d-flex nowrap buyvp_label"> <?php echo $menu[46] ?> </div>
 									<div class="col buyvp_value">
                                         <b><?php echo $vendor->getPriceAdult();?>€ </b>
                                         <span class="perperson">
@@ -96,12 +96,12 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 								</div>
 
 								<div class="row">
-									<div class="col"> <?php echo $menu[49] ?> </div>
+									<div class="col"> <?php echo $menu[47] ?> </div>
 									<div class="col from_price"> <?php echo $vendor->getOriginalPrice();?> € </div>
 								</div>
 
 								<div class="row">
-									<div class="col"> <?php echo $menu[50] ?> </div>
+									<div class="col"> <?php echo $menu[49] ?> </div>
 									<div class="col pay_value">
                                         <b><?php echo $totalToPay;?>€ </b>
                                         <span class="perperson">
@@ -111,10 +111,10 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 								</div>
 
 								<div class="row">
-									<div class="col">  <p class="vp_discount my-0 "><?php echo $menu[51] ?>  <?php echo $vendor->getDiscount();?>% <?php echo $menu[52] ?></p></div>
+									<div class="col">  <p class="vp_discount my-0 "><?php echo $menu[50] ?>  <?php echo $vendor->getDiscount();?>% <?php echo $menu[51] ?></p></div>
 
 								</div>
-                                <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > <?php echo $menu[53] ?>  </div></a>
+                                <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > <?php echo $menu[52] ?>  </div></a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 
 	<div class="container text-center my-2">
 		<div class="main_title_3 d-block">
-			<h2><?php echo $menu[44] ?> </h2>
+			<h2><?php echo $menu[43] ?> </h2>
 		</div>
 		<div class="form-check form-check-inline">
 			<input onclick="changeCategory(this.value,this.checked)" class="form-check-input" type="checkbox" id="inlineCheckboxminus1" value="-1" />
@@ -176,14 +176,14 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                             <h3><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><b><?php echo $vendor->getName();?></b></a></h3>
                             <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <span class="criteria">
-                                <?php echo $menu[45] ?>
+                                <?php echo $menu[44] ?>
                                 <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                             </span>
-                            <p class=""> <span class="voucher_av"><?php echo $menu[46] ?> <b> 4/10</b></span> </p>
+                            <p class=""> <span class="voucher_av"><?php echo $menu[45] ?> <b> 4/10</b></span> </p>
 
 							<div class="row ">
-									<div class="col d-flex nowrap buyvp_label">  <?php echo $menu[47] ?> </div>
+									<div class="col d-flex nowrap buyvp_label">  <?php echo $menu[46] ?> </div>
 									<div class="col buyvp_value">
                                         <b><?php echo $vendor->getPriceAdult();?>€ </b>
                                         <span class="perperson">
@@ -193,12 +193,12 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 								</div>
 
 								<div class="row">
-									<div class="col">  <?php echo $menu[49] ?> </div>
+									<div class="col">  <?php echo $menu[48] ?> </div>
 									<div class="col from_price"> <?php echo $vendor->getOriginalPrice();?> € </div>
 								</div>
 
 								<div class="row">
-									<div class="col"> <?php echo $menu[50] ?> </div>
+									<div class="col"> <?php echo $menu[49] ?> </div>
 									<div class="col pay_value">
                                         <b><?php echo $totalToPay;?>€ </b>
                                         <span class="perperson">
@@ -208,11 +208,11 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 								</div>
 
 								<div class="row">
-									<div class="col">  <p class="vp_discount my-0 "> <?php echo $menu[51] ?>  <?php echo $vendor->getDiscount();?>% <?php echo $menu[52] ?> </p></div>
+									<div class="col">  <p class="vp_discount my-0 "> <?php echo $menu[50] ?>  <?php echo $vendor->getDiscount();?>% <?php echo $menu[51] ?> </p></div>
 
 								</div>
 
-                            <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > <?php echo $menu[53] ?> </div></a>
+                            <a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><div class=" buy_button2" > <?php echo $menu[52] ?> </div></a>
                         </div>
                     </div>
                 </div>
@@ -235,9 +235,9 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 			<div class="col-lg-5 col-md-12 pe-5">
 				<!-- <p><img src="assets/img/valuepass3logo.png" width="100" height="100" alt=""></p> -->
 				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
-                <p>Escape the tourist traps with unforgettable travel experiences.<br> Get beneath the surface of these destinations.<br>
-                    All our proposals are hand-picked by our team! </p>
-                <b> Get inspired for your next trip </b>
+                <p><?php echo $menu[53] ?> <br><?php echo $menu[54] ?><br>
+                    <?php echo $menu[55] ?> </p>
+                <b> <?php echo $menu[56] ?></b>
 				<div class="follow_us">
 					<ul>
 						<li><?php echo $menu[12] ?> </li>

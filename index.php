@@ -89,18 +89,18 @@ $destinations = getDestinations($conn, $idLanguage);
 				<a class="box_feat ">
 					<!-- <i class="pe-7s-medal"></i> -->
 					<object class="SvgImage" data="assets/icons/fingerprint.svg" type="image/svg+xml"></object>
-					<h3><?php echo $menu[19] ?>  </h3>
-					<p> <?php echo $menu[20] ?> </p>
+					<h3><?php echo $menu[18] ?>  </h3>
+					<p> <?php echo $menu[19] ?> </p>
 				</a>
 			</div>
 
 			<div class="col-lg-4 col-md-6  " >
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/gift.svg" type="image/svg+xml"></object>
-					<h3> <?php echo $menu[21] ?>  </h3>
-					<p><?php echo $menu[22] ?> <br><?php echo $menu[13] ?></p>
+					<h3> <?php echo $menu[20] ?>  </h3>
+					<p><?php echo $menu[21] ?> <br><?php echo $menu[13] ?></p>
 					<!-- Button trigger modal -->
-					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> <?php echo $menu[23] ?></b>
+					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> <?php echo $menu[22] ?></b>
 				</a>
 			</div>
 
@@ -111,9 +111,9 @@ $destinations = getDestinations($conn, $idLanguage);
 				<a class="box_feat">
 					<!-- <i class="pe-7s-culture"></i> -->
 					<object class="SvgImage" data="assets/icons/spring.svg" type="image/svg+xml"></object>
-					<h3><?php echo $menu[28] ?> </h3>
-					<p><?php echo $menu[29] ?>  </p>
-					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1"> <?php echo $menu[23] ?></b>
+					<h3><?php echo $menu[27] ?> </h3>
+					<p><?php echo $menu[28] ?>  </p>
+					<b class="custom-pop" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1"> <?php echo $menu[22] ?></b>
 				</a>
 			</div>
 			<!-- Modal -->
@@ -122,12 +122,12 @@ $destinations = getDestinations($conn, $idLanguage);
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel1"><?php echo $menu[30] ?></h5>
+							<h5 class="modal-title" id="exampleModalLabel1"><?php echo $menu[29] ?></h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
 
-							<p> <?php echo $menu[72] ?> </p>
+							<p> <?php echo $menu[71] ?> </p>
 
 						</div>
 					</div>
@@ -137,8 +137,8 @@ $destinations = getDestinations($conn, $idLanguage);
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/smartphone.svg" type="image/svg+xml"></object>
-					<h3> <?php echo $menu[31] ?></h3>
-					<p> <?php echo $menu[32] ?> </p>
+					<h3> <?php echo $menu[30] ?></h3>
+					<p> <?php echo $menu[31] ?> </p>
 				</a>
 			</div>
 
@@ -147,15 +147,15 @@ $destinations = getDestinations($conn, $idLanguage);
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/credit-card.svg" type="image/svg+xml"></object>
-					<h3><?php echo $menu[33] ?>  </h3>
-					<p><?php echo $menu[34] ?> </p>
+					<h3><?php echo $menu[32] ?>  </h3>
+					<p><?php echo $menu[33] ?> </p>
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-6 ">
 				<a class="box_feat">
 					<object class="SvgImage" data="assets/icons/support.svg" type="image/svg+xml"></object>
-					<h3><?php echo $menu[35] ?> </h3>
-					<p> <?php echo $menu[36] ?> </p>
+					<h3><?php echo $menu[34] ?> </h3>
+					<p> <?php echo $menu[35] ?> </p>
 
 				</a>
 			</div>
@@ -169,25 +169,25 @@ $destinations = getDestinations($conn, $idLanguage);
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel"> <?php echo $menu[24] ?> : <small> <?php echo $menu[25] ?></small> </h5>
+							<h5 class="modal-title" id="exampleModalLabel"> <?php echo $menu[23] ?> : <small> <?php echo $menu[24] ?></small> </h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
 
 							<div class="col-lg-12 my-1 ">
-								<h6> 3 <?php echo $menu[26] ?> <b> 1 </b> <?php echo $menu[27] ?> </h6>
+								<h6> 3 <?php echo $menu[25] ?> <b> 1 </b> <?php echo $menu[26] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 4 <?php echo $menu[26] ?> <b>2 </b> <?php echo $menu[27] ?> </h6>
+								<h6> 4 <?php echo $menu[25] ?> <b>2 </b> <?php echo $menu[26] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 5 <?php echo $menu[26] ?> <b> 3</b> <?php echo $menu[27] ?> </h6>
+								<h6> 5 <?php echo $menu[25] ?> <b> 3</b> <?php echo $menu[26] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 6 <?php echo $menu[26] ?> <b> 4 </b> <?php echo $menu[27] ?> </h6>
+								<h6> 6 <?php echo $menu[25] ?> <b> 4 </b> <?php echo $menu[26] ?> </h6>
 							</div>
 							<div class="col-lg-12 my-1">
-								<h6> 7 <?php echo $menu[26] ?><b> 4 </b> <?php echo $menu[27] ?> </h6>
+								<h6> 7 <?php echo $menu[25] ?><b> 4 </b> <?php echo $menu[26] ?> </h6>
 							</div>
 						</div>
 					</div>
@@ -198,8 +198,8 @@ $destinations = getDestinations($conn, $idLanguage);
 		<section class="add_bottom_45">
 			<div class="main_title_2">
 				<span><em></em></span>
-				<h2><?php echo $menu[37] ?></h2>
-				<p> <?php echo $menu[38] ?> </p>
+				<h2><?php echo $menu[36] ?></h2>
+				<p> <?php echo $menu[37] ?> </p>
 			</div>
 
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
@@ -252,9 +252,9 @@ $destinations = getDestinations($conn, $idLanguage);
 		<div class="row">
 			<div class="col-lg-5 col-md-12 pe-5">
 				<p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
-				<p>Escape the tourist traps with unforgettable travel experiences.<br> Get beneath the surface of these destinations.<br>
-					All our proposals are hand-picked by our team! </p>
-				<b> Get inspired for your next trip </b>
+                <p><?php echo $menu[53] ?> <br><?php echo $menu[54] ?><br>
+                    <?php echo $menu[55] ?> </p>
+                <b> <?php echo $menu[56] ?></b>
 
 				<div class="follow_us">
 					<ul>
