@@ -377,7 +377,7 @@ VALUES (1),
        (71),
        (72),
        (73),
-       (74),
+       (74);
 
 
 
@@ -418,12 +418,12 @@ VALUES (1, 1, 'Αρχική'),
        (10, 2, 'Contact with Us'),
 
        (11, 1, 'Όροι και Προϋποθέσεις'),
-       (11, 2, 'Τerms and Conditions'),
+       (11, 2, 'Terms and Conditions'),
 
        (12, 1, 'Η πολιτική μας'),
        (12, 2, 'Our Privacy'),
 
-       (13, 1, 'Ακολουθηστε μας'),
+       (13, 1, 'Ακολουθήστε μας'),
        (13, 2, 'Follow Us'),
 
        (14, 1,
@@ -431,7 +431,7 @@ VALUES (1, 1, 'Αρχική'),
        (14, 2,
         'Purchase at least 2 vouchers for the same or different activities and up to 3rd voucher you get free vouchers. Your presents never end!'),
 
-        (15, 1, 'Οι προσφορές ValuePass είναι διαθέσιμες στο πλοιο'),
+        (15, 1, 'Οι προσφορές ValuePass είναι διαθέσιμες στο πλοίο'),
        (15, 2, 'ValuePass Offers are only Available Onboard'),
 
         (16, 1, 'Μην το χάσετε'),
@@ -471,7 +471,7 @@ VALUES (1, 1, 'Αρχική'),
     (27, 1, 'Δωρεάν Voucher'),
      (27, 2, 'Free Voucher'),
 
-    (28, 1, 'Eυέλικτος'),
+    (28, 1, 'Ευέλικτος'),
      (28, 2, 'Flexible'),
 
     (29, 1, 'Δωρεάν ακύρωση, επιλογές πληρωμής και επαναπρογραμματισμός'),
@@ -497,7 +497,7 @@ Receive detailed info at your preferred e-mail'),
     (35, 1, 'Υποστήριξη'),
     (35, 2, 'Supportive'),
 
-    (36, 1, 'Ρωτήστε όλα όσα θέλετε να μάθετε. Η ομάδα υποστήριξής μας είναι εδώ για να απαντήσει σε κάθε ερώτηση'),
+    (36, 1, 'Ρωτήστε όλα όσα θέλετε να μάθετε. Η ομάδα υποστήριξή μας είναι εδώ για να απαντήσει σε κάθε ερώτηση'),
     (36, 2, 'Ask everything you want to know. Our support team is here to answer every question'),
 
        (37, 1, 'Προορισμοί'),
