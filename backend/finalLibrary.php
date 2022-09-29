@@ -356,7 +356,8 @@ function getAllLanguages($conn)
 function GetMenu($conn,$lang){
     $query="SELECT m.id, mt.name
             FROM MenuTranslate as mt, Menu as m
-            where mt.idMenu = m.id and mt.idLanguage = ?";
+            where mt.idMenu = m.id and mt.idLanguage = ?
+            ORDER BY m.id;";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $lang);
 
