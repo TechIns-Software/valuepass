@@ -354,17 +354,20 @@ function getAllLanguages($conn)
 
 //Get Menu with right language
 function GetMenu($conn,$lang){
-    $query="SELECT mt.name FROM MenuTranslate as mt, Menu as m where  mt.idMenu=m.id and mt.idLanguage=?";
+    $query="SELECT m.id, mt.name
+            FROM MenuTranslate as mt, Menu as m
+            where mt.idMenu = m.id and mt.idLanguage = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $lang);
 
     if ($stmt->execute()) {
-        $name= '';
-        $stmt->bind_result($name);
+        $name = $idMenu = '';
+        $stmt->bind_result($idMenu, $name);
 
         $menu= [];
         while ($stmt->fetch()) {
-            array_push($menu, $name);
+            $menu[$idMenu - 1] = $name;
+//            array_push($menu, $name);
         }
     }
     return $menu;
