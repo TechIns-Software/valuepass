@@ -135,7 +135,7 @@ if (!isset($cartArray)) {
                                 <li>Vouchers Pay<span><?php echo $calculateCartObject['vouchersPay']; ?></span></li>
                                 <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span></li>
                             </ul>
-                            <input onclick="window.location = './client.html'" type="button" value="Checkout" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
+                            <input onclick="window.location = './client.html'" type="button" value=" <?php echo ($calculateCartObject['canOrder'] ? 'Checkout' : 'Select at least 2 vouchers to continue'); ?>" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
                             <!--                        <div class="text-center"><small>No money charged in this step</small></div>-->
                         </div>
                     </aside>

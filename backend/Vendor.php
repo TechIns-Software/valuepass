@@ -349,4 +349,21 @@ class Vendor {
     {
         return $this->availableVouchersToday .'/' .$this->maxVouchersToday;
     }
+
+    /**
+     * @return bool
+     */
+    public function isChildAcceptance(): bool
+    {
+        return $this->childAcceptance != 0;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isInfantTolerance(): bool
+    {
+        return $this->infantTolerance != 0;
+    }
+
 }
