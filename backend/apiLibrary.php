@@ -735,7 +735,7 @@ function vendorVoucherProcedure(
     if ($isUpdated) {
         $query = "UPDATE VendorVoucher
             SET idVendor = ?, isDateRestrict = ?, starterVouchers = ?,
-                existenceVoucher = ?, dateVoucher = ?, id = ? ;";
+                existenceVoucher = ?, dateVoucher = ? WHERE id = ? ;";
     } else {
         $query = "INSERT INTO VendorVoucher(idVendor, isDateRestrict,
                     starterVouchers, existenceVoucher, dateVoucher, id)

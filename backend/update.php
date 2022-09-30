@@ -1,6 +1,6 @@
 <?php
 
-include_once 'api/apiLibrary.php';
+include_once 'apiLibrary.php';
 
 
 if (!isset($conn)) {
