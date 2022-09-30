@@ -671,9 +671,6 @@ values (1, 'general'),
        (10, 'language');
 
 /*
-DROP TABLE VoucherSuppliers;
-DROP TABLE Voucher;
-DROP TABLE OrderVendorVoucher;
 DROP TABLE VendorVoucher;
 DROP TABLE ImportantInformationDescriptionTranslate;
 DROP TABLE ImportantInformationHeadTranslate;
