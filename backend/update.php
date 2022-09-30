@@ -213,16 +213,16 @@ if ($versions['general'] < $response['version']) {
                 if (array_key_exists($idVendor, $idsOfVendors)) {
                     if ($idsOfVendors[$idVendor] < $vendorValue['version']) {
                         $basic = array(
-                            $valueVendor['isBestoff'],
-                            $valueVendor['idDestination'],
-                            $valueVendor['priceAdult'],
-                            $valueVendor['originalPrice'],
-                            $valueVendor['discount'],
-                            $valueVendor['priceKid'],
-                            $valueVendor['infantPrice'],
-                            $valueVendor['idCategory'],
-                            $valueVendor['idPaymentInfo'],
-                            $valueVendor['forHowManyPersonsIs'],
+                            $vendorValue['isBestoff'],
+                            $vendorValue['idDestination'],
+                            $vendorValue['priceAdult'],
+                            $vendorValue['originalPrice'],
+                            $vendorValue['discount'],
+                            $vendorValue['priceKid'],
+                            $vendorValue['infantPrice'],
+                            $vendorValue['idCategory'],
+                            $vendorValue['idPaymentInfo'],
+                            $vendorValue['forHowManyPersonsIs'],
                             $vendorValue['childAcceptance'],
                             $vendorValue['infantTolerance'],
                         );
@@ -269,7 +269,7 @@ foreach ($response['vendors'] as $idVendor => $valueVendor) {
             vendorFunction(
                 $conn, $idVendor, $basic, $labelBoxes,
                 $includedServices, $rated, $languages,
-                $response['vendors'][$idVendor]['version'], false
+                $valueVendor['version'], false
             );
         }
     }
