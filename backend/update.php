@@ -225,6 +225,7 @@ if ($versions['general'] < $response['version']) {
                             $vendorValue['forHowManyPersonsIs'],
                             $vendorValue['childAcceptance'],
                             $vendorValue['infantTolerance'],
+                            $vendorValue['isActiveNow'],
                         );
                         $labelBoxes = $vendorValue['labelBox'];
                         $includedServices = $vendorValue['labelBox'];
@@ -261,6 +262,7 @@ foreach ($response['vendors'] as $idVendor => $valueVendor) {
                 $valueVendor['forHowManyPersonsIs'],
                 $valueVendor['childAcceptance'],
                 $valueVendor['infantTolerance'],
+                $valueVendor['isActiveNow'],
             );
             $labelBoxes = $valueVendor['labelBox'];
             $includedServices = $valueVendor['includedServices'];

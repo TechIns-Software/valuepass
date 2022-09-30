@@ -95,8 +95,8 @@ create TABLE Vendor
 (
     id                     int   NOT NULL,
     PRIMARY KEY (id),
-    version                bigint    DEFAULT 0,
-    isOkForShowing         binary(1) DEFAULT 0,
+    version                bigint         DEFAULT 0,
+    isOkForShowing         binary(1)      DEFAULT 0,
     idDestination          int   NOT NULL,
     FOREIGN KEY (idDestination) REFERENCES Destination (id),
     priceAdult             float NOT NULL,
@@ -104,17 +104,18 @@ create TABLE Vendor
     discount               float NOT NULL,
     priceKid               float NOT NULL,
     imageBasic             varchar(100),
-    imageBasicVersion      bigint    DEFAULT -1,
+    imageBasicVersion      bigint         DEFAULT -1,
     idCategory             int   NOT NULL,
     FOREIGN KEY (idCategory) REFERENCES CategoryVendor (id),
     idPaymentInfoActivity  int   NOT NULL,
     FOREIGN KEY (idPaymentInfoActivity) REFERENCES PaymentInfoActivity (id),
     googleMapsImage        varchar(100),
-    googleMapsImageVersion bigint    DEFAULT -1,
+    googleMapsImageVersion bigint         DEFAULT -1,
     infantPrice            int,
     forHowManyPersonsIs    int,
     childAcceptance        int   NOT NULL DEFAULT 1,
-    infantTolerance        int   NOT NULL DEFAULT 1
+    infantTolerance        int   NOT NULL DEFAULT 1,
+    isActiveNow            binary(1)      DEFAULT 1
 ) ENGINE = InnoDB;
 
 create TABLE VendorTranslate
