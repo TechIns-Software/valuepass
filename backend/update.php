@@ -213,16 +213,18 @@ if ($versions['general'] < $response['version']) {
                 if (array_key_exists($idVendor, $idsOfVendors)) {
                     if ($idsOfVendors[$idVendor] < $vendorValue['version']) {
                         $basic = array(
-                            $isBestOff = $vendorValue['isBestoff'],
-                            $idDestination = $vendorValue['idDestination'],
-                            $priceAdult = $vendorValue['priceAdult'],
-                            $originalPrice = $vendorValue['originalPrice'],
-                            $discount = $vendorValue['discount'],
-                            $priceKid = $vendorValue['priceKid'],
-                            $infantPrice = $vendorValue['infantPrice'],
-                            $idCategory = $vendorValue['idCategory'],
-                            $idPaymentInfo = $vendorValue['idPaymentInfo'],
-                            $forHowManyPersonsIs = $vendorValue['forHowManyPersonsIs']
+                            $valueVendor['isBestoff'],
+                            $valueVendor['idDestination'],
+                            $valueVendor['priceAdult'],
+                            $valueVendor['originalPrice'],
+                            $valueVendor['discount'],
+                            $valueVendor['priceKid'],
+                            $valueVendor['infantPrice'],
+                            $valueVendor['idCategory'],
+                            $valueVendor['idPaymentInfo'],
+                            $valueVendor['forHowManyPersonsIs'],
+                            $vendorValue['childAcceptance'],
+                            $vendorValue['infantTolerance'],
                         );
                         $labelBoxes = $vendorValue['labelBox'];
                         $includedServices = $vendorValue['labelBox'];
@@ -247,16 +249,18 @@ foreach ($response['vendors'] as $idVendor => $valueVendor) {
         $idVendor = intval($idVendor);
         if (!in_array($idVendor, $allIds['Vendor'])) {
             $basic = array(
-                $isBestOff = $valueVendor['isBestoff'],
-                $idDestination = $valueVendor['idDestination'],
-                $priceAdult = $valueVendor['priceAdult'],
-                $originalPrice = $valueVendor['originalPrice'],
-                $discount = $valueVendor['discount'],
-                $priceKid = $valueVendor['priceKid'],
-                $infantPrice = $valueVendor['infantPrice'],
-                $idCategory = $valueVendor['idCategory'],
-                $idPaymentInfo = $valueVendor['idPaymentInfo'],
-                $forHowManyPersonsIs = $valueVendor['forHowManyPersonsIs']
+                $valueVendor['isBestoff'],
+                $valueVendor['idDestination'],
+                $valueVendor['priceAdult'],
+                $valueVendor['originalPrice'],
+                $valueVendor['discount'],
+                $valueVendor['priceKid'],
+                $valueVendor['infantPrice'],
+                $valueVendor['idCategory'],
+                $valueVendor['idPaymentInfo'],
+                $valueVendor['forHowManyPersonsIs'],
+                $valueVendor['childAcceptance'],
+                $valueVendor['infantTolerance'],
             );
             $labelBoxes = $valueVendor['labelBox'];
             $includedServices = $valueVendor['includedServices'];

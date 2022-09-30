@@ -17,6 +17,8 @@ class Vendor {
     private string $name;
     private int $forHowManyPersonsIs;
     private string $googleMapsImage;
+    private int $childAcceptance;
+    private int $infantTolerance;
     private array $labelsBoxNames = [];
     private array $ratedArray = [];
 
@@ -48,12 +50,15 @@ class Vendor {
      * @param string $name
      * @param int $forHowManyPersonsIs
      * @param string $googleMapsImage
+     * @param int $childAcceptance
+     * @param int $infantTolerance
      */
     public function __construct(
         int $id, int $categoryId, string $categoryName,
         int $idDestination, float $priceAdult, float $originalPrice, float $discount,
         float $priceKid, string $pathToImage,
-        string $name, int $forHowManyPersonsIs, string $googleMapsImage
+        string $name, int $forHowManyPersonsIs, string $googleMapsImage,
+        int $childAcceptance, int $infantTolerance
     )
     {
         $this->id = $id;
@@ -68,6 +73,8 @@ class Vendor {
         $this->name = $name;
         $this->forHowManyPersonsIs = $forHowManyPersonsIs;
         $this->googleMapsImage = $googleMapsImage;
+        $this->childAcceptance = $childAcceptance;
+        $this->infantTolerance = $infantTolerance;
     }
 
 
