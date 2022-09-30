@@ -15,8 +15,8 @@ if (isset($_POST['promotions'])) {
 
 }
 session_start();
-$cartArray = unserialize($_SESSION['cart']);
 include 'backend/includeClasses.php';
+$cartArray = unserialize($_SESSION['cart']);
 $cart = new \ValuePass\Cart($cartArray);
 $products = $cart->readyForSendingVendorVoucherData();
 ?>

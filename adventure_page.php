@@ -482,6 +482,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                         <div class="text-center"><small><?php echo $menu[73] ?></small></div>
                     </div>
                     <div id="option"></div>
+                    <div style="min-height: 10px;"></div>
                 </div>
             </div>
         </div>

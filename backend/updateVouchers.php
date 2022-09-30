@@ -5,8 +5,8 @@ if (!isset($conn)) {
     include '../connection.php';
 }
 
-$targetFileName = './updateVoucherVendor.json';
-$fileDestination = 'https://valuepass.gr/request/update/updateVoucherVendor.json';
+$targetFileName = './update.json';
+$fileDestination = 'https://valuepass.gr/request/update/updateVouchers.json';
 @$file = file_get_contents($fileDestination);
 if ($file) {
     file_put_contents(
@@ -28,7 +28,7 @@ foreach ($response as $idVendorVoucher=> $vendorVoucherObj) {
 
     $idVendor = $vendorVoucherObj['idVendor'];
     $isDateRestrict = $vendorVoucherObj['isDateRestrict'];
-    $starterVoucher = $vendorVoucherObj['starterVoucher'];
+    $starterVoucher = $vendorVoucherObj['starterVouchers'];
     $existenceVoucher = $vendorVoucherObj['existenceVoucher'];
     $dateVoucher = $vendorVoucherObj['dateVoucher'];
     $isUpdated = in_array($idVendorVoucher, $idVendorVoucherExists);
