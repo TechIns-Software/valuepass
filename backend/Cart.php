@@ -61,7 +61,7 @@ class Cart
             //we get the max voucher can have, if does not exist we get 0
             $maxVoucherFromVendorThatCanHave = getMaxVendorVoucher($conn, $idAdded);
 
-            if ($newTotalNumber < $maxVoucherFromVendorThatCanHave) {
+            if ($newTotalNumber <= $maxVoucherFromVendorThatCanHave) {
                 //is not checked if infants and children are ok with vendorVoucher
                 //we check in interval server
                 array_push($this->arrayGroupVouchersWant, $groupVoucherWant);

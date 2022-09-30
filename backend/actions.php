@@ -41,7 +41,6 @@ $message2 = "";
 if ($_POST['action'] == 'addProduct') {
     if (isset($_POST['product'])) {
         $product = $_POST['product'];
-        //TODO: change condition + add vendorId condition
         if (!isset(
                 $product["voucherVendorId"],
                 $product["adults"],
@@ -127,13 +126,5 @@ if ($_POST['action'] == 'addProduct') {
             }
         }
     }
-} elseif ($_POST['action'] == 'checkOut') {
-    $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
-    $progress = $cart->progressForPayment();
-    if ($progress) {
-        //TODO
-    } else {
-        $message = $progress;
-    }
-} 
+}
 echo json_encode([$message, $message2]);

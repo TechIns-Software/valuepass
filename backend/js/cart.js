@@ -20,9 +20,11 @@ function addToCart(objectOfDetails) {
         'product': objectOfDetails
     };
     const callBackFnc = (data) => {
-        //TODO:check message return and inform user
-        if (data[1] !== '') {
+        if (data[0] === 'OK') {
             document.getElementById('cartNumberShow').innerText = data[1];
+            alert('Success');
+        } else {
+            alert(data[0]);
         }
     }
     getAjax(data, callBackFnc);
@@ -41,7 +43,6 @@ function deleteItem(idVendorItem) {
         } else {
             alert(data[0]);
         }
-        //TODO:check message return and inform user
         console.log(data);
     }
     getAjax(data, callBackFnc);

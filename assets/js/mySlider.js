@@ -19,7 +19,6 @@ setInterval(()=> {
     }
     const backgroundImage = `image${currentImage}`;
     const previousImage = `image${previous}`;
-    console.log(backgroundImage, previousImage);
     sliderItem.classList.remove(previousImage);
     sliderItem.classList.add(backgroundImage);
 }, 3000);

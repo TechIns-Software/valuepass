@@ -437,7 +437,6 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage) {
             $infants = $infants + $voucherWant->getNumberOfInfant();
             $voucherWant->isAdult() ? $adults = $adults + 1 : $children = $children + 1;
         }
-        //TODO: getVendor name and image
         array_push($idVendorArray, $idVendorDisplayed);
         array_push($nameVendorArray, $nameVendor);
         array_push($dateVoucherArray, $dateVoucher);

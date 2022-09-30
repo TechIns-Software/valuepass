@@ -56,8 +56,6 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 				<!-- <p>Some of our favorite experiences </p> -->
 			</div>
 
-
-<!--            TODO : FIX ME -->
 			<div id="reccomended" class="owl-carousel owl-theme">
 
                 <?php

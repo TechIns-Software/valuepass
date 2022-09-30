@@ -19,6 +19,9 @@ include 'backend/includeClasses.php';
 $cartArray = unserialize($_SESSION['cart']);
 $cart = new \ValuePass\Cart($cartArray);
 $products = $cart->readyForSendingVendorVoucherData();
+if (!(count($products) >= 2 && count($products) <= 11)) {
+    exit('No right amount of vouchers');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,3 +58,6 @@ $products = $cart->readyForSendingVendorVoucherData();
     document.getElementById('myForm').submit();
 </script>
 </html>
+<?php
+$_SESSION['cart'] = serialize([]);
+?>

@@ -200,7 +200,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     ?>
                     <div class="box_grid">
                         <div class="wrapper">
-                            <!--                            TODO: voucher available, Reserve Now your Spot & Pay Later for your activity-->
                             <h3 id="nameVendor"><?php echo $vendor->getName(); ?></h3>
                             <p>
 								<span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?>
@@ -698,13 +697,13 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
         const minDate = new Date();
         minDate.setDate(minDate.getDate() + 1);
         const maxDate = new Date();
-        maxDate.setDate(maxDate.getDate() + 15);
+        // maxDate.setDate(maxDate.getDate() + 15);
         $('input[name="dates"]').daterangepicker({
             autoUpdateInput: false,
             singleDatePicker: true,
             parentEl: '.scroll-fix',
             minDate: minDate,
-            maxDate: maxDate,
+            // maxDate: maxDate,
             opens: 'left',
             locale: {
                 cancelLabel: 'Clear'
