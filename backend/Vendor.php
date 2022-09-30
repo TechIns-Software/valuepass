@@ -29,8 +29,8 @@ class Vendor {
     private array $includedServicesArray = [];
     private array $aboutActivityArray = [];
     private array $importantInformationArray = [];
-
-    private array $vouchers = array();
+    private int $maxVouchersToday;
+    private int $availableVouchersToday;
 
     public static int $MAX_STARS = 5;
 
@@ -318,4 +318,28 @@ class Vendor {
         }
     }
 
+    /**
+     * @param int $maxVouchersToday
+     */
+    public function setMaxVouchersToday(int $maxVouchersToday): void
+    {
+        $this->maxVouchersToday = $maxVouchersToday;
+    }
+
+
+    /**
+     * @param int $availableVouchersToday
+     */
+    public function setAvailableVouchersToday(int $availableVouchersToday): void
+    {
+        $this->availableVouchersToday = $availableVouchersToday;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAvailabilityTodayVoucher(): string
+    {
+        return $this->availableVouchersToday .'/' .$this->maxVouchersToday;
+    }
 }

@@ -82,7 +82,12 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                     <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                                 </span>
-								<p class=""> <span class="voucher_av"><?php echo $menu[45] ?> <b> 4/10</b></span> </p>
+								<p class="">
+                                    <span class="voucher_av">
+                                        <?php echo $menu[45] ?>
+                                        <b> <?php echo $vendor->getAvailabilityTodayVoucher();?> </b>
+                                    </span>
+                                </p>
 
 
 								<div class="row">
@@ -157,7 +162,6 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 	<div class="container">
 		<div class="isotope-wrapper">
 			<div class="row" id="experiences">
-				<!--                TODO: add link for specific vendor, and criteria rated somehow, image link-->
 				<?php
 				foreach ($vendors as $vendor) {
 					$moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
@@ -180,7 +184,12 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                             </span>
-                            <p class=""> <span class="voucher_av"><?php echo $menu[45] ?> <b> 4/10</b></span> </p>
+                            <p class="">
+                                <span class="voucher_av">
+                                    <?php echo $menu[45] ?>
+                                    <b> <?php echo $vendor->getAvailabilityTodayVoucher();?></b>
+                                </span>
+                            </p>
 
 							<div class="row ">
 									<div class="col d-flex nowrap buyvp_label">  <?php echo $menu[46] ?> </div>

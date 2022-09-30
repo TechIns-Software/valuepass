@@ -211,9 +211,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 								<?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
 							</span>
-                            <p class=" voucher_av ">
+                            <p class="voucher_av ">
                                 <?php echo $menu[45] ?>
-                                <b>4/10</b>
+                                <b><?php echo $vendor->getAvailabilityTodayVoucher();?></b>
                             </p>
                             <div class="row ">
                                 <div class="col d-flex nowrap buyvp_label"> <?php echo $menu[46] ?> </div>
@@ -526,7 +526,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 											<?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
                                         <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
 										</span>
-                                    <p class=""><span class="voucher_av"><?php echo $menu[45] ?> <b> 4/10</b></span></p>
+                                    <p class="">
+                                        <span class="voucher_av">
+                                            <?php echo $menu[45] ?>
+                                            <b> <?php echo $vendor->getAvailabilityTodayVoucher();?></b>
+                                        </span>
+                                    </p>
                                     <div class="row ">
                                         <div class="col d-flex nowrap buyvp_label"> <?php echo $menu[46] ?> </div>
                                         <div class="col buyvp_value">

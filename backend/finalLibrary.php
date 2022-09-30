@@ -151,10 +151,23 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) : \ValuePa
             }
         }
 
-        //TODO vouchers available;
-        //getVoucherAvailability()
-        $query3 = "";
-
+        $dayNumberToday = date('d');
+        $monthNumberToday = intval(date('m')) + 1;
+        $yearNumberToday = date('Y');
+        $query3 = "SELECT VV.starterVouchers, VV.existenceVoucher
+                FROM VendorVoucher AS VV
+                WHERE VV.idVendor = $id
+                AND day(VV.dateVoucher) = $dayNumberToday
+                AND month(VV.dateVoucher) = $monthNumberToday
+                AND year(VV.dateVoucher) = $yearNumberToday";
+        $stmt3 = $conn->prepare($query3);
+        if ($stmt3->execute()) {
+            $starterVouchers = $existenceVoucher = 0;
+            $stmt3->bind_result($starterVouchers, $existenceVoucher);
+            while ($stmt3->fetch()) {}
+            $vendor->setMaxVouchersToday($starterVouchers);
+            $vendor->setAvailableVouchersToday($existenceVoucher);
+        }
         if ($fullOption) {
             //everything for Vendor
             $query4 = "SELECT VT.descriptionFull, VT.descriptionBig, P.head, P.description
