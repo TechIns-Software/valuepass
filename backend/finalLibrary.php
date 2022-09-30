@@ -12,7 +12,7 @@ function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
                 AND D.isOkForShowing = 1 $addition
                 ORDER BY id ASC;";
     $query2 = "SELECT COUNT(id), idDestination FROM Vendor
-                WHERE isOkForShowing = 1
+                WHERE isOkForShowing = 1 AND isActiveNow = 1
                 GROUP BY idDestination
                 ORDER BY idDestination ASC;";
     $stmt1 = $conn->prepare($query1);
@@ -72,11 +72,13 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false) : ar
     if ($isBestOff) {
         $query0 = "SELECT V.id
             FROM Vendor AS V, BestOff AS BO
-            WHERE V.idDestination = ? AND V.id = BO.idVendor AND V.isOkForShowing = 1";
+            WHERE V.idDestination = ? AND V.id = BO.idVendor
+              AND V.isOkForShowing = 1 AND V.isActiveNow = 1;";
     } else {
         $query0 = "SELECT V.id
             FROM Vendor AS V
-            WHERE V.idDestination = ? AND V.isOkForShowing = 1";
+            WHERE V.idDestination = ? AND V.isOkForShowing = 1
+                AND V.isActiveNow = 1;";
     }
     $stmt = $conn->prepare($query0);
     $stmt->bind_param('i', $idDestination);
@@ -108,7 +110,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true) : \ValuePa
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
                         AND CV.id = V.idCategory AND CV.id = CVT.idCategoryVendor
                         AND CVT.idLanguage = ?
-                        AND V.isOkForShowing = 1";
+                        AND V.isOkForShowing = 1 AND V.isActiveNow = 1;";
 
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iii', $idVendor, $idLanguage, $idLanguage);
@@ -281,7 +283,8 @@ function getCategoriesVendors($conn, $idLanguage, $idDestination) : array {
     $query = "SELECT DISTINCT(CV.id), CVT.name
             FROM Vendor AS V, CategoryVendor AS CV, CategoryVendorTranslate AS CVT
             WHERE CVT.idLanguage = $idLanguage AND CVT.idCategoryVendor = CV.id
-            AND V.idDestination = ? AND V.idCategory = CV.id AND V.isOkForShowing = 1";
+            AND V.idDestination = ? AND V.idCategory = CV.id
+              AND V.isOkForShowing = 1 AND V.isActiveNow = 1;";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $idDestination);
     $categories = [];
@@ -313,7 +316,8 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date) : 
             V.priceAdult, V.priceKid, V.infantPrice
             FROM VendorVoucher AS VV, Vendor AS V
             WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
-            AND V.id = VV.idVendor AND V.isOkForShowing = 1";
+            AND V.id = VV.idVendor
+              AND V.isOkForShowing = 1 AND V.isActiveNow = 1;";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
@@ -353,7 +357,7 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
 //Get all Languages
 function getAllLanguages($conn)
 {
-    $query = "Select * FROM Language;";
+    $query = "Select id, language, icon FROM Language;";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $id = $language = $icon = '';
@@ -525,15 +529,6 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $priceKid = $package[3];
     $priceInfant = $package[4];
     $totalPrice = $priceAdult * $adults + $priceKid * $children + $priceInfant * $infants;
-// $message = "<div class='col-lg-12  vouchertemplate'>" ;
-
-// $message .= "<div class='title'> <h4>  Experience Name $VoucherId  </h4> </div> <div class='pricebreakdown'> <h5>Price Breakdown </h5> <ul>";
-//     $message .= " <li> Adults  : <b>$adults  x </b> <span> 5 €</span>   </li>";
-//     $message .=  "<li> Children  : <b> $children  x</b>  <span> 15 €</span> </li>";
-//     $message .= "<li>  Infants  : <b> $infants x </b </li>  <span> 40 €</span> </ul> </div> <div class='price'>";
-//     $message .= "  <h5 >Price <b>  €</b> <br> <small>All taxes and fees included</small>   </h5></div> <div class='addtocartsection'>";
-//     $message .= "  <button onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
-//     $message .= " </div>";
 
     $day = substr($date, 0, 10);
     $hour = substr($date, 11);
