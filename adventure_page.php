@@ -645,7 +645,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
             <div class="col-lg-12">
                 <ul id="additional_links">
-                    <li><a href="#0"><?php echo $menu[10] ?></a></li>
+                    <li><a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf':'terms_gb.pdf' ?>" target="_blank"><?php echo $menu[10] ?></a></li>
                     <li><a href="#0"><?php echo $menu[11] ?></a></li>
                     <li><span>© Valuepass</span></li>
                 </ul>
