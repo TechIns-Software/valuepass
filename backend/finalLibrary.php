@@ -1,20 +1,17 @@
 <?php
 //$mysqli -> real_escape_string(escapestring)
-function getDestinations($conn, $idLanguage, $idDestination = 0) : array{
-    if ($idDestination != 0) {
-        $addition = " AND D.id = $idDestination ";
-    } else {
-        $addition = '';
-    }
+function getDestinations($conn, $idLanguage) : array{
     $query1 = "SELECT D.id, DT.name, DT.description, D.image1, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
                 WHERE D.id = DT.idDestination AND DT.idLanguage = ?
-                AND D.isOkForShowing = 1 $addition
+                AND D.isOkForShowing = 1 AND D.showIt = 1
                 ORDER BY id ASC;";
-    $query2 = "SELECT COUNT(id), idDestination FROM Vendor
-                WHERE isOkForShowing = 1 AND isActiveNow = 1
-                GROUP BY idDestination
-                ORDER BY idDestination ASC;";
+    $query2 = "SELECT COUNT(V.id), D.id
+                FROM Vendor AS V, Destination AS D
+                WHERE V.isOkForShowing = 1 AND V.isActiveNow = 1
+                    AND D.id = V.idDestination AND D.showIt = 1
+                GROUP BY D.id
+                ORDER BY D.id ASC;";
     $stmt1 = $conn->prepare($query1);
     $stmt1->bind_param('i', $idLanguage);
     $stmt2 = $conn->prepare($query2);
@@ -48,7 +45,8 @@ function getDestination($conn, $idDestination, $idLanguage) : \ValuePass\Destina
     $query = "SELECT D.id, DT.name, DT.description, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
                 WHERE D.id = $idDestination AND D.id = DT.idDestination
-                  AND DT.idLanguage = $idLanguage AND D.isOkForShowing = 1";
+                  AND DT.idLanguage = $idLanguage
+                  AND D.isOkForShowing = 1 AND D.showIt = 1";
     $stmt = $conn->prepare($query);
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
