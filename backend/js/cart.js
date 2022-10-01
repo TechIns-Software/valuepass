@@ -89,4 +89,17 @@ function getPackagesAvailable() {
     }
 }
 
+function goBackInHistory(idSelector) {
+    document.getElementById(idSelector).addEventListener('click', ()=> {
+        if (!history.back()) {
+            window.location = './index.php';
+        }
+    });
+    document.getElementById(idSelector).addEventListener('touchend', ()=> {
+        if (!history.back()) {
+            window.location = './index.php';
+        }
+    });
+}
+
 

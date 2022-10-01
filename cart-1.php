@@ -29,7 +29,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                 if (count($cartArray) == 0) { ?>
                     <div class="col-lg-12  novoucherincard">
                         <h3 class="my-5">No Vouchers in the card</h3>
-                      <h4 class="my-5"> <a href="adventures.php">Go Back and select your Experience</a> </h4>
+                      <h4 id="noVouchers" class="my-5">
+                          Go Back and select your Experience
+                      </h4>
                     </div>
 
                 <?php   } else {
@@ -296,5 +298,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 </body>
 <script src="backend/js/cart.js"></script>
+<script>goBackInHistory('noVouchers')</script>
 
 </html>
