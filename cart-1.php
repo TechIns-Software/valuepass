@@ -18,6 +18,7 @@ if (!isset($idLanguage)) {
 if (!isset($cartArray)) {
     $cartArray = unserialize($_SESSION['cart']);
 }
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
 <main>
     <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->

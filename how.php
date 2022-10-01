@@ -7,6 +7,7 @@ $home = 0;
 include_once 'includes/header.php';
 $idLanguage = $_SESSION["languageId"];
 $destinations = getDestinations($conn, $idLanguage);
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
 
 <main>

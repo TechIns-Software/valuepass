@@ -14,6 +14,7 @@ $destination = getDestination($conn, $idDestination, $languageId);
 if (is_null($destination)) {
     header('location: index.php');
 }
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 $vendors = getVendors($conn, $idDestination, $languageId);
 $bestOffs = getVendors($conn, $idDestination, $languageId, true);
 $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
