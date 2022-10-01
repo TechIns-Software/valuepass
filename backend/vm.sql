@@ -47,7 +47,8 @@ create TABLE Destination
     image1Version  bigint    DEFAULT -1,
     image2Version  bigint    DEFAULT -1,
     isOkForShowing binary(1) DEFAULT 0,
-    showIt         binary(1) DEFAULT 1
+    showIt         binary(1) DEFAULT 1,
+    mappingString  varchar(100)
 ) ENGINE = InnoDB;
 
 create TABLE DestinationTranslate
