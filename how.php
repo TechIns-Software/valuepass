@@ -274,7 +274,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 			<div class="col-lg-12">
 				<ul id="additional_links">
-					<li><a><?php echo $menu[10] ?></a></li>
+                    <li><a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf':'terms_gb.pdf' ?>" target="_blank"><?php echo $menu[10] ?></a></li>
 					<li><a><?php echo $menu[11] ?></a></li>
 					<li><span>© ValuePass</span></li>
 				</ul>
