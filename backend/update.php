@@ -15,6 +15,8 @@ if ($file) {
         $file
     );
 
+} else {
+    exit('Did not download');
 }
 
 if (!file_exists('update.json')) {
@@ -62,7 +64,7 @@ if ($versions['general'] < $response['version']) {
                             updateDestinationLanguages(
                                 $conn, $idLanguage, $idDestination,
                                 $destLangObj['name'], $destLangObj['description'],
-                                $destinationValue['version']
+                                $destinationValue['version'], $destinationValue['mappingString']
                             );
 
                         }
@@ -172,7 +174,8 @@ foreach ($response['destinations'] as $idDestination => $destinationValue) {
         $idDestination = intval($idDestination);
         if (!in_array($idDestination, $allIds['Destination'])) {
             if (isset($destinationValue['version'])) {
-                addDestination($conn, $idDestination, $destinationValue['languages'], $destinationValue['version']);
+                addDestination($conn, $idDestination, $destinationValue['languages'],
+                    $destinationValue['version'], $destinationValue['mappingString']);
             }
         }
     }

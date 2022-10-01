@@ -174,9 +174,10 @@ function getIdVersionOfElementsOfArrayWithVersion($conn, $tableName)
     return $versions;
 }
 
-function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description, $newVersion)
+function updateDestinationLanguages($conn, $idLang, $idDest, $name, $description, $newVersion, $mappingString)
 {
-    $query = "UPDATE Destination SET version = $newVersion WHERE id = $idDest ; ";
+    $query = "UPDATE Destination SET version = $newVersion , mappingString = '$mappingString'
+                   WHERE id = $idDest ; ";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt->close();
@@ -643,8 +644,8 @@ function setOkVendor($conn, $idsVendors) {
     $stmt->close();
 }
 
-function addDestination($conn, $idDestination, $destinationLangObj, $version) {
-    $query = "INSERT INTO Destination(id, version) VALUES ($idDestination, $version)";
+function addDestination($conn, $idDestination, $destinationLangObj, $version, $mappingString) {
+    $query = "INSERT INTO Destination(id, version, mappingString) VALUES ($idDestination, $version, '$mappingString')";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $queryTr = "INSERT INTO DestinationTranslate(idLanguage, idDestination,
