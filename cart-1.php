@@ -26,7 +26,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
         <div class="container container-custom margin_80_55">
             <div class="row">
                 <?php
-                //TODO: We need that calculation in backend as well, so make function
                 if (count($cartArray) == 0) { ?>
                     <div class="col-lg-12  novoucherincard">
                         <h3 class="my-5">No Vouchers in the card</h3>
@@ -112,7 +111,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <!-- /col -->
                     <?php
                     $calculateCartObject = calculatePriceCart($allVouchers);
-                    //                    TODO: when voucher is 1 or 0
                     ?>
                     <aside class="col-lg-4">
                         <div style="min-height: 30px;background-color: white"></div>
@@ -137,7 +135,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span></li>
                             </ul>
                             <input onclick="window.location = './client.html'" type="button" value=" <?php echo ($calculateCartObject['canOrder'] ? 'Checkout' : 'Select at least 2 vouchers to continue'); ?>" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
-                            <!--                        <div class="text-center"><small>No money charged in this step</small></div>-->
                         </div>
                     </aside>
                 <?php

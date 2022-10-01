@@ -497,11 +497,37 @@ function calculatePriceCart($arrayVouchers) {
             $less = $less + $arrayVouchers[$counter]->getPrice();
         }
     }
+    //TODO: from DB get texts
+    if (count($arrayVouchers) == 1) {
+        $messageModal = "Select at least 2 vouchers to continue";
+    } elseif (count($arrayVouchers) == 2) {
+        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+    } elseif (count($arrayVouchers) == 3) {
+        $messageModal = "You can get one voucher free!";
+    } elseif (count($arrayVouchers) == 4) {
+        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+    } elseif (count($arrayVouchers) == 5) {
+        $messageModal = "You can get one voucher free!";
+    } elseif (count($arrayVouchers) == 6) {
+        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+    } elseif (count($arrayVouchers) == 7) {
+        $messageModal = "You can get one voucher free!";
+    } elseif (count($arrayVouchers) == 8) {
+        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+    } elseif (count($arrayVouchers) == 9) {
+        $messageModal = "You can get one voucher free!";
+    } elseif (count($arrayVouchers) == 10) {
+        $messageModal = "You can select 1 more voucher";
+    } else { // 11 vouchers
+        $messageModal = "You have the maximum vouchers selected.";
+    }
+
     return array(
-        'totalPay'=>$totalToPay,
-        'moneyEarned'=>$less,
-        'vouchersPay'=>$lengthHowManyPay,
-        'canOrder'=>$canOrder
+        'totalPay'=> $totalToPay,
+        'moneyEarned'=> $less,
+        'vouchersPay'=> $lengthHowManyPay,
+        'canOrder'=> $canOrder,
+        'messageModal'=> $messageModal
     );
 }
 
