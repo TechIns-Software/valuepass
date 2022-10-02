@@ -1,3 +1,12 @@
+<?php
+if (!isset($conn)) {
+    include 'connection.php';
+}
+$title = "Homepage | ValuePass";
+$home = 1;
+include_once 'includes/header.php';
+$idLanguage = $_SESSION["languageId"];
+?>
 <!--TODO: future maybe client needs to fill up banks field f.e. region -->
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +60,10 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="terms">
                         <label class="form-check-label" for="terms">
-                            I have read and agree to the terms and conditions of <a href="#">ValuePass</a>
+                            I have read and agree to the terms and conditions of
+                            <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf':'terms_gb.pdf' ?>" target="_blank">
+                                <?php echo $menu[10] ?>
+                            </a>
                         </label>
                     </div>
 
