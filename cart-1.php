@@ -55,6 +55,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                         <th>
                                             Total Price
                                         </th>
+                                        <th>
+                                          X
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,7 +102,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                 <strong><?php echo $amountPay; ?>€</strong>
                                             </td>
                                             <td class="options" style="width:5%; text-align:center;">
-                                                <a href="javascript:deleteItem(<?php echo $counter;?>);"><i class="icon-trash"></i></a>
+                                                <a class="btn btn-danger" href="javascript:deleteItem(<?php echo $counter;?>);"><i class="icon-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php
@@ -115,7 +118,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     $calculateCartObject = calculatePriceCart($allVouchers);
                     ?>
                     <aside class="col-lg-4">
-                        <div style="min-height: 30px;background-color: white"></div>
+                        <div style="min-height: 30px;background-color: transparent"></div>
                         <div class="box_detail">
                             <div id="total_cart">
                                 Total <span class="float-end">
@@ -137,6 +140,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span></li>
                             </ul>
                             <input onclick="window.location = './client.php'" type="button" value=" <?php echo ($calculateCartObject['canOrder'] ? 'Checkout' : 'Select at least 2 vouchers to continue'); ?>" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
+                            <a href="adventure_page.php"><button  class="btn btn-warning" > Continue Shopping</button> </a>
                         </div>
                     </aside>
                 <?php
