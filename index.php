@@ -153,169 +153,142 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
         </div>
 
+        <div id="reccomended_adventure2" class="owl-carousel owl-theme">
 
-        <div class="row">
-            <!-- Carousel wrapper -->
-            <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-bs-ride="carousel">
-                <!-- Controls -->
+            <div class="item">
+                <a class="box_feat ">
+                    <!-- <i class="pe-7s-medal"></i> -->
+                    <object class="SvgImage" data="assets/icons/fingerprint.svg"
+                            type="image/svg+xml"></object>
+                    <h3><?php echo $menu[18] ?>  </h3>
+                    <p> <?php echo $menu[19] ?> </p>
+                </a>
+            </div>
 
-                <!-- Inner -->
-                <div class="carousel-inner py-4">
-                    <!-- Single item -->
-                    <div class="carousel-item active">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <a class="box_feat ">
-                                        <!-- <i class="pe-7s-medal"></i> -->
-                                        <object class="SvgImage" data="assets/icons/fingerprint.svg"
-                                                type="image/svg+xml"></object>
-                                        <h3><?php echo $menu[18] ?>  </h3>
-                                        <p> <?php echo $menu[19] ?> </p>
-                                    </a>
-                                </div>
+            <div class="item">
+                <a class="box_feat">
+                    <object class="SvgImage" data="assets/icons/gift.svg"
+                            type="image/svg+xml"></object>
+                    <h3> <?php echo $menu[20] ?>  </h3>
+                    <p><?php echo $menu[21] ?> <br><?php echo $menu[13] ?></p>
+                    <!-- Button trigger modal -->
+                    <b class="custom-pop" type="button" data-bs-toggle="modal"
+                       data-bs-target="#exampleModal"> <?php echo $menu[22] ?></b>
+                </a>
 
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <a class="box_feat">
-                                        <object class="SvgImage" data="assets/icons/gift.svg"
-                                                type="image/svg+xml"></object>
-                                        <h3> <?php echo $menu[20] ?>  </h3>
-                                        <p><?php echo $menu[21] ?> <br><?php echo $menu[13] ?></p>
-                                        <!-- Button trigger modal -->
-                                        <b class="custom-pop" type="button" data-bs-toggle="modal"
-                                           data-bs-target="#exampleModal"> <?php echo $menu[22] ?></b>
-                                    </a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div style="min-height: 120px;"></div>
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel"> <?php echo $menu[23] ?>
-                                                    :
-                                                    <small> <?php echo $menu[24] ?></small></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
+            </div>
 
-                                                <div class="col-lg-12 my-1 ">
-                                                    <h6> 3 <?php echo $menu[25] ?> <b> 1 </b> <?php echo $menu[26] ?>
-                                                    </h6>
-                                                </div>
-                                                <div class="col-lg-12 my-1">
-                                                    <h6> 4 <?php echo $menu[25] ?> <b>2 </b> <?php echo $menu[26] ?>
-                                                    </h6>
-                                                </div>
-                                                <div class="col-lg-12 my-1">
-                                                    <h6> 5 <?php echo $menu[25] ?> <b> 3</b> <?php echo $menu[26] ?>
-                                                    </h6>
-                                                </div>
-                                                <div class="col-lg-12 my-1">
-                                                    <h6> 6 <?php echo $menu[25] ?> <b> 4 </b> <?php echo $menu[26] ?>
-                                                    </h6>
-                                                </div>
-                                                <div class="col-lg-12 my-1">
-                                                    <h6> 7 <?php echo $menu[25] ?><b> 4 </b> <?php echo $menu[26] ?>
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="item">
+                <a class="box_feat">
+                    <!-- <i class="pe-7s-culture"></i> -->
+                    <object class="SvgImage" data="assets/icons/spring.svg"
+                            type="image/svg+xml"></object>
+                    <h3><?php echo $menu[27] ?> </h3>
+                    <p><?php echo $menu[28] ?>  </p>
+                    <b class="custom-pop" type="button" data-bs-toggle="modal"
+                       data-bs-target="#exampleModal1"> <?php echo $menu[22] ?></b>
+                </a>
 
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <a class="box_feat">
-                                        <!-- <i class="pe-7s-culture"></i> -->
-                                        <object class="SvgImage" data="assets/icons/spring.svg"
-                                                type="image/svg+xml"></object>
-                                        <h3><?php echo $menu[27] ?> </h3>
-                                        <p><?php echo $menu[28] ?>  </p>
-                                        <b class="custom-pop" type="button" data-bs-toggle="modal"
-                                           data-bs-target="#exampleModal1"> <?php echo $menu[22] ?></b>
-                                    </a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal1" tabindex="-1"
-                                     aria-labelledby="exampleModalLabel1"
-                                     aria-hidden="true">
-                                    <div style="min-height: 120px;"></div>
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title"
-                                                    id="exampleModalLabel1"><?php echo $menu[29] ?></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
+            </div>
 
-                                                <p> <?php echo $menu[71] ?> </p>
+            <div class="item">
+                <a class="box_feat">
+                    <object class="SvgImage" data="assets/icons/smartphone.svg"
+                            type="image/svg+xml"></object>
+                    <h3> <?php echo $menu[30] ?></h3>
+                    <p> <?php echo $menu[31] ?> </p>
+                </a>
+            </div>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="item">
+                <a class="box_feat">
+                    <object class="SvgImage" data="assets/icons/credit-card.svg"
+                            type="image/svg+xml"></object>
+                    <h3><?php echo $menu[32] ?>  </h3>
+                    <p><?php echo $menu[33] ?> </p>
+                </a>
+            </div>
 
-                            </div>
-                        </div>
-                    </div>
+            <div class="item">
+                <a class="box_feat">
+                    <object class="SvgImage" data="assets/icons/support.svg"
+                            type="image/svg+xml"></object>
+                    <h3><?php echo $menu[34] ?> </h3>
+                    <p> <?php echo $menu[35] ?> </p>
 
-                    <!-- Single item -->
-                    <div class="carousel-item">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <a class="box_feat">
-                                        <object class="SvgImage" data="assets/icons/smartphone.svg"
-                                                type="image/svg+xml"></object>
-                                        <h3> <?php echo $menu[30] ?></h3>
-                                        <p> <?php echo $menu[31] ?> </p>
-                                    </a>
-                                </div>
+                </a>
+            </div>
 
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <a class="box_feat">
-                                        <object class="SvgImage" data="assets/icons/credit-card.svg"
-                                                type="image/svg+xml"></object>
-                                        <h3><?php echo $menu[32] ?>  </h3>
-                                        <p><?php echo $menu[33] ?> </p>
-                                    </a>
-                                </div>
 
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <a class="box_feat">
-                                        <object class="SvgImage" data="assets/icons/support.svg"
-                                                type="image/svg+xml"></object>
-                                        <h3><?php echo $menu[34] ?> </h3>
-                                        <p> <?php echo $menu[35] ?> </p>
+        </div>
+    </div>
 
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div style="min-height: 120px;"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel"> <?php echo $menu[23] ?>
+                        :
+                        <small> <?php echo $menu[24] ?></small></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                 </div>
-                <!-- Inner -->
-                <div class="d-flex justify-content-center mb-4">
-                    <button class="carousel-control-prev position-relative" type="button"
-                            data-bs-target="#carouselMultiItemExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next position-relative" type="button"
-                            data-bs-target="#carouselMultiItemExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                <div class="modal-body">
+
+                    <div class="col-lg-12 my-1 ">
+                        <h6> 3 <?php echo $menu[25] ?> <b>
+                                1 </b> <?php echo $menu[26] ?>
+                        </h6>
+                    </div>
+                    <div class="col-lg-12 my-1">
+                        <h6> 4 <?php echo $menu[25] ?>
+                            <b>2 </b> <?php echo $menu[26] ?>
+                        </h6>
+                    </div>
+                    <div class="col-lg-12 my-1">
+                        <h6> 5 <?php echo $menu[25] ?> <b>
+                                3</b> <?php echo $menu[26] ?>
+                        </h6>
+                    </div>
+                    <div class="col-lg-12 my-1">
+                        <h6> 6 <?php echo $menu[25] ?> <b>
+                                4 </b> <?php echo $menu[26] ?>
+                        </h6>
+                    </div>
+                    <div class="col-lg-12 my-1">
+                        <h6> 7 <?php echo $menu[25] ?><b>
+                                4 </b> <?php echo $menu[26] ?>
+                        </h6>
+                    </div>
                 </div>
             </div>
-            <!-- Carousel wrapper -->
         </div>
+    </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1"
+         aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+        <div style="min-height: 120px;"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel1"><?php echo $menu[29] ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <p> <?php echo $menu[71] ?> </p>
+
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -447,194 +420,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 </div>
 <!-- page -->
 
-<!-- Modal -->
-<div class="modal fade" id="howitworks" tabindex="-1" aria-labelledby="howitworks" aria-hidden="true">
-    <div style="min-height: 120px;"></div>
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="howitworks">How it works </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <!--Start Accordion-->
-                        <div class="col-12">
-                            <div class="panel-group accordion-main" id="accordion">
-
-                                <!--About accordion #9-->
-
-                                <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse1"
-                                     role="button" aria-expanded="true" aria-controls="collapseExample">
-                                    <h6 class="panel-title accordion-toggle">
-                                        <b>Step 1. </b> Choose your Destination
-                                    </h6>
-                                </div>
-                                <div id="collapse1" class=" collapse">
-                                    <div class="panel-body">
-                                        <div class="row p-4">
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Syros</h3>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Tinos</h3>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Mykonos</h3>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Paros</h3>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Naxos</h3>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Santorini</h3>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Chania-Crete</h3>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <h3 class="text-muted">Athens</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2"
-                                     role="button" aria-expanded="true" aria-controls="collapseExample">
-                                    <h6 class="panel-title accordion-toggle">
-                                        <b>Step 2. </b> Choose your experience / Book your activity / Choose your
-                                        schedule / Add to the cart
-                                    </h6>
-                                </div>
-                                <div id="collapse2" class=" collapse">
-                                    <div class="panel-body px-4">
-
-                                        <p> • Buy your vouchers on board reserve your spot, and pay the provider with a
-                                            discount when you arrive at your activity location. (Check your activity
-                                            voucher once you book for full details). </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3"
-                                     role="button" aria-expanded="true" aria-controls="collapseExample">
-                                    <h6 class="panel-title accordion-toggle">
-                                        <b>Step 3. </b> Buy at least two (2) Vouchers with 3 or more you get for free
-                                        vouchers and your presents never end!
-                                    </h6>
-
-                                </div>
-                                <div id="collapse3" class=" collapse">
-                                    <div class="panel-body">
-                                        <div class="row px-4">
-                                            <p class="m-0"> Save from 20% to 30% discount on the initial price </p>
-
-                                            <h6><i class="fa-solid fa-money-bill"></i> 3 Vouchers from + extra <b>
-                                                    1 </b> free Voucher </h6>
-
-
-                                            <h6><i class="fa-solid fa-money-bill"></i> 4 Vouchers from + extra <b>2 </b>
-                                                free Voucher </h6>
-
-
-                                            <h6><i class="fa-solid fa-money-bill"></i> 5 Vouchers from + extra <b> 3</b>
-                                                free Voucher </h6>
-
-
-                                            <h6><i class="fa-solid fa-money-bill"></i> 6 Vouchers from + extra <b>
-                                                    4 </b> free Voucher </h6>
-
-
-                                            <h6><i class="fa-solid fa-money-bill"></i> 7 Vouchers from + extra <b>
-                                                    4 </b> free Voucher </h6>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4"
-                                     role="button" aria-expanded="true" aria-controls="collapseExample">
-                                    <h6 class="panel-title accordion-toggle">
-                                        <b>Step 4. </b> Enter your name, phone number, and email address here.
-                                    </h6>
-                                </div>
-                                <div id="collapse4" class=" collapse">
-                                    <div class="panel-body">
-                                        <div class="row px-4">
-                                            <p class="m-0"><b> Name : </b></p>
-                                            <p class="m-0"><b> Phone: </b> <small>(all calls are made through Viber,
-                                                    Whatsapp, or other free calling apps unless otherwise
-                                                    stated)</small></p>
-                                            <p class="m-0"><b> Email : </b></p>
-                                            <ul>
-                                                <li> • By signing up, I agree that the activity provider may be informed
-                                                    of my booking via email under the ValuePass privacy policy
-                                                </li>
-                                                <li> • We inform you that your personal data is used exclusively and
-                                                    only for the scope you have submitted to us and is destroyed after
-                                                    three months. (name, phone number, email).
-                                                </li>
-                                                <li> • We inform you that your personal data is used exclusively and
-                                                    only for the scope you have submitted to us and is destroyed after
-                                                    three months. (name, phone number, email)
-                                                </li>
-                                            </ul>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="panel-heading collapsed  " data-bs-toggle="collapse" href="#collapse5"
-                                     role="button" aria-expanded="true" aria-controls="collapseExample">
-                                    <h6 class="panel-title accordion-toggle">
-                                        <b>Step 5. </b> Pay with your credit card and receive the QR code and all needed
-                                        information in your email <small> (Supplier Information – Contact Details +
-                                            Google Maps Location Pin, etc.)</small>
-                                    </h6>
-                                </div>
-                                <div id="collapse5" class=" collapse">
-                                    <div class="panel-body">
-                                        <div class="row px-4">
-                                            <ul>
-                                                <li> • If you are unable to attend the attraction, you must cancel it at
-                                                    least from 12 hours to 24 hours in advance, depending on the
-                                                    activity provider. (Check your activity voucher once you book for
-                                                    full details)
-                                                </li>
-                                                <li> • We would like to inform you that your credit card details are
-                                                    immediately deleted at the end of the payment process.
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <!--/.row-->
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div id="toTop"></div><!-- Back to top button -->
 
 <!-- COMMON SCRIPTS -->
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=1.3"></script>
 <script src="assets/js/validate.js"></script>
 
 <!-- SLIDER REVOLUTION SCRIPTS  -->

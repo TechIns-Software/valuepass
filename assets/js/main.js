@@ -171,6 +171,18 @@
         1400: { items: 5 },
       },
     }),
+      i("#reccomended_adventure2").owlCarousel({
+        center: !1,
+        items: 3,
+        loop: !1,
+        margin: 15,
+        responsive: {
+          0: { items: 1 },
+          767: { items: 2 },
+          1e3: { items: 2 },
+          1400: { items: 3 },
+        },
+      }),
     i(window).bind("load resize", function () {
       i(window).width() <= 991
         ? i(".sticky_horizontal").stick_in_parent({
