@@ -6,7 +6,7 @@ include 'backend/includeClasses.php';
 if (!isset($conn)) {
 	include 'connection.php';
 }
-include 'backend/finalLibrary.php';
+include_once 'backend/finalLibrary.php';
 $menu = GetMenu($conn, $_SESSION['languageId']);
 $languages =  getAllLanguages($conn);
 $cartArray = unserialize($_SESSION['cart']);
@@ -65,61 +65,10 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
     <script src="assets/js/modernizr.js"></script>
 
 </head>
-
 <body>
-
 <div id="page">
-
     <?php
-
-    if ($home == 1) { ?>
-
-        <header class="header menu_fixed">
-            <div id="preloader">
-                <div data-loader="circle-side"></div>
-            </div><!-- /Page Preload -->
-            <div id="logo">
-                <a href="index.php">
-                    <img src="assets/img/valuepassLogo.png" width="140" height="70" alt="" class="logo_normal ">
-                    <img src="assets/img/valuepassLogo.png" width="120" height="55" alt="" class="logo_sticky ">
-                </a>
-            </div>
-            <ul id="top_menu">
-                <!-- <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li> -->
-                <li> </li>
-                <!-- for number in cart just add strong elemnt inside li  -->
-                <li><a href="cart-1.php" class="cart-menu-btn " title="Cart"><strong id="cartNumberShow"><?php echo $voucherNumber;?></strong></a></li>
-                <!--<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>  -->
-            </ul>
-            <!-- /top_menu -->
-            <a href="#menu" class="btn_mobile">
-                <div class="hamburger hamburger--spin" id="hamburger">
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </div>
-            </a>
-            <nav id="menu" class="main-menu">
-                <ul >
-                    <li><span><a href="how.php"><?php echo $menu[1] ?></a></span></li>
-                    <li><span><a href="#"><?php echo $menu[4] ?></a></span></li>
-                    <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>   </a>
-                        <ul >
-
-                            <?php
-                            foreach ($languages  as $language) {  ?>
-                                <li  ><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span> </a> </li>
-                            <?php	} ?>
-
-                        </ul>
-                    </li>
-                    <!-- <li><span><a href="adventure_page.php">Experience Page</a></span></li> -->
-                    <!-- <li><span><a href="#" target="_parent">Buy VP</a></span></li> -->
-                </ul>
-            </nav>
-        </header>
-
-    <?php	} else if (strpos($url, 'cart-1.php') !== false || strpos($url, 'how.php') !== false && $home == false) { ?>
+    if (strpos($url, 'cart-1.php') !== false || strpos($url, 'how.php') !== false && $home == false) { ?>
         <header class="header menu_fixed  cart-bg">
             <div id="preloader">
                 <div data-loader="circle-side"></div>
@@ -145,11 +94,9 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
             </a>
             <nav id="menu" class="main-menu">
                 <ul>
-                    <li><span><a href="index.php"> <?php echo $menu[0] ?> </a></span></li>
-
-
-                    <li><span><a href="adventures.php?id=1"> <?php echo $menu[3] ?> </a></span></li>
-                    <li><span><a ><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>  </a></span>
+                    <li><span><a href="how.php"><?php echo $menu[1] ?></a></span></li>
+                    <li><span><a href="#"><?php echo $menu[4] ?></a></span></li>
+                    <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>   </a>
                         <ul>
                             <?php
 
@@ -192,11 +139,9 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
             </a>
             <nav id="menu" class="main-menu">
                 <ul>
-                    <li><span><a href="index.php"> <?php echo $menu[0] ?> </a></span></li>
-
-
-                    <li><span><a href="adventures.php?id=1"> <?php echo $menu[3] ?> </a></span></li>
-                    <li ><span><a > <span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span> </a></span>
+                    <li><span><a href="how.php"><?php echo $menu[1] ?></a></span></li>
+                    <li><span><a href="#"><?php echo $menu[4] ?></a></span></li>
+                    <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>   </a>
                         <ul>
                             <?php
 
@@ -211,10 +156,6 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
                 </ul>
             </nav>
         </header>
-
-
-
-
     <?php } ?>
     <!-- /header -->
 <?php
