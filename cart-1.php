@@ -120,7 +120,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     $calculateCartObject = calculatePriceCart($allVouchers);
                     ?>
                     <aside class="col-lg-4">
-                        <div style="min-height: 30px;background-color: transparent"></div>
                         <div class="box_detail">
                             <div id="total_cart">
                                 Total <span class="float-end">
@@ -141,8 +140,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 <li>Vouchers Pay<span><?php echo $calculateCartObject['vouchersPay']; ?></span></li>
                                 <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span></li>
                             </ul>
-                            <a href="adventure_page.php"><button  class="btn btn-warning  full-width " > Continue Shopping</button> </a>
-                            <input onclick="window.location = './client.php'" type="button" value=" <?php echo ($calculateCartObject['canOrder'] ? 'Checkout' : 'Select at least 2 vouchers to continue'); ?>" class="btn btn-secondary btn_1 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
+                            <a href="adventure_page.php"><button  class="btn btn-warning  my-2 w-100" > Continue Shopping</button> </a>
+                            <input onclick="window.location = './client.php'" type="button" value=" <?php echo ($calculateCartObject['canOrder'] ? 'Checkout' : 'Select at least 2 vouchers to continue'); ?>" class="btn btn-secondary btn_1 my-2 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
                         </div>
                     </aside>
                 <?php
