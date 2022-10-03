@@ -544,7 +544,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message .=  " <div class='row border-bottom'> ";
         $message .=      " <div class='col-12'> ";
         $message .=       "  <div class='price text-center'> ";
-        $message .=          " <h5> Unfortunately no Vouchers found for that day </h5> ";
+        $message .=          " <h5> Unfortunately no Vouchers found for that day </h5> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#questionmodal' >Add To Cart  </button>  ";
         $message .=  " </div> ";
         $message .=  "</div> ";
         return $message;
@@ -607,7 +607,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .=  " <div class='row'> ";
     $message .=   "  <div class='col'> ";
     $message .=     "   <div class='addtocartsection'> ";
-    $message .=     "  <button onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
+    $message .=     "  <button class='btn btn-primary 'data-bs-toggle='modal' data-bs-target='#questionmodal' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
     $message .=   "  </div> ";
     $message .=   " </div> ";
 

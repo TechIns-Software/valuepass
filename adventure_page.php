@@ -584,7 +584,26 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     ?>
 
 
+    <div class="modal fade " id="questionmodal" tabindex="-1" aria-labelledby="questionmodal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="questionmodaltitle">ValuePass</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    The <b><?php echo $vendor->getName(); ?>  </b> Voucher has just been added to your shopping cart.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Continue with other Vouchers</button>
+                  <a href="cart-1.php"> <button type="button" class="btn btn-info">Go to cart </button> </a>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
 
 </main>
 
