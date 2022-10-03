@@ -136,7 +136,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             <div class="banner_title3">
                 <h2><?php echo $menu[14] ?></h2>
 
-                <p class="fs-2"><strong> <?php echo $menu[15] ?></strong></p>
+<!--                <p class="fs-2"><strong> --><?php //echo $menu[15] ?><!-- </strong></p>-->
             </div>
 
         </div>
@@ -206,6 +206,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             type="image/svg+xml"></object>
                     <h3><?php echo $menu[32] ?>  </h3>
                     <p><?php echo $menu[33] ?> </p>
+                    <b class="custom-pop" type="button" data-bs-toggle="modal"
+                       data-bs-target="#exampleModal2"> <?php echo $menu[22] ?></b>
                 </a>
             </div>
 
@@ -291,8 +293,33 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1"
+         aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+        <div style="min-height: 120px;"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel1"><?php echo $menu[32] ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <p>•	<?php echo $menu[90] ?></p>
+                        <p>•	<?php echo $menu[91] ?></p>
+                        <p>•	<?php echo $menu[92] ?></p>
+                        <a href="#"> <?php echo $menu[95] ?></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="container container-custom margin_80_55 col-lg-12 ">
+
         <section class="add_bottom_45">
             <div class="main_title_2">
                 <span><em></em></span>
@@ -330,7 +357,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     <h4 class="card-title mt-0 "><a class="text-white"
                                                                     href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a>
                                     </h4>
-                                    <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?><?php echo $menu[3] ?></small>
+                                    <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> <?php echo $menu[3] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -489,7 +516,7 @@ footer($menu,$languages)
     });
 </script>
 
-<script></script>
+
 <script src="changeLanguage.js"></script>
 
 

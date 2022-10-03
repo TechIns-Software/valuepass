@@ -8,7 +8,7 @@ if (!isset($conn)) {
 }
 
 $title = "Cart";
-$home = 0 ;
+$home = 0;
 $urr = $_SERVER['REQUEST_URI'];
 
 include_once 'includes/header.php';
@@ -23,106 +23,111 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 <main>
     <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
 
-        <div class="container container-custom margin_80_55">
-            <div class="row">
-                <?php
-                if (count($cartArray) == 0) { ?>
-                    <div class="col-lg-12  novoucherincard">
-                        <h3 class="my-5">No Vouchers in the card</h3>
-                      <h4 id="noVouchers" class="my-5">
-                          Go Back and select your Experience
-                      </h4>
-                    </div>
+    <div class="container container-custom margin_80_55">
+        <div class="row">
+            <?php
+            if (count($cartArray) == 0) { ?>
+                <div class="col-lg-12  novoucherincard">
+                    <h3 class="my-5">No Vouchers in the card</h3>
+                    <h4 id="noVouchers" class="my-5">
+                        Go <a href="./index.php"> Back </a> and select your Experience
+                    </h4>
+                </div>
 
-                <?php   } else {
+            <?php } else {
 
                 ?>
                 <div style="min-height: 110px;"></div>
-                    <div class="col-lg-8 ">
-                        <div class="box_cart">
-                            <table class="table cart-list">
-                                <thead>
-                                    <tr>
-                                        <th>
+                <div class="col-lg-8 ">
+                    <h2>   <?php echo $menu[97]; ?> </h2>
+                    <div class="box_cart">
+                        <table class="table ">
+                            <thead>
+                            <tr>
+                                <th>
+                                    <?php echo $menu[98]; ?>
+                                </th>
+                                <th>
+                                    <?php echo $menu[99]; ?>
+                                </th>
+                                <th>
+                                    <?php echo $menu[100]; ?>
+                                </th>
+                                <th>
+                                    <?php echo $menu[101]; ?>
+                                </th>
+                                <th>
+                                    <?php echo $menu[102]; ?>
+                                </th>
+                                <th>
+                                    <?php echo $menu[103]; ?>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray, $idLanguage);
+                            $vendorId = $objectVouchersDisplay['vendorId'];
+                            $allVouchers = $objectVouchersDisplay['allVouchers'];
+                            $nameVendorArray = $objectVouchersDisplay['nameVendor'];
+                            $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
+                            $imageVendorArray = $objectVouchersDisplay['imageVendor'];
+                            $adultsArray = $objectVouchersDisplay['adults'];
+                            $childrenArray = $objectVouchersDisplay['children'];
+                            $infantsArray = $objectVouchersDisplay['infants'];
+                            $amountPayArray = $objectVouchersDisplay['amountPay'];
+                            for ($counter = 0; $counter < count($nameVendorArray); $counter++) {
+                                $nameVendor = $nameVendorArray[$counter];
+                                $dateVoucher = $dateVoucherArray[$counter];
+                                $adults = $adultsArray[$counter];
+                                $children = $childrenArray[$counter];
+                                $infants = $infantsArray[$counter];
+                                $amountPay = $amountPayArray[$counter];
+                                $imageVendor = $imageVendorArray[$counter];
+                                ?>
+                                <tr>
+                                    <td>
+                                        <div class="thumb_cart d-inline">
+                                            <img src="vendorImages/<?php echo $vendorId[$counter] . '/' . $imageVendor ?>"
+                                                 alt="Image">
+                                        </div>
+                                    </td>
+                                    <td><span class="item_cart"><?php echo $nameVendor; ?></span></td>
+                                    <td>
+                                        <?php echo $dateVoucher; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $menu[110]; ?>: <?php echo $adults; ?>
+                                        <br>
+                                        <?php echo $menu[111]; ?>: <?php echo $children; ?>
+                                        <br>
+                                        <?php echo $menu[112]; ?>: <?php echo $infants; ?>
+                                    </td>
+                                    <td>
+                                        <strong><?php echo $amountPay; ?>€</strong>
+                                    </td>
+                                    <td class="options" style="width:5%; text-align:center;">
+                                        <a class="btn btn-danger"
+                                           href="javascript:deleteItem(<?php echo $counter; ?>);"><i
+                                                    class="icon-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
 
-                                        </th>
-                                        <th>
-                                            Activity
-                                        </th>
-                                        <th>
-                                            Date
-                                        </th>
-                                        <th>
-                                            Vouchers
-                                        </th>
-                                        <th>
-                                            Total Price
-                                        </th>
-                                        <th>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray, $idLanguage);
-                                    $vendorId = $objectVouchersDisplay['vendorId'];
-                                    $allVouchers = $objectVouchersDisplay['allVouchers'];
-                                    $nameVendorArray = $objectVouchersDisplay['nameVendor'];
-                                    $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
-                                    $imageVendorArray = $objectVouchersDisplay['imageVendor'];
-                                    $adultsArray = $objectVouchersDisplay['adults'];
-                                    $childrenArray = $objectVouchersDisplay['children'];
-                                    $infantsArray = $objectVouchersDisplay['infants'];
-                                    $amountPayArray = $objectVouchersDisplay['amountPay'];
-                                    for ($counter = 0; $counter < count($nameVendorArray); $counter++) {
-                                        $nameVendor = $nameVendorArray[$counter];
-                                        $dateVoucher = $dateVoucherArray[$counter];
-                                        $adults = $adultsArray[$counter];
-                                        $children = $childrenArray[$counter];
-                                        $infants = $infantsArray[$counter];
-                                        $amountPay = $amountPayArray[$counter];
-                                        $imageVendor = $imageVendorArray[$counter];
-                                    ?>
-                                        <tr>
-                                            <td>
-                                                <div class="thumb_cart d-inline">
-                                                    <img src="vendorImages/<?php echo $vendorId[$counter].'/'.$imageVendor?>" alt="Image">
-                                                </div>
-                                            </td>
-                                            <td>   <span class="item_cart"><?php echo $nameVendor; ?></span> </td>
-                                            <td>
-                                                <?php echo $dateVoucher; ?>
-                                            </td>
-                                            <td>
-                                                Adults: <?php echo $adults; ?>
-                                                <br>
-                                                Children: <?php echo $children; ?>
-                                                <br>
-                                                Infants: <?php echo $infants; ?>
-                                            </td>
-                                            <td>
-                                                <strong><?php echo $amountPay; ?>€</strong>
-                                            </td>
-                                            <td class="options" style="width:5%; text-align:center;">
-                                                <a class="btn btn-danger" href="javascript:deleteItem(<?php echo $counter;?>);"><i class="icon-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                    <?php
-                                    }
-
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
+                            ?>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- /col -->
-                    <?php
-                    $calculateCartObject = calculatePriceCart($allVouchers);
-                    ?>
-                    <aside class="col-lg-4">
-                        <div class="box_detail">
-                            <div id="total_cart">
-                                Total <span class="float-end">
+                </div>
+                <!-- /col -->
+                <?php
+                $calculateCartObject = calculatePriceCart($conn, $allVouchers);
+                ?>
+                <aside class="col-lg-4">
+                    <div class="box_detail">
+                        <div id="total_cart">
+                            <?php echo $menu[104]; ?> <span class="float-end">
                                     <?php
                                     if ($calculateCartObject['moneyEarned'] != 0) {
                                         ?>
@@ -131,35 +136,70 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                         </span> /
                                         <?php
                                     }
-                                    echo $calculateCartObject['totalPay'];
+                                    echo $calculateCartObject['totalPay'] . ' €';
                                     ?>
                                 </span>
-                            </div>
-                            <ul class="cart_details">
-                                <li>Total Vouchers Get<span><?php echo count($allVouchers); ?></span></li>
-                                <li>Vouchers Pay<span><?php echo $calculateCartObject['vouchersPay']; ?></span></li>
-                                <li>Vouchers Get Free<span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span></li>
-                            </ul>
-                            <a href="adventure_page.php"><button  class="btn btn-warning  my-2 w-100" > Continue Shopping</button> </a>
-                            <input onclick="window.location = './client.php'" type="button" value=" <?php echo ($calculateCartObject['canOrder'] ? 'Checkout' : 'Select at least 2 vouchers to continue'); ?>" class="btn btn-secondary btn_1 my-2 full-width purchase" <?php echo ($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
                         </div>
-                    </aside>
+                        <ul class="cart_details">
+                            <li>  <?php echo $menu[105]; ?> <span><?php echo count($allVouchers); ?></span></li>
+                            <li> <?php echo $menu[106]; ?>
+                                <span><?php echo $calculateCartObject['vouchersPay']; ?></span></li>
+                            <li> <?php echo $menu[107]; ?>
+                                <span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span>
+                            </li>
+                        </ul>
+                        <a href="adventure_page.php">
+                            <button class="btn btn-warning  my-2 w-100 p-3"> <?php echo $menu[108]; ?> </button>
+                        </a>
+                        <!--                            <input onclick="window.location = './client.php'" type="button"  class="btn btn-secondary btn_1 my-2 full-width purchase" >-->
+
+                        <button class="btn btn-success purchase  w-100 p-2" data-bs-toggle="modal"
+                                data-bs-target="#purchasemodal" <?php echo($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
+                            <?php echo($calculateCartObject['canOrder'] ? $menu[109] : $menu[114]); ?></button>
+                    </div>
+                </aside>
                 <?php
-                }
-                ?>
+            }
+            ?>
 
-            </div>
-            <!-- /row -->
         </div>
-  
+        <!-- /row -->
+    </div>
 
-    
+
+    <!-- Modal -->
+    <div class="modal fade" id="purchasemodal" tabindex="-1"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div style="min-height: 150px;"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel"> <?php echo $menu[113]; ?>
+
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+
+                    <h4 class="offertitle"> <?php echo $menu[122]; ?> </h4>
+                    <h5 class="offermessage"> <?php echo $calculateCartObject['messageModal']; ?></h5>
+                    <a class="btn btn-info w-100 my-2 p-3 "
+                       href="index.php#reccomended_adventure"> <?php echo $menu[121]; ?>  </a>
+                    <br>
+                    <a href="./client.php" class=" btn btn-success my-2 w-100  p-1">  <?php echo $menu[109]; ?>  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </main>
 <!--/main-->
 
 <?php include_once 'includes/footer.php';
-footer($menu,$languages)
+footer($menu, $languages)
 
 ?>
 
@@ -220,6 +260,7 @@ footer($menu,$languages)
 
 </body>
 <script src="backend/js/cart.js"></script>
-<script>goBackInHistory('noVouchers')</script>
+<script src="changeLanguage.js"></script>
+<!--<script>goBackInHistory('noVouchers')</script>-->
 
 </html>

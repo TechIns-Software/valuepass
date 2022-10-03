@@ -471,7 +471,9 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage) {
     );
 }
 
-function calculatePriceCart($arrayVouchers) {
+function calculatePriceCart($conn,$arrayVouchers) {
+    $menu = GetMenu($conn,$_SESSION["languageId"]);
+
     $canOrder = true;
     if (count($arrayVouchers) < 2 || count($arrayVouchers) > 11) {
         $canOrder = false;
@@ -499,27 +501,28 @@ function calculatePriceCart($arrayVouchers) {
     }
     //TODO: from DB get texts
     if (count($arrayVouchers) == 1) {
-        $messageModal = "Select at least 2 vouchers to continue";
+        $messageModal = $menu[114];
     } elseif (count($arrayVouchers) == 2) {
-        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+        $messageModal =  $menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 3) {
-        $messageModal = "You can get one voucher free!";
+        $messageModal = $menu[121];
     } elseif (count($arrayVouchers) == 4) {
-        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+        $messageModal = $menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 5) {
-        $messageModal = "You can get one voucher free!";
+        $messageModal = $menu[121];
     } elseif (count($arrayVouchers) == 6) {
-        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+        $messageModal =$menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 7) {
-        $messageModal = "You can get one voucher free!";
+        $messageModal = $menu[121];
     } elseif (count($arrayVouchers) == 8) {
-        $messageModal = "If you select 2 vouchers more, you get the 1 free!";
+        $messageModal = $menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 9) {
-        $messageModal = "You can get one voucher free!";
+        $messageModal = $menu[121];
     } elseif (count($arrayVouchers) == 10) {
-        $messageModal = "You can select 1 more voucher";
+        $messageModal =  $menu[118] . "1".$menu[119];
+//        You can select 1 more voucher || MESSAGE ABOVE
     } else { // 11 vouchers
-        $messageModal = "You have the maximum vouchers selected.";
+        $messageModal = $menu[119];
     }
 
     return array(
@@ -533,6 +536,35 @@ function calculatePriceCart($arrayVouchers) {
 
 
 function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '') {
+
+    if ($_SESSION["languageId"] == 2 ) {
+        $message1 = "Unfortunately no Vouchers found for that day";
+        $message2 = "Add to Cart";
+        $message3 = "Experience Name: ";
+        $message4 = "Day: ";
+        $message5 = "Hour: ";
+        $message6 = "Price Breakdown  ";
+        $message7 = " Adults : ";
+        $message8 = " Children : ";
+        $message9 = " Infants : ";
+        $message10 = " Total Price  : ";
+        $message11 = "All taxes and fees included : ";
+        $message12 = "Date : ";
+    }else{
+        $message1 = "Δυστυχώς, δεν βρέθηκαν διαθέσιμα vouchers για αυτή την ημερομηνία";
+        $message2 = "Προσθήκη στο καλάθι";
+        $message3 = "Ονομασία Εμπειρίας: ";
+        $message4 = "Ημέρα: ";
+        $message5 = "Ώρα: ";
+        $message6 = "Ανάλυση Τιμής";
+        $message7 = " Ενήλικες  : ";
+        $message8 = " Παιδιά : ";
+        $message9 = " Μωρά : ";
+        $message10 = "Σύνολο : ";
+        $message11 = "Περιλαμβάνονται όλοι φόροι: ";
+        $message12 = "Ημερομηνία: ";
+    }
+
     if (count($package) == 0) {
         $message = "<div class='col-lg-12 vouchertemplate2'>";
         $message .= " <div class='container'> <div  class='row'> ";
@@ -544,7 +576,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message .=  " <div class='row border-bottom'> ";
         $message .=      " <div class='col-12'> ";
         $message .=       "  <div class='price text-center'> ";
-        $message .=          " <h5> Unfortunately no Vouchers found for that day </h5> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#questionmodal' >Add To Cart  </button>  ";
+        $message .=          " <h5>$message1</h5> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#questionmodal' >$message2  </button>  ";
         $message .=  " </div> ";
         $message .=  "</div> ";
         return $message;
@@ -564,7 +596,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <div class='container'> <div  class='row'> ";
     $message .=   "   <div class='col'><div style='min-height: 5px;'></div> ";
     $message .=       "  <div class='title '>";
-    $message .=        "  <h4> <span style='color: black'>Experience Name: </span> $nameVendor </h4> ";
+    $message .=        "  <h4> <span style='color: black'>$message3 </span> $nameVendor </h4> ";
     $message .=      "  </div> ";
     $message .=   " </div> ";
     $message .=  " </div> ";
@@ -572,10 +604,10 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .=  " <div class='row border-bottom'> ";
     $message .=      " <div class='col-12'> ";
     $message .=       "  <div class='price text-center'> ";
-    $message .=          " <h5> Date </h5> ";
+    $message .=          " <h5> $message12 </h5> ";
     $message .=          " <ul> ";
-    $message .=             " <li> Day : <b> $day </b></li>";
-    $message .=             " <li> Hour : <b> $hour </b></li> ";
+    $message .=             " <li> $message4  <b> $day </b></li>";
+    $message .=             " <li> $message5 <b> $hour </b></li> ";
     $message .=     " </ul> ";
     $message .=  " </div> ";
     $message .=  "</div> ";
@@ -583,23 +615,23 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .=  " <div class='row border-bottom'> ";
     $message .=      " <div class='col-8  py-2'> ";
     $message .=       "  <div class='pricebreakdown2'> ";
-    $message .=          " <h5>Price Breakdown </h5> ";
+    $message .=          " <h5>$message6 </h5> ";
     $message .=          " <ul> ";
-    $message .=             " <li> Adults : <b>$adults  </b> x <span> $priceAdult €</span> </li> ";
+    $message .=             " <li> $message7 <b>$adults  </b> x <span> $priceAdult €</span> </li> ";
     if ($children != 0) {
-        $message .=             " <li> Children : <b> $children </b> x <span> $priceKid €</span> </li> ";
+        $message .=             " <li> $message8 <b> $children </b> x <span> $priceKid €</span> </li> ";
     }
     if ($infants != 0) {
-        $message .=         " <li> Infants : <b> $infants  </b> x <span> $priceInfant € </span></li> ";
+        $message .=         " <li> $message9 <b> $infants  </b> x <span> $priceInfant € </span></li> ";
     }
     $message .=     " </ul> ";
     $message .=  " </div> ";
     $message .=  "</div> ";
     $message .= " <div class='col  py-2'> ";
     $message .=  " <div class='price'> ";
-    $message .=    "     <h5 >Total Price  </h5> ";
+    $message .=    "     <h5>$message10 </h5> ";
     $message .=     "   <h4> $totalPrice € </h4> ";
-    $message .=      " <small> All taxes and fees included</small>  ";
+    $message .=      " <small> $message11</small>  ";
     $message .=  " </div> ";
     $message .=   " </div> ";
     $message .=  "  </div> ";
@@ -607,7 +639,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .=  " <div class='row'> ";
     $message .=   "  <div class='col'> ";
     $message .=     "   <div class='addtocartsection'> ";
-    $message .=     "  <button class='btn btn-primary 'data-bs-toggle='modal' data-bs-target='#questionmodal' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\">Add To Cart</button> </div>" ;
+    $message .=     "  <button class='btn btn-primary 'data-bs-toggle='modal' data-bs-target='#questionmodal' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\"> $message2 </button> </div>" ;
     $message .=   "  </div> ";
     $message .=   " </div> ";
 

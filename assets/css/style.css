@@ -6322,15 +6322,9 @@ span.infobox_rate {
 }
 
 .thumb_cart {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
   border-radius: 50%;
-  overflow: hidden;
-  width: 60px;
+  aspect-ratio: 1:1;
   height: 60px;
-  margin-right: 10px;
-  float: left;
 }
 
 .thumb_cart img {

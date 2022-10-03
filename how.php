@@ -14,8 +14,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 	<div style="min-height: 90px;"></div>
 	<div id="how" class="container margin_80_55">
 		<div class="main_title_2">
-			<h1> <b>How it works </b></h1>
-			<p>Learn how you can spend less money and doing it more</p>
+			<h1> <b><?php echo $menu[1] ;?> </b></h1>
+			<p><?php echo $menu[74] ;?> </p>
 		</div>
 
 	</div>
@@ -32,36 +32,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 						<div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="true" aria-controls="collapseExample">
 							<h6 class="panel-title accordion-toggle">
-								<b>Step 1. </b> Choose your Destination
+								<b><?php echo $menu[75] ;?> 1. </b> <?php echo $menu[76] ;?>
 							</h6>
 						</div>
 						<div id="collapse1" class=" collapse">
 							<div class="panel-body">
 								<div class="row p-4">
+                                    <?php foreach ($destinations as $destination){ ?>
 									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Syros</h3>
+										<h3 class="text-muted"> <?php echo $destination->getName(); ?> </h3>
 									</div>
-									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Tinos</h3>
-									</div>
-									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Mykonos</h3>
-									</div>
-									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Paros</h3>
-									</div>
-									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Naxos</h3>
-									</div>
-									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Santorini</h3>
-									</div>
-									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Chania-Crete</h3>
-									</div>
-									<div class="col-lg-4 col-md-6 col-6">
-										<h3 class="text-muted">Athens</h3>
-									</div>
+                                    <?php } ?>
 								</div>
 							</div>
 						</div>
@@ -69,13 +50,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 						<div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="true" aria-controls="collapseExample">
 							<h6 class="panel-title accordion-toggle">
-								<b>Step 2. </b> Choose your experience / Book your activity / Choose your schedule / Add to the cart
-							</h6>
+								<b><?php echo $menu[75] ;?> 2. </b> <?php echo $menu[77] ;?> / <?php echo $menu[78] ;?> / <?php echo $menu[79] ;?> /<?php echo $menu[80] ;?>
+                            </h6>
 						</div>
 						<div id="collapse2" class=" collapse">
 							<div class="panel-body px-4">
 
-								<p> • Buy your vouchers on board reserve your spot, and pay the provider with a discount when you arrive at your activity location. (Check your activity voucher once you book for full details). </p>
+								<p> <?php echo $menu[81] ;?></p>
 							</div>
 						</div>
 
@@ -83,28 +64,28 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 						<div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3" role="button" aria-expanded="true" aria-controls="collapseExample">
 							<h6 class="panel-title accordion-toggle">
-								<b>Step 3. </b> Buy at least two (2) Vouchers with 3 or more you get for free vouchers and your presents never end!
+								<b><?php echo $menu[75] ;?>3. </b><?php echo $menu[82] ;?>
 							</h6>
 
 						</div>
 						<div id="collapse3" class=" collapse">
 							<div class="panel-body">
 								<div class="row px-4">
-									<p class="m-0"> Save from 20% to 30% discount on the initial price </p>
+									<h5 class="text-decoration-underline"> <?php echo $menu[83] ;?></h5>
 
-									<h6> <i class="fa-solid fa-money-bill"></i> 3 Vouchers from + extra <b> 1 </b> free Voucher </h6>
-
-
-									<h6> <i class="fa-solid fa-money-bill"></i> 4 Vouchers from + extra <b>2 </b> free Voucher </h6>
+									<h6> <i class="fa-solid fa-money-bill"></i>   <?php echo $menu[84] ;?> 3 <?php echo $menu[25] ;?> <b> 1 </b> <?php echo $menu[26] ;?> </h6>
 
 
-									<h6> <i class="fa-solid fa-money-bill"></i> 5 Vouchers from + extra <b> 3</b> free Voucher </h6>
+									<h6> <i class="fa-solid fa-money-bill"></i>  <?php echo $menu[84] ;?> 4 <?php echo $menu[25] ;?>  <b>2 </b> <?php echo $menu[26] ;?> </h6>
 
 
-									<h6> <i class="fa-solid fa-money-bill"></i> 6 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+									<h6> <i class="fa-solid fa-money-bill"></i>  <?php echo $menu[84] ;?> 5 <?php echo $menu[25] ;?> <b> 3</b> <?php echo $menu[26] ;?> </h6>
 
 
-									<h6> <i class="fa-solid fa-money-bill"></i> 7 Vouchers from + extra <b> 4 </b> free Voucher </h6>
+									<h6> <i class="fa-solid fa-money-bill"></i>  <?php echo $menu[84] ;?> 6 <?php echo $menu[25] ;?>  <b> 4 </b> <?php echo $menu[26] ;?> </h6>
+
+
+									<h6> <i class="fa-solid fa-money-bill"></i>  <?php echo $menu[84] ;?>  7 <?php echo $menu[25] ;?><b> 4 </b> <?php echo $menu[26] ;?> </h6>
 
 								</div>
 
@@ -114,19 +95,19 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 						<div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4" role="button" aria-expanded="true" aria-controls="collapseExample">
 							<h6 class="panel-title accordion-toggle">
-								<b>Step 4. </b> Enter your name, phone number, and email address here.
+								<b><?php echo $menu[75] ;?>4. </b> <?php echo $menu[85] ;?>
 							</h6>
 						</div>
 						<div id="collapse4" class=" collapse">
 							<div class="panel-body">
 								<div class="row px-4">
-									<p class="m-0"> <b> Name : </b> </p>
-									<p class="m-0"> <b> Phone: </b> <small>(all calls are made through Viber, Whatsapp, or other free calling apps unless otherwise stated)</small> </p>
+									<p class="m-0"> <b> <?php echo $menu[86] ;?> : </b> </p>
+									<p class="m-0"> <b> <?php echo $menu[87] ;?></b> </p>
 									<p class="m-0"> <b> Email : </b> </p>
 									<ul>
-                                        <li> • By signing up, I agree that the activity provider may be informed of my booking via email under the ValuePass privacy policy</li>
-                                        <li> •	We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email).</li>
-                                        <li> • We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email)</li>
+                                        <li> • <?php echo $menu[92] ;?> </li>
+                                        <li> •	<?php echo $menu[93] ;?></li>
+
 									</ul>
 
 								</div>
@@ -136,15 +117,16 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 						<div class="panel-heading collapsed  " data-bs-toggle="collapse" href="#collapse5" role="button" aria-expanded="true" aria-controls="collapseExample">
 							<h6 class="panel-title accordion-toggle">
-								<b>Step 5. </b> Pay with your credit card and receive the QR code and all needed information in your email <small> (Supplier Information – Contact Details + Google Maps Location Pin, etc.)</small>
+								<b><?php echo $menu[75] ;?>5. </b> <?php echo $menu[88] ;?></small>
 							</h6>
 						</div>
 						<div id="collapse5" class=" collapse">
 							<div class="panel-body">
 								<div class="row px-4">
 									<ul>
-										<li> • If you are unable to attend the attraction, you must cancel it at least from 12 hours to 24 hours in advance, depending on the activity provider. (Check your activity voucher once you book for full details)</li>
-										<li> • We would like to inform you that your credit card details are immediately deleted at the end of the payment process. </li>
+										<li> • <?php echo $menu[89] ;?></li>
+										<li> • <?php echo $menu[90] ;?></li>
+
 									</ul>
 								</div>
 
@@ -169,8 +151,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 		<section class="add_bottom_45">
 			<div class="main_title_2">
 				<span><em></em></span>
-				<h2>Destinations</h2>
-				<p>Check here the available destinations</p>
+				<h2><?php echo $menu[36] ;?></h2>
+				<p><?php echo $menu[96] ?></p>
 			</div>
 
 			<div id="reccomended_adventure" class="owl-carousel owl-theme">
@@ -199,7 +181,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 								</div>
 								<div class="card-footer">
 									<h4 class="card-title mt-0 "><a class="text-white" href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a></h4>
-									<small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> Activities</small>
+									<small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> <?php echo $menu[3] ?></small>
 								</div>
 							</div>
 						</div>
