@@ -11681,3 +11681,12 @@ html[xmlns] .slides {
 #questionmodal{
   padding-top:200px ;
 }
+
+.customercare{
+  color: black;
+
+}
+
+.customercare ul li {
+  width: fit-content!important;
+}
