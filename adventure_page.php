@@ -127,10 +127,14 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div id="collapse2" class=" collapse">
                                     <div class="panel-body">
                                         <ul class="px-2">
-                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i>   <?php echo $menu[134] ; ?>  </li>
-                                            <li> <i class="fa fa-arrow-right" aria-hidden="true"></i>  <?php echo $menu[135]; ?>  </li>
-                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i>   <?php echo $menu[136]; ?>  </li>
-                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i>  <?php echo $menu[137]; ?>  </li>
+                                            <li><i class="fa fa-arrow-right"
+                                                   aria-hidden="true"></i> <?php echo $menu[134]; ?>  </li>
+                                            <li><i class="fa fa-arrow-right"
+                                                   aria-hidden="true"></i> <?php echo $menu[135]; ?>  </li>
+                                            <li><i class="fa fa-arrow-right"
+                                                   aria-hidden="true"></i> <?php echo $menu[136]; ?>  </li>
+                                            <li><i class="fa fa-arrow-right"
+                                                   aria-hidden="true"></i> <?php echo $menu[137]; ?>  </li>
                                             <?php
                                             $aboutActivityArray = $vendor->getAboutActivityArray();
                                             for ($counter = 0; $counter < ceil(count($aboutActivityArray) / 2); $counter++) {
@@ -584,11 +588,14 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 </div>
 
             </section>
+
+
         </div>
         <?php
     }
     ?>
 
+    </div>
 
     <div class="modal fade " id="questionmodal" tabindex="-1" aria-labelledby="questionmodal" aria-hidden="true">
         <div class="modal-dialog">
@@ -618,9 +625,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
 <?php include_once 'includes/footer.php';
 footer($menu, $languages)
-
 ?>
-
 
 <script src="assets/js/common_scripts.js"></script>
 <script src="assets/js/main.js"></script>
@@ -650,9 +655,7 @@ footer($menu, $languages)
     });
 </script>
 
-
 <!-- DATEPICKER  -->
-
 <script>
     $(function () {
         const minDate = new Date();
@@ -686,12 +689,10 @@ footer($menu, $languages)
     );
 </script>
 
-
-</body>
-
 <script src="backend/js/cart.js"></script>
 <script>
     var lengthImagesSlider = <?php echo count($vendor->getImages())?>;
 </script>
 <script src="assets/js/mySlider.js"></script>
+</body>
 </html>
