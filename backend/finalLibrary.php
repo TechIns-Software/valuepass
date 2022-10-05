@@ -609,7 +609,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message .= " <div class='row border-bottom'> ";
         $message .= " <div class='col-12'> ";
         $message .= "  <div class='price text-center'> ";
-        $message .= " <h5>$message1</h5> <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#questionmodal' >$message2  </button>  ";
+        $message .= " <h5>$message1</h5>";
         $message .= " </div> ";
         $message .= "</div> ";
         return $message;
