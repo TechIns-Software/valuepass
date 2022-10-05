@@ -387,8 +387,9 @@ function GetMenu($conn,$lang){
 
         $menu= [];
         while ($stmt->fetch()) {
-//            $menu[$idMenu - 1] = $name;
-            array_push($menu, $name);
+            //so to have the same errors in local, if duplicate rows
+            $menu[$idMenu - 1] = $name;
+//            array_push($menu, $name);
         }
     }
     return $menu;
