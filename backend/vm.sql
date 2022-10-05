@@ -441,7 +441,11 @@ VALUES (1),
        (130),
        (131),
        (132),
-       (133);
+       (133),
+       (134),
+       (135),
+       (136),
+       (137);
 
 
 
@@ -801,11 +805,11 @@ Also, in the email, there will be a possibility to choose new activities.'),
        (115,1, 'Επιλέξτε τουλάχιστον 2 κουπόνια για να συνεχίσετε'),
        (115, 2, 'Select at least 2 vouchers to continue'),
 
-       (116,1, 'Αν επιλέξεις'),
-       (116, 2, 'If you select '),
+       (116,1, 'Αν επιλέξεις 2 '),
+       (116, 2, 'If you select  2'),
 
-       (117,1, 'ακόμα Voucher,θα λάβεις '),
-       (117, 2, 'vouchers more, you get the'),
+       (117,1, 'ακόμα Voucher,θα λάβεις 1'),
+       (117, 2, 'vouchers more, you get  1'),
 
        (118,1, 'δωρεάν'),
        (118, 2, 'free'),
@@ -856,7 +860,27 @@ Also, in the email, there will be a possibility to choose new activities.'),
        (132, 2, 'For Suppliers'),
 
        (133,1, 'Άλλο'),
-       (133, 2, 'Other');
+       (133, 2, 'Other'),
+
+       (134,1, 'Αγοράστε τα κουπόνια σας εν πλ κρατήστε τη θέση σας και πληρώστε τον πάροχο με
+έκπτωση όταν φτάσετε στην τοποθεσία δραστηριότητάς σας'),
+       (134, 2, 'Buy your vouchers on board reserve your spot and pay the provider with a
+discount when you arrive at your activity location'),
+
+       (135,1, 'Τα vouchers της ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε
+τις καλύτερες εναλλακτικές λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε εάν
+κάτι πάει στραβά. Θα βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης.'),
+       (135, 2, 'ValuePass vouchers are not canceled, but we are always looking to offer you
+the best alternative solutions regarding the activity providers we promote if
+something goes wrong. You`ll find more information in your confirmation email.'),
+
+       (136,1, 'Πολιτική ακύρωσης δραστηριότητας ισχύει έως και 24 ώρες σύμφωνα με την Πολιτική Προμηθευτών του Παρόχου'),
+       (136, 2, 'Activity Cancellation Policy up to 24 hours according to Provider`s Supplier Policy'),
+
+       (137,1,'Προφυλάξεις για τον Covid-19 Ισχύουν ειδικά μέτρα υγείας και ασφάλειας. Ελεγχος
+το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.'),
+       (137, 2,'Covid-19 precautions Special health and safety measures are in place. Check
+your activity voucher once you book for full details.');
 
 
 
