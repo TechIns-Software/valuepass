@@ -125,7 +125,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     Cancel Before <?php echo date('h:i A', $timeStampCancel);?>
                                                     on
                                                     <br>
-                                                    <?php echo date('M jS', $timeStampCancel);?>
+                                                    <?php echo date('F jS', $timeStampCancel);?>
                                                     by Supplier Cancellation policy
                                                 </p>
                                             </div>

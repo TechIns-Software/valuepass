@@ -322,7 +322,7 @@ function getMaxVendorVoucher($conn, $idVendorVoucher): int
 function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): array
 {
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
-            V.priceAdult, V.priceKid, V.infantPrice
+            V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel
             FROM VendorVoucher AS VV, Vendor AS V
             WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
@@ -331,10 +331,10 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
     if ($stmt->execute()) {
-        $id = $date1 = $priceAdult = $priceKid = $infantPrice = '-1';
-        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice);
+        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = '-1';
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel]);
         }
     }
     return $possiblePackages;
@@ -616,10 +616,13 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $priceAdult = $package[2];
     $priceKid = $package[3];
     $priceInfant = $package[4];
+    $hourCancel = $package[5];
     $totalPrice = $priceAdult * $adults + $priceKid * $children + $priceInfant * $infants;
 
-    $day = substr($date, 0, 10);
-    $hour = substr($date, 11);
+    //echo date('M jS', $timeStampCancel)
+    $dateTimestamp = strtotime($date);
+    $day = date('d/m', $dateTimestamp);
+    $hour = date('h:i A', $dateTimestamp);
 
     $message = "<div class='col-12 vouchertemplate2'>";
     $message .= " <div class='container'> <div  class='row'> ";
@@ -653,6 +656,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     if ($infants != 0) {
         $message .= " <li> $message9 <b> $infants  </b> x <span> $priceInfant € </span></li> ";
     }
+    $cancelTimestamp = strtotime($date) - 3600 * $hourCancel;
+    $cancelDate = date('h:i A F jS ', $cancelTimestamp);
     $message .= " </ul> ";
     $message .= " </div> ";
     $message .= "</div> ";
@@ -661,7 +666,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "     <h5>$message10 </h5> ";
     $message .= "   <h4> $totalPrice € </h4> ";
     $message .= " <small> $message11</small>  ";
-    $message .= " <p><i class='icon_calendar'></i> $message13 <b> 6/12/2022 </b> $message14   </p> ";
+    $message .= " <p><i class='icon_calendar'></i> $message13 <b> $cancelDate </b> $message14   </p> ";
     $message .= "<p> <i class='icon-trash'></i> $message15  </p> ";
     $message .= " </div> ";
     $message .= "   <div class='addtocartsection'> ";

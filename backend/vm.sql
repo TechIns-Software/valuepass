@@ -93,6 +93,17 @@ create TABLE PaymentInfoActivityTranslate
     description           text
 ) ENGINE = InnoDB;
 
+create TABLE VendorTranslate
+(
+    idVendor        int          NOT NULL,
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
+    idLanguage      int          NOT NULL,
+    FOREIGN KEY (idLanguage) REFERENCES Language (id),
+    name            varchar(100) NOT NULL,
+    descriptionBig  text         NOT NULL,
+    descriptionFull text         NOT NULL
+) ENGINE = InnoDB;
+
 create TABLE Vendor
 (
     id                     int   NOT NULL,
@@ -119,17 +130,6 @@ create TABLE Vendor
     infantTolerance        int   NOT NULL DEFAULT 1,
     isActiveNow            binary(1)      DEFAULT 1,
     hourCancel             int            DEFAULT 4
-) ENGINE = InnoDB;
-
-create TABLE VendorTranslate
-(
-    idVendor        int          NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
-    idLanguage      int          NOT NULL,
-    FOREIGN KEY (idLanguage) REFERENCES Language (id),
-    name            varchar(100) NOT NULL,
-    descriptionBig  text         NOT NULL,
-    descriptionFull text         NOT NULL
 ) ENGINE = InnoDB;
 
 create TABLE BestOff
