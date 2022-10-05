@@ -29,7 +29,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
         $counter = $counter + 1;
     }
     ?>
-    body::after{
+    body::after {
         content: <?php echo $stringPreLoad;?>;
         display: none;
     }
@@ -95,8 +95,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 <div class="col-lg-6 col-md-12  ">
                     <section id="description">
                         <div class="panel-group accordion-main my-2" id="accordion">
-                            <!--About accordion #9-->
-                            <div class="panel">
+
+                            <div class="panel description">
                                 <div class="panel-heading   " data-bs-toggle="collapse" href="#collapse1" role="button"
                                      aria-expanded="true" aria-controls="collapseExample">
                                     <h6 class="panel-title accordion-toggle">
@@ -113,12 +113,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 </div>
                             </div>
                         </div>
-                        <!--/.row-->
 
 
-                        <div class="panel-group accordion-main my-2" id="accordion">
-                            <!--About accordion #9-->
-                            <div class="panel">
+                        <div class="panel-group accordion-main my-2 " id="accordion">
+
+                            <div class="panel aboutActivity">
                                 <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2"
                                      role="button" aria-expanded="true" aria-controls="collapseExample">
                                     <h6 class="panel-title accordion-toggle">
@@ -128,6 +127,13 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div id="collapse2" class=" collapse">
                                     <div class="panel-body">
                                         <ul class="px-2">
+
+
+                                            <li>   <?php echo $menu[134] ?>  </li>
+                                            <li>   <?php echo $menu[135] ?>  </li>
+                                            <li>   <?php echo $menu[136] ?>  </li>
+                                            <li>  <?php echo $menu[137] ?>  </li>
+
                                             <?php
                                             $aboutActivityArray = $vendor->getAboutActivityArray();
                                             for ($counter = 0; $counter < ceil(count($aboutActivityArray) / 2); $counter++) {
@@ -151,15 +157,13 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 </div>
                             </div>
                         </div>
-                        <!--/.row-->
+
                     </section>
 
                     <section>
-
-
                         <div class="panel-group accordion-main my-2" id="accordion">
-                            <!--About accordion #9-->
-                            <div class="panel">
+
+                            <div class="panel highlights">
                                 <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3"
                                      role="button" aria-expanded="true" aria-controls="collapseExample">
                                     <h6 class="panel-title accordion-toggle">
@@ -169,6 +173,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div id="collapse3" class=" collapse">
                                     <div class="panel-body">
                                         <ul class="px-2">
+
                                             <?php
                                             if (count($vendor->getHighlights()) > 0) {
                                                 foreach ($vendor->getHighlights() as $highlight) {
@@ -207,42 +212,43 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             </p>
                             <span class="criteria">
 								 <?php echo $menu[44] ?>
-								<?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
-                                <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
+                                 <?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
+                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
 							</span>
                             <p class="voucher_av ">
                                 <?php echo $menu[45] ?>
-                                <b><?php echo $vendor->getAvailabilityTodayVoucher();?></b>
+                                <b><?php echo $vendor->getAvailabilityTodayVoucher(); ?></b>
                             </p>
                             <div class="row ">
                                 <div class="col d-flex nowrap buyvp_label"> <?php echo $menu[46] ?> </div>
                                 <div class="col buyvp_value">
                                     <b><?php echo $vendor->getPriceAdult(); ?>€ </b>
                                     <span class="perperson">
-                                        <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                        <?php echo $vendor->getForHowManyPersonsIsString(); ?>
                                     </span>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col"> <?php echo $menu[47] ?></div>
+                                <div class="col"> <?php echo $menu[48] ?></div>
                                 <div class="col from_price"> <?php echo $vendor->getOriginalPrice(); ?> €</div>
                             </div>
 
                             <div class="row">
-                                <div class="col"> <?php echo $menu[48] ?></div>
+                                <div class="col"> <?php echo $menu[49] ?></div>
                                 <div class="col pay_value">
                                     <b><?php echo $totalToPay; ?>€ </b>
                                     <span class="perperson">
-                                        <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                        <?php echo $vendor->getForHowManyPersonsIsString(); ?>
                                     </span>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <p class="vp_discount my-0 "><?php echo $menu[50] ?> <?php echo $vendor->getDiscount(); ?>% <?php echo $menu[51] ?>
-                                        </p>
+                                    <p class="vp_discount my-0 "><?php echo $menu[50] ?> <?php echo $vendor->getDiscount(); ?>
+                                        % <?php echo $menu[51] ?>
+                                    </p>
                                 </div>
                             </div>
 
@@ -263,7 +269,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                     <div class="panel-group accordion-main my-2" id="accordion">
                         <!--About accordion #9-->
-                        <div class="panel">
+                        <div class="panel discriptionBig">
                             <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4"
                                  role="button" aria-expanded="true" aria-controls="collapseExample">
                                 <h6 class="panel-title accordion-toggle">
@@ -292,7 +298,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                     <div class="panel-group accordion-main my-2" id="accordion">
                         <!--About accordion #9-->
-                        <div class="panel">
+                        <div class="panel includedServices">
                             <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse6"
                                  role="button" aria-expanded="true" aria-controls="collapseExample">
                                 <h6 class="panel-title accordion-toggle">
@@ -339,7 +345,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                     <div class="panel-group accordion-main my-2" id="accordion">
                         <!--About accordion #9-->
-                        <div class="panel">
+                        <div class="panel importantInfos">
                             <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse7"
                                  role="button" aria-expanded="true" aria-controls="collapseExample">
                                 <h6 class="panel-title accordion-toggle">
@@ -391,8 +397,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                         <div class="col-lg-12">
 
                             <div class="panel-group accordion-main my-2" id="accordion">
-                                <!--About accordion #9-->
-                                <div class="panel">
+
+                                <div class="panel ratedcategories">
                                     <div class="panel-heading  collapsed" data-target="#collapse8"
                                          data-bs-toggle="collapse" href="#collapse8" role="button">
                                         <h6 class="panel-title accordion-toggle">
@@ -450,17 +456,19 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                         <!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
                         <div class="panel-dropdown">
-                            <a href="#"> <?php echo $menu[68] ?>  <span class="qtyTotal">0</span></a>
+                            <a href="#"> <?php echo $menu[68] ?> <span class="qtyTotal">0</span></a>
                             <div class="panel-dropdown-content right">
                                 <div class="qtyButtons">
                                     <label><?php echo $menu[68] ?> <small> (13-99)</small></label>
                                     <input id="adultsInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isChildAcceptance() ? 'style="display: none"': ''?> class="qtyButtons">
+                                <div <?php echo !$vendor->isChildAcceptance() ? 'style="display: none"' : '' ?>
+                                        class="qtyButtons">
                                     <label><?php echo $menu[69] ?></label>
                                     <input id="childrenInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isInfantTolerance() ? 'style="display: none"': '';?> class="qtyButtons">
+                                <div <?php echo !$vendor->isInfantTolerance() ? 'style="display: none"' : ''; ?>
+                                        class="qtyButtons">
                                     <label><?php echo $menu[70] ?></label>
                                     <input id="infantsInput" type="text" name="qtyInput" value="0">
                                 </div>
@@ -522,21 +530,21 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                                     <span class="criteria">
 											 <?php echo $menu[44] ?>
-											<?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
-                                        <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
+                                             <?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
+                                             <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
 										</span>
                                     <p class="">
                                         <span class="voucher_av">
                                             <?php echo $menu[45] ?>
-                                            <b> <?php echo $vendor->getAvailabilityTodayVoucher();?></b>
+                                            <b> <?php echo $vendor->getAvailabilityTodayVoucher(); ?></b>
                                         </span>
                                     </p>
                                     <div class="row ">
                                         <div class="col d-flex nowrap buyvp_label"> <?php echo $menu[46] ?> </div>
                                         <div class="col buyvp_value">
-                                            <b><?php echo $vendor->getPriceAdult();?>€ </b>
+                                            <b><?php echo $vendor->getPriceAdult(); ?>€ </b>
                                             <span class="perperson">
-                                                <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                                <?php echo $vendor->getForHowManyPersonsIsString(); ?>
                                             </span>
                                         </div>
                                     </div>
@@ -552,15 +560,16 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         <div class="col pay_value">
                                             <b><?php echo $totalToPay; ?>€ </b>
                                             <span class="perperson">
-                                                <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                                <?php echo $vendor->getForHowManyPersonsIsString(); ?>
                                             </span>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col">
-                                            <p class="vp_discount my-0 "> <?php echo $menu[50] ?> <?php echo $vendor->getDiscount(); ?>% <?php echo $menu[51] ?>
-                                                </p>
+                                            <p class="vp_discount my-0 "> <?php echo $menu[50] ?> <?php echo $vendor->getDiscount(); ?>
+                                                % <?php echo $menu[51] ?>
+                                            </p>
                                         </div>
                                     </div>
 
@@ -592,26 +601,28 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    The <b><?php echo $vendor->getName(); ?>  </b> Voucher has just been added to your shopping cart.
+                    <?php echo $menu[125]; ?> <b><?php echo $vendor->getName(); ?>  </b> <?php echo $menu[126]; ?>
                 </div>
                 <div class="modal-footer">
-                    <a href="<?php echo './adventures.php?id='.$vendor->getIdDestination(); ?>">   <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Continue with other Vouchers</button></a>
-                  <a href="cart-1.php"> <button type="button" class="btn btn-info">Go to cart </button> </a>
+                    <a href="<?php echo './adventures.php?id=' . $vendor->getIdDestination(); ?>">
+                        <button type="button" class="btn btn-warning"
+                                data-bs-dismiss="modal"><?php echo $menu[127]; ?></button>
+                    </a>
+                    <a href="cart-1.php">
+                        <button type="button" class="btn btn-info"><?php echo $menu[128]; ?></button>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
 
-
-
 </main>
 
 <?php include_once 'includes/footer.php';
-footer($menu,$languages)
+footer($menu, $languages)
 
 ?>
-
 
 
 <script src="assets/js/common_scripts.js"></script>

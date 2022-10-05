@@ -41,7 +41,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     </div>
                     <!-- btn layer -->
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-03"
-                       data-bs-toggle="modal" data-bs-target="#howitworks"
+                      onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
@@ -78,7 +78,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     </div>
                     <!-- btn layer -->
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-06"
-                       data-bs-toggle="modal" data-bs-target="#howitworks"
+                       onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
@@ -116,7 +116,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                     <!-- btn layer -->
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-09"
-                       data-bs-toggle="modal" data-bs-target="#howitworks"
+                       onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
@@ -307,10 +307,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                        <p>•	<?php echo $menu[90] ?></p>
                         <p>•	<?php echo $menu[91] ?></p>
                         <p>•	<?php echo $menu[92] ?></p>
-                        <a href="#"> <?php echo $menu[95] ?></a>
+                        <p>•	<?php echo $menu[93] ?></p>
+                        <p>•	<?php echo $menu[94] ?></p>
+                        <a href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
 
                 </div>
             </div>

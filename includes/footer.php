@@ -50,10 +50,25 @@ function footer($menu,$languages){ ?>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h5><?php echo $menu[9] ?></h5>
+                    <h5 class="border-bottom"><?php echo $menu[9] ?></h5>
+
+
                     <ul class="contacts">
-                        <li><a href="mailto:info@valuepass.com"><i class="ti-email"></i> info@valuepass.com</a></li>
+                        <h5 class="my-1"> <?php  echo $menu[130]?> </h5>
+                        <li><a href="mailto:info@valuepass.com"> info@valuepass.com</a></li>
                     </ul>
+
+                    <ul class="contacts">
+                        <h5 class="my-1"><?php  echo $menu[131]?> </h5>
+                        <li><a href="mailto:sales@valuepass.com"> sales@valuepass.com</a></li>
+                    </ul>
+
+                    <ul class="contacts" >
+                        <h5 class="my-1"><?php  echo $menu[132]?> </h5>
+                        <li><a href="mailto:info@valuepass.com"> info@valuepass.com</a></li>
+                        <li><a href="mailto:dataprotection@valuepass.com"> dataprotection@valuepass.com</a></li>
+                    </ul>
+
                 </div>
             </div>
             <hr>
