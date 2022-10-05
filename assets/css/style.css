@@ -11311,13 +11311,13 @@ html[xmlns] .slides {
 
   text-align: center;
   width: fit-content;
-  padding: 0.4em;
+  padding:1em;
   margin: 1em auto !important;
   background-color: #004d88;
   border-radius: 5em;
   color: white;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 500;
   border: none !important;
 }
 
@@ -11339,8 +11339,10 @@ html[xmlns] .slides {
 }
 
 .pricebreakdown2 h5{
-  border-bottom: 1px solid gray;
-  width: fit-content;
+  border-bottom: 1px solid #0078a8;
+
+  color: #0078a8;
+  font-weight: 700;
 }
 
 .pricebreakdown2 ul li b {
@@ -11690,4 +11692,9 @@ html[xmlns] .slides {
   padding: 1em;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.13);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.13);
+}
+
+.lastsection{
+  background-color: rgba(172, 172, 172, 0.4);
+  border-radius: 1em;
 }
