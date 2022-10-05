@@ -22,7 +22,6 @@ function addToCart(objectOfDetails) {
     const callBackFnc = (data) => {
         if (data[0] === 'OK') {
             document.getElementById('cartNumberShow').innerText = data[1];
-            alert('Success');
         } else {
             alert(data[0]);
         }

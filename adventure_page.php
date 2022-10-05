@@ -595,7 +595,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     The <b><?php echo $vendor->getName(); ?>  </b> Voucher has just been added to your shopping cart.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Continue with other Vouchers</button>
+                    <a href="<?php echo './adventures.php?id='.$vendor->getIdDestination(); ?>">   <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Continue with other Vouchers</button></a>
                   <a href="cart-1.php"> <button type="button" class="btn btn-info">Go to cart </button> </a>
                 </div>
             </div>
