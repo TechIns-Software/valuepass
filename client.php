@@ -2,89 +2,180 @@
 if (!isset($conn)) {
     include 'connection.php';
 }
-$title = "Homepage | ValuePass";
-$home = 1;
+$title = "Checkout";
+$home = 0;
 include_once 'includes/header.php';
 $idLanguage = $_SESSION["languageId"];
+
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
+//TODO: future maybe client needs to fill up banks field f.e. region
 ?>
-<!--TODO: future maybe client needs to fill up banks field f.e. region -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Valuepass Payment Info</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Lato:900">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <style>
-        .center-screen {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-    </style>
-</head>
-<body class="main-bg">
 
-<div class="center-screen container form-bg center-screen">
+<style>
+    .fixedHeightContainer
+    {
+        height: 700px;
+
+    }
+    .content
+    {
+        height: 650px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: inline-block;
+        background:#fff;
+    }
+    .content div {
+        /*width: 95%;*/
+    }
+    .orderItem div {
+        padding: 10px 25px;
+    }
+
+</style>
+<main class="center-screen container-fluid center-screen">
+    <div style="min-height: 120px;"></div>
     <div class="row">
-        <div class="col-12">
-            <img src="assets/img/valuepassLogo.png" height="200" width="200" class="img-fluid">
+        <div class="col-md-6">
+
+            <div class="col-12">
+                <form id="clientForm" class="row" method="post" action="procedure.php">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h4>Information</h4>
+                        <p>Relate your voucher with you, and receive your vouchers qr codes to your email</p>
+
+                        <div class="form-floating my-2">
+                            <input name="name" id="fullname" class="form-control"
+                                   placeholder="Full name" required>
+                            <label for="incomePartner">Full name</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <input type="email" name="email" id="email" class="form-control"
+                                   placeholder="Email" required>
+                            <label for="incomePartner">Email</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <input type="tel" name="phone" id="phone" class="form-control"
+                                   placeholder="Email" required>
+                            <label for="incomePartner">Phone Number</label>
+                        </div>
+                        <p class="text-center">
+                            We’ll only contact you with essential updates or changes to your booking
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="terms">
+                            <label class="form-check-label" for="terms">
+                                I have read and agree to the terms and conditions of
+                                <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf':'terms_gb.pdf' ?>" target="_blank">
+                                    <?php echo $menu[10] ?>
+                                </a>
+                            </label>
+                        </div>
+
+                        <div class="form-check ">
+                            <input name="promotions" class="form-check-input" type="checkbox" value="" id="emailmarketing">
+                            <label class="form-check-label " for="emailmarketing">
+                                I accept to send me occasional emails about promotions, new products and important updates.
+                            </label>
+                        </div>
+                        <div class="form-group my-4 text-center">
+                            <input style="font-weight: bold" type="submit" id="continue" class="btn btn-primary form-control" value="Checkout">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
+        <div class="col-md-6">
+            <div class="fixedHeightContainer">
+            <h3 class="text-center">Order Summary</h3>
+            <span class="content">
+            <?php
+            $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray, $idLanguage);
+            $vendorId = $objectVouchersDisplay['vendorId'];
+            $allVouchers = $objectVouchersDisplay['allVouchers'];
+            $nameVendorArray = $objectVouchersDisplay['nameVendor'];
+            $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
+            $imageVendorArray = $objectVouchersDisplay['imageVendor'];
+            $adultsArray = $objectVouchersDisplay['adults'];
+            $childrenArray = $objectVouchersDisplay['children'];
+            $infantsArray = $objectVouchersDisplay['infants'];
+            $amountPayArray = $objectVouchersDisplay['amountPay'];
+            for ($counter = 0; $counter < count($nameVendorArray); $counter++) {
+                $nameVendor = $nameVendorArray[$counter];
+                $dateVoucher = $dateVoucherArray[$counter];
+                $adults = $adultsArray[$counter];
+                $children = $childrenArray[$counter];
+                $infants = $infantsArray[$counter];
+                $amountPay = $amountPayArray[$counter];
+                $imageVendor = $imageVendorArray[$counter];
+                ?>
+                <div>
+                    <div class="row orderItem">
+                        <div class="col-sm-5">
+                            <img src="vendorImages/<?php echo $vendorId[$counter] . '/' . $imageVendor ?>"
+                                 style="max-height: 200px!important;" class="img-fluid" alt="Image">
+                        </div>
+                        <div class="col-sm-7 text-center">
+                            <h5><b>
+                                <?php echo $nameVendor; ?>
+                            </b></h5>
 
-        <div class="col-12">
-            <form id="clientForm" class="row" method="post" action="procedure.php">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <h4>Information</h4>
-                    <p>Relate your voucher with you, and receive your vouchers qr codes to your email</p>
-
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Enter your Full Name" required>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" id="email"  placeholder="Enter your email" required>
-
+                    <div>
+                        <p>
+                            <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?>
+                        </p>
+                        <p>
+                            Starting Time
+                            <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
+                            (local time)
+                        </p>
+                        <p>
+                        <?php
+                        if ($adults != 0) {
+                            echo $menu[110] .' : ' .$adults .'<br>';
+                        }
+                        if ($children != 0) {
+                            echo $menu[111] .' : ' .$children .'<br>';
+                        }
+                        if ($infants != 0) {
+                            echo $menu[112] .' : ' .$infants .'<br>';
+                        }
+                        ?>
+                        </p>
                     </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="terms">
-                        <label class="form-check-label" for="terms">
-                            I have read and agree to the terms and conditions of
-                            <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf':'terms_gb.pdf' ?>" target="_blank">
-                                <?php echo $menu[10] ?>
-                            </a>
-                        </label>
-                    </div>
-
-                    <div class="form-check ">
-                        <input name="promotions" class="form-check-input" type="checkbox" value="" id="emailmarketing">
-                        <label class="form-check-label " for="emailmarketing">
-                            I accept to send me occasional emails about promotions, new products and important updates.
-                        </label>
-                    </div>
-                    <div class="form-group my-4 text-center">
-                        <input type="submit" id="continue" class="btn btn-primary form-control" value="Continue">
-                    </div>
+                    <td>
+                        <strong><?php echo $amountPay; ?>€</strong>
+                    </td>
                 </div>
-            </form>
+                <?php
+            }
+
+            ?>
+                </span>
+            </div>
         </div>
+
 
     </div>
-</div>
+</main>
 
+
+<?php include_once 'includes/footer.php';
+footer($menu,$languages)
+
+?>
 </body>
 
 
+
+<script src="assets/js/common_scripts.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+<script src="changeLanguage.js"></script>
 <script src="assets/js/start.js"></script>
 </html>

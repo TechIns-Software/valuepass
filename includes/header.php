@@ -68,7 +68,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
 <body>
 <div id="page">
     <?php
-    if (strpos($url, 'cart-1.php') !== false || strpos($url, 'how.php') !== false && $home == false) { ?>
+    if (strpos($url, 'client.php') !== false || strpos($url, 'cart-1.php') !== false || strpos($url, 'how.php') !== false && $home == false) { ?>
         <header class="header menu_fixed  cart-bg">
             <div id="preloader">
                 <div data-loader="circle-side"></div>
