@@ -57,6 +57,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         $childrenArray = $objectVouchersDisplay['children'];
                         $infantsArray = $objectVouchersDisplay['infants'];
                         $amountPayArray = $objectVouchersDisplay['amountPay'];
+                        $hourCancels = $objectVouchersDisplay['hourCancels'];
                         for ($counter = 0;
                              $counter < count($nameVendorArray);
                              $counter++) {
@@ -67,6 +68,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             $infants = $infantsArray[$counter];
                             $amountPay = $amountPayArray[$counter];
                             $imageVendor = $imageVendorArray[$counter];
+                            $hourCancel = $hourCancels[$counter];
                             ?>
 
                             <div class="col-12 cart-voucher  ">
@@ -91,23 +93,49 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                                     <div class="col-12 py-3 ">
 <!--                                        <p class=" m-0   icon-adult  ">Initial Price X NumberOfPersons  </p>-->
-                                        <p class="text-muted d-inline icon-adult"><?php echo $menu[110]; ?>
-                                            : <?php echo $adults; ?> |
-                                            <?php echo $menu[111]; ?>: <?php echo $children; ?> |
-                                            <?php echo $menu[112]; ?>: <?php echo $infants; ?>
+                                        <p class="text-muted d-inline icon-adult">
+                                            <?php
+                                            $flagTemp = false;
+                                            if ($adults != 0) {
+                                                $flagTemp = true;
+                                                echo $menu[110] .' : ' .$adults;
+                                            }
+                                            if ($children != 0) {
+                                                echo ($flagTemp ? ' | ':'') .$menu[111] .' : ' .$children;
+                                            } else {
+                                                $flagTemp = false;
+                                            }
+                                            if ($infants != 0) {
+                                                echo ($flagTemp ? ' | ':'') .$menu[112] .' : ' .$infants;
+                                            }
+                                            ?>
                                         </p>
-                                        <p class=" m-0  icon-calendar"> <?php echo $dateVoucher; ?> </p>
-                                        <p class=" m-0  icon-clock">Starting Time: 21:00 </p>
-                                        <p class=" m-0 text-danger ">Cancel Before ... on October <br> 16th by Supplier Cancellation policy </p>
-
-
-
-
-                                        <p class="text-end fa-2x"> <a
-                                               href="javascript:deleteItem(<?php echo $counter; ?>);"><i
-                                                        class="icon-trash"></i></a> </p>
-
-
+                                        <p class=" m-0  icon-calendar"> <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?> </p>
+                                        <p class=" m-0  icon-clock">
+                                            Starting Time:
+                                            <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class=" m-0 text-danger">
+                                                    <?php
+                                                    $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
+                                                    //date('Y-m-d h:i:s', $timeStampCancel);
+                                                    ?>
+                                                    Cancel Before <?php echo date('h:i A', $timeStampCancel);?>
+                                                    on
+                                                    <br>
+                                                    <?php echo date('M jS', $timeStampCancel);?>
+                                                    by Supplier Cancellation policy
+                                                </p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p style="margin-bottom: 0px!important;" class="text-end fa-2x">
+                                                    <a href="javascript:deleteItem(<?php echo $counter; ?>);">
+                                                        <i class="icon-trash"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -137,7 +165,25 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 </span>
                         </div>
                         <ul class="cart_details">
-                            <li class="border-bottom"> Additionally Earned Discount on vouchers <span>25%</span></li>
+                            <?php
+                            if ($calculateCartObject['moneyEarned'] != 0) {
+                                ?>
+                            <li class="border-bottom"> Additionally Earned Discount on vouchers
+                                <span>
+                                    <?php
+                                    $extraDiscount = 100 * (
+                                            $calculateCartObject['moneyEarned'] /
+                                                ($calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'])
+                                        );
+                                    echo "$extraDiscount%";
+                                    ?>
+
+                                </span>
+                            </li>
+
+                                <?php
+                            }
+                            ?>
                             <li class="border-bottom">  <?php echo $menu[105]; ?>
                                 <span><?php echo count($allVouchers); ?></span></li>
                             <li class="border-bottom"> <?php echo $menu[106]; ?>

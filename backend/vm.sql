@@ -117,7 +117,8 @@ create TABLE Vendor
     forHowManyPersonsIs    int,
     childAcceptance        int   NOT NULL DEFAULT 1,
     infantTolerance        int   NOT NULL DEFAULT 1,
-    isActiveNow            binary(1)      DEFAULT 1
+    isActiveNow            binary(1)      DEFAULT 1,
+    hourCancel             int            DEFAULT 4
 ) ENGINE = InnoDB;
 
 create TABLE VendorTranslate
@@ -450,8 +451,6 @@ VALUES (1),
 
 
 
-
-
 insert into `MenuTranslate` (`idMenu`, `idLanguage`, `name`)
 VALUES (1, 1, 'Αρχική'),
        (1, 2, 'Home'),
@@ -562,7 +561,8 @@ VALUES (1, 1, 'Αρχική'),
        (35, 1, 'Αμεση Υποστήριξη'),
        (35, 2, 'Supportive'),
 
-       (36, 1, 'Ρωτήστε όλα όσα θέλετε να μάθετε. Η ομάδα υποστήριξής μας είναι εδώ για να απαντήσει σε κάθε ερώτησή σας.'),
+       (36, 1,
+        'Ρωτήστε όλα όσα θέλετε να μάθετε. Η ομάδα υποστήριξής μας είναι εδώ για να απαντήσει σε κάθε ερώτησή σας.'),
        (36, 2, 'Ask everything you want to know. Our support team is here to answer every question'),
 
        (37, 1, 'Προορισμοί'),
@@ -693,206 +693,212 @@ VALUES (1, 1, 'Αρχική'),
        (78, 1, 'Διαλέξτε την εμπειρία σας'),
        (78, 2, 'Choose your experience '),
 
-       (79,1, 'Κλείσε την δραστηριότητα που σε ενδιαφέρει '),
+       (79, 1, 'Κλείσε την δραστηριότητα που σε ενδιαφέρει '),
        (79, 2, 'Book your activity '),
 
-       (80,1, 'Διαλέξτε πότε θέλετε να την πραγματοποιήσετε'),
+       (80, 1, 'Διαλέξτε πότε θέλετε να την πραγματοποιήσετε'),
        (80, 2, 'Choose your schedule '),
 
-       (81,1, 'Βάλτε τη στο καλάθι'),
+       (81, 1, 'Βάλτε τη στο καλάθι'),
        (81, 2, 'Add to the cart'),
 
-       (82,1, 'Αγόραστε τα vouchers εν πλω, κλείστε τη θέση σας και πλήρωστε τον πάροχο με έκπτωση όταν φτάσετε στην τοποθεσία της δραστηριότητας. (Δείτε το voucher της δραστηριότητας για όλες τις λεπτομέρειες.)'),
-       (82, 2, 'Buy your vouchers on board reserve your spot, and pay the provider with a discount when you arrive at your activity location. (Check your activity voucher once you book for full details). '),
+       (82, 1,
+        'Αγόραστε τα vouchers εν πλω, κλείστε τη θέση σας και πλήρωστε τον πάροχο με έκπτωση όταν φτάσετε στην τοποθεσία της δραστηριότητας. (Δείτε το voucher της δραστηριότητας για όλες τις λεπτομέρειες.)'),
+       (82, 2,
+        'Buy your vouchers on board reserve your spot, and pay the provider with a discount when you arrive at your activity location. (Check your activity voucher once you book for full details). '),
 
-       (83,1, 'Αγόραστε το λιγότερο 2 vouchers. Αγοράζοντας 3 ή παραπάνω, κερδίζετε δωρεάν vouchers & τα δώρα σας από την ValuePass δε σταματούν ποτέ!'),
+       (83, 1,
+        'Αγόραστε το λιγότερο 2 vouchers. Αγοράζοντας 3 ή παραπάνω, κερδίζετε δωρεάν vouchers & τα δώρα σας από την ValuePass δε σταματούν ποτέ!'),
        (83, 2, 'Buy at least two (2) Vouchers, with 3 or more you get extra free vouchers and your gifts never end!'),
 
-       (84,1, 'Εξασφάλισε από 5% έως 30% έκπτωση από τις αρχικές τιμές'),
+       (84, 1, 'Εξασφάλισε από 5% έως 30% έκπτωση από τις αρχικές τιμές'),
        (84, 2, 'Save from 5% to 30% plus discount on the initial price'),
 
-       (85,1, 'Με'),
+       (85, 1, 'Με'),
        (85, 2, ' '),
 
-       (86,1, 'Συμπληρώστε το όνομα, το κινητό τηλέφωνο και το email σας εδώ.'),
+       (86, 1, 'Συμπληρώστε το όνομα, το κινητό τηλέφωνο και το email σας εδώ.'),
        (86, 2, 'Enter your name, phone number, and email address here. '),
 
-       (87,1, 'Όνομα'),
+       (87, 1, 'Όνομα'),
        (87, 2, 'Name'),
 
-       (88,1, 'Τηλέφωνο: (όλες οι κλήσεις ή τα μηνύματα πραγματοποιούνται μέσω Viber, WhatsApp ή άλλων εφαρμογών δωρεάν κλήσεων εκτός αν οριστεί αλλιώς)'),
-       (88, 2, 'Phone: (all calls or messages are made through Viber, WhatsApp, or other free calling apps unless otherwise stated)'),
+       (88, 1,
+        'Τηλέφωνο: (όλες οι κλήσεις ή τα μηνύματα πραγματοποιούνται μέσω Viber, WhatsApp ή άλλων εφαρμογών δωρεάν κλήσεων εκτός αν οριστεί αλλιώς)'),
+       (88, 2,
+        'Phone: (all calls or messages are made through Viber, WhatsApp, or other free calling apps unless otherwise stated)'),
 
-       (89,1, 'Πληρώνετε μέσω χρεωστικής/πιστωτικής κάρτας και λαμβάνετε μέσω email το QR code και όλες τις απαραίτητες πληροφορίες (Πληροφορίες προμηθευτή - Λεπτομέρειες/Στοιχεία επικοινωνίας- Google maps locator κλπ)'),
-       (89, 2, 'Pay with your debit/credit card and receive the QR code and all needed information in your email (Supplier Information – Contact Details + Google Maps Location Pin, etc.)'),
+       (89, 1,
+        'Πληρώνετε μέσω χρεωστικής/πιστωτικής κάρτας και λαμβάνετε μέσω email το QR code και όλες τις απαραίτητες πληροφορίες (Πληροφορίες προμηθευτή - Λεπτομέρειες/Στοιχεία επικοινωνίας- Google maps locator κλπ)'),
+       (89, 2,
+        'Pay with your debit/credit card and receive the QR code and all needed information in your email (Supplier Information – Contact Details + Google Maps Location Pin, etc.)'),
 
-       (90,1, 'Αν δεν μπορείτε να παραβρεθείτε στην δραστηριότητα, πρέπει να ακυρώσετε εντός 12 έως 24 ωρών πριν την πραγματοποίηση της δραστηριότητας, ανάλογα με τον πάροχο της και την πολιτική ακύρωσης του.'),
-       (90, 2, 'If you are unable to attend the attraction, you must cancel it at least from 12 hours to 24 hours in advance, depending on the activity provider. (Check your activity voucher once you book for full details)'),
+       (90, 1,
+        'Αν δεν μπορείτε να παραβρεθείτε στην δραστηριότητα, πρέπει να ακυρώσετε εντός 12 έως 24 ωρών πριν την πραγματοποίηση της δραστηριότητας, ανάλογα με τον πάροχο της και την πολιτική ακύρωσης του.'),
+       (90, 2,
+        'If you are unable to attend the attraction, you must cancel it at least from 12 hours to 24 hours in advance, depending on the activity provider. (Check your activity voucher once you book for full details)'),
 
-       (91,1, 'Θα θέλαμε να σας ενημερώσουμε ότι τα στοιχεία της χρεωστικής/πιστωτικής σας κάρτας διαγράφονται αμέσως μετά την ολοκλήρωση της πληρωμής.'),
-       (91, 2, 'We would like to inform you that your debit/credit card details are immediately deleted at the end of the payment process.'),
+       (91, 1,
+        'Θα θέλαμε να σας ενημερώσουμε ότι τα στοιχεία της χρεωστικής/πιστωτικής σας κάρτας διαγράφονται αμέσως μετά την ολοκλήρωση της πληρωμής.'),
+       (91, 2,
+        'We would like to inform you that your debit/credit card details are immediately deleted at the end of the payment process.'),
 
-       (92,1, 'Τα στοιχεία της κάρτας σας διαγράφονται αμέσως μετά την ολοκλήρωση της αγοράς του ValuePass Voucher.'),
-       (92, 2, 'Your debit/credit card details are immediately deleted at the end of the Valuepass Voucher payment process.'),
+       (92, 1, 'Τα στοιχεία της κάρτας σας διαγράφονται αμέσως μετά την ολοκλήρωση της αγοράς του ValuePass Voucher.'),
+       (92, 2,
+        'Your debit/credit card details are immediately deleted at the end of the Valuepass Voucher payment process.'),
 
-       (93,1, 'Κατά την εγγραφή μου συναινώ ότι ο πάροχος της δραστηριότητας μπορεί να ενημερωθεί για την κράτησή μου μέσω email βάσει της πολιτικής απορρήτου της ValuePass.'),
-       (93, 2, 'By signing up, I agree that the activity provider may be informed of my booking via email under the ValuePass privacy policy'),
+       (93, 1,
+        'Κατά την εγγραφή μου συναινώ ότι ο πάροχος της δραστηριότητας μπορεί να ενημερωθεί για την κράτησή μου μέσω email βάσει της πολιτικής απορρήτου της ValuePass.'),
+       (93, 2,
+        'By signing up, I agree that the activity provider may be informed of my booking via email under the ValuePass privacy policy'),
 
-       (94,1, 'Σας ενημερώνουμε ότι τα προσωπικά σας στοιχεία χρησιμοποιούνται μόνο και αποκλειστικά για το λόγο που τα υποβάλλατε στην ValuePass και διαγράφονται μετά από την πάροδο 3 μηνών (όνομα, τηλέφωνο, email)'),
-       (94, 2, 'We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is deleted after three months. (name, phone number, email).'),
+       (94, 1,
+        'Σας ενημερώνουμε ότι τα προσωπικά σας στοιχεία χρησιμοποιούνται μόνο και αποκλειστικά για το λόγο που τα υποβάλλατε στην ValuePass και διαγράφονται μετά από την πάροδο 3 μηνών (όνομα, τηλέφωνο, email)'),
+       (94, 2,
+        'We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is deleted after three months. (name, phone number, email).'),
 
-       (95,1, 'Κατά την εγγραφή μου συναινώ ότι θα λάβω email υπενθύμισης 2 με 6 ώρες πριν την λήξη της ακύρωσης ή για την επιβεβαίωση της δραστηριότητας μου, σύμφωνα με την πολιτική ακύρωσης που ορίζει ο πάροχος της δραστηριότητας.
+       (95, 1, 'Κατά την εγγραφή μου συναινώ ότι θα λάβω email υπενθύμισης 2 με 6 ώρες πριν την λήξη της ακύρωσης ή για την επιβεβαίωση της δραστηριότητας μου, σύμφωνα με την πολιτική ακύρωσης που ορίζει ο πάροχος της δραστηριότητας.
 Επίσης στο  email θα υπάρχει δυνατότητα επιλογής και νέων δραστηριοτήτων.'),
        (95, 2, 'By signing up I agree to receive a reminder email 2 to 6 hours before the cancellation deadline or to confirm my activity, according to the cancellation policy set by the activity provider.
 Also, in the email, there will be a possibility to choose new activities.'),
 
-       (96,1, 'Όροι και Προϋποθέσεις '),
+       (96, 1, 'Όροι και Προϋποθέσεις '),
        (96, 2, 'General Terms and Conditions '),
 
-       (97,1, 'Δείτε εδώ τους διαθέσιμους προορισμούς'),
+       (97, 1, 'Δείτε εδώ τους διαθέσιμους προορισμούς'),
        (97, 2, 'Check here the available destinations'),
 
-       (98,1, 'Καλάθι Αγορών'),
+       (98, 1, 'Καλάθι Αγορών'),
        (98, 2, 'Cart'),
 
-       (99,1, 'Φωτογραφία'),
+       (99, 1, 'Φωτογραφία'),
        (99, 2, 'Image'),
 
-       (100,1, 'Δραστηριότητα'),
+       (100, 1, 'Δραστηριότητα'),
        (100, 2, 'Experience'),
 
-       (101,1, 'Ημερομηνία'),
+       (101, 1, 'Ημερομηνία'),
        (101, 2, 'Date'),
 
-       (102,1, 'Vouchers'),
+       (102, 1, 'Vouchers'),
        (102, 2, 'Vouchers'),
 
-       (103,1, 'Συνολική τιμή'),
+       (103, 1, 'Συνολική τιμή'),
        (103, 2, 'Total Price'),
 
-       (104,1, 'Διαγραφή'),
+       (104, 1, 'Διαγραφή'),
        (104, 2, 'Delete'),
 
-       (105,1, 'Σύνολο'),
+       (105, 1, 'Σύνολο'),
        (105, 2, 'Total'),
 
-       (106,1, 'Συνολικά Voucher'),
+       (106, 1, 'Συνολικά Voucher'),
        (106, 2, 'Total Vouchers Get'),
 
-       (107,1, 'Voucher που πλήρωσες'),
+       (107, 1, 'Voucher που πλήρωσες'),
        (107, 2, 'Vouchers Pay'),
 
-       (108,1, 'Voucher που πήρες δώρο'),
+       (108, 1, 'Voucher που πήρες δώρο'),
        (108, 2, 'Vouchers Get Free'),
 
-       (109,1, 'Συνέχεια στις αγορές'),
+       (109, 1, 'Συνέχεια στις αγορές'),
        (109, 2, 'Continue Shopping'),
 
-       (110,1, 'Πληρωμή'),
+       (110, 1, 'Πληρωμή'),
        (110, 2, 'Checkout'),
 
-       (111,1, 'Ενήλικες'),
+       (111, 1, 'Ενήλικες'),
        (111, 2, 'Adults'),
 
-       (112,1, 'Παιδία'),
+       (112, 1, 'Παιδία'),
        (112, 2, 'Children'),
 
-       (113,1, 'Μωρά'),
+       (113, 1, 'Μωρά'),
        (113, 2, 'Infants'),
 
-       (114,1, 'Δες την προσφορά'),
+       (114, 1, 'Δες την προσφορά'),
        (114, 2, 'Check the offer'),
 
-       (115,1, 'Επιλέξτε τουλάχιστον 2 κουπόνια για να συνεχίσετε'),
+       (115, 1, 'Επιλέξτε τουλάχιστον 2 κουπόνια για να συνεχίσετε'),
        (115, 2, 'Select at least 2 vouchers to continue'),
 
-       (116,1, 'Αν επιλέξεις 2 '),
+       (116, 1, 'Αν επιλέξεις 2 '),
        (116, 2, 'If you select  2'),
 
-       (117,1, 'ακόμα Voucher,θα λάβεις 1'),
+       (117, 1, 'ακόμα Voucher,θα λάβεις 1'),
        (117, 2, 'vouchers more, you get  1'),
 
-       (118,1, 'δωρεάν'),
+       (118, 1, 'δωρεάν'),
        (118, 2, 'free'),
 
-       (119,1, 'Μπορείς να επιλέξεις ακόμα '),
+       (119, 1, 'Μπορείς να επιλέξεις ακόμα '),
        (119, 2, 'You can select '),
 
-       (120,1, 'Voucher'),
+       (120, 1, 'Voucher'),
        (120, 2, 'more voucher'),
 
-       (121,1, 'Έχετε επιλέξει τα μέγιστα Vouchers.'),
+       (121, 1, 'Έχετε επιλέξει τα μέγιστα Vouchers.'),
        (121, 2, 'You have the maximum vouchers selected.'),
 
-       (122,1, 'Μπορείτε να πάρετε ένα Voucher δωρεάν!'),
+       (122, 1, 'Μπορείτε να πάρετε ένα Voucher δωρεάν!'),
        (122, 2, 'You can get one voucher free!'),
 
-       (123,1, 'Δες περισσότερες δραστηριότητες'),
+       (123, 1, 'Δες περισσότερες δραστηριότητες'),
        (123, 2, 'See more αctivities'),
 
-       (124,1, 'Τώρα μπορείτε να επωφεληθείτε από τις προσφορές του Valuepass'),
+       (124, 1, 'Τώρα μπορείτε να επωφεληθείτε από τις προσφορές του Valuepass'),
        (124, 2, 'Spend less money and  do more with Valuepass Offers'),
 
-       (125,1, 'από μια ή περισσότερες δραστηριότητες. '),
+       (125, 1, 'από μια ή περισσότερες δραστηριότητες. '),
        (125, 2, 'from the same or more activities.'),
 
-       (126,1, 'To voucher'),
+       (126, 1, 'To voucher'),
        (126, 2, 'The'),
 
-       (127,1, 'μόλις προστέθηκε στο καλάθι σας.'),
+       (127, 1, 'μόλις προστέθηκε στο καλάθι σας.'),
        (127, 2, 'voucher has just been added to your shopping cart.'),
 
-       (128,1, 'Συνεχίστε τις αγορές σας'),
+       (128, 1, 'Συνεχίστε τις αγορές σας'),
        (128, 2, 'Continue Shopping'),
 
-       (129,1, 'Πηγαίντε στο καλάθι'),
+       (129, 1, 'Πηγαίντε στο καλάθι'),
        (129, 2, 'Co to cart'),
 
-       (130,1, 'Δεν υπάρχουν Vouchers στο καλάθι'),
+       (130, 1, 'Δεν υπάρχουν Vouchers στο καλάθι'),
        (130, 2, 'No Vouchers in the card'),
 
-       (131,1, 'Επιστρέψτε και επιλέξτε την Εμπειρία σας'),
+       (131, 1, 'Επιστρέψτε και επιλέξτε την Εμπειρία σας'),
        (131, 2, 'Go back and select your experience'),
 
-       (132,1, 'Για πελάτες'),
+       (132, 1, 'Για πελάτες'),
        (132, 2, 'For Customers'),
 
-       (133,1, 'Για προμηθευτές'),
+       (133, 1, 'Για προμηθευτές'),
        (133, 2, 'For Suppliers'),
 
-       (134,1, 'Άλλο'),
+       (134, 1, 'Άλλο'),
        (134, 2, 'Other'),
 
-       (135,1, 'Αγοράστε τα κουπόνια σας εν πλ κρατήστε τη θέση σας και πληρώστε τον πάροχο με
+       (135, 1, 'Αγοράστε τα κουπόνια σας εν πλ κρατήστε τη θέση σας και πληρώστε τον πάροχο με
 έκπτωση όταν φτάσετε στην τοποθεσία δραστηριότητάς σας'),
        (135, 2, 'Buy your vouchers on board reserve your spot and pay the provider with a
 discount when you arrive at your activity location'),
 
-       (136,1, 'Τα vouchers της ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε
+       (136, 1, 'Τα vouchers της ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε
 τις καλύτερες εναλλακτικές λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε εάν
 κάτι πάει στραβά. Θα βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης.'),
        (136, 2, 'ValuePass vouchers are not canceled, but we are always looking to offer you
 the best alternative solutions regarding the activity providers we promote if
 something goes wrong. You`ll find more information in your confirmation email.'),
 
-       (137,1, 'Πολιτική ακύρωσης δραστηριότητας ισχύει έως και 24 ώρες σύμφωνα με την Πολιτική Προμηθευτών του Παρόχου'),
+       (137, 1,
+        'Πολιτική ακύρωσης δραστηριότητας ισχύει έως και 24 ώρες σύμφωνα με την Πολιτική Προμηθευτών του Παρόχου'),
        (137, 2, 'Activity Cancellation Policy up to 24 hours according to Provider`s Supplier Policy'),
 
-       (138,1,'Προφυλάξεις για τον Covid-19 Ισχύουν ειδικά μέτρα υγείας και ασφάλειας. Ελεγχος
+       (138, 1, 'Προφυλάξεις για τον Covid-19 Ισχύουν ειδικά μέτρα υγείας και ασφάλειας. Ελεγχος
 το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.'),
-       (138, 2,'Covid-19 precautions Special health and safety measures are in place. Check
+       (138, 2, 'Covid-19 precautions Special health and safety measures are in place. Check
 your activity voucher once you book for full details.');
-
-
-
-
-
-
-
-
-
-
-
 
 
 
