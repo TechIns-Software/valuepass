@@ -39,7 +39,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 
             <div class="banner_title ">
                 <p class="flex-nowrap">  <?php echo $menu[38] ?>  </p>
-                <p class="flex-nowrap">  <?php echo $menu[123] ?>  </p>
+                <p class="flex-nowrap">  <?php echo $menu[124] ?>  </p>
                 <p class="flex-nowrap"> <?php echo $menu[39] ?>   </p>
                 <p class="flex-nowrap"> <?php echo $menu[40] ?>   </p>
                 <p class="flex-nowrap"> <?php echo $menu[41] ?>   </p>
