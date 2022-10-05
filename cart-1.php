@@ -20,6 +20,7 @@ if (!isset($cartArray)) {
 }
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
+<script src="backend/js/cart.js"></script>
 <main>
     <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
 
@@ -148,9 +149,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 <span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span>
                             </li>
                         </ul>
-                        <a href="adventure_page.php">
-                            <button class="btn btn-warning  my-2 w-100 p-3"> <?php echo $menu[108]; ?> </button>
-                        </a>
+                        <button id="btnContinue" class="btn btn-warning  my-2 w-100 p-3"> <?php echo $menu[108]; ?> </button>
+                        <script>goBackInHistory('btnContinue');</script>
                         <!--                            <input onclick="window.location = './client.php'" type="button"  class="btn btn-secondary btn_1 my-2 full-width purchase" >-->
 
                         <button class="btn btn-success purchase  w-100 p-2" data-bs-toggle="modal"
@@ -174,20 +174,20 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"
-                        id="exampleModalLabel"> <?php echo $menu[113]; ?>
+                    <h5 class="modal-title text-center"
+                        id="exampleModalLabel"> <?php echo $menu[122]; ?>
 
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
-                <div class="modal-body ">
+                <div class="modal-body text-center">
 
-                    <h4 class="offertitle"> <?php echo $menu[122]; ?> </h4>
-                    <h5 class="offermessage"> <?php echo $calculateCartObject['messageModal']; ?></h5>
-                    <a class="btn btn-info w-100 my-2 p-3 "
-                       href="index.php#reccomended_adventure"> <?php echo $menu[121]; ?>  </a>
+<!--                    <h5 class="offertitle">  </h5>-->
+                    <h4 class="offermessage"> <?php echo $calculateCartObject['messageModal']; ?></h4>
+                    <button id="seeMoreActivities" class="btn btn-info w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
                     <br>
+                    <script>goBackInHistory('seeMoreActivities');</script>
                     <a href="./client.php" class=" btn btn-success my-2 w-100  p-1">  <?php echo $menu[109]; ?>  </a>
                 </div>
             </div>
@@ -259,7 +259,6 @@ footer($menu, $languages)
 </div> -->
 
 </body>
-<script src="backend/js/cart.js"></script>
 <script src="changeLanguage.js"></script>
 <!--<script>goBackInHistory('noVouchers')</script>-->
 

@@ -505,19 +505,19 @@ function calculatePriceCart($conn,$arrayVouchers) {
     } elseif (count($arrayVouchers) == 2) {
         $messageModal =  $menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 3) {
-        $messageModal = $menu[121];
+        $messageModal = $menu[120];
     } elseif (count($arrayVouchers) == 4) {
         $messageModal = $menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 5) {
-        $messageModal = $menu[121];
+        $messageModal = $menu[120];
     } elseif (count($arrayVouchers) == 6) {
         $messageModal =$menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 7) {
-        $messageModal = $menu[121];
+        $messageModal = $menu[120];
     } elseif (count($arrayVouchers) == 8) {
         $messageModal = $menu[115]." 2 ".$menu[116]. " 1  ".$menu[117];
     } elseif (count($arrayVouchers) == 9) {
-        $messageModal = $menu[121];
+        $messageModal = $menu[120];
     } elseif (count($arrayVouchers) == 10) {
         $messageModal =  $menu[118] . "1".$menu[119];
 //        You can select 1 more voucher || MESSAGE ABOVE
