@@ -28,11 +28,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
         <div class="row">
             <?php
             if (count($cartArray) == 0) { ?>
-                <div class="col-lg-12  novoucherincard">
+                <div class="col-lg-12  novoucherincard text-center">
                     <h3 class="my-5">No Vouchers in the card</h3>
-                    <h4 id="noVouchers" class="my-5">
-                        Go <a href="./index.php"> Back </a> and select your Experience
-                    </h4>
+                    <button id="noVoucherBack" class="btn btn-primary">
+                        Go Back and select your Experience
+                    </button>
+                    <script>goBackInHistory('noVoucherBack')</script>
                 </div>
 
             <?php } else {
