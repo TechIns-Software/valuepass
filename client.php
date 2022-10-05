@@ -19,7 +19,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
     }
     .content
     {
-        height: 650px;
         overflow-x: hidden;
         overflow-y: auto;
         display: inline-block;
