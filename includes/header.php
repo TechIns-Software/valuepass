@@ -97,9 +97,10 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
                     <li><span><a href="how.php"><?php echo $menu[1] ?></a></span></li>
                     <li><span><a href="#"><?php echo $menu[4] ?></span></a>
                         <ul class="customercare">
-                            <li><a href="tel:+306931451910"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></li>
-                            <li><a href="tel:+306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
+                            <li><a href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></li>
+                            <li><a href=" viber://forward?phone='+306931451910'"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
                             <li><a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></li>
+                            <li><a class="icon-question"> FAQ’s</a></li>
                         </ul>
                     </li>
                     <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>   </a>
@@ -149,9 +150,10 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
 
                     <li><span><a href="#"><?php echo $menu[4] ?> </span></a>
                         <ul class="customercare">
-                            <li><a href="tel:+306931451910"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></li>
-                            <li><a href="tel:+306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
+                            <li><a href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></li>
+                            <li><a href=" viber://forward?phone='+306931451910'"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
                             <li><a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></li>
+                            <li><a class="icon-question"> FAQ’s</a></li>
                         </ul>
                     </li>
                     <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>   </a>

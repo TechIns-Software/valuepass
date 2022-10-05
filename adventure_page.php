@@ -225,12 +225,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             </div>
 
                             <div class="row">
-                                <div class="col"> <?php echo $menu[47] ?></div>
+                                <div class="col"> <?php echo $menu[48] ?></div>
                                 <div class="col from_price"> <?php echo $vendor->getOriginalPrice(); ?> €</div>
                             </div>
 
                             <div class="row">
-                                <div class="col"> <?php echo $menu[48] ?></div>
+                                <div class="col"> <?php echo $menu[49] ?></div>
                                 <div class="col pay_value">
                                     <b><?php echo $totalToPay; ?>€ </b>
                                     <span class="perperson">
@@ -592,11 +592,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    The <b><?php echo $vendor->getName(); ?>  </b> Voucher has just been added to your shopping cart.
+                   <?php echo $menu[124]; ?> <b><?php echo $vendor->getName(); ?>  </b>  <?php echo $menu[125]; ?>
                 </div>
                 <div class="modal-footer">
-                    <a href="<?php echo './adventures.php?id='.$vendor->getIdDestination(); ?>">   <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Continue with other Vouchers</button></a>
-                  <a href="cart-1.php"> <button type="button" class="btn btn-info">Go to cart </button> </a>
+                    <a href="<?php echo './adventures.php?id='.$vendor->getIdDestination(); ?>">   <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><?php echo $menu[126]; ?></button></a>
+                  <a href="cart-1.php"> <button type="button" class="btn btn-info"><?php echo $menu[127]; ?></button> </a>
                 </div>
             </div>
         </div>

@@ -548,7 +548,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message8 = " Children : ";
         $message9 = " Infants : ";
         $message10 = " Total Price  : ";
-        $message11 = "All taxes and fees included : ";
+        $message11 = "All taxes and fees included ";
         $message12 = "Date : ";
     }else{
         $message1 = "Δυστυχώς, δεν βρέθηκαν διαθέσιμα vouchers για αυτή την ημερομηνία";
@@ -561,7 +561,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message8 = " Παιδιά : ";
         $message9 = " Μωρά : ";
         $message10 = "Σύνολο : ";
-        $message11 = "Περιλαμβάνονται όλοι φόροι: ";
+        $message11 = "Περιλαμβάνονται όλοι φόροι";
         $message12 = "Ημερομηνία: ";
     }
 

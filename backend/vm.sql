@@ -431,7 +431,17 @@ VALUES (1),
        (120),
        (121),
        (122),
-       (123);
+       (123),
+       (124),
+       (125),
+       (126),
+       (127),
+       (128),
+       (129),
+       (130),
+       (131),
+       (132),
+       (133);
 
 
 
@@ -556,8 +566,8 @@ VALUES (1, 1, 'Αρχική'),
        (38, 1, 'Δημιουργήστε τη λίστα  των δραστηριοτήτων σας  εν πλω!'),
        (38, 2, 'Create your bucket list on board!'),
 
-       (39, 1, 'Αγοράστε τουλάχιστον 2 Voucher.'),
-       (39, 2, 'Buy at least 2 vouchers.'),
+       (39, 1, 'Αγοράστε τουλάχιστον 2 Voucher'),
+       (39, 2, 'Buy at least 2 vouchers'),
 
        (40, 1, 'Με 3 η περισσότερα'),
        (40, 2, 'With 3 or more '),
@@ -724,7 +734,7 @@ VALUES (1, 1, 'Αρχική'),
        (93, 2, 'By signing up, I agree that the activity provider may be informed of my booking via email under the ValuePass privacy policy'),
 
        (94,1, 'Σας ενημερώνουμε ότι τα προσωπικά σας στοιχεία χρησιμοποιούνται μόνο και αποκλειστικά για το λόγο που τα υποβάλλατε στην ValuePass και διαγράφονται μετά από την πάροδο 3 μηνών (όνομα, τηλέφωνο, email)'),
-       (94, 2, 'We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is destroyed after three months. (name, phone number, email).'),
+       (94, 2, 'We inform you that your personal data is used exclusively and only for the scope you have submitted to us and is deleted after three months. (name, phone number, email).'),
 
        (95,1, 'Κατά την εγγραφή μου συναινώ ότι θα λάβω email υπενθύμισης 2 με 6 ώρες πριν την λήξη της ακύρωσης ή για την επιβεβαίωση της δραστηριότητας μου, σύμφωνα με την πολιτική ακύρωσης που ορίζει ο πάροχος της δραστηριότητας.
 Επίσης στο  email θα υπάρχει δυνατότητα επιλογής και νέων δραστηριοτήτων.'),
@@ -816,7 +826,41 @@ Also, in the email, there will be a possibility to choose new activities.'),
        (122, 2, 'See more αctivities'),
 
        (123,1, 'Τώρα μπορείτε να επωφεληθείτε από τις προσφορές του Valuepass'),
-       (123, 2, 'Spend less money and  do more with Valuepass Offers');
+       (123, 2, 'Spend less money and  do more with Valuepass Offers'),
+
+       (124,1, 'από μια ή περισσότερες δραστηριότητες. '),
+       (124, 2, 'from the same or more activities.'),
+
+       (125,1, 'To voucher'),
+       (125, 2, 'The'),
+
+       (126,1, 'μόλις προστέθηκε στο καλάθι σας.'),
+       (126, 2, 'voucher has just been added to your shopping cart.'),
+
+       (127,1, 'Συνεχίστε τις αγορές σας'),
+       (127, 2, 'Continue Shopping'),
+
+       (128,1, 'Πηγαίντε στο καλάθι'),
+       (128, 2, 'Co to cart'),
+
+       (129,1, 'Δεν υπάρχουν Vouchers στο καλάθι'),
+       (129, 2, 'No Vouchers in the card'),
+
+       (130,1, 'Επιστρέψτε και επιλέξτε την Εμπειρία σας'),
+       (130, 2, 'Go back and select your experience'),
+
+       (131,1, 'Για πελάτες'),
+       (131, 2, 'For Customers'),
+
+       (132,1, 'Για προμηθευτές'),
+       (132, 2, 'For Suppliers'),
+
+       (133,1, 'Άλλο'),
+       (133, 2, 'Other');
+
+
+
+
 
 
 
