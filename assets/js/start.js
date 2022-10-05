@@ -7,16 +7,19 @@ continuebtn.addEventListener('click', () => {
     const termscheckbox = document.getElementById('terms').checked;
     const emailmarketingbox = document.getElementById('emailmarketing').checked;
 
-
-
-    if (fullname == "" || email == '') {
-        alert('Full name and email must be filled in');
-    }else {
-        if (!termscheckbox ){
-            alert('You have to agree to the terms and conditions in order to continue');
+    var regexp = /[a-zA-Z]+\s+[a-zA-Z]+/g;
+    if (regexp.test(fullname)) {
+        if (fullname == "" || email == '') {
+            alert('Full name and email must be filled in');
         } else {
-            $('#clientForm').submit()
+            if (!termscheckbox) {
+                alert('You have to agree to the terms and conditions in order to continue');
+            } else {
+                $('#clientForm').submit()
+            }
         }
+    } else {
+        alert('You have to enter your Full Name');
     }
 
 
