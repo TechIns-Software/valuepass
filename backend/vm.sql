@@ -445,7 +445,8 @@ VALUES (1),
        (134),
        (135),
        (136),
-       (137);
+       (137),
+       (138);
 
 
 
@@ -817,69 +818,69 @@ Also, in the email, there will be a possibility to choose new activities.'),
        (119,1, 'Μπορείς να επιλέξεις ακόμα '),
        (119, 2, 'You can select '),
 
-       (119,1, 'Voucher'),
-       (119, 2, 'more voucher'),
+       (120,1, 'Voucher'),
+       (120, 2, 'more voucher'),
 
-       (120,1, 'Έχετε επιλέξει τα μέγιστα Vouchers.'),
-       (120, 2, 'You have the maximum vouchers selected.'),
+       (121,1, 'Έχετε επιλέξει τα μέγιστα Vouchers.'),
+       (121, 2, 'You have the maximum vouchers selected.'),
 
-       (121,1, 'Μπορείτε να πάρετε ένα Voucher δωρεάν!'),
-       (121, 2, 'You can get one voucher free!'),
+       (122,1, 'Μπορείτε να πάρετε ένα Voucher δωρεάν!'),
+       (122, 2, 'You can get one voucher free!'),
 
-       (122,1, 'Δες περισσότερες δραστηριότητες'),
-       (122, 2, 'See more αctivities'),
+       (123,1, 'Δες περισσότερες δραστηριότητες'),
+       (123, 2, 'See more αctivities'),
 
-       (123,1, 'Τώρα μπορείτε να επωφεληθείτε από τις προσφορές του Valuepass'),
-       (123, 2, 'Spend less money and  do more with Valuepass Offers'),
+       (124,1, 'Τώρα μπορείτε να επωφεληθείτε από τις προσφορές του Valuepass'),
+       (124, 2, 'Spend less money and  do more with Valuepass Offers'),
 
-       (124,1, 'από μια ή περισσότερες δραστηριότητες. '),
-       (124, 2, 'from the same or more activities.'),
+       (125,1, 'από μια ή περισσότερες δραστηριότητες. '),
+       (125, 2, 'from the same or more activities.'),
 
-       (125,1, 'To voucher'),
-       (125, 2, 'The'),
+       (126,1, 'To voucher'),
+       (126, 2, 'The'),
 
-       (126,1, 'μόλις προστέθηκε στο καλάθι σας.'),
-       (126, 2, 'voucher has just been added to your shopping cart.'),
+       (127,1, 'μόλις προστέθηκε στο καλάθι σας.'),
+       (127, 2, 'voucher has just been added to your shopping cart.'),
 
-       (127,1, 'Συνεχίστε τις αγορές σας'),
-       (127, 2, 'Continue Shopping'),
+       (128,1, 'Συνεχίστε τις αγορές σας'),
+       (128, 2, 'Continue Shopping'),
 
-       (128,1, 'Πηγαίντε στο καλάθι'),
-       (128, 2, 'Co to cart'),
+       (129,1, 'Πηγαίντε στο καλάθι'),
+       (129, 2, 'Co to cart'),
 
-       (129,1, 'Δεν υπάρχουν Vouchers στο καλάθι'),
-       (129, 2, 'No Vouchers in the card'),
+       (130,1, 'Δεν υπάρχουν Vouchers στο καλάθι'),
+       (130, 2, 'No Vouchers in the card'),
 
-       (130,1, 'Επιστρέψτε και επιλέξτε την Εμπειρία σας'),
-       (130, 2, 'Go back and select your experience'),
+       (131,1, 'Επιστρέψτε και επιλέξτε την Εμπειρία σας'),
+       (131, 2, 'Go back and select your experience'),
 
-       (131,1, 'Για πελάτες'),
-       (131, 2, 'For Customers'),
+       (132,1, 'Για πελάτες'),
+       (132, 2, 'For Customers'),
 
-       (132,1, 'Για προμηθευτές'),
-       (132, 2, 'For Suppliers'),
+       (133,1, 'Για προμηθευτές'),
+       (133, 2, 'For Suppliers'),
 
-       (133,1, 'Άλλο'),
-       (133, 2, 'Other'),
+       (134,1, 'Άλλο'),
+       (134, 2, 'Other'),
 
-       (134,1, 'Αγοράστε τα κουπόνια σας εν πλ κρατήστε τη θέση σας και πληρώστε τον πάροχο με
+       (135,1, 'Αγοράστε τα κουπόνια σας εν πλ κρατήστε τη θέση σας και πληρώστε τον πάροχο με
 έκπτωση όταν φτάσετε στην τοποθεσία δραστηριότητάς σας'),
-       (134, 2, 'Buy your vouchers on board reserve your spot and pay the provider with a
+       (135, 2, 'Buy your vouchers on board reserve your spot and pay the provider with a
 discount when you arrive at your activity location'),
 
-       (135,1, 'Τα vouchers της ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε
+       (136,1, 'Τα vouchers της ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε
 τις καλύτερες εναλλακτικές λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε εάν
 κάτι πάει στραβά. Θα βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης.'),
-       (135, 2, 'ValuePass vouchers are not canceled, but we are always looking to offer you
+       (136, 2, 'ValuePass vouchers are not canceled, but we are always looking to offer you
 the best alternative solutions regarding the activity providers we promote if
 something goes wrong. You`ll find more information in your confirmation email.'),
 
-       (136,1, 'Πολιτική ακύρωσης δραστηριότητας ισχύει έως και 24 ώρες σύμφωνα με την Πολιτική Προμηθευτών του Παρόχου'),
-       (136, 2, 'Activity Cancellation Policy up to 24 hours according to Provider`s Supplier Policy'),
+       (137,1, 'Πολιτική ακύρωσης δραστηριότητας ισχύει έως και 24 ώρες σύμφωνα με την Πολιτική Προμηθευτών του Παρόχου'),
+       (137, 2, 'Activity Cancellation Policy up to 24 hours according to Provider`s Supplier Policy'),
 
-       (137,1,'Προφυλάξεις για τον Covid-19 Ισχύουν ειδικά μέτρα υγείας και ασφάλειας. Ελεγχος
+       (138,1,'Προφυλάξεις για τον Covid-19 Ισχύουν ειδικά μέτρα υγείας και ασφάλειας. Ελεγχος
 το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.'),
-       (137, 2,'Covid-19 precautions Special health and safety measures are in place. Check
+       (138, 2,'Covid-19 precautions Special health and safety measures are in place. Check
 your activity voucher once you book for full details.');
 
 

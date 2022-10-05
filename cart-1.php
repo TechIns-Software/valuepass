@@ -29,9 +29,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             <?php
             if (count($cartArray) == 0) { ?>
                 <div class="col-lg-12  novoucherincard text-center">
-                    <h3 class="my-5"><?php echo $menu[128]; ?></h3>
+                    <h3 class="my-5"><?php echo $menu[129]; ?></h3>
                     <button id="noVoucherBack" class="btn btn-primary">
-                        <?php echo $menu[129]; ?>
+                        <?php echo $menu[130]; ?>
                     </button>
                     <script>goBackInHistory('noVoucherBack')</script>
                 </div>
