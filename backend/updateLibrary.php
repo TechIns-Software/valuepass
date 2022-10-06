@@ -306,8 +306,8 @@ function vendorFunction(
     $infantPrice = $basic[6];
     $idCategory = $basic[7];
     $idPaymentInfo = $basic[8];
-    $childAcceptance = $basic[9];
-    $forHowManyPersonsIs = $basic[10];
+    $forHowManyPersonsIs = $basic[9];
+    $childAcceptance = $basic[10];
     $infantTolerance = $basic[11];
     $isActiveNow = $basic[11];
     if ($updateVendor) {
