@@ -37,3 +37,10 @@ foreach ($response as $idVendorVoucher=> $vendorVoucherObj) {
         $dateVoucher, $isUpdated);
 
 }
+
+$from = "test@valuepass.gr";
+$to = "christosbaztekas@gmail.com";
+$subject = "Check Cron Job UpdateVouchers Vm";
+$message = "Check Cron Job UpdateVouchers Vm";
+$headers = "From:" . $from;
+mail($to,$subject,$message, $headers);
