@@ -161,7 +161,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
         }
 
         $dayNumberToday = date('d');
-        $monthNumberToday = intval(date('m')) + 1;
+        $monthNumberToday = intval(date('m'));
         $yearNumberToday = date('Y');
         $query3 = "SELECT VV.starterVouchers, VV.existenceVoucher
                 FROM VendorVoucher AS VV
