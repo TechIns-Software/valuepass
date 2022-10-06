@@ -361,8 +361,8 @@ foreach ($modifiedImage2 as $idDestination => $imagePathName) {
 }
 
 
-updateBasicImages($conn, $image1Modified, $response, 'Destination', 'image1', 'image1Version');
-updateBasicImages($conn, $image2Modified, $response, 'Destination', 'image2', 'image2Version');
+updateBasicImages($conn, $image1Modified, $response['destinations'], 'Destination', 'image1', 'image1Version');
+updateBasicImages($conn, $image2Modified, $response['destinations'], 'Destination', 'image2', 'image2Version');
 
 $notOkForShowingDestinations = getNotOkForShowingDestinations($conn);
 //$modifiedDestinations contains the ok destinations images changed, both new and old
@@ -526,8 +526,8 @@ foreach ($imagesToBeAdded as $imageToAddedObj) {
 
 }
 
-updateBasicImages($conn, $updatedBasic, $response, 'Vendor', 'imageBasic', 'imageBasicVersion');
-updateBasicImages($conn, $updatedGoogleMaps, $response, 'Vendor', 'googleMapsImage', 'googleMapsImageVersion');
+updateBasicImages($conn, $updatedBasic, $response['vendors'], 'Vendor', 'imageBasic', 'imageBasicVersion');
+updateBasicImages($conn, $updatedGoogleMaps, $response['vendors'], 'Vendor', 'googleMapsImage', 'googleMapsImageVersion');
 
 
 updateInnerImages($conn, $innerImagesUploaded);

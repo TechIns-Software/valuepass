@@ -585,7 +585,7 @@ function vendorFunction(
 
 }
 
-function updateBasicImages($conn, $arr, $response, $table, $nameColumn, $versionNameCol) {
+function updateBasicImages($conn, $arr, $tableResponseArray, $table, $nameColumn, $versionNameCol) {
     $query = "UPDATE $table
             SET $versionNameCol = ?, $nameColumn = ?
             WHERE id = ?";
@@ -593,8 +593,8 @@ function updateBasicImages($conn, $arr, $response, $table, $nameColumn, $version
     $newVersion = $path = $id = '-1';
     $stmt->bind_param('isi', $newVersion , $path, $id);
     foreach ($arr as $id=>$path) {
-        if (isset($response['destinations']["$id"]['image1']['version'])) {
-            $newVersion = $response['destinations']["$id"]['image1']['version'];
+        if (isset($tableResponseArray["$id"][$nameColumn]['version'])) {
+            $newVersion = $tableResponseArray["$id"][$nameColumn]['version'];
         } else {
             $newVersion = 0;
         }
