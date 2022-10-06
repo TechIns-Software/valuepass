@@ -112,7 +112,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                         </p>
                                         <p class=" m-0  icon-calendar"> <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?> </p>
                                         <p class=" m-0  icon-clock">
-                                            Starting Time:
+
                                             <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
                                         </p>
                                         <div class="row">
@@ -122,11 +122,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
                                                     //date('Y-m-d h:i:s', $timeStampCancel);
                                                     ?>
-                                                    Cancel Before <?php echo date('h:i A', $timeStampCancel);?>
-                                                    on
+                                                    <?php  echo  $menu[138] ;?> <?php echo date('h:i A', $timeStampCancel);?>
+
                                                     <br>
                                                     <?php echo date('F jS', $timeStampCancel);?>
-                                                    by Supplier Cancellation policy
+                                                    <?php  echo  $menu[139] ;?>
                                                 </p>
                                             </div>
                                             <div class="col-sm-6">
@@ -201,9 +201,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 data-bs-target="#purchasemodal" <?php echo($calculateCartObject['canOrder'] ? '' : 'disabled'); ?>>
                             <?php echo($calculateCartObject['canOrder'] ? $menu[109] : $menu[114]); ?></button>
 
-                        <p class="text-muted py-3">ValuePass vouchers are not cancelled but we are always looking to offer you the
-                            best alternative solutions regarding the activity providers we promote if something goes wrong. You will find more information in your
-                            confirmation email</p>
+                        <p class="text-muted py-3"> <?php echo $menu[135] ?> </p>
                     </div>
 
 
