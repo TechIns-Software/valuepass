@@ -594,7 +594,7 @@ function updateBasicImages($conn, $arr, $tableResponseArray, $table, $nameColumn
     $stmt->bind_param('isi', $newVersion , $path, $id);
     foreach ($arr as $id=>$path) {
         if (isset($tableResponseArray["$id"][$nameColumn]['version'])) {
-            $newVersion = $tableResponseArray["$id"][$nameColumn]['version'];
+            $newVersion = $tableResponseArray["$id"]["$nameColumn"]['version'];
         } else {
             $newVersion = 0;
         }
