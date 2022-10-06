@@ -769,3 +769,13 @@ function updateVersionTable($conn, $arrayOfVersions) {
     $stmt->close();
 }
 
+function removeVendorVoucher($conn, $arrayVendorVoucher) {
+    $query = "DELETE FROM VendorVoucher WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $id = 0;
+    $stmt->bind_param('i', $id);
+    foreach ($arrayVendorVoucher as $id) {
+        $stmt->execute();
+    }
+    $stmt->close();
+}
