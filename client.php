@@ -12,21 +12,22 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
 
 <style>
-    .fixedHeightContainer
-    {
-        height: 700px;
-
+    .fixedHeightContainer {
+        height: 60vh;
+        overflow: auto;
     }
-    .content
-    {
+
+    .content {
         overflow-x: hidden;
         overflow-y: auto;
         display: inline-block;
-        background:#fff;
+        background: #fff;
     }
+
     .content div {
         /*width: 95%;*/
     }
+
     .orderItem div {
         padding: 10px 25px;
     }
@@ -66,95 +67,137 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             <input class="form-check-input" type="checkbox" value="" id="terms">
                             <label class="form-check-label" for="terms">
                                 I have read and agree to the terms and conditions of
-                                <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf':'terms_gb.pdf' ?>" target="_blank">
+                                <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
+                                   target="_blank">
                                     <?php echo $menu[10] ?>
                                 </a>
                             </label>
                         </div>
 
                         <div class="form-check ">
-                            <input name="promotions" class="form-check-input" type="checkbox" value="" id="emailmarketing">
+                            <input name="promotions" class="form-check-input" type="checkbox" value=""
+                                   id="emailmarketing">
                             <label class="form-check-label " for="emailmarketing">
-                                I accept to send me occasional emails about promotions, new products and important updates.
+                                I accept to send me occasional emails about promotions, new products and important
+                                updates.
                             </label>
                         </div>
                         <div class="form-group my-4 text-center">
-                            <input style="font-weight: bold" type="submit" id="continue" class="btn btn-primary form-control" value="Checkout">
+                            <input style="font-weight: bold" type="submit" id="continue"
+                                   class="btn btn-primary form-control" value="Checkout">
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-6 ">
             <div class="fixedHeightContainer">
-            <h3 class="text-center">Order Summary</h3>
-            <span class="content">
-            <?php
-            $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray, $idLanguage);
-            $vendorId = $objectVouchersDisplay['vendorId'];
-            $allVouchers = $objectVouchersDisplay['allVouchers'];
-            $nameVendorArray = $objectVouchersDisplay['nameVendor'];
-            $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
-            $imageVendorArray = $objectVouchersDisplay['imageVendor'];
-            $adultsArray = $objectVouchersDisplay['adults'];
-            $childrenArray = $objectVouchersDisplay['children'];
-            $infantsArray = $objectVouchersDisplay['infants'];
-            $amountPayArray = $objectVouchersDisplay['amountPay'];
-            for ($counter = 0; $counter < count($nameVendorArray); $counter++) {
-                $nameVendor = $nameVendorArray[$counter];
-                $dateVoucher = $dateVoucherArray[$counter];
-                $adults = $adultsArray[$counter];
-                $children = $childrenArray[$counter];
-                $infants = $infantsArray[$counter];
-                $amountPay = $amountPayArray[$counter];
-                $imageVendor = $imageVendorArray[$counter];
-                ?>
-                <div>
-                    <div class="row orderItem">
-                        <div class="col-sm-5">
-                            <img src="vendorImages/<?php echo $vendorId[$counter] . '/' . $imageVendor ?>"
-                                 style="max-height: 200px!important;" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="col-sm-7 text-center">
-                            <h5><b>
-                                <?php echo $nameVendor; ?>
-                            </b></h5>
+ <span class="content">
+            <div class="row">
 
-                        </div>
-                    </div>
-
-                    <div>
-                        <p>
-                            <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?>
-                        </p>
-                        <p>
-                            Starting Time
-                            <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
-                            (local time)
-                        </p>
-                        <p>
-                        <?php
-                        if ($adults != 0) {
-                            echo $menu[110] .' : ' .$adults .'<br>';
-                        }
-                        if ($children != 0) {
-                            echo $menu[111] .' : ' .$children .'<br>';
-                        }
-                        if ($infants != 0) {
-                            echo $menu[112] .' : ' .$infants .'<br>';
-                        }
-                        ?>
-                        </p>
-                    </div>
-                    <td>
-                        <strong><?php echo $amountPay; ?>€</strong>
-                    </td>
+                <div class="col-12">
+                  <h3> Order Summary </h3>
                 </div>
-                <?php
-            }
 
-            ?>
-                </span>
+
+
+                <?php
+                $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray, $idLanguage);
+                $vendorId = $objectVouchersDisplay['vendorId'];
+                $allVouchers = $objectVouchersDisplay['allVouchers'];
+                $nameVendorArray = $objectVouchersDisplay['nameVendor'];
+                $dateVoucherArray = $objectVouchersDisplay['dateVoucher'];
+                $imageVendorArray = $objectVouchersDisplay['imageVendor'];
+                $adultsArray = $objectVouchersDisplay['adults'];
+                $childrenArray = $objectVouchersDisplay['children'];
+                $infantsArray = $objectVouchersDisplay['infants'];
+                $amountPayArray = $objectVouchersDisplay['amountPay'];
+                $hourCancels = $objectVouchersDisplay['hourCancels'];
+                for ($counter = 0;
+                     $counter < count($nameVendorArray);
+                     $counter++) {
+                    $nameVendor = $nameVendorArray[$counter];
+                    $dateVoucher = $dateVoucherArray[$counter];
+                    $adults = $adultsArray[$counter];
+                    $children = $childrenArray[$counter];
+                    $infants = $infantsArray[$counter];
+                    $amountPay = $amountPayArray[$counter];
+                    $imageVendor = $imageVendorArray[$counter];
+                    $hourCancel = $hourCancels[$counter];
+                    ?>
+
+                    <div class="col-12 cart-voucher  ">
+                        <div class="row">
+                            <div class="col-4 ">
+                                <div class="thumb_cart">
+                                    <img class="img-fluid"
+                                         src="vendorImages/<?php echo $vendorId[$counter] . '/' . $imageVendor ?>"
+                                         alt="Image">
+                                </div>
+                            </div>
+
+                            <div class="col-8 ">
+                                <h5 class="py-1">
+                                    <span><?php echo $nameVendor; ?></span>
+                                </h5>
+
+                                <h6 class="text-end price ">
+                                    <strong><?php echo $amountPay; ?>€</strong>
+                                </h6>
+
+                            </div>
+
+                            <div class="col-12 py-3 ">
+                                <!--                                        <p class=" m-0   icon-adult  ">Initial Price X NumberOfPersons  </p>-->
+                                <p class="text-muted d-inline icon-adult">
+                                    <?php
+                                    $flagTemp = false;
+                                    if ($adults != 0) {
+                                        $flagTemp = true;
+                                        echo $menu[110] . ' : ' . $adults;
+                                    }
+                                    if ($children != 0) {
+                                        echo ($flagTemp ? ' | ' : '') . $menu[111] . ' : ' . $children;
+                                    } else {
+                                        $flagTemp = false;
+                                    }
+                                    if ($infants != 0) {
+                                        echo ($flagTemp ? ' | ' : '') . $menu[112] . ' : ' . $infants;
+                                    }
+                                    ?>
+                                </p>
+                                <p class=" m-0  icon-calendar"> <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?> </p>
+                                <p class=" m-0  icon-clock">
+
+                                    <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
+                                </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class=" m-0 text-danger">
+                                            <?php
+                                            $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
+                                            //date('Y-m-d h:i:s', $timeStampCancel);
+                                            ?>
+                                            <?php echo $menu[138]; ?> <?php echo date('h:i A', $timeStampCancel); ?>
+
+                                            <br>
+                                            <?php echo date('F jS', $timeStampCancel); ?>
+                                            <?php echo $menu[139]; ?>
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                <?php } ?>
+            </div>
+
+                     </span>
             </div>
         </div>
 
@@ -164,11 +207,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 
 <?php include_once 'includes/footer.php';
-footer($menu,$languages)
+footer($menu, $languages)
 
 ?>
 </body>
-
 
 
 <script src="assets/js/common_scripts.js"></script>
