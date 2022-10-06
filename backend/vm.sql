@@ -447,7 +447,9 @@ VALUES (1),
        (135),
        (136),
        (137),
-       (138);
+       (138),
+       (139),
+       (140);
 
 
 
@@ -898,7 +900,15 @@ something goes wrong. You`ll find more information in your confirmation email.')
        (138, 1, 'Προφυλάξεις για τον Covid-19 Ισχύουν ειδικά μέτρα υγείας και ασφάλειας. Ελεγχος
 το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.'),
        (138, 2, 'Covid-19 precautions Special health and safety measures are in place. Check
-your activity voucher once you book for full details.');
+your activity voucher once you book for full details.'),
+
+       (139, 1, 'Μπορείς να ακυρώσεις το Voucher πριν τις'),
+       (139, 2, 'You can cancel your Voucher before'),
+
+       (140, 1, ' σύμφωνα με την πολιτική ακύρωσης του προμηθευτή'),
+       (140, 2, 'by supplier cancellation policy');
+
+
 
 
 
