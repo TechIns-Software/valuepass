@@ -29,7 +29,7 @@ function getDestinations($conn, $idLanguage): array
         $stmt1->bind_result($id, $name, $description, $image1, $image2);
         $counter = 1;
         while ($stmt1->fetch()) {
-            $numberVendors = isset($sums[$counter]) ? intval($sums[$counter]) : 0;
+            $numberVendors = isset($sums[$id]) ? intval($sums[$id]) : 0;
             if ($numberVendors == 0) {
                 continue;
             }
