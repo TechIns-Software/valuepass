@@ -318,7 +318,7 @@ foreach ($modifiedImage1 as $idDestination => $imagePathName) {
     $targetFileName = "../images/location_images/";
     createFolderIfNotExists($targetFileName);
     $targetFileName .= "$imagePathName";
-    if (!file_exists($targetFileName)) {
+    if (!is_file($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
             file_put_contents(
@@ -342,7 +342,7 @@ foreach ($modifiedImage2 as $idDestination => $imagePathName) {
     $targetFileName = "../images/location_images/";
     createFolderIfNotExists($targetFileName);
     $targetFileName .= "$imagePathName";
-    if (!file_exists($targetFileName)) {
+    if (!is_file($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
             file_put_contents(
@@ -445,7 +445,7 @@ foreach ($basicImagesToChange as $idVendorBasicImage) {
     createFolderIfNotExists($targetFileName);
     $targetFileName .= "$imagePathName";
 
-    if (!file_exists($targetFileName)) {
+    if (!is_file($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
             file_put_contents(
@@ -472,7 +472,7 @@ foreach ($googleMapsImageToChange as $idVendorGoogleMaps) {
     $targetFileName = "../vendorImages/$idVendorGoogleMaps/";
     createFolderIfNotExists($targetFileName);
     $targetFileName .= "$imagePathName";
-    if (!file_exists($targetFileName)) {
+    if (!is_file($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
             file_put_contents(
@@ -501,7 +501,7 @@ foreach ($imagesToBeAdded as $imageToAddedObj) {
     $targetFileName = "../vendorImages/$idVendorInnerImage/";
     createFolderIfNotExists($targetFileName);
     $targetFileName .= "$imagePathName";
-    if (!file_exists($targetFileName)) {
+    if (!is_file($targetFileName)) {
         @$file = file_get_contents($url);
         if ($file) {
             file_put_contents(
