@@ -322,8 +322,8 @@ function getMaxVendorVoucher($conn, $idVendorVoucher): int
 function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): array
 {
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
-            V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel
-            FROM VendorVoucher AS VV, Vendor AS V
+            V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice
+            FROM Vendor AS V, VendorVoucher AS VV 
             WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
               AND V.isOkForShowing = 1 AND V.isActiveNow = 1;";
@@ -331,10 +331,10 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
     if ($stmt->execute()) {
-        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = '-1';
-        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel);
+        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = $discount = $originalPrice = '-1';
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice]);
         }
     }
     return $possiblePackages;
@@ -561,6 +561,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message4 = "Day: ";
         $message5 = "Hour: ";
         $message6 = "Price Breakdown  ";
+        $message6a = "ValuePass Voucher Price";
+        $message6b = "Pay to the Provider";
         $message7 = " Adults: ";
         $message8 = " Children: ";
         $message9 = " Infants: ";
@@ -579,6 +581,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message4 = "Ημέρα: ";
         $message5 = "Ώρα: ";
         $message6 = "Ανάλυση Τιμής";
+        $message6a = "Τιμή ValuePass Voucher";
+        $message6b = "Πληρωμή στον πάροχο";
         $message7 = " Ενήλικες: ";
         $message8 = " Παιδιά: ";
         $message9 = " Μωρά: ";
@@ -617,7 +621,14 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $priceKid = $package[3];
     $priceInfant = $package[4];
     $hourCancel = $package[5];
+    $discount = $package[6];
+    $originalPrice = $package[7];
     $totalPrice = $priceAdult * $adults + $priceKid * $children + $priceInfant * $infants;
+
+    $totalToPayAdultToVendor = $originalPrice - ($originalPrice * ($discount / 100)) - $priceAdult;
+    $percentPayedToVendor = $totalToPayAdultToVendor / $priceAdult;
+    $totalToPayKidToVendor = $percentPayedToVendor * $priceKid;
+    $totalToPayInfantToVendor = $percentPayedToVendor * $priceInfant;
 
     //echo date('M jS', $timeStampCancel)
     $dateTimestamp = strtotime($date);
@@ -648,14 +659,31 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <div class='col-12 col-lg-4'> ";
     $message .= "  <div class='pricebreakdown2'> ";
     $message .= " <h5>$message6 </h5> ";
+    $message .= " <h6>$message6a </h6> ";
     $message .= " <ul> ";
-    $message .= " <li> $message7 <b>$adults  </b> x <span> $priceAdult €</span> </li> ";
+    if ($adults != 0) {
+        $message .= " <li> $message7 <b>$adults  </b> x <span> $priceAdult €</span> </li> ";
+    }
     if ($children != 0) {
         $message .= " <li> $message8 <b> $children </b> x <span> $priceKid €</span> </li> ";
     }
     if ($infants != 0) {
         $message .= " <li> $message9 <b> $infants  </b> x <span> $priceInfant € </span></li> ";
     }
+
+    $message .= "<br>";
+    $message .= " <h6>$message6b </h6> ";
+    $message .= " <ul> ";
+    if ($adults != 0) {
+        $message .= " <li> $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </li> ";
+    }
+    if ($children != 0) {
+        $message .= " <li> $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </li> ";
+    }
+    if ($infants != 0) {
+        $message .= " <li> $message9 <b> $infants  </b> x <span> $totalToPayInfantToVendor € </span></li> ";
+    }
+
     $cancelTimestamp = strtotime($date) - 3600 * $hourCancel;
     $cancelDate = date('h:i A F jS ', $cancelTimestamp);
     $message .= " </ul> ";
