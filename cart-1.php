@@ -126,7 +126,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                                         </p>
                                         <p class=" m-0  icon-money ">
-                                            Pay to the Provider
+                                            <?php echo $menu[156]; ?>
                                             <ul>
                                             <?php
                                             if ($adults != 0) {
@@ -181,7 +181,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     <?php  echo  $menu[139] ;?>
 
                                                 </p>
-                                                <p class="valuepasswin"> Saved <span> <?=$saved?> € </span> using  ValuePass Experiences </p>
+                                                <p class="valuepasswin"> <?php echo $menu[144] ;?> <span> <?=$saved?> € </span> using  ValuePass Experiences </p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p style="margin-bottom: 0px!important;" class="text-end fa-2x">
