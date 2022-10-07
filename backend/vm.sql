@@ -970,8 +970,9 @@ your activity voucher once you book for full details.'),
        (155, 1, 'Θα επικοινωνήσουμε μαζί σας μόνο για βασικές ενημερώσεις ή αλλαγές στην κράτησή σας'),
        (155, 2, 'We’ll only contact you with essential updates or changes to your booking'),
 
-       (156, 1, 'Δέχομαι να μου αποστέλνονται  μηνύματα ηλεκτρονικού ταχυδρομείου σχετικά με προσφορές, νέα προϊόντα και σημαντικές ενημερώσεις.'),
-       (156, 2, 'I accept to send me occasional emails about promotions, new products and important updates.'),
+       (156, 1, 'Δέχομαι να μου αποστείλετε email υπενθύμισης 2 έως 6 ώρες πριν από την προθεσμία ακύρωσης
+       που έχει ορίσει ο πάροχος της δραστηριότητας στην πολιτική ακύρωσης του. Περιλαμβάνονται, επίσης προτεινόμενες δραστηριότητες.'),
+       (156, 2, 'I accept to send me a reminder email 2 to 6 hours before the cancellation deadline set by the provider in their activity cancellation policy, also suggested optional activities.'),
 
        (157, 1, 'Πληρωμή στον προμηθευτή'),
        (157, 2, 'Pay to the Provider');

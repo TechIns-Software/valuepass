@@ -35,8 +35,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 </style>
 <main class="center-screen container-fluid center-screen">
     <div style="min-height: 120px;"></div>
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row py-5">
+        <div class="col-md-6 ">
 
             <div class="col-12">
                 <form id="clientForm" class="row" method="post" action="procedure.php">
@@ -94,14 +94,20 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             </div>
         </div>
 
-        <div class="col-md-6 ">
+        <div class="col-md-6  ">
+
+            <div class="row ">
+
+                <div class="col-12  " >
+                    <h3> Order Summary </h3>
+                </div>
+
+            </div>
+
             <div class="fixedHeightContainer">
- <span class="content">
+            <span class="content">
             <div class="row">
 
-                <div class="col-12">
-                  <h3> Order Summary </h3>
-                </div>
 
 
 
