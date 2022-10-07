@@ -341,13 +341,14 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
 }
 
 function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
-    $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, V.hourCancel , VV.dateVoucher
+    $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, V.hourCancel , VV.dateVoucher,
+            V.discount, V.originalPrice
             FROM Vendor AS V, VendorVoucher AS VV
             WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
     $stmt = $conn->prepare($query);
-    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = -1;
+    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount = $originalPrice = -1;
     if ($stmt->execute()) {
-        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher);
+        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice);
         while ($stmt->fetch()) {}
     }
     $query2 = "SELECT VT.name
@@ -359,7 +360,7 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
         $stmt2->bind_result($vendorName);
         while ($stmt2->fetch()) {}
     }
-    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel];
+    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice];
 }
 
 
@@ -434,6 +435,14 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
     $imageVendorArray = [];
     $idVendorArray = [];
     $hourCancels = [];
+    $saved = [];
+    $payVendorAdult = [];
+    $payVendorChild = [];
+    $payVendorInfant = [];
+    $priceAdultArray = [];
+    $priceChildArray = [];
+    $priceInfantArray = [];
+    $saved = [];
     foreach ($cart as $arrayVouchersWant) {
         $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
         $arrayPrices = getVendorForCart($conn, $arrayVouchersWant[0]->getIdVendorVoucher(), $idLanguage);
@@ -444,9 +453,19 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         $dateVoucher = $arrayPrices[4];
         $nameVendor = $arrayPrices[5];
         $hourCancel = $arrayPrices[6];
+        $discount = $arrayPrices[7];
+        $originalPrice = $arrayPrices[8];
+
+        $totalToPayAdultToVendor = $originalPrice - ($originalPrice * ($discount / 100)) - $priceAdult;
+        $percentPayedToVendor = $totalToPayAdultToVendor / $priceAdult;
+        $totalToPayKidToVendor = $percentPayedToVendor * $priceChild;
+        $totalToPayInfantToVendor = $percentPayedToVendor * $priceInfant;
+
+
         $adults = 0;
         $children = 0;
         $infants = 0;
+        $totalPay = 0;
         foreach ($arrayVouchersWant as $voucherWant) {
             if ($voucherWant->isAdult()) {
                 $voucherWant->setPrice($priceAdult + $voucherWant->getNumberOfInfant() * $priceInfant);
@@ -454,10 +473,12 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
                 $voucherWant->setPrice($priceChild);
 
             }
+            $totalPay = $totalPay + $voucherWant->getPrice();
             array_push($allVouchers, $voucherWant);
             $infants = $infants + $voucherWant->getNumberOfInfant();
             $voucherWant->isAdult() ? $adults = $adults + 1 : $children = $children + 1;
         }
+
         array_push($idVendorArray, $idVendorDisplayed);
         array_push($nameVendorArray, $nameVendor);
         array_push($dateVoucherArray, $dateVoucher);
@@ -468,6 +489,14 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         $amountPay = $priceAdult * $adults + $priceChild * $children + $priceInfant * $infants;
         array_push($amountPayArray, $amountPay);
         array_push($hourCancels, $hourCancel);
+
+        array_push($payVendorAdult, $totalToPayAdultToVendor);
+        array_push($payVendorChild, $totalToPayKidToVendor);
+        array_push($payVendorInfant, $totalToPayInfantToVendor);
+        array_push($priceAdultArray, $priceAdult);
+        array_push($priceChildArray, $priceChild);
+        array_push($priceInfantArray, $priceInfant);
+        array_push($saved, ($discount / 10) * $totalPay);
     }
     //sort from bigger to smaller
     usort($allVouchers, function ($a, $b) {
@@ -483,7 +512,14 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         'infants'=>$infantsArray,
         'amountPay'=>$amountPayArray,
         'hourCancels'=>$hourCancels,
-        'vendorId'=>$idVendorArray
+        'vendorId'=>$idVendorArray,
+        'payVendorAdult'=>$payVendorAdult,
+        'payVendorChild'=>$payVendorChild,
+        'payVendorInfant'=>$payVendorInfant,
+        'priceAdultArray'=>$priceAdultArray,
+        'priceChildArray'=>$priceChildArray,
+        'priceInfantArray'=>$priceInfantArray,
+        'saved'=>$saved
     );
 }
 
@@ -559,7 +595,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message2 = "Add to Cart";
         $message3 = "Experience Name: ";
         $message4 = "Day: ";
-        $message5 = "Hour: ";
+        $message5 = "Starting Time: ";
         $message6 = "Price Breakdown  ";
         $message6a = "ValuePass Voucher Price";
         $message6b = "Pay to the Provider";
@@ -571,7 +607,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message12 = "Date ";
         $message13 = "You can cancel your voucher before ";
         $message14 = "by supplier Cancellation policy";
-        $message15 = "ValuePass vouchers are not cancelled, but we are always looking to offer you the bes alternative
+        $message15 = "ValuePass vouchers are not cancelled, but we are always looking to offer you the best alternative
         solutions regarding the activity providers we promote if something goes wrong. You will find more information
         in your confirmation email.";
     } else {
@@ -579,7 +615,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message2 = "Προσθήκη στο καλάθι";
         $message3 = "Ονομασία Εμπειρίας: ";
         $message4 = "Ημέρα: ";
-        $message5 = "Ώρα: ";
+        $message5 = "Ώρα Έναρξης: ";
         $message6 = "Ανάλυση Τιμής";
         $message6a = "Τιμή ValuePass Voucher";
         $message6b = "Πληρωμή στον πάροχο";

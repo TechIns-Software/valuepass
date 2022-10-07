@@ -58,6 +58,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         $infantsArray = $objectVouchersDisplay['infants'];
                         $amountPayArray = $objectVouchersDisplay['amountPay'];
                         $hourCancels = $objectVouchersDisplay['hourCancels'];
+                        $payVendorAdultArray = $objectVouchersDisplay['payVendorAdult'];
+                        $payVendorChildArray = $objectVouchersDisplay['payVendorChild'];
+                        $payVendorInfantArray = $objectVouchersDisplay['payVendorInfant'];
+                        $priceAdultArray = $objectVouchersDisplay['priceAdultArray'];
+                        $priceChildArray = $objectVouchersDisplay['priceChildArray'];
+                        $priceInfantArray = $objectVouchersDisplay['priceInfantArray'];
+                        $savedArray = $objectVouchersDisplay['saved'];
                         for ($counter = 0;
                              $counter < count($nameVendorArray);
                              $counter++) {
@@ -69,6 +76,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             $amountPay = $amountPayArray[$counter];
                             $imageVendor = $imageVendorArray[$counter];
                             $hourCancel = $hourCancels[$counter];
+                            $payVendorAdult = $payVendorAdultArray[$counter];
+                            $payVendorChild = $payVendorChildArray[$counter];
+                            $payVendorInfant = $payVendorInfantArray[$counter];
+                            $priceAdult = $priceAdultArray[$counter];
+                            $priceChild = $priceChildArray[$counter];
+                            $priceInfant = $priceInfantArray[$counter];
+                            $saved = $savedArray[$counter];
                             ?>
 
                             <div class="col-12 cart-voucher  ">
@@ -92,9 +106,45 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     </div>
 
                                     <div class="col-12 py-3 ">
-                                        <p class=" m-0   icon-users  ">  <?php echo $amountPay; ?>€  * {NumberOfPersons}  </p>
-                                        <p class=" m-0  icon-money "> Pay to the Provider( <?php echo $amountPay; ?>€  *
-                                            {NumberOfPersons} )  </p>
+                                        <p class=" m-0   icon-users">
+                                            ValuePass Voucher Price
+                                            <ul>
+                                                <?php
+                                                if ($adults != 0) {
+                                                    echo "<li>Adults: $adults X $priceAdult €</li>";
+                                                }
+                                                if ($children != 0) {
+                                                    echo "<li>Children: $children X $priceChild €</li>";
+
+                                                }
+                                                if ($infants != 0) {
+                                                    echo "<li>Infants: $infants X $priceInfant €</li>";
+
+                                                }
+                                                ?>
+                                            </ul>
+
+                                        </p>
+                                        <p class=" m-0  icon-money ">
+                                            Pay to the Provider
+                                            <ul>
+                                            <?php
+                                            if ($adults != 0) {
+                                                echo "<li>Adults: $adults X $payVendorAdult €</li>";
+                                            }
+                                            if ($children != 0) {
+                                                echo "<li>Children: $children X $payVendorChild €</li>";
+
+                                            }
+                                            if ($infants != 0) {
+                                                echo "<li>Infants: $infants X $payVendorInfant €</li>";
+
+                                            }
+                                            ?>
+
+                                            </ul>
+
+                                        </p>
                                         <p class="  m-0  d-inline icon-adult">
                                             <?php
                                             $flagTemp = false;
@@ -131,7 +181,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     <?php  echo  $menu[139] ;?>
 
                                                 </p>
-                                                <p class="valuepasswin"> Saved <span>  { } € </span> using  ValuePass Experiences </p>
+                                                <p class="valuepasswin"> Saved <span> <?=$saved?> € </span> using  ValuePass Experiences </p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p style="margin-bottom: 0px!important;" class="text-end fa-2x">

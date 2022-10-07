@@ -117,6 +117,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                 $infantsArray = $objectVouchersDisplay['infants'];
                 $amountPayArray = $objectVouchersDisplay['amountPay'];
                 $hourCancels = $objectVouchersDisplay['hourCancels'];
+                $payVendorAdultArray = $objectVouchersDisplay['payVendorAdult'];
+                $payVendorChildArray = $objectVouchersDisplay['payVendorChild'];
+                $payVendorInfantArray = $objectVouchersDisplay['payVendorInfant'];
+                $priceAdultArray = $objectVouchersDisplay['priceAdultArray'];
+                $priceChildArray = $objectVouchersDisplay['priceChildArray'];
+                $priceInfantArray = $objectVouchersDisplay['priceInfantArray'];
+                $savedArray = $objectVouchersDisplay['saved'];
                 for ($counter = 0;
                      $counter < count($nameVendorArray);
                      $counter++) {
@@ -128,75 +135,117 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     $amountPay = $amountPayArray[$counter];
                     $imageVendor = $imageVendorArray[$counter];
                     $hourCancel = $hourCancels[$counter];
+                    $payVendorAdult = $payVendorAdultArray[$counter];
+                    $payVendorChild = $payVendorChildArray[$counter];
+                    $payVendorInfant = $payVendorInfantArray[$counter];
+                    $priceAdult = $priceAdultArray[$counter];
+                    $priceChild = $priceChildArray[$counter];
+                    $priceInfant = $priceInfantArray[$counter];
+                    $saved = $savedArray[$counter];
                     ?>
 
                     <div class="col-12 cart-voucher  ">
                         <div class="row">
-                            <div class="col-4 ">
-                                <div class="thumb_cart">
-                                    <img class="img-fluid"
-                                         src="vendorImages/<?php echo $vendorId[$counter] . '/' . $imageVendor ?>"
-                                         alt="Image">
-                                </div>
-                            </div>
-
-                            <div class="col-8 ">
-                                <h5 class="py-1">
-                                    <span><?php echo $nameVendor; ?></span>
-                                </h5>
-
-                                <h6 class="text-end price ">
-                                    <strong><?php echo $amountPay; ?>€</strong>
-                                </h6>
-
-                            </div>
-
-                            <div class="col-12 py-3 ">
-                                <p class=" m-0   icon-users  ">  <?php echo $amountPay; ?>€  * {NumberOfPersons}  </p>
-                                 <p class=" m-0  icon-money "> <?php echo $menu[156]; ?>( <?php echo $amountPay; ?>€  *
-                                            {NumberOfPersons} )  </p>
-                                <p class="text-muted d-inline icon-adult">
-                                    <?php
-                                    $flagTemp = false;
-                                    if ($adults != 0) {
-                                        $flagTemp = true;
-                                        echo $menu[110] . ' : ' . $adults;
-                                    }
-                                    if ($children != 0) {
-                                        echo ($flagTemp ? ' | ' : '') . $menu[111] . ' : ' . $children;
-                                    } else {
-                                        $flagTemp = false;
-                                    }
-                                    if ($infants != 0) {
-                                        echo ($flagTemp ? ' | ' : '') . $menu[112] . ' : ' . $infants;
-                                    }
-                                    ?>
-                                </p>
-                                <p class=" m-0  icon-calendar"> <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?> </p>
-                                <p class=" m-0  icon-clock">
-
-                                    <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
-                                </p>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p class=" m-0 text-danger">
-                                            <?php
-                                            $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
-                                            //date('Y-m-d h:i:s', $timeStampCancel);
-                                            ?>
-                                            <?php echo $menu[138]; ?> <?php echo date('h:i A', $timeStampCancel); ?>
-
-                                            <br>
-                                            <?php echo date('F jS', $timeStampCancel); ?>
-                                            <?php echo $menu[139]; ?>
-                                        </p>
-                                          <p class="valuepasswin">  <?php echo $menu[144] ;?> <span>  { } € </span>  <?php echo $menu[145] ;?></p>
+                                    <div class="col-4 ">
+                                        <div class="thumb_cart" >
+                                            <img class="img-fluid" src="vendorImages/<?php echo $vendorId[$counter] . '/' . $imageVendor ?>"
+                                                 alt="Image">
+                                        </div>
                                     </div>
 
-                                </div>
+                                    <div class="col-8 ">
+                                        <h5 class="py-1">
+                                            <span ><?php echo $nameVendor; ?></span>
+                                        </h5>
 
-                            </div>
-                        </div>
+                                        <h6 class="text-end price ">
+                                            <strong><?php echo $amountPay; ?>€</strong>
+                                        </h6>
+
+                                    </div>
+
+                                    <div class="col-12 py-3 ">
+                                        <p class=" m-0   icon-users">
+                                            ValuePass Voucher Price
+                                            <ul>
+                                                <?php
+                                                if ($adults != 0) {
+                                                    echo "<li>Adults: $adults X $priceAdult €</li>";
+                                                }
+                                                if ($children != 0) {
+                                                    echo "<li>Children: $children X $priceChild €</li>";
+
+                                                }
+                                                if ($infants != 0) {
+                                                    echo "<li>Infants: $infants X $priceInfant €</li>";
+
+                                                }
+                                                ?>
+                                            </ul>
+
+                                        </p>
+                                        <p class=" m-0  icon-money ">
+                                            Pay to the Provider
+                                            <ul>
+                                            <?php
+                                            if ($adults != 0) {
+                                                echo "<li>Adults: $adults X $payVendorAdult €</li>";
+                                            }
+                                            if ($children != 0) {
+                                                echo "<li>Children: $children X $payVendorChild €</li>";
+
+                                            }
+                                            if ($infants != 0) {
+                                                echo "<li>Infants: $infants X $payVendorInfant €</li>";
+
+                                            }
+                                            ?>
+
+                                            </ul>
+
+                                        </p>
+                                        <p class="  m-0  d-inline icon-adult">
+                                            <?php
+                                            $flagTemp = false;
+                                            if ($adults != 0) {
+                                                $flagTemp = true;
+                                                echo $menu[110] .' : ' .$adults;
+                                            }
+                                            if ($children != 0) {
+                                                echo ($flagTemp ? ' | ':'') .$menu[111] .' : ' .$children;
+                                            } else {
+                                                $flagTemp = false;
+                                            }
+                                            if ($infants != 0) {
+                                                echo ($flagTemp ? ' | ':'') .$menu[112] .' : ' .$infants;
+                                            }
+                                            ?>
+                                        </p>
+                                        <p class=" m-0  icon-calendar"> <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?> </p>
+                                        <p class=" m-0  icon-clock">
+
+                                            <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class=" m-0 text-danger">
+                                                    <?php
+                                                    $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
+                                                    //date('Y-m-d h:i:s', $timeStampCancel);
+                                                    ?>
+                                                    <?php  echo  $menu[138] ;?> <?php echo date('h:i A', $timeStampCancel);?>
+
+                                                    <br>
+                                                    <?php echo date('F jS', $timeStampCancel);?>
+                                                    <?php  echo  $menu[139] ;?>
+
+                                                </p>
+                                                <p class="valuepasswin"> Saved <span> <?=$saved?> € </span> using  ValuePass Experiences </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                     </div>
 
