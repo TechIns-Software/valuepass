@@ -65,7 +65,7 @@ function footer($menu,$languages){ ?>
 
                     <ul class="contacts" >
                         <h5 class="my-1"><?php  echo $menu[133]?></h5>
-                        <li><a href="mailto:info@valuepass.com"> info@valuepass.com</a></li>
+                        <li><a href="mailto:customercare@valuepass.com"> customercare@valuepass.com</a></li>
                         <li><a href="mailto:dataprotectionofficer@valuepass.com"> dataprotectionofficer@valuepass.com</a></li>
                     </ul>
 
