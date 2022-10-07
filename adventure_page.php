@@ -236,7 +236,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             </div>
 
                             <div class="row">
-                                <div class="col"> <?php echo $menu[49] ?></div>
+                                <div class="col pay_label"> <?php echo $menu[49] ?></div>
                                 <div class="col pay_value">
                                     <b><?php echo $totalToPay; ?>€ </b>
                                     <span class="perperson">
@@ -557,7 +557,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     </div>
 
                                     <div class="row">
-                                        <div class="col"> <?php echo $menu[49] ?> </div>
+                                        <div class="col pay_label"> <?php echo $menu[49] ?> </div>
                                         <div class="col pay_value">
                                             <b><?php echo $totalToPay; ?>€ </b>
                                             <span class="perperson">

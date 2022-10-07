@@ -42,13 +42,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                 <form id="clientForm" class="row" method="post" action="procedure.php">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
-                        <h4>Information</h4>
-                        <p>Relate your voucher with you, and receive your vouchers qr codes to your email</p>
+                        <h4>  <?php echo $menu[150] ;?></h4>
+                        <p> <?php echo $menu[151] ;?></p>
 
                         <div class="form-floating my-2">
                             <input name="name" id="fullname" class="form-control"
-                                   placeholder="Full name" required>
-                            <label for="incomePartner">Full name</label>
+                                   placeholder="<?php echo $menu[152] ;?>" required>
+                            <label for="incomePartner"><?php echo $menu[152] ;?></label>
                         </div>
                         <div class="form-floating my-2">
                             <input type="email" name="email" id="email" class="form-control"
@@ -57,34 +57,37 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         </div>
                         <div class="form-floating my-2">
                             <input type="tel" name="phone" id="phone" class="form-control"
-                                   placeholder="Email" required>
-                            <label for="incomePartner">Phone Number</label>
+                                   placeholder="<?php echo $menu[153] ;?>" required>
+                            <label for="incomePartner"><?php echo $menu[153] ;?></label>
                         </div>
                         <p class="text-center">
-                            We’ll only contact you with essential updates or changes to your booking
+                            <?php echo $menu[154] ;?>
                         </p>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="terms">
+<!--                            <input class="form-check-input" type="checkbox" value="" id="terms">-->
                             <label class="form-check-label" for="terms">
-                                I have read and agree to the terms and conditions of
+                                <?php echo $menu[146] ;?>
                                 <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
                                    target="_blank">
-                                    <?php echo $menu[10] ?>
+                                  <b>  <?php echo $menu[148] ?> </b>
                                 </a>
+
+                                <?php echo $menu[147] ?>
+                                <a href="#"> <b><?php echo $menu[149] ?>  </b> </a>
                             </label>
                         </div>
 
+
                         <div class="form-check ">
-                            <input name="promotions" class="form-check-input" type="checkbox" value=""
+                            <input name="promotions" class="form-check-input" type="checkbox" checked value=""
                                    id="emailmarketing">
                             <label class="form-check-label " for="emailmarketing">
-                                I accept to send me occasional emails about promotions, new products and important
-                                updates.
+                                <?php echo $menu[155] ;?>
                             </label>
                         </div>
                         <div class="form-group my-4 text-center">
-                            <input style="font-weight: bold" type="submit" id="continue"
-                                   class="btn btn-primary form-control" value="Checkout">
+                            <input style="font-weight: bold;color: white" type="submit" id="continue"
+                                   class="btn btn-primary form-control" value="<?php echo $menu[109] ?>">
                         </div>
                     </div>
                 </form>
@@ -150,7 +153,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                             <div class="col-12 py-3 ">
                                 <p class=" m-0   icon-users  ">  <?php echo $amountPay; ?>€  * {NumberOfPersons}  </p>
-                                 <p class=" m-0  icon-money "> Pay to the Provider( <?php echo $amountPay; ?>€  *
+                                 <p class=" m-0  icon-money "> <?php echo $menu[156]; ?>( <?php echo $amountPay; ?>€  *
                                             {NumberOfPersons} )  </p>
                                 <p class="text-muted d-inline icon-adult">
                                     <?php
@@ -187,7 +190,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             <?php echo date('F jS', $timeStampCancel); ?>
                                             <?php echo $menu[139]; ?>
                                         </p>
-                                          <p class="valuepasswin"> Saved <span>  { } € </span> using  ValuePass Experiences </p>
+                                          <p class="valuepasswin">  <?php echo $menu[144] ;?> <span>  { } € </span>  <?php echo $menu[145] ;?></p>
                                     </div>
 
                                 </div>

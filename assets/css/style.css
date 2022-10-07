@@ -4134,6 +4134,11 @@ a.box_feat h3 {
   color: #121921;
 }
 
+.pay_label{
+  color: #fd0000;
+  font-weight: 700;
+}
+
 .pay_value b{
   color:   #FF5533;
   font-weight: 700;

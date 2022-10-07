@@ -449,7 +449,24 @@ VALUES (1),
        (137),
        (138),
        (139),
-       (140);
+       (140),
+       (141),
+       (142),
+       (143),
+       (144),
+       (145),
+       (146),
+       (147),
+       (148),
+       (149),
+       (150),
+       (151),
+       (152),
+       (153),
+       (154),
+       (155),
+       (156),
+       (157);
 
 
 
@@ -466,7 +483,7 @@ VALUES (1, 1, 'Αρχική'),
        (4, 1, 'Δραστηριότητες'),
        (4, 2, 'Experiences'),
 
-       (5, 1, 'Ερωτήσεις'),
+       (5, 1, 'Εξυπηρέτηση Πελατών'),
        (5, 2, 'Customer Care'),
 
        (6, 1, 'Εγγραφή'),
@@ -530,8 +547,8 @@ VALUES (1, 1, 'Αρχική'),
        (24, 1, 'Λεπτομέρειες: '),
        (24, 2, 'Pampered Info'),
 
-       (25, 1, 'Eξασφαλίστε από 5% έως 30% έκπτωση από την αρχική τιμή'),
-       (25, 2, 'Save from 5% to 30% discount on the initial price'),
+       (25, 1, 'Eξασφαλίστε  έως και 30% έκπτωση από την αρχική τιμή'),
+       (25, 2, 'Save up to 30% discount on the initial price'),
 
        (26, 1, 'Voucher + επιπλέον'),
        (26, 2, 'Vouchers  + extra'),
@@ -594,8 +611,8 @@ VALUES (1, 1, 'Αρχική'),
        (45, 1, 'Βαθμολογία Κριτηρίων'),
        (45, 2, 'Our Criteria Rating'),
 
-       (46, 1, 'Διαθέσιμα Vouchers'),
-       (46, 2, 'Vouchers Available'),
+       (46, 1, 'Διαθέσιμα Vouchers Σήμερα'),
+       (46, 2, 'Vouchers Available Today'),
 
        (47, 1, 'Αγόρασε το VP Voucher'),
        (47, 2, 'Buy VP Voucher'),
@@ -902,11 +919,64 @@ something goes wrong. You`ll find more information in your confirmation email.')
        (138, 2, 'Covid-19 precautions Special health and safety measures are in place. Check
 your activity voucher once you book for full details.'),
 
-       (139, 1, 'Μπορείς να ακυρώσεις το Voucher πριν τις'),
-       (139, 2, 'You can cancel your Voucher before'),
+       (139, 1, 'Μπορείς να ακυρώσεις την δραστηριότητα πριν τις'),
+       (139, 2, 'You can cancel your activity before'),
 
        (140, 1, ' σύμφωνα με την πολιτική ακύρωσης του προμηθευτή'),
-       (140, 2, 'by supplier cancellation policy');
+       (140, 2, 'by supplier cancellation policy'),
+
+       (141, 1, 'Ζήστε τις Καλύτερες Εμπειρίες... Κερδίζοντας!'),
+       (141, 2, 'Spend Less Doing More'),
+
+       (142, 1, 'Ανακαλύψτε Κορυφαίες Προτάσεις,με ένα απλό κλίκ!'),
+       (142, 2, 'Discover Authentic Experiences with a single click'),
+
+       (143, 1, 'Εξερευνήστε τους θησαυρούς του προορισμού σας!'),
+       (143, 2, 'Explore hand-picked gems at your ease!'),
+
+       (144, 1, 'Πλήρωσε στον προμηθευτή'),
+       (144, 2, 'Pay to the Provider '),
+
+       (145, 1, 'Εξοικονόμησες '),
+       (145, 2, 'You Saved'),
+
+       (146, 1, ' χρησιμοποιόντας τις δραστηριότητες του ValuePss '),
+       (146, 2, ' using ValuePass Experiences'),
+
+       (147, 1, 'Ολοκληρώνοντας την αγορά επιβεβαιώνετε ότι αποδέχεστε τους '),
+       (147, 2, 'By proceeding you confirm that you accept our'),
+
+       (148, 1, 'και την'),
+       (148, 2, 'and the '),
+
+       (149, 1, 'Ορους και Προυποθέσεις'),
+       (149, 2, 'Terms and Conditions'),
+
+       (150, 1, 'Πολιτική Ακύρωσης'),
+       (150, 2, 'Cancelation Policy'),
+
+       (151, 1, 'Πληροφορίες'),
+       (151, 2, 'Information'),
+
+       (152, 1, 'Σύνδεσε τα Vouchers με εσένα και λάβε τους QR κωδικους με τα Vouchers στο email σου'),
+       (152, 2, 'Relate your voucher with you, and receive your vouchers qr codes to your email'),
+
+       (153, 1, 'Ονοματεπώνυμο'),
+       (153, 2, 'Full Name'),
+
+       (154, 1, 'Τηλέφωνο επικοινωνίας'),
+       (154, 2, 'Phone Number'),
+
+       (155, 1, 'Θα επικοινωνήσουμε μαζί σας μόνο για βασικές ενημερώσεις ή αλλαγές στην κράτησή σας'),
+       (155, 2, 'We’ll only contact you with essential updates or changes to your booking'),
+
+       (156, 1, 'Δέχομαι να μου αποστέλνονται  μηνύματα ηλεκτρονικού ταχυδρομείου σχετικά με προσφορές, νέα προϊόντα και σημαντικές ενημερώσεις.'),
+       (156, 2, 'I accept to send me occasional emails about promotions, new products and important updates.'),
+
+       (157, 1, 'Πληρωμή στον προμηθευτή'),
+       (157, 2, 'Pay to the Provider');
+
+
 
 
 

@@ -106,7 +106,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 								</div>
 
 								<div class="row">
-									<div class="col"> <?php echo $menu[49] ?> </div>
+									<div class="col pay_label"> <?php echo $menu[49] ?> </div>
 									<div class="col pay_value">
                                         <b><?php echo $totalToPay;?>€ </b>
                                         <span class="perperson">
@@ -207,7 +207,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 								</div>
 
 								<div class="row">
-									<div class="col"> <?php echo $menu[49] ?> </div>
+									<div class="col pay_label"> <?php echo $menu[49] ?> </div>
 									<div class="col pay_value">
                                         <b><?php echo $totalToPay;?>€ </b>
                                         <span class="perperson">
