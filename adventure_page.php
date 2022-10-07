@@ -136,13 +136,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                             <li><i class="fa fa-arrow-right"
                                                    aria-hidden="true"></i> <?php echo $menu[137]; ?>  </li>
                                             <?php
-                                            $aboutActivityArray = $vendor->getAboutActivityArray();
-                                            for ($counter = 0; $counter < ceil(count($aboutActivityArray) / 2); $counter++) {
+                                            foreach ($vendor->getAboutActivityArray() as $aboutActivity) {
                                                 ?>
                                                 <li><i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                                    <?php echo $aboutActivityArray[$counter]->getHead(); ?>
+                                                    <?php echo $aboutActivity->getHead(); ?>
                                                     <small class="text-muted">
-                                                        <?php echo $aboutActivityArray[$counter]->getDescription(); ?>
+                                                        <?php echo $aboutActivity->getDescription(); ?>
                                                     </small>
                                                 </li>
                                                 <?php
@@ -153,7 +152,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                                 <?php echo $vendor->getPaymentInfoActivityDescription(); ?>
                                             </li>
                                         </ul>
-
                                     </div>
                                 </div>
                             </div>
@@ -659,15 +657,15 @@ footer($menu, $languages)
 <script>
     $(function () {
         const minDate = new Date();
-        minDate.setDate(minDate.getDate() + 1);
+        minDate.setDate(minDate.getDate());
         const maxDate = new Date();
-        // maxDate.setDate(maxDate.getDate() + 15);
+        maxDate.setDate(maxDate.getDate() + 91);
         $('input[name="dates"]').daterangepicker({
             autoUpdateInput: false,
             singleDatePicker: true,
             parentEl: '.scroll-fix',
             minDate: minDate,
-            // maxDate: maxDate,
+            maxDate: maxDate,
             opens: 'left',
             locale: {
                 cancelLabel: 'Clear'
