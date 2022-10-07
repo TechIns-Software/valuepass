@@ -667,7 +667,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "   <h4> $totalPrice € </h4> ";
     $message .= " <small> $message11</small>  ";
     $message .= " <p><i class='icon_calendar'></i> $message13 <b> $cancelDate </b> $message14   </p> ";
-    $message .= "<p> <i class='icon-trash'></i> $message15  </p> ";
+    $message .= "<p> <i class='icon-cancel-circled-4'></i> $message15  </p> ";
     $message .= " </div> ";
     $message .= "   <div class='addtocartsection'> ";
     $message .= "  <button class='btn btn-primary 'data-bs-toggle='modal' data-bs-target='#questionmodal' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\"> $message2 </button> </div>";

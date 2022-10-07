@@ -92,8 +92,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     </div>
 
                                     <div class="col-12 py-3 ">
-<!--                                        <p class=" m-0   icon-adult  ">Initial Price X NumberOfPersons  </p>-->
-                                        <p class="text-muted d-inline icon-adult">
+                                        <p class=" m-0   icon-users  ">  <?php echo $amountPay; ?>€  * {NumberOfPersons}  </p>
+                                        <p class=" m-0  icon-money "> Pay to the Provider( <?php echo $amountPay; ?>€  *
+                                            {NumberOfPersons} )  </p>
+                                        <p class="  m-0  d-inline icon-adult">
                                             <?php
                                             $flagTemp = false;
                                             if ($adults != 0) {
@@ -127,7 +129,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     <br>
                                                     <?php echo date('F jS', $timeStampCancel);?>
                                                     <?php  echo  $menu[139] ;?>
+
                                                 </p>
+                                                <p class="valuepasswin"> Saved <span>  { } € </span> using  ValuePass Experiences </p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p style="margin-bottom: 0px!important;" class="text-end fa-2x">

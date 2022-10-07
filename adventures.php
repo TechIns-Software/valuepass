@@ -101,7 +101,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 								</div>
 
 								<div class="row">
-									<div class="col"> <?php echo $menu[47] ?> </div>
+									<div class="col"> <?php echo $menu[48] ?></div>
 									<div class="col from_price"> <?php echo $vendor->getOriginalPrice();?> € </div>
 								</div>
 

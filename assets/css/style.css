@@ -11698,3 +11698,13 @@ html[xmlns] .slides {
   background-color: rgba(172, 172, 172, 0.4);
   border-radius: 1em;
 }
+
+.valuepasswin{
+  color: #c88307;
+  font-weight: 600;
+}
+
+.valuepasswin span{
+  color: black;
+  font-weight: 800;
+}
