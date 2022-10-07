@@ -93,7 +93,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                                     <div class="col-12 py-3 ">
                                         <p class=" m-0   icon-users  ">  <?php echo $amountPay; ?>€  * {NumberOfPersons}  </p>
-                                        <p class=" m-0  icon-money "> Pay to the Provider( <?php echo $amountPay; ?>€  *
+                                        <p class=" m-0  icon-money "> <?php echo $menu[156]; ?>( <?php echo $amountPay; ?>€  *
                                             {NumberOfPersons} )  </p>
                                         <p class="  m-0  d-inline icon-adult">
                                             <?php
@@ -131,7 +131,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     <?php  echo  $menu[139] ;?>
 
                                                 </p>
-                                                <p class="valuepasswin"> Saved <span>  { } € </span> using  ValuePass Experiences </p>
+                                                <p class="valuepasswin">  <?php echo $menu[144] ;?> <span>  { } € </span>  <?php echo $menu[145] ;?></p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p style="margin-bottom: 0px!important;" class="text-end fa-2x">
