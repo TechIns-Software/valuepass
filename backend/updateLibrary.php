@@ -779,3 +779,11 @@ function removeVendorVoucher($conn, $arrayVendorVoucher) {
     }
     $stmt->close();
 }
+
+function removeVendor($conn, $idVendor) {
+    //there are on delete cascade constraints
+    $query = "DELETE FROM Vendor WHERE id = $idVendor";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $stmt->close();
+}

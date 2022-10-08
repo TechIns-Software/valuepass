@@ -279,7 +279,12 @@ foreach ($response['vendors'] as $idVendor => $valueVendor) {
         }
     }
 }
+foreach ($allIds['Vendor'] as $idVendorVm => $valueVendorVm) {
+    if (!isset($response['vendors']["$idVendorVm"])) {
+        removeVendor($conn, $idVendorVm);
+    }
 
+}
 // # Step 3: Check if images are modified somehow(add, or remove)
 
 $destinations = $response['destinations'];

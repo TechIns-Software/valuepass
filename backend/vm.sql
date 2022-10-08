@@ -124,7 +124,7 @@ create TABLE Vendor
 create TABLE VendorTranslate
 (
     idVendor        int          NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE,
     idLanguage      int          NOT NULL,
     FOREIGN KEY (idLanguage) REFERENCES Language (id),
     name            varchar(100) NOT NULL,
@@ -139,7 +139,7 @@ create TABLE BestOff
     idDestination int NOT NULL,
     FOREIGN KEY (idDestination) REFERENCES Destination (id),
     idVendor      int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id)
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 create TABLE LabelsBox
@@ -162,7 +162,7 @@ create TABLE VendorLabelsBox
     id          int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idVendor    int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE,
     idLabelsBox int NOT NULL,
     FOREIGN KEY (idLabelsBox) REFERENCES LabelsBox (id)
 ) ENGINE = InnoDB;
@@ -171,7 +171,7 @@ create TABLE VendorImages
 (
     id       int,
     idVendor int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE,
     image    varchar(100)
 ) ENGINE = InnoDB;
 
@@ -180,7 +180,7 @@ create TABLE Highlight
     id       int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idVendor int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id)
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 create TABLE HighlightTranslate
@@ -199,7 +199,7 @@ create TABLE Rated
     idRatedCategory int NOT NULL,
     FOREIGN KEY (idRatedCategory) REFERENCES RatedCategory (id),
     idVendor        int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE,
     stars           int NOT NULL
 ) ENGINE = InnoDB;
 
@@ -224,7 +224,7 @@ create TABLE VendorIncludedService
     id                int NOT NULL AUTO_INCREMENT, -- not sure needed
     PRIMARY KEY (id),
     idVendor          int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id),
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE,
     idIncludedService int not null,
     FOREIGN KEY (idIncludedService) REFERENCES IncludedService (id)
 ) ENGINE = InnoDB;
@@ -233,7 +233,7 @@ create TABLE AboutActivity
     id       int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idVendor int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id)
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 create TABLE AboutActivityTranslate
 (
@@ -252,7 +252,7 @@ create TABLE ImportantInformationHead
     id       int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     idVendor int NOT NULL,
-    FOREIGN KEY (idVendor) REFERENCES Vendor (id)
+    FOREIGN KEY (idVendor) REFERENCES Vendor (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 create TABLE ImportantInformationDescription
 (
