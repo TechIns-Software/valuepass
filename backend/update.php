@@ -279,7 +279,7 @@ foreach ($response['vendors'] as $idVendor => $valueVendor) {
         }
     }
 }
-foreach ($allIds['Vendor'] as $idVendorVm => $valueVendorVm) {
+foreach ($allIds['Vendor'] as $idVendorVm) {
     if (!isset($response['vendors']["$idVendorVm"])) {
         removeVendor($conn, $idVendorVm);
     }
