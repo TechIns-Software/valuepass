@@ -225,10 +225,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             <li class="border-bottom"> Additionally Earned Discount on vouchers
                                 <span>
                                     <?php
-                                    $extraDiscount = 100 * (
+                                    $extraDiscount = round(100 * (
                                             $calculateCartObject['moneyEarned'] /
                                                 ($calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'])
-                                        );
+                                        ), 2);
                                     echo "$extraDiscount%";
                                     ?>
 
