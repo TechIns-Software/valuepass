@@ -4,7 +4,8 @@
 
 if (!isset(
     $_POST['name'],
-    $_POST['email']
+    $_POST['email'],
+    $_POST['phone']
 )) {
     exit('Bad Request!');
 }
@@ -34,6 +35,7 @@ if (!(count($products) >= 2 && count($products) <= 11)) {
     <input hidden name='promotions' value='<?php echo ($promotions) ? "1" : "0" ?>'>
     <input hidden name='name' value='<?php echo $_POST['name']?>'>
     <input hidden name='email' value='<?php echo $_POST['email']?>'>
+    <input hidden name='phone' value='<?php echo $_POST['phone']?>'>
     <?php
     foreach ($products as $counter=> $product) {
         $idVendorVoucher = $product['idVendorVoucher'];
