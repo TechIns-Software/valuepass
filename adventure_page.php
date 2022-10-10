@@ -455,10 +455,10 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                         <!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
                         <div class="panel-dropdown">
-                            <a href="#"> <?php echo $menu[68] ?> <span class="qtyTotal">0</span></a>
+                            <a href="#"> <?php echo $menu[68] ?>  <span class="qtyTotal">0</span></a>
                             <div class="panel-dropdown-content right">
                                 <div class="qtyButtons">
-                                    <label><?php echo $menu[68] ?> <small> (13-99)</small></label>
+                                    <label><?php echo $menu[68] ?>  <small> (13-99)</small></label>
                                     <input id="adultsInput" type="text" name="qtyInput" value="0">
                                 </div>
                                 <div <?php echo !$vendor->isChildAcceptance() ? 'style="display: none"' : '' ?>

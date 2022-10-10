@@ -1799,8 +1799,8 @@ footer #copy {
 
 .follow_us ul li:first-child {
   color: #fff;
-  text-transform: uppercase;
-  font-weight: 500;
+  text-transform: capitalize;
+  font-weight: 700;
   letter-spacing: 2px;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -9161,7 +9161,7 @@ ul.share-buttons li i {
 }
 
 #toTop:hover {
-  background-color: #fc5b62;
+  background-color: #f88f05;
 }
 
 .modal-backdrop {
@@ -11715,5 +11715,15 @@ html[xmlns] .slides {
 }
 .cancelbg{
   background: rgba(255, 255, 255, 0.82);
-
 }
+
+.cancelfinalbg{
+
+  height: 100vh;
+  background: #CE5937;
+  background: -moz-linear-gradient(top, #CE5937 0%, #C57E4A 100%);
+  background: -webkit-linear-gradient(top, #CE5937 0%, #C57E4A 100%);
+  background: linear-gradient(to bottom, #CE5937 0%, #C57E4A 100%);
+}
+
+
