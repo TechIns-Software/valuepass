@@ -11713,3 +11713,7 @@ html[xmlns] .slides {
   color: black;
   font-weight: 800;
 }
+.cancelbg{
+  background: rgba(255, 255, 255, 0.82);
+
+}
