@@ -463,12 +463,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 </div>
                                 <div <?php echo !$vendor->isChildAcceptance() ? 'style="display: none"' : '' ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[69] ?></label>
+                                    <label><?php echo $menu[69] ?> <small> (4-12)</small> </label>
                                     <input id="childrenInput" type="text" name="qtyInput" value="0">
                                 </div>
                                 <div <?php echo !$vendor->isInfantTolerance() ? 'style="display: none"' : ''; ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[70] ?></label>
+                                    <label><?php echo $menu[70] ?>  <small> (0-3)</small></label>
                                     <input id="infantsInput" type="text" name="qtyInput" value="0">
                                 </div>
                             </div>

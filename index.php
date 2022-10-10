@@ -37,7 +37,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
-                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> Spend less <br> doing more
+                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> <?php echo $menu[157] ;?> <br> <?php echo $menu[158] ;?>
                     </div>
                     <!-- btn layer -->
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-03"
@@ -46,7 +46,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                       data-textAlign="['center','center','center','center']">How it works
+                       data-textAlign="['center','center','center','center']"><?php echo $menu[1] ?>
                     </a>
 
 
@@ -73,8 +73,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
-                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> Discover authentic experiences
-                        <br> with a single click!
+                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">  <?php echo $menu[159] ;?>
+                        <br>  <?php echo $menu[160] ;?>
                     </div>
                     <!-- btn layer -->
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-06"
@@ -83,8 +83,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                       data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']">How
-                        it works
+                       data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']"><?php echo $menu[1] ?>
                     </a>
                 </li>
                 <!-- end slide 02 -->
@@ -110,8 +109,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
-                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">Explore hand-picked gems <br>
-                        at your ease!
+                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> <?php echo $menu[161] ;?> <br>
+                        <?php echo $menu[162] ;?>
                     </div>
 
                     <!-- btn layer -->
@@ -121,7 +120,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                       data-textAlign="['center','center','center','center']">How it works
+                       data-textAlign="['center','center','center','center']"><?php echo $menu[1] ?>
                     </a>
                 </li>
                 <!-- end slide 03 -->

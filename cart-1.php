@@ -107,18 +107,18 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                                     <div class="col-12 py-3 ">
                                         <p class=" m-0   icon-users">
-                                            ValuePass Voucher Price
+                                            <?php echo $menu[163]; ?>
                                             <ul>
                                                 <?php
                                                 if ($adults != 0) {
-                                                    echo "<li>Adults: $adults X $priceAdult €</li>";
+                                                    echo "<li> $menu[68]: $adults X $priceAdult €</li>";
                                                 }
                                                 if ($children != 0) {
-                                                    echo "<li>Children: $children X $priceChild €</li>";
+                                                    echo "<li>$menu[69]: $children X $priceChild €</li>";
 
                                                 }
                                                 if ($infants != 0) {
-                                                    echo "<li>Infants: $infants X $priceInfant €</li>";
+                                                    echo "<li>$menu[70]: $infants X $priceInfant €</li>";
 
                                                 }
                                                 ?>
@@ -130,14 +130,14 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             <ul>
                                             <?php
                                             if ($adults != 0) {
-                                                echo "<li>Adults: $adults X $payVendorAdult €</li>";
+                                                echo "<li>$menu[68]: $adults X $payVendorAdult €</li>";
                                             }
                                             if ($children != 0) {
-                                                echo "<li>Children: $children X $payVendorChild €</li>";
+                                                echo "<li>$menu[69]: $children X $payVendorChild €</li>";
 
                                             }
                                             if ($infants != 0) {
-                                                echo "<li>Infants: $infants X $payVendorInfant €</li>";
+                                                echo "<li>$menu[70]: $infants X $payVendorInfant €</li>";
 
                                             }
                                             ?>
