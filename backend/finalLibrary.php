@@ -555,26 +555,35 @@ function calculatePriceCart($conn, $arrayVouchers)
     if (count($arrayVouchers) == 1) {
         $messageModal = $menu[114];
     } elseif (count($arrayVouchers) == 2) {
-        $messageModal = $menu[115] . " " . $menu[116] . " " . $menu[117];
+        $messageModal = '';
     } elseif (count($arrayVouchers) == 3) {
-        $messageModal = $menu[120];
+        $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
+          1 '.$menu[168].' 4 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 4) {
-        $messageModal = $menu[115] . " " . $menu[116] . " " . $menu[117];
+        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
+        1 Voucher '.$menu[169] ;
     } elseif (count($arrayVouchers) == 5) {
-        $messageModal = $menu[120];
+        $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
+          2 '.$menu[168].' 6 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 6) {
-        $messageModal = $menu[115] . " " . $menu[116] . " " . $menu[117];
+        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
+        2 Vouchers '.$menu[169] ;
     } elseif (count($arrayVouchers) == 7) {
-        $messageModal = $menu[120];
+        $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
+          3 '.$menu[168].' 8 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 8) {
-        $messageModal = $menu[115] . " " . $menu[116] . " " . $menu[117];
+        $messageModal =  $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
+        3 Vouchers '.$menu[169] ;
     } elseif (count($arrayVouchers) == 9) {
-        $messageModal = $menu[120];
+        $messageModal = $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
+           4 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 10) {
-        $messageModal = $menu[118] . " " . $menu[119];
+        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
+        4 Vouchers '.$menu[169] ;
 //        You can select 1 more voucher || MESSAGE ABOVE
     } else { // 11 vouchers
-        $messageModal = $menu[119];
+        $messageModal =   $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
+        4 Vouchers '.$menu[169].' '.$menu[171].' '.$menu[172] ;
     }
 
     return array(

@@ -287,7 +287,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                 <div class="modal-body text-center">
 
                     <!--                    <h5 class="offertitle">  </h5>-->
-                    <h4 class="offermessage"> <?php echo $calculateCartObject['messageModal']; ?></h4>
+                    <h4 class="offermessage">  <?php echo $calculateCartObject['messageModal']; ?></h4>
                     <button id="seeMoreActivities"
                             class="btn btn-info w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
                     <br>
