@@ -5,7 +5,7 @@ if (!isset($conn)) {
     include '../connection.php';
 }
 
-$targetFileName = './update.json';
+$targetFileName = './updateVouchers.json';
 $fileDestination = 'https://valuepass.gr/request/update/updateVouchers.json';
 @$file = file_get_contents($fileDestination);
 if ($file) {
@@ -16,11 +16,11 @@ if ($file) {
 
 }
 
-if (!file_exists('update.json')) {
+if (!file_exists('updateVouchers.json')) {
     exit('No file found!');
 }
 
-$json = file_get_contents('update.json');
+$json = file_get_contents('updateVouchers.json');
 $response = json_decode($json, true);
 $idVendorVoucherExists = getIdVendorVoucher($conn);
 $idVendorExistsAgain = [];
