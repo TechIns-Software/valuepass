@@ -309,7 +309,7 @@ function vendorFunction(
     $forHowManyPersonsIs = $basic[9];
     $childAcceptance = $basic[10];
     $infantTolerance = $basic[11];
-    $isActiveNow = $basic[11];
+    $isActiveNow = $basic[12];
     if ($updateVendor) {
         $queryBasic = "UPDATE Vendor
         SET idDestination = $idDestination, priceAdult = $priceAdult,
