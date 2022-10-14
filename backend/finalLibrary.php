@@ -159,11 +159,11 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                 $vendor->addRatedCategory(new \ValuePass\RatedCategory($nameRated, $stars));
             }
         }
-
+        date_default_timezone_set('Europe/Athens');
         $dayNumberToday = date('d');
         $monthNumberToday = intval(date('m'));
         $yearNumberToday = date('Y');
-        $query3 = "SELECT VV.starterVouchers, VV.existenceVoucher
+        $query3 = "SELECT SUM(VV.starterVouchers), SUM(VV.existenceVoucher)
                 FROM VendorVoucher AS VV
                 WHERE VV.idVendor = $id
                 AND day(VV.dateVoucher) = $dayNumberToday
