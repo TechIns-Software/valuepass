@@ -174,6 +174,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
             $starterVouchers = $existenceVoucher = 0;
             $stmt3->bind_result($starterVouchers, $existenceVoucher);
             while ($stmt3->fetch()) {}
+            $starterVouchers = $starterVouchers ?: 0;
+            $existenceVoucher = $existenceVoucher ?: 0;
             $vendor->setMaxVouchersToday($starterVouchers);
             $vendor->setAvailableVouchersToday($existenceVoucher);
         }
