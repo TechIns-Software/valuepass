@@ -231,7 +231,7 @@ if ($versions['general'] < $response['version']) {
                             $vendorValue['isActiveNow'],
                         );
                         $labelBoxes = $vendorValue['labelBox'];
-                        $includedServices = $vendorValue['labelBox'];
+                        $includedServices = $vendorValue['includedServices'];
                         $rated = $vendorValue['rated'];
                         $languages = $vendorValue['languages'];
                         vendorFunction(
