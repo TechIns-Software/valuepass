@@ -127,8 +127,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div id="collapse2" class=" collapse">
                                     <div class="panel-body">
                                         <ul class="px-2">
-                                            <li><i class="fa fa-arrow-right"
-                                                   aria-hidden="true"></i> <?php echo $menu[134]; ?>  </li>
+<!--                                            <li><i class="fa fa-arrow-right"-->
+<!--                                                   aria-hidden="true"></i> --><?php //echo $menu[134]; ?><!--  </li>-->
                                             <li><i class="fa fa-arrow-right"
                                                    aria-hidden="true"></i> <?php echo $menu[135]; ?>  </li>
                                             <li><i class="fa fa-arrow-right"
