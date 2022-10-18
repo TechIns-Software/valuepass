@@ -90,7 +90,7 @@ function footer($menu,$languages){ ?>
                                target="_blank"><?php echo $menu[10] ?></a></li>
                         <li><a><?php echo $menu[11] ?></a></li>
                         <li><span>© ValuePass</span></li>
-                        <a class="btn btn-info" id="updatebtn"> Update  Demo</a>
+<!--                        <a class="btn btn-info" id="updatebtn"> Update  Demo</a>-->
                     </ul>
                 </div>
             </div>
@@ -100,6 +100,6 @@ function footer($menu,$languages){ ?>
     <div id="toTop"></div><!-- Back to top button -->
 
 
-    <script src="assets/js/custom_update.js"></script>
+
 
 <?php  } ?>
