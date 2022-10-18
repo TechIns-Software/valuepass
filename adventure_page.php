@@ -456,18 +456,34 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                         <!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
                         <div class="panel-dropdown">
-                            <a href="#">  <?php echo $vendor->getForHowManyPersonsIs() > 1   ?' Group' : $menu[68] ;?>  <span class="qtyTotal"></span></a>
+                            <a href="#">  <?php echo $vendor->getForHowManyPersonsIs() > 1   ?' Group' : $menu[68] ;?>   <span class="qtyTotal"></span></a>
                             <div class="panel-dropdown-content right">
                                 <div class="qtyButtons">
-                                    <label><?php echo $menu[68] ?>  <small> (13-99)</small></label>
-                                    <input id="adultsInput" type="text" name="qtyInput" value="<?php echo $vendor->getForHowManyPersonsIs() == 1 ? 0 : $vendor->getForHowManyPersonsIs()  ?>">
+                                    <label>
+                                        <?php
+                                        if ( $vendor->getForHowManyPersonsIs() == 1){
+                                            echo $menu[68] ;
+                                        }else if ( $vendor->getForHowManyPersonsIs() == 99){
+                                            echo 'Group';
+                                        }else{
+                                            echo 'Group of '.$vendor->getForHowManyPersonsIs();
+                                        } ?>
+                                        <small>
+                                            <?php
+                                            if ( $vendor->getForHowManyPersonsIs() == 1){
+                                                echo '(13-99)' ;
+                                            }else if ( $vendor->getForHowManyPersonsIs() == 99){
+                                                echo 'Group';
+                                            } ?>
+                                            </small></label>
+                                    <input id="adultsInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isChildAcceptance() ? 'style="display: none"' : '' ?>
+                                <div <?php echo !$vendor->isChildAcceptance() ||  $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : '' ?>
                                         class="qtyButtons">
                                     <label><?php echo $menu[69] ?> <small> (4-12)</small> </label>
                                     <input id="childrenInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isInfantTolerance() ? 'style="display: none"' : ''; ?>
+                                <div <?php echo !$vendor->isInfantTolerance() |  $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : ''; ?>
                                         class="qtyButtons">
                                     <label><?php echo $menu[70] ?>  <small> (0-3)</small></label>
                                     <input id="infantsInput" type="text" name="qtyInput" value="0">
