@@ -449,6 +449,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     <div class="box_detail booking">
                         <div class="price">
                             <span>    <?php echo $menu[67] ?> </span>
+                            <span>    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
 
                         </div>
 
