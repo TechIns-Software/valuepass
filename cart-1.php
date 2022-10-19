@@ -65,6 +65,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         $priceChildArray = $objectVouchersDisplay['priceChildArray'];
                         $priceInfantArray = $objectVouchersDisplay['priceInfantArray'];
                         $savedArray = $objectVouchersDisplay['saved'];
+                        $forHowManyPersonsIsArray = $objectVouchersDisplay['forHowManyPersonsIsArray'];
+
                         for ($counter = 0;
                              $counter < count($nameVendorArray);
                              $counter++) {
@@ -83,6 +85,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             $priceChild = $priceChildArray[$counter];
                             $priceInfant = $priceInfantArray[$counter];
                             $saved = $savedArray[$counter];
+                            $forHowManyPersonsIs= $forHowManyPersonsIsArray[$counter];
+
                             ?>
 
                             <div class="col-12 cart-voucher  ">
@@ -111,7 +115,15 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             <ul>
                                                 <?php
                                                 if ($adults != 0) {
-                                                    echo "<li> $menu[68]: $adults X $priceAdult €</li>";
+
+                                                    if ($forHowManyPersonsIs == 99){
+                                                        echo "<li> Group : $adults X $priceAdult €</li>";
+                                                    }else if ($forHowManyPersonsIs >1){
+                                                        echo "<li> Group  $menu[174].' $forHowManyPersonsIs ': $adults X $priceAdult €</li>";
+                                                    }else{
+                                                        echo "<li> $menu[68]: $adults X $priceAdult €</li>";
+                                                    }
+
                                                 }
                                                 if ($children != 0) {
                                                     echo "<li>$menu[69]: $children X $priceChild €</li>";
@@ -130,7 +142,15 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             <ul>
                                             <?php
                                             if ($adults != 0) {
-                                                echo "<li>$menu[68]: $adults X $payVendorAdult €</li>";
+
+                                                if ($forHowManyPersonsIs == 99){
+                                                    echo "<li> Group : $adults X $payVendorAdult €</li>";
+                                                }else if ($forHowManyPersonsIs >1){
+                                                    echo "<li> Group  $menu[174].' $forHowManyPersonsIs ': $adults X $payVendorAdult €</li>";
+                                                }else{
+                                                    echo "<li> $menu[68]: $adults X $payVendorAdult €</li>";
+                                                }
+
                                             }
                                             if ($children != 0) {
                                                 echo "<li>$menu[69]: $children X $payVendorChild €</li>";
@@ -150,7 +170,14 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             $flagTemp = false;
                                             if ($adults != 0) {
                                                 $flagTemp = true;
-                                                echo $menu[110] .' : ' .$adults;
+
+                                                if ($forHowManyPersonsIs == 99){
+                                                    echo  "Group : $adults ";
+                                                }else if ($forHowManyPersonsIs >1){
+                                                    echo " Group  $menu[174].' $forHowManyPersonsIs ': $adults ";
+                                                }else{
+                                                    echo $menu[110] .' : ' .$adults;
+                                                }
                                             }
                                             if ($children != 0) {
                                                 echo ($flagTemp ? ' | ':'') .$menu[111] .' : ' .$children;

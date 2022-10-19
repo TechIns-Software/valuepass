@@ -344,13 +344,13 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
 
 function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
     $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, V.hourCancel , VV.dateVoucher,
-            V.discount, V.originalPrice
+            V.discount, V.originalPrice,V.forHowManyPersonsIs
             FROM Vendor AS V, VendorVoucher AS VV
             WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
     $stmt = $conn->prepare($query);
-    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount = $originalPrice = -1;
+    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount = $originalPrice = $forHowManyPersonsIs = -1;
     if ($stmt->execute()) {
-        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice);
+        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice,$forHowManyPersonsIs);
         while ($stmt->fetch()) {}
     }
     $query2 = "SELECT VT.name
@@ -362,7 +362,7 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
         $stmt2->bind_result($vendorName);
         while ($stmt2->fetch()) {}
     }
-    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice];
+    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice,$forHowManyPersonsIs];
 }
 
 
@@ -445,6 +445,7 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
     $priceChildArray = [];
     $priceInfantArray = [];
     $saved = [];
+    $forHowManyPersonsIsArray = [];
     foreach ($cart as $arrayVouchersWant) {
         $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
         $arrayPrices = getVendorForCart($conn, $arrayVouchersWant[0]->getIdVendorVoucher(), $idLanguage);
@@ -457,6 +458,7 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         $hourCancel = $arrayPrices[6];
         $discount = $arrayPrices[7];
         $originalPrice = $arrayPrices[8];
+        $forHowManyPersonsIs = $arrayPrices[9];
 
         $totalToPayAdultToVendor = $originalPrice - ($originalPrice * ($discount / 100)) - $priceAdult;
         $percentPayedToVendor = $totalToPayAdultToVendor / $priceAdult;
@@ -499,6 +501,7 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         array_push($priceChildArray, $priceChild);
         array_push($priceInfantArray, $priceInfant);
         array_push($saved, ($discount / 10) * $totalPay);
+        array_push($forHowManyPersonsIsArray, $forHowManyPersonsIs);
     }
     //sort from bigger to smaller
     usort($allVouchers, function ($a, $b) {
@@ -521,7 +524,8 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         'priceAdultArray'=>$priceAdultArray,
         'priceChildArray'=>$priceChildArray,
         'priceInfantArray'=>$priceInfantArray,
-        'saved'=>$saved
+        'saved'=>$saved,
+        'forHowManyPersonsIsArray'=>$forHowManyPersonsIsArray
     );
 }
 
