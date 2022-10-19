@@ -324,7 +324,7 @@ function getMaxVendorVoucher($conn, $idVendorVoucher): int
 function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): array
 {
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
-            V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice
+            V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs
             FROM Vendor AS V, VendorVoucher AS VV 
             WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
@@ -333,10 +333,10 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
     if ($stmt->execute()) {
-        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = $discount = $originalPrice = '-1';
-        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice);
+        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = $discount = $originalPrice = $forHowManyPersonsIs = '-1';
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice,$forHowManyPersonsIs);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice,$forHowManyPersonsIs]);
         }
     }
     return $possiblePackages;
@@ -557,35 +557,36 @@ function calculatePriceCart($conn, $arrayVouchers)
     if (count($arrayVouchers) == 1) {
         $messageModal = $menu[114];
     } elseif (count($arrayVouchers) == 2) {
-        $messageModal = '';
+        $messageModal = $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 2 ' .$menu[167].' 
+          1 '.$menu[168].' 4 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 3) {
         $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
           1 '.$menu[168].' 4 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 4) {
-        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
+        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].' 
         1 Voucher '.$menu[169] ;
     } elseif (count($arrayVouchers) == 5) {
         $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
           2 '.$menu[168].' 6 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 6) {
-        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
+        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].' 
         2 Vouchers '.$menu[169] ;
     } elseif (count($arrayVouchers) == 7) {
         $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
           3 '.$menu[168].' 8 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 8) {
         $messageModal =  $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
-        3 Vouchers '.$menu[169] ;
+         3 Vouchers '.$menu[169] ;
     } elseif (count($arrayVouchers) == 9) {
         $messageModal = $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
            4 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 10) {
         $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
-        4 Vouchers '.$menu[169] ;
+         4 Vouchers '.$menu[169] ;
 //        You can select 1 more voucher || MESSAGE ABOVE
     } else { // 11 vouchers
-        $messageModal =   $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
-        4 Vouchers '.$menu[169].' '.$menu[171].' '.$menu[172] ;
+        $messageModal =   $menu[164].' '. count($arrayVouchers) .' '.$menu[165].
+            $menu[173].'4 Vouchers '.$menu[169].' '.$menu[171] ;
     }
 
     return array(
@@ -600,6 +601,16 @@ function calculatePriceCart($conn, $arrayVouchers)
 
 function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '')
 {
+    $VoucherId = $package[0];
+    $date = $package[1];
+    $priceAdult = $package[2];
+    $priceKid = $package[3];
+    $priceInfant = $package[4];
+    $hourCancel = $package[5];
+    $discount = $package[6];
+    $originalPrice = $package[7];
+    $forHowManyPersonsIs = $package[8];
+
 
     if ($_SESSION["languageId"] == 2) {
         $message1 = "Unfortunately no Vouchers found for that day";
@@ -610,7 +621,14 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message6 = "Price Breakdown  ";
         $message6a = "ValuePass Voucher Price";
         $message6b = "Pay to the Provider";
-        $message7 = " Adults: ";
+        if ($forHowManyPersonsIs == 99){
+            $message7 = " Group: ";
+        }else if ($forHowManyPersonsIs > 1){
+            $message7 = " Group of ".$forHowManyPersonsIs ;
+        }else{
+            $message7 = " Adults: ";
+        }
+
         $message8 = " Children: ";
         $message9 = " Infants: ";
         $message10 = " Total Price ";
@@ -630,7 +648,14 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message6 = "Ανάλυση Τιμής";
         $message6a = "Τιμή ValuePass Voucher";
         $message6b = "Πληρωμή στον πάροχο";
-        $message7 = " Ενήλικες: ";
+
+        if ($forHowManyPersonsIs == 99){
+            $message7 = " Group: ";
+        }else if ($forHowManyPersonsIs > 1){
+            $message7 = " Group με ".$forHowManyPersonsIs. " άτομα " ;
+        }else{
+            $message7 = " Ενήλικες: ";
+        }
         $message8 = " Παιδιά: ";
         $message9 = " Μωρά: ";
         $message10 = "Σύνολο ";
@@ -662,14 +687,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         return $message;
     }
 
-    $VoucherId = $package[0];
-    $date = $package[1];
-    $priceAdult = $package[2];
-    $priceKid = $package[3];
-    $priceInfant = $package[4];
-    $hourCancel = $package[5];
-    $discount = $package[6];
-    $originalPrice = $package[7];
+
     $totalPrice = $priceAdult * $adults + $priceKid * $children + $priceInfant * $infants;
 
     $totalToPayAdultToVendor = $originalPrice - ($originalPrice * ($discount / 100)) - $priceAdult;
