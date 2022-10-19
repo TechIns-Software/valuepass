@@ -182,7 +182,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     if ($forHowManyPersonsIs == 99){
                                                         echo "<li> Group : $adults X $priceAdult €</li>";
                                                     }else if ($forHowManyPersonsIs >1){
-                                                        echo "<li> Group  $menu[174].' $forHowManyPersonsIs ': $adults X $priceAdult €</li>";
+                                                        echo "<li> Group  $menu[174] $forHowManyPersonsIs  $menu[175] :  $adults X $priceAdult €</li>";
                                                     }else{
                                                         echo "<li> $menu[68]: $adults X $priceAdult €</li>";
                                                     }
@@ -209,7 +209,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                 if ($forHowManyPersonsIs == 99){
                                                     echo "<li> Group : $adults X $payVendorAdult €</li>";
                                                 }else if ($forHowManyPersonsIs >1){
-                                                    echo "<li> Group  $menu[174].' $forHowManyPersonsIs ': $adults X $payVendorAdult €</li>";
+                                                    echo "<li> Group  $menu[174]  $forHowManyPersonsIs  $menu[175] : $adults X $payVendorAdult €</li>";
                                                 }else{
                                                     echo "<li> $menu[68]: $adults X $payVendorAdult €</li>";
                                                 }
@@ -236,7 +236,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             if ($forHowManyPersonsIs == 99){
                                               echo  "Group : $adults ";
                                             }else if ($forHowManyPersonsIs >1){
-                                                echo " Group  $menu[174].' $forHowManyPersonsIs ': $adults ";
+                                                echo " Group  $menu[174]  $forHowManyPersonsIs  $menu[175] : $adults ";
                                             }else{
                                                 echo $menu[110] .' : ' .$adults;
                                             }
