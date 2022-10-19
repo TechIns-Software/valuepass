@@ -7,7 +7,7 @@ function footer($menu,$languages){ ?>
         <div class="container margin_60_35">
             <div class="row">
                 <div class="col-lg-5 col-md-12 pe-5">
-                    <p><img src="assets/img/valuepassLogo.png" width="180" height="100" alt="Logo"></p>
+                    <p><img src="assets/img/valuepassLogo.png" class="footerlogo " alt="Logo"></p>
                     <p><?php echo $menu[53] ?> <br><?php echo $menu[54] ?><br>
                         <?php echo $menu[55] ?> </p>
                     <b> <?php echo $menu[56] ?></b>
@@ -56,10 +56,8 @@ function footer($menu,$languages){ ?>
 
                     </ul>
                 </div>
-
                 <div class="col-lg-3 col-md-6">
                     <h5 class="border-bottom"><?php echo $menu[9] ?></h5>
-
 
                     <ul class="contacts">
                         <h5 class="my-1"> <?php  echo $menu[131]?> </h5>
@@ -81,6 +79,8 @@ function footer($menu,$languages){ ?>
                     </ul>
 
                 </div>
+
+                <div class="col-lg-3 col-md-6"></div>
             </div>
             <hr>
             <div class="row">

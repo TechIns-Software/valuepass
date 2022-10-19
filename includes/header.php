@@ -46,7 +46,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
 
     <!-- BASE CSS -->
     <link href="assets/bootstrap-5.1.3/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css?v=1.5" rel="stylesheet">
     <link href="assets/css/vendors.css" rel="stylesheet">
 
     <!-- REVOLUTION SLIDER CSS -->
