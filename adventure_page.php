@@ -476,7 +476,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         }else if ( $vendor->getForHowManyPersonsIs() == 99){
                                             echo '';
                                         }else{
-                                            echo 'Group of '.$vendor->getForHowManyPersonsIs();
+                                            echo 'Group '. $menu[174].' ' .$vendor->getForHowManyPersonsIs().' '.$menu[175];
                                         } ?>
                                         <small>
                                             <?php
