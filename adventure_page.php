@@ -449,14 +449,24 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     <div class="box_detail booking">
                         <div class="price">
                             <span>    <?php echo $menu[67] ?> </span>
-                            <span>    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
-
+                            <span style="display: none">    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
                         </div>
 
 
                         <!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
                         <div class="panel-dropdown">
-                            <a href="#">  <?php echo $vendor->getForHowManyPersonsIs() > 1   ?' Group' : $menu[68] ;?>   <span class="qtyTotal"></span></a>
+                            <a href="#">
+
+                                <?php
+                                if ( $vendor->getForHowManyPersonsIs() == 1){
+                                    echo $menu[68] ;
+                                }else if ( $vendor->getForHowManyPersonsIs() == 99){
+                                    echo 'Group';
+                                }else{
+                                    echo 'Group of '.$vendor->getForHowManyPersonsIs();
+                                } ?>
+
+                                <span class="qtyTotal"></span></a>
                             <div class="panel-dropdown-content right">
                                 <div class="qtyButtons">
                                     <label>
@@ -464,7 +474,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         if ( $vendor->getForHowManyPersonsIs() == 1){
                                             echo $menu[68] ;
                                         }else if ( $vendor->getForHowManyPersonsIs() == 99){
-                                            echo 'Group';
+                                            echo '';
                                         }else{
                                             echo 'Group of '.$vendor->getForHowManyPersonsIs();
                                         } ?>
