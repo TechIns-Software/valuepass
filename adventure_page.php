@@ -463,7 +463,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 }else if ( $vendor->getForHowManyPersonsIs() == 99){
                                     echo 'Group';
                                 }else{
-                                    echo 'Group of '.$vendor->getForHowManyPersonsIs();
+                                    echo 'Group '. $menu[174].' ' .$vendor->getForHowManyPersonsIs().$menu[175];
                                 } ?>
 
                                 <span class="qtyTotal"></span></a>
