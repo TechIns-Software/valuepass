@@ -19,9 +19,15 @@ $vendors = getVendors($conn, $idDestination, $languageId);
 $bestOffs = getVendors($conn, $idDestination, $languageId, true);
 $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 ?>
-
+<style>
+    @media(max-width: 600px) {
+        #backimageDest {
+            max-height: 450px;
+        }
+    }
+</style>
 <main>
-	<section style="@media(max-width: 600px){max-height: 450px;}background: url('images/location_images/<?php echo $destination->getImage2();?>') 50% 50% " class="header-video adventure">
+	<section id="backimageDest" style="background: url('images/location_images/<?php echo $destination->getImage2();?>') 50% 50% " class="header-video adventure">
 		<div id="hero_video">
 			<div class="wrapper">
 				<div class="container container-custom">
