@@ -2372,6 +2372,7 @@ website:    http://www.themepunch.com
       transition: opacity 0.3s ease;
 	  width:13px;height:13px;
 	  border:2px solid #fff;
+    display: none
  }
 .zeus .tp-bullet:after {
   content: "";

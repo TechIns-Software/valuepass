@@ -24,7 +24,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     data-description="">
                     <!-- main image -->
                     <img src="assets/img/slider_images/1small.jpg" alt="" data-bgcolor="#ccc"
-                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                         data-bgposition="left center" data-bgfit="cover" data-bgrepeat="no-repeat"
                          data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <div class="rev-slider-mask"></div>
                     <!-- main text layer -->
@@ -32,10 +32,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto"
-                         data-fontsize="['50','43','40','25']" data-lineheight="['70','45','60','30']"
+                         data-voffset="['-50','-50','10','-65']" data-width="auto" data-height="auto"
+                         data-fontsize="['50','43','30','25']" data-lineheight="['70','45','40','10']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
-                         data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
+                         data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
                          style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> <?php echo $menu[157]; ?>
                         <br> <?php echo $menu[158]; ?>
@@ -69,10 +69,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto"
-                         data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']"
+                         data-voffset="['-50','-50','-40','-65']" data-width="auto" data-height="auto"
+                         data-fontsize="['60','43','25','25']" data-lineheight="['70','59','40','39']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
-                         data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
+                         data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
                          style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">  <?php echo $menu[159]; ?>
                         <br> <?php echo $menu[160]; ?>
@@ -106,8 +106,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-115','-65']" data-width="auto" data-height="auto"
-                         data-fontsize="['60','43','30','25']" data-lineheight="['70','59','70','39']"
+                         data-voffset="['-50','-50','-40','-65']" data-width="auto" data-height="auto"
+                         data-fontsize="['60','43','25','25']" data-lineheight="['70','59','50','39']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
