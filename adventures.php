@@ -41,14 +41,12 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 <!--		 <img src="assets/img/10.jpg" alt="" class="header-video--media" data-video-src="video/adventure" data-teaser-source="video/adventure" data-provider="" data-video-width="1920" data-video-height="960">-->
 	</section>
 	<!-- /header-video -->
-    <div class="bg_color_1 shadow bgbanner">
+    <div class="bg_color_1 shadow bgbanner2">
 
-            <div class="banner_title ">
-                <p class="flex-nowrap">  <?php echo $menu[38] ?>  </p>
-                <p class="flex-nowrap">  <?php echo $menu[124] ?>  </p>
-                <p class="flex-nowrap"> <?php echo $menu[39] ?>   </p>
-                <p class="flex-nowrap"> <?php echo $menu[40] ?>   </p>
-                <p class="flex-nowrap"> <?php echo $menu[41] ?>   </p>
+            <div class="banner_title2 ">
+                <p class="flex-nowrap ">  <?php echo $menu[57] ?> </p>
+                <p class="flex-nowrap"> <?php echo $menu[58] ?> </p>
+                <p class="flex-nowrap">  <?php echo $menu[59] ?> </p>
                 <!--				   <p class="fs-2"> <strong> Your gifts never end </strong>  </p> -->
             </div>
 
