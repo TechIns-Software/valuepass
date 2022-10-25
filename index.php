@@ -253,7 +253,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                     <div class="col-lg-12 my-1 ">
                         <h6> 3 <?php echo $menu[25] ?> <b>
-                                1 </b> <?php echo $menu[26] ?>
+                                1 </b> <?php echo $menu[179] ?>
                         </h6>
                     </div>
                     <div class="col-lg-12 my-1">
@@ -321,7 +321,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <p>• <?php echo $menu[92] ?></p>
                     <p>• <?php echo $menu[93] ?></p>
                     <p> <?php echo $menu[94] ?></p>
-                    <a href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
+                    <a  target="_blank" href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
 
                 </div>
             </div>

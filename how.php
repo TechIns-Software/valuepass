@@ -14,8 +14,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
     <div style="min-height: 90px;"></div>
     <div id="how" class="container margin_80_55">
 
-        <div class= "row ">
-            <button onclick="window.location.href='index.php'" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="row ">
+            <button onclick="window.location.href='index.php'" type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             <div class="main_title_2">
                 <h1><b><?php echo $menu[1]; ?> </b></h1>
                 <p><?php echo $menu[74]; ?> </p>
@@ -81,7 +82,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     <h5 class="text-decoration-underline"> <?php echo $menu[24] ?></h5>
 
                                     <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
-                                        3 <?php echo $menu[25]; ?> <b> 1 </b> <?php echo $menu[26]; ?> </h6>
+                                        3 <?php echo $menu[25]; ?> <b> 1 </b> <?php echo $menu[179]; ?> </h6>
 
 
                                     <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
@@ -120,6 +121,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     <ul>
                                         <li> • <?php echo $menu[92]; ?> </li>
                                         <li> • <?php echo $menu[93]; ?></li>
+                                        <li> • <?php echo $menu[94]; ?></li>
+
+                                       <b>     <a target="_blank" href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a> </b>
+
+
 
                                     </ul>
 
