@@ -424,9 +424,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 <div class="col-12 shadow bgbanner2">
 
                     <div class="banner_title2 ">
-                        <p>  <?php echo $menu[57] ?> </p>
-                        <p> <?php echo $menu[58] ?> </p>
-                        <p>  <?php echo $menu[59] ?> </p>
+                        <p>  <?php echo $menu[38] ?>  </p>
+                        <p>  <?php echo $menu[124] ?>  </p>
+                        <p> <?php echo $menu[39] ?>   </p>
+                        <p> <?php echo $menu[40] ?>   </p>
+                        <p> <?php echo $menu[41] ?>   </p>
                     </div>
                 </div>
             </div>
