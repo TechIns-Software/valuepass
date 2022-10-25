@@ -4971,12 +4971,12 @@ section#reviews {
 
 .box_detail {
   padding: 25px 25px 15px 25px;
-  border: 1px solid #ededed;
   background-color: #f8f8f8;
+  /*background-color: rgba(255, 167, 0, 0.98);*/
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  border-radius: 5px;
+  border-radius: 1em;
   margin-bottom: 30px;
 }
 
@@ -4990,7 +4990,8 @@ section#reviews {
 .box_detail .price>span {
   font-size: 31px;
   font-size: 1.9375rem;
-  font-weight: 600;
+  font-weight: 500;
+  color: black;
 }
 
 .box_detail .price>span>small {
@@ -11242,6 +11243,7 @@ html[xmlns] .slides {
   background: linear-gradient(209deg, rgba(255,85,51,0.9612219887955182) 4%, rgba(255,71,35,0.8883928571428571) 81%);
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+  border-radius: 1em;
 
   /*border-radius: 2em;*/
   /*margin: 1em 3em;*/

@@ -61,18 +61,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     <!--    </div>-->
     <!-- End layerslider -->
 
-    <div class="bg_color_1 shadow bgbanner2">
-
-        <div class="banner_title2 ">
-            <p>  <?php echo $menu[57] ?> </p>
-            <p> <?php echo $menu[58] ?> </p>
-            <p>  <?php echo $menu[59] ?> </p>
-        </div>
-
-
-        <!-- /container -->
-    </div>
-
 
     <div class=" bg_color_1">
         <!--		<nav class="secondary_nav sticky_horizontal">-->
@@ -89,7 +77,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 <!--                    <h3>--><?php //echo $vendor->getName(); ?><!--</h3>-->
                 <!--                </div>-->
                 <div class="col-12 text-center">
-                    <h5><b><?php echo $vendor->getName(); ?></b></h5>
+                    <h4><b><?php echo $vendor->getName(); ?></b></h4>
                 </div>
 
                 <div class="col-lg-6 col-md-12  ">
@@ -127,8 +115,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div id="collapse2" class=" collapse">
                                     <div class="panel-body">
                                         <ul class="px-2">
-<!--                                            <li><i class="fa fa-arrow-right"-->
-<!--                                                   aria-hidden="true"></i> --><?php //echo $menu[134]; ?><!--  </li>-->
+                                            <!--                                            <li><i class="fa fa-arrow-right"-->
+                                            <!--                                                   aria-hidden="true"></i> -->
+                                            <?php //echo $menu[134]; ?><!--  </li>-->
                                             <li><i class="fa fa-arrow-right"
                                                    aria-hidden="true"></i> <?php echo $menu[135]; ?>  </li>
                                             <li><i class="fa fa-arrow-right"
@@ -289,8 +278,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                 </div>
             </div>
-
-
             <div class="row">
                 <div class="col-lg-12 includes">
 
@@ -337,8 +324,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 </div>
 
             </div>
-
-
             <div class="row">
                 <div class="col-lg-12">
 
@@ -388,8 +373,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                 </div>
             </div>
-
-
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
@@ -436,15 +419,28 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 </div>
             </div>
 
+            <div class="row">
+
+                <div class="col-12 shadow bgbanner2">
+
+                    <div class="banner_title2 ">
+                        <p>  <?php echo $menu[57] ?> </p>
+                        <p> <?php echo $menu[58] ?> </p>
+                        <p>  <?php echo $menu[59] ?> </p>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
+
 
     <div style="min-height: 20px"></div>
     <section id="book">
         <div class="container margin_60_35">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8 col-md-12">
 
                     <div class="box_detail booking">
                         <div class="price">
@@ -452,18 +448,17 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             <span style="display: none">    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
                         </div>
 
-
                         <!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
                         <div class="panel-dropdown">
                             <a href="#">
 
                                 <?php
-                                if ( $vendor->getForHowManyPersonsIs() == 1){
-                                    echo $menu[68] ;
-                                }else if ( $vendor->getForHowManyPersonsIs() == 99){
+                                if ($vendor->getForHowManyPersonsIs() == 1) {
+                                    echo $menu[68];
+                                } else if ($vendor->getForHowManyPersonsIs() == 99) {
                                     echo 'Group';
-                                }else{
-                                    echo 'Group '. $menu[174].' ' .$vendor->getForHowManyPersonsIs().' '.$menu[175];
+                                } else {
+                                    echo 'Group ' . $menu[174] . ' ' . $vendor->getForHowManyPersonsIs() . ' ' . $menu[175];
                                 } ?>
 
                                 <span class="qtyTotal"></span></a>
@@ -471,31 +466,31 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div class="qtyButtons">
                                     <label>
                                         <?php
-                                        if ( $vendor->getForHowManyPersonsIs() == 1){
-                                            echo $menu[68] ;
-                                        }else if ( $vendor->getForHowManyPersonsIs() == 99){
+                                        if ($vendor->getForHowManyPersonsIs() == 1) {
+                                            echo $menu[68];
+                                        } else if ($vendor->getForHowManyPersonsIs() == 99) {
                                             echo '';
-                                        }else{
-                                            echo 'Group '. $menu[174].' ' .$vendor->getForHowManyPersonsIs().' '.$menu[175];
+                                        } else {
+                                            echo 'Group ' . $menu[174] . ' ' . $vendor->getForHowManyPersonsIs() . ' ' . $menu[175];
                                         } ?>
                                         <small>
                                             <?php
-                                            if ( $vendor->getForHowManyPersonsIs() == 1){
-                                                echo '(13-99)' ;
-                                            }else if ( $vendor->getForHowManyPersonsIs() == 99){
+                                            if ($vendor->getForHowManyPersonsIs() == 1) {
+                                                echo '(13-99)';
+                                            } else if ($vendor->getForHowManyPersonsIs() == 99) {
                                                 echo 'Group';
                                             } ?>
-                                            </small></label>
+                                        </small></label>
                                     <input id="adultsInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isChildAcceptance() ||  $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : '' ?>
+                                <div <?php echo !$vendor->isChildAcceptance() || $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : '' ?>
                                         class="qtyButtons">
                                     <label><?php echo $menu[69] ?> <small> (4-12)</small> </label>
                                     <input id="childrenInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isInfantTolerance() |  $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : ''; ?>
+                                <div <?php echo !$vendor->isInfantTolerance() | $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : ''; ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[70] ?>  <small> (0-3)</small></label>
+                                    <label><?php echo $menu[70] ?> <small> (0-3)</small></label>
                                     <input id="infantsInput" type="text" name="qtyInput" value="0">
                                 </div>
                             </div>

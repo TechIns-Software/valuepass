@@ -357,7 +357,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     <h4 class="card-title mt-0 "><a class="text-white"
                                                                     href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a>
                                     </h4>
-                                    <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> <?php echo $menu[3] ?></small>
+                                    <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> <?php echo ' '.$menu[3] ?></small>
                                 </div>
                             </div>
                         </div>
