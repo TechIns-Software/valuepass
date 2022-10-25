@@ -37,11 +37,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
-                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> <?php echo $menu[157] ;?> <br> <?php echo $menu[158] ;?>
+                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600;"> <?php echo $menu[157]; ?>
+                        <br> <?php echo $menu[158]; ?>
                     </div>
                     <!-- btn layer -->
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-03"
-                      onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
+                       onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
@@ -73,8 +74,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
-                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">  <?php echo $menu[159] ;?>
-                        <br>  <?php echo $menu[160] ;?>
+                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600">  <?php echo $menu[159]; ?>
+                        <br> <?php echo $menu[160]; ?>
                     </div>
                     <!-- btn layer -->
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-06"
@@ -83,7 +84,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                        data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                       data-textAlign="['center','center','center','center']" data-paddingleft="['34','34','34','34']"><?php echo $menu[1] ?>
+                       data-textAlign="['center','center','center','center']"
+                       data-paddingleft="['34','34','34','34']"><?php echo $menu[1] ?>
                     </a>
                 </li>
                 <!-- end slide 02 -->
@@ -109,8 +111,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['15','8','8','8']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
-                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> <?php echo $menu[161] ;?> <br>
-                        <?php echo $menu[162] ;?>
+                         style="text-shadow: 0 0 20px rgba(0,0,0,0.3); font-weight: 600"> <?php echo $menu[161]; ?> <br>
+                        <?php echo $menu[162]; ?>
                     </div>
 
                     <!-- btn layer -->
@@ -135,7 +137,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             <div class="banner_title3">
                 <h2><?php echo $menu[14] ?></h2>
 
-<!--                <p class="fs-2"><strong> --><?php //echo $menu[15] ?><!-- </strong></p>-->
+                <!--                <p class="fs-2"><strong> --><?php //echo $menu[15] ?><!-- </strong></p>-->
             </div>
 
         </div>
@@ -169,7 +171,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <object class="SvgImage" data="assets/icons/gift.svg"
                             type="image/svg+xml"></object>
                     <h3> <?php echo $menu[20] ?>  </h3>
-                    <p><?php echo $menu[21] ?> <br><?php echo $menu[13] ?></p>
+                    <p><?php echo $menu[21] ?> </p>
                     <!-- Button trigger modal -->
                     <b class="custom-pop" type="button" data-bs-toggle="modal"
                        data-bs-target="#exampleModal"> <?php echo $menu[22] ?></b>
@@ -196,6 +198,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             type="image/svg+xml"></object>
                     <h3> <?php echo $menu[30] ?></h3>
                     <p> <?php echo $menu[31] ?> </p>
+                    <b class="custom-pop" type="button" data-bs-toggle="modal"
+                       data-bs-target="#exampleModal3"> <?php echo $menu[22] ?></b>
                 </a>
             </div>
 
@@ -216,7 +220,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             type="image/svg+xml"></object>
                     <h3><?php echo $menu[34] ?> </h3>
                     <p> <?php echo $menu[35] ?> </p>
-
+                    <b class="custom-pop" type="button" data-bs-toggle="modal"
+                       data-bs-target="#exampleModal4"> <?php echo $menu[22] ?></b>
                 </a>
             </div>
 
@@ -232,13 +237,19 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"
-                        id="exampleModalLabel"> <?php echo $menu[23] ?>
-                        :
-                        <small> <?php echo $menu[24] ?></small></h5>
+                        id="exampleModalLabel"> <?php echo $menu[23] ?> :
+
+                        <small> <?php echo $menu[13] ?></small></h5>
+
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="col-lg-12 my-1 ">
+                        <p> <?php echo $menu[24] ?> </p>
+                    </div>
+
 
                     <div class="col-lg-12 my-1 ">
                         <h6> 3 <?php echo $menu[25] ?> <b>
@@ -306,11 +317,56 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                        <p>•	<?php echo $menu[91] ?></p>
-                        <p>•	<?php echo $menu[92] ?></p>
-                        <p>•	<?php echo $menu[93] ?></p>
-                        <p>•	<?php echo $menu[94] ?></p>
-                        <a href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
+                    <p>• <?php echo $menu[91] ?></p>
+                    <p>• <?php echo $menu[92] ?></p>
+                    <p>• <?php echo $menu[93] ?></p>
+                    <p> <?php echo $menu[94] ?></p>
+                    <a href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1"
+         aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+        <div style="min-height: 120px;"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel1"><?php echo $menu[177] ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>    <?php echo $menu[178] ?></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1"
+         aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+        <div style="min-height: 120px;"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel1"><?php echo $menu[177] ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p> <b> Email:</b> <a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></p>
+                    <p> <b> WhatsApp:</b> <a href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></p>
+                    <p> <b> Viber:</b> <a href="https://msng.link/o/?306931451910=vi"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></p>
 
                 </div>
             </div>
@@ -357,7 +413,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     <h4 class="card-title mt-0 "><a class="text-white"
                                                                     href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a>
                                     </h4>
-                                    <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?> <?php echo ' '.$menu[3] ?></small>
+                                    <small class="card-meta mb-2"><?php echo $destination->getNumberOfVendors(); ?><?php echo ' ' . $menu[3] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +431,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 </main>
 
 <?php include_once 'includes/footer.php';
-footer($menu,$languages)
+footer($menu, $languages)
 
 ?>
 

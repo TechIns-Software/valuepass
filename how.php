@@ -140,6 +140,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                     <ul>
                                         <li> • <?php echo $menu[89]; ?></li>
                                         <li> • <?php echo $menu[90]; ?></li>
+                                        <li> • <?php echo $menu[176]; ?></li>
 
                                     </ul>
                                 </div>
