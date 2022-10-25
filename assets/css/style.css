@@ -11737,3 +11737,16 @@ html[xmlns] .slides {
   width: 200px;
   aspect-ratio: 1:1;
 }
+.headStyle{
+  font-weight: 700;
+  color: black;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.descrStyle{
+
+  color: rgb(44, 41, 41);
+  font-size: .9emem;
+  padding-left: 15px;
+}

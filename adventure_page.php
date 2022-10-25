@@ -114,23 +114,29 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 </div>
                                 <div id="collapse2" class=" collapse">
                                     <div class="panel-body">
-                                        <ul class="px-2">
+                                        <ul class="p-2">
                                             <!--                                            <li><i class="fa fa-arrow-right"-->
                                             <!--                                                   aria-hidden="true"></i> -->
                                             <?php //echo $menu[134]; ?><!--  </li>-->
-                                            <li><i class="fa fa-arrow-right"
-                                                   aria-hidden="true"></i> <?php echo $menu[135]; ?>  </li>
-                                            <li><i class="fa fa-arrow-right"
-                                                   aria-hidden="true"></i> <?php echo $menu[136]; ?>  </li>
-                                            <li><i class="fa fa-arrow-right"
-                                                   aria-hidden="true"></i> <?php echo $menu[137]; ?>  </li>
+                                            <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
+                                                                        aria-hidden="true"></i> <?php echo $menu[135]; ?>
+                                                </p></li>
+                                            <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
+                                                                        aria-hidden="true"></i> <?php echo $menu[136]; ?>
+                                                </p></li>
+                                            <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
+                                                                        aria-hidden="true"></i> <?php echo $menu[137]; ?>
+                                                </p></li>
                                             <?php
                                             foreach ($vendor->getAboutActivityArray() as $aboutActivity) {
                                                 ?>
-                                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                                    <?php echo $aboutActivity->getHead(); ?>
-                                                    <small class="text-muted">
+                                                <li class=headStyle ">
+                                                    <p class="headStyle "><i class="fa fa-arrow-right"
+                                                                            aria-hidden="true"></i> <?php echo $aboutActivity->getHead(); ?>
+                                                    </p>
+                                                    <small class="  descrStyle">
                                                         <?php echo $aboutActivity->getDescription(); ?>
+                                                        This is a Description
                                                     </small>
                                                 </li>
                                                 <?php
