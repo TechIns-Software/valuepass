@@ -289,9 +289,9 @@ website:   	http://www.themepunch.com
     height: 100vh!important;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
     .rev_slider_wrapper {
-        height: 60vh!important;
+        height: 50vh!important;
     }
 }
 
