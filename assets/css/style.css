@@ -11750,3 +11750,10 @@ html[xmlns] .slides {
   font-size: .9emem;
   padding-left: 15px;
 }
+.informationBox{
+  background-color: rgba(0, 119, 255, 0.87);
+  padding: 1em;
+  border-radius: 1em;
+  color: whitesmoke;
+  font-weight: 700;
+}
