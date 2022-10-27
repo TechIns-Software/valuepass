@@ -290,7 +290,7 @@ website:   	http://www.themepunch.com
 
 }
 
-@media only screen and (max-width: 480px) and (max-height:812px)  {
+@media only screen and (max-width: 480px) and (orientation:portrait)     {
     .rev_slider_wrapper {
         height:55vh!important;
     }
