@@ -291,7 +291,7 @@ website:   	http://www.themepunch.com
 
 @media only screen and (max-width: 800px){
     .rev_slider_wrapper {
-        height: 70vh!important;
+        height: 60vh!important;
     }
 }
 

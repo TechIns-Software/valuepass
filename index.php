@@ -24,7 +24,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     data-description="">
                     <!-- main image -->
                     <img src="assets/img/slider_images/1small.jpg" alt="" data-bgcolor="#ccc"
-                         data-bgposition="40% center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                         data-bgposition="left center" data-bgfit="cover" data-bgrepeat="no-repeat"
                          data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <div class="rev-slider-mask"></div>
                     <!-- main text layer -->
@@ -32,8 +32,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-20','-30']" data-width="auto" data-height="auto"
-                         data-fontsize="['50','43','30','30']" data-lineheight="['70','45','40','30']"
+                         data-voffset="['-50','-50','-20','80']" data-width="auto" data-height="auto"
+                         data-fontsize="['50','43','30','30']" data-lineheight="['70','45','40','40']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
                          data-paddingright="['0','0','0','0']" data-paddingleft="['0','0','0','0']"
@@ -44,7 +44,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-03"
                        onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','50','50']"
+                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','50','180']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                        data-textAlign="['center','center','center','center']"><?php echo $menu[1] ?>
@@ -60,7 +60,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     data-title="02" data-param1="02" data-description="">
                     <!-- main image -->
                     <img src="assets/img/slider_images/2small.jpg" alt="" data-bgcolor="#ccc"
-                         data-bgposition="right center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                         data-bgposition="60% center" data-bgfit="cover" data-bgrepeat="no-repeat"
                          data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <div class="rev-slider-mask"></div>
                     <!-- main text layer -->
@@ -69,7 +69,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-40','-25']" data-width="auto" data-height="auto"
+                         data-voffset="['-50','-50','-40','80']" data-width="auto" data-height="auto"
                          data-fontsize="['60','43','25','25']" data-lineheight="['70','59','40','39']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
@@ -81,7 +81,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-06"
                        onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','180']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                        data-textAlign="['center','center','center','center']"
@@ -106,7 +106,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-40','-20']" data-width="auto" data-height="auto"
+                         data-voffset="['-50','-50','-40','80']" data-width="auto" data-height="auto"
                          data-fontsize="['60','43','25','25']" data-lineheight="['70','59','50','39']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
@@ -119,7 +119,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-09"
                        onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','80']"
+                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','180']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                        data-textAlign="['center','center','center','center']"><?php echo $menu[1] ?>
