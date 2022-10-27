@@ -17,6 +17,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
         <!-- Start revolution slider 5.4.8 fullscreen mode -->
         <div id="rev_slider_44" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8">
             <ul>
+                <!-- breakPoints 1042px,794px,479px-->
                 <!-- start slide 01 -->
                 <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0"
                     data-hideslideonmobile="off" data-easein="Power1.easeInOut" data-easeout="Power2.easeInOut"
@@ -32,7 +33,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-20','-30']" data-width="auto" data-height="auto"
+                         data-voffset="['-50','-50','-50','-80']" data-width="auto" data-height="auto"
                          data-fontsize="['50','43','30','30']" data-lineheight="['70','45','40','40']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
@@ -44,7 +45,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-03"
                        onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','50','42']"
+                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','50','0']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                        data-textAlign="['center','center','center','center']"><?php echo $menu[1] ?>
@@ -69,7 +70,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-40','-50']" data-width="auto" data-height="auto"
+                         data-voffset="['-50','-50','-50','-80']" data-width="auto" data-height="auto"
                          data-fontsize="['60','43','25','25']" data-lineheight="['70','59','40','39']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
@@ -81,7 +82,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-06"
                        onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','30']"
+                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','50','0']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                        data-textAlign="['center','center','center','center']"
@@ -106,7 +107,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                          data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text" data-whitespace="nowrap" data-x="['center','center','center','center']"
                          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                         data-voffset="['-50','-50','-40','-40']" data-width="auto" data-height="auto"
+                         data-voffset="['-50','-50','-50','-80']" data-width="auto" data-height="auto"
                          data-fontsize="['60','43','25','25']" data-lineheight="['70','59','50','39']"
                          data-letterspacing="['-2','-1','-1','-1']" data-responsive="off" data-responsive_offset="off"
                          data-paddingtop="['0','0','0','0']" data-paddingbottom="['0','0','0','0']"
@@ -119,7 +120,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <a class="tp-caption tp-resizeme rs-btn btn_1" href="how.php" id="slide-411-layer-09"
                        onclick="window.location.href='how.php'" data-bs-toggle="modal" data-bs-target="#howitworks"
                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','82','30']"
+                       data-y="['middle','middle','middle','middle']" data-voffset="['152','130','50','0']"
                        data-whitespace="nowrap" data-type="button" data-responsive="off" data-responsive_offset="off"
                        data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                        data-textAlign="['center','center','center','center']"><?php echo $menu[1] ?>
@@ -321,7 +322,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <p>• <?php echo $menu[92] ?></p>
                     <p>• <?php echo $menu[93] ?></p>
                     <p> <?php echo $menu[94] ?></p>
-                    <a  target="_blank" href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
+                    <a target="_blank"
+                       href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
 
                 </div>
             </div>
@@ -364,9 +366,16 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p> <b> Email:</b> <a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></p>
-                    <p> <b> WhatsApp:</b> <a href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></p>
-                    <p> <b> Viber:</b> <a href="https://msng.link/o/?306931451910=vi"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></p>
+                    <p><b> Email:</b> <a href="mail:customercare@valuepass.gr" class="icon-email">
+                            customercare@valuepass.gr</a></p>
+                    <p><b> WhatsApp:</b> <a
+                                href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img
+                                    src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid">
+                            306931451910</a></p>
+                    <p><b> Viber:</b> <a href="https://msng.link/o/?306931451910=vi"> <img src="assets/icons/viber.png"
+                                                                                           height="20" width="20"
+                                                                                           class="img-fluid">
+                            +306931451910</a></p>
 
                 </div>
             </div>
