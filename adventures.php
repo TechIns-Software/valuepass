@@ -99,7 +99,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 									<div class="col buyvp_value">
                                         <b><?php echo $vendor->getPriceAdult();?>€ </b>
                                         <span class="perperson">
-                                            <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                            <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?>
                                         </span>
                                     </div>
 								</div>
@@ -114,7 +114,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 									<div class="col pay_value">
                                         <b><?php echo $totalToPay;?>€ </b>
                                         <span class="perperson">
-                                            <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                            <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?>
                                         </span>
                                     </div>
 								</div>
@@ -200,7 +200,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 									<div class="col buyvp_value">
                                         <b><?php echo $vendor->getPriceAdult();?>€ </b>
                                         <span class="perperson">
-                                            <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                            <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?>
                                         </span>
                                     </div>
 								</div>
@@ -215,7 +215,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 									<div class="col pay_value">
                                         <b><?php echo $totalToPay;?>€ </b>
                                         <span class="perperson">
-                                            <?php echo $vendor->getForHowManyPersonsIsString();?>
+                                            <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?>
                                         </span>
                                     </div>
 								</div>

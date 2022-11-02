@@ -218,7 +218,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div class="col buyvp_value">
                                     <b><?php echo $vendor->getPriceAdult(); ?>€ </b>
                                     <span class="perperson">
-                                        <?php echo $vendor->getForHowManyPersonsIsString(); ?>
+                                        <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
                                     </span>
                                 </div>
                             </div>
@@ -233,7 +233,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <div class="col pay_value">
                                     <b><?php echo $totalToPay; ?>€ </b>
                                     <span class="perperson">
-                                        <?php echo $vendor->getForHowManyPersonsIsString(); ?>
+                                        <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
                                     </span>
                                 </div>
                             </div>
@@ -573,7 +573,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         <div class="col buyvp_value">
                                             <b><?php echo $vendor->getPriceAdult(); ?>€ </b>
                                             <span class="perperson">
-                                                <?php echo $vendor->getForHowManyPersonsIsString(); ?>
+                                                <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
                                             </span>
                                         </div>
                                     </div>
@@ -589,7 +589,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         <div class="col pay_value">
                                             <b><?php echo $totalToPay; ?>€ </b>
                                             <span class="perperson">
-                                                <?php echo $vendor->getForHowManyPersonsIsString(); ?>
+                                                <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
                                             </span>
                                         </div>
                                     </div>
@@ -637,11 +637,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo './adventures.php?id=' . $vendor->getIdDestination(); ?>">
-                        <button type="button" class="btn btn-warning"
+                        <button type="button" class=" btn-cshopping"
                                 data-bs-dismiss="modal"><?php echo $menu[127]; ?></button>
                     </a>
                     <a href="cart-1.php">
-                        <button type="button" class="btn btn-info"><?php echo $menu[128]; ?></button>
+                        <button type="button" class="btn-gtcart"><?php echo $menu[128]; ?></button>
                     </a>
                 </div>
             </div>

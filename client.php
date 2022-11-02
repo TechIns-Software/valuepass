@@ -63,6 +63,16 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         <p class="text-center">
                             <?php echo $menu[154] ;?>
                         </p>
+
+                        <p  class="text-center">
+
+                            <?php echo $menu[180] ;?>
+                            <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
+                               target="_blank">
+                                <b>  <?php echo $menu[148] ?> </b>
+                            </a>
+                            <?php echo $_SESSION["languageId"] == 1? ' της Valuepass':null ?>
+                        </p>
                         <div class="form-check">
 <!--                            <input class="form-check-input" type="checkbox" value="" id="terms">-->
                             <label class="form-check-label" for="terms">
@@ -71,10 +81,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                    target="_blank">
                                   <b>  <?php echo $menu[148] ?> </b>
                                 </a>
-
-                                <?php echo $menu[147] ?>
-                                <a href="#"> <b><?php echo $menu[149] ?>  </b> </a>
+                                <?php echo $_SESSION["languageId"] == 1? ' της Valuepass':null ?>
+<!--                                --><?php //echo $menu[147] ?>
+<!--                                <a href="#"> <b>--><?php //echo $menu[149] ?><!--  </b>  </a>-->
                             </label>
+
+
                         </div>
 
 
@@ -99,7 +111,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             <div class="row ">
 
                 <div class="col-12  " >
-                    <h3> Order Summary </h3>
+                    <h3>  <?php echo $menu[182]; ?> </h3>
                 </div>
 
             </div>
@@ -166,9 +178,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             <span ><?php echo $nameVendor; ?></span>
                                         </h5>
 
-                                        <h6 class="text-end price ">
-                                            <strong><?php echo $amountPay; ?>€</strong>
-                                        </h6>
+<!--                                        <h6 class="text-end price ">-->
+<!--                                            <strong>--><?php //echo $amountPay; ?><!--€</strong>-->
+<!--                                        </h6>-->
 
                                     </div>
 
@@ -199,6 +211,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             </ul>
 
                                         </p>
+                                        <h4 class=" text-end  "><?php echo $menu[187];?>  <strong><?php echo $amountPay; ?>€</strong> </h4>
                                         <p class=" m-0  icon-money ">
                                         <?php echo $menu[156]; ?>
                                             <ul>
@@ -273,7 +286,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     <?php  echo  $menu[139] ;?>
 
                                                 </p>
-                                                <p class="valuepasswin"> Saved <span> <?=$saved?> € </span> using  ValuePass Experiences </p>
+                                                <p class="valuepasswin"> Saved <span> <?=$saved?> € </span> <?php echo $menu[181] ;?>  ValuePass Experiences </p>
                                             </div>
                                         </div>
 
@@ -286,6 +299,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             </div>
 
                      </span>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-muted py-3"> <?php echo $menu[135] ?> </p>
+                </div>
             </div>
         </div>
 

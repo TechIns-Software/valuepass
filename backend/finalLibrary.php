@@ -561,7 +561,7 @@ function calculatePriceCart($conn, $arrayVouchers)
     if (count($arrayVouchers) == 1) {
         $messageModal = $menu[114];
     } elseif (count($arrayVouchers) == 2) {
-        $messageModal = $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 2 ' .$menu[167].' 
+        $messageModal = $menu[164].'  '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 2 ' .$menu[167].' 
           1 '.$menu[168].' 4 Vouchers '.$menu[169];
     } elseif (count($arrayVouchers) == 3) {
         $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
@@ -638,7 +638,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message10 = " Total Price ";
         $message11 = "All taxes and fees included ";
         $message12 = "Date ";
-        $message13 = "You can cancel your voucher before ";
+        $message13 = "You can cancel your activity before ";
         $message14 = "by supplier Cancellation policy";
         $message15 = "ValuePass vouchers are not cancelled, but we are always looking to offer you the best alternative
         solutions regarding the activity providers we promote if something goes wrong. You will find more information
@@ -666,7 +666,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message11 = "Περιλαμβάνονται όλοι φόροι";
         $message12 = "Ημερομηνία";
 
-        $message13 = "Μπορείς να ακυρώσεις το Voucher μέχρι τις ";
+        $message13 = "Μπορείς να ακυρώσεις τη δραστηριότητα μέχρι τις ";
         $message14 = "συμφωνά με την πολιτική ακύρωσης του προμηθευτή";
         $message15 = "Τα vouchers ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε την καλύτερη εναλλακτική
         λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε εάν κάτι πάει στραβά,Θα βρείτε περισσότερες πληροφορίες
@@ -764,7 +764,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "   <h4> $totalPrice € </h4> ";
     $message .= " <small> $message11</small>  ";
     $message .= " <p><i class='icon_calendar'></i> $message13 <b> $cancelDate </b> $message14   </p> ";
-    $message .= "<p> <i class='icon-cancel-circled-4'></i> $message15  </p> ";
+    $message .= "<p> <b class='vpicon'>VP </b> $message15  </p> ";
     $message .= " </div> ";
     $message .= "   <div class='addtocartsection'> ";
     $message .= "  <button class='btn btn-primary 'data-bs-toggle='modal' data-bs-target='#questionmodal' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\"> $message2 </button> </div>";

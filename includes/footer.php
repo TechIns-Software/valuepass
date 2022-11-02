@@ -46,7 +46,7 @@ function footer($menu,$languages){ ?>
                             <a > <?php echo $menu[4] ?> </a>
                             <ul class="ps-3">
                                 <li><a href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid">+ 306931451910</a></li>
-                                <li><a href="viber://chat?number=306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
+                                <li><a class="viberlink" href="viber://add?number=306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
                                 <li><a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></li>
                                 <li><a class="icon-question"> FAQ’s</a></li>
                             </ul>
@@ -63,7 +63,7 @@ function footer($menu,$languages){ ?>
                         <h5 class="my-1"> <?php  echo $menu[131]?> </h5>
                         <li><a href="mailto:customercare@valuepass.gr"> customercare@valuepass.gr</a></li>
                         <li><a href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid">+ 306931451910</a></li>
-                        <li><a href="https://msng.link/o/?306931451910=vi"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
+                        <li><a class="viberlink" href="viber://add?number=306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
 
                     </ul>
 
@@ -77,7 +77,6 @@ function footer($menu,$languages){ ?>
                         <li><a href="mailto:customercare@valuepass.gr"> customercare@valuepass.gr</a></li>
                         <li><a href="mailto:dataprotectionofficer@valuepass.gr"> dataprotectionofficer@valuepass.gr</a></li>
                     </ul>
-
                 </div>
 
                 <div class="col-lg-3 col-md-6"></div>
@@ -98,8 +97,5 @@ function footer($menu,$languages){ ?>
     </footer>
 
     <div id="toTop"></div><!-- Back to top button -->
-
-
-
-
+    <script src="assets/js/changeviberurl.js"></script>
 <?php  } ?>

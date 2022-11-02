@@ -46,7 +46,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
 
     <!-- BASE CSS -->
     <link href="assets/bootstrap-5.1.3/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css?v=1.9" rel="stylesheet">
+    <link href="assets/css/style.css?v=2.2" rel="stylesheet">
     <link href="assets/css/vendors.css" rel="stylesheet">
 
     <!-- REVOLUTION SLIDER CSS -->
@@ -98,7 +98,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
                     <li><span><a href="#"><?php echo $menu[4] ?></span></a>
                         <ul class="customercare">
                             <li><a href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></li>
-                            <li><a href="https://msng.link/o/?306931451910=vi"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
+                            <li><a class="viberlink" href="viber://add?number=306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
                             <li><a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></li>
                             <li><a class="icon-question"> FAQ’s</a></li>
                         </ul>
@@ -151,7 +151,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
                     <li><span><a href="#"><?php echo $menu[4] ?> </span></a>
                         <ul class="customercare">
                             <li><a href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> 306931451910</a></li>
-                            <li><a href="https://msng.link/o/?306931451910=vi"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
+                            <li><a class="viberlink" href="viber://add?number=306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
                             <li><a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></li>
                             <li><a class="icon-question"> FAQ’s</a></li>
                         </ul>

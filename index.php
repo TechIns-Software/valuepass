@@ -583,6 +583,7 @@ footer($menu, $languages)
 
 
 <script src="changeLanguage.js"></script>
+<script  src="assets/js/changeviberurl.js"></script>
 
 
 </body>

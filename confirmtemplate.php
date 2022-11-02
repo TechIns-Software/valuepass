@@ -209,7 +209,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     <?php  echo  $menu[139] ;?>
 
                                                 </p>
-                                                <p class="valuepasswin"> <?php echo $menu[144] ;?> <span> <?=$saved?> € </span> using  ValuePass Experiences </p>
+                                                <p class="valuepasswin"> <?php echo $menu[144] ;?> <span> <?=$saved?> € </span> <?php echo $menu[181] ;?>  ValuePass Experiences </p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p style="margin-bottom: 0px!important;" class="text-end fa-2x">

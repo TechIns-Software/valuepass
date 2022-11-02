@@ -312,16 +312,17 @@ class Vendor {
     /**
      * @return string
      */
-    public function getForHowManyPersonsIsString(): string
+    public function getForHowManyPersonsIsString($perPerson= '',$forParticicants= '', $forParticicants2= '',$perGroup= ''): string
     {
         if ($this->getForHowManyPersonsIs() != 99) {
             if ($this->getForHowManyPersonsIs() == 1) {
-                return 'per person';
+
+                return $perPerson;
             } else {
-                return 'for '.$this->getForHowManyPersonsIs().' participants';
+                return $forParticicants.' '.$this->getForHowManyPersonsIs().' '.$forParticicants2;
             }
         } else {
-            return 'per group';
+            return $perGroup;
         }
     }
 

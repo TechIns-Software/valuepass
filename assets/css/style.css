@@ -1447,13 +1447,13 @@ header.sticky .hamburger-inner::before {
   }
 }
 
-.hero_in.hotels_detail:before {
-  background: url(../img/hero_in_hotels_detail.jpg) center center no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+/*.hero_in.hotels_detail:before {*/
+/*  background: url(../img/hero_in_hotels_detail.jpg) center center no-repeat;*/
+/*  -webkit-background-size: cover;*/
+/*  -moz-background-size: cover;*/
+/*  -o-background-size: cover;*/
+/*  background-size: cover;*/
+/*}*/
 
 /* .hero_in.hotels_detail .wrapper {
     background-color: #000;
@@ -11732,6 +11732,13 @@ html[xmlns] .slides {
 .offermessage{
   font-family: Fontello;
 }
+
+.offermessage2{
+  font-family: Fontello;
+  color: rgb(36 110 215);
+  font-weight: 700;
+}
+
 .footerlogo{
   padding: 1em 0;
   width: 200px;
@@ -11756,4 +11763,57 @@ html[xmlns] .slides {
   border-radius: 1em;
   color: whitesmoke;
   font-weight: 700;
+}
+
+.btn-cshopping{
+  background-color: #e8620c;
+  color: white;
+  border: none;
+  padding: 0.5em;
+  border-radius: 1.2em;
+}
+.btn-cshopping:hover{
+  color: white!important;
+
+}
+
+.btn-cshopping2{
+  background-color: white;
+  color: rgb(5 82 177 / 87%);
+  border: 1px solid #e8620c ;
+  padding: 0.5em;
+  border-radius: 1.2em;
+  font-weight: 800;
+  transition:  all 0.2s ease-in-out 0s;
+}
+.btn-cshopping2:hover{
+ color: white;
+  font-weight: 600;
+  background-color : rgb(5 82 177 / 87%);
+  border: 1px solid rgb(5 82 177 / 87%);
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
+  transition:  all 0.2s ease-in-out 0s;
+}
+
+.btn-gtcart{
+  background-color: rgb(5 82 177 / 87%);
+  color: white!important;
+  border: none;
+  padding: 0.5em;
+  border-radius: 1.2em;
+}
+
+.btn-gtcart:hover{
+  color: white!important;
+
+}
+
+.vpicon{
+  font-weight: bold;
+  color: #e8620c;
+}
+
+.color-b{
+color: rgba(19, 43, 197, 0.86);
 }

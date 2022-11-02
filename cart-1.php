@@ -208,7 +208,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     <?php  echo  $menu[139] ;?>
 
                                                 </p>
-                                                <p class="valuepasswin"> <?php echo $menu[144] ;?> <span> <?=$saved?> € </span> using  ValuePass Experiences </p>
+                                                <p class="valuepasswin"> <?php echo $menu[144] ;?> <span> <?=$saved?> € </span> <?php echo $menu[181] ;?>  ValuePass Experiences </p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p style="margin-bottom: 0px!important;" class="text-end fa-2x">
@@ -311,15 +311,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
+                <div class="modal-body ">
 
                     <!--                    <h5 class="offertitle">  </h5>-->
-                    <h4 class="offermessage">  <?php echo $calculateCartObject['messageModal']; ?></h4>
+                    <h4 class="offermessage2">   <b> <?php echo $calculateCartObject['messageModal']; ?> </b></h4>
+                    <h5 class="offermessage2" > <?php echo $menu[172] ;?></h5>
                     <button id="seeMoreActivities"
-                            class="btn btn-info w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
+                            class=" btn-cshopping2 w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
                     <br>
                     <script>goBackInHistory('seeMoreActivities');</script>
-                    <a href="./client.php" class=" btn btn-success my-2 w-100  p-1">  <?php echo $menu[109]; ?>  </a>
+
+                    <a href="./client.php" class="  "> <button class="btn btn-cshopping my-2 w-100  p-1">   <?php echo $menu[109]; ?> </button>  </a>
                 </div>
             </div>
         </div>
