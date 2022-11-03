@@ -121,7 +121,7 @@ function footer($menu, $languages)
 
                                     <ul  class="ps-3">
                                         <h5  class="m-1"><?php echo $menu[133] ?> </h5>
-                                        <li> <a href="mailto:customercare@valuepass.gr">customercare@valuepass.gr </a> </li>
+                                        <li> <a href="mailto:info@valuepass.gr">info@valuepass.gr </a> </li>
                                     </ul>
                                 </ul>
                             </div>
