@@ -605,6 +605,29 @@ function calculatePriceCart($conn, $arrayVouchers)
 
 function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '')
 {
+    if ($_SESSION["languageId"] == 2) {
+        $message1 = "Unfortunately no Vouchers found for that day";
+    } else {
+        $message1 = "Δυστυχώς, δεν βρέθηκαν διαθέσιμα vouchers για αυτή την ημερομηνία";
+    }
+
+    if (count($package) == 0) {
+        $message = "<div class='col-lg-12 vouchertemplate2'>";
+        $message .= " <div class='container'> <div  class='row'> ";
+        $message .= "   <div class='col'><div style='min-height: 5px;'></div> ";
+        $message .= "  <div class='title '>";
+        $message .= "  </div> ";
+        $message .= " </div> ";
+        $message .= " </div> ";
+        $message .= " <div class='row border-bottom'> ";
+        $message .= " <div class='col-12'> ";
+        $message .= "  <div class='price text-center'> ";
+        $message .= " <h5>$message1</h5>";
+        $message .= " </div> ";
+        $message .= "</div> ";
+        return $message;
+    }
+
     $VoucherId = $package[0];
     $date = $package[1];
     $priceAdult = $package[2];
@@ -672,23 +695,6 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε εάν κάτι πάει στραβά,Θα βρείτε περισσότερες πληροφορίες
         στο email επιβεβαίωσης.";
 
-    }
-
-    if (count($package) == 0) {
-        $message = "<div class='col-lg-12 vouchertemplate2'>";
-        $message .= " <div class='container'> <div  class='row'> ";
-        $message .= "   <div class='col'><div style='min-height: 5px;'></div> ";
-        $message .= "  <div class='title '>";
-        $message .= "  </div> ";
-        $message .= " </div> ";
-        $message .= " </div> ";
-        $message .= " <div class='row border-bottom'> ";
-        $message .= " <div class='col-12'> ";
-        $message .= "  <div class='price text-center'> ";
-        $message .= " <h5>$message1</h5>";
-        $message .= " </div> ";
-        $message .= "</div> ";
-        return $message;
     }
 
 
