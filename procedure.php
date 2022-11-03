@@ -9,12 +9,12 @@ if (!isset(
 )) {
     exit('Bad Request!');
 }
-if (isset($_POST['promotions'])) {
-    $promotions = true;
-} else {
-    $promotions = false;
-
-}
+//if (isset($_POST['promotions'])) {
+//    $promotions = true;
+//} else {
+//    $promotions = false;
+//}
+$promotions = true;
 session_start();
 include 'backend/includeClasses.php';
 $cartArray = unserialize($_SESSION['cart']);

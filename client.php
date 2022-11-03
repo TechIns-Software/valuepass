@@ -64,8 +64,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             <?php echo $menu[154] ;?>
                         </p>
 
-                        <p  class="text-center">
-
+                        <p  class="form-check">
                             <?php echo $menu[180] ;?>
                             <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
                                target="_blank">
@@ -91,8 +90,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 
                         <div class="form-check ">
-                            <input name="promotions" class="form-check-input" type="checkbox" checked value=""
-                                   id="emailmarketing">
+<!--                            <input name="promotions" class="form-check-input" type="checkbox" checked value=""-->
+<!--                                   id="emailmarketing">-->
                             <label class="form-check-label " for="emailmarketing">
                                 <?php echo $menu[155] ;?>
                             </label>
