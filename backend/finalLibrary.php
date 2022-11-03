@@ -605,6 +605,7 @@ function calculatePriceCart($conn, $arrayVouchers)
 
 function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '')
 {
+    $greekMonths = array('Ιανουαρίου','Φεβρουαρίου','Μαρτίου','Απριλίου','Μαΐου','Ιουνίου','Ιουλίου','Αυγούστου','Σεπτεμβρίου','Οκτωβρίου','Νοεμβρίου','Δεκεμβρίου');
     if ($_SESSION["languageId"] == 2) {
         $message1 = "Unfortunately no Vouchers found for that day";
     } else {
@@ -708,7 +709,11 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     //echo date('M jS', $timeStampCancel)
     $dateTimestamp = strtotime($date);
     $day = date('d/m', $dateTimestamp);
-    $hour = date('h:i A', $dateTimestamp);
+    if ($_SESSION["languageId"] == 2) {
+        $hour = date('h:i A', $dateTimestamp);
+    } else { //greek language fixme when new languages added
+        $hour = date('h:i ', $dateTimestamp) .(date('A', $dateTimestamp) == 'AM' ? 'π.μ.': 'μ.μ.');
+    }
 
     $message = "<div class='col-12 vouchertemplate2'>";
     $message .= " <div class='container'> <div  class='row'> ";
@@ -760,7 +765,15 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     }
 
     $cancelTimestamp = strtotime($date) - 3600 * $hourCancel;
-    $cancelDate = date('h:i A F jS ', $cancelTimestamp);
+    if ($_SESSION["languageId"] == 2) {
+        $cancelDate = date('h:i A F jS ', $cancelTimestamp);
+    } else { //greek language fixme when new languages added
+        $cancelDate = date('h:i  ', $cancelTimestamp)
+        .(date('A', $dateTimestamp) == 'AM' ? 'π.μ.': 'μ.μ.')
+        .date(' j ', $cancelTimestamp)
+        .$greekMonths[intval(date('m', $cancelTimestamp))-1];
+    }
+
     $message .= " </ul> ";
     $message .= " </div> ";
     $message .= "</div> ";
