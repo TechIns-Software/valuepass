@@ -84,11 +84,11 @@ function footer($menu, $languages)
 <!--                    </ul>-->
 <!--                </div>-->
                 <div class=" col-lg-3 col-md-6  text-center panel-heading collapsed   " data-bs-toggle="collapse" href="#collapse5" role="button"
-                     aria-expanded="true" aria-controls="collapseExample">
+                     aria-expanded="false" aria-controls="collapseExample">
                     <h5 class="panel-title  accordion-toggle">
                         <h5 class="border-bottom" > <span class=" icon-down-1"></span> <?php echo $menu[9] ?> <span class=" icon-down-1"></span></h5>
                     </h5>
-                    <div id="collapse5" class="  collapse show">
+                    <div id="collapse5" class="  collapse">
                         <div class="panel-body">
                             <div class="row px-4">
                                 <ul class="links ">
