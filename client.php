@@ -165,6 +165,25 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                     <div class="col-12 cart-voucher  ">
                         <div class="row">
+                            <h3 id="py-1 total_cart">
+                            <?php
+                            $calculateCartObject = calculatePriceCart($conn, $allVouchers);
+                            echo $menu[104]; ?>
+                                <span class="float-end">
+                                    <?php
+                                    if ($calculateCartObject['moneyEarned'] != 0) {
+                                        ?>
+                                        <span style="text-decoration: line-through;color: red">
+                                            <?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned']; ?>
+                                        </span> /
+                                        <?php
+                                    }
+                                    echo $calculateCartObject['totalPay'] . ' €';
+                                    ?>
+                                </span>
+                            </h3>
+                        </div>
+                        <div class="row">
                                     <div class="col-4 ">
                                         <div class="thumb_cart" >
                                             <img class="img-fluid" src="vendorImages/<?php echo $vendorId[$counter] . '/' . $imageVendor ?>"
