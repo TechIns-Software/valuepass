@@ -230,8 +230,14 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                                     ?>
                                                     <br>
                                                     <?php
-                                                    echo date('F jS', $timeStampCancel);
-                                                    echo $menu[139] ;?>
+                                                    if ($idLanguage == 2) {
+                                                        echo date('F jS', $timeStampCancel);
+                                                    } else {//fixme greek only
+                                                        echo date('j ', $timeStampCancel)
+                                                            .$greekMonths[intval(date('m', $timeStampCancel))-1];
+                                                    }
+                                                    echo $menu[139] ;
+                                                    ?>
 
                                                 </p>
                                                 <p class="valuepasswin"> <?php echo $menu[144] ;?> <span> <?=$saved?> € </span> <?php echo $menu[181] ;?>  ValuePass Experiences </p>

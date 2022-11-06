@@ -1,4 +1,5 @@
 <?php
+$greekMonths = array('Ιανουαρίου','Φεβρουαρίου','Μαρτίου','Απριλίου','Μαΐου','Ιουνίου','Ιουλίου','Αυγούστου','Σεπτεμβρίου','Οκτωβρίου','Νοεμβρίου','Δεκεμβρίου');
 if (!isset($conn)) {
     include 'connection.php';
 }
@@ -8,7 +9,6 @@ include_once 'includes/header.php';
 $idLanguage = $_SESSION["languageId"];
 
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
-//TODO: future maybe client needs to fill up banks field f.e. region
 ?>
 
 <style>
@@ -266,26 +266,52 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             }
                                             ?>
                                         </p>
-                                        <p class=" m-0  icon-calendar"> <?php echo date_format(date_create($dateVoucher), 'M d, Y'); ?> </p>
-                                        <p class=" m-0  icon-clock">
-
-                                            <?php echo date_format(date_create($dateVoucher), 'h:i A'); ?>
+                                        <p class="m-0 icon-calendar">
+                                            <?php
+                                            if ($idLanguage == 2) {
+                                                echo date_format(date_create($dateVoucher), 'M d, Y');
+                                            } else {//fixme greek only
+                                                echo date_format(date_create($dateVoucher), 'j ');
+                                                echo $greekMonths[intval(date_format(date_create($dateVoucher), 'm')) - 1];
+                                                echo date_format(date_create($dateVoucher), ', Y');
+                                            }
+                                            ?>
+                                        <p class="m-0 icon-clock">
+                                            <?php
+                                            if ($idLanguage == 2) {
+                                                echo date_format(date_create($dateVoucher), 'h:i A');
+                                            } else {//fixme greek only
+                                                echo date_format(date_create($dateVoucher), 'h:i ')
+                                                    .((date_format(date_create($dateVoucher), 'A') == 'AM') ? 'π.μ.' : 'μ.μ.');
+                                            }
+                                            ?>
                                         </p>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <p class=" m-0 text-danger">
                                                     <?php
                                                     $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
-                                                    //date('Y-m-d h:i:s', $timeStampCancel);
-                                                    ?>
-                                                    <?php  echo  $menu[138] ;?> <?php echo date('h:i A', $timeStampCancel);?>
 
+                                                    echo $menu[138];
+                                                    if ($idLanguage == 2) {
+                                                        echo date(' h:i A', $timeStampCancel);
+                                                    } else {//fixme greek only
+                                                        echo date(' h:i ', $timeStampCancel)
+                                                            .((date('A', $timeStampCancel) == 'AM') ? 'π.μ.' : 'μ.μ.');
+                                                    }
+                                                    ?>
                                                     <br>
-                                                    <?php echo date('F jS', $timeStampCancel);?>
-                                                    <?php  echo  $menu[139] ;?>
+                                                    <?php
+                                                    if ($idLanguage == 2) {
+                                                        echo date('F jS', $timeStampCancel);
+                                                    } else {//fixme greek only
+                                                        echo date('j ', $timeStampCancel)
+                                                        .$greekMonths[intval(date('m', $timeStampCancel))-1];
+                                                    }
+                                                    echo $menu[139] ;?>
 
                                                 </p>
-                                                <p class="valuepasswin"> Saved <span> <?=$saved?> € </span> <?php echo $menu[181] ;?>  ValuePass Experiences </p>
+                                                <p class="valuepasswin"> <?php echo $menu[144] ;?> <span> <?=$saved?> € </span> <?php echo $menu[181] ;?>  ValuePass Experiences </p>
                                             </div>
                                         </div>
 
