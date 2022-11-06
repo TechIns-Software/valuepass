@@ -281,7 +281,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             <?php
                             if ($calculateCartObject['moneyEarned'] != 0) {
                                 ?>
-                            <li class="border-bottom"> Additionally Earned Discount on vouchers
+                            <li class="border-bottom">  <?php echo $menu[188];?>
                                 <span>
                                     <?php
                                     $extraDiscount = round(100 * (
