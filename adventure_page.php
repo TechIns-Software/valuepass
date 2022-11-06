@@ -136,7 +136,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                                     </p>
                                                     <small class="  descrStyle">
                                                         <?php echo $aboutActivity->getDescription(); ?>
-                                                        This is a Description
+
                                                     </small>
                                                 </li>
                                                 <?php
