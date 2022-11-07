@@ -119,14 +119,21 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                             <!--                                                   aria-hidden="true"></i> -->
                                             <?php //echo $menu[134]; ?><!--  </li>-->
                                             <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
-                                                                        aria-hidden="true"></i> <?php echo $menu[135]; ?>
-                                                </p></li>
+                                                                        aria-hidden="true"></i>  <?php echo $menu[189]; ?>
+                                                </p>
+
+                                            <small> <?php echo $menu[135]; ?></small></li>
                                             <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
-                                                                        aria-hidden="true"></i> <?php echo $menu[136]; ?>
-                                                </p></li>
+                                                                        aria-hidden="true"></i> <?php echo $menu[190]; ?>
+                                                </p>
+                                                <small> <?php echo $menu[191]; ?> </small>
+                                            </li>
                                             <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
-                                                                        aria-hidden="true"></i> <?php echo $menu[137]; ?>
-                                                </p></li>
+                                                                        aria-hidden="true"></i> <?php echo $menu[192]; ?>
+                                                </p>
+                                                <small> <?php echo $menu[193]; ?> </small>
+                                            </li>
+
                                             <?php
                                             foreach ($vendor->getAboutActivityArray() as $aboutActivity) {
                                                 ?>
