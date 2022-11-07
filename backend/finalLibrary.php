@@ -56,7 +56,8 @@ function getDestination($conn, $idDestination, $idLanguage): \ValuePass\Destinat
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
         $stmt->bind_result($id, $name, $description, $image2);
-        while ($stmt->fetch()) {}
+        while ($stmt->fetch()) {
+        }
     }
     if ($id == "") {
         $destination = null;
@@ -122,7 +123,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
     if ($stmt->execute()) {
         $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs = $googleMapsImage = $childAcceptance = $infantTolerance = '';
         $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs, $googleMapsImage, $childAcceptance, $infantTolerance);
-        while ($stmt->fetch()) {}
+        while ($stmt->fetch()) {
+        }
         if (!$id) {
             return null;
         }
@@ -173,7 +175,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
         if ($stmt3->execute()) {
             $starterVouchers = $existenceVoucher = 0;
             $stmt3->bind_result($starterVouchers, $existenceVoucher);
-            while ($stmt3->fetch()) {}
+            while ($stmt3->fetch()) {
+            }
             $starterVouchers = $starterVouchers ?: 0;
             $existenceVoucher = $existenceVoucher ?: 0;
             $vendor->setMaxVouchersToday($starterVouchers);
@@ -190,7 +193,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
             if ($stmt4->execute()) {
                 $descriptionFull = $descriptionBig = $paymentActivityHead = $paymentActivityDesc = '';
                 $stmt4->bind_result($descriptionFull, $descriptionBig, $paymentActivityHead, $paymentActivityDesc);
-                while ($stmt4->fetch()) {}
+                while ($stmt4->fetch()) {
+                }
                 $vendor->addSimpleField($descriptionFull, $descriptionBig, $paymentActivityHead, $paymentActivityDesc);
             }
 
@@ -334,15 +338,16 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
     $possiblePackages = [];
     if ($stmt->execute()) {
         $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = $discount = $originalPrice = $forHowManyPersonsIs = '-1';
-        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice,$forHowManyPersonsIs);
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice,$forHowManyPersonsIs]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs]);
         }
     }
     return $possiblePackages;
 }
 
-function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
+function getVendorForCart($conn, $idVendorVoucher, $idLanguage): array
+{
     $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, V.hourCancel , VV.dateVoucher,
             V.discount, V.originalPrice,V.forHowManyPersonsIs
             FROM Vendor AS V, VendorVoucher AS VV
@@ -350,8 +355,9 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
     $stmt = $conn->prepare($query);
     $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount = $originalPrice = $forHowManyPersonsIs = -1;
     if ($stmt->execute()) {
-        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice,$forHowManyPersonsIs);
-        while ($stmt->fetch()) {}
+        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice, $forHowManyPersonsIs);
+        while ($stmt->fetch()) {
+        }
     }
     $query2 = "SELECT VT.name
             FROM VendorTranslate AS VT
@@ -360,9 +366,10 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage) : array {
     $vendorName = "";
     if ($stmt2->execute()) {
         $stmt2->bind_result($vendorName);
-        while ($stmt2->fetch()) {}
+        while ($stmt2->fetch()) {
+        }
     }
-    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice,$forHowManyPersonsIs];
+    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs];
 }
 
 
@@ -508,24 +515,24 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         return $b->getPrice() - $a->getPrice();
     });
     return array(
-        'allVouchers'=>$allVouchers,
-        'nameVendor'=>$nameVendorArray,
-        'dateVoucher'=>$dateVoucherArray,
-        'imageVendor'=>$imageVendorArray,
-        'adults'=>$adultsArray,
-        'children'=>$childrenArray,
-        'infants'=>$infantsArray,
-        'amountPay'=>$amountPayArray,
-        'hourCancels'=>$hourCancels,
-        'vendorId'=>$idVendorArray,
-        'payVendorAdult'=>$payVendorAdult,
-        'payVendorChild'=>$payVendorChild,
-        'payVendorInfant'=>$payVendorInfant,
-        'priceAdultArray'=>$priceAdultArray,
-        'priceChildArray'=>$priceChildArray,
-        'priceInfantArray'=>$priceInfantArray,
-        'saved'=>$saved,
-        'forHowManyPersonsIsArray'=>$forHowManyPersonsIsArray
+        'allVouchers' => $allVouchers,
+        'nameVendor' => $nameVendorArray,
+        'dateVoucher' => $dateVoucherArray,
+        'imageVendor' => $imageVendorArray,
+        'adults' => $adultsArray,
+        'children' => $childrenArray,
+        'infants' => $infantsArray,
+        'amountPay' => $amountPayArray,
+        'hourCancels' => $hourCancels,
+        'vendorId' => $idVendorArray,
+        'payVendorAdult' => $payVendorAdult,
+        'payVendorChild' => $payVendorChild,
+        'payVendorInfant' => $payVendorInfant,
+        'priceAdultArray' => $priceAdultArray,
+        'priceChildArray' => $priceChildArray,
+        'priceInfantArray' => $priceInfantArray,
+        'saved' => $saved,
+        'forHowManyPersonsIsArray' => $forHowManyPersonsIsArray
     );
 }
 
@@ -561,36 +568,36 @@ function calculatePriceCart($conn, $arrayVouchers)
     if (count($arrayVouchers) == 1) {
         $messageModal = $menu[114];
     } elseif (count($arrayVouchers) == 2) {
-        $messageModal = $menu[164].'  '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 2 ' .$menu[167].' 
-          1 '.$menu[168].' 4 Vouchers '.$menu[169];
+        $messageModal = $menu[164] . '  ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 2 ' . $menu[167] . ' 
+          1 ' . $menu[168] . ' 4 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 3) {
-        $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
-          1 '.$menu[168].' 4 Vouchers '.$menu[169];
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 1 ' . $menu[167] . ' 
+          1 ' . $menu[168] . ' 4 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 4) {
-        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].' 
-        1 Voucher '.$menu[169] ;
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' 
+        1 Voucher ' . $menu[169];
     } elseif (count($arrayVouchers) == 5) {
-        $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
-          2 '.$menu[168].' 6 Vouchers '.$menu[169];
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 1 ' . $menu[167] . ' 
+          2 ' . $menu[168] . ' 6 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 6) {
-        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].' 
-        2 Vouchers '.$menu[169] ;
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' 
+        2 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 7) {
-        $messageModal =  $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
-          3 '.$menu[168].' 8 Vouchers '.$menu[169];
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 1 ' . $menu[167] . ' 
+           3 ' . $menu[168] . ' 8 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 8) {
-        $messageModal =  $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
-         3 Vouchers '.$menu[169] ;
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . '
+          3 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 9) {
-        $messageModal = $menu[164].' '. count($arrayVouchers) .$menu[165].' '.$menu[166].' 1 ' .$menu[167].' 
-           4 Vouchers '.$menu[169];
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 1 ' . $menu[167] . ' 
+            4 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 10) {
-        $messageModal = $menu[164].' '. count($arrayVouchers) .' '.$menu[165].'
-         4 Vouchers '.$menu[169] ;
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . '
+          4 Vouchers ' . $menu[169];
 //        You can select 1 more voucher || MESSAGE ABOVE
     } else { // 11 vouchers
-        $messageModal =   $menu[164].' '. count($arrayVouchers) .' '.$menu[165].
-            $menu[173].'4 Vouchers '.$menu[169].' '.$menu[171] ;
+        $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] .
+            $menu[173] . '4 Vouchers ' . $menu[169] . ' ' . $menu[171];
     }
 
     return array(
@@ -605,7 +612,7 @@ function calculatePriceCart($conn, $arrayVouchers)
 
 function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '')
 {
-    $greekMonths = array('Ιανουαρίου','Φεβρουαρίου','Μαρτίου','Απριλίου','Μαΐου','Ιουνίου','Ιουλίου','Αυγούστου','Σεπτεμβρίου','Οκτωβρίου','Νοεμβρίου','Δεκεμβρίου');
+    $greekMonths = array('Ιανουαρίου', 'Φεβρουαρίου', 'Μαρτίου', 'Απριλίου', 'Μαΐου', 'Ιουνίου', 'Ιουλίου', 'Αυγούστου', 'Σεπτεμβρίου', 'Οκτωβρίου', 'Νοεμβρίου', 'Δεκεμβρίου');
     if ($_SESSION["languageId"] == 2) {
         $message1 = "Unfortunately no Vouchers found for that day";
     } else {
@@ -649,17 +656,17 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message6 = "Price Breakdown  ";
         $message6a = "ValuePass Voucher Price";
         $message6b = "Pay to the Provider";
-        if ($forHowManyPersonsIs == 99){
+        if ($forHowManyPersonsIs == 99) {
             $message7 = " Group: ";
-        }else if ($forHowManyPersonsIs > 1){
-            $message7 = " Group of ".$forHowManyPersonsIs ;
-        }else{
+        } else if ($forHowManyPersonsIs > 1) {
+            $message7 = " Group of " . $forHowManyPersonsIs;
+        } else {
             $message7 = " Adults: ";
         }
 
         $message8 = " Children: ";
         $message9 = " Infants: ";
-        $message10 = " Total Price ";
+        $message10 = " Total VP Voucher Price ";
         $message11 = "All taxes and fees included ";
         $message12 = "Date ";
         $message13 = "You can cancel your activity before ";
@@ -674,27 +681,27 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message4 = "Ημέρα: ";
         $message5 = "Ώρα Έναρξης: ";
         $message6 = "Ανάλυση Τιμής";
-        $message6a = "Τιμή ValuePass Voucher";
+        $message6a = "Τιμή VP Voucher";
         $message6b = "Πληρωμή στον πάροχο";
 
-        if ($forHowManyPersonsIs == 99){
+        if ($forHowManyPersonsIs == 99) {
             $message7 = " Group: ";
-        }else if ($forHowManyPersonsIs > 1){
-            $message7 = " Group με ".$forHowManyPersonsIs. " άτομα " ;
-        }else{
+        } else if ($forHowManyPersonsIs > 1) {
+            $message7 = " Group με " . $forHowManyPersonsIs . " άτομα ";
+        } else {
             $message7 = " Ενήλικες: ";
         }
         $message8 = " Παιδιά: ";
         $message9 = " Μωρά: ";
-        $message10 = "Σύνολο ";
+        $message10 = "Σύνολο Τιμής VP Voucher ";
         $message11 = "Περιλαμβάνονται όλοι φόροι";
         $message12 = "Ημερομηνία";
 
         $message13 = "Μπορείς να ακυρώσεις τη δραστηριότητα μέχρι τις ";
         $message14 = "συμφωνά με την πολιτική ακύρωσης του προμηθευτή";
-        $message15 = "Τα vouchers ValuePass δεν ακυρώνονται, αλλά προσπαθούμε πάντα να σας προσφέρουμε την καλύτερη εναλλακτική
-        λύσεις σχετικά με τους παρόχους δραστηριοτήτων που προωθούμε εάν κάτι πάει στραβά,Θα βρείτε περισσότερες πληροφορίες
-        στο email επιβεβαίωσης.";
+        $message15 = "Τα ValuePass vouchers δεν παρέχουν τη δυνατότητα ακύρωσης και επιστροφής χρημάτων, 
+        ωστόσο πάντα προσπαθούμε να σας προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σύμφωνα με τις δυνατότητες
+         των προμηθευτών των δραστηριοτήτων που προωθούμε, σε περίπτωση μη πραγματοποίησης της δραστηριότητας.";
 
     }
 
@@ -712,10 +719,10 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     if ($_SESSION["languageId"] == 2) {
         $hour = date('h:i A', $dateTimestamp);
     } else { //greek language fixme when new languages added
-        $hour = date('h:i ', $dateTimestamp) .(date('A', $dateTimestamp) == 'AM' ? 'π.μ.': 'μ.μ.');
+        $hour = date('h:i ', $dateTimestamp) . (date('A', $dateTimestamp) == 'AM' ? 'π.μ.' : 'μ.μ.');
     }
 
-    $message = "<div class='col-12 vouchertemplate2'>";
+    $message = "<div class='col-12 vouchertemplate my-2'>";
     $message .= " <div class='container'> <div  class='row'> ";
     $message .= "   <div class='col-12'><div style='min-height: 5px;'></div> ";
     $message .= "  <div class='title '>";
@@ -736,51 +743,80 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "</div> ";
 
     $message .= " <div class='row border-bottom'> ";
-    $message .= " <div class='col-12 col-lg-4'> ";
+    $message .= " <div class='col-12 col-lg-12'> ";
     $message .= "  <div class='pricebreakdown2'> ";
     $message .= " <h5>$message6 </h5> ";
-    $message .= " <h6>$message6a </h6> ";
-    $message .= " <ul> ";
+    $message .= " <h6 class='fw-bolder' >$message6a </h6> ";
+    $message .= " <ul class='border-bottom m-0'> ";
     if ($adults != 0) {
-        $message .= " <li> $message7 <b>$adults  </b> x <span> $priceAdult €</span> </li> ";
+        $totalAdultPrice = $adults * $priceAdult;
+        $message .= " <li class='d-flex justify-content-between'> <div> $message7 <b>$adults  </b> x <span> $priceAdult €</span> </div> 
+                    <div><p class='vpicon m-0 '> $totalAdultPrice  € </p> </div> </li> ";
     }
     if ($children != 0) {
-        $message .= " <li> $message8 <b> $children </b> x <span> $priceKid €</span> </li> ";
+        $totalChildrenPrice = $children * $priceKid;
+        $message .= " <li class='d-flex justify-content-between'> 
+ <div>  $message8 <b> $children </b> x <span> $priceKid €</span> </div> 
+ <div> <p class='vpicon m-0 '> $totalChildrenPrice  €  </p> </div> </li> ";
     }
     if ($infants != 0) {
-        $message .= " <li> $message9 <b> $infants  </b> x <span> $priceInfant € </span></li> ";
+        $totalInfantPrice = $infants * $priceInfant;
+        $message .= " <li class='d-flex justify-content-between'>
+  <div>  $message9 <b> $infants  </b> x <span> $priceInfant € </span> </div>
+  <div>  <p class='vpicon m-0 '> $totalInfantPrice  €  </p> </div>
+  </li> ";
+
     }
 
-    $message .= "<br>";
-    $message .= " <h6>$message6b </h6> ";
+    $message .= " </ul> ";
+    $message .= " <h6 class='fw-bolder'>$message6b </h6> ";
     $message .= " <ul> ";
     if ($adults != 0) {
-        $message .= " <li> $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </li> ";
+        $totalAdultPriceVendor =  $adults * $totalToPayAdultToVendor;
+        $message .= " <li class='d-flex justify-content-between'>
+  <div>  $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </div>
+   <div>  <p class='fw-bolder m-0 '> $totalAdultPriceVendor  €  </p> </div>
+   </li> ";
     }
     if ($children != 0) {
-        $message .= " <li> $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </li> ";
+        $totalChildrenPriceVendor = $children * $totalToPayKidToVendor;
+        $message .= " <li class='d-flex justify-content-between'>
+  <div>  $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </div>
+   <div>  <p class='fw-bolder m-0 '> $totalChildrenPriceVendor  €  </p> </div>
+   </li> ";
     }
     if ($infants != 0) {
-        $message .= " <li> $message9 <b> $infants  </b> x <span> $totalToPayInfantToVendor € </span></li> ";
+        $totalInfantPriceVendor =  $infants * $totalToPayInfantToVendor;
+        $message .= " <li class='d-flex justify-content-between'> 
+ <div>  $message9 <b> $infants  </b> x <span> $totalToPayInfantToVendor € </span> </div>
+   <div>  <p class='fw-bolder m-0 '> $totalInfantPriceVendor  €  </p> </div>
+ </li> ";
     }
+
 
     $cancelTimestamp = strtotime($date) - 3600 * $hourCancel;
     if ($_SESSION["languageId"] == 2) {
         $cancelDate = date('h:i A F jS ', $cancelTimestamp);
     } else { //greek language fixme when new languages added
         $cancelDate = date('h:i  ', $cancelTimestamp)
-        .(date('A', $dateTimestamp) == 'AM' ? 'π.μ.': 'μ.μ.')
-        .date(' j ', $cancelTimestamp)
-        .$greekMonths[intval(date('m', $cancelTimestamp))-1];
+            . (date('A', $dateTimestamp) == 'AM' ? 'π.μ.' : 'μ.μ.')
+            . date(' j ', $cancelTimestamp)
+            . $greekMonths[intval(date('m', $cancelTimestamp)) - 1];
     }
 
     $message .= " </ul> ";
     $message .= " </div> ";
     $message .= "</div> ";
+
+    $message .= " <div class='col-12 price '> ";
+    $message .= "     <h5 class='fw-bolder'>$message10 </h5> ";
+    $message .= "   <h4 class='vpicon'> $totalPrice € </h4> ";
+    $message .= "</div> ";
+
+
     $message .= " <div class='col-12 lastsection'> ";
     $message .= " <div class='price'> ";
-    $message .= "     <h5>$message10 </h5> ";
-    $message .= "   <h4> $totalPrice € </h4> ";
+
     $message .= " <small> $message11</small>  ";
     $message .= " <p><i class='icon_calendar'></i> $message13 <b> $cancelDate </b> $message14   </p> ";
     $message .= "<p> <b class='vpicon'>VP </b> $message15  </p> ";

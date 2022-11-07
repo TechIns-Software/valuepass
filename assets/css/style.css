@@ -11771,6 +11771,7 @@ html[xmlns] .slides {
   border: none;
   padding: 0.5em;
   border-radius: 1.2em;
+  font-size: 1.5em;
 }
 .btn-cshopping:hover{
   color: white!important;
@@ -11778,17 +11779,17 @@ html[xmlns] .slides {
 }
 
 .btn-cshopping2{
+  font-family: Fontello;
   background-color: white;
   color: rgb(5 82 177 / 87%);
   border: 1px solid #e8620c ;
   padding: 0.5em;
   border-radius: 1.2em;
-  font-weight: 800;
   transition:  all 0.2s ease-in-out 0s;
+  font-weight: 800;
 }
 .btn-cshopping2:hover{
  color: white;
-  font-weight: 600;
   background-color : rgb(5 82 177 / 87%);
   border: 1px solid rgb(5 82 177 / 87%);
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
