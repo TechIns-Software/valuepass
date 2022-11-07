@@ -534,48 +534,48 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 <div id="reccomended" class="owl-carousel owl-theme">
 
                     <?php
-                    foreach ($bestOffs as $vendor) {
-                        $moneySaved = $vendor->getOriginalPrice() * ($vendor->getDiscount() / 100);
-                        $totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
+                    foreach ($bestOffs as $vendorBO) {
+                        $moneySaved = $vendorBO->getOriginalPrice() * ($vendorBO->getDiscount() / 100);
+                        $totalToPay = $vendorBO->getOriginalPrice() - $moneySaved - $vendorBO->getPriceAdult();
 
                         ?>
                         <div class="item">
                             <div class="box_grid">
-                                <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
-                                    <img src="vendorImages/<?php echo $vendor->getId() . '/' . $vendor->getPathToImage(); ?>"
+                                <a href="adventure_page.php?id=<?php echo $vendorBO->getId(); ?>">
+                                    <img src="vendorImages/<?php echo $vendorBO->getId() . '/' . $vendorBO->getPathToImage(); ?>"
                                          class="img-fluid" alt="" width="800" height="933">
                                 </a>
                                 <div class="wrapper best ">
-                                    <small><?php echo $vendor->getCategoryName(); ?></small>
+                                    <small><?php echo $vendorBO->getCategoryName(); ?></small>
                                     <h3 class="vendorname"><a
-                                                href="adventure_page.php?id=<?php echo $vendor->getId(); ?>"><?php echo $vendor->getName(); ?></a>
+                                                href="adventure_page.php?id=<?php echo $vendorBO->getId(); ?>"><?php echo $vendorBO->getName(); ?></a>
                                     </h3>
-                                    <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?></p>
+                                    <p class="text-muted my-0 label"><?php echo implode(' / ', $vendorBO->getLabelsBoxNames()); ?></p>
 
                                     <span class="criteria">
 											 <?php echo $menu[44] ?>
-                                             <?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
-                                             <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
+                                             <?php echo str_repeat('<i class="icon_star voted"></i>', $vendorBO->getAverageRated()) ?>
+                                             <?php echo str_repeat('<i class="icon_star"></i>', $vendorBO::$MAX_STARS - $vendorBO->getAverageRated()) ?>
 										</span>
                                     <p class="">
                                         <span class="voucher_av">
                                             <?php echo $menu[45] ?>
-                                            <b> <?php echo $vendor->getAvailabilityTodayVoucher(); ?></b>
+                                            <b> <?php echo $vendorBO->getAvailabilityTodayVoucher(); ?></b>
                                         </span>
                                     </p>
                                     <div class="row ">
                                         <div class="col d-flex nowrap buyvp_label"> <?php echo $menu[46] ?> </div>
                                         <div class="col buyvp_value">
-                                            <b><?php echo $vendor->getPriceAdult(); ?>€ </b>
+                                            <b><?php echo $vendorBO->getPriceAdult(); ?>€ </b>
                                             <span class="perperson">
-                                                <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
+                                                <?php echo $vendorBO->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
                                             </span>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col"> <?php echo $menu[47] ?> </div>
-                                        <div class="col from_price"> <?php echo $vendor->getOriginalPrice(); ?>€
+                                        <div class="col from_price"> <?php echo $vendorBO->getOriginalPrice(); ?>€
                                         </div>
                                     </div>
 
@@ -584,20 +584,20 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         <div class="col pay_value">
                                             <b><?php echo $totalToPay; ?>€ </b>
                                             <span class="perperson">
-                                                <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
+                                                <?php echo $vendorBO->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]); ?>
                                             </span>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col">
-                                            <p class="vp_discount my-0 "> <?php echo $menu[50] ?> <?php echo $vendor->getDiscount(); ?>
+                                            <p class="vp_discount my-0 "> <?php echo $menu[50] ?> <?php echo $vendorBO->getDiscount(); ?>
                                                 % <?php echo $menu[51] ?>
                                             </p>
                                         </div>
                                     </div>
 
-                                    <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
+                                    <a href="adventure_page.php?id=<?php echo $vendorBO->getId(); ?>">
                                         <div class=" buy_button2"> <?php echo $menu[52] ?> </div>
                                     </a>
                                 </div>
@@ -677,9 +677,9 @@ footer($menu, $languages)
         // except the last line!
     });
 </script>
-
 <!-- DATEPICKER  -->
 <script>
+    var availableDates = <?php echo json_encode($vendor->getAvailableDates())?>;
     $(function () {
         const minDate = new Date();
         minDate.setDate(minDate.getDate());
@@ -693,6 +693,16 @@ footer($menu, $languages)
             minDate: minDate,
             maxDate: maxDate,
             opens: 'left',
+            isInvalidDate: function(date) {
+                // for (var _ = 0; _ < availableDates.length; _++) {
+                //     var dateAvailable = availableDates[_];
+                //     console.log(dateAvailable);
+                    if (!availableDates.includes(date.format('YYYY-MM-DD'))) {
+                        return true;
+                    }
+                // }
+
+            },
             locale: {
                 <?php
                 if ($languageId == 1) {

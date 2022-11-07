@@ -286,6 +286,20 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                     $vendor->addImportantInformation($importantInformation);
                 }
             }
+            $query9 = "SELECT DISTINCT DATE_FORMAT(dateVoucher, '%Y-%m-%d')
+                    FROM VendorVoucher AS VV
+                    WHERE VV.idVendor = $id
+                        AND VV.existenceVoucher > 0";
+            $stmt9 = $conn->prepare($query9);
+            $availableDates = [];
+            if ($stmt9->execute()) {
+                $dateString = "";
+                $stmt9->bind_result($dateString);
+                while ($stmt9->fetch()) {
+                    array_push($availableDates, $dateString);
+                }
+            }
+            $vendor->setAvailableDates($availableDates);
         }
 
 

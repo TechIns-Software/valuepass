@@ -37,7 +37,7 @@ class Vendor
     private array $importantInformationArray = [];
     private int $maxVouchersToday;
     private int $availableVouchersToday;
-
+    private array $availableDates = [];
     public static int $MAX_STARS = 5;
 
     /**
@@ -450,6 +450,22 @@ class Vendor
             $labelReturn .= ' <small>('.$this->getMinAgeAdult() .'-99)</small>';
         }
         return $labelReturn;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAvailableDates(): array
+    {
+        return $this->availableDates;
+    }
+
+    /**
+     * @param array $availableDates
+     */
+    public function setAvailableDates(array $availableDates): void
+    {
+        $this->availableDates = $availableDates;
     }
 
 
