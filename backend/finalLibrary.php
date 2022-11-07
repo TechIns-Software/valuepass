@@ -332,7 +332,8 @@ function getMaxVendorVoucher($conn, $idVendorVoucher): int
 function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): array
 {
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
-            V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs
+            V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs,
+            V.priceKidVendor
             FROM Vendor AS V, VendorVoucher AS VV 
             WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
@@ -341,10 +342,10 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
     if ($stmt->execute()) {
-        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = $discount = $originalPrice = $forHowManyPersonsIs = '-1';
-        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs);
+        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = $discount = $originalPrice = $forHowManyPersonsIs = $priceKidVendor = '-1';
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor]);
         }
     }
     return $possiblePackages;
@@ -353,13 +354,13 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
 function getVendorForCart($conn, $idVendorVoucher, $idLanguage): array
 {
     $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, V.hourCancel , VV.dateVoucher,
-            V.discount, V.originalPrice,V.forHowManyPersonsIs
+            V.discount, V.originalPrice,V.forHowManyPersonsIs, V.priceKidVendor
             FROM Vendor AS V, VendorVoucher AS VV
             WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
     $stmt = $conn->prepare($query);
-    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount = $originalPrice = $forHowManyPersonsIs = -1;
+    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount = $originalPrice = $forHowManyPersonsIs = $priceKidVendor = -1;
     if ($stmt->execute()) {
-        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice, $forHowManyPersonsIs);
+        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor);
         while ($stmt->fetch()) {
         }
     }
@@ -373,7 +374,7 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage): array
         while ($stmt2->fetch()) {
         }
     }
-    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs];
+    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor];
 }
 
 
@@ -470,10 +471,11 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         $discount = $arrayPrices[7];
         $originalPrice = $arrayPrices[8];
         $forHowManyPersonsIs = $arrayPrices[9];
+        $priceKidVendor = $arrayPrices[10];
 
         $totalToPayAdultToVendor = $originalPrice - ($originalPrice * ($discount / 100)) - $priceAdult;
         $percentPayedToVendor = $totalToPayAdultToVendor / $priceAdult;
-        $totalToPayKidToVendor = $percentPayedToVendor * $priceChild;
+        $totalToPayKidToVendor = $priceKidVendor - ($priceKidVendor * ($discount / 100)) - $priceChild;
         $totalToPayInfantToVendor = $percentPayedToVendor * $priceInfant;
 
 
@@ -649,6 +651,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $discount = $package[6];
     $originalPrice = $package[7];
     $forHowManyPersonsIs = $package[8];
+    $priceKidVendor = $package[9];
 
 
     if ($_SESSION["languageId"] == 2) {
@@ -714,7 +717,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
 
     $totalToPayAdultToVendor = $originalPrice - ($originalPrice * ($discount / 100)) - $priceAdult;
     $percentPayedToVendor = $totalToPayAdultToVendor / $priceAdult;
-    $totalToPayKidToVendor = $percentPayedToVendor * $priceKid;
+    $totalToPayKidToVendor = $priceKidVendor - ($priceKidVendor * ($discount / 100)) - $priceKid;
+
     $totalToPayInfantToVendor = $percentPayedToVendor * $priceInfant;
 
     //echo date('M jS', $timeStampCancel)
