@@ -310,6 +310,9 @@ function vendorFunction(
     $childAcceptance = $basic[10];
     $infantTolerance = $basic[11];
     $isActiveNow = $basic[12];
+    $minAgeChild = $basic[13];
+    $minAgeAdult = $basic[14];
+    $priceKidVendor = $basic[15];
     if ($updateVendor) {
         $queryBasic = "UPDATE Vendor
         SET idDestination = $idDestination, priceAdult = $priceAdult,
@@ -319,7 +322,9 @@ function vendorFunction(
             infantPrice = $infantPrice,
             forHowManyPersonsIs = $forHowManyPersonsIs,
             version = $versionVendor, childAcceptance = $childAcceptance,
-            infantTolerance  = $infantTolerance, isActiveNow = $isActiveNow
+            infantTolerance  = $infantTolerance, isActiveNow = $isActiveNow,
+            minAgeAdult = $minAgeAdult, minAgeKid = $minAgeChild,
+            priceKidVendor = $priceKidVendor
         WHERE id = $idVendor";
 
         $queryStars = "UPDATE Rated
@@ -329,11 +334,13 @@ function vendorFunction(
         $queryBasic = "INSERT INTO Vendor(idDestination, priceAdult, originalPrice,
             discount, priceKid, idCategory, idPaymentInfoActivity,
             infantPrice, forHowManyPersonsIs, id, version, childAcceptance,
-            infantTolerance, isActiveNow) VALUES (
+            infantTolerance, isActiveNow, minAgeAdult, minAgeKid, priceKidVendor)
+        VALUES (
                 $idDestination, $priceAdult, $originalPrice, $discount,
                 $priceKid, $idCategory, $idPaymentInfo, $infantPrice,
                 $forHowManyPersonsIs, $idVendor, $versionVendor,
-                $childAcceptance, $infantTolerance, $isActiveNow
+                $childAcceptance, $infantTolerance, $isActiveNow, $minAgeAdult,
+                $minAgeChild, $priceKidVendor
             );";
 
 

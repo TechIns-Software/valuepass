@@ -32,6 +32,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     body::after {
         content: <?php echo $stringPreLoad;?>;
         display: none;
+    },
+    .displayNone {
+        display: none;
     }
 </style>
 <main>
@@ -462,50 +465,35 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             <span>    <?php echo $menu[67] ?> </span>
                             <span style="display: none">    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
                         </div>
-
-                        <!-- TODO : To  make the adults label to display like this ex (2 adults ,3 children ,1 Infant) -->
                         <div class="panel-dropdown">
                             <a href="#">
-
-                                <?php
-                                if ($vendor->getForHowManyPersonsIs() == 1) {
-                                    echo $menu[68];
-                                } else if ($vendor->getForHowManyPersonsIs() == 99) {
-                                    echo 'Group';
-                                } else {
-                                    echo 'Group ' . $menu[174] . ' ' . $vendor->getForHowManyPersonsIs() . ' ' . $menu[175];
-                                } ?>
-
+                                <span id="adultsLabel">
+                                    <?=$vendor->getLabelAdults($menu[68], $menu[174], $menu[175], true)?>
+                                </span>
+                                <span class="" id="adultsLabelNext"></span>
+                                <span class="displayNone" id="childrenLabel"><?=$menu[69]?></span>
+                                <span class="displayNone" id="childrenLabelNext"></span>
+                                <span class="displayNone" id="infantsLabel"><?=$menu[70]?></span>
+                                <span class="displayNone" id="infantsLabelNext"></span>
+                                <span class="displayNone" id="displayTotalWord">
+                                    <span class="<?php echo ($vendor->getForHowManyPersonsIs() != 1 ? 'displayNone': '')?>"><?=$menu[104];?></span>
+                                </span>
                                 <span class="qtyTotal"></span></a>
                             <div class="panel-dropdown-content right">
                                 <div class="qtyButtons">
                                     <label>
-                                        <?php
-                                        if ($vendor->getForHowManyPersonsIs() == 1) {
-                                            echo $menu[68];
-                                        } else if ($vendor->getForHowManyPersonsIs() == 99) {
-                                            echo '';
-                                        } else {
-                                            echo 'Group ' . $menu[174] . ' ' . $vendor->getForHowManyPersonsIs() . ' ' . $menu[175];
-                                        } ?>
-                                        <small>
-                                            <?php
-                                            if ($vendor->getForHowManyPersonsIs() == 1) {
-                                                echo '(13-99)';
-                                            } else if ($vendor->getForHowManyPersonsIs() == 99) {
-                                                echo 'Group';
-                                            } ?>
-                                        </small></label>
+                                        <?=$vendor->getLabelAdults($menu[68], $menu[174], $menu[175])?>
+                                    </label>
                                     <input id="adultsInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isChildAcceptance() || $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : '' ?>
+                                <div <?php echo !$vendor->isChildAcceptance() || $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : '' ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[69] ?> <small> (4-12)</small> </label>
+                                    <label><?php echo $menu[69] ?> <small><?=$vendor->getLabelChild();?></small> </label>
                                     <input id="childrenInput" type="text" name="qtyInput" value="0">
                                 </div>
-                                <div <?php echo !$vendor->isInfantTolerance() | $vendor->getForHowManyPersonsIs() == 99 ? 'style="display: none"' : ''; ?>
+                                <div <?php echo !$vendor->isInfantTolerance() | $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : ''; ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[70] ?> <small> (0-3)</small></label>
+                                    <label><?php echo $menu[70] ?> <small><?=$vendor->getLabelInfant();?></small></label>
                                     <input id="infantsInput" type="text" name="qtyInput" value="0">
                                 </div>
                             </div>

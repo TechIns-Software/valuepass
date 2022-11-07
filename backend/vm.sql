@@ -118,7 +118,10 @@ create TABLE Vendor
     childAcceptance        int   NOT NULL DEFAULT 1,
     infantTolerance        int   NOT NULL DEFAULT 1,
     isActiveNow            binary(1)      DEFAULT 1,
-    hourCancel             int            DEFAULT 4
+    hourCancel             int            DEFAULT 24,
+    minAgeAdult            int            DEFAULT 13,
+    minAgeKid              int            DEFAULT 4,
+    priceKidVendor         float NOT NULL
 ) ENGINE = InnoDB;
 
 create TABLE VendorTranslate
@@ -314,17 +317,21 @@ insert into `PaymentInfoActivity` (id)
 VALUES (1),
        (2);
 
-insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`)
+insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
+                                            `idLanguage`, `head`, `description`)
 values (1, 1, 2.1,
         'Αγοράστε τώρα ένα κουπόνι VP για την κράτηση της δραστηριότητάς σας και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.');
-insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`)
+insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
+                                            `idLanguage`, `head`, `description`)
 values (1, 2, 2.1,
         'Buy a VP voucher for your activity reservation now and pay later for your activity with a discount when you arrive. Check your activity voucher once you have booked for full details.');
 
-insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`)
+insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
+                                            `idLanguage`, `head`, `description`)
 values (2, 1, 1.1,
         'Αγοράστε το κουπόνι VP που κάνετε κράτηση τώρα και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε ή μπορείτε να πληρώσετε νωρίτερα αν θέλετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.');
-insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`, `idLanguage`, `head`, `description`)
+insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
+                                            `idLanguage`, `head`, `description`)
 values (2, 2, 1.1,
         'Buy your vouchers on board reserve your spot and pay the provider with a discount when you arrive at your activity location.');
 
@@ -341,7 +348,8 @@ values (1, 1, 'Ποιότητα Εξυπηρέτησης Πελατών'),
        (1, 2, 'Customer Service Quality'),
        (2, 1, 'Εξατομίκευση & Ευελιξία'),
        (2, 2, 'Personalization & Flexibility'),
-       (3, 1, 'Πρότυπα ασφάλειας και υγιεινής (συμπεριλαμβανομένου του Covid-19)'),
+       (3, 1,
+        'Πρότυπα ασφάλειας και υγιεινής (συμπεριλαμβανομένου του Covid-19)'),
        (3, 2, 'Safety & Sanitary Standards (Covid-19 Included)'),
        (4, 1, 'Ποιότητα Υλικών'),
        (4, 2, 'Quality of Materials'),

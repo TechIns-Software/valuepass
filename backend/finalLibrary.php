@@ -110,7 +110,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
     $query = "SELECT V.id, V.priceAdult, V.originalPrice, V.discount,
                         V.priceKid, V.idDestination, V.imageBasic, VT.name,
                         CVT.name, CV.id, V.forHowManyPersonsIs, V.googleMapsImage,
-                        V.childAcceptance, V.infantTolerance
+                        V.childAcceptance, V.infantTolerance, V.minAgeAdult,
+                        V.minAgeKid
               FROM Vendor AS V, VendorTranslate AS VT, CategoryVendor as CV,
                         CategoryVendorTranslate CVT
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
@@ -121,8 +122,11 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iii', $idVendor, $idLanguage, $idLanguage);
     if ($stmt->execute()) {
-        $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs = $googleMapsImage = $childAcceptance = $infantTolerance = '';
-        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs, $googleMapsImage, $childAcceptance, $infantTolerance);
+        $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination
+            = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs
+            = $googleMapsImage = $childAcceptance = $infantTolerance = $minAgeAdult
+            = $minAgeKid = '';
+        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs, $googleMapsImage, $childAcceptance, $infantTolerance, $minAgeAdult, $minAgeKid);
         while ($stmt->fetch()) {
         }
         if (!$id) {
@@ -131,7 +135,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
         $vendor = new \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
             $discount, $priceKid, $image, $name, $forHowManyPersonsIs, $googleMapsImage,
-            $childAcceptance, $infantTolerance
+            $childAcceptance, $infantTolerance,$minAgeAdult, $minAgeKid
         );
         $query1 = "SELECT LBT.name
                 FROM LabelsBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT

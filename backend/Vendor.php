@@ -4,7 +4,8 @@
 namespace ValuePass;
 
 
-class Vendor {
+class Vendor
+{
     private int $id;
     private int $categoryId;
     private string $categoryName;
@@ -19,6 +20,9 @@ class Vendor {
     private string $googleMapsImage;
     private int $childAcceptance;
     private int $infantTolerance;
+    private int $minAgeAdult;
+    private int $minAgeKid;
+
     private array $labelsBoxNames = [];
     private array $ratedArray = [];
 
@@ -52,13 +56,15 @@ class Vendor {
      * @param string $googleMapsImage
      * @param int $childAcceptance
      * @param int $infantTolerance
+     * @param int $minAgeAdult
+     * @param int $minAgeKid
      */
     public function __construct(
-        int $id, int $categoryId, string $categoryName,
-        int $idDestination, float $priceAdult, float $originalPrice, float $discount,
-        float $priceKid, string $pathToImage,
+        int    $id, int $categoryId, string $categoryName,
+        int    $idDestination, float $priceAdult, float $originalPrice, float $discount,
+        float  $priceKid, string $pathToImage,
         string $name, int $forHowManyPersonsIs, string $googleMapsImage,
-        int $childAcceptance, int $infantTolerance
+        int    $childAcceptance, int $infantTolerance, int $minAgeAdult, int $minAgeKid
     )
     {
         $this->id = $id;
@@ -75,6 +81,8 @@ class Vendor {
         $this->googleMapsImage = $googleMapsImage;
         $this->childAcceptance = $childAcceptance;
         $this->infantTolerance = $infantTolerance;
+        $this->minAgeAdult = $minAgeAdult;
+        $this->minAgeKid = $minAgeKid;
     }
 
 
@@ -86,41 +94,49 @@ class Vendor {
         return $this->id;
     }
 
-    public function addLabelBoxName($labelName) : void {
+    public function addLabelBoxName($labelName): void
+    {
         array_push($this->labelsBoxNames, $labelName);
     }
 
-    public function addRatedCategory(RatedCategory $ratedCategory) : void {
+    public function addRatedCategory(RatedCategory $ratedCategory): void
+    {
         array_push($this->ratedArray, $ratedCategory);
     }
 
     public function addSimpleField(
         $descriptionFull, $descriptionBig,
         $paymentActivityHead, $paymentActivityDesc
-    ) : void {
+    ): void
+    {
         $this->descriptionFull = $descriptionFull;
         $this->descriptionBig = $descriptionBig;
         $this->paymentInfoActivityHead = $paymentActivityHead;
         $this->paymentInfoActivityDescription = $paymentActivityDesc;
     }
 
-    public function addImage(string $image) : void {
+    public function addImage(string $image): void
+    {
         array_push($this->images, $image);
     }
 
-    public function addHighlight(string $highlight) : void {
+    public function addHighlight(string $highlight): void
+    {
         array_push($this->highlights, $highlight);
     }
 
-    public function addIncludedService(IncludedService $includedService) : void {
+    public function addIncludedService(IncludedService $includedService): void
+    {
         array_push($this->includedServicesArray, $includedService);
     }
 
-    public function addActivity(AboutActivity $aboutActivity) {
+    public function addActivity(AboutActivity $aboutActivity)
+    {
         array_push($this->aboutActivityArray, $aboutActivity);
     }
 
-    public function addImportantInformation(ImportantInformation $importantInformation) : void {
+    public function addImportantInformation(ImportantInformation $importantInformation): void
+    {
         array_push($this->importantInformationArray, $importantInformation);
     }
 
@@ -312,14 +328,14 @@ class Vendor {
     /**
      * @return string
      */
-    public function getForHowManyPersonsIsString($perPerson= '',$forParticicants= '', $forParticicants2= '',$perGroup= ''): string
+    public function getForHowManyPersonsIsString($perPerson = '', $forParticicants = '', $forParticicants2 = '', $perGroup = ''): string
     {
         if ($this->getForHowManyPersonsIs() != 99) {
             if ($this->getForHowManyPersonsIs() == 1) {
 
                 return $perPerson;
             } else {
-                return $forParticicants.' '.$this->getForHowManyPersonsIs().' '.$forParticicants2;
+                return $forParticicants . ' ' . $this->getForHowManyPersonsIs() . ' ' . $forParticicants2;
             }
         } else {
             return $perGroup;
@@ -348,7 +364,7 @@ class Vendor {
      */
     public function getAvailabilityTodayVoucher(): string
     {
-        return $this->availableVouchersToday .'/' .$this->maxVouchersToday;
+        return $this->availableVouchersToday . '/' . $this->maxVouchersToday;
     }
 
     /**
@@ -366,5 +382,75 @@ class Vendor {
     {
         return $this->infantTolerance != 0;
     }
+
+    /**
+     * @return int
+     */
+    public function getMinAgeAdult(): int
+    {
+        return $this->minAgeAdult;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMinAgeKid(): int
+    {
+        return $this->minAgeKid;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxAgeKid(): int
+    {
+        return $this->minAgeAdult - 1;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxAgeInfant(): int
+    {
+        return $this->minAgeKid - 1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabelChild(): string
+    {
+        return "(" .$this->getMinAgeKid() .'-' .$this->getMaxAgeKid() .')';
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabelInfant(): string
+    {
+        return "(0-" .$this->getMaxAgeInfant() .')';
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabelAdults($onePersonText, $smallGroup1text, $smallGroup2text, $isBasicLabelForShowing = false, $groupWord = 'Group '): string
+    {
+        $labelReturn = '';
+        if ($this->getForHowManyPersonsIs() == 1) {
+            $labelReturn .= $onePersonText;
+        } else {
+            $labelReturn .= $groupWord;
+            if ($this->getForHowManyPersonsIs() != 99) {
+                $labelReturn .= $smallGroup1text .' '
+                    .$this->getForHowManyPersonsIs() .' ' .$smallGroup2text;
+            }
+        }
+        if (!$isBasicLabelForShowing) {
+            $labelReturn .= ' <small>('.$this->getMinAgeAdult() .'-99)</small>';
+        }
+        return $labelReturn;
+    }
+
 
 }
