@@ -688,12 +688,44 @@ footer($menu, $languages)
         $('input[name="dates"]').daterangepicker({
             autoUpdateInput: false,
             singleDatePicker: true,
+            autoApply: true,
             parentEl: '.scroll-fix',
             minDate: minDate,
             maxDate: maxDate,
             opens: 'left',
             locale: {
-                cancelLabel: 'Clear'
+                <?php
+                if ($languageId == 1) {
+                    ?>
+                daysOfWeek: [
+                    "Κυρ",
+                    "Δευ",
+                    "Τρι",
+                    "Τετ",
+                    "Πεμ",
+                    "Παρ",
+                    "Σαβ"
+                ],
+                "monthNames": [
+                    "Ιανουάριος",
+                    "Φεβρουάριος",
+                    "Μάρτιος",
+                    "Απρίλιος",
+                    "Μάιος",
+                    "Ιούνιος",
+                    "Ιούλιος",
+                    "Αύγουστος",
+                    "Σεπτέμβριος",
+                    "Οκτώβριος",
+                    "Νοέμβριος",
+                    "Δεκέμβριος"
+                ],
+                cancelLabel: 'Ακύρωση',
+                applyLabel: 'Επιλογή'
+                <?php
+                }
+                ?>
+
             }
         });
         $('input[name="dates"]').on('apply.daterangepicker', function (ev, picker) {
@@ -704,6 +736,7 @@ footer($menu, $languages)
         $('input[name="dates"]').on('cancel.daterangepicker', function (ev, picker) {
             $(this).val('');
         });
+
     });
     document.querySelector('.icon_calendar').addEventListener(
         'click', () => {
