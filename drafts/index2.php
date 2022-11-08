@@ -463,7 +463,7 @@ include_once "includes/header2.php" ?>
 
 
     <!-- <script src="assets/js/common_scripts.js"></script>
-	<script src="assets/js/main.js"></script> -->
+	<script src="assets/js/main.js?v=1.4"></script> -->
 
 
 </body>

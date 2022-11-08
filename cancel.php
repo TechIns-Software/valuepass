@@ -69,7 +69,7 @@ footer($menu, $languages)
 ?>
 </body>
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=1.4"></script>
 <script src="changeLanguage.js"></script>
 
 </html>
