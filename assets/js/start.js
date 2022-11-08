@@ -1,3 +1,4 @@
+//TODO: check better fields, like phone, email, ect
 const continuebtn = document.getElementById("continue");
 
 continuebtn.addEventListener('click', () => {

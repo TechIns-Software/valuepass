@@ -12,6 +12,11 @@ if ($voucherNumber == 0) {
 }
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
+<link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
 <style>
     .fixedHeightContainer {
@@ -33,6 +38,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
     .orderItem div {
         padding: 10px 25px;
     }
+    .iti {
+        display: block;
+    }
 
 </style>
 <main class="center-screen container-fluid center-screen">
@@ -41,7 +49,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
         <div class="col-md-6 ">
 
             <div class="col-12">
-                <form id="clientForm" class="row" method="post" action="procedure.php">
+                <form id="clientForm" class="row container" method="post" action="procedure.php">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <h4>  <?php echo $menu[150]; ?></h4>
@@ -57,10 +65,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                    placeholder="Email" required>
                             <label for="incomePartner">Email</label>
                         </div>
-                        <div class="form-floating my-2">
+                        <div class="my-2">
                             <input type="tel" name="phone" id="phone" class="form-control"
                                    placeholder="<?php echo $menu[153]; ?>" required>
-                            <label for="incomePartner"><?php echo $menu[153]; ?></label>
                         </div>
                         <p class="text-center">
                             <?php echo $menu[154]; ?>
@@ -408,7 +415,24 @@ footer($menu, $languages)
 ?>
 </body>
 
-
+<script>
+    const phoneInputField = document.getElementById("phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        preferredCountries: ["gr", "us", "cn", "de", "cy", "ru"],
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+    const form = document.getElementById('clientForm');
+    form.onsubmit = (e) => {
+        e.preventDefault();
+        var myInput = document.createElement('input');
+        myInput.setAttribute('name', 'phoneCode');
+        myInput.setAttribute('value', phoneInput.s.dialCode);
+        myInput.setAttribute("type", "hidden");
+        form.appendChild(myInput);
+        form.submit();
+    }
+</script>
 <script src="assets/js/common_scripts.js"></script>
 <script src="assets/js/main.js"></script>
 

@@ -1,11 +1,11 @@
 <?php
-
 // # We receive the page from user details and if ok redirects to ValuePass Server
 
 if (!isset(
     $_POST['name'],
     $_POST['email'],
-    $_POST['phone']
+    $_POST['phone'],
+    $_POST['phoneCode']
 )) {
     exit('Bad Request!');
 }
@@ -37,6 +37,7 @@ if (!(count($products) >= 1 && count($products) <= \ValuePass\Cart::$MAX_VOUCHER
     <input hidden name='name' value='<?php echo $_POST['name']?>'>
     <input hidden name='email' value='<?php echo $_POST['email']?>'>
     <input hidden name='phone' value='<?php echo $_POST['phone']?>'>
+    <input hidden name='phoneCode' value='<?php echo $_POST['phoneCode']?>'>
     <input hidden name='language' value='<?php echo $idLanguage;?>'>
     <?php
     foreach ($products as $counter=> $product) {
