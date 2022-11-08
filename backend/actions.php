@@ -13,17 +13,6 @@ function conditionForPackage() : bool {
         ($_POST['adults'] + $_POST['children'] > 0);
 }
 
-
-function findProductInCart($idVoucher) {
-    $alreadyProducts = unserialize($_SESSION['cart']);
-    for ($x = 0; $x < count($alreadyProducts); $x++) {
-        $voucher = $alreadyProducts[$x];
-        if ($voucher->getId() == $idVoucher) {
-            return $x;
-        }
-    }
-    return -1;
-}
 if (!isset($_POST['action'])) {
     exit("No Action Provided");
 }
