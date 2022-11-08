@@ -143,7 +143,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                 $priceInfantArray = $objectVouchersDisplay['priceInfantArray'];
                 $savedArray = $objectVouchersDisplay['saved'];
                 $forHowManyPersonsIsArray = $objectVouchersDisplay['forHowManyPersonsIsArray'];
-                $totalPays=array_sum($amountPayArray);
                 for ($counter = 0;
                      $counter < count($nameVendorArray);
                      $counter++) {
@@ -166,25 +165,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     ?>
 
                     <div class="col-12 cart-voucher  ">
-                        <div class="row displayNone">
-                            <h3 id="py-1 total_cart">
-                            <?php
-                            $calculateCartObject = calculatePriceCart($conn, $allVouchers);
-                            echo $menu[104]; ?>
-                                <span class="float-end">
-                                    <?php
-                                    if ($calculateCartObject['moneyEarned'] != 0) {
-                                        ?>
-                                        <span style="text-decoration: line-through;color: red">
-                                            <?php echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned']; ?>
-                                        </span> /
-                                        <?php
-                                    }
-                                    echo $calculateCartObject['totalPay'] . ' €';
-                                    ?>
-                                </span>
-                            </h3>
-                        </div>
                         <div class="row">
                                     <div class="col-4 ">
                                         <div class="thumb_cart">
@@ -392,7 +372,22 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                 <div class='col-12 price  '>
                     <h5 class='fw-bolder'>  <?php echo $menu[104]; ?>    </h5>
-                    <h4 class='vpicon'> <?php echo $totalPays; ?> € </h4>
+                    <h4 class='vpicon'>
+                        <?php
+                        $calculateCartObject = calculatePriceCart($conn, $allVouchers);
+                        if ($calculateCartObject['moneyEarned'] != 0) {
+                            ?>
+                            <span style="text-decoration: line-through;color: red">
+                            <?php
+                            echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
+                            ?>
+                            </span> /
+                            <?php
+                        }
+                        echo $calculateCartObject['totalPay'];
+                        ?>
+                        €
+                    </h4>
                 </div>
 
 
