@@ -319,8 +319,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                             }
                                             if ($children != 0) {
                                                 echo ($flagTemp ? ' | ' : '') . $menu[111] . ' : ' . $children;
-                                            } else {
-                                                $flagTemp = false;
+                                                $flagTemp = true;
                                             }
                                             if ($infants != 0) {
                                                 echo ($flagTemp ? ' | ' : '') . $menu[112] . ' : ' . $infants;
