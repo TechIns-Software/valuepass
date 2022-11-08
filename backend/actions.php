@@ -50,7 +50,6 @@ if ($_POST['action'] == 'addProduct') {
             ) || !is_numeric($product["infants"])) {
             $message = "Something went wrong";
         } else {
-
             $vouchersWant = [];
             $idVendor = $product["idVendor"];
             for ($counter = 0; $counter < $product["adults"]; $counter++) {
@@ -74,10 +73,11 @@ if ($_POST['action'] == 'addProduct') {
                 $cart = new \ValuePass\Cart(unserialize($_SESSION['cart']));
                 $message = $cart->addItemsToCart($vouchersWant, $conn);
                 $message2 = $cart->getNumberOfVoucher();
-                if ($message == "OK") {
+                if ($message['status'] == 1) {
                     $_SESSION['cart'] = serialize($cart->getArrayGroupVouchersWant());
-
                 }
+                //todo: translate messages
+                $message = $message['message'];
             }
         }
 

@@ -5,6 +5,7 @@ namespace ValuePass;
 
 class Cart
 {
+    private static int $MAX_VOUCHERS = 25;
     private array $arrayGroupVouchersWant = [];
     //We will keep vendorAvailability id
     //TODO: always reload session obj when return from functions call
@@ -42,11 +43,15 @@ class Cart
         foreach ($this->arrayGroupVouchersWant as $groupVoucherWant) {
             $newItems = $newItems + count($groupVoucherWant);
         }
-        return $newItems <= 11;
+        return $newItems <= self::$MAX_VOUCHERS;
     }
 
     //ok
-    public function addItemsToCart(array $groupVoucherWant, $conn) : string {
+    public function addItemsToCart(array $groupVoucherWant, $conn) : array {
+        $message = [
+            'status'=> 0,
+            'message'=> ''
+        ];
         //see if can add
         if ($this->checkUpperLimit(count($groupVoucherWant))) {
             //see if can buy from one vendor all these vouchers
@@ -54,8 +59,10 @@ class Cart
             $ids = $this->getConcentratedVendorVoucherIds();
             $idAdded = $vendorVoucherIdWant->getIdVendorVoucher();
             $newTotalNumber = 0;
+            $flagExistAlreadyVendorVoucher = false;
             if (isset($ids[$idAdded])) {
                 $newTotalNumber = $ids[$idAdded];
+                $flagExistAlreadyVendorVoucher = true;
             }
             $newTotalNumber = $newTotalNumber + count($groupVoucherWant);
             //we get the max voucher can have, if does not exist we get 0
@@ -64,14 +71,29 @@ class Cart
             if ($newTotalNumber <= $maxVoucherFromVendorThatCanHave) {
                 //is not checked if infants and children are ok with vendorVoucher
                 //we check in interval server
-                array_push($this->arrayGroupVouchersWant, $groupVoucherWant);
-                $message = "OK";
+                if ($flagExistAlreadyVendorVoucher) {
+                    $this->addItemInAlreadyVendorVoucher($groupVoucherWant);
+                } else {
+                    array_push($this->arrayGroupVouchersWant, $groupVoucherWant);
+                }
+                $message = [
+                    'status'=> 1,
+                    'message'=> 'OK'
+                ];
             } else {
-                $message = "Can Not Have More Than $maxVoucherFromVendorThatCanHave vouchers in that specific time";
+                $msg = "Can Not Have More Than $maxVoucherFromVendorThatCanHave vouchers in that specific time";
+                $message = [
+                    'status'=> 0,
+                    'message'=> $msg
+                ];
             }
 
         } else {
-            $message = 'You can have up to 11 vouchers totally selected';
+            $msg = "You can have up to " .self::$MAX_VOUCHERS ." vouchers totally selected";
+            $message = [
+                'status'=> 0,
+                'message'=> $msg
+            ];
         }
         return $message;
     }
@@ -169,6 +191,27 @@ class Cart
         }
         foreach ($indexesToBeRemoved as $indexToRemoved) {
             unset($this->arrayGroupVouchersWant[$indexToRemoved]);
+        }
+    }
+    private function addItemInAlreadyVendorVoucher($groupVoucherWant) {
+        $idVendorVoucherAdded = $groupVoucherWant[0]->getIdVendorVoucher();
+        $foundIndex = -1;
+        for ($counter = 0; $counter < count($this->arrayGroupVouchersWant); $counter++) {
+            $groupInside = $this->arrayGroupVouchersWant[$counter];
+            $idVendorVoucherWantInside = $groupInside[0]->getIdVendorVoucher();
+            if ($idVendorVoucherWantInside == $idVendorVoucherAdded) {
+                $foundIndex = $counter;
+                break;
+            }
+        }
+        if ($foundIndex != -1) {
+            $groupVoucherWantThatExists = $this->arrayGroupVouchersWant[$foundIndex];
+
+            $infantInNewGroup = $groupVoucherWant[0]->getNumberOfInfant();
+            $groupVoucherWant[0]->addNewInfantNumber($infantInNewGroup * (-1));
+            $groupVoucherWantThatExists[0]->addNewInfantNumber($infantInNewGroup);
+            array_push($groupVoucherWantThatExists, ...$groupVoucherWant);
+            $this->arrayGroupVouchersWant[$foundIndex] = $groupVoucherWantThatExists;
         }
     }
 }

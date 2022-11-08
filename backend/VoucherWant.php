@@ -76,5 +76,7 @@ class VoucherWant
         return $this->idVendor;
     }
 
-
+    public function addNewInfantNumber(int $addInfantNum): void {
+        $this->numberOfInfant = $this->numberOfInfant + $addInfantNum;
+    }
 }
