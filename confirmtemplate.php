@@ -21,7 +21,7 @@ if (!isset($cartArray)) {
 }
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
-<script src="backend/js/cart.js"></script>
+<script src="backend/js/cart.js?v=1.3"></script>
 <main>
     <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
 

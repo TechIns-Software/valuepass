@@ -752,7 +752,7 @@ footer($menu, $languages)
     );
 </script>
 
-<script src="backend/js/cart.js"></script>
+<script src="backend/js/cart.js?v=1.3"></script>
 <script>
     var lengthImagesSlider = <?php echo count($vendor->getImages())?>;
 </script>

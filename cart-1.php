@@ -22,7 +22,7 @@ if (!isset($cartArray)) {
 }
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
-<script src="backend/js/cart.js"></script>
+<script src="backend/js/cart.js?v=1.3"></script>
 <main>
     <!--    FIXME: height unset makes it the back image(svg file blue only for navbar-->
 
@@ -35,7 +35,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <button id="noVoucherBack" class="btn btn-primary">
                         <?php echo $menu[130]; ?>
                     </button>
-                    <script>goBackInHistory('noVoucherBack')</script>
+                    <script>goBackInHistory('noVoucherBack',<?php echo  $_SESSION['lastDestinationId']?>)</script>
                 </div>
 
             <?php } else {
@@ -345,7 +345,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         </ul>
                         <button id="btnContinue"
                                 class="btn btn-warning  my-2 w-100 p-3"> <?php echo $menu[108]; ?> </button>
-                        <script>goBackInHistory('btnContinue');</script>
+                        <script>goBackInHistory('btnContinue',<?php echo  $_SESSION['lastDestinationId']?>);</script>
                         <!--                            <input onclick="window.location = './client.php'" type="button"  class="btn btn-secondary btn_1 my-2 full-width purchase" >-->
 
                         <button class="btn btn-success purchase  w-100 p-2" data-bs-toggle="modal"
@@ -392,7 +392,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         <button id="seeMoreActivities"
                                 class=" btn-cshopping2 w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
                         <br>
-                        <script>goBackInHistory('seeMoreActivities');</script>
+                        <script>goBackInHistory('seeMoreActivities',<?php echo  $_SESSION['lastDestinationId']?>);</script>
 
                         <a href="./client.php" class="  ">
                             <button class="btn btn-cshopping my-2 w-100  p-1">   <?php echo $menu[109]; ?> </button>
@@ -419,56 +419,6 @@ footer($menu, $languages)
 <script src="assets/js/common_scripts.js"></script>
 <script src="assets/js/main.js?v=1.4"></script>
 <script src="assets/js/validate.js"></script>
-
-<!-- COLOR SWITCHER  -->
-<!-- <script src="js/switcher.js"></script>
-<div id="style-switcher">
-    <h6>Color Switcher <a href="#"><i class="ti-settings"></i></a></h6>
-    <div>
-        <ul class="colors" id="color1">
-            <li>
-                <a href="#" class="default" title="Default"></a>
-            </li>
-            <li>
-                <a href="#" class="aqua" title="Aqua"></a>
-            </li>
-            <li>
-                <a href="#" class="green_switcher" title="Green"></a>
-            </li>
-            <li>
-                <a href="#" class="orange" title="Orange"></a>
-            </li>
-            <li>
-                <a href="#" class="blue" title="Blue"></a>
-            </li>
-            <li>
-                <a href="#" class="beige" title="Beige"></a>
-            </li>
-            <li>
-                <a href="#" class="gray" title="Gray"></a>
-            </li>
-            <li>
-                <a href="#" class="green-2" title="Green"></a>
-            </li>
-            <li>
-                <a href="#" class="navy" title="Navy"></a>
-            </li>
-            <li>
-                <a href="#" class="peach" title="Peach"></a>
-            </li>
-            <li>
-                <a href="#" class="purple" title="Purple"></a>
-            </li>
-            <li>
-                <a href="#" class="red" title="Red"></a>
-            </li>
-            <li>
-                <a href="#" class="violet" title="Violet"></a>
-            </li>
-        </ul>
-    </div>
-</div> -->
-
 </body>
 <script src="changeLanguage.js"></script>
 <!--<script>goBackInHistory('noVouchers')</script>-->

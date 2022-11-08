@@ -9,6 +9,8 @@ $title = "Adventures";
 $home = 0;
 include_once 'includes/header.php';
 $idDestination = $_GET['id'];
+$_SESSION["lastDestinationId"] = 0;
+$_SESSION["lastDestinationId"] = $idDestination;
 $languageId = $_SESSION["languageId"];
 $destination = getDestination($conn, $idDestination, $languageId);
 if (is_null($destination)) {

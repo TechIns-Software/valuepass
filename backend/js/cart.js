@@ -99,15 +99,15 @@ function getPackagesAvailable() {
     }
 }
 
-function goBackInHistory(idSelector) {
+function goBackInHistory(idSelector,idDestination =0) {
     document.getElementById(idSelector).addEventListener('click', ()=> {
         if (!history.back()) {
-            window.location = './index.php';
+            window.location = `./adventures.php?id=${idDestination}`;
         }
     });
     document.getElementById(idSelector).addEventListener('touchend', ()=> {
         if (!history.back()) {
-            window.location = './index.php';
+            window.location = `./adventures.php?id=${idDestination}`;
         }
     });
 }
