@@ -14,6 +14,7 @@ $cartArray = unserialize($_SESSION['cart']);
 $cartHeader = new \ValuePass\Cart($cartArray);
 $cartHeader->checkIfVendorVouchersInCartStillExists($conn);
 $_SESSION['cart'] = serialize($cartHeader->getArrayGroupVouchersWant());
+$cartArray = unserialize($_SESSION['cart']);
 
 $url = $_SERVER['REQUEST_URI'];
 $lang_icon = getLanguageIcon($conn,$_SESSION["languageId"]);
