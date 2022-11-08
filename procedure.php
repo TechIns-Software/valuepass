@@ -9,12 +9,6 @@ if (!isset(
 )) {
     exit('Bad Request!');
 }
-//if (isset($_POST['promotions'])) {
-//    $promotions = true;
-//} else {
-//    $promotions = false;
-//}
-$promotions = true;
 session_start();
 include 'backend/includeClasses.php';
 $cartArray = unserialize($_SESSION['cart']);
@@ -33,7 +27,6 @@ if (!(count($products) >= 1 && count($products) <= \ValuePass\Cart::$MAX_VOUCHER
 </head>
 <body>
 <form id="myForm" action="https://valuepass.gr/request/payment/pay.php" method="post">
-    <input hidden name='promotions' value='<?php echo ($promotions) ? "1" : "0" ?>'>
     <input hidden name='name' value='<?php echo $_POST['name']?>'>
     <input hidden name='email' value='<?php echo $_POST['email']?>'>
     <input hidden name='phone' value='<?php echo $_POST['phone']?>'>
