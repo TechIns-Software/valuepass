@@ -94,23 +94,23 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 </p>
 
 
-                                <div class="row buyvp_label">
+                                <div class="row  buyNow_part">
                                     <div class="col-12 d-flex justify-content-between nowrap ">
-                                        <div>  <?php echo $menu[46] ?>  <span class="nowText">  <?php echo $menu[195] ?> </span>    </div>
-                                        <div>   <span class="nowText"><?php echo $vendor->getPriceAdult();?>€ </span>/  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?></div>
+                                        <div class="buyvp_label" >  <?php echo $menu[46] ?>  <span class="nowText">  <?php echo $menu[195] ?> </span>    </div>
+                                        <div class="buyvp_price">  <b class="nowText"><?php echo $vendor->getPriceAdult();?>€ </b>/ <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span></div>
                                     </div>
                                     <div class="col-12 ">
-                                        <span class="">
+                                        <b >
                                          <?php  echo $_SESSION["languageId"] == 1? 'To':''  ?>  <span class="nowText">VP</span> <?php echo $menu[196] ?>
-                                        </span>
+                                        </b>
                                     </div>
                                 </div>
                                 <div class="row paylater_box">
                                     <div class="col-12 pay_value  d-flex justify-content-between  ">
-                                        <div><?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?> </span> </div>
+                                        <div ><?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?> </span> </div>
                                         <div>
                                             <span class="from_price"> <?php echo $vendor->getOriginalPrice();?>€ </span>
-                                            <span class="laterText"><?php echo $totalToPay;?>   € </span> / <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?>
+                                            <span class="laterText"><?php echo $totalToPay;?>   € </span> / <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
                                         </div>
                                     </div>
 
@@ -195,23 +195,23 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 </span>
                             </p>
 
-                            <div class="row buyvp_label">
+                            <div class="row  buyNow_part">
                                 <div class="col-12 d-flex justify-content-between nowrap ">
-                                    <div>  <?php echo $menu[46] ?>  <span class="nowText">  <?php echo $menu[195] ?> </span>    </div>
-                                    <div>   <span class="nowText"><?php echo $vendor->getPriceAdult();?>€ </span>  /  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?></div>
+                                    <div class="buyvp_label" >  <?php echo $menu[46] ?>  <span class="nowText">  <?php echo $menu[195] ?> </span>    </div>
+                                    <div class="buyvp_price">  <b class="nowText"><?php echo $vendor->getPriceAdult();?>€ </b>/ <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span></div>
                                 </div>
                                 <div class="col-12 ">
-                                        <span class="">
-                                         <?php  echo $_SESSION["languageId"] == 1? 'To':''  ?>  <span class="nowText">VP</span> <?php echo $menu[196] ?>
-                                        </span>
+                                    <b >
+                                        <?php  echo $_SESSION["languageId"] == 1? 'To':''  ?>  <span class="nowText">VP</span> <?php echo $menu[196] ?>
+                                    </b>
                                 </div>
                             </div>
                             <div class="row paylater_box">
                                 <div class="col-12 pay_value  d-flex justify-content-between  ">
-                                    <div><?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?> </span> </div>
+                                    <div ><?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?> </span> </div>
                                     <div>
-                                        <span class="from_price"> <?php echo $vendor->getOriginalPrice();?>€</span>
-                                        <span class="laterText"><?php echo $totalToPay;?> € </span> / <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?>
+                                        <span class="from_price"> <?php echo $vendor->getOriginalPrice();?>€ </span>
+                                        <span class="laterText"><?php echo $totalToPay;?>   € </span> / <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
                                     </div>
                                 </div>
 
