@@ -564,6 +564,13 @@ function calculatePriceCart($conn, $arrayVouchers)
     if (count($arrayVouchers) < 2 || count($arrayVouchers) > 11) {
         $canOrder = false;
     }
+    if (count($arrayVouchers) == 1) {
+        $idVendorVoucherOneItem = $arrayVouchers[0]->getIdVendorVoucher();
+        $forHowManyPersonIs = checkIfIsGroupVendorVoucher($conn, $idVendorVoucherOneItem);
+        if ($forHowManyPersonIs > 1) {
+            $canOrder = true;
+        }
+    }
     $lengthHowManyPay = count($arrayVouchers);
     if (count($arrayVouchers) <= 3) {
         $lengthHowManyPay = count($arrayVouchers);
@@ -585,7 +592,13 @@ function calculatePriceCart($conn, $arrayVouchers)
             $less = $less + $arrayVouchers[$counter]->getPrice();
         }
     }
+    //there is no case of 0 Vouchers
     if (count($arrayVouchers) == 1) {
+//        if ($canOrder) {
+//            $messageModal = '';//message that can order
+//        } else {
+//            $messageModal = $menu[114];
+//        }
         $messageModal = $menu[114];
     } elseif (count($arrayVouchers) == 2) {
         $messageModal = $menu[164] . '  ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 2 ' . $menu[167] . ' 
@@ -878,3 +891,21 @@ function getAvailableVendorVoucher($conn, $arrayIVendorVoucherWithAmount)
     return $vendorVouchers;
 
 }
+
+function checkIfIsGroupVendorVoucher($conn, $idVendorVoucher) {
+    $query = "SELECT V.forHowManyPersonsIs
+            FROM VendorVoucher AS VV, Vendor AS V
+            WHERE VV.idVendor = V.id
+                AND VV.id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $idVendorVoucher);
+    $forHowManyPersonIs = 0;
+    if ($stmt->execute()) {
+        $stmt->bind_result($forHowManyPersonIs);
+        while ($stmt->fetch()) {}
+    }
+    $stmt->close();
+    return $forHowManyPersonIs;
+
+}
+

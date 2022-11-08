@@ -7,7 +7,9 @@ $title = "Checkout";
 $home = 0;
 include_once 'includes/header.php';
 $idLanguage = $_SESSION["languageId"];
-
+if ($voucherNumber == 0) {
+    header('location: index.php');
+}
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 ?>
 
