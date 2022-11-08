@@ -367,37 +367,43 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="purchasemodal" tabindex="-1"
-         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div style="min-height: 150px;"></div>
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center"
-                        id="exampleModalLabel"> <?php echo $menu[122]; ?>
+    <?php
+    if (count($cartArray) != 0) {
+        ?>
+        <!-- Modal -->
+        <div class="modal fade" id="purchasemodal" tabindex="-1"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div style="min-height: 150px;"></div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center"
+                            id="exampleModalLabel"> <?php echo $menu[122]; ?>
 
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                </div>
-                <div class="modal-body ">
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
 
-                    <!--                    <h5 class="offertitle">  </h5>-->
-                    <h4 class="offermessage2"><b> <?php echo $calculateCartObject['messageModal']; ?> </b></h4>
-                    <h5 class="offermessage2"> <?php echo $menu[172]; ?></h5>
-                    <button id="seeMoreActivities"
-                            class=" btn-cshopping2 w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
-                    <br>
-                    <script>goBackInHistory('seeMoreActivities');</script>
+                        <!--                    <h5 class="offertitle">  </h5>-->
+                        <h4 class="offermessage2"><b> <?php echo $calculateCartObject['messageModal']; ?> </b></h4>
+                        <h5 class="offermessage2"> <?php echo $menu[172]; ?></h5>
+                        <button id="seeMoreActivities"
+                                class=" btn-cshopping2 w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
+                        <br>
+                        <script>goBackInHistory('seeMoreActivities');</script>
 
-                    <a href="./client.php" class="  ">
-                        <button class="btn btn-cshopping my-2 w-100  p-1">   <?php echo $menu[109]; ?> </button>
-                    </a>
+                        <a href="./client.php" class="  ">
+                            <button class="btn btn-cshopping my-2 w-100  p-1">   <?php echo $menu[109]; ?> </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <?php
+    }
+    ?>
 
 
 </main>
