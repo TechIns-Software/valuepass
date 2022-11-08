@@ -627,10 +627,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     <h1 class="modal-title fs-5" id="questionmodaltitle">ValuePass</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div id="modalBodyInitial" class="modal-body">
                     <?php echo $menu[125]; ?> <b><?php echo $vendor->getName(); ?>  </b> <?php echo $menu[126]; ?>
                 </div>
-                <div class="modal-footer">
+                <div id="modalBodyError" class="modal-body displayNone"></div>
+                <div id="modalFooterInitial" class="modal-footer">
                     <a href="<?php echo './adventures.php?id=' . $vendor->getIdDestination(); ?>">
                         <button type="button" class=" btn-cshopping"
                                 data-bs-dismiss="modal"><?php echo $menu[127]; ?></button>

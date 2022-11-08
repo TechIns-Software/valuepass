@@ -23,7 +23,18 @@ function addToCart(objectOfDetails) {
         if (data[0] === 'OK') {
             document.getElementById('cartNumberShow').innerText = data[1];
         } else {
-            alert(data[0]);
+            const modal_footer = document.getElementById('modalFooterInitial');
+            const modal_body = document.getElementById('modalBodyInitial');
+            const modal_body_error = document.getElementById('modalBodyError');
+            modal_footer.classList.add('displayNone');
+            modal_body.classList.add('displayNone');
+            modal_body_error.classList.remove('displayNone');
+            modal_body_error.innerHTML = `${data[0]}`;
+            $('#questionmodal').on('hidden.bs.modal', function () {
+                modal_footer.classList.remove('displayNone');
+                modal_body.classList.remove('displayNone');
+                modal_body_error.classList.add('displayNone');
+            });
         }
     }
     getAjax(data, callBackFnc);
