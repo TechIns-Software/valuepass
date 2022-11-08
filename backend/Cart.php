@@ -5,7 +5,7 @@ namespace ValuePass;
 
 class Cart
 {
-    private static int $MAX_VOUCHERS = 25;
+    public static int $MAX_VOUCHERS = 25;
     private array $arrayGroupVouchersWant = [];
     //We will keep vendorAvailability id
     //TODO: always reload session obj when return from functions call

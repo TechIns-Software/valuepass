@@ -349,7 +349,7 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
             V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs,
             V.priceKidVendor
             FROM Vendor AS V, VendorVoucher AS VV 
-            WHERE VV.idVendor = ? AND VV.existenceVoucher > ? AND DATE(VV.dateVoucher) = ?
+            WHERE VV.idVendor = ? AND VV.existenceVoucher >= ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
               AND V.isOkForShowing = 1 AND V.isActiveNow = 1;";
     $stmt = $conn->prepare($query);
@@ -561,7 +561,7 @@ function calculatePriceCart($conn, $arrayVouchers)
     $menu = GetMenu($conn, $_SESSION["languageId"]);
 
     $canOrder = true;
-    if (count($arrayVouchers) < 2 || count($arrayVouchers) > 11) {
+    if (count($arrayVouchers) < 2 || count($arrayVouchers) > \ValuePass\Cart::$MAX_VOUCHERS) {
         $canOrder = false;
     }
     if (count($arrayVouchers) == 1) {
