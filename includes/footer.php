@@ -84,9 +84,9 @@ function footer($menu, $languages)
 <!--                    </ul>-->
 <!--                </div>-->
                 <div class=" col-lg-3 col-md-6  text-center panel-heading collapsed   " data-bs-toggle="collapse" href="#collapse5" role="button"
-                     aria-expanded="false" aria-controls="collapseExample">
-                    <h5 class="panel-title  accordion-toggle">
-                        <h5 class="border-bottom" > <span class=" icon-down-1"></span> <?php echo $menu[9] ?> <span class=" icon-down-1"></span></h5>
+                     aria-expanded="false" aria-controls="collapseExample" id="collapsebox">
+                    <h5 class="panel-title  accordion-toggle ">
+                        <h5 class="border-bottom  icon-up-1 "  id="collapsetitle">  <?php echo $menu[9] ?> </h5>
                     </h5>
                     <div id="collapse5" class="  collapse">
                         <div class="panel-body">
@@ -147,6 +147,29 @@ function footer($menu, $languages)
             </div>
         </div>
     </footer>
+    <script>
+        const collapsetitle = document.getElementById('collapsetitle');
+        const collapsebox = document.getElementById('collapsebox')
+        collapsebox.addEventListener('click',()=>{
+            if (!collapsebox.classList.contains('collapsed')){
+                collapsetitle.classList.remove('icon-up-1');
+                collapsetitle.classList.add('icon-down-1');
+                //remove  up arrow
+                //add down arrow
+            }else {
+                collapsetitle.classList.remove('icon-down-1');
+                collapsetitle.classList.add('icon-up-1');
+                //add  up arrow
+                //remove down arrow
+
+            }
+
+
+
+            console.log('clicked')
+        })
+
+    </script>
 
     <div id="toTop"></div><!-- Back to top button -->
 <?php } ?>

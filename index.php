@@ -238,17 +238,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"
-                        id="exampleModalLabel"> <?php echo $menu[23] ?> :
+                        id="exampleModalLabel"> <?php echo $menu[23] ?>
 
-                        <small> <?php echo $menu[13] ?></small></h5>
-
-
+                        </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <div class="col-lg-12 my-1 ">
-                        <p> <?php echo $menu[24] ?> </p>
+                        <p class="my-1">  <?php echo $menu[13] ?> </p>
+                        <p class="my-1"> <b>  <?php echo $menu[24] ?> </b> </p>
                     </div>
 
 
@@ -297,7 +297,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                 </div>
                 <div class="modal-body">
 
-                    <p> <?php echo $menu[71] ?> </p>
+
+                        <p> •  <?php echo $menu[71] ?>  </p>
+                        <p> •  <?php echo $menu[194] ?>  </p>
+
 
                 </div>
             </div>
@@ -321,7 +324,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                     <p>• <?php echo $menu[91] ?></p>
                     <p>• <?php echo $menu[92] ?></p>
                     <p>• <?php echo $menu[93] ?></p>
-                    <p> <?php echo $menu[94] ?></p>
+                    <p>• <?php echo $menu[94] ?></p>
                     <a target="_blank"
                        href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
 
@@ -574,12 +577,12 @@ footer($menu, $languages)
 
 <script src="assets/js/popper.min.js"></script>
 
-<script>
-    $(function () {
-        $('[data-toggle="popover"]').popover();
-
-    });
-</script>
+<!--<script>-->
+<!--    $(function () {-->
+<!--        $('[data-toggle="popover"]').popover();-->
+<!---->
+<!--    });-->
+<!--</script>-->
 
 
 <script src="changeLanguage.js"></script>

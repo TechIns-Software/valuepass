@@ -319,7 +319,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             <?php
                             if ($calculateCartObject['moneyEarned'] != 0) {
                                 ?>
-                                <li class="border-bottom">  <?php echo $menu[188]; ?>
+                                <li class="border-bottom d-flex justify-content-between"> <div>  <?php echo $menu[188]; ?> </div>
                                     <span>
                                     <?php
                                     $extraDiscount = round(100 * (
@@ -335,11 +335,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 <?php
                             }
                             ?>
-                            <li class="border-bottom">  <?php echo $menu[105]; ?>
+                            <li class="border-bottom d-flex justify-content-between"> <div>  <?php echo $menu[105]; ?> </div>
                                 <span><?php echo count($allVouchers); ?></span></li>
-                            <li class="border-bottom"> <?php echo $menu[106]; ?>
+                            <li class="border-bottom d-flex justify-content-between">  <div>  <?php echo $menu[106]; ?> </div>
                                 <span><?php echo $calculateCartObject['vouchersPay']; ?></span></li>
-                            <li class="border-bottom"> <?php echo $menu[107]; ?>
+                            <li class="border-bottom d-flex justify-content-between"> <div>  <?php echo $menu[107]; ?> </div>
                                 <span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span>
                             </li>
                         </ul>

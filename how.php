@@ -15,7 +15,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
     <div id="how" class="container margin_80_55">
 
         <div class="row ">
-            <button onclick="window.location.href='index.php'" type="button" class="btn-close" data-bs-dismiss="modal"
+            <button onclick="window.location.href='index.php'" type="button" class="btn-close " data-bs-dismiss="modal"
                     aria-label="Close"></button>
             <div class="main_title_2">
                 <h1><b><?php echo $menu[1]; ?> </b></h1>

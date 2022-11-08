@@ -4114,12 +4114,34 @@ a.box_feat h3 {
 }
 
 /* LATEST LAYOUT OF VOUCHER DISPLAY PRICES START */
+
+
+
 .buyvp_label{
   background-color: rgba(255, 255, 0, 0.671);
   color: #121921;
   font-weight: 700;
+  border-radius: .3em;
   word-wrap:break-word!important;
   white-space: nowrap!important;
+}
+
+.nowText{
+  color: red;
+}
+.paylater_box{
+  background-color: rgba(153, 153, 153, 0.63);
+  color: black;
+  font-weight: 600;
+}
+.laterText{
+  color: rgba(21, 127, 223, 0.83);
+  font-weight: 700;
+}
+
+.offerText{
+  color: rgba(10, 70, 123, 0.83);
+
 }
 
 .buyvp_value{
@@ -4132,6 +4154,7 @@ a.box_feat h3 {
   text-decoration: line-through;
   font-weight: 700;
   color: #121921;
+  padding-right: .1em;
 }
 
 .pay_label{

@@ -155,8 +155,8 @@
       responsive: {
         0: { items: 1 },
         767: { items: 2 },
-        1e3: { items: 3 },
-        1400: { items: 4 },
+        1e3: { items: 2 },
+        1400: { items: 3 },
       },
     }),
     i("#reccomended_adventure").owlCarousel({
