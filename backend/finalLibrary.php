@@ -872,7 +872,7 @@ function getAvailableVendorVoucher($conn, $arrayIVendorVoucherWithAmount)
 {
     $query = "SELECT VV.id
             FROM VendorVoucher AS VV
-            WHERE VV.id = ? AND VV.existenceVoucher > ?;";
+            WHERE VV.id = ? AND VV.existenceVoucher >= ?;";
     $stmt = $conn->prepare($query);
     $idVendorVoucher = $amountVouchers = 0;
     $stmt->bind_param('ii', $idVendorVoucher, $amountVouchers);
