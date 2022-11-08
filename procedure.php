@@ -20,7 +20,8 @@ include 'backend/includeClasses.php';
 $cartArray = unserialize($_SESSION['cart']);
 $cart = new \ValuePass\Cart($cartArray);
 $products = $cart->readyForSendingVendorVoucherData();
-if (!(count($products) >= 2 && count($products) <= 11)) {
+$idLanguage = $_SESSION["languageId"];
+if (!(count($products) >= 1 && count($products) <= \ValuePass\Cart::$MAX_VOUCHERS)) {
     exit('No right amount of vouchers');
 }
 ?>
@@ -36,6 +37,7 @@ if (!(count($products) >= 2 && count($products) <= 11)) {
     <input hidden name='name' value='<?php echo $_POST['name']?>'>
     <input hidden name='email' value='<?php echo $_POST['email']?>'>
     <input hidden name='phone' value='<?php echo $_POST['phone']?>'>
+    <input hidden name='language' value='<?php echo $idLanguage;?>'>
     <?php
     foreach ($products as $counter=> $product) {
         $idVendorVoucher = $product['idVendorVoucher'];
