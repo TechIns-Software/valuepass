@@ -417,7 +417,7 @@ footer($menu, $languages)
 <script>
     const phoneInputField = document.getElementById("phone");
     const phoneInput = window.intlTelInput(phoneInputField, {
-        preferredCountries: ["gr", "us", "cn", "de", "cy", "ru"],
+        preferredCountries: ["gr", "us", "gb", "es", "de", "fr", "it", "br", "cn"],
         utilsScript:
             "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
