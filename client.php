@@ -118,18 +118,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
         <div class="col-md-6  ">
 
             <div class="row ">
-
-                <div class="col-12  ">
-                    <h3>  <?php echo $menu[182]; ?> </h3>
-                </div>
-
-            </div>
-
-            <div class="fixedHeightContainer">
-            <span class="content">
-
-            <div class="row">
-
                 <?php
                 $objectVouchersDisplay = createArrayVouchersSortedFromCart($conn, $cartArray, $idLanguage);
                 $vendorId = $objectVouchersDisplay['vendorId'];
@@ -150,6 +138,39 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                 $priceInfantArray = $objectVouchersDisplay['priceInfantArray'];
                 $savedArray = $objectVouchersDisplay['saved'];
                 $forHowManyPersonsIsArray = $objectVouchersDisplay['forHowManyPersonsIsArray'];
+                ?>
+
+                <div class="col-12  ">
+                    <h3>  <?php echo $menu[182]; ?> </h3>
+                </div>
+
+                <div class='col-12 price ps-4  '>
+                    <h5 class='fw-bolder'>  <?php echo $menu[104]; ?>  <span class='vpicon'>
+                        <?php
+                        $calculateCartObject = calculatePriceCart($conn, $allVouchers);
+                        if ($calculateCartObject['moneyEarned'] != 0) {
+                            ?>
+                            <span style="text-decoration: line-through;color: red">
+                            <?php
+                            echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
+                            ?>
+                            </span> /
+                            <?php
+                        }
+                        echo $calculateCartObject['totalPay'];
+                        ?>
+                        €
+                    </span>   </h5>
+
+                </div>
+
+            </div>
+
+            <div class="fixedHeightContainer">
+            <span class="content">
+
+            <div class="row">
+                <?php
                 for ($counter = 0;
                      $counter < count($nameVendorArray);
                      $counter++) {
@@ -376,28 +397,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
             </div>
 
             <div class="row">
-
-                <div class='col-12 price  '>
-                    <h5 class='fw-bolder'>  <?php echo $menu[104]; ?>    </h5>
-                    <h4 class='vpicon'>
-                        <?php
-                        $calculateCartObject = calculatePriceCart($conn, $allVouchers);
-                        if ($calculateCartObject['moneyEarned'] != 0) {
-                            ?>
-                            <span style="text-decoration: line-through;color: red">
-                            <?php
-                            echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
-                            ?>
-                            </span> /
-                            <?php
-                        }
-                        echo $calculateCartObject['totalPay'];
-                        ?>
-                        €
-                    </h4>
-                </div>
-
-
                 <div class="col-12">
                     <p class="text-muted py-3"> <?php echo $menu[135] ?> </p>
                 </div>
