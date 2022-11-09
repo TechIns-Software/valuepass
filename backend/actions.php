@@ -100,17 +100,21 @@ if ($_POST['action'] == 'addProduct') {
             $possiblePackages= getPossibleVouchersPackages(
                 $conn, $idVendor, $totalVouchersWant, $dateSelected
             );
+            $numberOfPackages = count($possiblePackages);
             $adults = $_POST['adults'];
             $children = $_POST['children'];
             $infants = $_POST['infants'];
             $nameVendor = $_POST['nameVendor'];
             //return HTML
             if (count($possiblePackages) == 0) {
-                $message = getTemplateVoucher() ;
+                $templateResults = getTemplateVoucher() ;
+                $message = $templateResults[0];
             } else {
                 $message = '';
                 foreach ($possiblePackages as $possiblePackage) {
-                    $message .= getTemplateVoucher($possiblePackage ,$adults ,$children ,$infants ,$idVendor, $nameVendor) ;
+                    $templateResults =  getTemplateVoucher($possiblePackage ,$adults ,$children ,$infants ,$idVendor, $nameVendor,$numberOfPackages) ;
+                    $message .= $templateResults[0];
+                    $message2 .= $templateResults[1];
                 }
             }
         }

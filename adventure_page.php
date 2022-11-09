@@ -509,6 +509,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                         <!-- <a href="wishlist.html" class="btn_1 full-width outline wishlist"><i class="icon_heart"></i> Add to wishlist</a> -->
                         <div class="text-center"><small><?php echo $menu[73] ?></small></div>
                     </div>
+                    <div id="optionbuttons" class="d-flex"></div>
                     <div id="option"></div>
                     <div style="min-height: 10px;"></div>
                 </div>
@@ -752,7 +753,7 @@ footer($menu, $languages)
     );
 </script>
 
-<script src="backend/js/cart.js?v=1.3"></script>
+<script src="backend/js/cart.js?v=1.4"></script>
 <script>
     var lengthImagesSlider = <?php echo count($vendor->getImages())?>;
 </script>

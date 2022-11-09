@@ -135,7 +135,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
         $vendor = new \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
             $discount, $priceKid, $image, $name, $forHowManyPersonsIs, $googleMapsImage,
-            $childAcceptance, $infantTolerance,$minAgeAdult, $minAgeKid
+            $childAcceptance, $infantTolerance, $minAgeAdult, $minAgeKid
         );
         $query1 = "SELECT LBT.name
                 FROM LabelsBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT
@@ -643,7 +643,7 @@ function calculatePriceCart($conn, $arrayVouchers)
 }
 
 
-function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '')
+function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants = 0, $idVendor = 0, $nameVendor = '', $numberOfPackages = 1)
 {
     $greekMonths = array('Ιανουαρίου', 'Φεβρουαρίου', 'Μαρτίου', 'Απριλίου', 'Μαΐου', 'Ιουνίου', 'Ιουλίου', 'Αυγούστου', 'Σεπτεμβρίου', 'Οκτωβρίου', 'Νοεμβρίου', 'Δεκεμβρίου');
     if ($_SESSION["languageId"] == 2) {
@@ -756,9 +756,19 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     } else { //greek language fixme when new languages added
         $hour = date('h:i ', $dateTimestamp) . (date('A', $dateTimestamp) == 'AM' ? 'π.μ.' : 'μ.μ.');
     }
+    $button = '';
+    $message = '';
+    if ($numberOfPackages > 1) {
+        $button = "<div class='btn buy_button '  data-bs-toggle='collapse'
+     data-bs-target='#multiCollapseExample{$VoucherId}'  role='button' aria-expanded='false' 
+     aria-controls='multiCollapseExample{$VoucherId}'><a>  <span class='vpicon' > VP </span> $message5  $hour </a></div>";
 
-    $message = "<div class='col-12 vouchertemplate my-2'>";
-    $message .= " <div class='container'> <div  class='row'> ";
+        $message = "<div class=' collapse ' data-parent='#optionbuttons' id='multiCollapseExample{$VoucherId}' >";
+    }
+
+
+    $message .= "<div class='col-12 vouchertemplate '   >";
+    $message .= " <div class='container '> <div  class='row'> ";
     $message .= "   <div class='col-12'><div style='min-height: 5px;'></div> ";
     $message .= "  <div class='title '>";
     $message .= "  <h4> <span style='color: black'>$message3 </span> $nameVendor </h4> ";
@@ -807,7 +817,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <h6 class='fw-bolder'>$message6b </h6> ";
     $message .= " <ul> ";
     if ($adults != 0) {
-        $totalAdultPriceVendor =  $adults * $totalToPayAdultToVendor;
+        $totalAdultPriceVendor = $adults * $totalToPayAdultToVendor;
         $message .= " <li class='d-flex justify-content-between'>
   <div>  $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </div>
    <div>  <p class='fw-bolder m-0 '> $totalAdultPriceVendor  €  </p> </div>
@@ -821,7 +831,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
    </li> ";
     }
     if ($infants != 0) {
-        $totalInfantPriceVendor =  $infants * $totalToPayInfantToVendor;
+        $totalInfantPriceVendor = $infants * $totalToPayInfantToVendor;
         $message .= " <li class='d-flex justify-content-between'> 
  <div>  $message9 <b> $infants  </b> x <span> $totalToPayInfantToVendor € </span> </div>
    <div>  <p class='fw-bolder m-0 '> $totalInfantPriceVendor  €  </p> </div>
@@ -864,7 +874,11 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
 
     $message .= " </div> ";
     $message .= " </div> ";
-    return $message;
+
+    if ($numberOfPackages > 1) {
+        $message .= " </div> ";
+    }
+    return [$message, $button];
 
 }
 
@@ -892,7 +906,8 @@ function getAvailableVendorVoucher($conn, $arrayIVendorVoucherWithAmount)
 
 }
 
-function checkIfIsGroupVendorVoucher($conn, $idVendorVoucher) {
+function checkIfIsGroupVendorVoucher($conn, $idVendorVoucher)
+{
     $query = "SELECT V.forHowManyPersonsIs
             FROM VendorVoucher AS VV, Vendor AS V
             WHERE VV.idVendor = V.id
@@ -902,7 +917,8 @@ function checkIfIsGroupVendorVoucher($conn, $idVendorVoucher) {
     $forHowManyPersonIs = 0;
     if ($stmt->execute()) {
         $stmt->bind_result($forHowManyPersonIs);
-        while ($stmt->fetch()) {}
+        while ($stmt->fetch()) {
+        }
     }
     $stmt->close();
     return $forHowManyPersonIs;

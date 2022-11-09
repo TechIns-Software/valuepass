@@ -90,6 +90,10 @@ function getPackagesAvailable() {
                 const callBack = (data) => {
                     $("#option").empty();
                     $("#option").append(data[0]);
+
+                    $("#optionbuttons").empty();
+                    $("#optionbuttons").append(data[1]);
+
                 }
                 getAjax(data, callBack);
 
