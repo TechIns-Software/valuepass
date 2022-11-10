@@ -343,9 +343,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                 <span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span>
                             </li>
                         </ul>
-                        <button id="btnContinue"
-                                class="btn btn-warning  my-2 w-100 p-3"> <?php echo $menu[108]; ?> </button>
-                        <script>goBackInHistory('btnContinue',<?php echo  $_SESSION['lastDestinationId']?>);</script>
+                        <?php ?>
+                        <?php if ( !count($cartArray) == 1 && $calculateCartObject['canOrder'] ){  ?>
+                            <button id="btnContinue"
+                                    class="btn btn-warning  my-2 w-100 p-3"> <?php echo $menu[108]; ?> </button>
+                            <script>goBackInHistory('btnContinue',<?php echo  $_SESSION['lastDestinationId']?>);</script>
+                        <?php    } ?>
+
                         <!--                            <input onclick="window.location = './client.php'" type="button"  class="btn btn-secondary btn_1 my-2 full-width purchase" >-->
 
                         <button class="btn btn-success purchase  w-100 p-2" data-bs-toggle="modal"

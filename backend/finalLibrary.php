@@ -594,12 +594,12 @@ function calculatePriceCart($conn, $arrayVouchers)
     }
     //there is no case of 0 Vouchers
     if (count($arrayVouchers) == 1) {
-//        if ($canOrder) {
-//            $messageModal = '';//message that can order
-//        } else {
-//            $messageModal = $menu[114];
-//        }
-        $messageModal = $menu[114];
+        if ($canOrder) {
+            $messageModal = $menu[164] . '  ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 2 ' . $menu[167] . ' 
+          3 ' . $menu[168] . ' 4 Vouchers ' . $menu[169];
+        } else {
+            $messageModal = $menu[114];
+        }
     } elseif (count($arrayVouchers) == 2) {
         $messageModal = $menu[164] . '  ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 2 ' . $menu[167] . ' 
           1 ' . $menu[168] . ' 4 Vouchers ' . $menu[169];
