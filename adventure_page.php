@@ -432,7 +432,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="book">
 
                 <div class="col-12 shadow bgbanner2">
 
@@ -452,7 +452,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
 
     <div style="min-height: 20px"></div>
-    <section id="book">
+    <section >
         <div class="container margin_60_35">
             <div class="row">
                 <div class="col-lg-8 col-md-12">

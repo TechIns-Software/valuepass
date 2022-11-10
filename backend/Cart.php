@@ -81,7 +81,12 @@ class Cart
                     'message'=> 'OK'
                 ];
             } else {
-                $msg = "Can Not Have More Than $maxVoucherFromVendorThatCanHave vouchers in that specific time";
+                if ( $_SESSION["languageId"] == 1 ){
+                    $msg = "Τα διαθέσιμα vouchers για την επιλεγμένη ημερομηνία είναι $maxVoucherFromVendorThatCanHave ";
+                }else{
+                    $msg = "The available vouchers for the selected date are $maxVoucherFromVendorThatCanHave ";
+                }
+
                 $message = [
                     'status'=> 0,
                     'message'=> $msg
@@ -89,7 +94,12 @@ class Cart
             }
 
         } else {
-            $msg = "You can have up to " .self::$MAX_VOUCHERS ." vouchers totally selected";
+            if ( $_SESSION["languageId"] == 1 ){
+                $msg = "Μπορείτε να επιλέξετε μέχρι " .self::$MAX_VOUCHERS ." vouchers";
+            }else{
+                $msg = "You can have up to " .self::$MAX_VOUCHERS ." vouchers totally selected";
+            }
+
             $message = [
                 'status'=> 0,
                 'message'=> $msg
