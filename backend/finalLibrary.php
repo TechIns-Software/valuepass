@@ -253,7 +253,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                     $vendor->addActivity(new \ValuePass\AboutActivity($headAboutActivity, $descriptionAboutActivity));
                 }
             }
-            $query8 = "SELECT IIHT.name, IIDT.name
+            $query8 = "SELECT IIHT.name, IIDT.name, IIH.id
                     FROM ImportantInformationHead AS IIH, ImportantInformationHeadTranslate AS IIHT,
                     ImportantInformationDescription AS IID, ImportantInformationDescriptionTranslate AS IIDT
                     WHERE IIH.idVendor = $id
@@ -265,10 +265,10 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                     ORDER BY IIH.id";
             $stmt8 = $conn->prepare($query8);
             if ($stmt8->execute()) {
-                $headImportant = $previousImportant = $descriptionImportant = '';
-                $stmt8->bind_result($headImportant, $descriptionImportant);
+                $headImportant = $previousImportant = $descriptionImportant = $idHead = '';
+                $stmt8->bind_result($headImportant, $descriptionImportant, $idHead);
                 while ($stmt8->fetch()) {
-                    if ($previousImportant == $headImportant) {
+                    if ($previousImportant == $idHead) {
                         if (!isset($importantInformation)) {
                             $importantInformation = new \ValuePass\ImportantInformation($headImportant);
                         }
@@ -279,7 +279,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                         }
                         $importantInformation = new \ValuePass\ImportantInformation($headImportant);
                         $importantInformation->addDescription($descriptionImportant);
-                        $previousImportant = $headImportant;
+                        $previousImportant = $idHead;
                     }
                 }
                 if (isset($importantInformation)) {
