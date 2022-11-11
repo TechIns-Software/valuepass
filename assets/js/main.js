@@ -153,10 +153,10 @@
       loop: !0,
       margin: 0,
       responsive: {
-        0: { items: 1 },
+        0: { items: 1 , dots: 1},
         767: { items: 2 },
         1e3: { items: 2 },
-        1400: { items: 3 , dots: !1},
+        1400: { items: 3 },
       },
     }),
     i("#reccomended_adventure").owlCarousel({
