@@ -481,7 +481,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     <label>
                                         <?=$vendor->getLabelAdults($menu[68], $menu[174], $menu[175])?>
                                     </label>
-                                    <input id="adultsInput" type="text" name="qtyInput" value="0">
+                                    <input id="adultsInput" type="text" name="qtyInput" value="0"
+                                    <?=($vendor->getForHowManyPersonsIs() != 1 ? 'group="isGroup" ': '')?>
+                                    >
                                 </div>
                                 <div <?php echo !$vendor->isChildAcceptance() || $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : '' ?>
                                         class="qtyButtons">

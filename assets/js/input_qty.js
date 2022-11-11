@@ -73,25 +73,45 @@ $(function () {
     $(".qtyButtons input").after('<div class="qtyInc"></div>');
     $(".qtyButtons input").before('<div class="qtyDec"></div>');
     $(".qtyDec, .qtyInc").on("click", function () {
-        var whichClass = $(this).attr('class');
-
+        var inputLabel = $(this).siblings()['2'];
+        var idInput = $(inputLabel).attr('id');
+        var groupChecking = false;
+        var hasChangedValue = true;
+        if (idInput = 'adultsInput') {
+            var isGroup = $(inputLabel).attr('group');
+            if (isGroup === 'isGroup') {
+                groupChecking = true;
+            }
+        }
         var $button = $(this);
         var oldValue = $button.parent().find("input").val();
 
         if ($button.hasClass('qtyInc')) {
-            var newVal = parseFloat(oldValue) + 1;
+            if (groupChecking) {
+                if (oldValue == "0") {
+                    var newVal = parseFloat(oldValue) + 1;
+                } else {
+                    hasChangedValue = false;
+                    newVal = parseFloat(oldValue);
+                }
+            } else {
+                newVal = parseFloat(oldValue) + 1;
+            }
         } else {
             // don't allow decrementing below zero
             if (oldValue > 0) {
                 var newVal = parseFloat(oldValue) - 1;
             } else {
+                hasChangedValue = false;
                 newVal = 0;
             }
         }
 
         $button.parent().find("input").val(newVal);
         qtySum();
-        $(".qtyTotal").addClass("rotate-x");
+        if (hasChangedValue) {
+            $(".qtyTotal").addClass("rotate-x");
+        }
 
     });
 
