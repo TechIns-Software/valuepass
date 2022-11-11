@@ -257,7 +257,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                             <!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
                             <button class=" my-2 btn buy_button "><a href="#book"><?php echo $menu[52] ?> </a></button>
-                            <p class="my-0 offerText"> <?php echo $menu[57].''.$menu[58].''.$menu[59]; ?> </p>
+                            <p class="my-0 offerText"> <?php echo $menu[57].' '.$menu[58].' '.$menu[59]; ?> </p>
                         </div>
 
                     </div>
