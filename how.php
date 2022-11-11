@@ -14,9 +14,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
     <div style="min-height: 90px;"></div>
     <div id="how" class="container margin_80_55">
 
-        <div class="row ">
-            <button onclick="window.location.href='index.php'" type="button" class="btn-close " data-bs-dismiss="modal"
+        <div class="row d-flex justify-content-end ">
+            <button onclick="window.location.href='index.php'" type="button" class="btn-close mx-2 " data-bs-dismiss="modal"
                     aria-label="Close"></button>
+        </div>
+        <div class="row ">
             <div class="main_title_2">
                 <h1><b><?php echo $menu[1]; ?> </b></h1>
                 <p><?php echo $menu[74]; ?> </p>
@@ -35,7 +37,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
                         <!--About accordion #9-->
 
-                        <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse1" role="button"
+                        <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse1"
+                             role="button"
                              aria-expanded="true" aria-controls="collapseExample">
                             <h6 class="panel-title accordion-toggle">
                                 <b><?php echo $menu[75]; ?> 1. </b> <?php echo $menu[76]; ?>
@@ -54,10 +57,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         </div>
 
 
-                        <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2" role="button"
+                        <div class="panel-heading collapsed " data-bs-toggle="collapse" href="#collapse2"
+                             role="button"
                              aria-expanded="true" aria-controls="collapseExample">
                             <h6 class="panel-title accordion-toggle">
-                                <b><?php echo $menu[75]; ?> 2. </b> <?php echo $menu[77]; ?> / <?php echo $menu[78]; ?>
+                                <b><?php echo $menu[75]; ?> 2. </b> <?php echo $menu[77]; ?>
+                                / <?php echo $menu[78]; ?>
                                 / <?php echo $menu[79]; ?> /<?php echo $menu[80]; ?>
                             </h6>
                         </div>
@@ -69,7 +74,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         </div>
 
 
-                        <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3" role="button"
+                        <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse3"
+                             role="button"
                              aria-expanded="true" aria-controls="collapseExample">
                             <h6 class="panel-title accordion-toggle">
                                 <b><?php echo $menu[75]; ?>3. </b><?php echo $menu[82]; ?>
@@ -106,7 +112,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         </div>
 
 
-                        <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4" role="button"
+                        <div class="panel-heading  collapsed" data-bs-toggle="collapse" href="#collapse4"
+                             role="button"
                              aria-expanded="true" aria-controls="collapseExample">
                             <h6 class="panel-title accordion-toggle">
                                 <b><?php echo $menu[75]; ?>4. </b> <?php echo $menu[85]; ?>
@@ -123,8 +130,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                         <li> • <?php echo $menu[93]; ?></li>
                                         <li> • <?php echo $menu[94]; ?></li>
 
-                                       <b>     <a target="_blank" href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a> </b>
-
+                                        <b> <a target="_blank"
+                                               href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"> <?php echo $menu[95] ?></a>
+                                        </b>
 
 
                                     </ul>
@@ -134,7 +142,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                             </div>
                         </div>
 
-                        <div class="panel-heading collapsed  " data-bs-toggle="collapse" href="#collapse5" role="button"
+                        <div class="panel-heading collapsed  " data-bs-toggle="collapse" href="#collapse5"
+                             role="button"
                              aria-expanded="true" aria-controls="collapseExample">
                             <h6 class="panel-title accordion-toggle">
                                 <b><?php echo $menu[75]; ?>5. </b> <?php echo $menu[88]; ?></small>
@@ -230,7 +239,7 @@ footer($menu, $languages)
 
 <!-- COMMON SCRIPTS -->
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js?v=1.4"></script>
+<script src="assets/js/main.js?v=1.5"></script>
 <script src="assets/js/validate.js"></script>
 
 <!-- SLIDER REVOLUTION SCRIPTS  -->

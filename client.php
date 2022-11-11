@@ -70,11 +70,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                                    placeholder="<?php echo $menu[153]; ?>" required>
                         </div>
                         <p class="text-center">
-                            <?php echo $menu[154]; ?>
+                             <?php echo $menu[154]; ?>
                         </p>
 
                         <p class="form-check">
-                            <?php echo $menu[180]; ?>
+                            •  <?php echo $menu[180]; ?>
                             <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
                                target="_blank">
                                 <b>  <?php echo $menu[148] ?> </b>
@@ -84,7 +84,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
                         <div class="form-check">
                             <!--                            <input class="form-check-input" type="checkbox" value="" id="terms">-->
                             <label class="form-check-label" for="terms">
-                                <?php echo $menu[146]; ?>
+                                • <?php echo $menu[146]; ?>
                                 <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
                                    target="_blank">
                                     <b>  <?php echo $menu[148] ?> </b>
@@ -100,12 +100,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
 
 
                         <div class="form-check ">
-                            <!--                            <input name="promotions" class="form-check-input" type="checkbox" checked value=""-->
-                            <!--                                   id="emailmarketing">-->
                             <label class="form-check-label " for="emailmarketing">
-                                <?php echo $menu[155]; ?>
+                                •  <?php echo $menu[155]; ?>
                             </label>
                         </div>
+
                         <div class="form-group my-4 text-center">
                             <input style="font-weight: bold;color: white" type="submit" id="continue"
                                    class="btn btn-primary form-control" value="<?php echo $menu[109] ?>">
@@ -433,7 +432,7 @@ footer($menu, $languages)
     }
 </script>
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js?v=1.4"></script>
+<script src="assets/js/main.js?v=1.5"></script>
 
 
 <script src="changeLanguage.js"></script>

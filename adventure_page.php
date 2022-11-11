@@ -401,7 +401,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         </h6>
                                     </div>
                                     <div id="collapse8" class=" collapse">
-                                        <div class="panel-body px-2">
+                                        <div class="panel-body px-2" >
 
                                             <?php
                                             foreach ($vendor->getRatedArray() as $ratedCategory) {
@@ -432,8 +432,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 </div>
             </div>
 
-            <div class="row" id="book">
-
+            <div class="row" >
+                <div style="min-height: 45px" id="book"></div>
                 <div class="col-12 shadow bgbanner2">
 
                     <div class="banner_title2 ">
@@ -451,7 +451,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     </div>
 
 
-    <div style="min-height: 20px"></div>
+    <div style="min-height: 20px" ></div>
     <section >
         <div class="container margin_60_35">
             <div class="row">
@@ -651,7 +651,7 @@ footer($menu, $languages)
 ?>
 
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js?v=1.4"></script>
+<script src="assets/js/main.js?v=1.5"></script>
 <script src="assets/js/validate.js"></script>
 <!-- INPUT QUANTITY  -->
 <script src="assets/js/input_qty.js"></script>

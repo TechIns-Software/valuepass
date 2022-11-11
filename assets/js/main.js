@@ -156,7 +156,7 @@
         0: { items: 1 },
         767: { items: 2 },
         1e3: { items: 2 },
-        1400: { items: 3 },
+        1400: { items: 3 , dots: !1},
       },
     }),
     i("#reccomended_adventure").owlCarousel({

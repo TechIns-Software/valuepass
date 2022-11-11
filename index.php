@@ -450,7 +450,7 @@ footer($menu, $languages)
 
 <!-- COMMON SCRIPTS -->
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js?v=1.4?v=1.3"></script>
+<script src="assets/js/main.js?v=1.5"></script>
 <script src="assets/js/validate.js"></script>
 
 <!-- SLIDER REVOLUTION SCRIPTS  -->
