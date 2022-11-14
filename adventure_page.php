@@ -651,7 +651,7 @@ footer($menu, $languages)
 ?>
 
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js?v=1.5"></script>
+<script src="assets/js/main.js?v=1.6"></script>
 <script src="assets/js/validate.js"></script>
 <!-- INPUT QUANTITY  -->
 <script src="assets/js/input_qty.js"></script>

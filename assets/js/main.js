@@ -144,7 +144,7 @@
       responsive: {
         0: { items: 1, dots: !1 },
         600: { items: 2 },
-        1e3: { items: 4 },
+        1e3: { items: 4 ,dots:!1},
       },
     }),
     i("#reccomended").owlCarousel({
@@ -156,7 +156,7 @@
         0: { items: 1 },
         767: { items: 2 },
         1e3: { items: 2 },
-        1400: { items: 3 },
+        1400: { items: 3,dots:!1 },
       },
     }),
     i("#reccomended_adventure").owlCarousel({
@@ -168,7 +168,7 @@
         0: { items: 1 },
         767: { items: 3 },
         1e3: { items: 4 },
-        1400: { items: 5 },
+        1400: { items: 5,dots:!1 },
       },
     }),
       i("#reccomended_adventure2").owlCarousel({
