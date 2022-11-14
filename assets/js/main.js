@@ -148,9 +148,9 @@
       },
     }),
     i("#reccomended").owlCarousel({
-      center: 1,
+      center: !0,
       items: 4,
-      loop: 1,
+      loop: !0,
       margin: 0,
       responsive: {
         0: { items: 1 },
