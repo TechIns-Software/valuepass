@@ -47,49 +47,24 @@ foreach ($element_expected as $idVendor => $version) {
 // # Start only for data
 // # Step 1: Check if something is updated
 $versions = getVersions($conn);
-if ($versions['general'] < $response['version']) {
-    if ($versions['destination'] < $response['destinations']['version']) {
-        $idsOfDestination = getIdVersionOfElementsOfArrayWithVersion($conn, 'Destination');
-        foreach ($response['destinations'] as $idDestination => $destinationValue) {
-            if ($idDestination != 'version') {
+/****************************************/
+if ($versions['destination'] < $response['destinations']['version']) {
+    $idsOfDestination = getIdVersionOfElementsOfArrayWithVersion($conn, 'Destination');
+    foreach ($response['destinations'] as $idDestination => $destinationValue) {
+        if ($idDestination != 'version') {
 
-                $idDestination = intval($idDestination);
-                if (array_key_exists($idDestination, $idsOfDestination)) {
-
-
-                    if ($idsOfDestination[$idDestination] < $destinationValue['version']) {
+            $idDestination = intval($idDestination);
+            if (array_key_exists($idDestination, $idsOfDestination)) {
 
 
-                        foreach ($destinationValue['languages'] as $idLanguage => $destLangObj) {
-                            updateDestinationLanguages(
-                                $conn, $idLanguage, $idDestination,
-                                $destLangObj['name'], $destLangObj['description'],
-                                $destinationValue['version'], $destinationValue['mappingString']
-                            );
-
-                        }
-
-                    }
-                }
-
-            }
-
-        }
-
-    }
-
-    if ($versions['categoryVendor'] < $response['categoryVendor']['version']) {
-
-        $idsOfCategoryVendor = getIdVersionOfElementsOfArray($conn, 'CategoryVendor');
-        foreach ($response['categoryVendor'] as $idCategoryVendor => $idCategoryVendorValue) {
-            if ($idCategoryVendor != 'version') {
-                $idCategoryVendor = intval($idCategoryVendor);
-                if (array_key_exists($idCategoryVendor, $idsOfCategoryVendor)) {
+                if ($idsOfDestination[$idDestination] < $destinationValue['version']) {
 
 
-                    foreach ($idCategoryVendorValue['languages'] as $idLanguage => $catObj) {
-                        updateCategoryVendor(
-                            $conn, $idLanguage, $idCategoryVendor, $catObj['name']
+                    foreach ($destinationValue['languages'] as $idLanguage => $destLangObj) {
+                        updateDestinationLanguages(
+                            $conn, $idLanguage, $idDestination,
+                            $destLangObj['name'], $destLangObj['description'],
+                            $destinationValue['version'], $destinationValue['mappingString']
                         );
 
                     }
@@ -99,69 +74,93 @@ if ($versions['general'] < $response['version']) {
 
         }
 
-    }
-
-    if ($versions['paymentInfoActivity'] < $response['paymentInfoActivity']['version']) {
-        $idsOfPayment = getIdVersionOfElementsOfArray($conn, 'PaymentInfoActivity');
-        foreach ($response['paymentInfoActivity'] as $idPayment => $paymentValue) {
-            if ($idPayment != 'version') {
-                $idPayment = intval($idPayment);
-                if (array_key_exists($idPayment, $idsOfPayment)) {
-
-                    foreach ($paymentValue['languages'] as $idLanguage => $paymentInfoObj) {
-                        updatePaymentInfo(
-                            $conn, $idLanguage, $idPayment,
-                            $paymentInfoObj['description']
-                        );
-                    }
-
-                }
-            }
-        }
-    }
-
-    if ($versions['labelsBox'] < $response['labelsBox']['version']) {
-        $idsOfLabelsBox = getIdVersionOfElementsOfArray($conn, 'LabelsBox');
-        foreach ($response['labelsBox'] as $idLabelsBox => $labelsBoxValue) {
-            if ($idLabelsBox != 'version') {
-                $idLabelsBox = intval($idLabelsBox);
-                if (array_key_exists($idLabelsBox, $idsOfLabelsBox)) {
-                    foreach ($labelsBoxValue['languages'] as $idLanguage => $labelBoxObj) {
-
-                        updateLabelBox($conn,$idLanguage,$idLabelsBox,$labelBoxObj['name']);
-                    }
-
-                }
-            }
-        }
-    }
-
-////    if ($versions['ratedCategory'] < $respone['ratedCategory']) {}
-    if ($versions['includedService'] < $response['includedService']['version']) {
-        $idsOfIncludedService = getIdVersionOfElementsOfArray($conn, 'IncludedService');
-        foreach ($response['includedService'] as $idIncludedService => $includedServiceValue) {
-            if ($idIncludedService != 'version') {
-                $idIncludedService = intval($idIncludedService);
-                if (array_key_exists($idIncludedService, $idsOfIncludedService)) {
-
-                    foreach ($includedServiceValue['languages'] as $idLanguage => $includeServObj) {
-
-                        updateIncludeService(
-                            $conn, $idLanguage, $idIncludedService, $includeServObj['name']
-                        );
-                    }
-
-                }
-            }
-        }
-    }
-
-    if ($versions['menu'] < $response['menu']['version']) {
-
-        updateMenu($conn, $response['menu']);
     }
 
 }
+
+if ($versions['categoryVendor'] < $response['categoryVendor']['version']) {
+
+    $idsOfCategoryVendor = getIdVersionOfElementsOfArray($conn, 'CategoryVendor');
+    foreach ($response['categoryVendor'] as $idCategoryVendor => $idCategoryVendorValue) {
+        if ($idCategoryVendor != 'version') {
+            $idCategoryVendor = intval($idCategoryVendor);
+            if (array_key_exists($idCategoryVendor, $idsOfCategoryVendor)) {
+
+
+                foreach ($idCategoryVendorValue['languages'] as $idLanguage => $catObj) {
+                    updateCategoryVendor(
+                        $conn, $idLanguage, $idCategoryVendor, $catObj['name']
+                    );
+
+                }
+
+            }
+        }
+
+    }
+
+}
+
+if ($versions['paymentInfoActivity'] < $response['paymentInfoActivity']['version']) {
+    $idsOfPayment = getIdVersionOfElementsOfArray($conn, 'PaymentInfoActivity');
+    foreach ($response['paymentInfoActivity'] as $idPayment => $paymentValue) {
+        if ($idPayment != 'version') {
+            $idPayment = intval($idPayment);
+            if (array_key_exists($idPayment, $idsOfPayment)) {
+
+                foreach ($paymentValue['languages'] as $idLanguage => $paymentInfoObj) {
+                    updatePaymentInfo(
+                        $conn, $idLanguage, $idPayment,
+                        $paymentInfoObj['description']
+                    );
+                }
+
+            }
+        }
+    }
+}
+
+if ($versions['labelsBox'] < $response['labelsBox']['version']) {
+    $idsOfLabelsBox = getIdVersionOfElementsOfArray($conn, 'LabelsBox');
+    foreach ($response['labelsBox'] as $idLabelsBox => $labelsBoxValue) {
+        if ($idLabelsBox != 'version') {
+            $idLabelsBox = intval($idLabelsBox);
+            if (array_key_exists($idLabelsBox, $idsOfLabelsBox)) {
+                foreach ($labelsBoxValue['languages'] as $idLanguage => $labelBoxObj) {
+
+                    updateLabelBox($conn,$idLanguage,$idLabelsBox,$labelBoxObj['name']);
+                }
+
+            }
+        }
+    }
+}
+
+////    if ($versions['ratedCategory'] < $respone['ratedCategory']) {}
+if ($versions['includedService'] < $response['includedService']['version']) {
+    $idsOfIncludedService = getIdVersionOfElementsOfArray($conn, 'IncludedService');
+    foreach ($response['includedService'] as $idIncludedService => $includedServiceValue) {
+        if ($idIncludedService != 'version') {
+            $idIncludedService = intval($idIncludedService);
+            if (array_key_exists($idIncludedService, $idsOfIncludedService)) {
+
+                foreach ($includedServiceValue['languages'] as $idLanguage => $includeServObj) {
+
+                    updateIncludeService(
+                        $conn, $idLanguage, $idIncludedService, $includeServObj['name']
+                    );
+                }
+
+            }
+        }
+    }
+}
+
+if ($versions['menu'] < $response['menu']['version']) {
+
+    updateMenu($conn, $response['menu']);
+}
+/****************************************/
 
 // # Continue with data
 // Step 2: Check for new entries
@@ -207,46 +206,44 @@ foreach ($response['includedService'] as $idIncludedService => $includedServiceV
     }
 }
 //checked after other
-if ($versions['general'] < $response['version']) {
-    if ($versions['vendor'] < $response['vendors']['version']) {
-        $idsOfVendors = getIdVersionOfElementsOfArrayWithVersion($conn, 'Vendor');
-        foreach ($response['vendors'] as $idVendor => $vendorValue) {
-            if ($idVendor != 'version') {
-                $idVendor = intval($idVendor);
-                if (array_key_exists($idVendor, $idsOfVendors)) {
-                    if ($idsOfVendors[$idVendor] < $vendorValue['version']) {
-                        $basic = array(
-                            $vendorValue['isBestoff'],
-                            $vendorValue['idDestination'],
-                            $vendorValue['priceAdult'],
-                            $vendorValue['originalPrice'],
-                            $vendorValue['discount'],
-                            $vendorValue['priceKid'],
-                            $vendorValue['infantPrice'],
-                            $vendorValue['idCategory'],
-                            $vendorValue['idPaymentInfo'],
-                            $vendorValue['forHowManyPersonsIs'],
-                            $vendorValue['childAcceptance'],
-                            $vendorValue['infantTolerance'],
-                            $vendorValue['isActiveNow'],
-                            $vendorValue['minAgeChild'],
-                            $vendorValue['minAgeAdult'],
-                            $vendorValue['priceKidVendor'],
-                        );
-                        $labelBoxes = $vendorValue['labelBox'];
-                        $includedServices = $vendorValue['includedServices'];
-                        $rated = $vendorValue['rated'];
-                        $languages = $vendorValue['languages'];
-                        vendorFunction(
-                            $conn, $idVendor, $basic, $labelBoxes,
-                            $includedServices, $rated,
-                            $languages, $vendorValue['version']
-                        );
-                    }
-
+if ($versions['vendor'] < $response['vendors']['version']) {
+    $idsOfVendors = getIdVersionOfElementsOfArrayWithVersion($conn, 'Vendor');
+    foreach ($response['vendors'] as $idVendor => $vendorValue) {
+        if ($idVendor != 'version') {
+            $idVendor = intval($idVendor);
+            if (array_key_exists($idVendor, $idsOfVendors)) {
+                if ($idsOfVendors[$idVendor] < $vendorValue['version']) {
+                    $basic = array(
+                        $vendorValue['isBestoff'],
+                        $vendorValue['idDestination'],
+                        $vendorValue['priceAdult'],
+                        $vendorValue['originalPrice'],
+                        $vendorValue['discount'],
+                        $vendorValue['priceKid'],
+                        $vendorValue['infantPrice'],
+                        $vendorValue['idCategory'],
+                        $vendorValue['idPaymentInfo'],
+                        $vendorValue['forHowManyPersonsIs'],
+                        $vendorValue['childAcceptance'],
+                        $vendorValue['infantTolerance'],
+                        $vendorValue['isActiveNow'],
+                        $vendorValue['minAgeChild'],
+                        $vendorValue['minAgeAdult'],
+                        $vendorValue['priceKidVendor'],
+                    );
+                    $labelBoxes = $vendorValue['labelBox'];
+                    $includedServices = $vendorValue['includedServices'];
+                    $rated = $vendorValue['rated'];
+                    $languages = $vendorValue['languages'];
+                    vendorFunction(
+                        $conn, $idVendor, $basic, $labelBoxes,
+                        $includedServices, $rated,
+                        $languages, $vendorValue['version']
+                    );
                 }
 
             }
+
         }
     }
 }
