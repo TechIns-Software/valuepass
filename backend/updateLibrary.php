@@ -539,7 +539,6 @@ function vendorFunction(
             $stmtAddHighTr->close();
         }
     }
-    $importantInfoDescriptionArray = [];
 
     foreach ($importantInfoMyInternal as $impInfoOBJ) {
         $queryAddImpInfHead = "INSERT INTO ImportantInformationHead (idVendor)
@@ -560,7 +559,7 @@ function vendorFunction(
             $stmtImpInfoHeadTransl->execute();
             $stmtImpInfoHeadTransl->close();
 
-
+            $importantInfoDescriptionArray = [];
             $descriptions = $impInfoObjectInner['descriptions'];
             foreach ($descriptions as $counter=>$description) {
                 if (!isset($importantInfoDescriptionArray[$counter])) {
