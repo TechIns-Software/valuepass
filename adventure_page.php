@@ -759,5 +759,23 @@ footer($menu, $languages)
     var lengthImagesSlider = <?php echo count($vendor->getImages())?>;
 </script>
 <script src="assets/js/mySlider.js"></script>
+<script>
+    setInterval(()=>{
+        const childrenButtons = document.getElementById('optionbuttons').childNodes;
+        const ids = [];
+        for (var __ = 0; __ < childrenButtons.length; __++) {
+            const child = childrenButtons[__];
+            const id = $(child).attr('data-bs-target');
+            ids.push(id);
+
+        }
+        for (var __ = 0; __ < ids.length; __++) {
+            const id = ids[__];
+            $(`${id}`).on('show.bs.collapse', function () {
+                ids.forEach((id_temp)=> {$(`${id_temp}`).collapse("hide")});
+            });
+        }
+    }, 500)
+</script>
 </body>
 </html>
