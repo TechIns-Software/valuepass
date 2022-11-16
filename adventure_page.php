@@ -144,9 +144,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                                     <p class="headStyle "><i class="fa fa-arrow-right"
                                                                             aria-hidden="true"></i> <?php echo $aboutActivity->getHead(); ?>
                                                     </p>
+                                                <?php if ($aboutActivity->getDescription() != '') ?>
                                                     <small class="  descrStyle">
                                                         <?php echo $aboutActivity->getDescription(); ?>
-
                                                     </small>
                                                 </li>
                                                 <?php
@@ -358,8 +358,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     <ul>
                                         <?php
                                         if (count($vendor->getImportantInformationArray()) > 0) {
-                                            foreach ($vendor->getImportantInformationArray() as $importantInformation) {
-                                                ?>
+                                            foreach ($vendor->getImportantInformationArray() as $importantInformation) {?>
                                                 <div class="col-sm-12 importantinfosli">
                                                     <b> <?php echo $importantInformation->getHead(); ?> </b>
                                                     <ul class="ps-3">
