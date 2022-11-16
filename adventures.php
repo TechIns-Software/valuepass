@@ -59,8 +59,10 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 	<div id="bestof" class="container container-custom margin_80_55 ">
 		<section class="add_bottom_45">
 			<div class="main_title_3">
+                <?php if(count($bestOffs) > 0){  ?>
 				<span><em></em></span>
-				<h2><?php echo $menu[42] ?> </h2>
+                <h2><?php echo $menu[42] ?> </h2>
+                <?php  }?>
 				<!-- <p>Some of our favorite experiences </p> -->
 			</div>
 
@@ -252,7 +254,7 @@ footer($menu,$languages)
 
 <!-- COMMON SCRIPTS -->
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js?v=1.5"></script>
+<script src="assets/js/main.js?v=1.6"></script>
 <script src="assets/js/validate.js"></script>
 
 <script src="changeLanguage.js"></script>

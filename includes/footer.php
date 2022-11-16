@@ -86,7 +86,7 @@ function footer($menu, $languages)
                 <div class=" col-lg-3 col-md-6  text-center panel-heading collapsed   " data-bs-toggle="collapse" href="#collapse5" role="button"
                      aria-expanded="false" aria-controls="collapseExample" id="collapsebox">
                     <h5 class="panel-title  accordion-toggle ">
-                        <h5 class="border-bottom  icon-up-1 "  id="collapsetitle">  <?php echo $menu[9] ?> </h5>
+                        <h5 class="border-bottom  icon-down-1 "  id="collapsetitle">  <?php echo $menu[9] ?> </h5>
                     </h5>
                     <div id="collapse5" class="  collapse">
                         <div class="panel-body">
@@ -151,7 +151,7 @@ function footer($menu, $languages)
         const collapsetitle = document.getElementById('collapsetitle');
         const collapsebox = document.getElementById('collapsebox')
         collapsebox.addEventListener('click',()=>{
-            if (!collapsebox.classList.contains('collapsed')){
+            if (collapsebox.classList.contains('collapsed')){
                 collapsetitle.classList.remove('icon-up-1');
                 collapsetitle.classList.add('icon-down-1');
                 //remove  up arrow
