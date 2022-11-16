@@ -41,7 +41,7 @@ foreach ($response as $idVendorVoucher=> $vendorVoucherObj) {
         $dateVoucher, $isUpdated);
 
 }
-$toRemovedVendorVoucher = array_intersect($idVendorVoucherExists, $idVendorExistsAgain);
+$toRemovedVendorVoucher = array_diff($idVendorVoucherExists, $idVendorExistsAgain);
 removeVendorVoucher($conn, $toRemovedVendorVoucher);
 $from = "test@valuepass.gr";
 $to = "christosbaztekas@gmail.com";
