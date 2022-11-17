@@ -844,7 +844,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $cancelDate = date('h:i A F jS ', $cancelTimestamp);
     } else { //greek language fixme when new languages added
         $cancelDate = date('h:i  ', $cancelTimestamp)
-            . (date('A', $dateTimestamp) == 'AM' ? 'π.μ.' : 'μ.μ.')
+            . (date('A', $cancelTimestamp) == 'AM' ? 'π.μ.' : 'μ.μ.')
             . date(' j ', $cancelTimestamp)
             . $greekMonths[intval(date('m', $cancelTimestamp)) - 1];
     }
