@@ -4142,7 +4142,7 @@ a.box_feat h3 {
   font-size: 1.1em;
 }
 .laterText{
-  color: rgba(21, 127, 223, 0.83);
+  color: rgba(21, 127, 223, 0.83)!important;
   font-weight: 700;
 }
 
@@ -11742,8 +11742,8 @@ html[xmlns] .slides {
 }
 
 .valuepasswin{
-  color: #c88307;
-  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 700;
 }
 
 .valuepasswin span{
@@ -11846,7 +11846,7 @@ html[xmlns] .slides {
 
 .vpicon{
   font-weight: bold;
-  color: #e8620c;
+  color: #e8620c!important;
 }
 
 .color-b{

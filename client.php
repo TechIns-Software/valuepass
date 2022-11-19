@@ -10,7 +10,7 @@ $idLanguage = $_SESSION["languageId"];
 if ($voucherNumber == 0) {
     header('location: index.php');
 }
-getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $destinations);
 ?>
 <link
         rel="stylesheet"
@@ -38,6 +38,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
     .orderItem div {
         padding: 10px 25px;
     }
+
     .iti {
         display: block;
     }
@@ -53,9 +54,14 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <h4>  <?php echo $menu[150]; ?></h4>
-                        <p> <?php echo $menu[151]; ?></p>
+                        <p class="my-1"> <?php echo $menu[151]; ?></p>
+                        <p class="text-success my-1 fw-bolder"><span class="fa-icon-lock"></span> Checkout is fast and
+                            secure</p>
 
+                        <p class="text-danger my-1">
+                            All fields are mandatory</p>
                         <div class="form-floating my-2">
+
                             <input name="name" id="fullname" class="form-control"
                                    placeholder="<?php echo $menu[152]; ?>" required>
                             <label for="incomePartner"><?php echo $menu[152]; ?></label>
@@ -66,44 +72,38 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             <label for="incomePartner">Email</label>
                         </div>
                         <div class="my-2">
-                            <input type="tel" name="phone" id="phone" class="form-control"
+                            <input style="height: 58px;" type="tel" name="phone" id="phone" class="form-control"
                                    placeholder="<?php echo $menu[153]; ?>" required>
                         </div>
+
                         <p class="text-center">
-                             <?php echo $menu[154]; ?>
+                            <?php echo $menu[154]; ?>
                         </p>
 
-                        <p class="form-check">
-                            •  <?php echo $menu[180]; ?>
+                        <p class="my-1 ">
+                            • <?php echo $menu[180]; ?>
                             <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
                                target="_blank">
-                                <b>  <?php echo $menu[148] ?> </b>
+                                <?php echo $menu[148] ?>
                             </a>
                             <?php echo $_SESSION["languageId"] == 1 ? ' της Valuepass' : null ?>
                         </p>
-                        <div class="form-check">
-                            <!--                            <input class="form-check-input" type="checkbox" value="" id="terms">-->
-                            <label class="form-check-label" for="terms">
-                                • <?php echo $menu[146]; ?>
-                                <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
-                                   target="_blank">
-                                    <b>  <?php echo $menu[148] ?> </b>
-                                </a>
-                                <?php echo $_SESSION["languageId"] == 1 ? ' της Valuepass' : null ?>
-                                <!--                                --><?php //echo $menu[147] ?>
-                                <!--                                <a href="#"> <b>-->
-                                <?php //echo $menu[149] ?><!--  </b>  </a>-->
-                            </label>
 
+                        <p class="my-1 ">
+                            • <?php echo $menu[146]; ?>
+                            <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
+                               target="_blank">
+                                <?php echo $menu[148] ?>
+                            </a>
+                            <?php echo $_SESSION["languageId"] == 1 ? ' της Valuepass' : null ?>
+                            <!--                                --><?php //echo $menu[147] ?>
+                            <!--                                <a href="#"> <b>-->
+                            <?php //echo $menu[149] ?><!--  </b>  </a>-->
+                        </p>
 
-                        </div>
-
-
-                        <div class="form-check ">
-                            <label class="form-check-label " for="emailmarketing">
-                                •  <?php echo $menu[155]; ?>
-                            </label>
-                        </div>
+                        <p class="my-1 ">
+                            • <?php echo $menu[155]; ?>
+                        </p>
 
                         <div class="form-group my-4 text-center">
                             <input style="font-weight: bold;color: white" type="submit" id="continue"
@@ -144,22 +144,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 </div>
 
                 <div class='col-12 price ps-4  '>
-                    <h5 class='fw-bolder'>  <?php echo $menu[104]; ?>  <span class='vpicon'>
-                        <?php
-                        $calculateCartObject = calculatePriceCart($conn, $allVouchers);
-                        if ($calculateCartObject['moneyEarned'] != 0) {
-                            ?>
-                            <span style="text-decoration: line-through;color: red">
-                            <?php
-                            echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
-                            ?>
-                            </span> /
-                            <?php
-                        }
-                        echo $calculateCartObject['totalPay'];
-                        ?>
-                        €
-                    </span>   </h5>
 
                 </div>
 
@@ -215,7 +199,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
                                     <div class="col-12  ">
                                         <p class=" m-0   fw-bolder">
-                                              <?php echo $menu[163]; ?>
+                                            <?php echo $_SESSION['languageId'] == 1 ? 'Tιμή  <span class="vpicon">VP </span> Voucher'
+                                                : '<span class="vpicon">VP </span> Voucher Price' ?>
                                               </p>
                                             <ul class="border-bottom my-1">
                                                 <?php
@@ -224,17 +209,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                     if ($forHowManyPersonsIs == 99) {
                                                         echo "<li class='d-flex justify-content-between'>
  <div>  Group : $adults X $priceAdult € </div>
- <div><p class='vpicon m-0 '> $totalAdultsPrice  € </p> </div> 
+ <div><h5 class='vpicon m-0 '> $totalAdultsPrice  € </h5> </div> 
  </li>";
                                                     } else if ($forHowManyPersonsIs > 1) {
                                                         echo "<li class='d-flex justify-content-between'>
  <div>  Group  $menu[174] $forHowManyPersonsIs  $menu[175] :  $adults X $priceAdult € </div>
- <div><p class='vpicon m-0 '> $totalAdultsPrice  € </p> </div> 
+ <div><h5 class='vpicon m-0 '> $totalAdultsPrice  € </h5> </div> 
  </li>";
                                                     } else {
                                                         echo "<li  class='d-flex justify-content-between'>
  <div>  $menu[68]: $adults X $priceAdult € </div>
- <div><p class='vpicon m-0 '> $totalAdultsPrice  € </p> </div> 
+ <div><h5 class='vpicon m-0 '> $totalAdultsPrice  € </h5> </div> 
  </li>";
                                                     }
                                                 }
@@ -242,14 +227,14 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                     $totalChildrenPrice = $children * $priceChild;
                                                     echo "<li class='d-flex justify-content-between'> 
 <div>  $menu[69]: $children X $priceChild € </div>
- <div><p class='vpicon m-0 '> $totalChildrenPrice  € </p> </div> 
+ <div><h5 class='vpicon m-0 '> $totalChildrenPrice  € </h5> </div> 
 </li>";
                                                 }
                                                 if ($infants != 0) {
                                                     $totalInfantPrice = $infants * $priceInfant;
                                                     echo "<li class='d-flex justify-content-between'>
 <div>  $menu[70]: $infants X $priceInfant € </div>
-<div><p class='vpicon m-0 '> $totalInfantPrice  € </p> </div> 
+<div><h5 class='vpicon m-0 '> $totalInfantPrice  € </h5> </div> 
 </li>";
 
                                                 }
@@ -261,7 +246,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                         <?php //echo $menu[187];?><!--  <strong>-->
                                         <?php //echo $amountPay; ?><!--€</strong> </h4>-->
                                         <p class=" m-0  fw-bolder  ">
-                                        <?php echo $menu[156]; ?>
+                                            <?php echo $menu[49] ?> <span
+                                                    class="laterText">  <?php echo $menu[197] ?>   </span> <?php echo $menu[198] ?>
                                                 </p>
                                             <ul class="my-1">
                                             <?php
@@ -270,17 +256,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                 if ($forHowManyPersonsIs == 99) {
                                                     echo "<li class='d-flex justify-content-between'>
  <div>  Group : $adults X $payVendorAdult € </div>
-<div><p class='vpicon m-0 '> $totalAdultsPriceVendor  € </p> </div> 
+<div><b class=' m-0 '> $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 } else if ($forHowManyPersonsIs > 1) {
                                                     echo "<li  class='d-flex justify-content-between'>
  <div> Group  $menu[174]  $forHowManyPersonsIs  $menu[175] : $adults X $payVendorAdult €  </div>
-<div><p class='vpicon m-0 '> $totalAdultsPriceVendor  € </p> </div> 
+<div><b class=' m-0 '> $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 } else {
                                                     echo "<li class='d-flex justify-content-between'>
  <div> $menu[68]: $adults X $payVendorAdult € </div> 
-<div><p class='vpicon m-0 '> $totalAdultsPriceVendor  € </p> </div> 
+<div><b class=' m-0 '> $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 }
                                             }
@@ -288,7 +274,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                 $totalChildrenPriceVendor = $children * $payVendorChild;
                                                 echo "<li class='d-flex justify-content-between'>
 <div>  $menu[69]: $children X $payVendorChild € </div>
-<div><p class='vpicon m-0 '> $totalChildrenPriceVendor  € </p> </div> 
+<div><b class=' m-0 '> $totalChildrenPriceVendor  € </b> </div> 
 </li>";
 
                                             }
@@ -296,7 +282,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                 $totalInfantPriceVendor = $infants * $payVendorInfant;
                                                 echo "<li class='d-flex justify-content-between'>
 <div>  $menu[70]: $infants X $payVendorInfant € </div>
-<div><p class='vpicon m-0 '> $totalInfantPriceVendor  € </p> </div> 
+<div><b class=' m-0 '> $totalInfantPriceVendor  € </b> </div> 
 </li>";
 
                                             }
@@ -304,9 +290,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
                                             </ul>
 
-                                            <div class='col-12 price '>
-                                            <h5 class='fw-bolder'>  <?php echo $menu[104]; ?>    </h5>
-                                            <h4 class='vpicon'> <?php echo $amountPay; ?> € </h4>
+<!--                                            <div class='col-12 price '>-->
+<!--                                            <h5 class='fw-bolder'>  --><?php //echo $menu[104]; ?><!--    </h5>-->
+<!--                                            <h4 class='vpicon'> --><?php //echo $amountPay; ?><!-- € </h4>-->
+<!--                                                   </div>-->
+                                        <div class="col-12 text-success">
+                                            <b> <?php echo $menu[201]?></b>
                                         </div>
 
 
@@ -377,10 +366,15 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                         echo date('j ', $timeStampCancel)
                                                             . $greekMonths[intval(date('m', $timeStampCancel)) - 1];
                                                     }
-                                                    echo $menu[139]; ?>
+                                                    echo ' '. $menu[139]; ?>
+
 
                                                 </p>
-                                                <p class="valuepasswin"> <?php echo $menu[144]; ?> <span> <?= $saved ?> € </span> <?php echo $menu[181]; ?>  ValuePass Experiences </p>
+
+                                                <b class="valuepasswin"> <?php echo $menu[144]; ?> <span
+                                                            class="laterText">
+                                                        <?php echo $saved ?> € </span> <?php echo $menu[181]; ?>
+                                                     <span class="vpicon"> VP</span>  Voucher</b>
                                             </div>
                                         </div>
 
@@ -395,7 +389,36 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                      </span>
             </div>
 
-            <div class="row">
+            <div class="row ">
+
+                <div class="col-12  d-flex justify-content-between">
+                    <div></div>
+                    <div class="me-3">
+                        <?php
+                        $calculateCartObject = calculatePriceCart($conn, $allVouchers);
+                        if ($calculateCartObject['moneyEarned'] != 0) {
+                            ?>
+                            <h5 class="my-0" style="text-decoration: line-through;color: black">
+                                <?php
+                                echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
+                                ?>
+                            </h5>
+                            <?php
+                        }
+                        ?> </div>
+                </div>
+                <div class="col-12 d-flex justify-content-between">
+                    <div>
+                        <h4 class='fw-bolder me-3'>
+                            <?php echo $_SESSION['languageId'] == 1 ? 'Σύνολο Τιμής <span class="vpicon"> VP </span> Voucher ' :
+                                'Total  <span class="vpicon"> VP </span> Voucher Price' ?> </h4>
+                    </div>
+                    <div>
+                        <h3 class='my-0 vpicon'> <?php echo $calculateCartObject['totalPay']; ?> € </h3>
+                        <small class="text-success me-3"> <?php echo $menu[202]?></small>
+                    </div>
+
+                </div>
                 <div class="col-12">
                     <p class="text-muted py-3"> <?php echo $menu[135] ?> </p>
                 </div>
