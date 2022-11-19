@@ -4,11 +4,11 @@ include 'backend/includeClasses.php';
 
 
 if (!isset($conn)) {
-	include 'connection.php';
+    include 'connection.php';
 }
 include_once 'backend/finalLibrary.php';
 $menu = GetMenu($conn, $_SESSION['languageId']);
-$languages =  getAllLanguages($conn);
+$languages = getAllLanguages($conn);
 $cartArray = unserialize($_SESSION['cart']);
 
 $cartHeader = new \ValuePass\Cart($cartArray);
@@ -17,11 +17,12 @@ $_SESSION['cart'] = serialize($cartHeader->getArrayGroupVouchersWant());
 $cartArray = unserialize($_SESSION['cart']);
 
 $url = $_SERVER['REQUEST_URI'];
-$lang_icon = getLanguageIcon($conn,$_SESSION["languageId"]);
+$lang_icon = getLanguageIcon($conn, $_SESSION["languageId"]);
 $voucherNumber = $cartHeader->getNumberOfVoucher();
+$destinations = getDestinations($conn, $_SESSION["languageId"]);
 
-function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber) {
-    ?>
+function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $destinations) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
 
     <link rel="stylesheet" type="text/css" href="assets/css/layerslider.css">
     <!-- FOR FLAGS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/flags.css"  >
+    <link rel="stylesheet" type="text/css" href="assets/css/flags.css">
 
     <!--	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>-->
     <script src="assets/js/fontawesome.js"></script>
@@ -82,7 +83,8 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
             </div>
             <ul id="top_menu">
                 <li></li>
-                <li><a href="cart-1.php" class="cart-menu-btn" title="Cart"><strong id="cartNumberShow"><?php echo $voucherNumber;?></strong></a></li>
+                <li><a href="cart-1.php" class="cart-menu-btn" title="Cart"><strong
+                                id="cartNumberShow"><?php echo $voucherNumber; ?></strong></a></li>
                 <!-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
             </ul>
             <!-- /top_menu -->
@@ -95,22 +97,42 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
             </a>
             <nav id="menu" class="main-menu">
                 <ul>
+                    <li><span><a href="#"><?php echo $menu[36] ?></span></a>
+                        <ul >
+                            <?php
+                            foreach ($destinations as $destination) {
+                                ?>
+                                <li>
+                                    <a  class="icon-location"
+                                       href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </li>
                     <li><span><a href="how.php"><?php echo $menu[1] ?></a></span></li>
                     <li><span><a href="#"><?php echo $menu[4] ?></span></a>
                         <ul class="customercare">
-                            <li><a href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
-                            <li><a class="viberlink" href="viber://add?number=306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
-                            <li><a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0">
+                                    <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid">
+                                    +306931451910</a></li>
+                            <li><a class="viberlink" href="viber://add?number=306931451910"> <img
+                                            src="assets/icons/viber.png" height="20" width="20" class="img-fluid">
+                                    +306931451910</a></li>
+                            <li><a href="mail:customercare@valuepass.gr" class="icon-email">
+                                    customercare@valuepass.gr</a></li>
                             <li><a class="icon-question"> FAQ’s</a></li>
                         </ul>
                     </li>
-                    <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>   </a>
+                    <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span> </a>
                         <ul>
                             <?php
 
-                            foreach ($languages  as $language) {  ?>
-                                <li><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span></a> </li>
-                            <?php	} ?>
+                            foreach ($languages as $language) { ?>
+                                <li><a href="javascript:void(0);"
+                                       onclick="changeLanguage('<?php echo $language[0] ?>');"><span
+                                                class="flag-icon flag-icon-<?php echo $language[2] ?>"></span></a></li>
+                            <?php } ?>
 
                         </ul>
                     </li>
@@ -120,7 +142,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
             </nav>
         </header>
 
-    <?php } else { 	?>
+    <?php } else { ?>
 
         <header class="header menu_fixed">
             <div id="preloader">
@@ -134,7 +156,8 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
             </div>
             <ul id="top_menu">
                 <li></li>
-                <li><a href="cart-1.php" class="cart-menu-btn" title="Cart"><strong id="cartNumberShow"><?php echo $voucherNumber;?></strong></a></li>
+                <li><a href="cart-1.php" class="cart-menu-btn" title="Cart"><strong
+                                id="cartNumberShow"><?php echo $voucherNumber; ?></strong></a></li>
                 <!-- <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
             </ul>
             <!-- /top_menu -->
@@ -147,23 +170,44 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
             </a>
             <nav id="menu" class="main-menu">
                 <ul>
+                    <li><span><a href="#"><?php echo $menu[36] ?></span></a>
+                        <ul >
+                            <?php
+                            foreach ($destinations as $destination) {
+                                ?>
+                                <li>
+                                    <a  class="icon-location"
+                                        href="adventures.php?id=<?php echo $destination->getId(); ?>"><?php echo $destination->getName(); ?></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </li>
                     <li><span><a href="how.php"><?php echo $menu[1] ?></a></span></li>
-
                     <li><span><a href="#"><?php echo $menu[4] ?> </span></a>
                         <ul class="customercare">
-                            <li><a href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
-                            <li><a class="viberlink" href="viber://add?number=306931451910"> <img src="assets/icons/viber.png" height="20" width="20" class="img-fluid"> +306931451910</a></li>
-                            <li><a href="mail:customercare@valuepass.gr" class="icon-email"> customercare@valuepass.gr</a></li>
+                            <li><a href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'">
+                                    <img
+                                            src="assets/icons/whatsapp.png" height="20" width="20"
+                                            class="img-fluid">
+                                    +306931451910</a></li>
+                            <li><a class="viberlink" href="viber://add?number=306931451910"> <img
+                                            src="assets/icons/viber.png" height="20" width="20" class="img-fluid">
+                                    +306931451910</a></li>
+                            <li><a href="mail:customercare@valuepass.gr" class="icon-email">
+                                    customercare@valuepass.gr</a></li>
                             <li><a class="icon-question"> FAQ’s</a></li>
                         </ul>
                     </li>
-                    <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span>   </a>
+                    <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span> </a>
                         <ul>
                             <?php
 
-                            foreach ($languages  as $language) {  ?>
-                                <li ><a href="javascript:void(0);" onclick="changeLanguage('<?php echo $language[0] ?>');"><span class="flag-icon flag-icon-<?php echo $language[2] ?>"></span></a> </li>
-                            <?php	} ?>
+                            foreach ($languages as $language) { ?>
+                                <li><a href="javascript:void(0);"
+                                       onclick="changeLanguage('<?php echo $language[0] ?>');"><span
+                                                class="flag-icon flag-icon-<?php echo $language[2] ?>"></span></a>
+                                </li>
+                            <?php } ?>
 
                         </ul>
                     </li>
@@ -174,7 +218,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
         </header>
     <?php } ?>
     <!-- /header -->
-<?php
-}
-?>
+    <?php
+    }
+    ?>
 

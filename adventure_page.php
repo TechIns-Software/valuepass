@@ -15,7 +15,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 if (is_null($vendor)) {
     header('location: index.php');
 }
-getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);
 $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 ?>
 <input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>

@@ -19,7 +19,7 @@ if (!isset($idLanguage)) {
 if (!isset($cartArray)) {
     $cartArray = unserialize($_SESSION['cart']);
 }
-getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);
 ?>
 <script src="backend/js/cart.js?v=1.4"></script>
 <main>

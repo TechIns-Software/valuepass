@@ -10,7 +10,7 @@ $idLanguage = $_SESSION["languageId"];
 if ($voucherNumber == 0) {
     header('location: index.php');
 }
-getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber);
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);
 ?>
 <link
         rel="stylesheet"
