@@ -90,11 +90,13 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                     <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                                 </span>
-								<p class="">
-                                    <span class="voucher_av">
-                                        <?php echo $menu[45] ?>
-                                        <b> <?php echo $vendor->getAvailabilityTodayVoucher();?> </b>
-                                    </span>
+								<p class="sellout_label my-3">
+<!--                                    <span class="voucher_av">-->
+<!--                                        --><?php //echo $menu[45] ?>
+<!--                                        <b> --><?php //echo $vendor->getAvailabilityTodayVoucher();?><!-- </b>-->
+<!--                                    </span>-->
+
+                                    <?php echo $menu[203] ?>
                                 </p>
 
 
@@ -192,11 +194,12 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                             </span>
-                            <p class="">
-                                <span class="voucher_av">
-                                    <?php echo $menu[45] ?>
-                                    <b> <?php echo $vendor->getAvailabilityTodayVoucher();?></b>
-                                </span>
+                            <p class="sellout_label my-3">
+                                <!--                                    <span class="voucher_av">-->
+                                <!--                                        --><?php //echo $menu[45] ?>
+                                <!--                                        <b> --><?php //echo $vendor->getAvailabilityTodayVoucher();?><!-- </b>-->
+                                <!--                                    </span>-->
+                                Likely to sell out.
                             </p>
 
                             <div class="row  buyNow_part">

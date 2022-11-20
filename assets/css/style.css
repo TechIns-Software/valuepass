@@ -11852,3 +11852,10 @@ html[xmlns] .slides {
 .color-b{
 color: rgba(19, 43, 197, 0.86);
 }
+.sellout_label{
+  border-radius: .5em;
+  padding: .5em;
+  color: white;
+  background-color: rgb(248, 20, 20);
+  width: fit-content;
+}

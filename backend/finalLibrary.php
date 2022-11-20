@@ -689,7 +689,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message5 = "Starting Time: ";
         $message6 = "Price Breakdown  ";
         $message6a = "ValuePass Voucher Price";
-        $message6b = "Pay to the Provider";
+        $message6b1 = "Pay ";
+        $message6b2 = " later";
+        $message6b3 = " at your Activity Location";
         if ($forHowManyPersonsIs == 99) {
             $message7 = " Group: ";
         } else if ($forHowManyPersonsIs > 1) {
@@ -708,6 +710,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message15 = "ValuePass vouchers are not cancelled, but we are always looking to offer you the best alternative
         solutions regarding the activity providers we promote if something goes wrong. You will find more information
         in your confirmation email.";
+        $message16 = "Voucher Available ";
     } else {
         $message1 = "Δυστυχώς, δεν βρέθηκαν διαθέσιμα vouchers για αυτή την ημερομηνία";
         $message2 = "Προσθήκη στο καλάθι";
@@ -716,7 +719,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message5 = "Ώρα Έναρξης: ";
         $message6 = "Ανάλυση Τιμής";
         $message6a = "Τιμή VP Voucher";
-        $message6b = "Πληρωμή στον πάροχο";
+        $message6b1 = "Πληρώστε ";
+        $message6b2 = " αργότερα ";
+        $message6b3 = " την δραστηριότητα";
 
         if ($forHowManyPersonsIs == 99) {
             $message7 = " Group: ";
@@ -736,6 +741,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message15 = "Τα ValuePass vouchers δεν παρέχουν τη δυνατότητα ακύρωσης και επιστροφής χρημάτων, 
         ωστόσο πάντα προσπαθούμε να σας προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σύμφωνα με τις δυνατότητες
          των προμηθευτών των δραστηριοτήτων που προωθούμε, σε περίπτωση μη πραγματοποίησης της δραστηριότητας.";
+        $message16 = " Διαθέσιμα Vouchers Σήμερα ";
 
     }
 
@@ -777,7 +783,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " </div> ";
 
     $message .= " <div class='row border-bottom'> ";
-    $message .= " <div class='col-12 col-lg-4'> ";
+    $message .= " <div class='col-12 col-lg-12 d-flex justify-content-between'> ";
     $message .= "  <div class='price '> ";
     $message .= " <h5> $message12 </h5> ";
     $message .= " <ul> ";
@@ -785,13 +791,21 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <li> $message5 <b> $hour </b></li> ";
     $message .= " </ul> ";
     $message .= " </div> ";
+    // TODO WE HAVE TO GET VOUCHERS AVAILABLE NUMBER
+    $message .= " <div> <p class='voucher_av'>$message16 <b> 15/20</b> </p> </div>";
+    $message .= " </div> ";
     $message .= "</div> ";
 
     $message .= " <div class='row border-bottom'> ";
     $message .= " <div class='col-12 col-lg-12'> ";
     $message .= "  <div class='pricebreakdown2'> ";
     $message .= " <h5>$message6 </h5> ";
-    $message .= " <h6 class='fw-bolder' >$message6a </h6> ";
+//    $message .= " <h6 class='fw-bolder' >$message6a </h6> ";
+    if ($_SESSION['languageId'] == 1){
+        $message .= '<h6 class="fw-bolder"> Tιμή  <span class="vpicon">VP </span> Voucher </h6>';
+    }else{
+        $message .= '<h6 class="fw-bolder"> <span class="vpicon">VP </span> Vouchers Price </h6>' ;
+    }
     $message .= " <ul class='border-bottom m-0'> ";
     if ($adults != 0) {
         $totalAdultPrice = $adults * $priceAdult;
@@ -814,7 +828,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     }
 
     $message .= " </ul> ";
-    $message .= " <h6 class='fw-bolder'>$message6b </h6> ";
+    $message .= " <h6 class='fw-bolder'>$message6b1  <span class='laterText'> $message6b2 </span>  $message6b3</h6> ";
     $message .= " <ul> ";
     if ($adults != 0) {
         $totalAdultPriceVendor = $adults * $totalToPayAdultToVendor;
