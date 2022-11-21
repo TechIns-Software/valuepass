@@ -211,17 +211,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                                 if ($adults != 0) {
                                                     $totalAdultsPrice = $adults * $priceAdult;
                                                     if ($forHowManyPersonsIs == 99) {
-                                                        echo "<li class='d-flex justify-content-between'>
+                                                        echo "<li class='my-1 d-flex justify-content-between'>
  <div>  Group : $adults X $priceAdult € </div>
  <div><h5 class='vpicon m-0 '> $totalAdultsPrice  € </h5> </div> 
  </li>";
                                                     } else if ($forHowManyPersonsIs > 1) {
-                                                        echo "<li class='d-flex justify-content-between'>
+                                                        echo "<li class=' my-1 d-flex justify-content-between'>
  <div>  Group  $menu[174] $forHowManyPersonsIs  $menu[175] :  $adults X $priceAdult € </div>
  <div><h5 class='vpicon m-0 '> $totalAdultsPrice  € </h5> </div> 
  </li>";
                                                     } else {
-                                                        echo "<li  class='d-flex justify-content-between'>
+                                                        echo "<li  class='my-1 d-flex justify-content-between'>
  <div>  $menu[68]: $adults X $priceAdult € </div>
  <div><h5 class='vpicon m-0 '> $totalAdultsPrice  € </h5> </div> 
  </li>";
@@ -229,14 +229,14 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                                 }
                                                 if ($children != 0) {
                                                     $totalChildrenPrice = $children * $priceChild;
-                                                    echo "<li class='d-flex justify-content-between'> 
+                                                    echo "<li class='my-1 d-flex justify-content-between'> 
 <div>  $menu[69]: $children X $priceChild € </div>
  <div><h5 class='vpicon m-0 '> $totalChildrenPrice  € </h5> </div> 
 </li>";
                                                 }
                                                 if ($infants != 0) {
                                                     $totalInfantPrice = $infants * $priceInfant;
-                                                    echo "<li class='d-flex justify-content-between'>
+                                                    echo "<li class='my-1 d-flex justify-content-between'>
 <div>  $menu[70]: $infants X $priceInfant € </div>
 <div><h5 class='vpicon m-0 '> $totalInfantPrice  € </h5> </div> 
 </li>";
@@ -261,17 +261,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                                 if ($forHowManyPersonsIs == 99) {
                                                     echo "<li class='d-flex justify-content-between'>
  <div>  Group : $adults X $payVendorAdult € </div>
-<div><b class=' m-0 '> $totalExPrice / $totalAdultsPriceVendor  € </b> </div> 
+<div> <p class='exprice '> $totalExPrice €</p> <b class=' real-price '> $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 } else if ($forHowManyPersonsIs > 1) {
                                                     echo "<li  class='d-flex justify-content-between'>
  <div> Group  $menu[174]  $forHowManyPersonsIs  $menu[175] : $adults X $payVendorAdult €  </div>
-<div><b class=' m-0 '> $totalExPrice / $totalAdultsPriceVendor  € </b> </div> 
+<div> <p class='exprice'> $totalExPrice €</p> <b class=' real-price'> $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 } else {
                                                     echo "<li class='d-flex justify-content-between'>
  <div> $menu[68]: $adults X $payVendorAdult € </div> 
-<div><b class=' m-0 '> $totalExPrice / $totalAdultsPriceVendor  € </b> </div> 
+<div> <p class='exprice '> $totalExPrice €</p> <b class=' real-price '> $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 }
                                             }
@@ -280,7 +280,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                                 $totalExPrice = $children * $originalPriceAdult;
                                                 echo "<li class='d-flex justify-content-between'>
 <div>  $menu[69]: $children X $payVendorChild € </div>
-<div><b class=' m-0 '> $totalExPrice / $totalChildrenPriceVendor  € </b> </div> 
+<div> <p class='exprice '> $totalExPrice €</p> <b class='real-price '>  $totalChildrenPriceVendor  € </b> </div> 
 </li>";
 
                                             }
