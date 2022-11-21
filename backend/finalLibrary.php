@@ -472,6 +472,8 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
     $priceAdultArray = [];
     $priceChildArray = [];
     $priceInfantArray = [];
+    $originalPriceAdult = [];
+    $originalPriceKid = [];
     $saved = [];
     $forHowManyPersonsIsArray = [];
     foreach ($cart as $arrayVouchersWant) {
@@ -512,6 +514,8 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
             $voucherWant->isAdult() ? $adults = $adults + 1 : $children = $children + 1;
         }
 
+        array_push($originalPriceAdult, $originalPrice);
+        array_push($originalPriceKid, $priceKidVendor);
         array_push($idVendorArray, $idVendorDisplayed);
         array_push($nameVendorArray, $nameVendor);
         array_push($dateVoucherArray, $dateVoucher);
@@ -554,7 +558,9 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         'priceChildArray' => $priceChildArray,
         'priceInfantArray' => $priceInfantArray,
         'saved' => $saved,
-        'forHowManyPersonsIsArray' => $forHowManyPersonsIsArray
+        'forHowManyPersonsIsArray' => $forHowManyPersonsIsArray,
+        'originalPriceAdult' => $originalPriceAdult,
+        'originalPriceKid' => $originalPriceKid
     );
 }
 

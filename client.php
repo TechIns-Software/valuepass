@@ -137,6 +137,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                 $priceInfantArray = $objectVouchersDisplay['priceInfantArray'];
                 $savedArray = $objectVouchersDisplay['saved'];
                 $forHowManyPersonsIsArray = $objectVouchersDisplay['forHowManyPersonsIsArray'];
+                $originalPriceAdultArray = $objectVouchersDisplay['originalPriceAdult'];
+                $originalPriceKidArray = $objectVouchersDisplay['originalPriceKid'];
                 ?>
 
                 <div class="col-12  ">
@@ -173,6 +175,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     $priceInfant = $priceInfantArray[$counter];
                     $saved = $savedArray[$counter];
                     $forHowManyPersonsIs = $forHowManyPersonsIsArray[$counter];
+                    $originalPriceAdult = $originalPriceAdultArray[$counter];
+                    $originalPriceKid = $originalPriceKidArray[$counter];
                     ?>
 
                     <div class="col-12 cart-voucher  ">
@@ -253,28 +257,30 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                             <?php
                                             if ($adults != 0) {
                                                 $totalAdultsPriceVendor = $adults * $payVendorAdult;
+                                                $totalExPrice = $adults * $originalPriceAdult;
                                                 if ($forHowManyPersonsIs == 99) {
                                                     echo "<li class='d-flex justify-content-between'>
  <div>  Group : $adults X $payVendorAdult € </div>
-<div><b class=' m-0 '> $totalAdultsPriceVendor  € </b> </div> 
+<div><b class=' m-0 '> $totalExPrice / $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 } else if ($forHowManyPersonsIs > 1) {
                                                     echo "<li  class='d-flex justify-content-between'>
  <div> Group  $menu[174]  $forHowManyPersonsIs  $menu[175] : $adults X $payVendorAdult €  </div>
-<div><b class=' m-0 '> $totalAdultsPriceVendor  € </b> </div> 
+<div><b class=' m-0 '> $totalExPrice / $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 } else {
                                                     echo "<li class='d-flex justify-content-between'>
  <div> $menu[68]: $adults X $payVendorAdult € </div> 
-<div><b class=' m-0 '> $totalAdultsPriceVendor  € </b> </div> 
+<div><b class=' m-0 '> $totalExPrice / $totalAdultsPriceVendor  € </b> </div> 
  </li>";
                                                 }
                                             }
                                             if ($children != 0) {
                                                 $totalChildrenPriceVendor = $children * $payVendorChild;
+                                                $totalExPrice = $children * $originalPriceAdult;
                                                 echo "<li class='d-flex justify-content-between'>
 <div>  $menu[69]: $children X $payVendorChild € </div>
-<div><b class=' m-0 '> $totalChildrenPriceVendor  € </b> </div> 
+<div><b class=' m-0 '> $totalExPrice / $totalChildrenPriceVendor  € </b> </div> 
 </li>";
 
                                             }
