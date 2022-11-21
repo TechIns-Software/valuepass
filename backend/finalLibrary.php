@@ -844,7 +844,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $totalExAdult = $adults * $originalPrice;
         $message .= " <li class='d-flex justify-content-between'>
   <div>  $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </div>
-   <div>  <p class='fw-bolder m-0 '> $totalAdultPriceVendor  €  </p> </div>
+   <div><p class='exprice'>$totalExAdult </p>  <p class='real-price '> $totalAdultPriceVendor  €  </p> </div>
    </li> ";
     }
     if ($children != 0) {
@@ -852,7 +852,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $totalExChildren = $children * $priceKid;
         $message .= " <li class='d-flex justify-content-between'>
   <div>  $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </div>
-   <div>  <p class='fw-bolder m-0 '> $totalChildrenPriceVendor  €  </p> </div>
+   <div><p class='exprice'>$totalExChildren </p>  <p class='real-price'> $totalChildrenPriceVendor  €  </p> </div>
    </li> ";
     }
     if ($infants != 0) {

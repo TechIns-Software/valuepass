@@ -11869,6 +11869,7 @@ color: rgba(19, 43, 197, 0.86);
   margin: 0;
 }
 .real-price{
+  font-weight: bold;
   position: relative;
   bottom: 15px;
   margin: 0;
