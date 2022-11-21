@@ -347,7 +347,7 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
 {
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
             V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs,
-            V.priceKidVendor
+            V.priceKidVendor, VV.starterVouchers, VV.existenceVoucher
             FROM Vendor AS V, VendorVoucher AS VV 
             WHERE VV.idVendor = ? AND VV.existenceVoucher >= ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
@@ -356,10 +356,12 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
     if ($stmt->execute()) {
-        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel = $discount = $originalPrice = $forHowManyPersonsIs = $priceKidVendor = '-1';
-        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor);
+        $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel =
+        $discount = $originalPrice = $forHowManyPersonsIs = $priceKidVendor =
+        $starterVouchers = $existenceVoucher = '-1';
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor, $starterVouchers, $existenceVoucher);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor, $starterVouchers, $existenceVoucher]);
         }
     }
     return $possiblePackages;
@@ -679,6 +681,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $originalPrice = $package[7];
     $forHowManyPersonsIs = $package[8];
     $priceKidVendor = $package[9];
+    $starterVouchers = $package[10];
+    $existenceVoucher = $package[11];
 
 
     if ($_SESSION["languageId"] == 2) {
@@ -791,8 +795,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <li> $message5 <b> $hour </b></li> ";
     $message .= " </ul> ";
     $message .= " </div> ";
-    // TODO WE HAVE TO GET VOUCHERS AVAILABLE NUMBER
-    $message .= " <div> <p class='voucher_av'>$message16 <b> 15/20</b> </p> </div>";
+        $message .= " <div> <p class='voucher_av'>$message16 <b> $starterVouchers/$existenceVoucher</b> </p> </div>";
     $message .= " </div> ";
     $message .= "</div> ";
 
@@ -802,7 +805,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <h5>$message6 </h5> ";
 //    $message .= " <h6 class='fw-bolder' >$message6a </h6> ";
     if ($_SESSION['languageId'] == 1){
-        $message .= '<h6 class="fw-bolder"> Tιμή  <span class="vpicon">VP </span> Voucher </h6>';
+        $message .= '<h6 class="fw-bolder"> Τιμή  <span class="vpicon">VP </span> Voucher </h6>';
     }else{
         $message .= '<h6 class="fw-bolder"> <span class="vpicon">VP </span> Vouchers Price </h6>' ;
     }
