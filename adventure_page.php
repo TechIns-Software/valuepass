@@ -210,19 +210,19 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     <div class="box_grid">
                         <div class="wrapper">
                             <h3 id="nameVendor"><?php echo $vendor->getName(); ?></h3>
-                            <p>
+                            <p class="my-1">
 								<span class="extras"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?>
 								</span>
                             </p>
-                            <span class="criteria">
+                            <p class="criteria my-1 ">
 								 <?php echo $menu[44] ?>
                                  <?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
                                  <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
-							</span>
-                            <p class="voucher_av ">
-                                <?php echo $menu[45] ?>
-                                <b><?php echo $vendor->getAvailabilityTodayVoucher(); ?></b>
-                            </p>
+							</p>
+<!--                            <p class="voucher_av ">-->
+<!--                                --><?php //echo $menu[45] ?>
+<!--                                <b>--><?php //echo $vendor->getAvailabilityTodayVoucher(); ?><!--</b>-->
+<!--                            </p>-->
                             <div class="row  buyNow_part">
                                 <div class="col-12 d-flex justify-content-between nowrap ">
                                     <div class="buyvp_label" >  <?php echo $menu[46] ?>  <span class="nowText">  <?php echo $menu[195] ?> </span>    </div>

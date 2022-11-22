@@ -175,7 +175,10 @@
   url('../fonts/poppins-v20-latin-ext_latin_devanagari-800.svg#Poppins') format('svg'); /* Legacy iOS */
 }
 
-
+:root{
+  --blue-btns:#0071eb;
+  --vp-primary-color:#e8620c;
+}
 
 
 /*GOOGLE FONTS DOWWNLOADED LOCAL END */
@@ -842,11 +845,14 @@ a.btn_1.full-width {
 .btn_1.full-width.purchase,
 a.btn_1.full-width.purchase {
   background-color: #32a067;
+  transition: all 0.4s ease-in-out 0s;
 }
 
 .btn_1.full-width.purchase:hover,
 a.btn_1.full-width.purchase:hover {
-  background-color: #0054a6;
+  /*background-color: #0054a6;*/
+  background-color: var(--blue-btns);
+  transition: all 0.4s ease-in-out 0s;
 }
 
 .btn_1.full-width.wishlist,
@@ -4132,7 +4138,8 @@ a.box_feat h3 {
 }
 
 .nowText{
-  color: red;
+  /*color: red;*/
+  color:var(--vp-primary-color);
   font-size: 1.2em;
 }
 .paylater_box{
@@ -11201,7 +11208,8 @@ html[xmlns] .slides {
 }
 
 .buy_button {
-  background-color: #004d88;
+  /*background-color: #004d88;*/
+  background-color: var(--blue-btns);
   border-radius: 5em;
   color: white;
   font-size: 1.2em;
@@ -11223,7 +11231,8 @@ html[xmlns] .slides {
   width: 75%;
   padding: 0.4em;
   margin: 1em auto !important;
-  background-color: #0071eb;
+  /*background-color: #0071eb;*/
+  background-color: var(--blue-btns);
   border-radius: 5em;
   color: white;
   font-size: 1em;
@@ -11355,7 +11364,8 @@ html[xmlns] .slides {
   width: fit-content;
   padding:1em;
   margin: 1em auto !important;
-  background-color: #004d88;
+  /*background-color: #004d88;*/
+  background-color: var(--blue-btns);
   border-radius: 5em;
   color: white;
   font-size: 1em;
@@ -11793,7 +11803,8 @@ html[xmlns] .slides {
   padding-left: 15px;
 }
 .informationBox{
-  background-color: rgba(0, 119, 255, 0.87);
+  /*background-color: rgba(0, 119, 255, 0.87);*/
+  background-color: var(--blue-btns);
   padding: 1em;
   border-radius: 1em;
   color: whitesmoke;
@@ -11815,7 +11826,8 @@ html[xmlns] .slides {
 .btn-cshopping2{
   font-family: Fontello;
   background-color: white;
-  color: rgb(5 82 177 / 87%);
+  /*color: rgb(5 82 177 / 87%);*/
+ color: var(--blue-btns);
   border: 1px solid #e8620c ;
   padding: 0.5em;
   border-radius: 1.2em;
@@ -11824,7 +11836,8 @@ html[xmlns] .slides {
 }
 .btn-cshopping2:hover{
  color: white;
-  background-color : rgb(5 82 177 / 87%);
+  /*background-color : rgb(5 82 177 / 87%);*/
+  background-color: var(--blue-btns);
   border: 1px solid rgb(5 82 177 / 87%);
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
@@ -11832,7 +11845,8 @@ html[xmlns] .slides {
 }
 
 .btn-gtcart{
-  background-color: rgb(5 82 177 / 87%);
+  /*background-color: rgb(5 82 177 / 87%);*/
+  background-color: var(--blue-btns);
   color: white!important;
   border: none;
   padding: 0.5em;
@@ -11846,7 +11860,8 @@ html[xmlns] .slides {
 
 .vpicon{
   font-weight: bold;
-  color: #e8620c!important;
+  /*color: #e8620c!important;*/
+  color: var(--vp-primary-color)!important;
 }
 
 .color-b{

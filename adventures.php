@@ -178,7 +178,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 					$totalToPay = $vendor->getOriginalPrice() - $moneySaved - $vendor->getPriceAdult();
 				?>
 
-                <div id="exper<?php echo $vendor->getId();?>" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular" data-category="<?php echo $vendor->getCategoryId();?>">
+                <div id="exper<?php echo $vendor->getId();?>" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular " data-category="<?php echo $vendor->getCategoryId();?>">
                     <div class="box_grid">
                         <figure>
                             <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
