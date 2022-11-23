@@ -320,20 +320,24 @@ VALUES (1),
 insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
                                             `idLanguage`, `head`, `description`)
 values (1, 1, 2.1,
-        'Αγοράστε τώρα ένα κουπόνι VP για την κράτηση της δραστηριότητάς σας και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.');
+        'Αγοράστε τώρα ένα κουπόνι VP για την κράτηση της δραστηριότητάς σας και πληρώστε αργότερα για τη δραστηριότητά
+        σας με έκπτωση όταν φτάσετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.');
 insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
                                             `idLanguage`, `head`, `description`)
 values (1, 2, 2.1,
-        'Buy a VP voucher for your activity reservation now and pay later for your activity with a discount when you arrive. Check your activity voucher once you have booked for full details.');
+        'Buy a VP voucher for your activity reservation now and pay later for your activity with a discount when
+         you arrive. Check your activity voucher once you have booked for full details.');
 
 insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
                                             `idLanguage`, `head`, `description`)
 values (2, 1, 1.1,
-        'Αγοράστε το κουπόνι VP που κάνετε κράτηση τώρα και πληρώστε αργότερα για τη δραστηριότητά σας με έκπτωση όταν φτάσετε ή μπορείτε να πληρώσετε νωρίτερα αν θέλετε. Ελέγξτε το κουπόνι δραστηριότητάς σας μόλις κάνετε κράτηση για πλήρεις λεπτομέρειες.');
+        'Αγοράστε το VP Voucher εν πλω, κρατήστε τη θέση σας και πληρώστε τον πάροχο με έκπτωση όταν φτάσετε στην
+        τοποθεσία της δραστηριότητας. Ελέγξτε το email επιβεβαίωσης, για τις απαραίτητες πληροφορίες.');
 insert into `PaymentInfoActivityTranslate` (`idPaymentInfoActivity`,
                                             `idLanguage`, `head`, `description`)
 values (2, 2, 1.1,
-        'Buy your vouchers on board reserve your spot and pay the provider with a discount when you arrive at your activity location.');
+        'Purchase your VP Voucher on board, reserve your spot, and pay the provider with a
+        discount when you arrive at your activity location. Check your confirmation email once you book for full details.');
 
 insert into RatedCategory(id, orderNumber)
 values (1, 1),
