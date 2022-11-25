@@ -170,17 +170,17 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                 if ($forHowManyPersonsIs == 99) {
                                                     echo "<li class='d-flex justify-content-between'>
   <div>  Group : $adults X $payVendorAdult € </div>
-  <div> <p class='exprice m-0'>$totalExPrice € </p> <b class=' real-price '> $payVendorAdultTotal  € </b> </div> 
+  <div> <span class='exprice '>$totalExPrice € </span> <b class=' real-price '> $payVendorAdultTotal  € </b> </div> 
   </li>";
                                                 } else if ($forHowManyPersonsIs > 1) {
                                                     echo "<li class=' my-1 d-flex justify-content-between'>
  <div>  Group  $menu[174]  $forHowManyPersonsIs  $menu[175] : $adults X $payVendorAdult € </div>
-  <div> <p class='exprice m-0'>$totalExPrice € </p><b class=' real-price '>$payVendorAdultTotal  € </b> </div> 
+  <div> <span class='exprice '>$totalExPrice € </span><b class=' real-price '>$payVendorAdultTotal  € </b> </div> 
  </li>";
                                                 } else {
                                                     echo "<li class=' my-1  d-flex justify-content-between'>
  <div> $menu[68]: $adults X $payVendorAdult € </div> 
-  <div> <p class='exprice m-0'> $totalExPrice €</p> <b class=' real-price '>  $payVendorAdultTotal  € </b> </div> 
+  <div> <span class='exprice'> $totalExPrice €</span> <b class=' real-price '>  $payVendorAdultTotal  € </b> </div> 
  </li>";
                                                 }
 
@@ -190,7 +190,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                 $totalExPrice = $children * $originalPriceKid;
                                                 echo "<li class='d-flex justify-content-between'>
 <div> $menu[69]: $children X $payVendorChild € </div> 
-  <div> <p class='exprice m-0'> $totalExPrice €</p><b class=' real-price '>  $payVendorChildTotal  € </b> </div> 
+  <div> <span class='exprice '> $totalExPrice €</span><b class=' real-price '>  $payVendorChildTotal  € </b> </div> 
 </li>";
                                             }
                                             if ($infants != 0) {

@@ -137,11 +137,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                                 <small> <?php echo $menu[193]; ?> </small>
                                             </li>
 
+                                            <hr>
                                             <?php
                                             foreach ($vendor->getAboutActivityArray() as $aboutActivity) {
                                                 ?>
-                                                <li class=headStyle ">
-                                                    <p class="headStyle "><i class="fa fa-arrow-right"
+                                                <li>
+                                                    <p class="headStyle p-0 "><i class="fa fa-arrow-right"
                                                                             aria-hidden="true"></i> <?php echo $aboutActivity->getHead(); ?>
                                                     </p>
                                                 <?php if ($aboutActivity->getDescription() != '') ?>

@@ -577,14 +577,6 @@ footer($menu, $languages)
 
 <script src="assets/js/popper.min.js"></script>
 
-<!--<script>-->
-<!--    $(function () {-->
-<!--        $('[data-toggle="popover"]').popover();-->
-<!---->
-<!--    });-->
-<!--</script>-->
-
-
 <script src="changeLanguage.js"></script>
 <script  src="assets/js/changeviberurl.js"></script>
 

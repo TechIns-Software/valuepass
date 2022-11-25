@@ -11797,10 +11797,8 @@ html[xmlns] .slides {
 }
 
 .descrStyle{
-
   color: rgb(44, 41, 41);
   font-size: .9emem;
-  padding-left: 15px;
 }
 .informationBox{
   /*background-color: rgba(0, 119, 255, 0.87);*/
@@ -11878,14 +11876,9 @@ color: rgba(19, 43, 197, 0.86);
 .exprice{
   text-decoration: line-through;
   color: rgba(128, 128, 128, 0.65);
-  position: relative;
-  right: 30px;
-  bottom: 5px;
-  margin: 0;
+
 }
 .real-price{
+  font-size: 1.2em;
   font-weight: bold;
-  position: relative;
-  bottom: 15px;
-  margin: 0;
 }
