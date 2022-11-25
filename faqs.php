@@ -48,7 +48,20 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 </div>
                 <div class="col-12 ">
                     <h4>5.<b> <?php echo $menu[215];?></b></h4>
-                    <p><?php echo $menu[216];?></p>
+                    <p class="my-1"><?php echo $menu[216];?></p>
+
+                    <h5 class="text-decoration-underline"> <?php echo $menu[24] ?></h5>
+
+                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
+                        3 <?php echo $menu[25]; ?> <b> 1 </b> <?php echo $menu[179]; ?> </h6>
+                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
+                        4 <?php echo $menu[25]; ?> <b>2 </b> <?php echo $menu[26]; ?> </h6>
+                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
+                        5 <?php echo $menu[25]; ?> <b> 3</b> <?php echo $menu[26]; ?> </h6>
+                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
+                        6 <?php echo $menu[25]; ?> <b> 4 </b> <?php echo $menu[26]; ?> </h6>
+                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
+                        7 <?php echo $menu[25]; ?><b> 4 </b> <?php echo $menu[26]; ?> </h6>
                 </div>
 
                 <div class="col-12 ">
