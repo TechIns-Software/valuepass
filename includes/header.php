@@ -70,7 +70,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
 <body>
 <div id="page">
     <?php
-    if (strpos($url, 'client.php') !== false || strpos($url, 'cart-1.php') !== false || strpos($url, 'cancel.php') !== false || strpos($url, 'how.php') !== false && $home == false) { ?>
+    if (strpos($url, 'client.php') !== false || strpos($url, 'faqs.php') || strpos($url, 'cart-1.php') !== false || strpos($url, 'cancel.php') !== false || strpos($url, 'how.php') !== false && $home == false) { ?>
         <header class="header menu_fixed  cart-bg">
             <div id="preloader">
                 <div data-loader="circle-side"></div>
@@ -121,7 +121,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
                                     +306931451910</a></li>
                             <li><a href="mail:customercare@valuepass.gr" class="icon-email">
                                     customercare@valuepass.gr</a></li>
-                            <li><a class="icon-question"> FAQ’s</a></li>
+                            <li><a href="faqs.php" class="icon-question"> FAQ’s</a></li>
                         </ul>
                     </li>
                     <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span> </a>
@@ -195,7 +195,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
                                     +306931451910</a></li>
                             <li><a href="mail:customercare@valuepass.gr" class="icon-email">
                                     customercare@valuepass.gr</a></li>
-                            <li><a class="icon-question"> FAQ’s</a></li>
+                            <li><a  href="faqs.php" class="icon-question"> FAQ’s</a></li>
                         </ul>
                     </li>
                     <li><a><span class="flag-icon flag-icon-<?php echo $lang_icon ?>"></span> </a>
