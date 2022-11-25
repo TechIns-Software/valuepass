@@ -720,7 +720,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message15 = "ValuePass vouchers are not cancelled, but we are always looking to offer you the best alternative
         solutions regarding the activity providers we promote if something goes wrong. You will find more information
         in your confirmation email.";
-        $message16 = "Voucher Available ";
+        $message16 = "Vouchers Available ";
     } else {
         $message1 = "Δυστυχώς, δεν βρέθηκαν διαθέσιμα vouchers για αυτή την ημερομηνία";
         $message2 = "Προσθήκη στο καλάθι";
@@ -801,7 +801,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <li> $message5 <b> $hour </b></li> ";
     $message .= " </ul> ";
     $message .= " </div> ";
-        $message .= " <div> <p class='voucher_av'>$message16 <b> $starterVouchers/$existenceVoucher</b> </p> </div>";
+        $message .= " <div> <p class='voucher_av'>$message16 <b> $existenceVoucher/$starterVouchers</b> </p> </div>";
     $message .= " </div> ";
     $message .= "</div> ";
 

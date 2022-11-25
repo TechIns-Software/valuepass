@@ -199,7 +199,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 <!--                                        --><?php //echo $menu[45] ?>
                                 <!--                                        <b> --><?php //echo $vendor->getAvailabilityTodayVoucher();?><!-- </b>-->
                                 <!--                                    </span>-->
-                                Likely to sell out.
+                                Likely to sell out
                             </p>
 
                             <div class="row  buyNow_part">
