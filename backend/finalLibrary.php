@@ -850,7 +850,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     }
     if ($children != 0) {
         $totalChildrenPriceVendor = $children * $totalToPayKidToVendor;
-        $totalExChildren = $children * $priceKid;
+        $totalExChildren = $children * $priceKidVendor;
         $message .= " <li class='d-flex justify-content-between'>
   <div>  $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </div>
    <div><span class='exprice'>$totalExChildren  € </span>  <span class='real-price'> $totalChildrenPriceVendor  €  </span> </div>
