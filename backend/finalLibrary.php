@@ -788,6 +788,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "   <div class='col-12'><div style='min-height: 5px;'></div> ";
     $message .= "  <div class='title '>";
     $message .= "  <h4> <span style='color: black'>$message3 </span> $nameVendor </h4> ";
+    $message .= "  <h4> <span style='color: black'>PRICE KID </span> $priceKidVendor </h4> ";
     $message .= "  </div> ";
     $message .= " </div> ";
     $message .= " </div> ";
@@ -844,7 +845,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $totalExAdult = $adults * $originalPrice;
         $message .= " <li class='d-flex justify-content-between'>
   <div>  $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </div>
-   <div><span class='exprice'>$totalExAdult € </span>  <b class='real-price '> $totalAdultPriceVendor  €  </b> </div>
+   <div><span class='exprice'>$totalExAdult € </span>  <span class='real-price '> $totalAdultPriceVendor  €  </span> </div>
    </li> ";
     }
     if ($children != 0) {
@@ -852,7 +853,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $totalExChildren = $children * $priceKid;
         $message .= " <li class='d-flex justify-content-between'>
   <div>  $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </div>
-   <div><span class='exprice'>$totalExChildren  € </span>  <b class='real-price'> $totalChildrenPriceVendor  €  </b> </div>
+   <div><span class='exprice'>$totalExChildren  € </span>  <span class='real-price'> $totalChildrenPriceVendor  €  </span> </div>
    </li> ";
     }
     if ($infants != 0) {
