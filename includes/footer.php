@@ -139,7 +139,8 @@ function footer($menu, $languages)
                     <ul id="additional_links">
                         <li><a href="<?php echo $_SESSION["languageId"] == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
                                target="_blank"><?php echo $menu[10] ?></a></li>
-                        <li><a><?php echo $menu[11] ?></a></li>
+                        <li><a href="<?php echo $_SESSION["languageId"] == 1 ? 'cancel_policy_gr.pdf' : 'cancel_policy_gb.pdf' ?>"
+                               target="_blank"><?php echo $menu[11] ?></a></li>
                         <li><span>© ValuePass</span></li>
                         <!--                        <a class="btn btn-info" id="updatebtn"> Update  Demo</a>-->
                     </ul>
