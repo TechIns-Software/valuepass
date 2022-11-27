@@ -788,7 +788,6 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "   <div class='col-12'><div style='min-height: 5px;'></div> ";
     $message .= "  <div class='title '>";
     $message .= "  <h4> <span style='color: black'>$message3 </span> $nameVendor </h4> ";
-    $message .= "  <h4> <span style='color: black'>PRICE KID </span> $priceKidVendor </h4> ";
     $message .= "  </div> ";
     $message .= " </div> ";
     $message .= " </div> ";
