@@ -109,8 +109,8 @@ class Vendor
         $paymentActivityHead, $paymentActivityDesc
     ): void
     {
-        $this->descriptionFull = str_replace(PHP_EOL, '<br><br>', $descriptionFull);
-        $this->descriptionBig = str_replace(PHP_EOL, '<br><br>', $descriptionBig);
+        $this->descriptionFull = str_replace(PHP_EOL, '<br>', $descriptionFull);
+        $this->descriptionBig = str_replace(PHP_EOL, '<br>', $descriptionBig);
         $this->paymentInfoActivityHead = $paymentActivityHead;
         $this->paymentInfoActivityDescription = $paymentActivityDesc;
     }
