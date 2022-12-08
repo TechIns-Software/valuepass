@@ -187,6 +187,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                         </figure>
                         <div class="wrapper best  ">
                             <small><?php echo $vendor->getCategoryName();?></small>
+                            <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 ">'.$menu[203].'    </p>' : '';?>
                             <h3><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><b><?php echo $vendor->getName();?></b></a></h3>
                             <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <span class="criteria">
@@ -201,7 +202,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 <!--                                    </span>-->
 
 
-                            <?php echo $vendor->getId() == 5 ? '<p class="sellout_label my-3">'.$menu[203].'    </p>' : '';?>
+
 
                             <div class="row  buyNow_part">
                                 <div class="col-12 d-flex justify-content-between nowrap ">
