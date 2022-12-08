@@ -87,24 +87,20 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                 <div class="row px-4">
                                     <h5 class="text-decoration-underline"> <?php echo $menu[24] ?></h5>
 
-                                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
-                                        3 <?php echo $menu[25]; ?> <b> 1 </b> <?php echo $menu[179]; ?> </h6>
+                                    <?php if ($_SESSION['languageId'] == 1){   ?>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 4 VP Vouchers το 1 είναι Δωρεάν </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 6 VP Vouchers τα 2 είναι Δωρεάν </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 8 VP Vouchers τα 3 είναι Δωρεάν </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 10 VP Vouchers τα 4 είναι Δωρεάν </h6>
+                                        <p class="text-muted"> Η προσφορά ισχύει για τα VP Vouchers και ΟΧΙ για τις δραστηριότητες</p>
+                                  <?php  }else{?>
 
-
-                                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
-                                        4 <?php echo $menu[25]; ?> <b>2 </b> <?php echo $menu[26]; ?> </h6>
-
-
-                                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
-                                        5 <?php echo $menu[25]; ?> <b> 3</b> <?php echo $menu[26]; ?> </h6>
-
-
-                                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
-                                        6 <?php echo $menu[25]; ?> <b> 4 </b> <?php echo $menu[26]; ?> </h6>
-
-
-                                    <h6><i class="fa-solid fa-money-bill"></i> <?php echo $menu[84]; ?>
-                                        7 <?php echo $menu[25]; ?><b> 4 </b> <?php echo $menu[26]; ?> </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Purchase 4 VP Vouchers and 1 of the 4 is Free </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Purchase 6 VP Vouchers and 2 of the 6is Free </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Purchase 8 VP Vouchers and 3 of the 8 is Free </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Purchase 10 VP Vouchers and 4 of the 10 is Free </h6>
+                                        <p class="text-muted"> The offer only applies to VP Vouchers, not the activities. </p>
+                                  <?php   }  ?>
 
                                 </div>
 

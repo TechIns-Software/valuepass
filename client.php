@@ -352,7 +352,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                         </p>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <p class=" m-0 text-danger">
+                                                <p class=" m-0 vpicon">
                                                     <?php
                                                     $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
 
@@ -395,32 +395,41 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                      </span>
             </div>
 
-            <div class="row ">
+            <div class="row py-3">
 
-                <div class="col-12  d-flex justify-content-between">
-                    <div></div>
-                    <div class="me-3">
+
+                <div class="col-12 d-flex justify-content-between">
+                    <div>
+                        <h4 class='fw-bolder me-3'>
+                            <?php echo $_SESSION['languageId'] == 1 ? 'Σύνολο Τιμής' :
+                                'Total  <span class="vpicon"> VP </span> ' ?> </h4>
+                    </div>
+                    <div>
                         <?php
                         $calculateCartObject = calculatePriceCart($conn, $allVouchers);
                         if ($calculateCartObject['moneyEarned'] != 0) {
                             ?>
-                            <h5 class="my-0" style="text-decoration: line-through;color: black">
+                            <h5 class="my-0 text-center" style="text-decoration: line-through;color: black">
                                 <?php
                                 echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
                                 ?>
                             </h5>
                             <?php
                         }
-                        ?> </div>
+                        ?>
+
+                    </div>
+
                 </div>
+
                 <div class="col-12 d-flex justify-content-between">
                     <div>
                         <h4 class='fw-bolder me-3'>
-                            <?php echo $_SESSION['languageId'] == 1 ? 'Σύνολο Τιμής <span class="vpicon"> VP </span> Voucher ' :
-                                'Total  <span class="vpicon"> VP </span> Voucher Price' ?> </h4>
+                            <?php echo $_SESSION['languageId'] == 1 ? '<span class="vpicon"> VP </span> Voucher ' :
+                                'Voucher Price' ?> </h4>
                     </div>
                     <div>
-                        <h3 class='my-0 vpicon'> <?php echo $calculateCartObject['totalPay']; ?> € </h3>
+                        <h3 class='my-0 vpicon text-end'> <?php echo $calculateCartObject['totalPay']; ?> € </h3>
                         <small class="text-success me-3"> <?php echo $menu[202]?></small>
                     </div>
 

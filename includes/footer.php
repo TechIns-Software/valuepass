@@ -83,12 +83,12 @@ function footer($menu, $languages)
 <!---->
 <!--                    </ul>-->
 <!--                </div>-->
-                <div class=" col-lg-3 col-md-6  text-center panel-heading collapsed   " data-bs-toggle="collapse" href="#collapse5" role="button"
+                <div class=" col-lg-3 col-md-6  text-center panel-heading    " data-bs-toggle="collapse" href="#collapse5" role="button"
                      aria-expanded="false" aria-controls="collapseExample" id="collapsebox">
                     <h5 class="panel-title  accordion-toggle ">
                         <h5 class="border-bottom  icon-down-1 "  id="collapsetitle">  <?php echo $menu[9] ?> </h5>
                     </h5>
-                    <div id="collapse5" class="  collapse">
+                    <div id="collapse5" class="  collapse show">
                         <div class="panel-body">
                             <div class="row px-4">
                                 <ul class="links ">
@@ -114,10 +114,6 @@ function footer($menu, $languages)
                                         <li> <a href="mailto:sales@valuepass.gr"> sales@valuepass.gr</a> </li>
                                     </ul>
 
-                                    <ul class="ps-3">
-                                        <h5  class="m-1">GDPR </h5>
-                                        <li> <a href="mailto:dataprotectionofficer@valuepass.gr">dataprotectionofficer@valuepass.gr </a> </li>
-                                    </ul>
 
                                     <ul  class="ps-3">
                                         <h5  class="m-1"><?php echo $menu[133] ?> </h5>
@@ -152,7 +148,7 @@ function footer($menu, $languages)
         const collapsetitle = document.getElementById('collapsetitle');
         const collapsebox = document.getElementById('collapsebox')
         collapsebox.addEventListener('click',()=>{
-            if (collapsebox.classList.contains('collapsed')){
+            if (!collapsebox.classList.contains('collapsed')){
                 collapsetitle.classList.remove('icon-up-1');
                 collapsetitle.classList.add('icon-down-1');
                 //remove  up arrow

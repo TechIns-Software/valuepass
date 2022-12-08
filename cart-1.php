@@ -260,7 +260,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                         </p>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <p class=" m-0 text-danger">
+                                                <p class=" m-0 vpicon">
                                                     <?php
                                                     $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
 
@@ -344,7 +344,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             <?php
                             if ($calculateCartObject['moneyEarned'] != 0) {
                                 ?>
-                                <li class="border-bottom d-flex justify-content-between"> <div>  <?php echo $menu[188]; ?> </div>
+                                <li class="border-bottom d-flex justify-content-between"> <div class="fw-bolder">
+                                        <?php echo $_SESSION['languageId'] == 1 ? "Επιπλέον έκπτωση στα <b class='vpicon'> VP </b> Vouchers"
+                                            : "Additional Discount on <span class='vpicon'> VP </span> Vouchers " ?>
+                                    </div>
                                     <span>
                                     <?php
                                     $extraDiscount = round(100 * (

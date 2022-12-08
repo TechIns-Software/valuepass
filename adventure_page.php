@@ -15,7 +15,7 @@ $vendor = getVendor($conn, $idVendor, $languageId);
 if (is_null($vendor)) {
     header('location: index.php');
 }
-getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);
+getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $destinations);
 $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 ?>
 <input value="<?php echo $vendor->getId(); ?>" id="vendorId" hidden>
@@ -32,7 +32,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     body::after {
         content: <?php echo $stringPreLoad;?>;
         display: none;
-    },
+    }
+
+    ,
     .displayNone {
         display: none;
     }
@@ -122,17 +124,17 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                             <!--                                                   aria-hidden="true"></i> -->
                                             <?php //echo $menu[134]; ?><!--  </li>-->
                                             <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
-                                                                        aria-hidden="true"></i>  <?php echo $menu[189]; ?>
+                                                                            aria-hidden="true"></i> <?php echo $menu[189]; ?>
                                                 </p>
 
-                                            <small> <?php echo $menu[135]; ?></small></li>
+                                                <small> <?php echo $menu[135]; ?></small></li>
                                             <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
-                                                                        aria-hidden="true"></i> <?php echo $menu[190]; ?>
+                                                                            aria-hidden="true"></i> <?php echo $menu[190]; ?>
                                                 </p>
                                                 <small> <?php echo $menu[191]; ?> </small>
                                             </li>
                                             <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
-                                                                        aria-hidden="true"></i> <?php echo $menu[192]; ?>
+                                                                            aria-hidden="true"></i> <?php echo $menu[192]; ?>
                                                 </p>
                                                 <small> <?php echo $menu[193]; ?> </small>
                                             </li>
@@ -143,9 +145,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                                 ?>
                                                 <li>
                                                     <p class="headStyle p-0 "><i class="fa fa-arrow-right"
-                                                                            aria-hidden="true"></i> <?php echo $aboutActivity->getHead(); ?>
+                                                                                 aria-hidden="true"></i> <?php echo $aboutActivity->getHead(); ?>
                                                     </p>
-                                                <?php if ($aboutActivity->getDescription() != '') ?>
+                                                    <?php if ($aboutActivity->getDescription() != '') ?>
                                                     <small class="  descrStyle">
                                                         <?php echo $aboutActivity->getDescription(); ?>
                                                     </small>
@@ -216,36 +218,44 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 								</span>
                             </p>
                             <p class="criteria my-1 ">
-								 <?php echo $menu[44] ?>
-                                 <?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
-                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
-							</p>
-<!--                            <p class="voucher_av ">-->
-<!--                                --><?php //echo $menu[45] ?>
-<!--                                <b>--><?php //echo $vendor->getAvailabilityTodayVoucher(); ?><!--</b>-->
-<!--                            </p>-->
+                                <?php echo $menu[44] ?>
+                                <?php echo str_repeat('<i class="icon_star voted"></i>', $vendor->getAverageRated()) ?>
+                                <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
+                            </p>
+                            <!--                            <p class="voucher_av ">-->
+                            <!--                                --><?php //echo $menu[45] ?>
+                            <!--                                <b>-->
+                            <?php //echo $vendor->getAvailabilityTodayVoucher(); ?><!--</b>-->
+                            <!--                            </p>-->
                             <div class="row  buyNow_part">
                                 <div class="col-12 d-flex justify-content-between nowrap ">
-                                    <div class="buyvp_label" >  <?php echo $menu[46] ?>  <span class="nowText">  <?php echo $menu[195] ?> </span>    </div>
-                                    <div class="buyvp_price">  <b class="nowText"><?php echo $vendor->getPriceAdult();?>€ </b>/ <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span></div>
+                                    <div class="buyvp_label">  <?php echo $menu[46] ?> <span
+                                                class="nowText">  <?php echo $menu[195] ?> </span></div>
+                                    <div class="buyvp_price"><b class="nowText"><?php echo $vendor->getPriceAdult(); ?>
+                                            € </b>/ <span
+                                                class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
+                                    </div>
                                 </div>
                                 <div class="col-12 ">
-                                    <b >
-                                        <?php  echo $_SESSION["languageId"] == 1? 'To':''  ?>  <span class="nowText">VP</span> <?php echo $menu[196] ?>
+                                    <b>
+                                        <?php echo $_SESSION["languageId"] == 1 ? 'To' : '' ?> <span
+                                                class="nowText">VP</span> <?php echo $menu[196] ?>
                                     </b>
                                 </div>
                             </div>
                             <div class="row paylater_box">
                                 <div class="col-12 pay_value  d-flex justify-content-between  ">
-                                    <div ><?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?> </span> </div>
+                                    <div><?php echo $menu[49] ?> <span
+                                                class="laterText">  <?php echo $menu[197] ?> </span></div>
                                     <div>
-                                        <span class="from_price"> <?php echo $vendor->getOriginalPrice();?>€ </span>
-                                        <span class="laterText"><?php echo $totalToPay;?>   € </span> / <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
+                                        <span class="from_price"> <?php echo $vendor->getOriginalPrice(); ?>€ </span>
+                                        <span class="laterText"><?php echo $totalToPay; ?>   € </span> / <span
+                                                class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
-                                    <p  class="my-0">  <?php echo $menu[198] ?> </p>
+                                    <p class="my-0">  <?php echo $menu[198] ?> </p>
                                 </div>
                             </div>
                             <div class="row">
@@ -258,7 +268,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                             <!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
                             <button class=" my-2 btn buy_button "><a href="#book"><?php echo $menu[52] ?> </a></button>
-                            <p class="my-0 offerText"> <?php echo $menu[57].' '.$menu[58].' '.$menu[59]; ?> </p>
+                            <p class="my-0 offerText"> <?php echo $menu[57] . ' ' . $menu[58] . ' ' . $menu[59]; ?> </p>
                         </div>
 
                     </div>
@@ -359,7 +369,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     <ul>
                                         <?php
                                         if (count($vendor->getImportantInformationArray()) > 0) {
-                                            foreach ($vendor->getImportantInformationArray() as $importantInformation) {?>
+                                            foreach ($vendor->getImportantInformationArray() as $importantInformation) { ?>
                                                 <div class="col-sm-12 importantinfosli">
                                                     <b> <?php echo $importantInformation->getHead(); ?> </b>
                                                     <ul class="ps-3">
@@ -401,7 +411,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                         </h6>
                                     </div>
                                     <div id="collapse8" class=" collapse">
-                                        <div class="panel-body px-2" >
+                                        <div class="panel-body px-2">
 
                                             <?php
                                             foreach ($vendor->getRatedArray() as $ratedCategory) {
@@ -432,7 +442,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 </div>
             </div>
 
-            <div class="row" >
+            <div class="row">
                 <div style="min-height: 45px" id="book"></div>
                 <div class="col-12 shadow bgbanner2">
 
@@ -451,8 +461,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     </div>
 
 
-    <div style="min-height: 20px" ></div>
-    <section >
+    <div style="min-height: 20px"></div>
+    <section>
         <div class="container margin_60_35">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
@@ -465,34 +475,36 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                         <div class="panel-dropdown">
                             <a href="#">
                                 <span id="adultsLabel">
-                                    <?=$vendor->getLabelAdults($menu[68], $menu[174], $menu[175], true)?>
+                                    <?= $vendor->getLabelAdults($menu[68], $menu[174], $menu[175], true) ?>
                                 </span>
                                 <span class="" id="adultsLabelNext"></span>
-                                <span class="displayNone" id="childrenLabel"><?=$menu[69]?></span>
+                                <span class="displayNone" id="childrenLabel"><?= $menu[69] ?></span>
                                 <span class="displayNone" id="childrenLabelNext"></span>
-                                <span class="displayNone" id="infantsLabel"><?=$menu[70]?></span>
+                                <span class="displayNone" id="infantsLabel"><?= $menu[70] ?></span>
                                 <span class="displayNone" id="infantsLabelNext"></span>
                                 <span class="displayNone" id="displayTotalWord">
-                                    <span class="<?php echo ($vendor->getForHowManyPersonsIs() != 1 ? 'displayNone': '')?>"><?=$menu[104];?></span>
+                                    <span class="<?php echo($vendor->getForHowManyPersonsIs() != 1 ? 'displayNone' : '') ?>"><?= $menu[104]; ?></span>
                                 </span>
                                 <span class="qtyTotal"></span></a>
                             <div class="panel-dropdown-content right">
                                 <div class="qtyButtons">
                                     <label>
-                                        <?=$vendor->getLabelAdults($menu[68], $menu[174], $menu[175])?>
+                                        <?= $vendor->getLabelAdults($menu[68], $menu[174], $menu[175]) ?>
                                     </label>
                                     <input id="adultsInput" type="text" name="qtyInput" value="0"
-                                    <?=($vendor->getForHowManyPersonsIs() != 1 ? 'group="isGroup" ': '')?>
+                                        <?= ($vendor->getForHowManyPersonsIs() != 1 ? 'group="isGroup" ' : '') ?>
                                     >
                                 </div>
                                 <div <?php echo !$vendor->isChildAcceptance() || $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : '' ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[69] ?> <small><?=$vendor->getLabelChild();?></small> </label>
+                                    <label><?php echo $menu[69] ?> <small><?= $vendor->getLabelChild(); ?></small>
+                                    </label>
                                     <input id="childrenInput" type="text" name="qtyInput" value="0">
                                 </div>
                                 <div <?php echo !$vendor->isInfantTolerance() | $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : ''; ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[70] ?> <small><?=$vendor->getLabelInfant();?></small></label>
+                                    <label><?php echo $menu[70] ?>
+                                        <small><?= $vendor->getLabelInfant(); ?></small></label>
                                     <input id="infantsInput" type="text" name="qtyInput" value="0">
                                 </div>
                             </div>
@@ -565,26 +577,33 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     </p>
                                     <div class="row  buyNow_part">
                                         <div class="col-12 d-flex justify-content-between nowrap ">
-                                            <div class="buyvp_label" >  <?php echo $menu[46] ?>  <span class="nowText">  <?php echo $menu[195] ?> </span>    </div>
-                                            <div class="buyvp_price">  <b class="nowText"><?php echo $vendor->getPriceAdult();?>€ </b>/ <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span></div>
+                                            <div class="buyvp_label">  <?php echo $menu[46] ?> <span
+                                                        class="nowText">  <?php echo $menu[195] ?> </span></div>
+                                            <div class="buyvp_price"><b
+                                                        class="nowText"><?php echo $vendor->getPriceAdult(); ?>€ </b>/
+                                                <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
+                                            </div>
                                         </div>
                                         <div class="col-12 ">
-                                            <b >
-                                                <?php  echo $_SESSION["languageId"] == 1? 'To':''  ?>  <span class="nowText">VP</span> <?php echo $menu[196] ?>
+                                            <b>
+                                                <?php echo $_SESSION["languageId"] == 1 ? 'To' : '' ?> <span
+                                                        class="nowText">VP</span> <?php echo $menu[196] ?>
                                             </b>
                                         </div>
                                     </div>
                                     <div class="row paylater_box">
                                         <div class="col-12 pay_value  d-flex justify-content-between  ">
-                                            <div ><?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?> </span> </div>
+                                            <div><?php echo $menu[49] ?> <span
+                                                        class="laterText">  <?php echo $menu[197] ?> </span></div>
                                             <div>
-                                                <span class="from_price"> <?php echo $vendor->getOriginalPrice();?>€ </span>
-                                                <span class="laterText"><?php echo $totalToPay;?>   € </span> / <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
+                                                <span class="from_price"> <?php echo $vendor->getOriginalPrice(); ?>€ </span>
+                                                <span class="laterText"><?php echo $totalToPay; ?>   € </span> / <span
+                                                        class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <p  class="my-0">  <?php echo $menu[198] ?> </p>
+                                            <p class="my-0">  <?php echo $menu[198] ?> </p>
                                         </div>
                                     </div>
 
@@ -693,20 +712,20 @@ footer($menu, $languages)
             minDate: minDate,
             maxDate: maxDate,
             opens: 'left',
-            isInvalidDate: function(date) {
+            isInvalidDate: function (date) {
                 // for (var _ = 0; _ < availableDates.length; _++) {
                 //     var dateAvailable = availableDates[_];
                 //     console.log(dateAvailable);
-                    if (!availableDates.includes(date.format('YYYY-MM-DD'))) {
-                        return true;
-                    }
+                if (!availableDates.includes(date.format('YYYY-MM-DD'))) {
+                    return true;
+                }
                 // }
 
             },
             locale: {
                 <?php
                 if ($languageId == 1) {
-                    ?>
+                ?>
                 daysOfWeek: [
                     "Κυρ",
                     "Δευ",
@@ -761,7 +780,7 @@ footer($menu, $languages)
 </script>
 <script src="assets/js/mySlider.js"></script>
 <script>
-    setInterval(()=>{
+    setInterval(() => {
         const childrenButtons = document.getElementById('optionbuttons').childNodes;
         const ids = [];
         for (var __ = 0; __ < childrenButtons.length; __++) {
@@ -773,7 +792,9 @@ footer($menu, $languages)
         for (var __ = 0; __ < ids.length; __++) {
             const id = ids[__];
             $(`${id}`).on('show.bs.collapse', function () {
-                ids.forEach((id_temp)=> {$(`${id_temp}`).collapse("hide")});
+                ids.forEach((id_temp) => {
+                    $(`${id_temp}`).collapse("hide")
+                });
             });
         }
     }, 500)

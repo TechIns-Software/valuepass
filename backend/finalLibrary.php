@@ -717,9 +717,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message12 = "Date ";
         $message13 = "You can cancel your activity before ";
         $message14 = "by supplier Cancellation policy";
-        $message15 = "ValuePass vouchers are not cancelled, but we are always looking to offer you the best alternative
-        solutions regarding the activity providers we promote if something goes wrong. You will find more information
-        in your confirmation email.";
+        $message15 = "VP Vouchers are non-refundable and cannot be canceled, but we are always looking for the best 
+        alternative solutions based on the potential of the activity providers that we promote if something goes wrong.
+         You will find more information in your confirmation email.";
         $message16 = "Vouchers Available ";
     } else {
         $message1 = "Δυστυχώς, δεν βρέθηκαν διαθέσιμα vouchers για αυτή την ημερομηνία";
@@ -731,7 +731,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message6a = "Τιμή VP Voucher";
         $message6b1 = "Πληρώστε ";
         $message6b2 = " αργότερα ";
-        $message6b3 = " την δραστηριότητα";
+        $message6b3 = " στην δραστηριότητα";
 
         if ($forHowManyPersonsIs == 99) {
             $message7 = " Group: ";
@@ -748,9 +748,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
 
         $message13 = "Μπορείς να ακυρώσεις τη δραστηριότητα μέχρι τις ";
         $message14 = "σύμφωνα με την πολιτική ακύρωσης του προμηθευτή";
-        $message15 = "Τα ValuePass vouchers δεν παρέχουν τη δυνατότητα ακύρωσης και επιστροφής χρημάτων, 
-        ωστόσο πάντα προσπαθούμε να σας προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σύμφωνα με τις δυνατότητες
-         των προμηθευτών των δραστηριοτήτων που προωθούμε, σε περίπτωση μη πραγματοποίησης της δραστηριότητας.";
+        $message15 = "Τα VP Vouchers δεν παρέχουν τη δυνατότητα ακύρωσης και επιστροφής χρημάτων, ωστόσο πάντα 
+        προσπαθούμε να σας προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σύμφωνα με τις δυνατότητες των προμηθευτών των
+        δραστηριοτήτων που προωθούμε, σε περίπτωση μη πραγματοποίησης της δραστηριότητας.";
         $message16 = " Διαθέσιμα Vouchers Σήμερα ";
 
     }
@@ -879,7 +879,11 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "</div> ";
 
     $message .= " <div class='col-12 price '> ";
-    $message .= "     <h5 class='fw-bolder'>$message10 </h5> ";
+    if ($_SESSION["languageId"] == 2) {
+        $message .= " <h5 class='fw-bolder'> Total  <span class='vpicon'>VP</span>Voucher Price </h5> ";
+    }else{
+        $message .= " <h5 class='fw-bolder'> Σύνολο Τιμής <span class='vpicon'>VP</span> Voucher </h5> ";
+    }
     $message .= "   <h4 class='vpicon'> $totalPrice € </h4> ";
     $message .= "</div> ";
 

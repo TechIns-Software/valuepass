@@ -251,32 +251,21 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                         <p class="my-1"> <b>  <?php echo $menu[24] ?> </b> </p>
                     </div>
 
+                    <?php if ($_SESSION['languageId'] == 1){   ?>
+                        <h6> Αγοράζοντας 4 VP Vouchers το 1 είναι Δωρεάν </h6>
+                        <h6> Αγοράζοντας 6 VP Vouchers τα 2 είναι Δωρεάν </h6>
+                        <h6> Αγοράζοντας 8 VP Vouchers τα 3 είναι Δωρεάν </h6>
+                        <h6>  Αγοράζοντας 10 VP Vouchers τα 4 είναι Δωρεάν </h6>
+                        <p class="text-muted"> Η προσφορά ισχύει για τα VP Vouchers και ΟΧΙ για τις δραστηριότητες</p>
+                    <?php  }else{?>
 
-                    <div class="col-lg-12 my-1 ">
-                        <h6> 3 <?php echo $menu[25] ?> <b>
-                                1 </b> <?php echo $menu[179] ?>
-                        </h6>
-                    </div>
-                    <div class="col-lg-12 my-1">
-                        <h6> 4 <?php echo $menu[25] ?>
-                            <b>2 </b> <?php echo $menu[26] ?>
-                        </h6>
-                    </div>
-                    <div class="col-lg-12 my-1">
-                        <h6> 5 <?php echo $menu[25] ?> <b>
-                                3</b> <?php echo $menu[26] ?>
-                        </h6>
-                    </div>
-                    <div class="col-lg-12 my-1">
-                        <h6> 6 <?php echo $menu[25] ?> <b>
-                                4 </b> <?php echo $menu[26] ?>
-                        </h6>
-                    </div>
-                    <div class="col-lg-12 my-1">
-                        <h6> 7 <?php echo $menu[25] ?><b>
-                                4 </b> <?php echo $menu[26] ?>
-                        </h6>
-                    </div>
+                        <h6>  Purchase 4 VP Vouchers and 1 of the 4 is Free </h6>
+                        <h6>  Purchase 6 VP Vouchers and 2 of the 6is Free </h6>
+                        <h6>  Purchase 8 VP Vouchers and 3 of the 8 is Free </h6>
+                        <h6>  Purchase 10 VP Vouchers and 4 of the 10 is Free </h6>
+                        <p class="text-muted"> The offer only applies to VP Vouchers, not the activities. </p>
+                    <?php   }  ?>
+
                 </div>
             </div>
         </div>
@@ -363,8 +352,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"
-                        id="exampleModalLabel1"><?php echo $menu[177] ?></h5>
+<!--                    <h5 class="modal-title" id="exampleModalLabel1">--><?php //echo $menu[177] ?><!-- </h5>-->
+                    <h5 class="modal-title" id="exampleModalLabel1">Customer Care</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
