@@ -246,7 +246,8 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                        href="#collapse<?=$counterCollapseVendor?>"
                                        role="button" aria-expanded="false" aria-controls="collapseExample"
                                        >
-                                        <?php echo $menu [227].'/' .$menu [228]  ?>
+                                        <span id="collapse1Span<?=$counterCollapseVendor?>"><?=$menu[227]?></span>
+                                        <span class="displayNone" id="collapse2Span<?=$counterCollapseVendor?>"><?=$menu[228]?></span>
                                     </a>
                                 </p>
                                 <div class="row">
