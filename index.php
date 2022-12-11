@@ -260,9 +260,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                     <?php  }else{?>
 
                         <h6>  Purchase 4 VP Vouchers and 1 of the 4 is Free </h6>
-                        <h6>  Purchase 6 VP Vouchers and 2 of the 6is Free </h6>
-                        <h6>  Purchase 8 VP Vouchers and 3 of the 8 is Free </h6>
-                        <h6>  Purchase 10 VP Vouchers and 4 of the 10 is Free </h6>
+                        <h6>  Purchase 6 VP Vouchers and 2 of the 6 are Free </h6>
+                        <h6>  Purchase 8 VP Vouchers and 3 of the 8 are Free </h6>
+                        <h6>  Purchase 10 VP Vouchers and 4 of the 10 are Free </h6>
                         <p class="text-muted"> The offer only applies to VP Vouchers, not the activities. </p>
                     <?php   }  ?>
 
