@@ -4124,6 +4124,19 @@ a.box_feat h3 {
   background-color: rgba(255, 255, 0, 0.671);
 }
 
+.buyNow_part2{
+  background-color: rgb(10, 107, 252);
+  color: white;
+  font-weight: 600;
+  border-radius: 1em;
+  text-align: center;
+  padding: .5em;
+}
+.buyNow_part2 p {
+  padding: 0;
+  margin: 0;
+}
+
 .buyvp_label{
   color: #121921;
   font-weight: 700;
@@ -11235,6 +11248,7 @@ html[xmlns] .slides {
   background-color: var(--blue-btns);
   border-radius: 5em;
   color: white;
+  text-shadow: 2px 2px 2px rgba(178, 79, 52, 0.86);
   font-size: 1em;
   font-weight: 700;
   border: none !important;
@@ -11248,6 +11262,7 @@ html[xmlns] .slides {
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
   transition:  all 0.3s ease-in-out 0s;
+  text-shadow:unset;
 }
 
 .buy_button2 a {
