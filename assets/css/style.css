@@ -11912,7 +11912,14 @@ color: rgba(19, 43, 197, 0.86);
 .exprice{
   text-decoration: line-through;
   color: rgba(6, 5, 5,0.77 )
+}
 
+.exprice2{
+  text-decoration: line-through;
+  color: rgba(6, 5, 5,0.77 );
+  position: relative;
+  bottom: 15px;
+  left: 49px;
 }
 .real-price{
   font-size: 1.2em;

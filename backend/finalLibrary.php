@@ -842,22 +842,22 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     if ($adults != 0) {
         $totalAdultPriceVendor = $adults * $totalToPayAdultToVendor;
         $totalExAdult = $adults * $originalPrice;
-        $message .= " <li class='d-flex justify-content-between'>
+        $message .= " <li class='d-flex justify-content-between py-1'>
   <div>  $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </div>
-   <div><span class='exprice'>$totalExAdult € </span>  <span class='real-price '> $totalAdultPriceVendor  €  </span> </div>
+   <div><span class='exprice2'>$totalExAdult € </span>  <span class='real-price '> $totalAdultPriceVendor  €  </span> </div>
    </li> ";
     }
     if ($children != 0) {
         $totalChildrenPriceVendor = $children * $totalToPayKidToVendor;
         $totalExChildren = $children * $priceKidVendor;
-        $message .= " <li class='d-flex justify-content-between'>
+        $message .= " <li class='d-flex justify-content-between py-1'>
   <div>  $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </div>
-   <div><span class='exprice'>$totalExChildren  € </span>  <span class='real-price'> $totalChildrenPriceVendor  €  </span> </div>
+   <div><span class='exprice2'>$totalExChildren  € </span>  <span class='real-price'> $totalChildrenPriceVendor  €  </span> </div>
    </li> ";
     }
     if ($infants != 0) {
         $totalInfantPriceVendor = $infants * $totalToPayInfantToVendor;
-        $message .= " <li class='d-flex justify-content-between'> 
+        $message .= " <li class='d-flex justify-content-between py-1'> 
  <div>  $message9 <b> $infants  </b> x <span> $totalToPayInfantToVendor € </span> </div>
    <div>  <p class='fw-bolder m-0 '> $totalInfantPriceVendor  €  </p> </div>
  </li> ";
