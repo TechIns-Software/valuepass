@@ -144,29 +144,5 @@ function footer($menu, $languages)
             </div>
         </div>
     </footer>
-    <script>
-        const collapsetitle = document.getElementById('collapsetitle');
-        const collapsebox = document.getElementById('collapsebox')
-        collapsebox.addEventListener('click',()=>{
-            if (!collapsebox.classList.contains('collapsed')){
-                collapsetitle.classList.remove('icon-up-1');
-                collapsetitle.classList.add('icon-down-1');
-                //remove  up arrow
-                //add down arrow
-            }else {
-                collapsetitle.classList.remove('icon-down-1');
-                collapsetitle.classList.add('icon-up-1');
-                //add  up arrow
-                //remove down arrow
-
-            }
-
-
-
-            console.log('clicked')
-        })
-
-    </script>
-
     <div id="toTop"></div><!-- Back to top button -->
 <?php } ?>

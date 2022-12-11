@@ -682,6 +682,7 @@ footer($menu, $languages)
     var lengthImagesSlider = <?php echo count($vendor->getImages())?>;
 </script>
 <script src="assets/js/mySlider.js"></script>
+<script src="assets/js/voucherDetailsToggle.js"></script>
 <script>
     setInterval(() => {
         const childrenButtons = document.getElementById('optionbuttons').childNodes;

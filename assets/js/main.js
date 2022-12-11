@@ -150,7 +150,8 @@
     i("#reccomended").owlCarousel({
       center: !0,
       items: 4,
-      loop: !0,
+      loop: false,
+      rewind: true,
       margin: 0,
       responsive: {
         0: { items: 1 },

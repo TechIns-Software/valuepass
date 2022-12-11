@@ -63,15 +63,23 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 	<div id="bestof" class="container container-custom margin_80_55 ">
 		<section class="add_bottom_45">
 			<div class="main_title_3">
-                <?php if(count($bestOffs) > 0){  ?>
-				<span><em></em></span>
-                <h2><?php echo $menu[42] ?> </h2>
-                <?php  }?>
+                <?php
+                if(count($bestOffs) > 0) {
+                ?>
+                    <span><em></em></span>
+                    <h2><?php echo $menu[42] ?> </h2>
+                <?php
+                }
+                ?>
 				<!-- <p>Some of our favorite experiences </p> -->
 			</div>
-
-            <?php include_once 'bestoffs.php';
-            bestoffs($bestOffs,$menu);?>
+            <?php
+            if (count($bestOffs) > 0) {
+                include_once 'bestoffs.php';
+                bestoffs($bestOffs,$menu);
+            }
+            $counterCollapseVendor = $GLOBALS['counterForCollapseVendor'] ?? 1;
+            ?>
 
 
 		</section>
@@ -233,17 +241,17 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                             </div>
                             <div class="row  border-top">
                                 <p class="my-0">
-
-                                    <a class=" icon-down-1 detailsCollapse " data-bs-toggle="collapse"
-                                       href="#collapse<?php echo $vendor->getId(); ?>"
+                                    <span class="icon-down-1" id="collapse_<?=$counterCollapseVendor?>"></span>
+                                    <a class=" detailsCollapse " data-bs-toggle="collapse"
+                                       href="#collapse<?=$counterCollapseVendor?>"
                                        role="button" aria-expanded="false" aria-controls="collapseExample"
-                                       id="collapse_<?php echo $vendor->getId(); ?>">
+                                       >
                                         <?php echo $menu [227].'/' .$menu [228]  ?>
                                     </a>
                                 </p>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="collapse " id="collapse<?php echo $vendor->getId(); ?>">
+                                        <div class="collapse " id="collapse<?=$counterCollapseVendor?>">
                                             <div class="text-center my-0">
                                                 <p class="my-1"> <?php echo $menu[223] ?> <?php echo($totalToPay + $vendor->getPriceAdult()); ?>
                                                     €/ <span
@@ -270,6 +278,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                 </div>
 
                 <?php
+                    $counterCollapseVendor = $counterCollapseVendor + 1;
                 }
                 ?>
 
