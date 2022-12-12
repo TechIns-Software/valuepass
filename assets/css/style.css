@@ -4196,8 +4196,9 @@ a.box_feat h3 {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 438px) {
   .from_price2{
+    color: red;
     right: 45px;
   }
 }
