@@ -321,16 +321,16 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             </div>
                             <div class="row  border-top">
                                 <p class="my-0">
-                                    <span class="icon-down-1" id="collapse_<?=$idVendor?>"></span>
-                                    <a class= "detailsCollapse " data-bs-toggle="collapse" href="#collapse<?=$idVendor?>"
+                                    <span class="icon-down-1" id="collapse_99"></span>
+                                    <a class= "detailsCollapse " data-bs-toggle="collapse" href="#collapse99"
                                        role="button" aria-expanded="false" aria-controls="collapseExample" >
-                                        <span id="collapse1Span<?=$idVendor?>"><?=$menu[228]?></span>
-                                        <span class="displayNone" id="collapse2Span<?=$idVendor?>"><?=$menu[229]?></span>
+                                        <span id="collapse1Span99"><?=$menu[228]?></span>
+                                        <span class="displayNone" id="collapse2Span99"><?=$menu[229]?></span>
                                     </a>
                                 </p>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="collapse " id="collapse<?=$idVendor?>">
+                                        <div class="collapse " id="collapse99">
                                             <div class="text-center my-0">
                                                 <p class="my-1"><b>  <?php echo $menu[224]?> <?php echo ($totalToPay + $vendor->getPriceAdult()  ) ;?>€/
                                                         <span ><?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </b></p>
