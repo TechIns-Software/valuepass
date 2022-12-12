@@ -19,7 +19,7 @@ function bestoffs($bestOffs,$menu){
                         </a>
                         <div class="wrapper best ">
                             <small><?php echo $vendor->getCategoryName();?></small>
-                            <?php echo $vendor->getId() == 5 ? '<p class="sellout_label m-0">'.$menu[203].'    </p>' : '';?>
+                            <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 m-0">'.$menu[203].'    </p>' : '';?>
                             <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
                             <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
 
@@ -44,7 +44,6 @@ function bestoffs($bestOffs,$menu){
                                     </b>
                                 </div>
                             </div>
-
                             <div class="row paylater_box" style="display: none">
                                 <div class="col-12 pay_value  d-flex justify-content-between  ">
                                     <div ><?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?> </span> </div>
@@ -58,13 +57,12 @@ function bestoffs($bestOffs,$menu){
                                     <p  class="my-0">  <?php echo $menu[198] ?> </p>
                                 </div>
                             </div>
-
                             <div class="row" style="display: none">
                                 <div class="col">  <p class="vp_discount my-0 "><?php echo $menu[50] ?>  <?php echo $vendor->getDiscount();?>% <?php echo $menu[51] ?></p></div>
 
                             </div>
                             <div class="row  my-1">
-                                <div class="col-12 buyNow_part2 d-flex justify-content-center ">
+                                <div class="col-12 buyNow_part2 d-flex justify-content-around ">
 
                                     <div class="px-1 text-start ">
                                         <?php if ( $_SESSION['languageId'] == 1 ){ ?>
@@ -75,7 +73,7 @@ function bestoffs($bestOffs,$menu){
                                             Book on board via <span class="vpicon"> VP </span> Voucher
                                         <?php }?>
                                     </div>
-                                    <div class="px-1">
+                                    <div  <?php echo $_SESSION['languageId'] == 1 ? "class ='greekPrice ' ": "class='px-1'" ?>>
                                         <?php echo $vendor->getPriceAdult();?> €/ <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
                                     </div>
                                 </div>
@@ -85,14 +83,14 @@ function bestoffs($bestOffs,$menu){
 
                                     <div>
                                         <?php if ($_SESSION['languageId'] == 1){ ?>
-                                            Κερδίστε έκπτωση στην αρχική τιμή
+                                            Κερδίστε <span class="vpicon"> έκπτωση </span> στην αρχική τιμή
                                         <?php  }else{?>
                                             Get a <span class="vpicon"> discount</span>  on the initial price
                                         <?php }?>
 
                                     </div>
-                                    <div>
-                                        <?php echo $menu[48] ;?> <span class="exprice"><?php echo $vendor->getOriginalPrice();?> € </span>
+                                    <div class="from_price2">
+                                        <?php echo $menu[48] ;?> <span class="exprice"><?php echo $vendor->getOriginalPrice();?>€ </span>
                                     </div>
                                 </div>
 
@@ -102,16 +100,16 @@ function bestoffs($bestOffs,$menu){
                                        <?php echo $menu[223] ;?>
                                     </div>
                                     <div>
-                                        <?php echo $totalToPay;?>€/  <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
+                                      <b>   <?php echo $totalToPay;?>€ </b>/  <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
                                     </div>
                                 </div>
 
                                 <div class="col-12 text-start text-success  ">
                                     <?php if ($_SESSION['languageId'] == 1){ ?>
                                         Χρησιμοποιώντας το <span class="vpicon">VP </span>Voucher,
-                                        εξοικονομείτε<span class="vpicon"> <?php echo $vendor->getDiscount();?>%</span>  από την αρχική τιμή
+                                        εξοικονομείτε<span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  από την αρχική τιμή
                                     <?php  }else{?>
-                                    Save <span class="vpicon"> <?php echo $vendor->getDiscount();?>%</span>  pp on the initial price<br>
+                                    Save <span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  pp on the initial price<br>
                                     using  <span class="vpicon">VP </span> Voucher
                                    <?php }?>
                                 </div>
@@ -129,23 +127,30 @@ function bestoffs($bestOffs,$menu){
                                     <div class="col-12">
                                         <div class="collapse " id="collapse<?=$counterCollapseVendor?>">
                                             <div class="text-center my-0">
-                                                <p class="my-1" > <?php echo $menu[223]?> <?php echo ($totalToPay + $vendor->getPriceAdult()  ) ;?>€/  <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
-                                                    <br>(<b class="vpicon">  VP</b> Voucher + <?php echo $menu[224]?>) </p>
+                                                <p class="my-1"><b>  <?php echo $menu[224]?> <?php echo ($totalToPay + $vendor->getPriceAdult()  ) ;?>€/
+                                                    <span ><?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </b></p>
+                                                    <p>(<b class="vpicon">  VP</b> Voucher + <?php echo $menu[225]?>) </p>
                                             </div>
                                             <div>
-                                                <li ><b class="vpicon ">VP </b> Voucher = <?php echo $menu[225]?>
+                                                <li ><b class="vpicon ">VP </b> Voucher = <?php echo $menu[226]?>
                                                 </li>
-                                                <li><?php echo $menu[224]?> = <?php echo $menu[226]?> </li>
+                                                <li><?php echo $menu[225]?> = <?php echo $menu[227]?> </li>
 
-                                                <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
-                                                    <div class=" buy_button2"> <?php echo $menu[52] ?>  </div>
-                                                </a>
+
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
+                                        <div class=" buy_button2"> <?php echo $menu[52] ?>  </div>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

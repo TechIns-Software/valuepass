@@ -4185,6 +4185,35 @@ a.box_feat h3 {
   font-size: .9em;
 }
 
+.from_price2{
+  position: relative;
+  right: 35px;
+}
+
+@media only screen and (max-width: 991px) {
+  .from_price2{
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .from_price2{
+    right: 45px;
+  }
+}
+
+/*@media only screen and (max-width: 600px) {*/
+/*  .from_price2{*/
+/*    position: relative;*/
+/*    right: 50px;*/
+/*    color: red!important;*/
+/*  }*/
+/*}*/
+
+
+
+
+
 .buy_now_label{
   font-size: 1.4em;
 }
@@ -11911,7 +11940,7 @@ color: rgba(19, 43, 197, 0.86);
 
 .exprice{
   text-decoration: line-through;
-  color: rgba(6, 5, 5,0.77 )
+  color: rgba(6, 5, 5,0.77 );
 }
 
 .exprice2{
@@ -11924,4 +11953,9 @@ color: rgba(19, 43, 197, 0.86);
 .real-price{
   font-size: 1.2em;
   font-weight: bold;
+}
+.greekPrice{
+  position: relative;
+  top: 15px;
+  padding: 5px ;
 }
