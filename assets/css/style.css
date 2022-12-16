@@ -11936,6 +11936,20 @@ color: rgba(19, 43, 197, 0.86);
   line-height: 1;
   font-size: .9em;
   width: fit-content;
+  transition: all 0.3s ease-in-out 0s;
+}
+@media only screen and (max-width: 991px){
+  .sellout_label2{
+    right: -150px;
+
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .sellout_label2{
+    right: -230px;
+
+  }
 }
 
 .exprice{
