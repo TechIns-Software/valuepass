@@ -272,7 +272,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                             . ((date('A', $timeStampCancel) == 'AM') ? 'π.μ.' : 'μ.μ.');
                                                     }
                                                     ?>
-                                                    <br>
+
                                                     <?php
                                                     if ($idLanguage == 2) {
                                                         echo date('F jS', $timeStampCancel);
@@ -328,7 +328,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                         <div class="col-12 d-flex justify-content-between">
                             <div class="">
                                 <h5 class='fw-bolder me-3'>
-                                    <?php echo $_SESSION['languageId'] == 1 ? 'Σύνολο Τιμής <span class="vpicon"> VP </span> Voucher ' :
+                                    <?php echo $_SESSION['languageId'] == 1 ? 'Σύνολο Τιμής<br> <span class="vpicon"> VP </span> Voucher ' :
                                         'Total  <span class="vpicon"> VP </span> Voucher Price' ?> </h5>
                             </div>
                             <div class="text-end">

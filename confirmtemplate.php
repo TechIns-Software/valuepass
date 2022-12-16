@@ -204,7 +204,6 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                     ?>
                                                     <?php  echo  $menu[138] ;?> <?php echo date('h:i A', $timeStampCancel);?>
 
-                                                    <br>
                                                     <?php echo date('F jS', $timeStampCancel);?>
                                                     <?php  echo  $menu[139] ;?>
 

@@ -717,7 +717,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message12 = "Date ";
         $message13 = "You can cancel your activity before ";
         $message14 = "by supplier Cancellation policy";
-        $message15 = "VP Vouchers are non-refundable and cannot be canceled, but we are always looking for the best 
+        $message15 = " Vouchers are non-refundable and cannot be canceled, but we are always looking for the best 
         alternative solutions based on the potential of the activity providers that we promote if something goes wrong.
          You will find more information in your confirmation email.";
         $message16 = "Vouchers Available ";
@@ -880,9 +880,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
 
     $message .= " <div class='col-12 price '> ";
     if ($_SESSION["languageId"] == 2) {
-        $message .= " <h5 class='fw-bolder'> Total  <span class='vpicon'>VP</span>Voucher Price </h5> ";
+        $message .= " <h5 class='fw-bolder'> Total  <span class='vpicon'> VP </span>Voucher Price </h5> ";
     }else{
-        $message .= " <h5 class='fw-bolder'> Σύνολο Τιμής <span class='vpicon'>VP</span> Voucher </h5> ";
+        $message .= " <h5 class='fw-bolder'> Σύνολο Τιμής <span class='vpicon'> VP </span> Voucher </h5> ";
     }
     $message .= "   <h4 class='vpicon'> $totalPrice € </h4> ";
     $message .= "</div> ";

@@ -364,7 +364,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                                             . ((date('A', $timeStampCancel) == 'AM') ? 'π.μ.' : 'μ.μ.');
                                                     }
                                                     ?>
-                                                    <br>
+
                                                     <?php
                                                     if ($idLanguage == 2) {
                                                         echo date('F jS', $timeStampCancel);
