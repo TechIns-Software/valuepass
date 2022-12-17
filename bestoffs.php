@@ -21,13 +21,13 @@ function bestoffs($bestOffs,$menu){
                             <small><?php echo $vendor->getCategoryName();?></small>
                             <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 m-0">'.$menu[203].'    </p>' : '';?>
                             <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
-                            <p class="text-muted my-0 label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
-
-                            <span class="criteria">
+                            <p class=" label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
+                            <p class="criteria">
                                        <?php echo $menu[44] ?>
                                        <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                        <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
-                                    </span>
+                                    </p>
+
                             <!--                                    <span class="voucher_av">-->
                             <!--                                        --><?php //echo $menu[45] ?>
                             <!--                                        <b> --><?php //echo $vendor->getAvailabilityTodayVoucher();?><!-- </b>-->
@@ -64,7 +64,7 @@ function bestoffs($bestOffs,$menu){
                             <div class="row  my-1">
                                 <div class="col-12 buyNow_part2 d-flex justify-content-around ">
 
-                                    <div class="px-1 text-start ">
+                                    <div class="px-1 text-start buyNow_part2_text ">
                                         <?php if ( $_SESSION['languageId'] == 1 ){ ?>
                                             Κάντε κράτηση εν πλω <br>
                                             μέσω του <span class="vpicon"> VP </span>  Voucher
@@ -73,40 +73,36 @@ function bestoffs($bestOffs,$menu){
                                             Book on board via <span class="vpicon"> VP </span> Voucher
                                         <?php }?>
                                     </div>
-                                    <div  <?php echo $_SESSION['languageId'] == 1 ? "class ='greekPrice ' ": "class='px-1'" ?>>
-                                        <?php echo $vendor->getPriceAdult();?> €/ <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
+                                    <div  <?php echo $_SESSION['languageId'] == 1 ? "class ='greekPrice ' ": "class='englishPrice'" ?> >
+                                        <?php echo $vendor->getPriceAdult();?> €/ <span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="row   my-1 ">
-                                <div class="col-12  d-flex justify-content-between  text-black">
-
-                                    <div>
+                                <div class="col-12  infoText1">
                                         <?php if ($_SESSION['languageId'] == 1){ ?>
                                             Κερδίστε <span class="vpicon"> έκπτωση </span> στην αρχική τιμή
                                         <?php  }else{?>
                                             Get a <span class="vpicon"> discount</span>  on the initial price
                                         <?php }?>
+                                </div>
 
-                                    </div>
-                                    <div class="from_price2">
+                                <div class="col-12  infoText2">
+                                    <?php echo $menu[223] ;?>
+                                </div>
+                                <div class="col-12  text-end">
+                                     <span class="from_price2">
                                         <?php echo $menu[48] ;?> <span class="exprice"><?php echo $vendor->getOriginalPrice();?>€ </span>
-                                    </div>
+                                    </span>
                                 </div>
 
-                                <div class="col-12  d-flex justify-content-between text-black">
-
-                                    <div>
-                                       <?php echo $menu[223] ;?>
-                                    </div>
-                                    <div>
-                                      <b>   <?php echo $totalToPay;?>€ </b>/  <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
-                                    </div>
+                                <div class="col-12  text-end container-real-price2 ">
+                                      <span class="real-price2">   <?php echo $totalToPay;?> € </span> /  <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
                                 </div>
 
-                                <div class="col-12 text-start text-success  ">
+                                <div class="col-12 win-text ">
                                     <?php if ($_SESSION['languageId'] == 1){ ?>
-                                        Χρησιμοποιώντας το <span class="vpicon">VP </span>Voucher,
+                                        Χρησιμοποιώντας το <span class="vpicon">VP </span>Voucher <br>
                                         εξοικονομείτε<span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  από την αρχική τιμή
                                     <?php  }else{?>
                                     Save <span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  pp on the initial price<br>
@@ -117,19 +113,19 @@ function bestoffs($bestOffs,$menu){
                             <div class="row  border-top">
                                 <p class="my-0">
                                     <span class="icon-down-1" id="collapse_<?=$counterCollapseVendor?>"></span>
-                                    <a class= "detailsCollapse " data-bs-toggle="collapse" href="#collapse<?=$counterCollapseVendor?>"
+                                    <a class= "detailsCollapse detailsbtn " data-bs-toggle="collapse" href="#collapse<?=$counterCollapseVendor?>"
                                        role="button" aria-expanded="false" aria-controls="collapseExample" >
-                                        <span id="collapse1Span<?=$counterCollapseVendor?>"><?=$menu[227]?></span>
-                                        <span class="displayNone" id="collapse2Span<?=$counterCollapseVendor?>"><?=$menu[228]?></span>
+                                        <span id="collapse1Span<?=$counterCollapseVendor?>"><?=$menu[228]?></span>
+                                        <span class="displayNone" id="collapse2Span<?=$counterCollapseVendor?>"><?=$menu[229]?></span>
                                     </a>
                                 </p>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="collapse " id="collapse<?=$counterCollapseVendor?>">
-                                            <div class="text-center my-0">
-                                                <p class="my-1"><b>  <?php echo $menu[224]?> <?php echo ($totalToPay + $vendor->getPriceAdult()  ) ;?>€/
+                                            <div class="text-end my-0">
+                                                <p class="details-prices"><b>  <?php echo $menu[224]?> <?php echo ($totalToPay + $vendor->getPriceAdult()  ) ;?>€/
                                                     <span ><?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </b></p>
-                                                    <p>(<b class="vpicon">  VP</b> Voucher + <?php echo $menu[225]?>) </p>
+                                                    <p class="details-prices-text">(<b class="vpicon">  VP</b> Voucher + <?php echo $menu[225]?>) </p>
                                             </div>
                                             <div>
                                                 <li ><b class="vpicon ">VP </b> Voucher = <?php echo $menu[226]?>

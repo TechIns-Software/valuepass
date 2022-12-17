@@ -176,7 +176,7 @@
 }
 
 :root{
-  --blue-btns:#0071eb;
+  --blue-btns:rgb(10, 107, 252);
   --vp-primary-color:#e8620c;
 }
 
@@ -3231,6 +3231,7 @@ video {
 
 #reccomended .item {
   margin: 0 15px;
+  font-family: Arial!important;
 }
 
 #reccomended .owl-item {
@@ -4127,7 +4128,7 @@ a.box_feat h3 {
 .buyNow_part2{
   background-color: rgb(10, 107, 252);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 1em;
   text-align: center;
   padding: .5em;
@@ -4136,6 +4137,7 @@ a.box_feat h3 {
   padding: 0;
   margin: 0;
 }
+
 
 .buyvp_label{
   color: #121921;
@@ -4257,7 +4259,7 @@ a.box_feat h3 {
 
 .perperson {
   font-weight: 400 !important;
-  font-size: 0.8rem !important;
+  font-size: 15px!important;
 }
 
 .final_price span {
@@ -11278,7 +11280,7 @@ html[xmlns] .slides {
   border-radius: 5em;
   color: white;
   text-shadow: 2px 2px 2px rgba(178, 79, 52, 0.86);
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 700;
   border: none !important;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
@@ -11471,7 +11473,14 @@ html[xmlns] .slides {
 }
 
 .label {
-  font-size: .7rem;
+  font-size: 14px;
+  color: black;
+  margin: 0  ;
+}
+.criteria{
+  font-size: 14px;
+  color: black;
+  margin-bottom: 5px;
 }
 
 .displayNone {
@@ -11480,6 +11489,11 @@ html[xmlns] .slides {
 
 .details{
   font-weight: 600;
+}
+.vendorname{
+  font-size: 18px;
+  font-family: Arial!important;
+  margin-bottom: 5px;
 }
 
 .vendorname a{
@@ -11956,6 +11970,7 @@ color: rgba(19, 43, 197, 0.86);
 .exprice{
   text-decoration: line-through;
   color: rgba(6, 5, 5,0.77 );
+  font-size: 16px;
 }
 
 .exprice2{
@@ -11971,6 +11986,47 @@ color: rgba(19, 43, 197, 0.86);
 }
 .greekPrice{
   position: relative;
-  top: 15px;
+  top: 5px;
   padding: 5px ;
+  font-size:18.66px ;
+}
+
+.englishPrice{
+  font-size:18.66px ;
+  padding-bottom: 5px;
+}
+
+
+.buyNow_part2_perperson{
+  font-weight: normal;
+  font-size:15px ;
+}
+.real-price2{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.container-real-price2{
+  margin-bottom: 8px;
+}
+
+.win-text{
+  color: #026f1a;
+  font-size: 14px;
+  /*font-weight: lighter;*/
+}
+.arrows{
+  font-family: Calibri;
+  font-size: 12px;
+}
+.detailsbtn{
+  font-size: 10.66px;
+}
+.details-prices{
+  font-size :15px;
+  margin: 0;
+}
+.details-prices-text{
+  font-size :12px;
+  margin: 0;
 }
