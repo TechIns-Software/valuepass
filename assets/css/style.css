@@ -11989,17 +11989,20 @@ color: rgba(19, 43, 197, 0.86);
   top: 5px;
   padding: 5px ;
   font-size:18.66px ;
+  display: inline;!important;
 }
 
 .englishPrice{
   font-size:18.66px ;
   padding-bottom: 5px;
+  display: inline;!important;
 }
 
 
 .buyNow_part2_perperson{
   font-weight: normal;
   font-size:15px ;
+
 }
 .real-price2{
   font-size: 18px;

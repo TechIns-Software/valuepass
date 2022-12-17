@@ -70,11 +70,11 @@ function bestoffs($bestOffs,$menu){
                                             μέσω του <span class="vpicon"> VP </span>  Voucher
 
                                         <?php  }else{?>
-                                            Book on board via <span class="vpicon"> VP </span> Voucher
+                                            Book on board <br> via <span class="vpicon"> VP </span> Voucher
                                         <?php }?>
                                     </div>
                                     <div  <?php echo $_SESSION['languageId'] == 1 ? "class ='greekPrice ' ": "class='englishPrice'" ?> >
-                                        <?php echo $vendor->getPriceAdult();?> €/ <span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
+                                        <?php echo $vendor->getPriceAdult();?> € /<span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
                                     </div>
                                 </div>
                             </div>

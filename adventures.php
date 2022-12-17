@@ -184,7 +184,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                             μέσω του <span class="vpicon"> VP </span>  Voucher
 
                                         <?php  }else{?>
-                                            Book on board via <span class="vpicon"> VP </span> Voucher
+                                            Book on board <br> via <span class="vpicon"> VP </span> Voucher
                                         <?php }?>
                                     </div>
                                     <div  <?php echo $_SESSION['languageId'] == 1 ? "class ='greekPrice ' ": "class='englishPrice'" ?> >
