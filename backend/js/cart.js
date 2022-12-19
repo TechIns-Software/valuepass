@@ -76,7 +76,7 @@ function getPackagesAvailable() {
             if (dateString) {
                 const newFormatDate = $('#date').attr('value2');
                 console.log(newFormatDate);
-                const nameVendor = document.getElementById('nameVendor').innerText;
+                const nameVendor = document.getElementById('vendorname').innerText;
                 const data = {
                     'action': 'getPackagesAvailable',
                     'idVendor': idVendor,
