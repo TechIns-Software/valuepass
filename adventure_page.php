@@ -212,7 +212,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     ?>
                     <div class="box_grid">
                         <div class="wrapper">
-                            <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
+                            <h3 id="nameVendor" class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
                             <p class=" label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <p class="criteria">
                                 <?php echo $menu[44] ?>
