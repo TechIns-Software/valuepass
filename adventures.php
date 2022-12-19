@@ -181,7 +181,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     <div class="px-1 text-start buyNow_part2_text ">
                                         <?php if ( $_SESSION['languageId'] == 1 ){ ?>
                                             Κάντε κράτηση εν πλω <br>
-                                            μέσω του <span class="vpicon"> VP </span>  Voucher
+                                            μέσω  <span class="vpicon"> VP </span>  Voucher
 
                                         <?php  }else{?>
                                             Book on board <br> via <span class="vpicon"> VP </span> Voucher
@@ -242,9 +242,9 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                                 <p class="details-prices-text">(<b class="vpicon">  VP</b> Voucher + <?php echo $menu[225]?>) </p>
                                             </div>
                                             <div>
-                                                <li ><b class="vpicon ">VP </b> Voucher = <?php echo $menu[226]?>
+                                                <li class="details-prices-text" ><b class="vpicon ">VP </b> Voucher = <?php echo $menu[226]?>
                                                 </li>
-                                                <li><?php echo $menu[225]?> = <?php echo $menu[227]?> </li>
+                                                <li class="details-prices-text"><?php echo $menu[225]?> = <?php echo $menu[227]?> </li>
 
 
                                             </div>
