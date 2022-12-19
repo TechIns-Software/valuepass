@@ -342,7 +342,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
+                                    <a href="#checkAvailabillity">
                                         <div class=" buy_button2"> <?php echo $menu[52] ?>  </div>
                                     </a>
                                 </div>
@@ -548,7 +548,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                     <div class="box_detail booking">
                         <div class="price">
-                            <span>    <?php echo $menu[67] ?> </span>
+                            <span id="checkAvailabillity">    <?php echo $menu[67] ?> </span>
                             <span style="display: none">    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
                         </div>
                         <div class="panel-dropdown">
