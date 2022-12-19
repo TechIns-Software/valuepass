@@ -105,7 +105,7 @@ function bestoffs($bestOffs,$menu){
                                         Χρησιμοποιώντας το <span class="vpicon">VP </span>Voucher <br>
                                         εξοικονομείτε<span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  από την αρχική τιμή
                                     <?php  }else{?>
-                                    Save <span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  pp on the initial price<br>
+                                    Save <span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  on the initial price<br>
                                     using  <span class="vpicon">VP </span> Voucher
                                    <?php }?>
                                 </div>
