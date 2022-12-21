@@ -41,7 +41,7 @@ if (!(count($products) >= 1 && count($products) <= \ValuePass\Cart::$MAX_VOUCHER
         <input hidden name="products['<?php echo $counter;?>'][idVendorVoucher]"
                value="<?php echo $idVendorVoucher;?>">
         <input hidden name="products['<?php echo $counter;?>'][isAdult]"
-               value="<?php echo $isAdult;?>">
+               value="<?php echo ($isAdult ? 1: 0);?>">
         <input hidden name="products['<?php echo $counter;?>'][numberInfants]"
                value="<?php echo $numberInfants;?>">
 
