@@ -259,11 +259,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                         <p class="text-muted">Η προσφορά ισχύει ΜΟΝΟ για τα VP Vouchers και ΟΧΙ για τις δραστηριότητες.</p>
                     <?php  }else{?>
 
-                        <h6>  Purchase 4 VP Vouchers and 1 of the 4 is Free </h6>
-                        <h6>  Purchase 6 VP Vouchers and 2 of the 6 are Free </h6>
-                        <h6>  Purchase 8 VP Vouchers and 3 of the 8 are Free </h6>
-                        <h6>  Purchase 10 VP Vouchers and 4 of the 10 are Free </h6>
-                        <p class="text-muted"> The offer only applies to VP Vouchers, not the activities. </p>
+                        <h6>  Select 4 VP Vouchers and 1 of the 4 is Free </h6>
+                        <h6>  Select 6 VP Vouchers and 2 of the 6 are Free </h6>
+                        <h6>  Select 8 VP Vouchers and 3 of the 8 are Free </h6>
+                        <h6>  Select 10 VP Vouchers and 4 of the 10 are Free </h6>
+                        <p class="text-muted"> The offer only applies to the VP Vouchers, NOT the activities. </p>
                     <?php   }  ?>
 
                 </div>
@@ -363,7 +363,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                     <p><b> WhatsApp:</b> <a
                                 href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img
                                     src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid">
-                            306931451910</a></p>
+                            +306931451910</a></p>
                     <p><b> Viber:</b> <a href="https://msng.link/o/?306931451910=vi"> <img src="assets/icons/viber.png"
                                                                                            height="20" width="20"
                                                                                            class="img-fluid">
