@@ -55,8 +55,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     <div class="col-md-8">
                         <h4>  <?php echo $menu[150]; ?></h4>
                         <p class="my-1"> <?php echo $menu[151]; ?></p>
-                        <p class="text-success my-1 fw-bolder"><span class="fa-icon-lock"></span> Checkout is fast and
-                            secure</p>
+                        <p class="text-success my-1 fw-bolder"><span class="fa-icon-lock"></span>
+                            <?php echo $_SESSION['languageId'] == 1 ? '   Η ολοκλήρωση της αγοράς είναι γρήγορη & ασφαλής' :' Checkout is fast and
+                            secure' ?></p>
 
                         <p class="text-danger my-1">
                             <?php echo $menu[204]; ?> </p>

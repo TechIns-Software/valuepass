@@ -88,11 +88,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                     <h5 class="text-decoration-underline"> <?php echo $menu[24] ?></h5>
 
                                     <?php if ($_SESSION['languageId'] == 1){   ?>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 4 VP Vouchers το 1 είναι Δωρεάν </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 6 VP Vouchers τα 2 είναι Δωρεάν </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 8 VP Vouchers τα 3 είναι Δωρεάν </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Αγοράζοντας 10 VP Vouchers τα 4 είναι Δωρεάν </h6>
-                                        <p class="text-muted"> Η προσφορά ισχύει για τα VP Vouchers και ΟΧΙ για τις δραστηριότητες</p>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  4 VP Vouchers το 1 είναι Δωρεάν </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  6 VP Vouchers τα 2 είναι Δωρεάν </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  8 VP Vouchers τα 3 είναι Δωρεάν </h6>
+                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  10 VP Vouchers τα 4 είναι Δωρεάν </h6>
+                                        <p class="text-muted">         Η προσφορά ισχύει ΜΟΝΟ για τα VP Vouchers και ΟΧΙ για τις δραστηριότητες.</p>
                                   <?php  }else{?>
 
                                         <h6> <i class="fa-solid fa-money-bill"></i> Purchase 4 VP Vouchers and 1 of the 4 is Free </h6>
@@ -149,8 +149,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             <div class="panel-body">
                                 <div class="row px-4">
                                     <ul>
-                                        <li> • <?php echo $menu[89]; ?></li>
+
                                         <li> • <?php echo $menu[90]; ?></li>
+                                        <li> • <?php echo $menu[89]; ?></li>
                                         <li> • <?php echo $menu[176]; ?></li>
 
                                     </ul>
