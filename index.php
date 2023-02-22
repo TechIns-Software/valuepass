@@ -287,8 +287,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 <div class="modal-body">
 
 
-                        <p> •  <?php echo $menu[71] ?>  </p>
                         <p> •  <?php echo $menu[194] ?>  </p>
+                        <p> •  <?php echo $menu[71] ?>  </p>
 
 
                 </div>

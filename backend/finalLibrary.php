@@ -716,10 +716,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
         $message11 = "All taxes and fees included ";
         $message12 = "Date ";
         $message13 = "You can cancel your activity before ";
-        $message14 = "by supplier Cancellation policy";
-        $message15 = " Vouchers are non-refundable and cannot be canceled, but we are always looking for the best 
-        alternative solutions based on the potential of the activity providers that we promote if something goes wrong.
-         You will find more information in your confirmation email.";
+        $message14 = "by supplier`s Cancellation policy";
+        $message15 = "ValuePass Vouchers are non-refundable and cannot be canceled, however, in the event that a problem arises due to the provider’s error, we are continually searching for the best alternatives depending on the accessibility of the activity providers we promote. You will find more information in your confirmation email.";
         $message16 = "Vouchers Available ";
     } else {
         $message1 = "Δυστυχώς, δεν βρέθηκαν διαθέσιμα vouchers για αυτή την ημερομηνία";
@@ -891,7 +889,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
 
     $message .= " <small> $message11</small>  ";
     $message .= " <p><i class='icon_calendar'></i> $message13 <b> $cancelDate </b> $message14   </p> ";
-    $message .= "<p> <b class='vpicon'>VP </b> $message15  </p> ";
+    $message .= "<p>  $message15  </p> ";
     $message .= " </div> ";
     $message .= "   <div class='addtocartsection'> ";
     $message .= "  <button class='btn btn-primary 'data-bs-toggle='modal' data-bs-target='#questionmodal' onclick=\"addToCart({'voucherVendorId': $VoucherId ,'adults': $adults, 'children': $children, 'infants': $infants, 'idVendor': $idVendor});\"> $message2 </button> </div>";

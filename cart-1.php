@@ -315,11 +315,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                 <?php
                                 $calculateCartObject = calculatePriceCart($conn, $allVouchers);
                                 if ($calculateCartObject['moneyEarned'] != 0) {
+
                                     ?>
-                                    <h5 class="my-0" style="text-decoration: line-through;color: black">
-                                        <?php
-                                        echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
-                                        ?>
+                                    <h5 class="my-0" >
+                                        <?php echo   $_SESSION['languageId'] == 1 ?'Από':'From'  ?>
+                                     <span style="text-decoration: line-through;color: black">    <?php
+                                         echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
+                                         ?></span>
                                     </h5>
                                     <?php
                                 }
@@ -329,7 +331,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             <div class="">
                                 <h5 class='fw-bolder me-3'>
                                     <?php echo $_SESSION['languageId'] == 1 ? 'Σύνολο Τιμής<br> <span class="vpicon"> VP </span> Voucher ' :
-                                        'Total  <span class="vpicon"> VP </span> Voucher Price' ?> </h5>
+                                        'Total  <span class="vpicon"> VP </span> <br>Voucher Price' ?> </h5>
                             </div>
                             <div class="text-end">
                                 <h4 class='my-0 vpicon'> <?php echo $calculateCartObject['totalPay']; ?> € </h4>
