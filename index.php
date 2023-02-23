@@ -358,7 +358,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p><b> Email:</b> <a href="mail:customercare@valuepass.gr" class="icon-email">
+                    <p><b> Email:</b> <a href="mailto:customercare@valuepass.gr" class="icon-email">
                             customercare@valuepass.gr</a></p>
                     <p><b> WhatsApp:</b> <a
                                 href="https://wa.me/+306931451910?text='Valuepass Support is available 24/7'"> <img
