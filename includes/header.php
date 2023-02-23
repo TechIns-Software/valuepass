@@ -193,7 +193,7 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
                             <li><a class="viberlink" href="viber://add?number=306931451910"> <img
                                             src="assets/icons/viber.png" height="20" width="20" class="img-fluid">
                                     +306931451910</a></li>
-                            <li><a href="mailto:customercare@valuepass.gr" target="_blank" class="icon-email">
+                            <li><a href="mailto:customercare@valuepass.gr"  class="icon-email">
                                     customercare@valuepass.gr</a></li>
                             <li><a  href="faqs.php" class="icon-question"> FAQ’s</a></li>
                         </ul>
