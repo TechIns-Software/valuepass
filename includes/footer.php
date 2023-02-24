@@ -83,20 +83,22 @@ function footer($menu, $languages)
 <!---->
 <!--                    </ul>-->
 <!--                </div>-->
-                <div class=" col-lg-3 col-md-6  text-center panel-heading    " data-bs-toggle="collapse" href="#collapse5" role="button"
-                     aria-expanded="false" aria-controls="collapseExample" id="collapsebox">
-                    <h5 class="panel-title  accordion-toggle ">
-                        <h5 class="border-bottom  icon-down-1 "  id="collapsetitle">  <?php echo $menu[9] ?> </h5>
-                    </h5>
-                    <div id="collapse5" class="  collapse show">
-                        <div class="panel-body">
+                <div class=" col-lg-3 col-md-6  text-center"  >
+
+                    <h5 class="border-bottom  icon-down-1 " id="collapsetitle" data-bs-toggle="collapse"
+                        href="#collapse5" role="button"
+                        aria-expanded="false" aria-controls="collapseExample"
+                        id="collapsebox">  <?php echo $menu[9] ?> </h5>
+
+                    <div id="collapse5"  class="  collapse show">
+                        <div class="">
                             <div class="row px-4">
                                 <ul class="links ">
                                     <h5 class="m-0" > <?php echo $menu[4] ?></h5>
                                     <li>
-                                        <ul class="ps-3">
+                                        <ul class="ps-3" >
                                             <li>
-                                                <a href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0">
+                                                <a  href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0">
                                                     <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid">+
                                                     306931451910</a></li>
                                             <li><a class="viberlink" href="viber://add?number=306931451910"> <img
