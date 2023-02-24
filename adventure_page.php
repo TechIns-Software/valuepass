@@ -44,43 +44,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
              style="background-size: cover;">
 
     </section>
-    <!--/hero_in-->
-
-    <!-- Slider -->
-    <!--    <div id="full-slider-wrapper">-->
-    <!--        <div id="layerslider" style="width:100%;height:650px;">-->
-    <!--            --><?php
-    //            $dummyCounter = 0;
-    //            foreach ($vendor->getImages() as $imagePath) {
-    //                ?>
-    <!--                <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">-->
-    <!--                    <img src="vendorImages/-->
-    <?php //echo $vendor->getId() . '/' . $imagePath; ?><!--" class="ls-bg"-->
-    <!--                         alt="Slide background">-->
-    <!--                </div>-->
-    <!--                --><?php
-    //            }
-    //            ?>
-    <!---->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!-- End layerslider -->
-
 
     <div class=" bg_color_1">
-        <!--		<nav class="secondary_nav sticky_horizontal">-->
-        <!--			<div class="container">-->
-        <!--				<ul class="clearfix">-->
-        <!--					<li><a href="#book" class="active">Buy VP Voucher</a></li>-->
-        <!--				</ul>-->
-        <!--			</div>-->
-        <!--		</nav>-->
+
         <div class="container margin_60_35">
             <div class="row">
-                <!---->
-                <!--                <div class="col-lg-12  col-md-12 title-vendor">-->
-                <!--                    <h3>--><?php //echo $vendor->getName(); ?><!--</h3>-->
-                <!--                </div>-->
+
                 <div class="col-12 text-center">
                     <h4><b><?php echo $vendor->getName(); ?></b></h4>
                 </div>
@@ -219,127 +188,73 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 <?php echo str_repeat('<i class="icon_star voted"></i>',$vendor->getAverageRated())?>
                                 <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated())?>
                             </p>
-                            <!--                            <p class="voucher_av ">-->
-                            <!--                                --><?php //echo $menu[45] ?>
-                            <!--                                <b>-->
-                            <?php //echo $vendor->getAvailabilityTodayVoucher(); ?><!--</b>-->
-                            <!--                            </p>-->
-                            <div class="row  buyNow_part" style="display: none">
-                                <div class="col-12 d-flex justify-content-between nowrap ">
-                                    <div class="buyvp_label">  <?php echo $menu[46] ?> <span
-                                                class="nowText">  <?php echo $menu[195] ?> </span></div>
-                                    <div class="buyvp_price"><b class="nowText"><?php echo $vendor->getPriceAdult(); ?>
-                                            € </b>/ <span
-                                                class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
-                                    </div>
-                                </div>
-                                <div class="col-12 ">
-                                    <b>
-                                        <?php echo $_SESSION["languageId"] == 1 ? 'To' : '' ?> <span
-                                                class="nowText">VP</span> <?php echo $menu[196] ?>
-                                    </b>
-                                </div>
-                            </div>
-                            <div class="row paylater_box" style="display: none">
-                                <div class="col-12 pay_value  d-flex justify-content-between  ">
-                                    <div><?php echo $menu[49] ?> <span
-                                                class="laterText">  <?php echo $menu[197] ?> </span></div>
-                                    <div>
-                                        <span class="from_price"> <?php echo $vendor->getOriginalPrice(); ?>€ </span>
-                                        <span class="laterText"><?php echo $totalToPay; ?>   € </span> / <span
-                                                class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
-                                    </div>
-                                </div>
+                            <div class="row my-1">
+                                <div class="col-12  infoText1">
+                                    <p class="my-1" style="font-size: 15px">
+                                        <?php if ($_SESSION['languageId'] == 1) { ?>
+                                            Κερδίστε <span class="vpicon"> έκπτωση </span> μέσω του <span
+                                                    class="vpicon"> VP </span>  Voucher
+                                        <?php } else { ?>
 
-                                <div class="col-12">
-                                    <p class="my-0">  <?php echo $menu[198] ?> </p>
-                                </div>
-                            </div>
-                            <div class="row" style="display: none" >
-                                <div class="col">
-                                    <p class="vp_discount my-0 "><?php echo $menu[50] ?> <?php echo $vendor->getDiscount(); ?>
-                                        % <?php echo $menu[51] ?>
+                                            Get a <span class="vpicon"> discount</span>  via  <span class="vpicon">VP </span> Voucher
+                                        <?php } ?>
                                     </p>
                                 </div>
                             </div>
-                            <!-- <p class="final_price1 m-0 mb-2"> Final Price <span class="final_price1_value">84€ </span></p> <span class="perperson">per person</span> </p> -->
-                            <div class="row  my-1">
-                                <div class="col-12 buyNow_part2 d-flex justify-content-around ">
-
-                                    <div class="px-1 text-start buyNow_part2_text ">
-                                        <?php if ( $_SESSION['languageId'] == 1 ){ ?>
-                                            Κάντε κράτηση εν πλω <br>
-                                            μέσω  <span class="vpicon"> VP </span>  Voucher
-                                        <?php  }else{?>
-                                            Book on board <br> via <span class="vpicon"> VP </span> Voucher
-                                        <?php }?>
-                                    </div>
-                                    <div  <?php echo $_SESSION['languageId'] == 1 ? "class ='greekPrice ' ": "class='englishPrice'" ?> >
-                                        <?php echo $vendor->getPriceAdult();?> €/ <span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row   my-1 ">
-                                <div class="col-12  infoText1">
-                                    <?php if ($_SESSION['languageId'] == 1){ ?>
-                                        Κερδίστε <span class="vpicon"> έκπτωση </span> στην αρχική τιμή
-                                    <?php  }else{?>
-                                        Get a <span class="vpicon"> discount</span>  on the initial price
-                                    <?php }?>
-                                </div>
-
-                                <div class="col-12  infoText2">
-                                    <?php echo $menu[223] ;?>
-                                </div>
-                                <div class="col-12  text-end">
-                                     <span class="from_price2">
-                                        <?php echo $menu[48] ;?> <span class="exprice"><?php echo $vendor->getOriginalPrice();?>€ </span>
+                            <div class="row my-1">
+                                <div class="d-flex justify-content-end">
+                                                                         <span class="from_price2">
+                                        <?php echo $menu[48]; ?> <span class="exprice"><?php echo $vendor->getOriginalPrice(); ?>€ </span>
                                     </span>
                                 </div>
-
-                                <div class="col-12  text-end container-real-price2 ">
-                                    <span class="real-price2">   <?php echo $totalToPay;?> € </span> /  <span class="perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>
-                                </div>
-
                                 <div class="col-12 win-text ">
-                                    <?php if ($_SESSION['languageId'] == 1){ ?>
+                                    <?php if ($_SESSION['languageId'] == 1) { ?>
                                         Χρησιμοποιώντας το <span class="vpicon">VP </span>Voucher <br>
-                                        εξοικονομείτε<span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  από την αρχική τιμή
-                                    <?php  }else{?>
-                                        Save <span class="vpicon"> <?php echo ($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult() ) ?> €</span>  on the initial price<br>
+                                        εξοικονομείτε<span
+                                                class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span>  από την αρχική τιμή
+                                    <?php } else { ?>
+                                        Save <span
+                                                class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span>  on the initial price
+                                        <br>
                                         using  <span class="vpicon">VP </span> Voucher
-                                    <?php }?>
+                                    <?php } ?>
                                 </div>
                             </div>
-                            <div class="row  border-top">
-                                <p class="my-0">
-                                    <span class="icon-down-1" id="collapse_991"></span>
-                                    <a class= "detailsCollapse detailsbtn " data-bs-toggle="collapse" href="#collapse991"
-                                       role="button" aria-expanded="false" aria-controls="collapseExample" >
-                                        <span id="collapse1Span991"><?=$menu[228]?></span>
-                                        <span class="displayNone" id="collapse2Span991"><?=$menu[229]?></span>
-                                    </a>
-                                </p>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="collapse " id="collapse991">
-                                            <div class="text-end my-0">
-                                                <p class="details-prices"><b>  <?php echo $menu[224]?> <?php echo ($totalToPay + $vendor->getPriceAdult()  ) ;?>€/
-                                                        <span ><?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </b></p>
-                                                <p class="details-prices-text">(<b class="vpicon">  VP</b> Voucher + <?php echo $menu[225]?>) </p>
-                                            </div>
-                                            <div>
-                                                <li class="details-prices-text" ><b class="vpicon ">VP </b> Voucher = <?php echo $menu[226]?>
-                                                </li>
-                                                <li class="details-prices-text"><?php echo $menu[225]?> = <?php echo $menu[227]?> </li>
-
-
-                                            </div>
-                                        </div>
+                            <div class="row my-1">
+                                <div class="d-flex justify-content-between">
+                                    <div class="p-0 m-0 "><b> <?php if ($_SESSION['languageId'] == 1) { ?>
+                                                Πληρώστε στην τοποθεσία<br>
+                                                της δραστηριότητας
+                                            <?php } else { ?>
+                                                Pay at the activity location
+                                            <?php } ?>
+                                        </b>
                                     </div>
-
+                                    <div class=""><b><?php echo $totalToPay; ?>
+                                            €/ <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?></b>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="row my-1 ">
+                                <div class="d-flex justify-content-between offerContainer align-items-start">
+                                    <div>
+                                        <p class=" text-white my-auto " style="font-size: 15px">
+                                            <?php if ($_SESSION['languageId'] == 1) { ?>
+                                                Κάντε Κράτηση εν πλω<br>
+                                                μέσω <span class="vpicon"> VP </span> Voucher
+
+                                            <?php } else { ?>
+                                                Book on board <span class="vpicon">VP </span> Voucher
+                                            <?php } ?>
+                                        </p>
+                                    </div>
+                                    <div class="my-auto"> <?php echo $vendor->getPriceAdult(); ?> €/ <span
+                                                class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="row">
                                 <div class="col-12">
                                     <a href="#checkAvailabillity">
@@ -347,7 +262,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                     </a>
                                 </div>
                             </div>
-<!--                            <p class="my-0 offerText"> --><?php //echo $menu[57] . ' ' . $menu[58] . ' ' . $menu[59]; ?><!-- </p>-->
+
                         </div>
 
                     </div>
@@ -609,7 +524,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
             </div>
         </div>
     </section>
-
+    <div id="bestof" class="container container-custom margin_80_55 ">
+        <section class="add_bottom_45">
 
     <?php
     if (count($bestOffs) > 0) {
@@ -618,6 +534,8 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     }
     ?>
 
+        </section>
+    </div>
     </div>
 
     <div class="modal fade " id="questionmodal" tabindex="-1" aria-labelledby="questionmodal" aria-hidden="true">
