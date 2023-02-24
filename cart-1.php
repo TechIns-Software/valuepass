@@ -428,15 +428,15 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                     <div class="modal-body ">
 
                         <!--                    <h5 class="offertitle">  </h5>-->
-                        <h4 class="offermessage2"><b> <?php echo $calculateCartObject['messageModal']; ?> </b></h4>
-                        <h5 class="offermessage2"> <?php echo $menu[172]; ?></h5>
+                        <h4 class="offermessage2"> <?php echo $calculateCartObject['messageModal']; ?> </h4>
+                        <h5 class="offermessage2 border-top"> <?php echo $menu[172]; ?></h5>
                         <button id="seeMoreActivities"
-                                class=" btn-cshopping2 w-100 my-2 p-3 "> <?php echo $menu[121]; ?>  </button>
+                                class=" btn-cshopping2 w-100 my-2 p-3 icon-gift "> <?php echo $menu[121]; ?>  </button>
                         <br>
                         <script>goBackInHistory('seeMoreActivities',<?php echo  $_SESSION['lastDestinationId']?>);</script>
 
                         <a href="./client.php" class="  ">
-                            <button class="btn btn-cshopping my-2 w-100  p-1">   <?php echo $menu[109]; ?> </button>
+                            <button class="btn btn-cshopping my-2 w-100   icon-cart">   <?php echo $menu[109]; ?> </button>
                         </a>
                     </div>
                 </div>

@@ -11838,8 +11838,9 @@ html[xmlns] .slides {
 
 .offermessage2{
   font-family: Fontello;
-  color: rgb(36 110 215);
+  color: rgb(72 127 205);
   font-weight: 700;
+  font-size: 20px;
 }
 
 .footerlogo{
@@ -11871,7 +11872,7 @@ html[xmlns] .slides {
   background-color: #e8620c;
   color: white;
   border: none;
-  padding: 0.5em;
+  padding: 0.8em;
   border-radius: 1.2em;
 }
 .btn-cshopping:hover{
@@ -11885,10 +11886,11 @@ html[xmlns] .slides {
   /*color: rgb(5 82 177 / 87%);*/
  color: var(--blue-btns);
   border: 1px solid #e8620c ;
-  padding: 0.5em;
+  padding: 0.9em;
   border-radius: 1.2em;
   transition:  all 0.2s ease-in-out 0s;
   font-weight: 800;
+  font-size: 1.5em;
 }
 .btn-cshopping2:hover{
  color: white;
@@ -11898,6 +11900,7 @@ html[xmlns] .slides {
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
   transition:  all 0.2s ease-in-out 0s;
+  font-size: 1.7em;
 }
 
 .btn-gtcart{
