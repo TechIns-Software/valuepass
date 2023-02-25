@@ -143,8 +143,8 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     <?php echo str_repeat('<i class="icon_star"></i>', $vendor::$MAX_STARS - $vendor->getAverageRated()) ?>
                                 </p>
                                 <div class="row my-1">
-                                    <div class="col-12  infoText1">
-                                        <p class="my-1" style="font-size: 15px">
+                                    <div class="col-12  ">
+                                        <b class="my-1" style="font-size: 15px">
                                             <?php if ($_SESSION['languageId'] == 1) { ?>
                                                 Κερδίστε <span class="vpicon"> έκπτωση </span> μέσω του <span
                                                         class="vpicon"> VP </span>  Voucher
@@ -152,20 +152,19 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 
                                                 Get a <span class="vpicon"> discount</span>  via  <span class="vpicon">VP </span> Voucher
                                             <?php } ?>
-                                        </p>
+                                        </b>
                                     </div>
                                 </div>
-                                <div class="row my-1">
+                                <div class="row my-2">
                                     <div class="d-flex justify-content-end">
-                                                                         <span class="from_price2">
-                                        <?php echo $menu[48]; ?> <span class="exprice"><?php echo $vendor->getOriginalPrice(); ?>€ </span>
-                                    </span>
+                                                                         <b style="font-size: 15px">
+                                        <?php echo $menu[48]; ?> <b class="exprice" ><?php echo $vendor->getOriginalPrice(); ?>€ </b>
+                                    </b>
                                     </div>
                                     <div class="col-12 win-text ">
                                         <?php if ($_SESSION['languageId'] == 1) { ?>
-                                            Χρησιμοποιώντας το <span class="vpicon">VP </span>Voucher <br>
-                                            εξοικονομείτε<span
-                                                    class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span>  από την αρχική τιμή
+                                            Εξοικονομήστε <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span> από την αρχική τιμή <br>
+                                            χρησιμοποιώντας το <span class="vpicon">VP </span> Voucher
                                         <?php } else { ?>
                                             Save <span
                                                     class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span>  on the initial price
@@ -174,9 +173,9 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                         <?php } ?>
                                     </div>
                                 </div>
-                                <div class="row my-1">
+                                <div class="row my-2">
                                     <div class="d-flex justify-content-between">
-                                        <div class="p-0 m-0 "><b> <?php if ($_SESSION['languageId'] == 1) { ?>
+                                        <div class="p-0 m-0  "><b style=" font-size: 15px; font-weight: 800"> <?php if ($_SESSION['languageId'] == 1) { ?>
                                                     Πληρώστε στην τοποθεσία<br>
                                                     της δραστηριότητας
                                                 <?php } else { ?>
@@ -184,13 +183,15 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                                 <?php } ?>
                                             </b>
                                         </div>
-                                        <div class=""><b><?php echo $totalToPay; ?>
+                                        <div class=""><b style="font-weight: 800"><?php echo $totalToPay; ?>
                                                 €/ <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?></b>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-1 ">
+                                <div class="row my-2  ">
+                                    <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
                                     <div class="d-flex justify-content-between offerContainer align-items-start">
+
                                         <div>
                                             <p class=" text-white my-auto " style="font-size: 15px">
                                                 <?php if ($_SESSION['languageId'] == 1) { ?>
@@ -203,17 +204,14 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                             </p>
                                         </div>
                                         <div class="my-auto"> <?php echo $vendor->getPriceAdult(); ?> €/ <span
-                                                    class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span>
-                                        </div>
+                                                    class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?> </span> </div>
+
                                     </div>
+                                    </a>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
-                                            <div class=" buy_button2"> <?php echo $menu[52] ?>  </div>
-                                        </a>
-                                    </div>
-                                </div>
+
+
+
                             </div>
                         </div>
                     </div>

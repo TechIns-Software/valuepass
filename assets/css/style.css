@@ -12020,7 +12020,7 @@ color: rgba(19, 43, 197, 0.86);
 
 .win-text{
   color: #026f1a;
-  font-size: 14px;
+  font-size: 13px;
   /*font-weight: lighter;*/
 }
 .arrows{
@@ -12042,12 +12042,13 @@ color: rgba(19, 43, 197, 0.86);
   background-color: #0a53be;
   color: white;
   font-weight: 600;
+  padding:  1em .6em;
 }
 .box_grid .best .bookmarkContainer {
   position: relative;
   background-color: rgb(216, 81, 8);
   left: 267px;
-  top: -225px;
+  top: -345px;
   text-transform: capitalize;
   color: rgb(252, 252, 252);
   font-weight: 600;
@@ -12069,7 +12070,7 @@ color: rgba(19, 43, 197, 0.86);
   position: relative;
   background-color: rgb(216, 81, 8);
   left: 313px;
-  top: -225px;
+  top: -345px;
   text-transform: capitalize;
   color: rgb(252, 252, 252);
   font-weight: 600;
@@ -12225,4 +12226,13 @@ color: rgba(19, 43, 197, 0.86);
 
 
   }
+}
+
+.ctabtnprice{
+  margin: 0;
+  padding: 0;
+}
+
+.ctabtnprice:hover{
+  color: white!important;
 }
