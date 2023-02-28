@@ -92,7 +92,7 @@ function bestoffs($bestOffs,$menu){
                                                         μέσω <span class="vpicon"> VP </span> Voucher
 
                                                     <?php } else { ?>
-                                                        Book on board <span class="vpicon">VP </span> Voucher
+                                                        Book on board via <span class="vpicon">VP </span> Voucher
                                                     <?php } ?>
                                                 </p>
                                             </div>
