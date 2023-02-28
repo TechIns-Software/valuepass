@@ -20,7 +20,8 @@ function bestoffs($bestOffs,$menu){
                         </a>
                         <div class="wrapper best ">
                             <small><?php echo $vendor->getCategoryName();?></small>
-                            <div class="bookmarkContainer2 "> <?php echo $menu[48] ;?> <span class="text-decoration-line-through"><?php echo $vendor->getOriginalPrice();?>€ </span>  <br>   <?php echo $vendor->getPriceAdult();?> €/ <span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </div>
+                            <div class="bookmarkContainer2 "> <?php echo $menu[48] ;?> <span class="text-decoration-line-through"><?php echo $vendor->getOriginalPrice();?>€ </span>  <br>
+                                <?php echo ($vendor->getPriceAdult()+$totalToPay);?> €/ <span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </div>
 
                             <div style="margin-top: -50px">
                             <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 m-0">'.$menu[203].'    </p>' : '';?>

@@ -129,7 +129,8 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                         </figure>
                         <div class="wrapper best  ">
                             <small><?php echo $vendor->getCategoryName();?></small>
-                            <div class="bookmarkContainer "> <?php echo $menu[48] ;?> <span class="text-decoration-line-through"><?php echo $vendor->getOriginalPrice();?>€ </span>  <br>   <?php echo $vendor->getPriceAdult();?> €/ <span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </div>
+                            <div class="bookmarkContainer "> <?php echo $menu[48] ;?> <span class="text-decoration-line-through"><?php echo $vendor->getOriginalPrice();?>€ </span>
+                                <br>   <?php echo ($vendor->getPriceAdult()+$totalToPay) ;?> €/ <span class="buyNow_part2_perperson">  <?php echo $vendor->getForHowManyPersonsIsString($menu[183],$menu[184],$menu[185],$menu[186]);?> </span>  </div>
 
                             <div style="margin-top: -60px">
                                 <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 ">' . $menu[203] . '    </p>' : ''; ?>
