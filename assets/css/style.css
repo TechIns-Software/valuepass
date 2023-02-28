@@ -12070,7 +12070,7 @@ color: rgba(19, 43, 197, 0.86);
   position: relative;
   background-color: rgb(216, 81, 8);
   left: 313px;
-  top: -225px;
+  top: -346px;
   text-transform: capitalize;
   color: rgb(252, 252, 252);
   font-weight: 600;
@@ -12142,6 +12142,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 1540px) {
   .box_grid .best .bookmarkContainer2 {
     left: 275px;
+    top: -325px;
 
 
   }
@@ -12150,6 +12151,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 1469px) {
   .box_grid .best .bookmarkContainer2 {
     left: 249px;
+    top: -300px;
 
 
   }
@@ -12158,7 +12160,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 1400px) {
   .box_grid .best .bookmarkContainer2 {
     left: 377px;
-
+    top: -387px;
 
   }
 }
@@ -12166,7 +12168,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 1200px) {
   .box_grid .best .bookmarkContainer2 {
     left: 288px;
-
+    top: -333px;
 
   }
 }
@@ -12174,7 +12176,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 993px) {
   .box_grid .best .bookmarkContainer2 {
     left: 170px;
-
+    top: -255px;
 
   }
 }
@@ -12182,6 +12184,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 776px) {
   .box_grid .best .bookmarkContainer2 {
     left: 337px;
+    top: -357px;
 
 
   }
@@ -12190,7 +12193,8 @@ color: rgba(19, 43, 197, 0.86);
 
 @media screen and (max-width: 552px) {
   .box_grid .best .bookmarkContainer2 {
-    left: 306px;
+    left: 335px;
+    top: -355px;
 
 
   }
@@ -12199,6 +12203,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 507px) {
   .box_grid .best .bookmarkContainer2 {
     left: 217px;
+    top: -332px;
 
 
   }
@@ -12207,7 +12212,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 421px) {
   .box_grid .best .bookmarkContainer2 {
     left: 196px;
-
+    top: -281px;
 
   }
 }
@@ -12215,7 +12220,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 400px) {
   .box_grid .best .bookmarkContainer2 {
     left: 160px;
-
+    top: -267px;
 
   }
 }
@@ -12223,7 +12228,7 @@ color: rgba(19, 43, 197, 0.86);
 @media screen and (max-width: 350px) {
   .box_grid .best .bookmarkContainer2 {
     left: 120px;
-
+    top: -226px;
 
   }
 }
