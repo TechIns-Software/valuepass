@@ -14,7 +14,7 @@ function bestoffs($bestOffs,$menu){
                 <div class="item">
                     <div class="box_grid">
 
-                        <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
+                        <a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity';?>">
                             <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>"
                                  class="img-fluid" alt="" width="800" height="933">
                         </a>
@@ -25,7 +25,7 @@ function bestoffs($bestOffs,$menu){
 
                             <div style="margin-top: -50px">
                             <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 m-0">'.$menu[203].'    </p>' : '';?>
-                            <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
+                            <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity';?>"><?php echo $vendor->getName();?></a></h3>
                             <p class=" label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <p class="criteria">
                                        <?php echo $menu[44] ?>
@@ -82,7 +82,7 @@ function bestoffs($bestOffs,$menu){
                                     </div>
                                 </div>
                                 <div class="row my-2  ">
-                                    <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
+                                    <a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity'; ?>">
                                         <div class="d-flex justify-content-between offerContainer align-items-start">
 
                                             <div>

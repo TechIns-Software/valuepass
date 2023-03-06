@@ -181,7 +181,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     ?>
                     <div class="box_grid">
                         <div class="wrapper">
-                            <h3 id="nameVendor" class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
+                            <h3 id="nameVendor" class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity';?>"><?php echo $vendor->getName();?></a></h3>
                             <p class=" label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <p class="criteria">
                                 <?php echo $menu[44] ?>
@@ -428,9 +428,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                 </div>
             </div>
-
-            <div class="row">
-                <div style="min-height: 45px" id="book"></div>
+            <div id="checkAvailabillity" style="min-height: 30px" ></div>
+            <div class="row" >
+                <div style="min-height: 45px" id="book " ></div>
                 <div class="col-12 shadow bgbanner2">
 
                     <div class="banner_title2 ">
@@ -448,15 +448,15 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
     </div>
 
 
-    <div style="min-height: 20px"></div>
+
     <section>
-        <div class="container margin_60_35">
+        <div class="container   ">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
 
                     <div class="box_detail booking">
                         <div class="price">
-                            <span id="checkAvailabillity">    <?php echo $menu[67] ?> </span>
+                            <span >    <?php echo $menu[67] ?> </span>
                             <span style="display: none">    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
                         </div>
                         <div class="panel-dropdown">
@@ -517,18 +517,25 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
             </div>
         </div>
     </section>
-    <div id="bestof" class="container container-custom margin_80_55 ">
-        <section class="add_bottom_45">
+
 
     <?php
     if (count($bestOffs) > 0) {
+        ?>
+    <div id="bestof" class="container container-custom    ">
+        <section class="add_bottom_45">
+            <?php
         include_once 'bestoffs.php';
         bestoffs($bestOffs,$menu);
-    }
-    ?>
+        ?>
 
         </section>
     </div>
+    <?php
+    }
+    ?>
+
+
     </div>
 
     <div class="modal fade " id="questionmodal" tabindex="-1" aria-labelledby="questionmodal" aria-hidden="true">
