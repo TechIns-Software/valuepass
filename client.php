@@ -475,5 +475,5 @@ footer($menu, $languages)
 
 
 <script src="changeLanguage.js"></script>
-<script src="assets/js/start.js?v=1.1"></script>
+<script src="assets/js/start.js?v=1.3"></script>
 </html>

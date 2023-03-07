@@ -7,8 +7,8 @@ continuebtn.addEventListener('click', () => {
     const email = document.getElementById('email').value;
     // const emailmarketingbox = document.getElementById('emailmarketing').checked;
 
-    var regexp = /[a-zA-Z]+\s+[a-zA-Z]+/g;
-    if (regexp.test(fullname)) {
+
+    if (fullname.index('') && fullname.length > 3 ) {
         if (fullname == "" || email == '') {
             alert('Full name and email must be filled in');
         } else {
