@@ -123,7 +123,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                 <div id="exper<?php echo $vendor->getId();?>" class="col-xl-4 col-lg-6 col-md-6 isotope-item popular " data-category="<?php echo $vendor->getCategoryId();?>">
                     <div class="box_grid">
                         <figure>
-                            <a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity';?>">
+                            <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
                                 <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>" class="img-fluid" alt="" width="800" height="533">
                             </a>
                         </figure>
@@ -135,7 +135,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                             <div style="margin-top: -60px">
                                 <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 ">' . $menu[203] . '    </p>' : ''; ?>
                                 <h3 class="vendorname"><a
-                                            href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity'; ?>"><?php echo $vendor->getName(); ?></a>
+                                            href="adventure_page.php?id=<?php echo $vendor->getId(); ?>"><?php echo $vendor->getName(); ?></a>
                                 </h3>
                                 <p class=" label"><?php echo implode(' / ', $vendor->getLabelsBoxNames()); ?></p>
                                 <p class="criteria">
@@ -164,7 +164,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     </div>
                                     <div class="col-12 win-text ">
                                         <?php if ($_SESSION['languageId'] == 1) { ?>
-                                            Εξοικονομήστε <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span> από την αρχική τιμή <br>
+                                            Εξοικονομήστε <span class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span> από την αρχική τιμή <br>
                                             χρησιμοποιώντας το <span class="vpicon">VP </span> Voucher
                                         <?php } else { ?>
                                             Save <span
@@ -190,7 +190,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     </div>
                                 </div>
                                 <div class="row my-2  ">
-                                    <a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity'; ?>">
+                                    <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
                                     <div class="d-flex justify-content-between offerContainer align-items-start">
 
                                         <div>

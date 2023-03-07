@@ -209,7 +209,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 </div>
                                 <div class="col-12 win-text ">
                                     <?php if ($_SESSION['languageId'] == 1) { ?>
-                                        Εξοικονομήστε <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span> από την αρχική τιμή <br>
+                                        Εξοικονομήστε <span class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span> από την αρχική τιμή <br>
                                         χρησιμοποιώντας το <span class="vpicon">VP </span> Voucher
                                     <?php } else { ?>
                                         Save <span
@@ -434,11 +434,22 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 <div class="col-12 shadow bgbanner2">
 
                     <div class="banner_title2 ">
+                        <?php
+                        if ($_SESSION['languageId'] == 1){
+                            ?>
                         <p>  <?php echo $menu[38] ?>  </p>
                         <p>  <?php echo $menu[124] ?>  </p>
                         <p> <?php echo $menu[39] ?>   </p>
                         <p> <?php echo $menu[40] ?>   </p>
                         <p> <?php echo $menu[41] ?>   </p>
+                        <?php }
+                        else  if ($_SESSION['languageId'] == 2){
+                            ?>
+                            <p>Purchase at least two (2) VP Vouchers </p>
+                            <p>from the same or different activities. </p>
+                            <p>With four (4) or more you get free VP Vouchers </p>
+                            <p>and your gifts never end! </p>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@ function bestoffs($bestOffs,$menu){
                 <div class="item">
                     <div class="box_grid">
 
-                        <a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity';?>">
+                        <a href="adventure_page.php?id=<?php echo $vendor->getId();?>">
                             <img src="vendorImages/<?php echo $vendor->getId().'/'. $vendor->getPathToImage();?>"
                                  class="img-fluid" alt="" width="800" height="933">
                         </a>
@@ -25,7 +25,7 @@ function bestoffs($bestOffs,$menu){
 
                             <div style="margin-top: -50px">
                             <?php echo $vendor->getId() == 5 ? '<p class="sellout_label2 m-0">'.$menu[203].'    </p>' : '';?>
-                            <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity';?>"><?php echo $vendor->getName();?></a></h3>
+                            <h3 class="vendorname"><a href="adventure_page.php?id=<?php echo $vendor->getId();?>"><?php echo $vendor->getName();?></a></h3>
                             <p class=" label"><?php echo implode(' / ', $vendor->getLabelsBoxNames());?></p>
                             <p class="criteria">
                                        <?php echo $menu[44] ?>
@@ -54,7 +54,7 @@ function bestoffs($bestOffs,$menu){
                                     </div>
                                     <div class="col-12 win-text ">
                                         <?php if ($_SESSION['languageId'] == 1) { ?>
-                                            Εξοικονομήστε <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span> από την αρχική τιμή
+                                            Εξοικονομήστε <b class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</</b>> από την αρχική τιμή
                                             <br>
                                             χρησιμοποιώντας το <span class="vpicon">VP </span> Voucher
                                         <?php } else { ?>
@@ -82,7 +82,7 @@ function bestoffs($bestOffs,$menu){
                                     </div>
                                 </div>
                                 <div class="row my-2  ">
-                                    <a href="adventure_page.php?id=<?php echo $vendor->getId().'#checkAvailabillity'; ?>">
+                                    <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
                                         <div class="d-flex justify-content-between offerContainer align-items-start">
 
                                             <div>
