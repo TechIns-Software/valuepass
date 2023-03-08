@@ -331,7 +331,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             <div class="">
                                 <h5 class='fw-bolder me-3'>
                                     <?php echo $_SESSION['languageId'] == 1 ? 'Σύνολο Τιμής<br> <span class="vpicon"> VP </span> Voucher ' :
-                                        'Total  <span class="vpicon"> VP </span> <br>Voucher Price' ?> </h5>
+                                        'Total  <span class="vpicon"> VP </span> Voucher <br> Price' ?> </h5>
                             </div>
                             <div class="text-end">
                                 <h4 class='my-0 vpicon'> <?php echo $calculateCartObject['totalPay']; ?> € </h4>
@@ -348,7 +348,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                 ?>
                                 <li class="border-bottom d-flex justify-content-between"> <div class="fw-bolder">
                                         <?php echo $_SESSION['languageId'] == 1 ? "Επιπλέον έκπτωση στα <b class='vpicon'> VP </b> Vouchers"
-                                            : "Additional Discount on <span class='vpicon'> VP </span> Vouchers " ?>
+                                            : "Additional Discount on <b class='vpicon'> VP </b> Vouchers " ?>
                                     </div>
                                     <span>
                                     <?php
