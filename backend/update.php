@@ -555,9 +555,9 @@ $idImage = $idVendor = 0;
 $stmtImageRemove->bind_param('ii', $idImage, $idVendor);
 foreach ($imagesToBeRemoved as $idImage => $idVendor) {
 
-    if (in_array($idVendor, $vendorsModified)) {//because can stay without images
-        $stmtImageRemove->execute();
-    }
+    $stmtImageRemove->execute();
+//    if (in_array($idVendor, $vendorsModified)) {//because can stay without images
+//    }
 }
 
 $allVersions = [
