@@ -1,5 +1,5 @@
 <?php
-
+ini_set('max_execution_time', 300);
 include_once 'updateLibrary.php';
 
 
@@ -430,8 +430,10 @@ foreach ($vendors as $idVendor => $vendorValue) {
                 if (!in_array($idVendor, $vendorsModified)) {
                     array_push($vendorsModified, $idVendor);
                 }
+            } else {
                 $index_temp = array_search($idImage, $imagesAvailable);
                 unset($imagesAvailable[$index_temp]);
+
             }
 
         }
