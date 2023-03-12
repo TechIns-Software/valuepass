@@ -16,7 +16,6 @@ continuebtn.addEventListener('click', () => {
     } else {
 
         if (fullname.trim().includes(' ') && fullname.length > 3) {
-            alert('All Good');
             $('#clientForm').submit();
         } else {
             alert('You have to enter your Full Name');
