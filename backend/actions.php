@@ -117,7 +117,14 @@ if ($_POST['action'] == 'addProduct') {
                     $message2 .= $templateResults[1];
                 }
             }
+            $message3 = '';
+            if($_SESSION["languageId"] == 1){
+                $message3 = 'Επιλέξτε ώρα έναρξης';
+            }else if ($_SESSION["languageId"] == 2){
+                $message3 = 'Select your starting time';
+            }
         }
+
     }
 }
-echo json_encode([$message, $message2]);
+echo json_encode([$message, $message2,$message3]);

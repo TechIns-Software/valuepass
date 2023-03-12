@@ -773,9 +773,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     if ($numberOfPackages > 1) {
         $button = "<div class='btn buy_button '  data-bs-toggle='collapse'
      data-bs-target='#multiCollapseExample{$VoucherId}'  role='button' aria-expanded='false' 
-     aria-controls='multiCollapseExample{$VoucherId}'><a>  <span class='vpicon' > VP </span> $message5  $hour </a></div>";
+     aria-controls='multiCollapseExample{$VoucherId}'><a>   $message5  $hour </a></div>";
 
-        $message = "<div class=' collapse ' data-parent='#optionbuttons' id='multiCollapseExample{$VoucherId}' >";
+        $message .= "<div class=' collapse ' data-parent='#optionbuttons' id='multiCollapseExample{$VoucherId}' >";
     }
 
 

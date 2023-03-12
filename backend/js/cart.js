@@ -92,8 +92,12 @@ function getPackagesAvailable() {
                     $("#option").empty();
                     $("#option").append(data[0]);
 
+
                     $("#optionbuttons").empty();
                     $("#optionbuttons").append(data[1]);
+
+                    $("#selectTimeTitle").empty();
+                    $("#selectTimeTitle").append(data[2]);
 
                 }
                 getAjax(data, callBack);
