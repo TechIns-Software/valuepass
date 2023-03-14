@@ -54,7 +54,7 @@ function bestoffs($bestOffs,$menu){
                                     </div>
                                     <div class="col-12 win-text ">
                                         <?php if ($_SESSION['languageId'] == 1) { ?>
-                                            Εξοικονομήστε <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</</b>> από την αρχική τιμή
+                                            Εξοικονομήστε <b class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> € </b> από την αρχική τιμή
                                             <br>
                                             χρησιμοποιώντας το <span class="vpicon">VP </span> Voucher
                                         <?php } else { ?>
