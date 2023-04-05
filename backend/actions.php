@@ -118,10 +118,13 @@ if ($_POST['action'] == 'addProduct') {
                 }
             }
             $message3 = '';
-            if($_SESSION["languageId"] == 1){
-                $message3 = 'Επιλέξτε ώρα έναρξης';
-            }else if ($_SESSION["languageId"] == 2){
-                $message3 = 'Select your starting time';
+
+            if (count($possiblePackages) > 1) {
+                if ($_SESSION["languageId"] == 1) {
+                    $message3 = 'Επιλέξτε ώρα έναρξης ' ;
+                } else if ($_SESSION["languageId"] == 2) {
+                    $message3 = 'Select your starting time ' ;
+                }
             }
         }
 

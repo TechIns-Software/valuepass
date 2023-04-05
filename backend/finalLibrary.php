@@ -773,7 +773,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     if ($numberOfPackages > 1) {
         $button = "<div class='btn buy_button '  data-bs-toggle='collapse'
      data-bs-target='#multiCollapseExample{$VoucherId}'  role='button' aria-expanded='false' 
-     aria-controls='multiCollapseExample{$VoucherId}'><a>   $message5  $hour </a></div>";
+     aria-controls='multiCollapseExample{$VoucherId}'><a>    $hour </a></div>";
 
         $message .= "<div class=' collapse ' data-parent='#optionbuttons' id='multiCollapseExample{$VoucherId}' >";
     }
@@ -783,7 +783,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <div class='container '> <div  class='row'> ";
     $message .= "   <div class='col-12'><div style='min-height: 5px;'></div> ";
     $message .= "  <div class='title '>";
-    $message .= "  <h4> <span style='color: black'>$message3 </span> $nameVendor </h4> ";
+    $message .= "  <h4>  $nameVendor </h4> ";
     $message .= "  </div> ";
     $message .= " </div> ";
     $message .= " </div> ";

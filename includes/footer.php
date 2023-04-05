@@ -9,14 +9,6 @@ function footer($menu, $languages)
             <div class="row">
                 <div class="col-lg-3 col-md-12 ">
                     <p class="text-center "><img src="assets/img/valuepassLogo.png" class="footerlogo " alt="Logo"></p>
-                    <!--                    <p>--><?php //echo $menu[53]
-                    ?><!-- <br>--><?php //echo $menu[54]
-                    ?><!--<br>-->
-                    <!--                        --><?php //echo $menu[55]
-                    ?><!-- </p>-->
-                    <!--                    <b> --><?php //echo $menu[56]
-                    ?><!--</b>-->
-
                     <div class="follow_us text-center">
                         <h5> <?php echo $menu[12] ?>  </h5>
                         <ul>
@@ -43,46 +35,7 @@ function footer($menu, $languages)
                         </ul>
                     </div>
                 </div>
-<!--                <div class="col-lg-3 col-md-6  text-center">-->
-<!--                    <h5 class="border-bottom"> --><?php //echo $menu[9] ?><!--</h5>-->
-<!--                    <ul class="links ">-->
-<!--                        <h5 > --><?php //echo $menu[4] ?><!-- </h5>-->
-<!--                        <li>-->
-<!--                            <ul class="ps-3">-->
-<!--                                <li>-->
-<!--                                    <a href="https://api.whatsapp.com/send/?phone=306931451910&text=Welcome+to+ValuePass%21+How+can+we+help+you%3F+&type=phone_number&app_absent=0">-->
-<!--                                        <img src="assets/icons/whatsapp.png" height="20" width="20" class="img-fluid">+-->
-<!--                                        306931451910</a></li>-->
-<!--                                <li><a class="viberlink" href="viber://add?number=306931451910"> <img-->
-<!--                                                src="assets/icons/viber.png" height="20" width="20" class="img-fluid">-->
-<!--                                        +306931451910</a></li>-->
-<!--                                <li><a href="mailto:customercare@valuepass.gr" class="icon-email">-->
-<!--                                        customercare@valuepass.gr</a></li>-->
-<!---->
-<!--                            </ul>-->
-<!---->
-<!--                        </li>-->
-<!---->
-<!--                        <ul class="ps-3">-->
-<!--                            <h5 class="m-1">--><?php //echo $menu[132] ?><!-- </h5>-->
-<!--                            <li> <a href="mailto:sales@valuepass.gr"> sales@valuepass.gr</a> </li>-->
-<!--                        </ul>-->
-<!---->
-<!--                        <ul class="ps-3">-->
-<!--                            <h5  class="m-1">GDPR </h5>-->
-<!--                            <li> <a href="mailto:dataprotectionofficer@valuepass.gr">dataprotectionofficer@valuepass.gr </a> </li>-->
-<!--                        </ul>-->
-<!---->
-<!--                        <ul  class="ps-3">-->
-<!--                            <h5  class="m-1">--><?php //echo $menu[133] ?><!-- </h5>-->
-<!--                            <li> <a href="mailto:customercare@valuepass.gr">customercare@valuepass.gr </a> </li>-->
-<!--                        </ul>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--                    </ul>-->
-<!--                </div>-->
+
                 <div class=" col-lg-3 col-md-6  text-center"  >
 
                     <h5 class="border-bottom  icon-down-1 " id="collapsetitle" data-bs-toggle="collapse"
@@ -140,7 +93,6 @@ function footer($menu, $languages)
                         <li><a href="<?php echo $_SESSION["languageId"] == 1 ? 'cancel_policy_gr.pdf' : 'cancel_policy_gb.pdf' ?>"
                                target="_blank"><?php echo $menu[11] ?></a></li>
                         <li><span>© ValuePass</span></li>
-                        <!--                        <a class="btn btn-info" id="updatebtn"> Update  Demo</a>-->
                     </ul>
                 </div>
             </div>

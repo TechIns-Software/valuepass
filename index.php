@@ -380,25 +380,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
         <section class="add_bottom_45">
             <div class="main_title_2">
                 <span><em></em></span>
-                <h2><?php echo $menu[36] ?></h2>
+                <h2><?php echo $menu[233] ?></h2>
                 <p> <?php echo $menu[37] ?> </p>
             </div>
 
             <div id="reccomended_adventure" class="owl-carousel owl-theme">
 
-                <!-- version 1 carsouel ready css
-                        <div class="item">
-                            <a href="adventure-detail.html" class="grid_item_adventure">
-                                <figure>
-                                    <div class="score"><strong>7.9</strong></div>
-                                    <img src="assets/img/10.jpg" class="img-fluid" alt="">
-                                    <div class="info">
-                                        <em>3 days in Patagonia</em>
-                                        <h3>Horseback ride through Valencia</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>  -->
                 <?php
                 foreach ($destinations as $destination) {
                     ?>
@@ -406,7 +393,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                          onclick="location.href='./adventures.php?id=<?php echo $destination->getId(); ?>';">
                         <div class="card text-white card-has-bg click-col"
                              style="background-image:url('images/location_images/<?php echo $destination->getImage1(); ?>');">
-                            <!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?mykonos" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
+
                             <div class="card-img-overlay d-flex flex-column">
                                 <div class="card-body">
                                 </div>
