@@ -251,8 +251,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                         <?php //echo $menu[187];?><!--  <strong>-->
                                         <?php //echo $amountPay; ?><!--€</strong> </h4>-->
                                         <p class=" m-0  fw-bolder  ">
-                                            <?php echo $menu[49] ?> <span
-                                                    class="laterText">  <?php echo $menu[197] ?>   </span> <?php echo $menu[198] ?>
+                                            <?php echo $menu[49] ?> <b
+                                                    class="">  <?php echo $menu[197] ?>   </b> <?php echo $menu[198] ?>
                                                 </p>
                                             <ul class="my-1">
                                             <?php
@@ -282,6 +282,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                                 echo "<li class='d-flex justify-content-between'>
 <div>  $menu[69]: $children X $payVendorChild € </div>
 <div> <span class='exprice '> $totalExPrice €</span> <b class='real-price '>  $totalChildrenPriceVendor  € </b> </div> 
+</li>";
+
+                                                $sumAdultandChildren =  $totalAdultsPriceVendor + $totalChildrenPriceVendor ;
+
+                                                echo "<li class='d-flex justify-content-between'>
+<div>  </div> 
+  <div class='border-top fw-bolder fs-5'>  $sumAdultandChildren  € </b> </div> 
 </li>";
 
                                             }

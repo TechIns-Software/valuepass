@@ -788,10 +788,10 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " </div> ";
     $message .= " </div> ";
 
-    $message .= " <div class='row border-bottom'> ";
+    $message .= " <div class='row '> ";
     $message .= " <div class='col-12 col-lg-12 d-flex justify-content-between'> ";
     $message .= "  <div class='price '> ";
-    $message .= " <h5> $message12 </h5> ";
+    $message .= " <h5>  </h5> ";
     $message .= " <ul> ";
     $message .= " <li> $message4  <b> $day </b></li>";
     $message .= " <li> $message5 <b> $hour </b></li> ";
@@ -803,8 +803,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
 
     $message .= " <div class='row border-bottom'> ";
     $message .= " <div class='col-12 col-lg-12'> ";
-    $message .= "  <div class='pricebreakdown2'> ";
-    $message .= " <h5>$message6 </h5> ";
+    $message .= "  <div class=''> ";
+    $message .= " <h5 class='border-bottom'> <b> $message6 </b> </h5> ";
 //    $message .= " <h6 class='fw-bolder' >$message6a </h6> ";
     if ($_SESSION['languageId'] == 1){
         $message .= '<h6 class="fw-bolder"> Τιμή  <span class="vpicon">VP </span> Voucher </h6>';
@@ -842,6 +842,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
   <div>  $message7 <b>$adults  </b> x <span> $totalToPayAdultToVendor €</span> </div>
    <div><span class='exprice2'>$totalExAdult € </span>  <span class='real-price '> $totalAdultPriceVendor  €  </span> </div>
    </li> ";
+
     }
     if ($children != 0) {
         $totalChildrenPriceVendor = $children * $totalToPayKidToVendor;
@@ -850,6 +851,11 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
   <div>  $message8 <b> $children </b> x <span> $totalToPayKidToVendor €</span> </div>
    <div><span class='exprice2'>$totalExChildren  € </span>  <span class='real-price'> $totalChildrenPriceVendor  €  </span> </div>
    </li> ";
+        $sumAdultandChildren =  $totalAdultPriceVendor + $totalChildrenPriceVendor ;
+        $message .= " <li class='d-flex justify-content-between py-1'>
+ <div></div> 
+  <div class='border-top fw-bolder fs-5'>  $sumAdultandChildren  €</div> 
+ </li>";
     }
     if ($infants != 0) {
         $totalInfantPriceVendor = $infants * $totalToPayInfantToVendor;
@@ -874,7 +880,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " </div> ";
     $message .= "</div> ";
 
-    $message .= " <div class='col-12 price '> ";
+    $message .= " <div class='col-12 price border-top py-3 '> ";
     if ($_SESSION["languageId"] == 2) {
         $message .= " <h5 class='fw-bolder'> Total  <span class='vpicon'> VP </span>Voucher Price </h5> ";
     }else{

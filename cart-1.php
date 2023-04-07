@@ -160,7 +160,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
                                         <p class=" m-0 fw-bolder  ">
 
-                                            <?php echo $menu[49] ?> <span class="laterText">  <?php echo $menu[197] ?>   </span> <?php echo $menu[198] ?>
+                                            <?php echo $menu[49] ?> <b class="">  <?php echo $menu[197] ?>   </b> <?php echo $menu[198] ?>
                                         </p>
                                         <ul>
                                             <?php
@@ -191,6 +191,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                 echo "<li class='d-flex justify-content-between'>
 <div> $menu[69]: $children X $payVendorChild € </div> 
   <div> <span class='exprice '> $totalExPrice €</span><b class=' real-price '>  $payVendorChildTotal  € </b> </div> 
+</li>";
+                                                $sumAdultandChildren =  $payVendorAdultTotal + $payVendorChildTotal ;
+
+                                                echo "<li class='d-flex justify-content-between'>
+<div>  </div> 
+  <div class='border-top fw-bolder fs-5'>  $sumAdultandChildren  € </b> </div> 
 </li>";
                                             }
                                             if ($infants != 0) {
