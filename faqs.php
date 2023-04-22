@@ -51,15 +51,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                         <p class="my-1">  Υπάρχει δυνατότητα δωρεάν ακύρωσης της κράτησή σας συνήθως έως και 24 ώρες πριν από την ώρα έναρξης της δραστηριότητας, σύμφωνα με την πολιτική ακύρωσης του παρόχου. Θα βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης.</p>
                     </div>
 
-                    <div class="col-12 ">
-                        <h4>3.<b> Μπορώ να κάνω την κράτηση μου τώρα και να πληρώσω αργότερα;</b></h4>
-                        <p class="my-1">Η πλατφόρμα της ValuePass σας δίνει την ευκαιρία να αγοράσετε τα Vouchers εν
-                            πλω, να κρατήσετε τη θέση σας, και να πληρώσετε τον πάροχο με έκπτωση όταν φτάσετε στην
-                            τοποθεσία της δραστηριότητας.</p>
-                    </div>
+
 
                     <div class="col-12 ">
-                        <h4>4.<b> Μπορώ να ακυρώσω το VP Voucher μου;</b></h4>
+                        <h4>3.<b> Μπορώ να ακυρώσω το VP Voucher μου;</b></h4>
                         <p class="my-1">Τα ValuePass Vouchers δεν ακυρώνονται και η αξία τους δεν επιστρέφεται.
                             Ωστόσο, σε περίπτωση μη πραγματοποίησης της δραστηριότητας από υπαιτιότητα του παρόχου, σας
                             προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σύμφωνα με τις δυνατότητες των προμηθευτών των
@@ -74,7 +69,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                             ValuePass σας επιστρέφει την αξία αγοράς του VP Voucher σας!</p>
                     </div>
                     <div class="col-12 ">
-                        <h4>5.<b> Πώς λειτουργούν τα δώρα μου;</b></h4>
+                        <h4>4.<b> Πώς λειτουργούν τα δώρα μου;</b></h4>
                         <p class="my-1">Η ValuePass σας επιτρέπει να διαλέγετε τις πιο συναρπαστικές εμπειρίες,
                             προσφέροντας σας περισσότερα δώρα!</p>
                         <p class="my-1">Αγοράστε τουλάχιστον 2 VP Vouchers από την ίδια ή διαφορετικές δραστηριότητες.
@@ -92,7 +87,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>6.<b> Μπορώ να αγοράσω μόνο 1 VP Voucher;</b></h4>
+                        <h4>5.<b> Μπορώ να αγοράσω μόνο 1 VP Voucher;</b></h4>
                         <p class="my-1">Σημαντική προϋπόθεση για να ολοκληρώσετε την πληρωμή σας, είναι να επιλέξετε
                             συνολικά δύο (2) ή περισσότερα Voucher, από την ίδια ή/και διαφορετικές δραστηριότητες.</p>
                         <p class="my-1">Τα Voucher μπορεί να αντιστοιχούν σε γκρουπ είτε να είναι ατομικά. </p>
@@ -101,7 +96,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>7.<b> Πως επιβεβαιώνω την κράτηση της δραστηριότητας μου;</b></h4>
+                        <h4>6.<b> Πως επιβεβαιώνω την κράτηση της δραστηριότητας μου;</b></h4>
                         <p class="my-1">Μπορείτε να επιβεβαιώσετε, να ακυρώσετε ή να επαναπρογραμματίσετε τη
                             δραστηριότητά σας, εύκολα μέσω του email σας.</p>
                         <p class="my-1">Θα λάβετε ένα email υπενθύμισης, μετά την κράτηση της δραστηριότητάς σας, έως
@@ -118,7 +113,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>8.<b> Γιατί πρέπει να επιδείξω το VP Voucher (QR Code) όταν βρεθώ στη δραστηριότητα που έχω
+                        <h4>7.<b> Γιατί πρέπει να επιδείξω το VP Voucher (QR Code) όταν βρεθώ στη δραστηριότητα που έχω
                                 επιλέξει; </b></h4>
                         <p class="my-1">Όταν φτάσετε στον τόπο διεξαγωγής της δραστηριότητας επιδεικνύετε το QR Code που
                             σας εχει αποσταλθεί στο email επιβεβαίωσης. Με τον τρόπο αυτό, γίνεται η επικύρωση της
@@ -127,13 +122,55 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>9.<b> Μπορώ να μεταβιβάσω την κράτηση μου σε άλλο πρόσωπο; </b></h4>
+                        <h4>8.<b> Μπορώ να μεταβιβάσω την κράτηση μου σε άλλο πρόσωπο; </b></h4>
                         <p class="my-1">Το VP Voucher είναι μοναδικό, είναι προσωπικής χρήσης και συγκεκριμένης
                             ημερομηνίας.
                             Για οποιαδήποτε αλλαγή στο όνομα της κράτησης πρέπει να επικοινωνήσετε με τον πάροχο της
                             δραστηριότητας. Διαφορετικά, ο πάροχος της δραστηριότητας έχει το δικαίωμα να μην δεχτεί την
                             κράτηση σας.
                         </p>
+
+                    </div>
+
+                    <div class="col-12 ">
+                        <h4>9.<b> Πώς κάνω Κράτηση εν πλω & Πληρώστε Αργότερα ; </b></h4>
+                        <p class="my-1">
+                            Κρατήστε τη θέση σας εν πλω και κερδίστε έκπτωση στην αρχική τιμή της δραστηριότητας μέσω του VP Voucher.
+                        </p>
+                        <b> Διαδικασία πληρωμής παρόχου μέσω email </b>
+
+                        <p class="my-1">
+                            Είναι σημαντικό να γνωρίζετε ότι με την αγορά του VP Voucher μέσω της πλατφόρμας μας, ο πάροχος της δραστηριότητας θα σας στείλει ένα email με έναν σύνδεσμο (link) πληρωμής της δικής του σελίδας
+                            ολοκλήρωσης κράτησης, όπου θα χρειαστεί να συμπληρώσετε τα στοιχεία της πιστωτικής σας κάρτας για να επιβεβαιώσετε τη δραστηριότητά σας.
+                        </p>
+
+                        <p class="my-1">
+                            Με την ολοκλήρωση, δεν θα υπάρξει καμία χρέωση στην πιστωτική σας κάρτα ως αποτέλεσμα αυτού του βήματος.
+                        </p>
+
+                        <p class="my-1">
+                            Η πληρωμή της δραστηριότητας γίνεται τελικά, χρησιμοποιώντας οποιαδήποτε μέθοδο πληρωμής επιλέξετε (Μετρητά ή πιστωτική κάρτα Visa,Mastercard), στην τοποθεσία της δραστηριότητας.
+                        </p>
+
+                        <p class="my-1">
+                            Εάν δεν παραβρεθείτε στη δραστηριότητα μετά την επιβεβαίωση της και εφόσον δεν την ακυρώσετε 24 ώρες πριν την έναρξη της, το ποσό θα χρεωθεί αυτόματα από τον πάροχο.
+                        </p>
+
+                        <b class="my-1">
+                            Διαδικασία πληρωμής παρόχου μέσω κλήσης, μηνύματος (WhatsApp/Viber) ή email
+                        </b>
+
+                        <p class="my-1">
+                            Ο πάροχος της δραστηριότητας θα επικοινωνήσει μαζί σας για να επιβεβαιώσει την κράτηση σας εκ νέου και να σας ενημερώσει για περισσότερα βήματα, στην περίπτωση που αυτά χρειαστούν
+                        </p>
+
+                        <p class="my-1">
+                            Η επικοινωνία μπορεί να πραγματοποιηθεί και μέσω τηλεφωνικής κλήσης, μηνύματος (WhatsApp/Viber) ή email.
+                        </p>
+
+
+
+
 
                     </div>
 
@@ -172,15 +209,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                         </p>
                     </div>
 
-                    <div class="col-12 ">
-                        <h4>3.<b> Can I reserve now and pay later?</b></h4>
-                        <p class="my-1">The ValuePass Experiences platform allows you to buy your vouchers on board,
-                            reserve your spot, and pay the provider with a discount when you arrive at your activity
-                            location.</p>
-                    </div>
+
 
                     <div class="col-12 ">
-                        <h4>4.<b>Can I cancel my VP voucher?</b></h4>
+                        <h4>3.<b>Can I cancel my VP voucher?</b></h4>
                         <p class="my-1">ValuePass Vouchers are non-refundable and cannot be canceled, however, in the
                             event that a problem arises due to the provider’s error, we are continually searching for
                             the best alternatives depending on the accessibility of the activity providers we promote.
@@ -194,7 +226,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                             alternatives work.</p>
                     </div>
                     <div class="col-12 ">
-                        <h4>5.<b> How do my gifts work?</b></h4>
+                        <h4>4.<b> How do my gifts work?</b></h4>
                         <p class="my-1">We offer you more gifts while letting you select the most thrilling
                             experiences!</p>
                         <p class="my-1">Purchase at least two (2) VP Vouchers from the same or separate activities. With
@@ -212,7 +244,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>6.<b> Can I buy one VP voucher?</b></h4>
+                        <h4>5.<b> Can I buy one VP voucher?</b></h4>
                         <p class="my-1">To complete your payment, you must choose a total of two (2) or more vouchers,
                             from the same or different activities. </p>
                         <p class="my-1">The vouchers might apply to a person or a group.</p>
@@ -221,7 +253,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>7.<b> How do I confirm my activity booking? </b></h4>
+                        <h4>6.<b> How do I confirm my activity booking? </b></h4>
                         <p class="my-1">You can easily confirm, cancel, or reschedule your activity via email.</p>
                         <p class="my-1">You will receive a reminder email, after booking your activity, up to 6 hours
                             before the cancellation deadline, according to the cancellation policy set by the activity
@@ -236,7 +268,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>8.<b> Why do I have to show my VP Voucher (QR code) when I arrive at the location of my
+                        <h4>7.<b> Why do I have to show my VP Voucher (QR code) when I arrive at the location of my
                                 activity?</b></h4>
                         <p class="my-1">You simply show the QR code that was sent to you in your confirmation email when
                             you arrive at the activity location. By doing this, you will receive the activity discount
@@ -245,11 +277,51 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                     </div>
 
                     <div class="col-12 ">
-                        <h4>9.<b> Can I give my reservation to another person? </b></h4>
+                        <h4>8.<b> Can I give my reservation to another person? </b></h4>
                         <p class="my-1">The VP Voucher is unique, for date-specific personal usage only. You must get in
                             touch with the activity provider if you need to update the name on the reservation.
                             Otherwise, the organizer of the activity has the right to reject your reservation.
                         </p>
+
+                    </div>
+
+                    <div class="col-12 ">
+                        <h4>9.<b> How do I Book onboard & Pay later? </b></h4>
+                        <p class="my-1">Reserve your spot and get a discount on the initial price of the activity by purchasing the VP Voucher onboard.
+                        </p>
+                        <b> Provider’s payment process via email  </b>
+
+                        <p class="my-1"> It’s important to be aware that once you purchase the VP Voucher through our platform,
+                            the activity provider will send you an email with a payment link to his unique checkout page, where you’ll need to enter your credit card information to confirm your activity.
+                        </p>
+
+                        <p class="my-1">
+                            Once you finish, there will be no charge of any kind made to your credit card as a result of this step.
+                        </p>
+
+                        <p class="my-1">
+                            The payment will ultimately be made using any method you choose (cash, credit card Visa or Mastercard) at the activity location.
+                        </p>
+
+                        <p class="my-1">
+                            If you fail to show up for the activity after confirming it and you have not canceled it 24 hours in advance, the provider will debit the discounted price of the activity.
+                        </p>
+
+                        <b class="my-1">
+                            Provider’s payment process via phone call, message (WhatsApp/Viber) or email
+                        </b>
+
+                        <p class="my-1">
+                            The provider of the activity will contact you, simply to confirm your booking once more and inform you of the remaining steps if needed.
+                        </p>
+
+                        <p class="my-1">
+                            Contact may be made via phone call, message (WhatsApp/Viber), or email.
+                        </p>
+
+
+
+
 
                     </div>
 
