@@ -132,7 +132,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
 
                     </div>
 
-                    <div class="col-12 ">
+                    <div class="col-12 " id="payments" >
                         <h4>9.<b> Πώς κάνω Κράτηση εν πλω & Πληρώστε Αργότερα ; </b></h4>
                         <p class="my-1">
                             Κρατήστε τη θέση σας εν πλω και κερδίστε έκπτωση στην αρχική τιμή της δραστηριότητας μέσω του VP Voucher.
