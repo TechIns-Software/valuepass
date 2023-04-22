@@ -150,8 +150,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
     <div id="how" class="container margin_80_55">
         <div class="main_title_2">
             <span><em></em></span>
-            <h2><b> <?php echo $menu[16] ?></b></h2>
-            <p><?php echo $menu[17] ?> </p>
+            <h2><b> <?php echo $menu[16] ?> </b></h2>
+            <p><?php echo $menu[157]; ?> <?php echo $menu[158]; ?> </p>
 
         </div>
 
@@ -312,6 +312,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 <div class="modal-body">
                     <p>• <?php echo $menu[91] ?></p>
                     <p>• <?php echo $menu[92] ?></p>
+                    <p>• <?php echo $menu[234] ?></p>
                     <p>• <?php echo $menu[93] ?></p>
                     <p>• <?php echo $menu[94] ?></p>
                     <a target="_blank"

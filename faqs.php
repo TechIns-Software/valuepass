@@ -40,18 +40,15 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
 
                     <div class="col-12 ">
                         <h4>2.<b> Μπορώ να κάνω αλλαγές στην κράτησή μου αφού την πραγματοποιήσω; </b></h4>
-                        <p class="my-1">Εάν χρειάζεται να κάνετε αλλαγές, όπως να αφαιρέσετε κάποιον από την κράτησή
-                            σας, να ενημερώσετε τα στοιχεία επικοινωνίας σας ή να αλλάξετε την ημερομηνία ή την ώρα της
-                            δραστηριότητάς σας, πρέπει να επικοινωνήσετε με τον πάροχο της δραστηριότητάς. Θα βρείτε τα
-                            στοιχεία επικοινωνίας του παρόχου σας στο email επιβεβαίωσης. </p>
-                        <p class="my-1">Τα ValuePass Vouchers δεν ακυρώνονται και η αξία τους δεν επιστρέφεται.
-                            Ωστόσο, σε περίπτωση μη πραγματοποίησης της δραστηριότητας, σας προσφέρουμε τις καλύτερες
-                            εναλλακτικές λύσεις σύμφωνα με τις δυνατότητες των προμηθευτών των δραστηριοτήτων που
-                            προωθούμε.
+                        <p class="my-1">Εάν χρειάζεται να κάνετε αλλαγές, όπως να αφαιρέσετε κάποιον από την κράτησή σας ή
+                            να ενημερώσετε τα στοιχεία επικοινωνίας σας, θα χρειαστεί να επικοινωνήσετε με τον πάροχο της
+                            δραστηριότητάς. Θα βρείτε τα στοιχεία επικοινωνίας του παρόχου σας στο email επιβεβαίωσης. </p>
+                        <p class="my-1">
+                            Τα ValuePass Vouchers δεν παρέχουν τη δυνατότητα ακύρωσης ή επιστροφής χρημάτων, ωστόσο πάντα προσπαθούμε
+                            να σας προσφέρουμε τις καλύτερες εναλλακτικές λύσεις σύμφωνα με τις δυνατότητες των παρόχων των
+                            δραστηριοτήτων που προωθούμε, σε οποιαδήποτε περίπτωση μη πραγματοποίησης της δραστηριότητας από υπαιτιότητα του παρόχου.
                         </p>
-                        <p class="my-1"> Υπάρχει δυνατότητα δωρεάν ακύρωσης της κράτησή σας συνήθως έως και 24 ώρες πριν
-                            από την ώρα έναρξης της δραστηριότητας, σύμφωνα με την πολιτική ακύρωσης του παρόχου. Θα
-                            βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης.</p>
+                        <p class="my-1">  Υπάρχει δυνατότητα δωρεάν ακύρωσης της κράτησή σας συνήθως έως και 24 ώρες πριν από την ώρα έναρξης της δραστηριότητας, σύμφωνα με την πολιτική ακύρωσης του παρόχου. Θα βρείτε περισσότερες πληροφορίες στο email επιβεβαίωσης.</p>
                     </div>
 
                     <div class="col-12 ">
@@ -157,16 +154,22 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
 
                     <div class="col-12 ">
                         <h4>2.<b> Can I make changes to my booking after I book?</b></h4>
-                        <p class="my-1">If you need to make changes such as removing someone from your booking, updating
-                            your contact details or changing the date or time of your activity, you must contact your
-                            activity provider. You will find your provider’s contact information in your confirmation
-                            email. </p>
-                        <p class="my-1">ValuePass Vouchers are non-refundable and cannot be canceled, however, in the
-                            event that a problem arises, we are continually searching for the best alternatives
-                            depending on the accessibility of the activity providers we promote.
-                        <p class="my-1"> According to the cancellation policy set forth by the supplier of the activity,
-                            you can cancel your booking up to 24 hours before the beginning of the activity. You will
-                            find more information in your confirmation email.</p>
+                        <p class="my-1">
+                        If you need to make changes such as removing someone from your booking or updating your contact details, you must contact your activity provider.
+                        You will find your provider’s contact information in your confirmation email.
+
+                        </p>
+                        <p class="my-1">
+                        ValuePass Vouchers are non-refundable and cannot be canceled, however,
+                        in the event that a problem arises due to the provider’s error, we are continually
+                        searching for the best alternatives depending on the accessibility of the activity providers we promote.
+
+                        </p>
+                        <p class="my-1">
+                        According to the cancellation policy set forth by the supplier of the activity,
+                        you can cancel your booking up to 24 hours before the beginning of the activity.
+                        You will find more information in your confirmation email.
+                        </p>
                     </div>
 
                     <div class="col-12 ">
