@@ -797,7 +797,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= " <li> $message5 <b> $hour </b></li> ";
     $message .= " </ul> ";
     $message .= " </div> ";
-        $message .= " <div> <p class='voucher_av'>$message16 <b> $existenceVoucher/$starterVouchers</b> </p> </div>";
+
     $message .= " </div> ";
     $message .= "</div> ";
 

@@ -88,10 +88,27 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                 </div>
                                 <div id="collapse2" class=" collapse">
                                     <div class="panel-body">
-                                        <ul class="p-2">
-                                            <!--                                            <li><i class="fa fa-arrow-right"-->
-                                            <!--                                                   aria-hidden="true"></i> -->
-                                            <?php //echo $menu[134]; ?><!--  </li>-->
+
+                                        <b class="p-2 my-0"> <?php echo $vendor->getPaymentInfoActivityDescription(); ?></b>
+                                        <ul class="p-2 my-0">
+
+
+
+                                            <?php
+                                            foreach ($vendor->getAboutActivityArray() as $aboutActivity) {
+                                                ?>
+                                                <li>
+                                                    <p class="headStyle p-0 "><i class="fa fa-arrow-right"
+                                                                                 aria-hidden="true"></i> <?php echo $aboutActivity->getHead(); ?>
+                                                    </p>
+                                                    <?php if ($aboutActivity->getDescription() != '') ?>
+                                                    <small class="  descrStyle">
+                                                        <?php echo $aboutActivity->getDescription(); ?>
+                                                    </small>
+                                                </li>
+                                                <?php
+                                            }
+                                            ?>
                                             <li><p class="headStyle p-0"><i class="fa fa-arrow-right"
                                                                             aria-hidden="true"></i> <?php echo $menu[189]; ?>
                                                 </p>
@@ -108,26 +125,6 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                                                 <small> <?php echo $menu[193]; ?> </small>
                                             </li>
 
-                                            <hr>
-                                            <?php
-                                            foreach ($vendor->getAboutActivityArray() as $aboutActivity) {
-                                                ?>
-                                                <li>
-                                                    <p class="headStyle p-0 "><i class="fa fa-arrow-right"
-                                                                                 aria-hidden="true"></i> <?php echo $aboutActivity->getHead(); ?>
-                                                    </p>
-                                                    <?php if ($aboutActivity->getDescription() != '') ?>
-                                                    <small class="  descrStyle">
-                                                        <?php echo $aboutActivity->getDescription(); ?>
-                                                    </small>
-                                                </li>
-                                                <?php
-                                            }
-                                            ?>
-                                            <li>
-                                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                                <?php echo $vendor->getPaymentInfoActivityDescription(); ?>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
