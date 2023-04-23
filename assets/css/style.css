@@ -11843,6 +11843,16 @@ html[xmlns] .slides {
   font-size: 20px;
 }
 
+.main-blue-color{
+  color: rgb(72 127 205);
+  font-weight: 700;
+}
+
+.main-blue-color:hover{
+  color: rgb(6, 66, 151);
+  cursor: pointer;
+}
+
 .footerlogo{
   padding: 1em 0;
   width: 200px;
