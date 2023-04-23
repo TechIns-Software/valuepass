@@ -5,6 +5,7 @@ if (!isset($conn)) {
 if (!isset($_GET['id'])) {
     header('location: index.php');
 }
+// TODO: THE  `data-bs-target="#promoCode0"` MUST CHANGE AND BE DYNAMIC
 $title = "Vendor page";
 $home = 0;
 include_once 'includes/header.php';
