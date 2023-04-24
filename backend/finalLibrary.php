@@ -616,7 +616,7 @@ function calculatePriceCart($conn, $arrayVouchers)
           1 ' . $menu[168] . ' 4 Vouchers ' . $menu[169];
     } elseif (count($arrayVouchers) == 4) {
         $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' 
-        1 Voucher ' . $menu[169];
+        1 Voucher ' . $menu[239];
     } elseif (count($arrayVouchers) == 5) {
         $messageModal = $menu[164] . ' ' . count($arrayVouchers) . ' ' . $menu[165] . ' ' . $menu[166] . ' 1 ' . $menu[167] . ' 
           2 ' . $menu[168] . ' 6 Vouchers ' . $menu[169];
