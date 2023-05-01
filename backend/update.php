@@ -230,6 +230,8 @@ if ($versions['vendor'] < $response['vendors']['version']) {
                         $vendorValue['minAgeChild'],
                         $vendorValue['minAgeAdult'],
                         $vendorValue['priceKidVendor'],
+                        $vendorValue['orderDisplay'],
+                        $vendorValue['promoCodesAvailable'],
                     );
                     $labelBoxes = $vendorValue['labelBox'];
                     $includedServices = $vendorValue['includedServices'];
@@ -269,6 +271,8 @@ foreach ($response['vendors'] as $idVendor => $valueVendor) {
                 $valueVendor['minAgeChild'],
                 $valueVendor['minAgeAdult'],
                 $valueVendor['priceKidVendor'],
+                $valueVendor['orderDisplay'],
+                $valueVendor['promoCodesAvailable'],
             );
             $labelBoxes = $valueVendor['labelBox'];
             $includedServices = $valueVendor['includedServices'];

@@ -22,6 +22,7 @@ class Vendor
     private int $infantTolerance;
     private int $minAgeAdult;
     private int $minAgeKid;
+    private bool $promoCodesAvailable;
 
     private array $labelsBoxNames = [];
     private array $ratedArray = [];
@@ -58,13 +59,15 @@ class Vendor
      * @param int $infantTolerance
      * @param int $minAgeAdult
      * @param int $minAgeKid
+     * @param bool $minAgeKid
      */
     public function __construct(
         int    $id, int $categoryId, string $categoryName,
         int    $idDestination, float $priceAdult, float $originalPrice, float $discount,
         float  $priceKid, string $pathToImage,
         string $name, int $forHowManyPersonsIs, string $googleMapsImage,
-        int    $childAcceptance, int $infantTolerance, int $minAgeAdult, int $minAgeKid
+        int    $childAcceptance, int $infantTolerance, int $minAgeAdult, int $minAgeKid,
+        bool   $promoCodesAvailable
     )
     {
         $this->id = $id;
@@ -83,6 +86,7 @@ class Vendor
         $this->infantTolerance = $infantTolerance;
         $this->minAgeAdult = $minAgeAdult;
         $this->minAgeKid = $minAgeKid;
+        $this->promoCodesAvailable = $promoCodesAvailable;
     }
 
 
@@ -466,6 +470,14 @@ class Vendor
     public function setAvailableDates(array $availableDates): void
     {
         $this->availableDates = $availableDates;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPromoCodesAvailable(): string
+    {
+        return ($this->promoCodesAvailable ? '1' : '0');
     }
 
 

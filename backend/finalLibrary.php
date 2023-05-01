@@ -83,7 +83,8 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false): arr
         $query0 = "SELECT V.id
             FROM Vendor AS V
             WHERE V.idDestination = ? AND V.isOkForShowing = 1
-                AND V.isActiveNow = 1;";
+                AND V.isActiveNow = 1
+            ORDER BY V.orderDisplay, V.id;";
     }
     $stmt = $conn->prepare($query0);
     $stmt->bind_param('i', $idDestination);
@@ -111,7 +112,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                         V.priceKid, V.idDestination, V.imageBasic, VT.name,
                         CVT.name, CV.id, V.forHowManyPersonsIs, V.googleMapsImage,
                         V.childAcceptance, V.infantTolerance, V.minAgeAdult,
-                        V.minAgeKid
+                        V.minAgeKid, V.promoCodesAvailable
               FROM Vendor AS V, VendorTranslate AS VT, CategoryVendor as CV,
                         CategoryVendorTranslate CVT
               WHERE V.id = ? AND V.id = VT.idVendor AND VT.idLanguage = ?
@@ -125,8 +126,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
         $id = $priceAdult = $originalPrice = $discount = $priceKid = $idDestination
             = $image = $name = $categoryName = $categoryId = $forHowManyPersonsIs
             = $googleMapsImage = $childAcceptance = $infantTolerance = $minAgeAdult
-            = $minAgeKid = '';
-        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs, $googleMapsImage, $childAcceptance, $infantTolerance, $minAgeAdult, $minAgeKid);
+            = $minAgeKid = $promoCodesAvailable = '';
+        $stmt->bind_result($id, $priceAdult, $originalPrice, $discount, $priceKid, $idDestination, $image, $name, $categoryName, $categoryId, $forHowManyPersonsIs, $googleMapsImage, $childAcceptance, $infantTolerance, $minAgeAdult, $minAgeKid, $promoCodesAvailable);
         while ($stmt->fetch()) {
         }
         if (!$id) {
@@ -135,7 +136,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
         $vendor = new \ValuePass\Vendor(
             $id, $categoryId, $categoryName, $idDestination, $priceAdult, $originalPrice,
             $discount, $priceKid, $image, $name, $forHowManyPersonsIs, $googleMapsImage,
-            $childAcceptance, $infantTolerance, $minAgeAdult, $minAgeKid
+            $childAcceptance, $infantTolerance, $minAgeAdult, $minAgeKid, $promoCodesAvailable
         );
         $query1 = "SELECT LBT.name
                 FROM LabelsBox LB, VendorLabelsBox AS VLB, LabelsBoxTranslate AS LBT

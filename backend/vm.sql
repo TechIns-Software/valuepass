@@ -121,7 +121,9 @@ create TABLE Vendor
     hourCancel             int            DEFAULT 24,
     minAgeAdult            int            DEFAULT 13,
     minAgeKid              int            DEFAULT 4,
-    priceKidVendor         float NOT NULL
+    priceKidVendor         float NOT NULL,
+    orderDisplay           int            DEFAULT 0,
+    promoCodesAvailable    binary(1)      DEFAULT 0
 ) ENGINE = InnoDB;
 
 create TABLE VendorTranslate
