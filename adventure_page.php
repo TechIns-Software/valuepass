@@ -237,10 +237,10 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                             <div class="row my-2">
                                 <div class="d-flex justify-content-between">
                                     <div class="p-0 m-0  "><b style=" font-size: 15px; font-weight: 800"> <?php if ($_SESSION['languageId'] == 1) { ?>
-                                               <b class="main-blue-color" data-bs-toggle="modal" data-bs-target="#promoCode<?=$vendor->getPromoCodesAvailable()?>">Πληρώστε αργότερα  </b>  στην τοποθεσία<br>
+                                               <b class="main-blue-color text-decoration-underline" data-bs-toggle="modal" data-bs-target="#promoCode<?=$vendor->getPromoCodesAvailable()?>">Πληρώστε αργότερα  </b>  στην τοποθεσία<br>
                                                 της δραστηριότητας
                                             <?php } else { ?>
-                                                <b class="main-blue-color" data-bs-toggle="modal" data-bs-target="#promoCode<?=$vendor->getPromoCodesAvailable()?>">  Pay later </b> at the activity location
+                                                <b class="main-blue-color text-decoration-underline" data-bs-toggle="modal" data-bs-target="#promoCode<?=$vendor->getPromoCodesAvailable()?>">  Pay later </b> at the activity location
                                             <?php } ?>
                                         </b>
                                     </div>
