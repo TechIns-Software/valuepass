@@ -600,6 +600,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 if ($_SESSION["languageId"] == 2){
                 ?>
                 <div  class="modal-body">
+
+                    <h2> Book onboard & Pay later</h2>
+                    <p class="my-0"> Reserve your spot onboard and get a discount on the initial price of
+                        the activity via the <b class="vpicon">  VP </b> Voucher. Pay later the discounted price of the activity at its location. </p>
+                    <b class="border-bottom my-2"> How it works</b>
                     <h5>1) <b> Find your experience</b></h5>
                     <p> Choose the experience you want, reserve your spot onboard, and get a
                         discount on the initial price of the activity by purchasing the VP Voucher </p>
@@ -627,6 +632,11 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 ?>
 
                     <div  class="modal-body">
+
+                        <h2> Κάντε Κράτηση εν πλω & Πληρώστε αργότερα</h2>
+                        <p class="my-0"> Κρατήστε τη θέση σας εν πλω και κερδίστε έκπτωση στην αρχική τιμή της
+                            δραστηριότητας μέσω του <b class="vpicon">  VP </b> Voucher. Πληρώστε αργότερα την τιμή της δραστηριότητας σας με έκπτωση στην τοποθεσία της. </p>
+                        <b class="border-bottom my-2"> Πώς λειτουργεί </b>
                         <h5>1) <b> Επιλέξτε την εμπειρία σας</b></h5>
                         <p> Διαλέξτε την εμπειρία που σας ταιριάζει, κάντε κράτηση για τη θέση σας και κερδίστε έκπτωση στην αρχική τιμή της δραστηριότητας αγοράζοντας το VP Voucher εν πλω. </p>
 
@@ -670,6 +680,12 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 if ($_SESSION["languageId"] == 2){
                 ?>
                 <div  class="modal-body">
+                    <h2> Book onboard & Pay later</h2>
+                    <p class="my-0"> Reserve your spot onboard and get a discount on the initial price of
+                        the activity via the <b class="vpicon">  VP </b> Voucher. Pay later the discounted price of the activity at its location. </p>
+                    <h5 class="border-bottom my-2"> How it works</h5>
+
+
                     <h5>1) <b> Find your experience</b></h5>
                     <p> Choose the experience you want, reserve your spot onboard, and get a
                         discount on the initial price of the activity by purchasing the VP Voucher.
@@ -694,6 +710,13 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                 }else{
                 ?>
                     <div  class="modal-body">
+
+                        <h3> Κάντε Κράτηση εν πλω & Πληρώστε αργότερα</h3>
+                        <p class="my-0"  > Κρατήστε τη θέση σας εν πλω και κερδίστε έκπτωση στην αρχική τιμή της
+                            δραστηριότητας μέσω του <b class="vpicon">  VP </b> Voucher. Πληρώστε αργότερα την τιμή της δραστηριότητας σας με έκπτωση στην τοποθεσία της. </p>
+                        <h5 class="border-bottom my-2"> Πώς λειτουργεί </h5>
+
+
                         <h5>1) <b> Επιλέξτε την εμπειρία σας</b></h5>
                         <p>Διαλέξτε την εμπειρία που σας ταιριάζει, κάντε κράτηση για τη θέση σας και κερδίστε έκπτωση στην αρχική τιμή της δραστηριότητας αγοράζοντας το VP Voucher εν πλω.
                         </p>
