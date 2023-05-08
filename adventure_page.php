@@ -588,7 +588,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
         </div>
     </div>
 
-    <div style="top: 40px" class="modal fade " id="promoCode0" tabindex="-1" aria-labelledby="promoCode0" aria-hidden="true">
+    <div style="top: 40px" class="modal fade " id="promoCode1" tabindex="-1" aria-labelledby="promoCode0" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div style="min-height: 40px"></div>
             <div class="modal-content">
@@ -659,7 +659,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
         </div>
     </div>
 
-    <div style="top: 40px" class="modal fade " id="promoCode1" tabindex="-1" aria-labelledby="questionmodal" aria-hidden="true">
+    <div style="top: 40px" class="modal fade " id="promoCode0" tabindex="-1" aria-labelledby="questionmodal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
