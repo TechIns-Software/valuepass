@@ -536,7 +536,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                         <div class="text-center"><small><?php echo $menu[73] ?></small></div>
                     </div>
                     <div class="selectTimeContainer"  class="d-flex"> <h4 id="selectTimeTitle"></h4></div>
-                    <div id="optionbuttons" class="d-flex"></div>
+                    <div id="optionbuttons" class="d-flex justify-content-start flex-wrap"></div>
                     <div id="option"></div>
                     <div style="min-height: 10px;"></div>
                 </div>
