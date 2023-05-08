@@ -70,6 +70,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                         $forHowManyPersonsIsArray = $objectVouchersDisplay['forHowManyPersonsIsArray'];
                         $originalPriceAdultArray = $objectVouchersDisplay['originalPriceAdult'];
                         $originalPriceKidArray = $objectVouchersDisplay['originalPriceKid'];
+                        $hasPromoCodes = $objectVouchersDisplay['hasPromoCodes'];
                         for ($counter = 0;
                              $counter < count($nameVendorArray);
                              $counter++) {
@@ -91,6 +92,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             $forHowManyPersonsIs = $forHowManyPersonsIsArray[$counter];
                             $originalPriceAdult = $originalPriceAdultArray[$counter];
                             $originalPriceKid = $originalPriceKidArray[$counter];
+                            $hasPromo = $hasPromoCodes[$counter] ;
                             ?>
 
                             <div class="col-12 cart-voucher  ">
@@ -160,7 +162,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
                                         <p class=" m-0 fw-bolder  ">
 
-                                            <?php echo $menu[49] ?> <b class="">  <?php echo $menu[197] ?>   </b> <?php echo $menu[198] ?>
+                                            <b class="main-blue-color" data-bs-toggle="modal" data-bs-target='#promoCode<?php echo $hasPromo ?>'>    <?php echo $menu[49].''. $menu[197] ?>   </b> <?php echo $menu[198] ?>
                                         </p>
                                         <ul>
                                             <?php
@@ -450,6 +452,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
         </div>
         <?php
     }
+    include_once 'promoCodeModals.php';
     ?>
 
 

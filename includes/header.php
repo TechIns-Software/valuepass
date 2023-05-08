@@ -38,17 +38,10 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="assets/img/logo2.jpg">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="assets/img/logo2.jpg">
 
-    <!-- GOOGLE WEB FONT -->
-    <!--	<link rel="preconnect" href="https://fonts.gstatic.com">-->
-    <!--	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">-->
-    <!--	<link rel="preconnect" href="https://fonts.googleapis.com">-->
-    <!--	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
-    <!--	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">-->
-    <!--	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">-->
 
     <!-- BASE CSS -->
     <link href="assets/bootstrap-5.1.3/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css?v=5.3" rel="stylesheet">
+    <link href="assets/css/style.css?v=5.4" rel="stylesheet">
     <link href="assets/css/vendors.css" rel="stylesheet">
 
     <!-- REVOLUTION SLIDER CSS -->

@@ -348,7 +348,7 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
 {
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
             V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs,
-            V.priceKidVendor, VV.starterVouchers, VV.existenceVoucher
+            V.priceKidVendor, VV.starterVouchers, VV.existenceVoucher,V.promoCodesAvailable
             FROM Vendor AS V, VendorVoucher AS VV 
             WHERE VV.idVendor = ? AND VV.existenceVoucher >= ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
@@ -359,10 +359,10 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
     if ($stmt->execute()) {
         $id = $date1 = $priceAdult = $priceKid = $infantPrice = $hourCancel =
         $discount = $originalPrice = $forHowManyPersonsIs = $priceKidVendor =
-        $starterVouchers = $existenceVoucher = '-1';
-        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor, $starterVouchers, $existenceVoucher);
+        $starterVouchers = $existenceVoucher =  $hasPromoCode = '-1';
+        $stmt->bind_result($id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor, $starterVouchers, $existenceVoucher,$hasPromoCode);
         while ($stmt->fetch()) {
-            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor, $starterVouchers, $existenceVoucher]);
+            array_push($possiblePackages, [$id, $date1, $priceAdult, $priceKid, $infantPrice, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor, $starterVouchers, $existenceVoucher,$hasPromoCode]);
         }
     }
     return $possiblePackages;
@@ -371,13 +371,15 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
 function getVendorForCart($conn, $idVendorVoucher, $idLanguage): array
 {
     $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, V.hourCancel , VV.dateVoucher,
-            V.discount, V.originalPrice,V.forHowManyPersonsIs, V.priceKidVendor
+            V.discount, V.originalPrice,V.forHowManyPersonsIs, V.priceKidVendor , V.promoCodesAvailable
             FROM Vendor AS V, VendorVoucher AS VV
             WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
     $stmt = $conn->prepare($query);
-    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount = $originalPrice = $forHowManyPersonsIs = $priceKidVendor = -1;
+    $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount
+        = $originalPrice = $forHowManyPersonsIs = $priceKidVendor = $hasPromoCode = -1;
     if ($stmt->execute()) {
-        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel, $dateVoucher, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor);
+        $stmt->bind_result($priceAdult, $priceKid, $priceInfant, $imageBasic, $idVendor, $hourCancel,
+            $dateVoucher, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor,$hasPromoCode);
         while ($stmt->fetch()) {
         }
     }
@@ -391,7 +393,7 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage): array
         while ($stmt2->fetch()) {
         }
     }
-    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor];
+    return [$priceAdult, $priceKid, $priceInfant, $imageBasic, $dateVoucher, $vendorName, $hourCancel, $discount, $originalPrice, $forHowManyPersonsIs, $priceKidVendor,$hasPromoCode];
 }
 
 
@@ -476,6 +478,7 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
     $originalPriceAdult = [];
     $originalPriceKid = [];
     $saved = [];
+    $hasPromoCodes = [];
     $forHowManyPersonsIsArray = [];
     foreach ($cart as $arrayVouchersWant) {
         $idVendorDisplayed = $arrayVouchersWant[0]->getIdVendor();
@@ -491,6 +494,7 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         $originalPrice = $arrayPrices[8];
         $forHowManyPersonsIs = $arrayPrices[9];
         $priceKidVendor = $arrayPrices[10];
+        $hasPromoCode = $arrayPrices[11];
 
         $totalToPayAdultToVendor = $originalPrice - ($originalPrice * ($discount / 100)) - $priceAdult;
         $percentPayedToVendor = $totalToPayAdultToVendor / $priceAdult;
@@ -536,6 +540,7 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         array_push($priceInfantArray, $priceInfant);
         array_push($saved, ($discount / 10) * $totalPay);
         array_push($forHowManyPersonsIsArray, $forHowManyPersonsIs);
+        array_push($hasPromoCodes, $hasPromoCode);
     }
     //sort from bigger to smaller
     usort($allVouchers, function ($a, $b) {
@@ -561,7 +566,8 @@ function createArrayVouchersSortedFromCart($conn, $cart, $idLanguage)
         'saved' => $saved,
         'forHowManyPersonsIsArray' => $forHowManyPersonsIsArray,
         'originalPriceAdult' => $originalPriceAdult,
-        'originalPriceKid' => $originalPriceKid
+        'originalPriceKid' => $originalPriceKid,
+        'hasPromoCodes' => $hasPromoCodes
     );
 }
 
@@ -690,6 +696,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $priceKidVendor = $package[9];
     $starterVouchers = $package[10];
     $existenceVoucher = $package[11];
+    $hasPromoCode = $package[12];
 
 
     if ($_SESSION["languageId"] == 2) {
@@ -834,7 +841,8 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     }
 
     $message .= " </ul> ";
-    $message .= " <h6 class='fw-bolder'>$message6b1  <span class='laterText'> $message6b2 </span>  $message6b3</h6> ";
+    $message .= " <h6 class='fw-bolder'>  <a  data-bs-toggle='modal'
+  data-bs-target='#promoCode$hasPromoCode' class='main-blue-color'> $message6b1  $message6b2 </a>  $message6b3</h6> ";
     $message .= " <ul> ";
     if ($adults != 0) {
         $totalAdultPriceVendor = $adults * $totalToPayAdultToVendor;
