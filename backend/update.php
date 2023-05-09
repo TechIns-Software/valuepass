@@ -579,10 +579,3 @@ $allVersions = [
 ];
 updateVersionTable($conn, $allVersions);
 
-$from = "test@valuepass.gr";
-$to = "christosbaztekas@gmail.com";
-$subject = "Check Cron Job Update Vm";
-$message = "Check Cron Job Update Vm";
-$headers = "From:" . $from;
-mail($to,$subject,$message, $headers);
-
