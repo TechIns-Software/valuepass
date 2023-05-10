@@ -1,10 +1,13 @@
 <?php
-ini_set('max_execution_time', 300);
-include_once 'updateLibrary.php';
+const PATH_DOMAIN = 'https://valuepass.gr/';
+const SUB_PATH_VENDOR = 'vendorImages/';
+const SUB_PATH_DESTINATION = 'images/location_images/';
+ini_set('max_execution_time', 600);
+require 'updateLibrary.php';
 
 
 if (!isset($conn)) {
-    include '../connection.php';
+    require '../connection.php';
 }
 $targetFileName = './update.json';
 $fileDestination = 'https://valuepass.gr/request/update/update.json';
@@ -382,189 +385,165 @@ $okForShowingDestinations = array_intersect($notOkForShowingDestinations, $modif
 setOkDestinations($conn, $okForShowingDestinations);
 
 $vendors = $response['vendors'];
-
-$vendorsModified = [];
-
-$basicImagesToChange = [];
-$googleMapsImageToChange = [];
-
-$imagesToBeAdded = [];
-$imagesToBeRemoved = [];
-
 $basicImagesVendor = getImageBasicVendors($conn);
 $imagesAvailableOfAllVendor = getImageVendors($conn);
+$vendorStatus = getStatusOfVendors($conn);
+$vendorImagesGiven = [];
 foreach ($vendors as $idVendor => $vendorValue) {
-    if ($idVendor !== 'version') {
-        $idVendor = intval($idVendor);
-        // # Basic vendor images
-        $imagesBasicNow = $basicImagesVendor[$idVendor];
-        $imageBasicObjectJSON = $vendorValue['imageBasic'];
-        $imageGoogleMapsObjectJSON = $vendorValue['googleMapsImage'];
-        if ($imagesBasicNow['imageBasicVersion'] < $imageBasicObjectJSON['version']) {
-            array_push($basicImagesToChange, $idVendor);
-            if (!in_array($idVendor, $vendorsModified)) {
-                array_push($vendorsModified, $idVendor);
-            }
-        }
-        if ($imagesBasicNow['googleMapsImageVersion'] < $imageGoogleMapsObjectJSON['version']) {
-            array_push($googleMapsImageToChange, $idVendor);
-            if (!in_array($idVendor, $vendorsModified)) {
-                array_push($vendorsModified, $idVendor);
-            }
-        }
-
-        // # vendor images
-        if (!isset($imagesAvailableOfAllVendor[$idVendor])) {
-            $imagesAvailable = [];
-        } else {
-            $imagesAvailable = $imagesAvailableOfAllVendor[$idVendor];
-        }
-        $imagesPlural = $vendorValue['images'];
-        foreach ($imagesPlural as $imageObject) {
-
-            $idImage = intval($imageObject['id']);
-            $pathImage = $imageObject['path'];
-            if (!in_array($idImage, $imagesAvailable)) {
-                $imageToBeAdded = array(
-                    'id' => $idImage,
-                    'idVendor' => $idVendor,
-                    'path' => $pathImage
-                );
-                array_push($imagesToBeAdded, $imageToBeAdded);
-                if (!in_array($idVendor, $vendorsModified)) {
-                    array_push($vendorsModified, $idVendor);
-                }
-            } else {
-                $index_temp = array_search($idImage, $imagesAvailable);
-                unset($imagesAvailable[$index_temp]);
-
-            }
-
-        }
-
-        foreach ($imagesAvailable as $toBeRemovedImages) {
-            $imagesToBeRemoved[$toBeRemovedImages] = $idVendor;
-        }
-
+    if ($idVendor == 'version') {
+        continue;
     }
-}
-
-// # start download
-$updatedBasic = [];
-
-foreach ($basicImagesToChange as $idVendorBasicImage) {
-    $imagePathName = $vendors[$idVendorBasicImage]['imageBasic']['path'];
-    $url = "https://valuepass.gr/vendorImages/$idVendorBasicImage/$imagePathName";
-    $targetFileName = "../vendorImages/$idVendorBasicImage/";
-    createFolderIfNotExists($targetFileName);
-    $targetFileName .= "$imagePathName";
-
-    if (!is_file($targetFileName)) {
-        @$file = file_get_contents($url);
-        if ($file) {
-            file_put_contents(
-                $targetFileName,
-                $file
-            );
-            $updatedBasic[$idVendorBasicImage] = $imagePathName;
-        } else {
-            if (($key = array_search($idVendorBasicImage, $vendorsModified)) !== false) {
-                unset($vendorsModified[$key]);
-            }
-        }
-    } else {
-        $updatedBasic[$idVendorBasicImage] = $imagePathName;
+    if (!isset($vendorStatus[$idVendor])) {
+        echo "Vendor $idVendor not found in status database<br>";
+        continue;
     }
+    $vendorImagesGiven[$idVendor] = array(
+        'isShown' => $vendorStatus[$idVendor],
+        'addedImages' => [],
+        'changedMade' => 0
+    );
 
-}
 
+    $idVendor = intval($idVendor);
+    $imagesBasicNow = $basicImagesVendor[$idVendor];
 
-$updatedGoogleMaps = [];
-foreach ($googleMapsImageToChange as $idVendorGoogleMaps) {
-    $imagePathName = $vendors[$idVendorGoogleMaps]['googleMapsImage']['path'];
-    $url = "https://valuepass.gr/vendorImages/$idVendorGoogleMaps/$imagePathName";
-    $targetFileName = "../vendorImages/$idVendorGoogleMaps/";
-    createFolderIfNotExists($targetFileName);
-    $targetFileName .= "$imagePathName";
-    if (!is_file($targetFileName)) {
-        @$file = file_get_contents($url);
-        if ($file) {
-            file_put_contents(
-                $targetFileName,
-                $file
-            );
-            $updatedGoogleMaps[$idVendorGoogleMaps] = $imagePathName;
-        } else {
-            if (($key = array_search($idVendorGoogleMaps, $vendorsModified)) !== false) {
-                unset($vendorsModified[$key]);
-            }
-        }
-    } else {
-        $updatedGoogleMaps[$idVendorGoogleMaps] = $imagePathName;
-    }
+    $imageBasicObjectJSON = $vendorValue['imageBasic'];
 
-}
-
-$innerImagesUploaded = [];
-foreach ($imagesToBeAdded as $imageToAddedObj) {
-    $idVendorInnerImage = $imageToAddedObj['idVendor'];
-    $imagePathName = $imageToAddedObj['path'];
-    $idImage = $imageToAddedObj['id'];
-
-    $url = "https://valuepass.gr/vendorImages/$idVendorInnerImage/$imagePathName";
-    $targetFileName = "../vendorImages/$idVendorInnerImage/";
-    createFolderIfNotExists($targetFileName);
-    $targetFileName .= "$imagePathName";
-    if (!is_file($targetFileName)) {
-        @$file = file_get_contents($url);
-        if ($file) {
-            file_put_contents(
-                $targetFileName,
-                $file
-            );
-            $innerImagesUploaded[$idImage] = array(
-                'idVendor' => $idVendorInnerImage,
-                'path' => $imagePathName
-            );
-        } else {
-            if (($key = array_search($idVendorInnerImage, $vendorsModified)) !== false) {
-                unset($vendorsModified[$key]);
-            }
-        }
-    } else {
-        $innerImagesUploaded[$idImage] = array(
-            'idVendor' => $idVendorInnerImage,
-            'path' => $imagePathName
+    if ($imagesBasicNow['imageBasicVersion'] < $imageBasicObjectJSON['version']) {
+        $vendorImagesGiven[$idVendor]['changedMade'] = 1;
+        $vendorImagesGiven[$idVendor]['imageBasic'] = array(
+            'path' => $imageBasicObjectJSON['path'],
+            'version' => $imageBasicObjectJSON['version']
         );
     }
 
+    $imageGoogleMapsObjectJSON = $vendorValue['googleMapsImage'];
+
+    if ($imagesBasicNow['googleMapsImageVersion'] < $imageGoogleMapsObjectJSON['version']) {
+        $vendorImagesGiven[$idVendor]['changedMade'] = 1;
+        $vendorImagesGiven[$idVendor]['googleMapsImage'] = array(
+            'path' => $imageGoogleMapsObjectJSON['path'],
+            'version' => $imageGoogleMapsObjectJSON['version']
+        );
+    }
+    $imagesAvailable = !isset($imagesAvailableOfAllVendor[$idVendor]) ? [] : $imagesAvailableOfAllVendor[$idVendor];
+
+    $imagesPlural = $vendorValue['images'];
+
+    foreach ($imagesPlural as $imageObject) {
+
+        $idImage = intval($imageObject['id']);
+        $pathImage = $imageObject['path'];
+        if (!in_array($idImage, $imagesAvailable)) {
+            $vendorImagesGiven[$idVendor]['addedImages']["$idImage"] = $pathImage;
+        } else {
+            $index_temp = array_search($idImage, $imagesAvailable);
+            unset($imagesAvailable[$index_temp]);
+        }
+
+    }
+    $vendorImagesGiven[$idVendor]['removedImages'] = $imagesAvailable;
+
+
 }
-
-updateBasicImages($conn, $updatedBasic, $response['vendors'], 'Vendor', 'imageBasic', 'imageBasicVersion');
-updateBasicImages($conn, $updatedGoogleMaps, $response['vendors'], 'Vendor', 'googleMapsImage', 'googleMapsImageVersion');
-
-
-updateInnerImages($conn, $innerImagesUploaded);
-
-
-// NOTE: not isOkForShowing, take all of them compare to the
-//       vendorsModified and these are ok for showing
-$notOkForShowingVendors = getNotOkForShowingVendors($conn);
-$okForShowingNow = array_intersect($notOkForShowingVendors, $vendorsModified);
-
-setOkVendor($conn, $okForShowingNow);
-
 $queryImageRemove = "DELETE FROM VendorImages
                     WHERE id = ? AND idVendor = ?";
 $stmtImageRemove = $conn->prepare($queryImageRemove);
-$idImage = $idVendor = 0;
-$stmtImageRemove->bind_param('ii', $idImage, $idVendor);
-foreach ($imagesToBeRemoved as $idImage => $idVendor) {
+$idImageRemoved = $idVendor = 0;
+$stmtImageRemove->bind_param('ii', $idImageRemoved, $idVendor);
+foreach ($vendorImagesGiven as $idVendor => $vendorImagesObj) {
+    $flagShownOk = true;
+    $urlWeb_basic = PATH_DOMAIN. SUB_PATH_VENDOR;
+    $local_url = "../". SUB_PATH_VENDOR;
+    createFolderIfNotExists($local_url. "$idVendor");
 
-    $stmtImageRemove->execute();
-//    if (in_array($idVendor, $vendorsModified)) {//because can stay without images
-//    }
+
+    if (isset($vendorImagesObj['imageBasic'])) {
+        $pathImage = $vendorImagesObj['imageBasic']['path'];
+        $versionImage = $vendorImagesObj['imageBasic']['version'];
+        $urlWeb = $urlWeb_basic. "$idVendor/$pathImage";
+        $urlLocal = $local_url. "$idVendor/$pathImage";
+
+        if (!is_file($urlLocal)) {
+            @$file = file_get_contents($urlWeb);
+            if ($file) {
+                file_put_contents(
+                    $urlLocal,
+                    $file
+                );
+                updateBasicImageVendor($conn, $idVendor, $pathImage, $versionImage, 'Vendor', 'imageBasic', 'imageBasicVersion');
+            } else {
+                echo "Vendor $idVendor imageBasic $pathImage 1<br>";
+                $flagShownOk = false;
+            }
+        } else {
+            updateBasicImageVendor($conn, $idVendor, $pathImage, $versionImage, 'Vendor', 'imageBasic', 'imageBasicVersion');
+        }
+    }
+    if (isset($vendorImagesObj['googleMapsImage'])) {
+        $pathImage = $vendorImagesObj['googleMapsImage']['path'];
+        $versionImage = $vendorImagesObj['googleMapsImage']['version'];
+        $urlWeb = $urlWeb_basic. "$idVendor/$pathImage";
+        $urlLocal = $local_url. "$idVendor/$pathImage";
+
+        if (!is_file($urlLocal)) {
+            @$file = file_get_contents($urlWeb);
+            if ($file) {
+                file_put_contents(
+                    $urlLocal,
+                    $file
+                );
+                updateBasicImageVendor($conn, $idVendor, $pathImage, $versionImage, 'Vendor', 'googleMapsImage', 'googleMapsImageVersion');
+            } else {
+                echo "Vendor $idVendor imageBasic $pathImage 2<br>";
+
+
+                $flagShownOk = false;
+            }
+        } else {
+            updateBasicImageVendor($conn, $idVendor, $pathImage, $versionImage, 'Vendor', 'googleMapsImage', 'googleMapsImageVersion');
+        }
+    }
+
+    $imagesAdded = [];
+    foreach ($vendorImagesObj['addedImages'] as $idImageAdded => $pathImage) {
+        $urlWeb = $urlWeb_basic. "$idVendor/$pathImage";
+        $urlLocal = $local_url. "$idVendor/$pathImage";
+
+        if (!is_file($urlLocal)) {
+            @$file = file_get_contents($urlWeb);
+            if ($file) {
+                file_put_contents(
+                    $urlLocal,
+                    $file
+                );
+                $imagesAdded[$idImageAdded] = $pathImage;
+            } else {
+                echo "Vendor $idVendor imageBasic $pathImage 3<br>";
+
+
+                $flagShownOk = false;
+            }
+        } else {
+            $imagesAdded[$idImageAdded] = $pathImage;
+        }
+    }
+
+    // # add inner images to vendor
+    insertInnerImagesVendor($conn, $idVendor, $imagesAdded);
+
+    if ($flagShownOk) {
+        if (!$vendorImagesObj['isShown']) {
+            setOkForShowingVendor($conn, $idVendor);
+        }
+
+        foreach ($vendorImagesObj['removedImages'] as $idImageRemoved) {
+            $stmtImageRemove->execute();
+        }
+
+    }
 }
+
 
 $allVersions = [
     $response['version'],
