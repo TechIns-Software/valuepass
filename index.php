@@ -251,21 +251,11 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                         <p class="my-1"> <b>  <?php echo $menu[24] ?> </b> </p>
                     </div>
 
-                    <?php if ($_SESSION['languageId'] == 1){   ?>
-                        <h6> Επιλέγοντας 4 VP Vouchers το 1 είναι Δωρεάν </h6>
-                        <h6> Επιλέγοντας 6 VP Vouchers τα 2 είναι Δωρεάν </h6>
-                        <h6> Επιλέγοντας 8 VP Vouchers τα 3 είναι Δωρεάν </h6>
-                        <h6>  Επιλέγοντας 10 VP Vouchers τα 4 είναι Δωρεάν </h6>
-                        <p class="text-muted">Η προσφορά ισχύει ΜΟΝΟ για τα VP Vouchers και ΟΧΙ για τις δραστηριότητες.</p>
-                    <?php  }else{?>
-
-                        <h6>  Select 4 VP Vouchers and 1 of the 4 is Free </h6>
-                        <h6>  Select 6 VP Vouchers and 2 of the 6 are Free </h6>
-                        <h6>  Select 8 VP Vouchers and 3 of the 8 are Free </h6>
-                        <h6>  Select 10 VP Vouchers and 4 of the 10 are Free </h6>
-                        <p class="text-muted"> The offer only applies to the VP Vouchers, NOT the activities. </p>
-                    <?php   }  ?>
-
+                    <h6>  <?php echo $menu[242] ?> </h6>
+                    <h6>  <?php echo $menu[243] ?> </h6>
+                    <h6>  <?php echo $menu[244] ?> </h6>
+                    <h6>  <?php echo $menu[245] ?> </h6>
+                    <p class="text-muted"> <?php echo $menu[246] ?></p>
                 </div>
             </div>
         </div>
