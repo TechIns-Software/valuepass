@@ -87,20 +87,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                 <div class="row px-4">
                                     <h5 class="text-decoration-underline"> <?php echo $menu[24] ?></h5>
 
-                                    <?php if ($_SESSION['languageId'] == 1){   ?>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  4 VP Vouchers το 1 είναι Δωρεάν </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  6 VP Vouchers τα 2 είναι Δωρεάν </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  8 VP Vouchers τα 3 είναι Δωρεάν </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Επιλέγοντας  10 VP Vouchers τα 4 είναι Δωρεάν </h6>
-                                        <p class="text-muted">         Η προσφορά ισχύει ΜΟΝΟ για τα VP Vouchers και ΟΧΙ για τις δραστηριότητες.</p>
-                                  <?php  }else{?>
+                                    <h6>  <?php echo $menu[242] ?> </h6>
+                                    <h6>  <?php echo $menu[243] ?> </h6>
+                                    <h6>  <?php echo $menu[244] ?> </h6>
+                                    <h6>  <?php echo $menu[245] ?> </h6>
+                                    <p class="text-muted"> <?php echo $menu[246] ?></p>
 
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Select 4 VP Vouchers and 1 of the 4 is Free </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Select 6 VP Vouchers and 2 of the 6 are Free </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Select 8 VP Vouchers and 3 of the 8 are Free </h6>
-                                        <h6> <i class="fa-solid fa-money-bill"></i> Select 10 VP Vouchers and 4 of the 10 are Free </h6>
-                                        <p class="text-muted"> The offer only applies to the VP Vouchers, NOT the activities. </p>
-                                  <?php   }  ?>
 
                                 </div>
 
@@ -142,7 +134,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                              role="button"
                              aria-expanded="true" aria-controls="collapseExample">
                             <h6 class="panel-title accordion-toggle">
-                                <b><?php echo $menu[75]; ?>5. </b> <?php echo $menu[88]; ?></small>
+                                <b><?php echo $menu[75]; ?>5. </b> <?php echo $menu[88]; ?>
                             </h6>
                         </div>
                         <div id="collapse5" class=" collapse">
