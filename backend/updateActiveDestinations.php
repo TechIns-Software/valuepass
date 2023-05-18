@@ -1,4 +1,5 @@
 <?php
+exit('Deprecated Service');
 if (!isset($ports)) {
     $ports = [];
 //    exit('No arguments provided');

@@ -796,3 +796,51 @@ function removeVendor($conn, $idVendor) {
     $stmt->execute();
     $stmt->close();
 }
+
+function getStatusOfVendors(mysqli $conn) {
+    $query = "SELECT id, isOkForShowing FROM Vendor;";
+    $stmt = $conn->prepare($query);
+    $id = $status = 0;
+    $stmt->bind_result($id, $status);
+    $arrayOfStatus = [];
+    if ($stmt->execute()) {
+        while ($stmt->fetch()) {
+            $arrayOfStatus[$id] = $status;
+        }
+    }
+    $stmt->close();
+    return $arrayOfStatus;
+}
+
+function setOkForShowingVendor($conn, $idVendor) {
+    $query = "UPDATE Vendor
+            SET isOkForShowing = 1
+            WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $idVendor);
+    $stmt->execute();
+    $stmt->close();
+}
+
+function insertInnerImagesVendor($conn, $idVendor, $ids) {
+    $query = "INSERT INTO VendorImages(id, idVendor, image) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($query);
+    $imagePath = $idImage = '-1';
+    $stmt->bind_param('iis', $idImage, $idVendor, $imagePath);
+    foreach ($ids as $idImage=> $imagePath) {
+        $stmt->execute();
+    }
+    $stmt->close();
+
+}
+
+function updateBasicImageVendor($conn, $idImage, $path, $newVersion, $table, $nameColumn, $versionNameCol) {
+    $query = "UPDATE $table
+            SET $versionNameCol = ?, $nameColumn = ?
+            WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('isi', $newVersion , $path, $idImage);
+    $stmt->execute();
+    $stmt->close();
+
+}
