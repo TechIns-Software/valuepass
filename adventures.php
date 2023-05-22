@@ -146,13 +146,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 <div class="row my-1">
                                     <div class="col-12  ">
                                         <b class="my-1" style="font-size: 15px">
-                                            <?php if ($_SESSION['languageId'] == 1) { ?>
-                                                Κερδίστε <span class="vpicon"> έκπτωση </span> μέσω του <span
-                                                        class="vpicon"> VP </span>  Voucher
-                                            <?php } else { ?>
-
-                                                Get a <span class="vpicon"> discount</span>  via  <span class="vpicon">VP </span> Voucher
-                                            <?php } ?>
+                                            <?php echo $menu[285] ?>
                                         </b>
                                     </div>
                                 </div>
@@ -163,25 +157,13 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     </b>
                                     </div>
                                     <div class="col-12 win-text ">
-                                        <?php if ($_SESSION['languageId'] == 1) { ?>
-                                            Εξοικονομήστε <span class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span> από την αρχική τιμή <br>
-                                            χρησιμοποιώντας το <span class="vpicon">VP </span> Voucher
-                                        <?php } else { ?>
-                                            Save <span
-                                                    class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> €</span>  on the initial price
-                                            <br>
-                                            using  <span class="vpicon">VP </span> Voucher
-                                        <?php } ?>
+                                        <?php echo $menu[286]; ?>  <b class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> € </b>   <?php echo $menu[287]; ?>
                                     </div>
                                 </div>
                                 <div class="row my-2">
                                     <div class="d-flex justify-content-between">
-                                        <div class="p-0 m-0  "><b style=" font-size: 15px; font-weight: 800"> <?php if ($_SESSION['languageId'] == 1) { ?>
-                                                    Πληρώστε στην τοποθεσία<br>
-                                                    της δραστηριότητας
-                                                <?php } else { ?>
-                                                    Pay at the activity location
-                                                <?php } ?>
+                                        <div class="p-0 m-0  "><b style=" font-size: 15px; font-weight: 800">
+                                                <?php echo $menu[288]; ?>
                                             </b>
                                         </div>
                                         <div class=""><b style="font-weight: 800"><?php echo $totalToPay; ?>
@@ -195,13 +177,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
 
                                         <div>
                                             <p class=" text-white my-auto " style="font-size: 15px">
-                                                <?php if ($_SESSION['languageId'] == 1) { ?>
-                                                    Κάντε Κράτηση εν πλω<br>
-                                                    μέσω <span class="vpicon"> VP </span> Voucher
-
-                                                <?php } else { ?>
-                                                    Book on board via <br> <span class="vpicon">VP </span> Voucher
-                                                <?php } ?>
+                                                <?php echo $menu[289]; ?>
                                             </p>
                                         </div>
                                         <div class="my-auto"> <?php echo $vendor->getPriceAdult(); ?> €/ <span
