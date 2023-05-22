@@ -7,7 +7,7 @@ if (!isset($conn)) {
     include 'connection.php';
 }
 include_once 'backend/finalLibrary.php';
-$menu = GetMenu($conn, $_SESSION['languageId']);
+$menu = GetMenu($conn, $_SESSION['"anguageId"]);
 $languages = getAllLanguages($conn);
 $cartArray = unserialize($_SESSION['cart']);
 
