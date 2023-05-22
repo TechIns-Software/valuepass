@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['languageName'], $_SESSION['"anguageId"])) {
+if (!isset($_SESSION['languageName'], $_SESSION["languageId"])) {
     $_SESSION['languageName'] = 'english';
-    $_SESSION['"anguageId"] = 2;
+    $_SESSION["languageId"] = 2;
 }
-$languageId = $_SESSION['"anguageId"];
+$languageId = $_SESSION["languageId"];
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = serialize([]);
 }

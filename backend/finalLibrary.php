@@ -814,7 +814,7 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     $message .= "  <div class=''> ";
     $message .= " <h5 class='border-bottom'> <b> $message6 </b> </h5> ";
 //    $message .= " <h6 class='fw-bolder' >$message6a </h6> ";
-    if ($_SESSION['"anguageId"] == 1){
+    if ($_SESSION["languageId"] == 1){
         $message .= '<h6 class="fw-bolder"> Τιμή  <span class="vpicon">VP </span> Voucher </h6>';
     }else{
         $message .= '<h6 class="fw-bolder"> <span class="vpicon">VP </span> Vouchers Price </h6>' ;

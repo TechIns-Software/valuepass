@@ -114,7 +114,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
                                     <div class="col-12 py-3  ">
                                         <p class=" m-0   fw-bolder">
-                                            <?php echo $_SESSION['"anguageId"] == 1? 'Tιμή  <span class="vpicon">VP </span> Voucher'
+                                            <?php echo $_SESSION["languageId"] == 1? 'Tιμή  <span class="vpicon">VP </span> Voucher'
                                                 : '<span class="vpicon">VP </span> Vouchers Price'   ?>
                                         </p>
                                         <ul class="border-bottom my-1">
@@ -326,7 +326,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
                                     ?>
                                     <h5 class="my-0" >
-                                        <?php echo   $_SESSION['"anguageId"] == 1 ?'Από':'From'  ?>
+                                        <?php echo   $_SESSION["languageId"] == 1 ?'Από':'From'  ?>
                                      <span style="text-decoration: line-through;color: black">    <?php
                                          echo $calculateCartObject['totalPay'] + $calculateCartObject['moneyEarned'];
                                          ?></span>
@@ -338,7 +338,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                         <div class="col-12 d-flex justify-content-between">
                             <div class="">
                                 <h5 class='fw-bolder me-3'>
-                                    <?php echo $_SESSION['"anguageId"] == 1 ? 'Σύνολο Τιμής<br> <span class="vpicon"> VP </span> Voucher ' :
+                                    <?php echo $_SESSION["languageId"] == 1 ? 'Σύνολο Τιμής<br> <span class="vpicon"> VP </span> Voucher ' :
                                         'Total  <span class="vpicon"> VP </span> Voucher <br> Price' ?> </h5>
                             </div>
                             <div class="text-end">
@@ -355,7 +355,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             if ($calculateCartObject['moneyEarned'] != 0) {
                                 ?>
                                 <li class="border-bottom d-flex justify-content-between"> <div class="fw-bolder">
-                                        <?php echo $_SESSION['"anguageId"] == 1 ? "Επιπλέον έκπτωση στα <b class='vpicon'> VP </b> Vouchers"
+                                        <?php echo $_SESSION["languageId"] == 1 ? "Επιπλέον έκπτωση στα <b class='vpicon'> VP </b> Vouchers"
                                             : "Additional Discount on <b class='vpicon'> VP </b> Vouchers " ?>
                                     </div>
                                     <span>
@@ -375,16 +375,16 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                             ?>
 
                             <li class="border-bottom d-flex justify-content-between">
-                                <div> <?php echo $_SESSION['"anguageId"] == 1 ? ' <b> Πληρωτέα <b class="vpicon">VP</b> Vouchers </b> ' :
+                                <div> <?php echo $_SESSION["languageId"] == 1 ? ' <b> Πληρωτέα <b class="vpicon">VP</b> Vouchers </b> ' :
                                         '<b> <b class="vpicon">VP </b> Vouchers to be Paid </b>' ?> </div>
                                 <span><?php echo $calculateCartObject['vouchersPay']; ?></span></li>
                             <li class="border-bottom d-flex justify-content-between">
-                                <div> <?php echo $_SESSION['"anguageId"] == 1 ? '<b> Δωρεάν <b class="vpicon"> VP </b> Vouchers </b>':
+                                <div> <?php echo $_SESSION["languageId"] == 1 ? '<b> Δωρεάν <b class="vpicon"> VP </b> Vouchers </b>':
                                    '<b> Free <b class="vpicon">  VP </b> Vouchers </b>' ?></div>
                                 <span><?php echo count($allVouchers) - $calculateCartObject['vouchersPay']; ?></span>
                             </li>
                             <li class="border-bottom d-flex justify-content-between">
-                                <div>   <?php echo $_SESSION['"anguageId"] == 1 ? ' <b> Σύνολο  <b class="vpicon"> VP </b> Vouchers </b>' :
+                                <div>   <?php echo $_SESSION["languageId"] == 1 ? ' <b> Σύνολο  <b class="vpicon"> VP </b> Vouchers </b>' :
                                     ' <b> Total <b class="vpicon"> VP </b> Vouchers </b>' ?></div>
                                 <span><?php echo count($allVouchers); ?></span></li>
                         </ul>

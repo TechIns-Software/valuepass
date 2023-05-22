@@ -418,7 +418,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
 
                     <div class="banner_title2 ">
                         <?php
-                        if ($_SESSION['"anguageId"] == 1){
+                        if ($_SESSION["languageId"] == 1){
                             ?>
                         <p>  <?php echo $menu[38] ?>  </p>
                         <p>  <?php echo $menu[124] ?>  </p>
@@ -426,7 +426,7 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                         <p> <?php echo $menu[40] ?>   </p>
                         <p> <?php echo $menu[41] ?>   </p>
                         <?php }
-                        else  if ($_SESSION['"anguageId"] == 2){
+                        else  if ($_SESSION["languageId"] == 2){
                             ?>
                             <p>Purchase at least two (2) VP Vouchers </p>
                             <p>from the same or different activities. </p>

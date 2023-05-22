@@ -56,7 +56,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                         <h4>  <?php echo $menu[150]; ?></h4>
                         <p class="my-1"> <?php echo $menu[151]; ?></p>
                         <p class="text-success my-1 fw-bolder"><span class="fa-icon-lock"></span>
-                            <?php echo $_SESSION['"anguageId"] == 1 ? '   Η ολοκλήρωση της αγοράς είναι γρήγορη & ασφαλής' :' Checkout is fast and
+                            <?php echo $_SESSION["languageId"] == 1 ? '   Η ολοκλήρωση της αγοράς είναι γρήγορη & ασφαλής' :' Checkout is fast and
                             secure' ?></p>
 
                         <p class="text-danger my-1">
@@ -204,7 +204,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
 
                                     <div class="col-12  ">
                                         <p class=" m-0   fw-bolder">
-                                            <?php echo $_SESSION['"anguageId"] == 1 ? 'Tιμή  <span class="vpicon">VP </span> Voucher'
+                                            <?php echo $_SESSION["languageId"] == 1 ? 'Tιμή  <span class="vpicon">VP </span> Voucher'
                                                 : '<span class="vpicon">VP </span> Voucher Price' ?>
                                               </p>
                                             <ul class="border-bottom my-1">
@@ -409,7 +409,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                 <div class="col-12 d-flex justify-content-between">
                     <div>
                         <h4 class='fw-bolder me-3'>
-                            <?php echo $_SESSION['"anguageId"] == 1 ? 'Σύνολο Τιμής' :
+                            <?php echo $_SESSION["languageId"] == 1 ? 'Σύνολο Τιμής' :
                                 'Total  <span class="vpicon"> VP </span> ' ?> </h4>
                     </div>
                     <div>
@@ -433,7 +433,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                 <div class="col-12 d-flex justify-content-between">
                     <div>
                         <h4 class='fw-bolder me-3'>
-                            <?php echo $_SESSION['"anguageId"] == 1 ? '<span class="vpicon"> VP </span> Voucher ' :
+                            <?php echo $_SESSION["languageId"] == 1 ? '<span class="vpicon"> VP </span> Voucher ' :
                                 'Voucher Price' ?> </h4>
                     </div>
                     <div>
