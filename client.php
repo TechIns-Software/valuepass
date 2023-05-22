@@ -56,8 +56,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                         <h4>  <?php echo $menu[150]; ?></h4>
                         <p class="my-1"> <?php echo $menu[151]; ?></p>
                         <p class="text-success my-1 fw-bolder"><span class="fa-icon-lock"></span>
-                            <?php echo $_SESSION["languageId"] == 1 ? '   Η ολοκλήρωση της αγοράς είναι γρήγορη & ασφαλής' :' Checkout is fast and
-                            secure' ?></p>
+                            <?php echo $menu[300]; ?>
+                        </p>
 
                         <p class="text-danger my-1">
                             <?php echo $menu[204]; ?> </p>
@@ -82,24 +82,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                         </p>
 
                         <p class="my-1 ">
-                            • <?php echo $menu[180]; ?>
-                            <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
-                               target="_blank">
-                                <?php echo $menu[148] ?>
-                            </a>
-                            <?php echo $_SESSION["languageId"] == 1 ? ' της Valuepass' : null ?>
+                            • <?php echo $menu[301]; ?>
+
                         </p>
 
                         <p class="my-1 ">
-                            • <?php echo $menu[146]; ?>
-                            <a href="<?php echo $idLanguage == 1 ? 'terms_gr.pdf' : 'terms_gb.pdf' ?>"
-                               target="_blank">
-                                <?php echo $menu[148] ?>
-                            </a>
-                            <?php echo $_SESSION["languageId"] == 1 ? ' της Valuepass' : null ?>
-                            <!--                                --><?php //echo $menu[147] ?>
-                            <!--                                <a href="#"> <b>-->
-                            <?php //echo $menu[149] ?><!--  </b>  </a>-->
+                            • <?php echo $menu[302]; ?>
                         </p>
 
                         <p class="my-1 ">
@@ -204,8 +192,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
 
                                     <div class="col-12  ">
                                         <p class=" m-0   fw-bolder">
-                                            <?php echo $_SESSION["languageId"] == 1 ? 'Tιμή  <span class="vpicon">VP </span> Voucher'
-                                                : '<span class="vpicon">VP </span> Voucher Price' ?>
+                                            <?php echo $menu[293];?>
                                               </p>
                                             <ul class="border-bottom my-1">
                                                 <?php
@@ -409,8 +396,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                 <div class="col-12 d-flex justify-content-between">
                     <div>
                         <h4 class='fw-bolder me-3'>
-                            <?php echo $_SESSION["languageId"] == 1 ? 'Σύνολο Τιμής' :
-                                'Total  <span class="vpicon"> VP </span> ' ?> </h4>
+                            <?php echo $menu[303];?>
+                        </h4>
                     </div>
                     <div>
                         <?php
@@ -433,8 +420,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                 <div class="col-12 d-flex justify-content-between">
                     <div>
                         <h4 class='fw-bolder me-3'>
-                            <?php echo $_SESSION["languageId"] == 1 ? '<span class="vpicon"> VP </span> Voucher ' :
-                                'Voucher Price' ?> </h4>
+                            <?php echo $menu[304];?>
+                        </h4>
                     </div>
                     <div>
                         <h3 class='my-0 vpicon text-end'> <?php echo $calculateCartObject['totalPay']; ?> € </h3>
