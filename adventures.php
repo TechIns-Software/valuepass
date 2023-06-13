@@ -153,12 +153,12 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                 <div class="row my-2">
                                     <div class="d-flex justify-content-between ">
 
-                                        <div class="win-text">
+                                        <div class="win-text  w-100">
                                             <?php echo $menu[286]; ?> <b
                                                     class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?>
                                                 € </b> <?php echo $menu[287]; ?>
                                         </div>
-                                        <div class="" >
+                                        <div class=" w-100" >
                                             <b style="font-size: 15px">
                                                 <?php echo $menu[48]; ?> <b
                                                         class="exprice"><?php echo $vendor->getOriginalPrice(); ?>€</b><span class="opacity-0"><?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?></b></span>
