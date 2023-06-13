@@ -11636,6 +11636,10 @@ html[xmlns] .slides {
 .isotope-item{
   height:100%
 }
+.isotope-item .box_grid{
+  min-height: 540px;
+
+}
 
 .dissapear{
   display: none;
