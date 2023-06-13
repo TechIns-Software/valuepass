@@ -151,16 +151,28 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                     </div>
                                 </div>
                                 <div class="row my-2">
-                                    <div class="d-flex justify-content-end">
-                                                                         <b style="font-size: 15px">
-                                        <?php echo $menu[48]; ?> <b class="exprice" ><?php echo $vendor->getOriginalPrice(); ?>€ </b>
-                                    </b>
+                                    <div class="d-flex justify-content-between ">
+
+                                        <div class="win-text">
+                                            <?php echo $menu[286]; ?> <b
+                                                    class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?>
+                                                € </b> <?php echo $menu[287]; ?>
+                                        </div>
+                                        <div class="" >
+                                            <b style="font-size: 15px">
+                                                <?php echo $menu[48]; ?> <b
+                                                        class="exprice"><?php echo $vendor->getOriginalPrice(); ?>€</b><span class="opacity-0"><?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?></b></span>
+                                            </b>
+                                            <br>
+                                            <b class="vpicon">
+                                            <b class="opacity-0"><?php echo $menu[48]; ?> </b>
+                                            <?php echo $totalToPay +  $vendor->getPriceAdult();  ?>
+                                            €/ <?php echo $vendor->getForHowManyPersonsIsString($menu[183], $menu[184], $menu[185], $menu[186]); ?></b>
+                                        </div>
                                     </div>
-                                    <div class="col-12 win-text ">
-                                        <?php echo $menu[286]; ?>  <b class="vpicon"> <?php echo($vendor->getOriginalPrice() - $totalToPay - $vendor->getPriceAdult()) ?> € </b>   <?php echo $menu[287]; ?>
-                                    </div>
+
                                 </div>
-                                <div class="row my-2">
+                                <div class="row my-2 d-none">
                                     <div class="d-flex justify-content-between">
                                         <div class="p-0 m-0  "><b style=" font-size: 15px; font-weight: 800">
                                                 <?php echo $menu[288]; ?>
@@ -171,7 +183,7 @@ $availableCategories = getCategoriesVendors($conn, $languageId, $idDestination);
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-2  ">
+                                <div class="row my-2 d-none  ">
                                     <a href="adventure_page.php?id=<?php echo $vendor->getId(); ?>">
                                     <div class="d-flex justify-content-between offerContainer align-items-start">
 

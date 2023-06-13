@@ -177,7 +177,7 @@
 
 :root{
   --blue-btns:rgb(10, 107, 252);
-  --vp-primary-color:#e8620c;
+  --vp-primary-color:#FF5533;
 }
 
 
@@ -12075,6 +12075,7 @@ color: rgba(19, 43, 197, 0.86);
   font-size: .9em;
   text-align: center;
   transition: all 0.3s ease-in-out 0s;
+  opacity: 0;
 }
 
 .box_grid .best .bookmarkContainer2 {
@@ -12097,6 +12098,7 @@ color: rgba(19, 43, 197, 0.86);
   font-size: .9em;
   text-align: center;
   transition: all 0.3s ease-in-out 0s;
+  opacity: 0;
 }
 
 @media screen and (max-width: 1400px) {
