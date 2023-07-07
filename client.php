@@ -14,9 +14,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
 ?>
 <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+        href="assets/css/intlTelInput.css"
 />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="assets/js/intlTelInput.min.js"></script>
 
 <style>
     .fixedHeightContainer {
@@ -451,7 +451,7 @@ footer($menu, $languages)
     const phoneInput = window.intlTelInput(phoneInputField, {
         preferredCountries: ["gr", "us", "gb", "es", "de", "fr", "it", "br", "cn"],
         utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            "assets/js/utils.js",
     });
     const form = document.getElementById('clientForm');
     form.onsubmit = (e) => {
