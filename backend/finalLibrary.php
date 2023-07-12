@@ -49,10 +49,11 @@ function getDestination($conn, $idDestination, $idLanguage): \ValuePass\Destinat
 {
     $query = "SELECT D.id, DT.name, DT.description, D.image2
                 FROM Destination AS D, DestinationTranslate AS DT
-                WHERE D.id = $idDestination AND D.id = DT.idDestination
+                WHERE D.id = ? AND D.id = DT.idDestination
                   AND DT.idLanguage = $idLanguage
                   AND D.isOkForShowing = 1 AND D.showIt = 1";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $idDestination);
     if ($stmt->execute()) {
         $id = $name = $description = $image2 = '';
         $stmt->bind_result($id, $name, $description, $image2);
@@ -373,8 +374,9 @@ function getVendorForCart($conn, $idVendorVoucher, $idLanguage): array
     $query = "SELECT V.priceAdult, V.priceKid, V.infantPrice, V.imageBasic, V.id, V.hourCancel , VV.dateVoucher,
             V.discount, V.originalPrice,V.forHowManyPersonsIs, V.priceKidVendor , V.promoCodesAvailable
             FROM Vendor AS V, VendorVoucher AS VV
-            WHERE VV.id = $idVendorVoucher AND VV.idVendor = V.id";
+            WHERE VV.id = ? AND VV.idVendor = V.id";
     $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $idVendorVoucher);
     $priceAdult = $priceKid = $priceInfant = $imageBasic = $idVendor = $hourCancel = $dateVoucher = $discount
         = $originalPrice = $forHowManyPersonsIs = $priceKidVendor = $hasPromoCode = -1;
     if ($stmt->execute()) {
