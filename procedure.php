@@ -9,11 +9,25 @@ if (!isset(
 )) {
     exit('Bad Request!');
 }
+if (!isset($conn)) {
+    require 'connection.php';
+}
+$query = "SELECT name FROM Version WHERE id = 11";
+$stmt = $conn->prepare($query);
+$vesselId = '0';
+if ($stmt->execute()) {
+    $stmt->bind_result($vesselId);
+    $stmt->fetch();
+}
+$stmt->close();
 session_start();
 include 'backend/includeClasses.php';
 $cartArray = unserialize($_SESSION['cart']);
 $cart = new \ValuePass\Cart($cartArray);
 $products = $cart->readyForSendingVendorVoucherData();
+if (!isset($_SESSION["languageId"])) {
+    $_SESSION["languageId"] = 2;
+}
 $idLanguage = $_SESSION["languageId"];
 if (!(count($products) >= 1 && count($products) <= \ValuePass\Cart::$MAX_VOUCHERS)) {
     exit('No right amount of vouchers');
@@ -32,6 +46,7 @@ if (!(count($products) >= 1 && count($products) <= \ValuePass\Cart::$MAX_VOUCHER
     <input hidden name='phone' value='<?php echo $_POST['phone']?>'>
     <input hidden name='phoneCode' value='<?php echo $_POST['phoneCode']?>'>
     <input hidden name='language' value='<?php echo $idLanguage;?>'>
+    <input hidden name='vessel' value='<?php echo $vesselId;?>'>
     <?php
     foreach ($products as $counter=> $product) {
         $idVendorVoucher = $product['idVendorVoucher'];

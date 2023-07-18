@@ -378,6 +378,8 @@ values (1, 'general'),
        (9, 'includedService'),
        (10, 'language');
 
+INSERT INTO Version (id, name) VALUES (11, );# '7' is blue star paros
+
 /*
 DROP TABLE VendorVoucher;
 DROP TABLE ImportantInformationDescriptionTranslate;
