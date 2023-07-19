@@ -5,6 +5,9 @@ if (!isset($conn)) {
 $title = "Homepage | ValuePass";
 $home = 1;
 include_once 'includes/header.php';
+if(isset($_GET['lang']) && $_GET['lang'] == 'gr') {
+    $_SESSION["languageId"] = 1;
+}
 $idLanguage = $_SESSION["languageId"];
 $destinations = getDestinations($conn, $idLanguage);
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);
@@ -417,7 +420,7 @@ footer($menu, $languages)
 
 <!-- COMMON SCRIPTS -->
 <script src="assets/js/common_scripts.js"></script>
-<script src="assets/js/main.js?v=1.6"></script>
+<script src="assets/js/main.js?v=1.8"></script>
 <script src="assets/js/validate.js"></script>
 
 <!-- SLIDER REVOLUTION SCRIPTS  -->
