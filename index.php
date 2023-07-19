@@ -5,9 +5,6 @@ if (!isset($conn)) {
 $title = "Homepage | ValuePass";
 $home = 1;
 include_once 'includes/header.php';
-if(isset($_GET['lang']) && $_GET['lang'] == 'gr') {
-    $_SESSION["languageId"] = 1;
-}
 $idLanguage = $_SESSION["languageId"];
 $destinations = getDestinations($conn, $idLanguage);
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);

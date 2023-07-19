@@ -1,8 +1,12 @@
 <?php
 session_start();
 if (!isset($_SESSION['languageName'], $_SESSION["languageId"])) {
-    $_SESSION['languageName'] = 'english';
-    $_SESSION["languageId"] = 2;
+    if(isset($_GET['lang']) && $_GET['lang'] == 'gr') {
+        $_SESSION["languageId"] = 1;
+    } else {
+        $_SESSION['languageName'] = 'english';
+        $_SESSION["languageId"] = 2;
+    }
 }
 $languageId = $_SESSION["languageId"];
 if (!isset($_SESSION['cart'])) {
