@@ -9,7 +9,7 @@ try {
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 } catch (Exception $e) {
     $username = "root";
-    $password = "";
+    $password = "1234";
     $dbname = "valuepass_vm";
     try {
         $conn = mysqli_connect($servername, $username, $password, $dbname);
