@@ -439,6 +439,23 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
     </div>
 </main>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="text-center">
+              <h3> <?php echo $menu[322]?>  </h3>
+                <h5> <?php echo $menu[323]?></h5>
+                <p class="spinner-border"></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include_once 'includes/footer.php';
 footer($menu, $languages)
@@ -456,12 +473,16 @@ footer($menu, $languages)
     const form = document.getElementById('clientForm');
     form.onsubmit = (e) => {
         e.preventDefault();
-        var myInput = document.createElement('input');
-        myInput.setAttribute('name', 'phoneCode');
-        myInput.setAttribute('value', phoneInput.s.dialCode);
-        myInput.setAttribute("type", "hidden");
-        form.appendChild(myInput);
-        form.submit();
+        $('#staticBackdrop').modal('show');
+
+        setTimeout(() => {
+            var myInput = document.createElement('input');
+            myInput.setAttribute('name', 'phoneCode');
+            myInput.setAttribute('value', phoneInput.s.dialCode);
+            myInput.setAttribute("type", "hidden");
+            form.appendChild(myInput);
+            form.submit();
+        }, 3000);
     }
 </script>
 <script src="assets/js/common_scripts.js"></script>
