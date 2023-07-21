@@ -1,6 +1,14 @@
 <?php
-// # We receive the page from user details and if ok redirects to ValuePass Server
+// Setting Content Security Policy
+header("Content-Security-Policy: default-src 'self';");
 
+// Setting X-Content-Type-Options
+header("X-Content-Type-Options: nosniff");
+
+// Setting X-Frame-Options
+header('X-Frame-Options: SAMEORIGIN');
+
+// # We receive the page from user details and if ok redirects to ValuePass Server
 if (!isset(
     $_POST['name'],
     $_POST['email'],
@@ -10,6 +18,11 @@ if (!isset(
     exit('Bad Request!');
 }
 session_start();
+// Setting cookie with HttpOnly flag
+setcookie('cookie_name', 'cookie_value', [
+    'httponly' => true,
+    'samesite' => 'Strict', // Requires PHP 7.3.0 or newer
+]);
 include 'backend/includeClasses.php';
 $cartArray = unserialize($_SESSION['cart']);
 $cart = new \ValuePass\Cart($cartArray);
