@@ -160,8 +160,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
             <div class="item">
                 <a class="box_feat ">
                     <!-- <i class="pe-7s-medal"></i> -->
-                    <object class="SvgImage" data="assets/icons/fingerprint.svg"
-                            type="image/svg+xml"></object>
+<!--                    <object class="SvgImage" data="assets/icons/fingerprint.svg"-->
+<!--                            type="image/svg+xml"></object>-->
+                    <img src="assets/icons/fingerprint.svg" class="img-fluid SvgImage">
                     <h3><?php echo $menu[18] ?>  </h3>
                     <p> <?php echo $menu[19] ?> </p>
                 </a>
@@ -169,8 +170,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
             <div class="item">
                 <a class="box_feat">
-                    <object class="SvgImage" data="assets/icons/gift.svg"
-                            type="image/svg+xml"></object>
+<!--                    <object class="SvgImage" data="assets/icons/gift.svg"-->
+<!--                            type="image/svg+xml"></object>-->
+                    <img src="assets/icons/gift.svg" class="img-fluid SvgImage">
                     <h3> <?php echo $menu[20] ?>  </h3>
                     <p><?php echo $menu[21] ?> </p>
                     <!-- Button trigger modal -->
@@ -183,8 +185,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
             <div class="item">
                 <a class="box_feat">
                     <!-- <i class="pe-7s-culture"></i> -->
-                    <object class="SvgImage" data="assets/icons/spring.svg"
-                            type="image/svg+xml"></object>
+<!--                    <object class="SvgImage" data="assets/icons/spring.svg"-->
+<!--                            type="image/svg+xml"></object>-->
+                    <img src="assets/icons/spring.svg" class="img-fluid SvgImage">
                     <h3><?php echo $menu[27] ?> </h3>
                     <p><?php echo $menu[28] ?>  </p>
                     <b class="custom-pop" type="button" data-bs-toggle="modal"
@@ -195,8 +198,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
             <div class="item">
                 <a class="box_feat">
-                    <object class="SvgImage" data="assets/icons/smartphone.svg"
-                            type="image/svg+xml"></object>
+<!--                    <object class="SvgImage" data="assets/icons/smartphone.svg"-->
+<!--                            type="image/svg+xml"></object>-->
+                    <img src="assets/icons/smartphone.svg" class="img-fluid SvgImage">
                     <h3> <?php echo $menu[30] ?></h3>
                     <p> <?php echo $menu[31] ?> </p>
                     <b class="custom-pop" type="button" data-bs-toggle="modal"
@@ -206,8 +210,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
             <div class="item">
                 <a class="box_feat">
-                    <object class="SvgImage" data="assets/icons/credit-card.svg"
-                            type="image/svg+xml"></object>
+<!--                    <object class="SvgImage" data="assets/icons/credit-card.svg"-->
+<!--                            type="image/svg+xml"></object>-->
+                    <img src="assets/icons/credit-card.svg" class="img-fluid SvgImage">
                     <h3><?php echo $menu[32] ?>  </h3>
                     <p><?php echo $menu[33] ?> </p>
                     <b class="custom-pop" type="button" data-bs-toggle="modal"
@@ -217,8 +222,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
             <div class="item">
                 <a class="box_feat">
-                    <object class="SvgImage" data="assets/icons/support.svg"
-                            type="image/svg+xml"></object>
+<!--                    <object class="SvgImage" data="assets/icons/support.svg"-->
+<!--                            type="image/svg+xml"></object>-->
+                    <img src="assets/icons/support.svg" class="img-fluid SvgImage">
                     <h3><?php echo $menu[34] ?> </h3>
                     <p> <?php echo $menu[35] ?> </p>
                     <b class="custom-pop" type="button" data-bs-toggle="modal"

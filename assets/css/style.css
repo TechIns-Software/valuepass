@@ -11625,6 +11625,7 @@ html[xmlns] .slides {
 }
 
 .SvgImage{
+  margin: auto;
   width: 45%!important;
   color:#FF5533 !important;
 }
