@@ -448,61 +448,76 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
             <div class="row">
                 <div class="col-lg-8 col-md-12">
 
-                    <div class="box_detail booking">
-                        <div class="price">
-                            <span >    <?php echo $menu[67] ?> </span>
-                            <span style="display: none">    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
-                        </div>
-                        <div class="panel-dropdown">
-                            <a href="#">
+                    <?php
+                    $query = "SELECT name FROM Version WHERE id = 11";
+                    $stmt = $conn->prepare($query);
+                    $vesselId = '0';
+                    if ($stmt->execute()) {
+                        $stmt->bind_result($vesselId);
+                        $stmt->fetch();
+                    }
+                    $stmt->close();
+                    if ($vesselId != 0 || str_contains($_SERVER['REQUEST_URI'], 'demo')) {
+                        ?>
+                        <div class="box_detail booking">
+                            <div class="price">
+                                <span >    <?php echo $menu[67] ?> </span>
+                                <span style="display: none">    <?php echo $vendor->getForHowManyPersonsIs(); ?> </span>
+                            </div>
+                            <div class="panel-dropdown">
+                                <a href="#">
                                 <span id="adultsLabel">
                                     <?= $vendor->getLabelAdults($menu[68], $menu[174], $menu[175], true) ?>
                                 </span>
-                                <span class="" id="adultsLabelNext"></span>
-                                <span class="displayNone" id="childrenLabel"><?= $menu[69] ?></span>
-                                <span class="displayNone" id="childrenLabelNext"></span>
-                                <span class="displayNone" id="infantsLabel"><?= $menu[70] ?></span>
-                                <span class="displayNone" id="infantsLabelNext"></span>
-                                <span class="displayNone" id="displayTotalWord">
+                                    <span class="" id="adultsLabelNext"></span>
+                                    <span class="displayNone" id="childrenLabel"><?= $menu[69] ?></span>
+                                    <span class="displayNone" id="childrenLabelNext"></span>
+                                    <span class="displayNone" id="infantsLabel"><?= $menu[70] ?></span>
+                                    <span class="displayNone" id="infantsLabelNext"></span>
+                                    <span class="displayNone" id="displayTotalWord">
                                     <span class="<?php echo($vendor->getForHowManyPersonsIs() != 1 ? 'displayNone' : '') ?>"><?= $menu[104]; ?></span>
                                 </span>
-                                <span class="qtyTotal"></span></a>
-                            <div class="panel-dropdown-content right">
-                                <div class="qtyButtons">
-                                    <label>
-                                        <?= $vendor->getLabelAdults($menu[68], $menu[174], $menu[175]) ?>
-                                    </label>
-                                    <input id="adultsInput" type="text" name="qtyInput" value="0"
-                                        <?= ($vendor->getForHowManyPersonsIs() != 1 ? 'group="isGroup" ' : '') ?>
-                                    >
-                                </div>
-                                <div <?php echo !$vendor->isChildAcceptance() || $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : '' ?>
+                                    <span class="qtyTotal"></span></a>
+                                <div class="panel-dropdown-content right">
+                                    <div class="qtyButtons">
+                                        <label>
+                                            <?= $vendor->getLabelAdults($menu[68], $menu[174], $menu[175]) ?>
+                                        </label>
+                                        <input id="adultsInput" type="text" name="qtyInput" value="0"
+                                            <?= ($vendor->getForHowManyPersonsIs() != 1 ? 'group="isGroup" ' : '') ?>
+                                        >
+                                    </div>
+                                    <div <?php echo !$vendor->isChildAcceptance() || $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : '' ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[69] ?> <small><?= $vendor->getLabelChild(); ?></small>
-                                    </label>
-                                    <input id="childrenInput" type="text" name="qtyInput" value="0">
-                                </div>
-                                <div <?php echo !$vendor->isInfantTolerance() | $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : ''; ?>
+                                        <label><?php echo $menu[69] ?> <small><?= $vendor->getLabelChild(); ?></small>
+                                        </label>
+                                        <input id="childrenInput" type="text" name="qtyInput" value="0">
+                                    </div>
+                                    <div <?php echo !$vendor->isInfantTolerance() | $vendor->getForHowManyPersonsIs() != 1 ? 'class="displayNone"' : ''; ?>
                                         class="qtyButtons">
-                                    <label><?php echo $menu[70] ?>
-                                        <small><?= $vendor->getLabelInfant(); ?></small></label>
-                                    <input id="infantsInput" type="text" name="qtyInput" value="0">
+                                        <label><?php echo $menu[70] ?>
+                                            <small><?= $vendor->getLabelInfant(); ?></small></label>
+                                        <input id="infantsInput" type="text" name="qtyInput" value="0">
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="form-group input-dates">
+                                <input id="date" class="form-control" type="text" name="dates"
+                                       placeholder="<?php echo $menu[72] ?>">
+                                <i class="icon_calendar"></i>
+                            </div>
+
+
+                            <button onclick="getPackagesAvailable();" class=" add_top_30 btn_1 full-width purchase">
+                                <?php echo $menu[67] ?>
+                            </button>
+                            <div class="text-center"><small><?php echo $menu[73] ?></small></div>
                         </div>
+                        <?php
+                    }
+                    ?>
 
-                        <div class="form-group input-dates">
-                            <input id="date" class="form-control" type="text" name="dates"
-                                   placeholder="<?php echo $menu[72] ?>">
-                            <i class="icon_calendar"></i>
-                        </div>
-
-
-                        <button onclick="getPackagesAvailable();" class=" add_top_30 btn_1 full-width purchase">
-                            <?php echo $menu[67] ?>
-                        </button>
-                        <div class="text-center"><small><?php echo $menu[73] ?></small></div>
-                    </div>
                     <div class="selectTimeContainer"  class="d-flex"> <h4 id="selectTimeTitle"></h4></div>
                     <div id="optionbuttons" class="d-flex justify-content-start flex-wrap"></div>
                     <div id="option"></div>
