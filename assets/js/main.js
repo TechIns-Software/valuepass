@@ -169,7 +169,7 @@
         0: { items: 1 },
         767: { items: 3 },
         1e3: { items: 4 },
-        1400: { items: 5,dots:!1 },
+        1400: { items: 5 },
       },
     }),
       i("#reccomended_adventure2").owlCarousel({

@@ -49,13 +49,12 @@ function getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherN
     <link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/settings.css">
     <link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/layers.css">
     <link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontawesome6/css/all.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/layerslider.css">
     <!-- FOR FLAGS -->
     <link rel="stylesheet" type="text/css" href="assets/css/flags.css">
 
-    <!--	<script src="https://kit.fontawesome.com/16f09725b0.js" crossorigin="anonymous"></script>-->
-    <script src="assets/js/fontawesome.js"></script>
     <!-- Modernizr -->
     <script src="assets/js/modernizr.js"></script>
 
