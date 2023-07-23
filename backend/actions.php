@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Europe/Athens');
 function conditionForPackage() : bool {
     return
         is_numeric($_POST['adults']) &&

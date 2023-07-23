@@ -288,7 +288,8 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                     $vendor->addImportantInformation($importantInformation);
                 }
             }
-            $formattedTime = date('Y-m-d H:i:s', strtotime('+24 hours'));
+            $timestamp = time() - (24 * 60 * 60);
+            $formattedTime = date('Y-m-d H:i:s', $timestamp);
             $query9 = "SELECT DISTINCT DATE_FORMAT(dateVoucher, '%Y-%m-%d')
                     FROM VendorVoucher AS VV
                     WHERE VV.idVendor = $id
@@ -349,7 +350,8 @@ function getMaxVendorVoucher($conn, $idVendorVoucher): int
 
 function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): array
 {
-    $formattedTime = date('Y-m-d', strtotime('+24 hours'));
+    $timestamp = time() - (24 * 60 * 60);
+    $formattedTime = date('Y-m-d H:i:s', $timestamp);
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
             V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs,
             V.priceKidVendor, VV.starterVouchers, VV.existenceVoucher,V.promoCodesAvailable
