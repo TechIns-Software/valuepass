@@ -383,6 +383,7 @@ INSERT INTO Version (id, name) VALUES (11, );
 # '0' demo
 # '-1' real hidden client
 # '-2' beta
+# '-3' preview
 
 /*
 DROP TABLE VendorVoucher;

@@ -451,13 +451,13 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
                     <?php
                     $query = "SELECT name FROM Version WHERE id = 11";
                     $stmt = $conn->prepare($query);
-                    $vesselId = '0';
+                    $vesselId = '-3';
                     if ($stmt->execute()) {
                         $stmt->bind_result($vesselId);
                         $stmt->fetch();
                     }
                     $stmt->close();
-                    if ($vesselId != 0 || str_contains($_SERVER['REQUEST_URI'], 'demo')) {
+                    if ($vesselId != -3) {
                         ?>
                         <div class="box_detail booking">
                             <div class="price">

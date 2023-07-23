@@ -22,7 +22,7 @@ if (!isset($conn)) {
 }
 $query = "SELECT name FROM Version WHERE id = 11";
 $stmt = $conn->prepare($query);
-$vesselId = '0';
+$vesselId = '-4';
 if ($stmt->execute()) {
     $stmt->bind_result($vesselId);
     $stmt->fetch();
