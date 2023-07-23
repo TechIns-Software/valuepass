@@ -14,9 +14,9 @@ try {
             $password = "lCtfo[0NM3V2KV]o*3";
             $dbname = "u503457546_demovaluepassv";
         } else {
-            $username = "u503457546_vpvmpreview";
-            $password = "c6!8rLgYfJ4yhIfieF^lJ!";
-            $dbname = "u503457546_vpvmpreview";
+            $username = "u503457546_vpvmbeta";
+            $password = "&s^m7IvySZ2cA*2rkfGI[1S";
+            $dbname = "u503457546_vpvmbeta";
         }
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
