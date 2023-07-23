@@ -2,7 +2,7 @@
 const PATH_DOMAIN = 'https://valuepass.gr/';
 const SUB_PATH_VENDOR = 'vendorImages/';
 const SUB_PATH_DESTINATION = 'images/location_images/';
-ini_set('max_execution_time', 600);
+ini_set('max_execution_time', 6000);
 require 'updateLibrary.php';
 
 
