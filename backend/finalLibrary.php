@@ -356,8 +356,8 @@ function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): a
             FROM Vendor AS V, VendorVoucher AS VV 
             WHERE VV.idVendor = ? AND VV.existenceVoucher >= ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
-              AND V.isOkForShowing = 1 AND V.isActiveNow = 1;
-                AND VV.dateVoucher >= '$formattedTime'";
+              AND V.isOkForShowing = 1 AND V.isActiveNow = 1
+                AND VV.dateVoucher >= '$formattedTime' ;";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
