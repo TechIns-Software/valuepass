@@ -8,7 +8,6 @@ include_once 'includes/header.php';
 $idLanguage = $_SESSION["languageId"];
 
 getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$destinations);
-//TODO: future maybe client needs to fill up banks field f.e. region
 ?>
 
 

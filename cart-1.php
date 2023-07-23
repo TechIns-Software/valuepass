@@ -245,9 +245,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                         </p>
                                         <p class=" fw-bolder m-0  icon-calendar">
                                             <?php
-                                            if ($idLanguage == 2) {
+                                            if ($idLanguage != 1) {
                                                 echo date_format(date_create($dateVoucher), 'M d, Y');
-                                            } else {//fixme greek only
+                                            } else {
                                                 echo date_format(date_create($dateVoucher), 'j ');
                                                 echo $greekMonths[intval(date_format(date_create($dateVoucher), 'm')) - 1];
                                                 echo date_format(date_create($dateVoucher), ', Y');
@@ -258,9 +258,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                         </p>
                                         <p class=" fw-bolder m-0  icon-clock">
                                             <?php
-                                            if ($idLanguage == 2) {
+                                            if ($idLanguage != 1) {
                                                 echo date_format(date_create($dateVoucher), 'h:i A');
-                                            } else {//fixme greek only
+                                            } else {
                                                 echo date_format(date_create($dateVoucher), 'h:i ')
                                                     . ((date_format(date_create($dateVoucher), 'A') == 'AM') ? 'π.μ.' : 'μ.μ.');
                                             }
@@ -273,18 +273,18 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                                                     $timeStampCancel = strtotime($dateVoucher) - 3600 * $hourCancel;
 
                                                     echo $menu[138];
-                                                    if ($idLanguage == 2) {
+                                                    if ($idLanguage != 1) {
                                                         echo date(' h:i A', $timeStampCancel);
-                                                    } else {//fixme greek only
+                                                    } else {
                                                         echo date(' h:i ', $timeStampCancel)
                                                             . ((date('A', $timeStampCancel) == 'AM') ? 'π.μ.' : 'μ.μ.');
                                                     }
                                                     ?>
 
                                                     <?php
-                                                    if ($idLanguage == 2) {
+                                                    if ($idLanguage != 1) {
                                                         echo date('F jS', $timeStampCancel);
-                                                    } else {//fixme greek only
+                                                    } else {
                                                         echo date('j ', $timeStampCancel)
                                                             . $greekMonths[intval(date('m', $timeStampCancel)) - 1];
                                                     }

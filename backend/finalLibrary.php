@@ -171,23 +171,23 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
         $dayNumberToday = date('d');
         $monthNumberToday = intval(date('m'));
         $yearNumberToday = date('Y');
-        $query3 = "SELECT SUM(VV.starterVouchers), SUM(VV.existenceVoucher)
-                FROM VendorVoucher AS VV
-                WHERE VV.idVendor = $id
-                AND day(VV.dateVoucher) = $dayNumberToday
-                AND month(VV.dateVoucher) = $monthNumberToday
-                AND year(VV.dateVoucher) = $yearNumberToday";
-        $stmt3 = $conn->prepare($query3);
-        if ($stmt3->execute()) {
-            $starterVouchers = $existenceVoucher = 0;
-            $stmt3->bind_result($starterVouchers, $existenceVoucher);
-            while ($stmt3->fetch()) {
-            }
-            $starterVouchers = $starterVouchers ?: 0;
-            $existenceVoucher = $existenceVoucher ?: 0;
-            $vendor->setMaxVouchersToday($starterVouchers);
-            $vendor->setAvailableVouchersToday($existenceVoucher);
-        }
+//        $query3 = "SELECT SUM(VV.starterVouchers), SUM(VV.existenceVoucher)
+//                FROM VendorVoucher AS VV
+//                WHERE VV.idVendor = $id
+//                AND day(VV.dateVoucher) = $dayNumberToday
+//                AND month(VV.dateVoucher) = $monthNumberToday
+//                AND year(VV.dateVoucher) = $yearNumberToday";
+//        $stmt3 = $conn->prepare($query3);
+//        if ($stmt3->execute()) {
+//            $starterVouchers = $existenceVoucher = 0;
+//            $stmt3->bind_result($starterVouchers, $existenceVoucher);
+//            while ($stmt3->fetch()) {
+//            }
+//            $starterVouchers = $starterVouchers ?: 0;
+//            $existenceVoucher = $existenceVoucher ?: 0;
+//            $vendor->setMaxVouchersToday($starterVouchers);
+//            $vendor->setAvailableVouchersToday($existenceVoucher);
+//        }
         if ($fullOption) {
             //everything for Vendor
             $query4 = "SELECT VT.descriptionFull, VT.descriptionBig, P.head, P.description
@@ -288,6 +288,7 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                     $vendor->addImportantInformation($importantInformation);
                 }
             }
+            //todo add extra condition
             $query9 = "SELECT DISTINCT DATE_FORMAT(dateVoucher, '%Y-%m-%d')
                     FROM VendorVoucher AS VV
                     WHERE VV.idVendor = $id
@@ -773,9 +774,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
     //echo date('M jS', $timeStampCancel)
     $dateTimestamp = strtotime($date);
     $day = date('d/m', $dateTimestamp);
-    if ($_SESSION["languageId"] == 2) {
+    if ($_SESSION["languageId"] != 1) {
         $hour = date('h:i A', $dateTimestamp);
-    } else { //greek language fixme when new languages added
+    } else { //greek language
         $hour = date('h:i ', $dateTimestamp) . (date('A', $dateTimestamp) == 'AM' ? 'π.μ.' : 'μ.μ.');
     }
     $button = '';
