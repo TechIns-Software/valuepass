@@ -378,7 +378,11 @@ values (1, 'general'),
        (9, 'includedService'),
        (10, 'language');
 
-INSERT INTO Version (id, name) VALUES (11, );# '7' is blue star paros
+INSERT INTO Version (id, name) VALUES (11, );
+# '7' is blue star paros
+# '0' demo
+# '-1' real hidden client
+# '-2' beta
 
 /*
 DROP TABLE VendorVoucher;
