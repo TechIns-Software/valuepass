@@ -9,7 +9,11 @@ try {
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 } catch (Exception $e) {
     try {
-        if (str_contains($_SERVER['REQUEST_URI'], 'demo')) {
+        if (str_contains($_SERVER['REQUEST_URI'], 'preview')) {
+            $username = "u503457546_vpvmpreview";
+            $password = "c6!8rLgYfJ4yhIfieF^lJ!";
+            $dbname = "u503457546_vpvmpreview";
+        } elseif (str_contains($_SERVER['REQUEST_URI'], 'demo')) {
             $username = "u503457546_demovaluepassv";
             $password = "lCtfo[0NM3V2KV]o*3";
             $dbname = "u503457546_demovaluepassv";
