@@ -879,9 +879,9 @@ function getTemplateVoucher($package = [], $adults = 0, $children = 0, $infants 
 
 
     $cancelTimestamp = strtotime($date) - 3600 * $hourCancel;
-    if ($_SESSION["languageId"] == 2) {
+    if ($_SESSION["languageId"] != 1) {
         $cancelDate = date('h:i A F jS ', $cancelTimestamp);
-    } else { //greek language fixme when new languages added
+    } else { //greek language
         $cancelDate = date('h:i  ', $cancelTimestamp)
             . (date('A', $cancelTimestamp) == 'AM' ? 'π.μ.' : 'μ.μ.')
             . date(' j ', $cancelTimestamp)

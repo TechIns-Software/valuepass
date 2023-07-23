@@ -65,7 +65,6 @@ if ($_POST['action'] == 'addProduct') {
                 if ($message['status'] == 1) {
                     $_SESSION['cart'] = serialize($cart->getArrayGroupVouchersWant());
                 }
-                //todo: translate messages
                 $message = $message['message'];
             }
         }

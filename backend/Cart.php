@@ -8,8 +8,8 @@ class Cart
     public static int $MAX_VOUCHERS = 25;
     private array $arrayGroupVouchersWant = [];
     //We will keep vendorAvailability id
-    //TODO: always reload session obj when return from functions call
-    //TODO: think about voucher not is only about unique id but also save preference of voucher
+    //Caution: always reload session obj when return from functions call
+    //Cuation: think about voucher not is only about unique id but also save preference of voucher
     /**
      * Cart constructor.
      * @param array $arrayGroupVouchersWant
