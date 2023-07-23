@@ -288,11 +288,12 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                     $vendor->addImportantInformation($importantInformation);
                 }
             }
-            //todo add extra condition
+            $formattedTime = date('Y-m-d H:i:s', strtotime('+24 hours'));
             $query9 = "SELECT DISTINCT DATE_FORMAT(dateVoucher, '%Y-%m-%d')
                     FROM VendorVoucher AS VV
                     WHERE VV.idVendor = $id
-                        AND VV.existenceVoucher > 0";
+                        AND VV.existenceVoucher > 0
+                        AND VV.dateVoucher >= '$formattedTime'";
             $stmt9 = $conn->prepare($query9);
             $availableDates = [];
             if ($stmt9->execute()) {
@@ -348,13 +349,15 @@ function getMaxVendorVoucher($conn, $idVendorVoucher): int
 
 function getPossibleVouchersPackages($conn, $idVendor, $numberVoucher, $date): array
 {
+    $formattedTime = date('Y-m-d', strtotime('+24 hours'));
     $query = "SELECT VV.id, DATE_FORMAT(VV.dateVoucher, '%Y-%m-%d %H:%i:%s'),
             V.priceAdult, V.priceKid, V.infantPrice, V.hourCancel, V.discount, V.originalPrice ,V.forHowManyPersonsIs,
             V.priceKidVendor, VV.starterVouchers, VV.existenceVoucher,V.promoCodesAvailable
             FROM Vendor AS V, VendorVoucher AS VV 
             WHERE VV.idVendor = ? AND VV.existenceVoucher >= ? AND DATE(VV.dateVoucher) = ?
             AND V.id = VV.idVendor
-              AND V.isOkForShowing = 1 AND V.isActiveNow = 1;";
+              AND V.isOkForShowing = 1 AND V.isActiveNow = 1;
+                AND VV.dateVoucher >= '$formattedTime'";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('iis', $idVendor, $numberVoucher, $date);
     $possiblePackages = [];
