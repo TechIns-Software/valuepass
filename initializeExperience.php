@@ -1,6 +1,6 @@
 <?php
 // Setting Content Security Policy
-header("Content-Security-Policy: default-src 'self';");
+header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';");
 
 // Setting X-Content-Type-Options
 header("X-Content-Type-Options: nosniff");
