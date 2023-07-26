@@ -14,10 +14,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
     <div style="min-height: 90px;"></div>
     <div id="how" class="container margin_80_55">
 
-        <div class="row d-flex justify-content-end ">
-            <button onclick="window.location.href='index.php'" type="button" class="btn-close mx-2 " data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-        </div>
+
         <div class="row ">
             <div class="main_title_2">
                 <h1><b><?php echo $menu[1]; ?> </b></h1>
@@ -158,6 +155,13 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
 
                     </div>
                     <!--/.row-->
+                </div>
+
+                <div class="col-12 text-end ">
+                    <div class="">
+                        <i onclick="window.location.href='index.php'"  class="m-0 p-0 btn fa-solid fa-circle-xmark fs-3"></i>
+                    </div>
+
                 </div>
             </div>
         </div>

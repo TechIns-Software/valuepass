@@ -44,7 +44,9 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Voucher Cancellation</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                            <i type="button"  data-bs-dismiss="modal"
+                               aria-label="Close" class="fa-solid fa-circle-xmark"></i>
                         </div>
                         <div class="modal-body">
                         <h3>Your voucher has successful cancel. </h3>

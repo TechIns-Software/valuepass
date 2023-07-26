@@ -3,7 +3,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="questionmodaltitle">ValuePass</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <i type="button"  data-bs-dismiss="modal"
+                   aria-label="Close" class="fa-solid fa-circle-xmark"></i>
             </div>
             <div  class="modal-body">
                 <h2><?php echo $menu[305]?> </h2>
@@ -38,7 +39,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="promoCode0Title">ValuePass</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <i type="button"  data-bs-dismiss="modal"
+                   aria-label="Close" class="fa-solid fa-circle-xmark"></i>
             </div>
 
             <div class="modal-body">

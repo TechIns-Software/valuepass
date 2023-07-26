@@ -244,11 +244,12 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"
-                        id="exampleModalLabel"> <?php echo $menu[23] ?>
+                        id="exampleModalLab"> <?php echo $menu[23] ?>
 
                         </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+
+                    <i type="button"  data-bs-dismiss="modal"
+                       aria-label="Close" class="fa-solid fa-circle-xmark"></i>
                 </div>
 
                 <div class="modal-body">
@@ -277,8 +278,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 <div class="modal-header">
                     <h5 class="modal-title"
                         id="exampleModalLabel1"><?php echo $menu[29] ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                    <i type="button"  data-bs-dismiss="modal"
+                       aria-label="Close" class="fa-solid fa-circle-xmark"></i>
                 </div>
                 <div class="modal-body">
 
@@ -302,8 +303,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 <div class="modal-header">
                     <h5 class="modal-title"
                         id="exampleModalLabel1"><?php echo $menu[32] ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                    <i type="button"  data-bs-dismiss="modal"
+                       aria-label="Close" class="fa-solid fa-circle-xmark"></i>
                 </div>
                 <div class="modal-body">
                     <p>• <?php echo $menu[91] ?></p>
@@ -330,8 +331,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 <div class="modal-header">
                     <h5 class="modal-title"
                         id="exampleModalLabel1"><?php echo $menu[177] ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                    <i type="button"  data-bs-dismiss="modal"
+                       aria-label="Close" class="fa-solid fa-circle-xmark"></i>
                 </div>
                 <div class="modal-body">
                     <p>    <?php echo $menu[178] ?></p>
@@ -351,8 +352,8 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber,$de
                 <div class="modal-header">
 <!--                    <h5 class="modal-title" id="exampleModalLabel1">--><?php //echo $menu[177] ?><!-- </h5>-->
                     <h5 class="modal-title" id="exampleModalLabel1">Customer Care</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                    <i type="button"  data-bs-dismiss="modal"
+                       aria-label="Close" class="fa-solid fa-circle-xmark"></i>
                 </div>
                 <div class="modal-body">
                     <p><b> Email:</b> <a href="mailto:customercare@valuepass.gr" class="icon-email">

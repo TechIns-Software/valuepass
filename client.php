@@ -77,22 +77,37 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                                    placeholder="<?php echo $menu[153]; ?>" required>
                         </div>
 
-                        <p class="text-center">
-                            <?php echo $menu[154]; ?>
-                        </p>
 
-                        <p class="my-1 ">
-                            • <?php echo $menu[301]; ?>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <?php echo $menu[154]; ?>
+                            </label>
+                        </div>
 
-                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"  id="flexCheckDefault2">
+                            <label class="form-check-label" for="flexCheckDefault2">
+                                <?php echo $menu[301]; ?>
+                            </label>
+                        </div>
 
-                        <p class="my-1 ">
-                            • <?php echo $menu[302]; ?>
-                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"   id="flexCheckDefault3">
+                            <label class="form-check-label" for="flexCheckDefault3">
+                                <?php echo $menu[302]; ?>
+                            </label>
+                        </div>
 
-                        <p class="my-1 ">
-                            • <?php echo $menu[155]; ?>
-                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"  id="flexCheckDefault4">
+                            <label class="form-check-label" for="flexCheckDefault4">
+                                <?php echo $menu[155]; ?>
+                            </label>
+                        </div>
+
+
+
 
                         <div class="form-group my-4 text-center">
                             <input style="font-weight: bold;color: white" type="submit" id="continue"
@@ -480,6 +495,27 @@ footer($menu, $languages)
             form.appendChild(myInput);
             form.submit();
         }, 3000);
+    }
+    const allCheckBoxes = document.querySelectorAll('.form-check-input');
+    allCheckBoxes.forEach((checkbox) =>{
+        checkbox.addEventListener('change',checkTheBoxes);
+    })
+
+    function checkTheBoxes(){
+      var isChecked = this.checked;
+
+       if (isChecked){
+           allCheckBoxes.forEach((checkbox) =>{
+               checkbox.checked = true;
+           })
+           $('#continue').attr('disabled',false)
+       }else{
+           allCheckBoxes.forEach((checkbox) =>{
+               checkbox.checked = false;
+           })
+           $('#continue').attr('disabled',true)
+       }
+
     }
 </script>
 <script src="assets/js/common_scripts.js"></script>

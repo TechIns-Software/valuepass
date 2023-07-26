@@ -552,7 +552,9 @@ $bestOffs = getVendors($conn, $vendor->getIdDestination(), $languageId, true);
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="questionmodaltitle">ValuePass</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <i type="button"  data-bs-dismiss="modal"
+                       aria-label="Close" class="fa-solid fa-circle-xmark"></i>
                 </div>
                 <div id="modalBodyInitial" class="modal-body">
                     <?php echo $menu[125]; ?> <b><?php echo $vendor->getName(); ?>  </b> <?php echo $menu[126]; ?>
