@@ -25,6 +25,7 @@ include 'finalLibrary.php';
 include 'includeClasses.php';
 $message = "You did not provide the request correctly";
 $message2 = "";
+$message3 = "";
 
 
 if ($_POST['action'] == 'addProduct') {
