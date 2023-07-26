@@ -135,7 +135,7 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
 
                         <div class="form-group my-4 text-center">
                             <input style="font-weight: bold;color: white" type="submit" id="continue"
-                                   class="btn btn-primary form-control" value="<?php echo $menu[109] ?>">
+                                   class="btn btn-primary form-control" disabled value="<?php echo $menu[109] ?>">
                         </div>
                     </div>
                 </form>
