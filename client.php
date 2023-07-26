@@ -78,32 +78,56 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                         </div>
 
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <?php echo $menu[154]; ?>
-                            </label>
+                        <div class="d-flex justify-content-start">
+                            <div class="mx-2">
+                                <input class="form-check-inputs" type="checkbox" id="flexCheckDefault">
+                            </div>
+                            <div>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <?php echo $menu[154]; ?>
+                                </label>
+                            </div>
+
                         </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"  id="flexCheckDefault2">
-                            <label class="form-check-label" for="flexCheckDefault2">
-                                <?php echo $menu[301]; ?>
-                            </label>
+                        <div class="d-flex justify-content-start">
+                            <div class="mx-2">
+                                <input class="form-check-inputs" type="checkbox"  id="flexCheckDefault2">
+                            </div>
+                            <div>
+                                <label class="form-check-label" for="flexCheckDefault2">
+                                    <?php echo $menu[301]; ?>
+                                </label>
+                            </div>
+
+
                         </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"   id="flexCheckDefault3">
-                            <label class="form-check-label" for="flexCheckDefault3">
-                                <?php echo $menu[302]; ?>
-                            </label>
+                        <div class="d-flex justify-content-start">
+                            <div class="mx-2">
+                                <input class="form-check-inputs" type="checkbox"   id="flexCheckDefault3">
+                            </div>
+
+                            <div>
+                                <label class="form-check-label" for="flexCheckDefault3">
+                                    <?php echo $menu[302]; ?>
+                                </label>
+                            </div>
+
                         </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"  id="flexCheckDefault4">
-                            <label class="form-check-label" for="flexCheckDefault4">
-                                <?php echo $menu[155]; ?>
-                            </label>
+                        <div class="d-flex justify-content-start">
+                            <div class="mx-2">
+                                <input class="form-check-inputs" type="checkbox"  id="flexCheckDefault4">
+                            </div>
+
+                            <div>
+                                <label class="form-check-label" for="flexCheckDefault4">
+                                    <?php echo $menu[155]; ?>
+                                </label>
+                            </div>
+
+
                         </div>
 
 
@@ -496,7 +520,7 @@ footer($menu, $languages)
             form.submit();
         }, 3000);
     }
-    const allCheckBoxes = document.querySelectorAll('.form-check-input');
+    const allCheckBoxes = document.querySelectorAll('.form-check-inputs');
     allCheckBoxes.forEach((checkbox) =>{
         checkbox.addEventListener('change',checkTheBoxes);
     })
