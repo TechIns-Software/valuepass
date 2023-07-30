@@ -85,7 +85,11 @@ function getVendors($conn, $idDestination, $idLanguage, $isBestOff = false): arr
             FROM Vendor AS V
             WHERE V.idDestination = ? AND V.isOkForShowing = 1
                 AND V.isActiveNow = 1
-            ORDER BY V.orderDisplay, V.id;";
+            ORDER BY CASE 
+                WHEN V.orderDisplay = 0 THEN 1 
+                    ELSE 0 
+                END,
+            V.orderDisplay, V.id;";
     }
     $stmt = $conn->prepare($query0);
     $stmt->bind_param('i', $idDestination);
