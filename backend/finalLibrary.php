@@ -278,14 +278,20 @@ function getVendor($conn, $idVendor, $idLanguage, $fullOption = true): \ValuePas
                         if (!isset($importantInformation)) {
                             $importantInformation = new \ValuePass\ImportantInformation($headImportant);
                         }
+                        if (is_null($descriptionImportant)) {
+                           continue;
+                        }
                         $importantInformation->addDescription($descriptionImportant);
                     } else {
                         if (isset($importantInformation)) {
                             $vendor->addImportantInformation($importantInformation);
                         }
                         $importantInformation = new \ValuePass\ImportantInformation($headImportant);
-                        $importantInformation->addDescription($descriptionImportant);
                         $previousImportant = $idHead;
+                        if (is_null($descriptionImportant)) {
+                            continue;
+                        }
+                        $importantInformation->addDescription($descriptionImportant);
                     }
                 }
                 if (isset($importantInformation)) {
