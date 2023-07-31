@@ -22,7 +22,7 @@ if (!isset($_SESSION['cart'])) {
 }
 if (!isset($_SESSION['guest'])) {
     date_default_timezone_set('Europe/Athens');
-    $_SESSION['quest'] = 1;
+    $_SESSION['guest'] = 1;
     if (!isset($conn)) {
         include 'connection.php';
     }
