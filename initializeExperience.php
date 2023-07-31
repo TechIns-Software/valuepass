@@ -9,7 +9,7 @@ header("X-Content-Type-Options: nosniff");
 header('X-Frame-Options: SAMEORIGIN');
 session_start();
 if (!isset($_SESSION['languageName'], $_SESSION["languageId"])) {
-    if(isset($_GET['lang']) && $_GET['lang'] == 'gr') {
+    if(isset($_GET['lang']) && $_GET['lang'] == 'el') {
         $_SESSION["languageId"] = 1;
     } else {
         $_SESSION['languageName'] = 'english';

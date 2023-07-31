@@ -371,7 +371,7 @@ create TABLE Guests
     id       int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     dateLog     datetime NOT NULL,
-    userAgent text DEFAULT ''
+    userAgent text
 ) ENGINE = InnoDB;
 
 insert into Version(id, name)
@@ -425,6 +425,8 @@ DROP TABLE PaymentInfoActivity;
 DROP TABLE RatedCategoryTranslate;
 DROP TABLE RatedCategory;
 DROP TABLE Version;
+DROP TABLE Guests;
 DROP TABLE Language;
  */
 
+UPDATE Vendor Set isActiveNow = 0 Where id in (57,85,86,104,145,91,95,96,97,98,102,103,105,106,107,108,109,146,147,148,149,152);
