@@ -366,6 +366,14 @@ values (1, 1, 'Ποιότητα Εξυπηρέτησης Πελατών'),
        (7, 1, 'Σεβασμός στους Πολιτιστική Κληρονομιά'),
        (7, 2, 'Respect for Local Cultures');
 
+create TABLE Guests
+(
+    id       int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    dateLog     datetime NOT NULL,
+    userAgent text DEFAULT ''
+) ENGINE = InnoDB;
+
 insert into Version(id, name)
 values (1, 'general'),
        (2, 'ratedCategory'),

@@ -20,6 +20,21 @@ $languageId = $_SESSION["languageId"];
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = serialize([]);
 }
+if (!isset($_SESSION['guest'])) {
+    date_default_timezone_set('Europe/Athens');
+    $_SESSION['quest'] = 1;
+    if (!isset($conn)) {
+        include 'connection.php';
+    }
+    $query = "INSERT INTO Guests (dateLog, userAgent) VALUES (?,?)";
+    $stmt = $conn->prepare($query);
+    $dateLog = date('Y-m-d H:i:s');
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $stmt->bind_param('ss', $dateLog, $userAgent);
+    $stmt->execute();
+    $stmt->close();
+
+}
 setcookie('cookie_name', 'cookie_value', [
     'httponly' => true,
     'samesite' => 'Strict', // Requires PHP 7.3.0 or newer
