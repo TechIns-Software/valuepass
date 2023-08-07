@@ -78,17 +78,10 @@ getHeader($title, $home, $menu, $languages, $url, $lang_icon, $voucherNumber, $d
                         </div>
 
 
-                        <div class="d-flex justify-content-start">
-                            <div class="mx-2">
-                                <input class="form-check-inputs" type="checkbox" id="flexCheckDefault">
-                            </div>
-                            <div>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    <?php echo $menu[154]; ?>
-                                </label>
-                            </div>
+                        <p class="text-center">
+                            <?php echo $menu[154]; ?>
+                        </p>
 
-                        </div>
 
                         <div class="d-flex justify-content-start">
                             <div class="mx-2">
